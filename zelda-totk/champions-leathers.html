@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Champion's Leathers - Zelda TOTK Crafting Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0f0f0f;color:#e0e0e0;line-height:1.7}
+a{color:#4fc3f7;text-decoration:none}
+a:hover{color:#81d4fa}
+.container{display:flex;min-height:100vh}
+.left-sidebar{width:260px;background:#1a1a1a;border-right:1px solid #333;padding:20px 0;position:fixed;height:100vh;overflow-y:auto}
+.left-sidebar h2{font-size:14px;text-transform:uppercase;color:#888;padding:0 20px;margin-bottom:15px;letter-spacing:1px}
+.left-sidebar ul{list-style:none}
+.left-sidebar li a{display:block;padding:10px 20px;color:#aaa;font-size:14px;border-left:3px solid transparent;transition:all .2s}
+.left-sidebar li a:hover,.left-sidebar li a.active{color:#fff;background:#252525;border-left-color:#4fc3f7}
+.left-sidebar .emoji{margin-right:8px}
+.main-wrapper{flex:1;margin-left:260px;margin-right:300px}
+.top-nav{background:#1a1a1a;border-bottom:1px solid #333;padding:15px 30px;display:flex;align-items:center;gap:25px;position:sticky;top:0;z-index:100}
+.top-nav a{color:#aaa;font-size:14px;padding:5px 0}
+.top-nav a:hover{color:#fff}
+.ticker-bar{background:#1e2a1e;border-bottom:1px solid #2a3a2a;padding:10px 30px;font-size:13px;color:#7cb97c;overflow:hidden;white-space:nowrap}
+.ticker-bar span{margin-right:30px}
+.content-area{padding:35px 40px;max-width:900px}
+.right-sidebar{width:300px;background:#1a1a1a;border-left:1px solid #333;padding:25px;position:fixed;right:0;height:100vh;overflow-y:auto}
+.right-sidebar h3{font-size:14px;text-transform:uppercase;color:#888;margin-bottom:15px;letter-spacing:1px}
+.right-sidebar .stat-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #2a2a2a;font-size:14px}
+.right-sidebar .stat-label{color:#888}
+.right-sidebar .stat-value{color:#ccc}
+.related-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #2a2a2a}
+.related-item .ri-icon{font-size:24px}
+.related-item .ri-name{font-size:14px;color:#ccc}
+.related-item .ri-desc{font-size:12px;color:#666}
+h1{font-size:32px;margin-bottom:10px;color:#fff}
+h2{font-size:22px;margin:30px 0 15px;color:#4fc3f7;border-bottom:1px solid #333;padding-bottom:8px}
+h3{font-size:17px;margin:22px 0 10px;color:#ccc}
+p{margin-bottom:14px;color:#c0c0c0}
+.item-header{display:flex;align-items:center;gap:18px;margin-bottom:25px;padding:20px;background:#1a1a1a;border:1px solid #333;border-radius:6px}
+.item-icon-accessory{font-size:48px;background:#2a1a2a;border-radius:8px;padding:10px}
+.item-meta{display:flex;gap:15px;flex-wrap:wrap;margin-top:8px}
+.item-meta span{font-size:13px;padding:4px 12px;background:#252525;border-radius:4px;color:#aaa}
+.item-meta .rare{background:#2a1a2a;color:#d48aff}
+.item-meta .difficulty{background:#1a2a1a;color:#7cb97c}
+.section{margin-bottom:40px}
+.gotcha-box{background:#2a1a1a;border:1px solid #4a2a2a;border-radius:6px;padding:20px;margin:15px 0}
+.gotcha-box h4{color:#e57373;margin-bottom:10px;font-size:15px}
+.gotcha-box ul{list-style:none;padding-left:0}
+.gotcha-box li{padding:8px 0;border-bottom:1px solid #3a2a2a;color:#d0a0a0;font-size:14px}
+.gotcha-box li:last-child{border-bottom:none}
+.route-tree{background:#1a1a2a;border:1px solid #2a2a3a;border-radius:6px;padding:20px;margin:15px 0}
+.route-step{display:flex;align-items:flex-start;gap:15px;padding:15px 0;border-bottom:1px solid #2a2a3a}
+.route-step:last-child{border-bottom:none}
+.step-num{background:#4fc3f7;color:#0f0f0f;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.route-step h4{color:#81d4fa;margin-bottom:5px;font-size:15px}
+.route-step p{margin-bottom:4px;font-size:14px}
+.material-item{display:flex;align-items:flex-start;gap:15px;padding:15px;background:#1a1a1a;border:1px solid #333;border-radius:6px;margin:12px 0}
+.mat-icon{font-size:28px;flex-shrink:0}
+.mat-info h4{color:#ccc;margin-bottom:5px}
+.mat-info p{font-size:14px;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th{background:#252525;color:#4fc3f7;padding:12px;text-align:left;border-bottom:2px solid #4fc3f7}
+td{padding:12px;border-bottom:1px solid #2a2a2a;color:#c0c0c0}
+tr:hover td{background:#1a1a1a}
+.coord{font-family:'Courier New',monospace;color:#7cb97c;background:#1a2a1a;padding:2px 8px;border-radius:4px;font-size:13px}
+.tag{display:inline-block;padding:3px 10px;background:#252525;border-radius:4px;font-size:12px;color:#aaa;margin-right:6px}
+.footer{text-align:center;padding:40px;color:#555;font-size:13px;border-top:1px solid #222;margin-top:60px}
+.breadcrumb{color:#666;font-size:13px;margin-bottom:20px}
+.breadcrumb a{color:#888}
+.next-page{display:block;margin-top:30px;padding:20px;background:#1a2a1a;border:1px solid #2a3a2a;border-radius:6px;text-align:center;color:#7cb97c;font-weight:600}
+.next-page:hover{background:#1e321e}
+.warning-box{background:#2a1a1a;border:1px solid #4a2a2a;border-radius:6px;padding:15px;margin:15px 0;color:#d0a0a0;font-size:14px}
+.info-box{background:#1a1a2a;border:1px solid #2a2a3a;border-radius:6px;padding:15px;margin:15px 0;color:#a0a0d0;font-size:14px}
+.tip-list{list-style:none;padding-left:0}
+.tip-list li{padding:10px 0;border-bottom:1px solid #2a2a2a;font-size:14px;color:#c0c0c0}
+.tip-list li:last-child{border-bottom:none}
+.pro-tip{background:#1a2a1a;border-left:4px solid #7cb97c;padding:15px;margin:15px 0;border-radius:0 6px 6px 0}
+.pro-tip strong{color:#7cb97c}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- LEFT SIDEBAR -->
+<nav class="left-sidebar">
+<h2>Zelda TOTK Items</h2>
+<ul>
+<li><a href="champions-leathers.html" class="active"><span class="emoji">👕</span>Champion's Leathers</a></li>
+<li><a href="radiant-set.html"><span class="emoji">💀</span>Radiant Armor Set</a></li>
+<li><a href="#"><span class="emoji">⚡</span>Master Sword</a></li>
+<li><a href="#"><span class="emoji">🛡️</span>Hylian Shield</a></li>
+<li><a href="#"><span class="emoji">🌿</span>Hearty Elixir</a></li>
+<li><a href="#"><span class="emoji">🔥</span>Flamebreaker Armor</a></li>
+<li><a href="#"><span class="emoji">❄️</span>Snowquill Set</a></li>
+<li><a href="#"><span class="emoji">🏹</span>Great Eagle Bow</a></li>
+<li><a href="#"><span class="emoji">💎</span>Diamond Circlet</a></li>
+<li><a href="#"><span class="emoji">🧪</span> mighty elixir </a></li>
+</ul>
+</nav>
+
+<!-- MAIN AREA -->
+<div class="main-wrapper">
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+<a href="./">Crafting Hub</a>
+<a href="./">Armor</a>
+<a href="./">Weapons</a>
+<a href="./">Elixirs</a>
+<a href="./">Materials</a>
+<a href="./">Depths Guide</a>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+<span>👕 Champion's Leathers — boosts Master Sword beam</span>
+<span>💀 Radiant Set — Stal disguise + bone attack up</span>
+<span>⚡ Master Sword — dragon scale required</span>
+<span>🛡️ Hylian Shield — highest defense</span>
+<span>🌿 Hearty Elixir — full recovery + bonus hearts</span>
+</div>
+
+<!-- CONTENT -->
+<main class="content-area">
+
+<div class="breadcrumb">
+<a href="./">Crafting Hub</a> / <a href="./">Armor</a> / Champion's Leathers
+</div>
+
+<div class="item-header">
+<div class="item-icon-accessory">👕</div>
+<div>
+<h1>Champion's Leathers</h1>
+<p data-zh="冠军皮衣">5 defense, boosts Master Sword beam attack. Requires finding the hidden tailor and collecting rare materials from across Hyrule.</p>
+<div class="item-meta">
+<span class="rare">Rarity: Rare</span>
+<span>Item Type: Armor (Chest)</span>
+<span class="difficulty">Difficulty: ★★★☆☆ Mid Game</span>
+</div>
+</div>
+</div>
+
+<!-- MODULE 1 -->
+<section class="section" id="overview">
+<h2>1. Why This Item Matters</h2>
+<p data-zh="为什么这件物品重要">The <strong>Champion's Leathers</strong> is not just another chest armor piece in <em>Zelda: Tears of the Kingdom</em> — it is one of the most build-defining items for any player who relies on the Master Sword as their primary weapon. While its base defense of 5 is modest compared to fully upgraded heavy armor sets, the unique passive effect it provides is found nowhere else in the game: <strong>it dramatically amplifies the Master Sword's sword beam attack</strong>, turning an occasionally useful ranged option into a genuine combat strategy.</p>
+
+<p data-zh="大师之剑光束">When Link is at full health and equipped with the Champion's Leathers, the Master Sword's beam projectile — normally a weak, situational attack used for distant targets — becomes a powerful ranged strike capable of dealing significant damage across long distances. This fundamentally changes how you can approach combat encounters. Enemies on cliffs, across chasms, or guarding camps from elevated positions can now be engaged and eliminated before you ever close the distance. For players who enjoy a more tactical, ranged-melee hybrid playstyle, this armor is essential.</p>
+
+<p data-zh="独特效果">Beyond the beam boost, the Champion's Leathers carries significant lore weight. It is crafted by a reclusive tailor with deep connections to Hyrule's history, and the materials required tie directly into the game's central dragon mythology. Obtaining this piece of armor feels like a genuine quest rather than a simple purchase — you must hunt rare flowers that only bloom under moonlight, face one of the four great dragons circling Hyrule's sky, and track down a hidden NPC whose location is never marked on your map.</p>
+
+<p data-zh="错过了就没有">Here is the FOMO angle: <strong>the Champion's Leathers cannot be obtained through any shop, shrine, or standard questline.</strong> There is no map marker pointing you toward it, no quest log entry guiding your steps. If you do not know what to look for — a hidden well behind a stable, a tailor who only appears after story progression, flowers that vanish during daylight — you can easily complete the entire game without ever knowing this armor exists. For completionists and anyone running a Master Sword build, that is an unacceptable miss.</p>
+
+<div class="pro-tip">
+<strong>PRO TIP:</strong> The Master Sword beam boost from Champion's Leathers stacks with the sword's own scaling (it grows stronger as you complete more main quests). At endgame, a full-health beam shot with this armor equipped can one-shot many standard Bokoblin and Moblin variants from extreme range. This makes it one of the most efficient open-world traversal and cleanup tools available.
+</div>
+</section>
+
+<!-- MODULE 2 -->
+<section class="section" id="recipe">
+<h2>2. Fuse / Craft Recipe</h2>
+<p data-zh="合成配方">The Champion's Leathers is not found in a chest, won from a boss, or purchased with standard currency. It must be <strong>crafted by a hidden tailor NPC</strong> who resides in a secret location. The crafting process requires three specific materials plus a Rupee payment. Below is the complete recipe table:</p>
+
+<table>
+<tr>
+<th>Material</th>
+<th>Qty</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>Silent Princess</td>
+<td>3</td>
+<td>Rare wildflower — Hyrule Ridge, Akkala, Satori Mountain</td>
+<td>Only blooms at night; glows faintly</td>
+</tr>
+<tr>
+<td>Light Dragon's Scale</td>
+<td>1</td>
+<td>Shoot the Light Dragon with an arrow</td>
+<td>Dragon circles entire map; requires all 12 Dragon's Tears</td>
+</tr>
+<tr>
+<td>Rupees</td>
+<td>500</td>
+<td>Any standard source (mining, selling, chests)</td>
+<td>Easily obtained; no special farming needed</td>
+</tr>
+</table>
+
+<p data-zh="裁缝位置">The crafting itself is performed by the <strong>Hidden Tailor</strong> located inside the <strong>Wetland Stable Well</strong>. This NPC does not appear on the map, does not have a quest marker, and will not even be present at the location until you have progressed the main quest to the point where all 12 Dragon's Tears geoglyphs have been revealed and the Master Sword has been recovered from the Light Dragon. If you visit the well before this point, you will find it empty.</p>
+
+<div class="info-box">
+<strong>Crafting Location:</strong> Wetland Stable Well — enter the well behind Wetland Stable in the Lanayru Wetlands region. The tailor is in the underground chamber at the bottom. Bring all materials and 500 Rupees. Interact with the tailor to trigger the crafting dialogue. The armor is added to your inventory immediately upon confirmation.
+</div>
+
+<p data-zh="无法购买">Unlike most armor in TOTK, the Champion's Leathers <strong>cannot be purchased from a standard shop, cannot be dyed at the Kochi Dye Shop</strong> (it has a unique coloration tied to its crafting), and <strong>cannot be upgraded at Great Fairy Fountains</strong>. Its stats are fixed: 5 defense, Master Sword beam boost passive. This is a one-and-done acquisition — make it count.</p>
+</section>
+
+<!-- MODULE 3 -->
+<section class="section" id="materials">
+<h2>3. Materials &amp; Locations</h2>
+
+<h3>Silent Princess</h3>
+<div class="material-item">
+<div class="mat-icon">🌸</div>
+<div class="mat-info">
+<h4>Silent Princess <span class="tag">Need: 3</span> <span class="tag">Rarity: Rare</span></h4>
+<p data-zh="寂静公主">The Silent Princess is one of the most visually striking and mechanically elusive collectible plants in Tears of the Kingdom. It is a pale, glowing wildflower with translucent petals that emit a soft blue-white luminescence. In the lore of Breath of the Wild and TOTK, this flower holds deep symbolic meaning — it was Princess Zelda's favorite flower and is strongly associated with her presence across Hyrule.</p>
+<p><strong>Critical mechanic:</strong> The Silent Princess <strong>only blooms at night</strong>. During daylight hours, the flower either does not appear at all or appears as a closed, uncollectible bud. You must wait until nightfall (or sit at a campfire until night) for the flowers to open and become interactable. This applies to every single spawn point across the map.</p>
+<p><strong>Best farming locations:</strong></p>
+<ul class="tip-list">
+<li><strong>Tabantha Frontier — Great Fairy Fountain:</strong> Several Silent Princess spawn around the entrance to the Great Fairy Fountain in this region. Coordinates roughly <span class="coord">-1366, 1072, 0221</span>. Fast travel to the nearby shrine, then glide down. Check the flower beds surrounding the fountain structure.</li>
+<li><strong>Akkala Highlands:</strong> The elevated, peaceful regions of Akkala hold multiple spawn points. Check near ancient ruins and along cliff edges with clear sightlines. The area around the Akkala Citadel Ruins occasionally spawns Silent Princess among other rare flora.</li>
+<li><strong>Satori Mountain (when glowing):</strong> When the Lord of the Mountain appears on Satori Mountain (indicated by a glowing green aura visible from a distance), the entire mountain becomes a treasure trove of rare materials including numerous Silent Princess flowers. This event is random but frequent enough to camp for. Coordinates <span class="coord">-2233, -0627, 0910</span> for the mountain peak.</li>
+<li><strong>Hyrule Ridge:</strong> Scattered across the higher elevations of Hyrule Ridge, particularly near ridges and overlooks. These are more spread out but worth checking if you are already in the region.</li>
+<li><strong>Near Great Fairy Fountains (all four):</strong> Each Great Fairy Fountain location has a small chance to spawn Silent Princess in the surrounding garden areas. The Tabantha fountain is the most reliable, but check all four if you are struggling.</li>
+</ul>
+<p><strong>Drop rate / respawn:</strong> Silent Princess uses the rare plant respawn timer. After collecting, you must wait for a Blood Moon for the flower to reappear at that location. If you need three and a location only has two, you will need to either find multiple spawn points or wait for a Blood Moon after collecting the first batch.</p>
+<p><strong>Collection tip:</strong> The flower glows faintly even from a distance at night. Use Ultrahand or your scope to scan areas from high ground — the pale glow is visible against dark grass. Cooking a meal with a Silent Princess provides no special effect (it is classified as a "neutral" cooking ingredient), so do not waste it in recipes — save all collected flowers for the armor craft.</p>
+</div>
+</div>
+
+<h3>Light Dragon's Scale</h3>
+<div class="material-item">
+<div class="mat-icon">🐉</div>
+<div class="mat-info">
+<h4>Light Dragon's Scale <span class="tag">Need: 1</span> <span class="tag">Rarity: Legendary</span></h4>
+<p data-zh="光龙之鳞">The Light Dragon's Scale is a legendary crafting material dropped by the <strong>Light Dragon</strong> (also known as the Dragon of Light), one of four great dragons that circle the skies of Hyrule. This particular dragon is unique because it is intrinsically tied to the Master Sword questline — in fact, the Master Sword is embedded in the dragon's head for a significant portion of the game.</p>
+<p><strong>How to obtain:</strong> To acquire a scale, you must <strong>shoot the Light Dragon with an arrow</strong> while it is flying. Any bow will work — you do not need a special weapon. When struck, the dragon will drop a scale (or occasionally a different dragon part depending on where you hit it). The scale will glow and fall slowly, emitting a bright light that makes it easy to spot against the landscape. Use your paraglider to chase it down and collect it mid-air, or mark the landing spot and travel there on foot.</p>
+<p><strong>Prerequisite — ALL 12 Dragon's Tears:</strong> This is absolutely critical. <strong>The Light Dragon will NOT appear in the sky until you have collected all 12 Dragon's Tears</strong> from the geoglyph locations across Hyrule and completed the associated memory sequences. Before this point, the dragon simply does not spawn. If you are trying to get the Champion's Leathers early in your playthrough, you are wasting your time — this is a mid-to-late game acquisition by design.</p>
+<p><strong>Dragon flight path:</strong> After being freed from the Master Sword quest, the Light Dragon follows a massive, predictable circular route around the entire map of Hyrule. It flies at high altitude, typically well above most mountain peaks. The route passes near or over multiple Skyview Towers, making those the ideal camping spots. The dragon emits a brilliant golden-white glow visible from extreme distances, so spotting it is usually not difficult — the challenge is positioning yourself to intercept.</p>
+<p><strong>Best interception points:</strong></p>
+<ul class="tip-list">
+<li><strong>Mount Lanayru Skyview Tower:</strong> Launch from this tower and glide toward the dragon as it passes. The height advantage gives you ample time to line up a shot. Coordinates <span class="coord">3846, -1307, 0539</span>.</li>
+<li><strong>Tabantha Skyview Tower:</strong> Another excellent vantage point on the western side of the dragon's route. Launch and paraglide to intercept. Coordinates <span class="coord">-2898, 0990, 0359</span>.</li>
+<li><strong>Any high Sky Island:</strong> If you have unlocked Sky Islands along or above the dragon's flight path, these provide even better positioning than Skyview Towers. The dragon flies below the highest Sky Islands, giving you a top-down shot angle.</li>
+<li><strong>Wait on a mountain peak:</strong> If no tower is available, camp on any sufficiently high mountain along the route. The dragon's altitude is high but not extreme — most major mountain ranges put you within bow range.</li>
+</ul>
+<p><strong>Hit confirmation:</strong> When you successfully hit the dragon, you will hear a distinct impact sound and see a burst of light particles. The dropped scale will shine brilliantly as it falls. If you do not see a drop, you may have missed — the dragon has a cooldown between part drops, so you may need to wait and shoot again on its next pass.</p>
+</div>
+</div>
+
+<h3>Rupees × 500</h3>
+<div class="material-item">
+<div class="mat-icon">💰</div>
+<div class="mat-info">
+<h4>Rupees <span class="tag">Need: 500</span> <span class="tag">Rarity: Common</span></h4>
+<p data-zh="卢比">The 500 Rupee cost is the easiest requirement to meet and should not require any dedicated farming. By the mid-game point when you are eligible to craft the Champion's Leathers, you have almost certainly accumulated thousands of Rupees through normal play. If you are somehow short, here are the fastest methods:</p>
+<ul class="tip-list">
+<li><strong>Sell gemstones:</strong> Mining ore deposits (common in caves and around rocky areas) yields Amber, Opal, Topaz, Ruby, and Sapphire. A handful of Rubies or Sapphires alone will cover the 500 Rupee cost.</li>
+<li><strong>Sell cooked meals:</strong> High-end meals cooked with multiple ingredients sell for significant Rupees. A 5-ingredient gourmet meat skewer can sell for 100+ Rupees. Cook in bulk and sell to any shopkeeper.</li>
+<li><strong>Chests and enemy drops:</strong> Silver and gold enemy variants frequently drop Rupees. Treasure chests scattered across Hyrule (underwater, in caves, on Sky Islands) commonly contain 100-300 Rupees each.</li>
+<li><strong>Side quests:</strong> Many side quests reward 50-200 Rupees upon completion. If you have uncompleted quests in your log, they are easy money.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- MODULE 4 -->
+<section class="section" id="route">
+<h2>4. Optimal Route</h2>
+<p data-zh="最优路线">This route assumes you have already completed the main quest to the point where all 12 Dragon's Tears are collected and the Light Dragon is active in the sky. If you have not reached this point, bookmark this guide and return later — the armor is literally impossible to obtain before then.</p>
+
+<div class="route-tree">
+
+<div class="route-step">
+<div class="step-num">1</div>
+<div>
+<h4 data-zh="准备阶段">Preparation Phase — Gear and Supplies (5 minutes)</h4>
+<p><strong>Start point:</strong> Any Skyview Tower or major settlement.</p>
+<p>Before beginning the hunt, ensure you have: a bow with at least 20 arrows (any bow works), the paraglider (essential for chasing dropped scales), at least one campfire or access to one (for time-skipping to night), and 500 Rupees in your wallet. If you plan to use a Skyview Tower launch, make sure the tower in your chosen region is activated.</p>
+<p class="coord">Recommended base: Lookout Landing Skyview Tower (central Hyrule, easy fast travel)</p>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">2</div>
+<div>
+<h4 data-zh="猎杀光龙">Hunt the Light Dragon — Acquire the Scale (10-20 minutes)</h4>
+<p><strong>Fast travel to Mount Lanayru Skyview Tower</strong> <span class="coord">3846, -1307, 0539</span>. Launch from the tower and use your scope to scan the sky for the Light Dragon's telltale golden-white glow. If it is not immediately visible, wait on the tower platform — the dragon's route is predictable and it will pass within sight eventually.</p>
+<p>When spotted, launch from the tower and paraglide toward the dragon. You do not need to land on it (though you can if you want to farm multiple parts). Simply get within bow range, aim carefully, and fire an arrow at any part of its body. When struck, the dragon will drop a glowing part. A Light Dragon's Scale is the most common drop from body shots.</p>
+<p>Watch the scale fall and track its landing point. Paraglide after it or mark the location on your map. Collect the scale. If you accidentally get a claw or horn piece instead, you can use those for other crafts — just shoot the dragon again on its next circuit for another drop (there is a short cooldown between drops, roughly 10 minutes of in-game time).</p>
+<div class="pro-tip">
+<strong>PRO TIP:</strong> If you are having trouble hitting the dragon while gliding, try using a long-range bow like the Steel Lizal Bow or a Knight's Bow. The phrenic bow also works well. You do not need to be particularly close — just within standard arrow range. Time your shot when the dragon is flying straight, not during turns.
+</div>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">3</div>
+<div>
+<h4 data-zh="采集寂静公主">Collect Silent Princess Flowers (15-25 minutes)</h4>
+<p>With the scale in your inventory, fast travel to <strong>Tabantha Frontier</strong>. Head to the Great Fairy Fountain in this region <span class="coord">-1366, 1072, 0221</span>. If it is daytime, sit at the nearest campfire and select "Wait until night."</p>
+<p>When night falls, search the flower beds and grassy areas surrounding the Great Fairy Fountain. You should find <strong>1-2 Silent Princess</strong> flowers here. Collect them. If you need more, continue to the next location.</p>
+<p>Fast travel to <strong>Satori Mountain</strong> <span class="coord">-2233, -0627, 0910</span>. Check if the mountain is glowing green (indicating the Lord of the Mountain event is active). If yes, climb the mountain and collect <strong>2-3 Silent Princess</strong> flowers scattered across the summit. If the mountain is not glowing, proceed to the backup location.</p>
+<p>Fast travel to <strong>Akkala Highlands</strong>. Search the elevated regions near the Akkala Citadel Ruins and cliff edges. You should find at least <strong>1 Silent Princess</strong> here at night. By now you should have all 3 required flowers.</p>
+<div class="pro-tip">
+<strong>PRO TIP:</strong> Use your Purah Pad camera to photograph a Silent Princess when you find your first one. This adds it to your Hyrule Compendium, which allows you to use the sensor to detect nearby Silent Princess at other locations. This dramatically speeds up farming if you need more.
+</div>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">4</div>
+<div>
+<h4 data-zh="找到隐藏裁缝">Find the Hidden Tailor (5-10 minutes)</h4>
+<p><strong>Fast travel to Wetland Stable</strong> in the Lanayru Wetlands region <span class="coord">0844, -0190, 0012</span>. The stable is on the road between Kakariko Village and Zora's Domain, so you have likely passed it many times. Walk around to the <strong>back of the stable</strong> and locate the well. Wells are marked by a wooden structure with a rope and bucket.</p>
+<p>Drop down into the well. At the bottom, you will find an underground chamber. If you have met the quest prerequisites (all 12 Dragon's Tears collected), the Hidden Tailor will be standing here, waiting. If the room is empty, you have not progressed far enough in the main story — complete more Dragon's Tear geoglyphs and return.</p>
+<p>Talk to the tailor. Select the dialogue option to craft the Champion's Leathers. Confirm that you have all materials (3 Silent Princess, 1 Light Dragon's Scale, 500 Rupees). The armor is crafted instantly and added to your inventory.</p>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">5</div>
+<div>
+<h4 data-zh="装备">Equip and Test (2 minutes)</h4>
+<p>Open your inventory, navigate to the Armor tab, and equip the Champion's Leathers. Switch to the Master Sword (ensure it is at full health). Find a distant target — a tree, a rock, an enemy camp — and swing the sword. You will see the beam projectile launch with noticeably increased size, speed, and damage compared to without the armor. Congratulations. You now have one of the most unique armor pieces in the game.</p>
+</div>
+</div>
+
+</div>
+
+<p data-zh="总时间"><strong>Total estimated route time:</strong> 35-60 minutes depending on Light Dragon spawn timing and Silent Princess RNG. The dragon is the biggest variable — if you are lucky enough to catch it passing near a tower immediately, the total time drops significantly. If you need to wait for its circuit, add 10-15 minutes.</p>
+</section>
+
+<!-- MODULE 5 -->
+<section class="section" id="gotchas">
+<h2>5. Gotcha Tips</h2>
+<p data-zh="注意事项">The Champion's Leathers acquisition is riddled with prerequisites, hidden requirements, and easily missed details. Read this section carefully before attempting the craft — it will save you hours of frustration.</p>
+
+<div class="gotcha-box">
+<h4>⚠️ Critical Prerequisites &amp; Blockers</h4>
+<ul>
+<li><strong>Dragon's Tears requirement:</strong> The Light Dragon does not appear in the sky until ALL 12 Dragon's Tears geoglyphs have been collected and viewed. This is a hard story lock. You cannot bypass it, glitch it, or work around it. If the dragon is not flying, you are not far enough in the main quest. Period.</li>
+<li><strong>Master Sword recovery:</strong> The Light Dragon carries the Master Sword embedded in its head for much of the game. You must pull the Master Sword from the dragon during the main quest (which itself requires sufficient stamina). This happens during the Dragon's Tears sequence. Only AFTER the sword is pulled does the dragon begin its free flight pattern and become farmable for parts.</li>
+<li><strong>Tailor appearance condition:</strong> The Hidden Tailor inside Wetland Stable Well does not appear until the Light Dragon is freed (i.e., after the Master Sword is pulled). Visiting the well before this point reveals an empty room. This is a common source of confusion — players find the well via guides but assume the tailor is bugged when he is simply not there yet.</li>
+<li><strong>Silent Princess nighttime ONLY:</strong> This cannot be overstated. Silent Princess flowers ONLY appear at night. If you visit a known spawn location during the day, you will see nothing. Many players assume they are at the wrong location or that the flower has been collected already, when in reality they simply need to wait for sunset. Use a campfire to skip to night instantly.</li>
+<li><strong>Silent Princess Blood Moon respawn:</strong> If you already collected the Silent Princess from a location, it will NOT reappear until the next Blood Moon. Do not waste time rechecking the same spot hoping it respawned early. Mark collected locations on your map and rotate between different spawn points.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<h4>⚠️ Common Mistakes &amp; How to Avoid Them</h4>
+<ul>
+<li><strong>Shooting the wrong dragon:</strong> Hyrule has FOUR dragons — Light Dragon (golden-white), Farosh (electric/green), Dinraal (fire/red), and Naydra (ice/blue). Only the Light Dragon drops Light Dragon's Scales. The others drop their own elementally-themed parts. If your scale has a different name or elemental effect, you shot the wrong dragon.</li>
+<li><strong>Missing the dropped scale:</strong> Dragon parts fall slowly and glow, but if you shoot the dragon from extreme height (like a Sky Island), the part can fall into a river, into a chasm, or onto terrain you cannot reach. Always try to shoot from moderate height and immediately track the fall path. Mark the landing spot on your map if you cannot collect it mid-air.</li>
+<li><strong>Using the scale for something else:</strong> A Light Dragon's Scale is also a valid Fuse material (it adds a light effect and moderate damage to a weapon). Do NOT fuse your only scale to a stick or sword. You need it for the armor craft. The game does not warn you that the material is quest-relevant.</li>
+<li><strong>Expecting to upgrade the armor:</strong> The Champion's Leathers has a fixed 5 defense and cannot be upgraded at Great Fairy Fountains. Do not waste Rupees and materials trying to enhance it. The trade-off for the unique beam boost is the lack of upgrade potential.</li>
+<li><strong>Beam only works at full health:</strong> The Master Sword beam (enhanced or not) ONLY fires when Link is at full health. If you have taken any damage, the beam will not activate. This means the armor's primary benefit is nullified during extended combat where you cannot heal. Plan accordingly — stock up on healing items or retreat to heal before engaging at range.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<h4>⚠️ Timing &amp; Progression Issues</h4>
+<ul>
+<li><strong>Do not attempt before mid-game:</strong> The Champion's Leathers is firmly a mid-to-late game item. Between the Dragon's Tears requirement, the Master Sword pull, and the 500 Rupee cost, a new player cannot realistically obtain this armor within the first 15-20 hours of play. Focus on main story progression first.</li>
+<li><strong>Wetland Stable well access:</strong> The well behind Wetland Stable requires you to climb over or around the stable building. It is not visible from the front entrance. Walk around to the back and look for the wooden well structure.</li>
+<li><strong>Silent Princess despawn on approach:</strong> In rare cases, Silent Princess flowers can despawn if you approach too quickly (running or using Rewind). Walk slowly toward them to ensure they load properly.</li>
+</ul>
+</div>
+</section>
+
+<!-- MODULE 6 -->
+<section class="section" id="free-benefits">
+<h2>6. Free Benefits</h2>
+<p data-zh="额外收益">The journey to acquire the Champion's Leathers takes you across some of the most rewarding regions in Hyrule. Even if you are focused solely on the armor, you will pick up significant secondary benefits along the way. Do not ignore these — they often exceed the value of the armor itself.</p>
+
+<h3>Light Dragon Route Benefits</h3>
+<div class="material-item">
+<div class="mat-icon">🗼</div>
+<div class="mat-info">
+<h4>Skyview Tower and Shrine Discoveries</h4>
+<p data-zh="塔和神庙">Tracking the Light Dragon's flight path will take you near multiple Skyview Towers and shrines you may not have activated yet. The Mount Lanayru Tower alone reveals a massive portion of the southeastern map. As you camp on towers waiting for the dragon, take the opportunity to launch and glide toward any unexplored map markers. Each tower unlocks the regional map; each shrine gives a Light of Blessing for heart/stamina upgrades.</p>
+<p>Specific unlocks along the dragon's route: <strong>Mount Lanayru Skyview Tower</strong> (southeast Lanayru), <strong>Tabantha Skyview Tower</strong> (northwest Hebra/Tabantha), <strong>Upland Zorana Skyview Tower</strong> (Lanayru region), and numerous shrines in Akkala, Lanayru, and Tabantha that are visible from high vantage points during your dragon hunt.</p>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🌿</div>
+<div class="mat-info">
+<h4>Rare Material Gathering at Silent Princess Locations</h4>
+<p data-zh="稀有材料">The locations where Silent Princess grows are among the most bountiful flora spawn points in the game. While collecting the flowers, you will inevitably gather: <strong>Hearty Radishes, Endura Carrots, Stamella Shrooms, and other high-value cooking ingredients</strong>. The Great Fairy Fountain locations in particular are surrounded by premium plants. The Satori Mountain summit during a Lord of the Mountain event is arguably the best single location in the entire game for rare material farming — you can collect dozens of premium items in a single visit.</p>
+<p>Also keep an eye out for <strong>fairies</strong> near Great Fairy Fountains. These act as auto-revive items when kept in your inventory and are among the most valuable survival tools in the game.</p>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">✂️</div>
+<div class="mat-info">
+<h4>Tailor Unlock — Additional Crafting Options</h4>
+<p data-zh="裁缝解锁">Discovering the Hidden Tailor at Wetland Stable Well does more than enable the Champion's Leathers craft. The tailor also offers <strong>additional unique armor crafting options</strong> not available anywhere else in Hyrule. While the specific inventory varies based on your progression, many players report access to unique cosmetic variants and specialty pieces after crafting the Champion's Leathers. Talk to the tailor again after receiving the armor to see if new dialogue options or crafting recipes have opened up.</p>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🧚</div>
+<div class="mat-info">
+<h4>Great Fairy Fountain Visits</h4>
+<p data-zh="大妖精之泉">Since the best Silent Princess farming spot is near the Tabantha Great Fairy Fountain, you have a natural opportunity to visit and upgrade your other armor pieces while in the area. If you have not yet unlocked all four Great Fairies, the Tabantha fairy is one of the easier ones to access — her fountain is not locked behind a quest gate like some others. Bring Rupees and materials to upgrade your primary combat armor while you are already in the neighborhood.</p>
+<p>Visiting Great Fairy Fountains also unlocks <strong>armor dye options</strong> at the Kochi Dye Shop and progresses any side quests related to the fairy questline.</p>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">⭐</div>
+<div class="mat-info">
+<h4>Depths and Sky Island Exploration</h4>
+<p data-zh="地底和空岛">Hunting the Light Dragon at high altitude will inevitably take you near or onto Sky Islands you have not explored. These islands contain: <strong>Zonai devices</strong> (fan, wheel, rocket, steering stick, etc.), <strong>Zonai charges</strong> for your Energy Cell, <strong>treasure chests</strong> with weapons and bows, and <strong>Shrine of Light</strong> entrances. Each Sky Island you clear is a permanent fast travel point and resource node.</p>
+<p>If your dragon hunt takes you over chasm entrances, consider dropping into the Depths as well. The Depths contain <strong>Zonaite ore</strong> (for Energy Cell upgrades), <strong>Brightbloom Seeds</strong>, <strong>Poes</strong> (currency for the Depths vendor), and <strong>Lightroots</strong> that serve as fast travel points for the underground map.</p>
+</div>
+</div>
+
+<div class="pro-tip">
+<strong>PRO TIP:</strong> The full Champion's Leathers acquisition route, if done thoroughly, can yield 5-10 new fast travel points (towers, shrines, Sky Islands, Lightroots), hundreds of Rupees in sellable materials, multiple heart/stamina upgrades from shrine completions, and potentially a fully upgraded Energy Cell if you mine Zonaite along the way. Treat this as a major expedition, not a quick errand.
+</div>
+</section>
+
+<!-- NEXT PAGE -->
+<section class="section">
+<a href="radiant-set.html" class="next-page" data-zh="推荐下一篇">Recommended Next → Radiant Armor Set — Bone-themed glow-in-the-dark armor with Stal disguise and bone attack boost. Perfect for nighttime combat builds.</a>
+</section>
+
+</main>
+
+<div class="footer">
+<p>Zelda: Tears of the Kingdom — Crafting Guide Database</p>
+<p>Guides written by the community, for the community.</p>
+</div>
+
+</div>
+
+<!-- RIGHT SIDEBAR -->
+<aside class="right-sidebar">
+<h3>Item Stats</h3>
+<div class="stat-row">
+<span class="stat-label">Defense</span>
+<span class="stat-value">5 (fixed)</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Set Bonus</span>
+<span class="stat-value">Master Sword Beam Up</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Upgradeable</span>
+<span class="stat-value">No</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Dyeable</span>
+<span class="stat-value">No</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Item Type</span>
+<span class="stat-value">Chest Armor</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Rarity</span>
+<span class="stat-value">Rare / Unique</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Quest Locked</span>
+<span class="stat-value">Yes (12 Tears)</span>
+</div>
+
+<h3 style="margin-top:30px">Materials Summary</h3>
+<div class="stat-row">
+<span class="stat-label">Silent Princess</span>
+<span class="stat-value">× 3</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Light Dragon's Scale</span>
+<span class="stat-value">× 1</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Rupees</span>
+<span class="stat-value">× 500</span>
+</div>
+
+<h3 style="margin-top:30px">Related Guides</h3>
+<div class="related-item">
+<div class="ri-icon">💀</div>
+<div>
+<div class="ri-name"><a href="radiant-set.html">Radiant Armor Set</a></div>
+<div class="ri-desc">Stal disguise + bone attack boost</div>
+</div>
+</div>
+<div class="related-item">
+<div class="ri-icon">⚡</div>
+<div>
+<div class="ri-name"><a href="#">Master Sword Guide</a></div>
+<div class="ri-desc">Pull location &amp; beam mechanics</div>
+</div>
+</div>
+<div class="related-item">
+<div class="ri-icon">🐉</div>
+<div>
+<div class="ri-name"><a href="#">Dragon Farming Guide</a></div>
+<div class="ri-desc">All 4 dragons, parts &amp; routes</div>
+</div>
+</div>
+<div class="related-item">
+<div class="ri-icon">🌸</div>
+<div>
+<div class="ri-name"><a href="#">Rare Plants Guide</a></div>
+<div class="ri-desc">Silent Princess &amp; more</div>
+</div>
+</div>
+</aside>
+
+</div>
+</body>
+</html>

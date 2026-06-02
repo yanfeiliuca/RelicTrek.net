@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Headhunter Guide — Path of Exile 2 | CraftHunt</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#0a0a0a;color:#d4d4d4;line-height:1.6}
+a{color:#ff3333;text-decoration:none}
+a:hover{color:#ff6666}
+.nav{background:#111;padding:15px 30px;display:flex;align-items:center;border-bottom:2px solid #ff3333;position:sticky;top:0;z-index:100}
+.nav a{margin-right:20px;color:#ccc;font-size:13px}.nav a:hover{color:#fff}
+.ticker{background:#1a0000;padding:8px 30px;font-size:12px;border-bottom:1px solid #330000;overflow:hidden;white-space:nowrap}
+.ticker span{color:#ff3333}
+.container{display:flex;max-width:1400px;margin:0 auto}
+.left-sidebar{width:220px;background:#111;padding:20px;border-right:1px solid #222;position:sticky;top:55px;height:calc(100vh - 55px);overflow-y:auto}
+.left-sidebar a{display:block;padding:6px 10px;margin:2px 0;font-size:13px;color:#999;border-radius:3px}
+.left-sidebar a:hover{background:#1a1a1a;color:#fff}
+.left-sidebar a.active{background:#1a0000;color:#ff3333;border-left:3px solid #ff3333}
+.quick-nav{margin-top:15px;padding-top:15px;border-top:1px solid #222}
+.quick-nav h4{color:#ff3333;margin-bottom:8px;font-size:14px}
+.main-content{flex:1;padding:30px;background:#0d0d0d;min-height:calc(100vh - 55px)}
+.section{background:#111;margin-bottom:25px;padding:25px;border:1px solid #222;border-radius:4px}
+.section h2{color:#ff3333;margin-bottom:15px;font-size:22px;border-bottom:1px solid #222;padding-bottom:8px}
+.section h3{color:#ff9999;margin:15px 0 10px;font-size:16px}
+.item-header{display:flex;align-items:center;margin-bottom:20px;padding:20px;background:#1a0000;border:1px solid #330000;border-radius:4px}
+.item-icon-legendary{width:64px;height:64px;background:#1a0500;border:2px solid #ff3333;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-right:20px}
+.item-icon-tech{width:64px;height:64px;background:#001a1a;border:2px solid #00cccc;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-right:20px}
+.item-icon-rare{width:64px;height:64px;background:#1a1500;border:2px solid #ffcc00;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-right:20px}
+.item-title h1{font-size:28px;color:#fff}
+.item-meta{font-size:14px;color:#999;margin-top:4px}
+.diff{color:#ffcc00}
+.gotcha-box{background:#1a0000;border:2px solid #ff3333;padding:15px;margin:15px 0;border-radius:4px}
+.gotcha-box h4{color:#ff3333;margin-bottom:8px}
+.route-tree{padding:15px;background:#0a0a0a;border:1px solid #222;border-radius:4px;margin:10px 0}
+.route-step{padding:8px 12px;margin:5px 0;background:#111;border-left:3px solid #ff3333;font-size:14px}
+.material-item{display:flex;align-items:center;padding:8px 12px;background:#111;margin:5px 0;border-radius:3px;border-left:3px solid #666}
+.material-item.rare{border-left-color:#ffcc00}
+.material-item.legendary{border-left-color:#ff3333}
+.material-item.magic{border-left-color:#6666ff}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th,td{padding:10px;border:1px solid #222;text-align:left}
+th{background:#1a0000;color:#ff3333}
+tr:nth-child(even){background:#111}
+.right-sidebar{width:300px;background:#111;padding:20px;border-left:1px solid #222;position:sticky;top:55px;height:calc(100vh - 55px);overflow-y:auto}
+.right-sidebar h3{color:#ff3333;font-size:16px;margin-bottom:12px}
+.right-sidebar a{display:block;padding:6px 0;font-size:13px;color:#ccc;border-bottom:1px solid #222}
+.footer{background:#111;padding:30px;text-align:center;border-top:2px solid #ff3333;font-size:13px;color:#666;margin-top:30px}
+.footer a{color:#999;margin:0 10px}
+.current-indicator{background:#ff3333;color:#fff;padding:2px 8px;font-size:11px;border-radius:3px;margin-left:10px}
+ul,ol{margin-left:20px;margin-bottom:15px}
+li{margin:5px 0}
+p{margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../">CraftHunt</a>
+  <a href="../">Guides</a>
+  <a href="../">Games</a>
+  <a href="../">Maps</a>
+  <a href="../">Trade</a>
+  <a href="../about.html">About</a>
+</nav>
+
+<div class="ticker">
+  <span>Latest:</span> Uber boss drop tables updated | Headhunter drop rates in Tier 16 maps | The Doctor card farm route optimized | New league mechanic added to chase unique pool
+</div>
+
+<div class="container">
+  <aside class="left-sidebar">
+    <a href="../terraria/">Terraria</a>
+    <a href="../subnautica2/">Subnautica 2</a>
+    <a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+    <a href="../zelda-totk/">Zelda: TOTK</a>
+      <a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man's Sky</a>
+      <a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+    <a href="../minecraft/">Minecraft</a>
+    <a href="../no-mans-sky/">No Man's Sky</a>
+    <a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+    <a href="../valheim/">Valheim</a>
+    <a href="./" class="active">Path of Exile 2</a>
+    <div class="quick-nav">
+      <h4>PoE 2 Items</h4>
+      <a href="tabula-rasa.html">Tabula Rasa</a>
+      <a href="headhunter.html" class="active">Headhunter</a>
+      <a href="mageblood.html">Mageblood</a>
+      <a href="mirror-kalandra.html">Mirror of Kalandra</a>
+      <a href="exalted-crafting.html">Exalted Orb Crafting</a>
+      <a href="six-link-armor.html">Six-Link Armor</a>
+      <a href="uncorrupted-vessel.html">Uncorrupted Vessel</a>
+      <a href="regal-orb.html">Regal Orb Farming</a>
+      <a href="skill-gem.html">21/23 Skill Gem</a>
+      <a href="divine-orb.html">Divine Orb Farming</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="item-header">
+      <div class="item-icon-legendary">🐍</div>
+      <div class="item-title">
+        <h1>Headhunter <span class="current-indicator">CURRENT</span></h1>
+        <div class="item-meta">Leather Belt | Legendary (Unique) | Difficulty: <span class="diff">★★★★★</span></div>
+      </div>
+    </div>
+
+    <!-- Section 1: Overview -->
+    <section class="section" id="overview">
+      <h2>1. Overview</h2>
+      <p>Headhunter is the most storied and sought-after unique item in the entire Path of Exile franchise. First introduced in the original game and carried forward as a crown jewel chase unique in Path of Exile 2, this Leather Belt fundamentally transforms the mapping experience by granting the player the power of slain rare monsters. When you kill a rare (yellow) monster while wearing Headhunter, you gain one of its monster modifiers for 20 seconds. These modifiers can stack up to a maximum of one instance per modifier type, and the cumulative effect of multiple stolen monster mods creates a snowball of power that turns an ordinary mapping character into an unstoppable force of nature.</p>
+
+      <p>The mechanics of Headhunter operate through the following sequence: as you enter a map, you begin encountering rare monster packs. Each rare monster has a set of randomly assigned modifiers — such as "Hexproof," "Extra Life," "Deadeye," "Soul Eater," "Temporal Bubble," "Gargantuan," and dozens more. Upon delivering the killing blow to a rare monster, Headhunter absorbs one of these modifiers and bestows it upon your character with a 20-second duration. As you chain kills across the map, you accumulate a cascading array of buffs that can include massive increases to attack and cast speed, damage reduction, elemental damage penetration, area of effect expansion, movement speed, extra projectiles, and more.</p>
+
+      <p>The true power of Headhunter manifests in dense maps with high rare monster counts. In a typical Tier 16 map with 30-50 rare monsters, a Headhunter user can maintain 10-20 active monster modifiers simultaneously during the peak of their map clear. This results in damage output that can exceed base values by 300-800%, movement speed that makes the character feel like a teleporting blur across the screen, and defensive layers that render most map monster damage trivial. The experience of mapping with a fully stacked Headhunter is often described by players as the most satisfying and addictive gameplay loop in all of Path of Exile.</p>
+
+      <p>However, Headhunter is not without its limitations. The 20-second duration on stolen mods means that in sparse maps or boss arenas where rare monsters are few, the belt provides minimal benefit. It offers no passive statistics — no life, no resistances, no damage — when no monster mods are active. Boss encounters with single targets and no rare monster spawns render Headhunter essentially a blank item. This makes it a specialized mapping tool rather than a universal best-in-slot belt for all content. Understanding when Headhunter shines, when it falls short, and how to acquire it is essential knowledge for any serious Path of Exile 2 endgame player.</p>
+
+      <p>In Path of Exile 2, Headhunter maintains its core mechanic with potential adjustments to the specific modifier pool to account for the new monster mod system in the sequel. The belt remains classified as a "chase unique" — an item so rare and powerful that acquiring one represents a significant milestone in a player's league journey. The prestige of wearing a Headhunter extends beyond its mechanical benefits; it serves as a visible symbol of wealth, dedication, and achievement within the Path of Exile community. Walking into town with a Headhunter equipped still turns heads years after its initial introduction, a testament to its enduring legendary status.</p>
+    </section>
+
+    <!-- Section 2: Recipe / Crafting Method -->
+    <section class="section" id="recipe">
+      <h2>2. Acquisition Method</h2>
+      <p>Headhunter cannot be crafted through any deterministic vendor recipe, bench craft, or player-driven crafting process. It is a pure chase unique that must be acquired through one of three primary vectors: divination card turn-in, direct drop from specific high-tier content, or trade purchase. Each method carries dramatically different time investments, RNG exposure, and opportunity costs that must be weighed carefully based on your playstyle, league type, and available resources.</p>
+
+      <h3>2.1 The Doctor Divination Card (Primary Targeted Method)</h3>
+      <p>The Doctor is the divination card associated with Headhunter. Eight Doctor cards can be exchanged for one Headhunter. This card is classified as an "ultra-rare" divination card — meaning it drops extremely infrequently even under optimal conditions. Farming The Doctor cards is a long-term project that typically requires dozens if not hundreds of hours of dedicated farming in specific endgame maps.</p>
+
+      <table>
+        <tr><th>Acquisition Method</th><th>Quantity Required</th><th>Estimated Time/Cost</th><th>Reliability</th></tr>
+        <tr><td>The Doctor Card Farm</td><td>8 cards</td><td>50-150+ hours</td><td>Deterministic but extremely long</td></tr>
+        <tr><td>Direct Drop (Tier 16 Maps)</td><td>N/A</td><td>Highly variable</td><td>Ultra-low RNG (1 in 500k+ kills)</td></tr>
+        <tr><td>Uber Boss Drop</td><td>N/A</td><td>Varies by boss</td><td>Very low (0.1-0.5% per kill)</td></tr>
+        <tr><td>Trade Purchase (Early League)</td><td>N/A</td><td>50-100+ Divine Orbs</td><td>Immediate (if currency available)</td></tr>
+        <tr><td>Trade Purchase (Mid-Late League)</td><td>N/A</td><td>30-60 Divine Orbs</td><td>Immediate (if currency available)</td></tr>
+      </table>
+
+      <h3>2.2 Direct Drop Mechanics</h3>
+      <p>Headhunter can drop directly from any monster that can drop a Leather Belt base item, but the drop rate is extraordinarily low. The estimated base drop chance from a white monster in a Tier 16 map with no quantity modifiers is approximately 1 in 1,000,000 to 1 in 2,000,000 kills. This makes targeted farming through natural drops essentially impossible. The most realistic scenario for a direct Headhunter drop is:</p>
+      <ul>
+        <li>Running heavily juiced Tier 16 maps with maximum item quantity (120%+)</li>
+        <li>Using Beyond, Delirium, Breach, and Legion mechanics to massively inflate monster counts</li>
+        <li>Maintaining elevated item rarity through gear, flasks, and map mods</li>
+        <li>Running content hundreds or thousands of times to accumulate enough rolls</li>
+        <li>Accessing content that has Headhunter on its specific drop table (certain league mechanics)</li>
+      </ul>
+      <p>Even under these optimal conditions, a direct Headhunter drop remains a once-per-league (or once-per-several-leagues) event for most players. This is by design — Headhunter is intended to be one of the rarest power spikes in the game.</p>
+
+      <h3>2.3 Uber Pinnacle Boss Drops</h3>
+      <p>In Path of Exile 2, the pinnacle boss system has been expanded with multiple Uber-difficulty encounters that have enhanced drop tables. Headhunter appears on the drop table for several of these encounters, typically at a rate of 0.1% to 0.5% per kill depending on the specific boss and any atlas passive investment. The primary bosses with Headhunter on their table include:</p>
+      <ul>
+        <li><strong>Uber Exarch:</strong> ~0.2-0.4% drop chance (also drops Searing Exarch exclusive uniques)</li>
+        <li><strong>Uber Eater of Worlds:</strong> ~0.2-0.4% drop chance (also drops Eater exclusive uniques)</li>
+        <li><strong>Uber Maven:</strong> ~0.3-0.5% drop chance (highest among pinnacle bosses)</li>
+        <li><strong>Uber Uber Elder:</strong> ~0.1-0.3% drop chance</li>
+      </ul>
+      <p>Farming these bosses for Headhunter requires significant upfront investment in atlas progression, boss key fragments, and build capability to defeat some of the hardest content in the game. The expected value calculation typically favors selling boss drops and purchasing Headhunter through trade rather than directly farming for the drop.</p>
+
+      <h3>2.4 Trade League Economics</h3>
+      <p>In trade leagues, Headhunter pricing follows a predictable arc across the league timeline:</p>
+      <ul>
+        <li><strong>Day 1-3:</strong> Not available (no one has farmed enough cards yet)</li>
+        <li><strong>Week 1-2:</strong> 80-120 Divine Orbs (first Headhunters enter market at extreme premium)</li>
+        <li><strong>Week 3-4:</strong> 50-80 Divine Orbs (supply increases, price stabilizes)</li>
+        <li><strong>Month 2:</strong> 30-50 Divine Orbs (steady supply from dedicated card farmers)</li>
+        <li><strong>Mid-Late League:</strong> 20-35 Divine Orbs (market saturation, demand softens)</li>
+      </ul>
+      <p>The decision to purchase versus farm depends heavily on your currency generation rate. Players who can generate 5-10 Divine Orbs per hour through mapping or crafting are often better off farming currency and buying Headhunter directly rather than committing 100+ hours to card farming.</p>
+    </section>
+
+    <!-- Section 3: Materials / Drop Sources -->
+    <section class="section" id="materials">
+      <h2>3. Materials & Drop Sources</h2>
+
+      <h3>3.1 The Doctor Divination Card</h3>
+      <div class="material-item legendary">
+        <strong>The Doctor</strong> — Divination Card | Stack Size: 1/8
+      </div>
+      <p>The Doctor card depicts a sinister physician and is one of the most recognizable divination cards in Path of Exile history. Its ultra-rare classification means the drop rate is significantly lower than common cards like Humility. Under optimal farming conditions in its target map, the estimated drop rate is approximately 1 card per 6-15 hours of dedicated farming. This means a full set of 8 cards typically requires 50-120 hours of focused farm time, making it one of the longest deterministic farms in the game.</p>
+
+      <h3>3.2 Primary Farm Map: Burial Chambers</h3>
+      <p>Burial Chambers is the definitive map for farming The Doctor cards. This map has several characteristics that make it ideal for long-term card farming:</p>
+      <ul>
+        <li><strong>Compact Layout:</strong> The map features a relatively dense, enclosed layout with predictable monster pack placement</li>
+        <li><strong>High Monster Density:</strong> Good baseline monster count per map instance</li>
+        <li><strong>Doctor Card on Drop Table:</strong> Confirmed drop location with the highest known card rate</li>
+        <li><strong>Favorable Map Tier:</strong> Tier 5-6 base tier, easily sustained and rolled</li>
+        <li><strong>Boss Accessibility:</strong> The boss arena is quickly reachable for bonus drops</li>
+      </ul>
+
+      <table>
+        <tr><th>Map</th><th>Tier</th><th>Layout Rating</th><th>Card Drop Rate</th></tr>
+        <tr><td>Burial Chambers</td><td>T5-T6</td><td>Good</td><td>Highest (~1 per 6-15 hrs)</td></tr>
+        <tr><td>Arsenal</td><td>T10-T12</td><td>Moderate</td><td>Moderate (~1 per 15-25 hrs)</td></tr>
+        <tr><td>Defiled Cathedral</td><td>T14-T16</td><td>Moderate</td><td>Moderate (~1 per 12-20 hrs)</td></tr>
+        <tr><td>Juiced T16 Mapping</td><td>T16</td><td>Variable</td><td>Low (~1 per 30-60 hrs)</td></tr>
+      </table>
+
+      <h3>3.3 Atlas Passive Investment for Doctor Farming</h3>
+      <p>The Path of Exile 2 atlas skill tree offers several passive nodes that directly improve Headhunter farming efficiency:</p>
+      <ul>
+        <li><strong>Divination Card Drop Chance nodes:</strong> Each allocated node provides 5-10% increased chance for divination cards to drop. Stack as many as reachable near your farm map.</li>
+        <li><strong>Map Boss Drop nodes:</strong> Since map bosses have elevated card drop rates, passives that increase boss drops provide indirect Doctor card benefits.</li>
+        <li><strong>Item Quantity nodes:</strong> Global item quantity affects all drops including divination cards.</li>
+        <li><strong>Map Modifier Effect nodes:</strong> Allow for more aggressive map rolling that increases monster count and quantity.</li>
+        <li><strong>League Mechanic nodes:</strong> Passives that boost Breach, Legion, or Beyond spawn rates add monster density that translates to more card drop rolls.</li>
+      </ul>
+
+      <h3>3.4 Maximizing Doctor Card Acquisition</h3>
+      <p>To maximize your chances of obtaining The Doctor cards efficiently, implement the following strategies:</p>
+      <ul>
+        <li><strong>Sextant Blocking:</strong> Use Awakened Sextants to force favorable map modifiers that add monsters or increase drops. Block undesirable sextant mods on other atlas regions to increase the weight of good rolls.</li>
+        <li><strong>Scarab Usage:</strong> Deploy Gilded or Winged Scarabs that add monster packs (Breach, Legion, Ambush, Harbinger) to maximize monsters per map.</li>
+        <li><strong>Beyond Mechanic:</strong> Beyond spawns additional rare and unique monsters that can also drop divination cards. The "Beyond" map modifier or Beyond crafting on the map device significantly boosts pack size.</li>
+        <li><strong>Delirium Orbs:</strong> Applying Delirium Orbs to maps adds a fog layer that scales monster density and reward drops proportionally to how deep you push the Delirium reward meter.</li>
+        <li><strong>Magic Find Setup:</strong> Some dedicated Headhunter farmers build specialized Magic Find characters using items like Ventor's Gamble, Goldwyrm boots, and Bisco's Collar to maximize item rarity and quantity at the cost of personal survivability. These builds rely on Headhunter's stolen defensive mods for survival.</li>
+        <li><strong>Streamlined Clear:</strong> Optimize your build for sub-2-minute map clears. Clear speed directly translates to cards per hour — doubling your clear speed effectively doubles your card acquisition rate.</li>
+      </ul>
+    </section>
+
+    <!-- Section 4: Route -->
+    <section class="section" id="route">
+      <h2>4. Farm Route</h2>
+      <p>This route is optimized for Burial Chambers map farming with the goal of maximizing Doctor card drops per hour. The strategy assumes a character capable of clearing Tier 5-6 maps in under 2 minutes and access to the map device with available scarabs and sextants.</p>
+
+      <div class="route-tree">
+        <div class="route-step"><strong>Step 1 — Map Preparation:</strong> Roll your Burial Chambers maps using Orb of Alchemy and Orb of Scouring for re-rolls. Target modifiers: "(20-30)% increased Quantity of Items," "(20-30)% increased Rarity of Items," "(12-18)% increased Monster Pack Size," and any Beyond or additional monster mods. Avoid Reflect, No Regen, and Reduced Player Resistances unless your build can handle them.</div>
+        <div class="route-step"><strong>Step 2 — Scarab Selection:</strong> Apply Gilded Breach Scarab + Gilded Legion Scarab + Rusted Ambush Scarab to the map device. These add the highest monster density per scarab slot. If available, use Winged versions for maximum effect.</div>
+        <div class="route-step"><strong>Step 3 — Sextant Setup:</strong> Apply Awakened Sextants to the atlas regions containing Burial Chambers. Desirable sextant mods include: "(30-40)% increased Monster Pack Size," "Areas contain an additional Breach," "Areas contain an additional Legion Encounter," and "Unique Monsters drop Corrupted Items." Block bad sextant mods on adjacent regions.</div>
+        <div class="route-step"><strong>Step 4 — Map Entry:</strong> Place your prepared map in the Map Device with selected scarabs. Activate the map and immediately begin your clear pattern.</div>
+        <div class="route-step"><strong>Step 5 — Clear Pattern:</strong> Clear in a clockwise spiral from the entrance. Prioritize rare monster packs — these have the highest divination card drop chance. Do not backtrack; push forward continuously.</div>
+        <div class="route-step"><strong>Step 6 — League Mechanics:</strong> Open Breaches immediately upon encounter — stand in the center to maximize spawn rate. Activate Legion monoliths and break out all rare monsters. Click Strongboxes (especially Diviner's Strongboxes for bonus card drops).</div>
+        <div class="route-step"><strong>Step 7 — Boss Kill:</strong> Locate and kill the map boss quickly. Map bosses have elevated divination card drop rates and should never be skipped.</div>
+        <div class="route-step"><strong>Step 8 — Loot Filter:</strong> Use a strict loot filter that highlights divination cards prominently. The sound cue for a Doctor card dropping should be unmistakable — configure your filter with a unique sound.</div>
+        <div class="route-step"><strong>Step 9 — Reset:</strong> Portal out immediately after boss kill. Do not loot low-value currency. Open your next prepared map and repeat. Target pace: 1 map per 90-120 seconds.</div>
+        <div class="route-step"><strong>Step 10 — Turn-in:</strong> After collecting 8 Doctor cards, visit Navali to exchange for your Headhunter. Consider corrupting with a Vaal Orb for a chance at an implicit modifier.</div>
+      </div>
+
+      <h3>4.1 Expected Time Investment</h3>
+      <table>
+        <tr><th>Farm Setup</th><th>Avg. Time Per Card</th><th>Total for Headhunter (8 cards)</th></tr>
+        <tr><td>Optimized (scarabs, sextants, MF gear, speed build)</td><td>5-8 hours</td><td>40-65 hours</td></tr>
+        <tr><td>Good (alchemied maps, basic scarabs, solid build)</td><td>8-15 hours</td><td>65-120 hours</td></tr>
+        <tr><td>Casual (basic alc maps, no scarabs, moderate speed)</td><td>15-25 hours</td><td>120-200 hours</td></tr>
+        <tr><td>Currency farm → Purchase (5 Div/hr rate)</td><td>N/A</td><td>10-20 hours equivalent</td></tr>
+      </table>
+
+      <h3>4.2 Alternative: Defiled Cathedral Farm</h3>
+      <p>Defiled Cathedral (Tier 14-16) is an alternative map for Doctor card farming that offers a higher card drop rate per map at the cost of slower clear speed and more expensive map sustain. This route is recommended for builds that can efficiently clear Tier 16 content and prefer the additional baseline map rewards that higher tier maps provide. The route follows the same principles as Burial Chambers but with a focus on fully juiced map preparation and scarab investment to maximize returns.</p>
+
+      <h3>4.3 Currency Farm and Buy Strategy</h3>
+      <p>For many players, the most efficient route to Headhunter is not farming cards at all, but instead:</p>
+      <ol>
+        <li>Develop a high-tier mapping character capable of clearing Tier 14-16 maps efficiently</li>
+        <li>Focus on currency-generating strategies (Expedition, Heist, high-value map drops, crafting sales)</li>
+        <li>Aim for 5-10 Divine Orbs per hour of play</li>
+        <li>Purchase Headhunter from trade after accumulating sufficient currency</li>
+      </ol>
+      <p>This approach typically requires 10-25 hours of focused currency farming compared to 50-200 hours of dedicated card farming, making it the preferred method for trade league players who value their time.</p>
+    </section>
+
+    <!-- Section 5: Gotcha -->
+    <section class="section" id="gotcha">
+      <h2>5. Gotchas & Common Mistakes</h2>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #1: No Passive Stats</h4>
+        <p>Headhunter provides zero life, zero resistances, and zero damage when no monster mods are active. In boss encounters, Delve deep zones, and sparse maps, you are effectively wearing an empty belt slot. Always ensure your other gear provides sufficient baseline defenses to survive without Headhunter buffs. Many players maintain a secondary belt (Mageblood, Stygian Vise with life/resists) for boss swapping.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #2: Map Choice Matters</h4>
+        <p>Headhunter's power scales directly with rare monster density. Running narrow corridor maps or boss-rush strategies dramatically reduces Headhunter's effectiveness. The best maps for Headhunter are wide-open layouts with many rare monster packs: Tropical Island, Strand, Mesa, Dunes, and Cemetery. Avoid Phantasmagoria, Cells, and underground maps where monster density is low and spread out.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #3: Boss Content Limitation</h4>
+        <p>Headhunter is terrible for pure boss encounters. Uber bosses, Sirus, Maven, and other pinnacle encounters typically feature a single target with no rare monster adds. In these fights, Headhunter provides nothing. Always swap to a defensive belt before major boss fights. Dying to a boss because you forgot to swap off Headhunter is a rookie mistake that experienced players laugh about — until it happens to them.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #4: Don't Farm Cards in SSF Without a Plan</h4>
+        <p>In Solo Self-Found, dedicating 100+ hours to farming The Doctor cards is a massive opportunity cost. Before committing to this farm, honestly assess whether your build truly benefits from Headhunter or whether those hours would be better spent on atlas progression, crafting, or other character upgrades. Many SSF players never acquire Headhunter and still complete all content comfortably. Headhunter is a luxury, not a requirement.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #5: Corruption Risk</h4>
+        <p>Corrupting a Headhunter with a Vaal Orb can result in:</p>
+        <ul>
+          <li><strong>No effect (~50%):</strong> Gains Corrupted tag, no change</li>
+          <li><strong>Implicit added (~25%):</strong> May gain +1-3% to all maximum resistances, +10-20 to all attributes, or other beneficial implicits</li>
+          <li><strong>Reroll to rare (~12.5%):</strong> DESTROYS your Headhunter into a random rare Leather Belt</li>
+          <li><strong>Socket change (~12.5%):</strong> Adds 1 abyssal socket (useless) or white sockets (irrelevant on belts)</li>
+        </ul>
+        <p>Only corrupt Headhunter if you have a backup or can afford to replace it. The risk of losing a 50+ Divine Orb item is real and painful.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #6: The "Overinvestment" Trap</h4>
+        <p>Many players fall into the trap of spending more on scarabs, sextants, and map juice for Doctor farming than the resulting Headhunter would cost on the trade market. Before each farming session, calculate your hourly investment (scarab costs, sextant costs, map costs) and compare it to your expected hourly currency generation from regular mapping. If the differential exceeds the trade price of Headhunter divided by your farm hours, you are losing currency by farming cards instead of buying outright.</p>
+      </div>
+    </section>
+
+    <!-- Section 6: Free Benefits -->
+    <section class="section" id="benefits">
+      <h2>6. Free Benefits & Bonus Tips</h2>
+
+      <h3>6.1 Understanding Stolen Modifier Mechanics</h3>
+      <p>Not all monster modifiers are created equal when stolen by Headhunter. The most powerful stolen mods include:</p>
+      <ul>
+        <li><strong>Soul Eater:</strong> Gain increased attack and cast speed for each soul consumed. Arguably the most powerful modifier — can stack to 300%+ speed.</li>
+        <li><strong>Gargantuan:</strong> Massive increase to area of effect and damage. Transforms small skills into screen-clearing nukes.</li>
+        <li><strong>Juggernaut:</strong> Cannot be slowed, significant damage reduction. Essential for survivability at high map tiers.</li>
+        <li><strong>Deadeye:</strong> +2 projectiles, increased projectile damage. Synergizes with virtually all projectile builds.</li>
+        <li><strong>Bombardier:</strong> Periodic mortar attacks that add significant clear coverage.</li>
+        <li><strong>Frostwalker/Flamewalker/Stormwalker:</strong> Leave damaging ground trails that clear stragglers automatically.</li>
+        <li><strong>Hexproof:</strong> Immunity to curses. Situationally very powerful against curse-heavy map mods.</li>
+      </ul>
+
+      <h3>6.2 Build Synergies with Headhunter</h3>
+        <p>Certain builds benefit from Headhunter more than others:</p>
+      <ul>
+        <li><strong>Projectile Builds (Bow, Wand, Spell):</strong> Scale extremely well with "additional projectiles" stolen mods</li>
+        <li><strong>Attack Speed Builds:</strong> Benefit massively from haste and Soul Eater stolen mods</li>
+        <li><strong>Movement-Skill Clearing Builds:</strong> Shield Charge, Whirling Blades, and Dash builds can maintain momentum while Headhunter buffs provide the damage</li>
+        <li><strong>Low-Baseline, High-Scaling Builds:</strong> Builds that deal moderate damage but scale extremely well with added stats see the largest Headhunter benefit</li>
+      </ul>
+
+      <h3>6.3 The "Headhunter Reset" Technique</h3>
+      <p>Advanced players use a technique called "Headhunter resetting" to maintain buffs across map transitions:</p>
+      <ol>
+        <li>Before your current Headhunter buffs expire (watch the 20-second timer), move to the next map</li>
+        <li>Immediately engage rare monsters in the new map before existing buffs fade</li>
+        <li>Chain kills to refresh and extend your modifier stack indefinitely</li>
+        <li>This technique requires intimate knowledge of map layouts and rare spawn locations</li>
+      </ol>
+
+      <h3>6.4 When Headhunter Is NOT Worth It</h3>
+      <p>Headhunter is not universally optimal. Consider skipping it if:</p>
+      <ul>
+        <li><strong>You primarily do boss content:</strong> Boss kills, Uber pinnacle farming, and invitation running provide minimal Headhunter value</li>
+        <li><strong>Your build already has insane clear:</strong> If you one-shot entire screens without Headhunter, the marginal improvement may not justify the cost</li>
+        <li><strong>Defense is your bottleneck:</strong> If you are dying regularly, a Mageblood or defensive rare belt provides more practical value</li>
+        <li><strong>You play hardcore:</strong> The all-or-nothing defensive profile of Headhunter is dangerous in hardcore leagues</li>
+      </ul>
+
+      <h3>6.5 Related Guides</h3>
+      <p>Explore our other Path of Exile 2 item guides to build your knowledge of endgame essentials:</p>
+      <ul>
+        <li><a href="tabula-rasa.html">Tabula Rasa Guide</a> — The ultimate leveling item with six white linked sockets</li>
+        <li><a href="mageblood.html">Mageblood Guide</a> — Permanent flask effects for unmatched quality of life</li>
+        <li><a href="mirror-kalandra.html">Mirror of Kalandra</a> — The rarest item in the game and its economy</li>
+        <li><a href="exalted-crafting.html">Exalted Orb Crafting</a> — Master meta-crafting for endgame gear</li>
+        <li><a href="six-link-armor.html">Six-Link Armor Crafting</a> — Craft your own six-linked body armor</li>
+      </ul>
+
+      <h3>6.6 Final Verdict</h3>
+      <p>Headhunter represents the pinnacle of mapping-focused power in Path of Exile 2. It transforms the core mapping loop from a methodical clear into a hypercharged experience of escalating power and speed. For dedicated mappers, no other item provides the same level of gameplay enhancement. However, its ultra-rare acquisition cost, lack of bossing utility, and zero baseline stats mean it should be pursued with clear-eyed understanding of both its strengths and limitations. Whether you farm 8 Doctor cards over 100 hours, purchase it with 50 Divine Orbs of farmed currency, or experience the euphoria of a direct drop from an Uber boss, acquiring your first Headhunter remains one of the most memorable milestones in Path of Exile.</p>
+    </section>
+  </main>
+
+  <aside class="right-sidebar">
+    <h3>Quick Stats</h3>
+    <a>Item Level: 40</a>
+    <a>Rarity: Unique (Legendary)</a>
+    <a>Base: Leather Belt</a>
+    <a>Implicit: +(25-40) to Maximum Life</a>
+    <a>Explicit: Gain Mods of Slain Rares (20s)</a>
+    <a>Maximum Modifiers: One per type</a>
+    <a>Corruptable: Yes</a>
+    <a>Best Corruption: +1% to +3% all Max Res</a>
+
+    <h3 style="margin-top:20px">Farm Efficiency</h3>
+    <a>Primary: The Doctor Cards (8)</a>
+    <a>Optimal Map: Burial Chambers</a>
+    <a>Avg. Farm Time: 50-150 hours</a>
+    <a>Alternative: Uber Boss Drops</a>
+    <a>Trade Price: 30-100 Divine Orbs</a>
+
+    <h3 style="margin-top:20px">Related Items</h3>
+    <a href="tabula-rasa.html">Tabula Rasa</a>
+    <a href="mageblood.html">Mageblood</a>
+    <a href="mirror-kalandra.html">Mirror of Kalandra</a>
+    <a href="exalted-crafting.html">Exalted Orb Crafting</a>
+    <a href="six-link-armor.html">Six-Link Armor</a>
+
+    <h3 style="margin-top:20px">PoE 2 Navigation</h3>
+    <a href="./">← Back to PoE 2 Hub</a>
+  </aside>
+</div>
+
+<footer class="footer">
+  <p>CraftHunt — Path of Exile 2 Item Guides | Written for patch 0.5.x Early Access</p>
+  <p><a href="./">PoE 2 Hub</a> | <a href="tabula-rasa.html">Tabula Rasa</a> | <a href="headhunter.html">Headhunter</a> | <a href="mageblood.html">Mageblood</a> | <a href="mirror-kalandra.html">Mirror</a> | <a href="exalted-crafting.html">Exalted Crafting</a></p>
+</footer>
+
+</body>
+</html>

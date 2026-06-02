@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spark Aromatic — Elden Ring Crafting Guide | RelicTrek</title>
+<meta name="description" content="Complete guide to crafting Spark Aromatic in Elden Ring. AoE lightning damage around player. Altus Bloom + Fulgurbloom. Perfumer's Cookbook [1]. Anti-swarm tool.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-tool{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e67e22;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="./">Guides</a>
+<a href="./" class="active">Crafting</a>
+<a href="./">Maps</a>
+<a href="./">Tools</a>
+</div>
+</div>
+</nav>
+
+<div class="ticker-bar">
+<div class="ticker-inner">
+⚡ <strong>Spark Aromatic</strong> — AoE lightning damage around player | Perfumer's Cookbook [1] | Altus Bloom + Fulgurbloom | <a href="warming-stone.html">Next: Warming Stone →</a>
+</div>
+</div>
+
+<div class="container">
+
+<aside class="sidebar">
+<h3>Game Select</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+<a href="../no-mans-sky/">No Man's Sky</a>
+<a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+<a href="../valheim/">Valheim</a>
+<a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="./" class="active">Elden Ring</a>
+<a href="../stardew-valley/">Stardew Valley</a>
+<a href="../hades-2/">Hades 2</a>
+<a href="../satisfactory/">Satisfactory</a>
+<div class="quick-nav">
+<h4>Elden Ring Items</h4>
+<a href="gold-pickled-fowl-foot.html">Gold-Pickled Fowl Foot</a>
+<a href="exalted-flesh.html">Exalted Flesh</a>
+<a href="uplifting-aromatic.html">Uplifting Aromatic</a>
+<a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>
+<a href="ironjar-aromatic.html">Ironjar Aromatic</a>
+<a href="preserving-boluses.html">Preserving Boluses</a>
+<a href="drawstring-blood-grease.html">Drawstring Blood Grease</a>
+<a href="spark-aromatic.html" class="active" style="color: var(--accent); font-weight: 600;">Spark Aromatic</a>
+<a href="warming-stone.html">Warming Stone</a>
+<a href="bewitching-branch.html">Bewitching Branch</a>
+</div>
+</aside>
+
+<main class="main-content">
+
+<div class="item-header">
+<div class="item-icon-tool">⚡</div>
+<div class="item-title">
+<h1 data-zh="雷火香">Spark Aromatic</h1>
+<div class="item-subtitle" data-zh="范围闪电伤害——反群攻神器，瞬间清理周围的杂兵">AoE Lightning Damage Around Player — The Ultimate Anti-Swarm Tool for Clearing Mobs</div>
+<div class="item-meta">
+<span class="difficulty">★★★☆☆ Medium</span>
+<span>Type: Aromatic (Offensive)</span>
+<span>Stack: 10</span>
+</div>
+</div>
+</div>
+
+<section class="section" id="why">
+<h2><span>⚡</span> Why Spark Aromatic Matters</h2>
+<p data-zh="在艾尔登法环中，被一群敌人包围是最危险的情况之一。当五六个敌人同时从不同方向攻击你时，即使是最熟练的玩家也会陷入困境。Spark Aromatic就是为此而生的解决方案——它在你周围释放一道环形闪电冲击波，对所有靠近的敌人造成雷电伤害并通常会使他们踉跄。这是游戏中最可靠的反群攻道具之一。">Being surrounded by a swarm of enemies is one of the most dangerous situations in Elden Ring. When five or six foes attack from different directions simultaneously, even skilled players can get overwhelmed. <strong>Spark Aromatic</strong> exists to solve exactly this problem. It releases a <strong>circular lightning shockwave</strong> around the player, dealing lightning damage to all nearby enemies and typically causing them to stagger. It is one of the game's most reliable anti-swarm tools and a lifesaver in tight situations.</p>
+
+<p data-zh="Spark Aromatic的伤害类型是雷电——这意味着它对穿戴重甲的敌人特别有效，因为雷电伤害会穿透他们的物理防御。在地下墓穴和狭窄空间中，当敌人的数量优势变得致命时，一瓶Spark Aromatic可能就是生与死的区别。">Spark Aromatic deals <strong>lightning damage</strong> — meaning it is particularly effective against heavily armored enemies, as lightning partially bypasses their physical defense. In catacombs and tight spaces where enemy numbers become deadly, a single Spark Aromatic can be the difference between life and death. It is the closest thing Elden Ring has to a "get off me" button.</p>
+
+<h3 data-zh="最佳使用场景">When to Use Spark Aromatic</h3>
+<ul>
+<li data-zh="地下墓穴群战：被骷髅和imps包围时的紧急脱困工具"><strong>Catacomb Swarms:</strong> When surrounded by skeletons, imps, or other dungeon fodder — Spark Aromatic buys you breathing room.</li>
+<li data-zh="狭窄走廊：在被敌人堵住的通道中使用，一举清理"><strong>Narrow Corridors:</strong> When enemies block a passageway, one aromatic clears the path.</li>
+<li data-zh="入侵PvP中的多对一：被多个玩家包围时创造奇迹"><strong>Outnumbered Invasions:</strong> When invaded or invading and facing multiple opponents, Spark Aromatic punishes grouped-up enemies.</li>
+<li data-zh="对付小型快速敌人：老鼠、狗、昆虫等成群的小型敌人最怕AoE"><strong>Small Fast Enemies:</strong> Rats, dogs, and insect swarms — the bane of every Tarnished — die in droves to a single Spark.</li>
+<li data-zh="打断敌人群攻：当多个敌人同时准备攻击时，Spark可以打断所有人"><strong>Interrupt Enemy Attacks:</strong> When multiple enemies wind up attacks simultaneously, Spark Aromatic interrupts all of them.</li>
+</ul>
+
+<h3 data-zh="与其他反群攻手段的对比">Comparison with Other Anti-Swarm Tools</h3>
+<ul>
+<li data-zh=" vs 龙息祷告：需要高信仰投资和较长施法时间；Spark Aromatic是瞬发道具"><strong>vs. Dragon Breath Incantations:</strong> Require high Faith investment and long cast times. Spark Aromatic is an instant-use item with no stat requirements.</li>
+<li data-zh=" vs 战技旋风斩：需要特定武器和FP；Spark Aromatic不需要FP"><strong>vs. AoW Whirlwind Slash:</strong> Requires specific weapon and FP. Spark Aromatic costs no FP and works with any build.</li>
+<li data-zh=" vs 火焰壶：火焰壶是直线投掷物，只击中一个区域；Spark是360度全方向">vs. <strong>Fire Pots:</strong> Fire Pots are line-thrown AoE in one direction. Spark Aromatic is <strong>360 degrees</strong> around the player — no aiming required.</li>
+<li data-zh=" vs 魔法辉石大魔砾：需要智力投资且是直线弹道；Spark不需要属性"><strong>vs. Glintstone Spells:</strong> Require Intelligence and are directional projectiles. Spark Aromatic is omni-directional and stat-free.</li>
+</ul>
+
+<h3 data-zh="雷电伤害的优势">The Advantage of Lightning Damage</h3>
+<p data-zh="雷电伤害在艾尔登法环中有几个独特的优势。首先，大多数穿戴金属重甲的敌人对雷电的防御较低，因为雷电会传导金属。其次，很多水生敌人（如Lake of Rot中的生物）对雷电特别脆弱。第三，雷电伤害造成的硬直通常比其他类型更大，这意味着Spark Aromatic不仅能造成伤害，还能为你创造逃跑或反击的窗口。">Lightning damage has several unique advantages in Elden Ring. First, most metal-armored enemies have lower lightning defense — lightning conducts through metal. Second, many aquatic enemies (creatures in water-heavy areas) are especially vulnerable to lightning. Third, lightning typically causes more stance damage than other elements, meaning Spark Aromatic does not just deal damage — it creates an opening for you to escape or counter-attack. The stagger from the lightning burst often gives you 1–2 seconds of complete safety, which is enough to roll away, heal, or wind up a big attack.</p>
+
+<h3 data-zh="Spark Aromatic的伤害机制详解">Spark Aromatic Damage Mechanics Deep Dive</h3>
+<p data-zh="Spark Aromatic的伤害计算基于你的角色等级和敌人的雷电防御。在中期游戏（角色等级60-80），Spark Aromatic对普通敌人的伤害大约在200-350之间，对金属护甲敌人可能高达400-500。这意味着在地下墓穴中，一个Spark Aromatic通常可以秒杀imps和老鼠，对骷髅造成约一半血量伤害，并对中型敌人造成可观的硬直。随着游戏进程推进，虽然伤害数字相对于敌人血量的比例会下降，但硬直效果始终保持其价值——因为在高难度内容中，创造安全窗口比直接伤害更重要。">Spark Aromatic's damage scales with your character level and the enemy's lightning defense. At mid-game (character level 60–80), expect 200–350 damage to regular enemies and 400–500 to metal-armored foes. In catacombs, this typically one-shots imps and rats, halves skeleton HP, and staggers medium enemies. As the game progresses, the damage ratio relative to enemy HP decreases, but the stagger value remains constant — because at high difficulty, creating safety windows matters more than raw damage numbers.</p>
+
+<h3 data-zh="FOMO因素——为什么你不应该错过">The FOMO Factor</h3>
+<p data-zh="Perfumer's Cookbook [1]位于Leyndell, Royal Capital的East Capital Rampart——这是游戏后期的区域。很多玩家在推进主线时匆忙穿过Leyndell，忽略了城墙上的制作笔记。当你后来在地下墓穴中被一群imps围攻致死时，你会后悔没有早点制作Spark Aromatic。它可能不是最耀眼的道具，但在正确的时刻，它就是你的救命稻草。">Perfumer's Cookbook [1] is at <strong>East Capital Rampart in Leyndell, Royal Capital</strong> — a late-game zone. Many players rush through Leyndell during main story progression and miss the Cookbook on the ramparts. When you later die to a swarm of imps in a catacomb, you will wish you had Spark Aromatic. It may not be the flashiest item, but in the right moment, it is a literal lifesaver. The FOMO is subtle but real — this is an item you do not appreciate until you desperately need it and do not have it.</p>
+
+<div class="cross-links">
+<a href="drawstring-blood-grease.html" class="cross-link">← Drawstring Blood Grease</a>
+<a href="warming-stone.html" class="cross-link">Warming Stone →</a>
+</div>
+</section>
+
+<section class="section" id="recipe">
+<h2><span>🧪</span> Crafting Recipe</h2>
+<p data-zh="Spark Aromatic的配方只需要两种花朵材料——是芳香类道具中最简单的配方之一。两种花都来自特定的植物区域，farm起来相对直接。">The Spark Aromatic recipe requires only <strong>two flower materials</strong> — one of the simplest aromatic recipes. Both flowers come from specific plant zones and are relatively straightforward to farm.</p>
+
+<table class="recipe-table">
+<thead>
+<tr><th>Material</th><th>Quantity</th><th>Rarity</th><th>Farmable</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🌸 <strong>Altus Bloom</strong></td>
+<td>1x</td>
+<td data-zh="中等（Altus高原）">Medium (Altus Plateau)</td>
+<td>✅ Yes — Altus Plateau flower nodes</td>
+</tr>
+<tr>
+<td>⚡ <strong>Fulgurbloom</strong></td>
+<td>1x</td>
+<td data-zh="中等（雷电区域）">Medium (Lightning Zones)</td>
+<td>✅ Yes — Lightning-themed areas</td>
+</tr>
+</tbody>
+</table>
+
+<h3 data-zh="制作产出">Yield</h3>
+<p data-zh="每次制作产出1个Spark Aromatic。堆叠上限为10个。建议保持库存5-8个用于地下墓穴探索和紧急情况。">Each crafting attempt produces <span class="highlight">1x Spark Aromatic</span>. The stack limit is <strong>10</strong>. Recommended stockpile: <strong>5–8</strong> for catacomb runs and emergency situations.</p>
+
+<div class="gotcha-box">
+<h4>⚠️ Recipe Key Notes</h4>
+<ul>
+<li data-zh="范围效果：以玩家为中心的中等范围AoE——覆盖约3-4个身位的半径">AoE radius is approximately <strong>3–4 character lengths</strong> around the player — covers most melee engagement ranges.</li>
+<li data-zh="雷电伤害：对金属护甲敌人和水生敌人有加成">Deals <strong>lightning damage</strong> — bonus effectiveness against metal-armored and aquatic enemies.</li>
+<li data-zh="硬直效果：通常会使中小型敌人踉跄——创造逃脱窗口">Causes <strong>stagger on most small-to-medium enemies</strong> — creates escape or counter-attack windows.</li>
+<li data-zh="无属性需求：任何Build都可以使用——无需信仰、智力或感应">No stat requirements — <strong>any build can use it</strong>. No Faith, Intelligence, or Arcane needed.</li>
+<li data-zh="快速使用：道具使用动画约1秒——在紧急情况下来得及">Fast use animation — approximately <strong>1 second</strong>. Usable in emergencies.</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Perfumer's Cookbook [1]</h2>
+<p data-zh="要解锁Spark Aromatic的配方，你需要调香师的制作笔记[1]。这本笔记位于Leyndell, Royal Capital的East Capital Rampart区域——与Bloodboil Aromatic和Ironjar Aromatic的制作笔记在同一系列中。">To unlock the Spark Aromatic recipe, you must acquire <strong>Perfumer's Cookbook [1]</strong>. This Cookbook is located in <strong>Leyndell, Royal Capital</strong>, at the <strong>East Capital Rampart</strong> — in the same series as the Bloodboil Aromatic and Ironjar Aromatic cookbooks.</p>
+
+<div class="cookbook-box">
+<h4>📖 Perfumer's Cookbook [1]</h4>
+<p><strong>Location:</strong> East Capital Rampart, Leyndell, Royal Capital</p>
+<p><strong>Coordinates:</strong> On a corpse along the eastern rampart walkway, near Perfumer enemies</p>
+<p><strong>Recipe Unlocked:</strong> Spark Aromatic</p>
+<p><strong>Also Unlocks:</strong> Various lightning and perfumer aromatic recipes</p>
+</div>
+
+<h3 data-zh="如何到达East Capital Rampart">How to Reach East Capital Rampart</h3>
+<p data-zh="East Capital Rampart是Leyndell王城城墙的东侧部分。要到达这里，你需要先进入Leyndell——这要求击败至少两个半神Shardbearer。">The East Capital Rampart is the eastern section of Leyndell's outer wall. Reaching it requires entering the Royal Capital, which opens after defeating at least <strong>two Shardbearer demigods</strong> (Godrick, Rennala, Radahn, Rykard, or Malenia).</p>
+
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Defeat at least <strong>two Shardbearers</strong> to open the capital gates.</p>
+<p><span class="step">Step 2:</span> Travel to the <strong>Capital Rampart</strong> Site of Grace — the main entrance from Altus Plateau.</p>
+<p><span class="step">Step 3:</span> Progress through the outer wall, engaging or bypassing <strong>Perfumer enemies</strong> (alchemists who throw aromatic projectiles).</p>
+<p><span class="step">Step 4:</span> Follow the eastern rampart walkway. The Cookbook is a <strong>glowing white item on a corpse</strong> near the Perfumer patrol routes.</p>
+<p><span class="step">Step 5:</span> Look for the corpse on a raised platform section near the rampart's edge, overlooking the capital below.</p>
+</div>
+
+<h3 data-zh="Leyndell East Capital Rampart的危险">Leyndell Rampart Hazards</h3>
+<ul>
+<li data-zh="调香师敌人：投掷各种香药瓶——保持距离或使用远程攻击">• <strong>Perfumer enemies:</strong> Throw fire, sleep, and poison aromatics. Engage at range.</li>
+<li data-zh="Leyndell骑士：持长矛和盾牌的骑士，高韧性高伤害">• <strong>Leyndell Knights:</strong> High-poise spear and shield knights. Use guard breaks or backstabs.</li>
+<li data-zh="无需击败Boss：制作笔记在开放区域，可以直接拾取">• <strong>No boss required:</strong> The Cookbook is in an open area — safe to grab.</li>
+<li data-zh="附近有赐福点：Capital Rampart赐福点可以快速返回">• <strong>Grace nearby:</strong> Capital Rampart grace allows fast return trips.</li>
+</ul>
+
+<div class="cross-links">
+<a href="drawstring-blood-grease.html" class="cross-link">← Drawstring Blood Grease</a>
+<a href="warming-stone.html" class="cross-link">Warming Stone →</a>
+</div>
+</section>
+
+<section class="section" id="materials">
+<h2><span>🌿</span> Materials &amp; Farm Locations</h2>
+<p data-zh="Spark Aromatic的两种材料都是花朵——Altus Bloom来自高原的金色花朵，Fulgurbloom来自雷电区域的特殊植物。这意味着你的farm路线会集中在Altus Plateau和雷电主题区域。">Spark Aromatic requires two flowers: Altus Bloom from golden highland flowers and Fulgurbloom from lightning-themed zones. Your farming routes will center on Altus Plateau and areas associated with lightning.</p>
+
+<h3>🌸 Material 1: Altus Bloom</h3>
+<div class="material-item">
+<div class="material-icon">🌸</div>
+<div class="material-info">
+<h4>Altus Bloom <span style="color:#e6a817">★ Zone-Specific — Altus Plateau</span></h4>
+<p data-zh="Altus Bloom是在Altus Plateau地区生长的金色花朵。它是多种芳香类道具的基础材料，包括Spark Aromatic、Bloodboil Aromatic和Ironjar Aromatic。"><strong>Altus Bloom</strong> is a golden flower native to Altus Plateau. It is a foundational material for multiple aromatics including Spark Aromatic, Bloodboil Aromatic, and Ironjar Aromatic.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Altus Bloom Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Altus Highway Junction — Densest Cluster</strong></p>
+<p data-zh="Altus Highway Junction赐福点是farm Altus Bloom的绝对最佳地点。赐福点周围的草原上生长着大量金色Altus Bloom——通常一次可以采集8-12朵。从赐福点出发，骑马绕一圈，采集所有金色花朵，然后休息重复。"><strong>Altus Highway Junction</strong> is the best Altus Bloom farm. The surrounding plains hold <strong>8–12 golden flowers</strong> per sweep. From the grace, ride in a circle collecting all golden blooms, rest, and repeat. This grace also provides convenient access to the entire Altus Plateau region.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Erdtree-Gazing Hill — Scattered Blooms</strong></p>
+<p data-zh="Erdtree-Gazing Hill区域也有Altus Bloom分布，但密度不如Highway Junction。大约每次循环可以采集4-6朵。"><strong>Erdtree-Gazing Hill</strong> has scattered Altus Bloom — roughly <strong>4–6 per circuit</strong>. Lower density but a pleasant farming route.</p>
+</div>
+
+<h3>⚡ Material 2: Fulgurbloom</h3>
+<div class="material-item">
+<div class="material-icon">⚡</div>
+<div class="material-info">
+<h4>Fulgurbloom <span style="color:#e6a817">★★ Zone-Specific — Lightning Areas</span></h4>
+<p data-zh="Fulgurbloom是一种只在雷电主题区域生长的发光花朵。它的外观呈淡蓝色并带有微弱的电光效果，在黑暗环境中很容易辨认。"><strong>Fulgurbloom</strong> is a pale blue flower with faint electrical glow that only grows in lightning-themed areas. Its distinctive appearance makes it easy to spot, especially in darker environments.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Fulgurbloom Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Altus Plateau — Storm Hill Areas</strong></p>
+<p data-zh="Altus Plateau的某些高地和storm-exposed区域有Fulgurbloom生长。特别是在Windmill Village附近的山丘上——这些花朵在雷暴天气中似乎更加活跃。每次循环可以采集3-5朵。"><strong>Altus Plateau's elevated storm-exposed areas</strong> produce Fulgurbloom. The hills near <strong>Windmill Village</strong> are particularly productive — <strong>3–5 flowers per circuit</strong>. The flowers seem more vibrant during stormy weather, adding atmospheric immersion to your farming.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Mt. Gelmir — Volcanic Lightning Zone</strong></p>
+<p data-zh="Mt. Gelmir区域有Fulgurbloom分布——这个火山区域的雷电现象使得这里成为了Fulgurbloom的产地之一。但敌人较强，farm时需要小心。"><strong>Mt. Gelmir</strong> also has Fulgurbloom — the volcanic lightning phenomena in this region support its growth. Enemies are stronger here, so farm cautiously.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Crumbling Farum Azula — Late-Game Source</strong></p>
+<p data-zh="Crumbling Farum Azula有Fulgurbloom分布，但这是一个后期区域且充满危险的敌人。不推荐专门来这里farm。"><strong>Crumbling Farum Azula</strong> has Fulgurbloom, but this is a late-game zone filled with dangerous enemies. Not recommended for dedicated farming.</p>
+</div>
+
+<h4 data-zh="Fulgurbloom Farm技巧">Fulgurbloom Farming Tips</h4>
+<ul>
+<li data-zh="Fulgurbloom在赐福休息后刷新——可以无限farm">Respawns on grace rest — <strong>infinitely farmable</strong>.</li>
+<li data-zh="配合Altus Bloom一起farm——两者都在Altus Plateau有分布">Farm alongside <strong>Altus Bloom</strong> — both have Altus Plateau spawns.</li>
+<li data-zh="也是其他雷电主题配方的材料——不会浪费">Used in other lightning-themed recipes — excess never goes to waste.</li>
+<li data-zh="发光的外观让它们在夜间更容易被发现">The glowing appearance makes them <strong>easier to spot at night</strong>.</li>
+</ul>
+
+<div class="cross-links">
+<a href="warming-stone.html" class="cross-link">Warming Stone →</a>
+<a href="drawstring-blood-grease.html" class="cross-link">← Drawstring Blood Grease</a>
+</div>
+</section>
+
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> Gotcha Tips — What Can Go Wrong</h2>
+<p data-zh="Spark Aromatic虽然是一个简单直接的道具，但在使用和获取过程中仍有一些需要注意的陷阱。以下是完整的问题清单。">Spark Aromatic is straightforward, but several pitfalls exist. Here is the complete warning list.</p>
+
+<div class="gotcha-box">
+<h4>📏 Gotcha 1: The Range Is Shorter Than You Think</h4>
+<p data-zh="Spark Aromatic的有效范围大约是你周围3-4个身位的半径。这意味着它对远处的敌人没有效果——如果敌人正在用弓箭或魔法攻击你，Spark是打不到他们的。确保敌人在近战范围内再使用，否则会浪费道具。">The effective radius is about <strong>3–4 character lengths</strong>. Enemies at bow or spell range are unaffected. <strong>Ensure enemies are in melee range</strong> before using, or the aromatic is wasted. This is a "get off me" tool, not a ranged attack.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🛡️ Gotcha 2: Large Enemies May Not Stagger</h4>
+<p data-zh="Spark Aromatic的硬直效果对小型和中型敌人很有效，但对大型敌人（如巨魔、骑士、Boss）通常不会造成硬直。不要指望用它打断Boss的攻击——它更适合清理杂兵。">The stagger effect works well on small and medium enemies but <strong>typically does not stagger large foes</strong> like trolls, knights, or bosses. Do not rely on it to interrupt boss attacks — it is a crowd-clearing tool, not a boss-fighting tool.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🌸 Gotcha 3: Fulgurbloom Can Be Hard to Spot</h4>
+<p data-zh="Fulgurbloom的淡蓝色在草原背景下不太显眼——特别是在白天。建议在夜间或黄昏时分farm，这时花朵的电光效果更容易被看到。">Fulgurbloom's pale blue color blends into grassy backgrounds — especially during daylight. <strong>Farm at night or dusk</strong> when the electrical glow is more visible. Alternatively, listen for the faint crackling sound they emit when nearby.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🏰 Gotcha 4: Leyndell Access Is Gated</h4>
+<p data-zh="Perfumer's Cookbook [1]位于Leyndell王城内，需要击败至少两个半神才能进入。对于想要尽早获得这个配方的玩家来说，这是不可能的——先把主线推进到王城吧。">The Cookbook is inside Leyndell, requiring at least <strong>two demigod kills</strong> to access. No early-game workaround — progress the main story to reach the capital first.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>⚡ Gotcha 5: Lightning-Resistant Enemies Exist</h4>
+<p data-zh="某些敌人对雷电伤害有很高的抗性——特别是使用雷电攻击的敌人（如Leyndell骑士中的雷电使用者）和某些Boss。对这些敌人使用Spark Aromatic效果会大打折扣。">Certain enemies have high lightning resistance — particularly enemies that <strong>use lightning attacks themselves</strong> (Leyndell's lightning-wielding knights) and certain bosses. Against these foes, Spark Aromatic's damage is significantly reduced. Know your enemy's resistances.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🎯 Gotcha 6: Friendly Fire in Co-Op</h4>
+<p data-zh="在合作模式下，Spark Aromatic不会对队友造成伤害，但它的硬直效果也不会帮助队友。确保你的队友知道你要使用它，以免他们正准备攻击时被你的硬直效果打乱节奏。">In co-op, Spark Aromatic does not damage allies, but its stagger also does not help them. <strong>Communicate with your team</strong> before using it, so you do not interrupt a partner's combo setup. Timing is everything in group play.</p>
+</div>
+</section>
+
+<section class="section" id="benefits">
+<h2><span>🎁</span> Free Benefits — What Else You Get Farming These Materials</h2>
+<p data-zh="farm Spark Aromatic的材料本身就是一次穿越Altus Plateau的美妙旅程。以下是你在farm过程中会获得的额外收益。">Farming Spark Aromatic materials doubles as a scenic tour of Altus Plateau. Here is what else you will collect:</p>
+
+<h3 data-zh="在Altus Plateau Farm的额外收益">Farming Altus Plateau (Altus Bloom + Fulgurbloom)</h3>
+<ul>
+<li data-zh="Arteria Leaf：用于制作Exalted Flesh——+20%物理伤害"><strong>Arteria Leaf:</strong> For crafting <a href="exalted-flesh.html">Exalted Flesh</a> (+20% physical damage).</li>
+<li data-zh="Miranda Powder：用于制作Ironjar Aromatic"><strong>Miranda Powder:</strong> For <a href="ironjar-aromatic.html">Ironjar Aromatic</a> crafting.</li>
+<li data-zh="Golden Seeds：Altus Plateau有多个Golden Seed"><strong>Golden Seeds:</strong> Multiple seeds to upgrade your Flask.</li>
+<li data-zh="地图碎片：Altus Plateau地图碎片就在Highway Junction附近"><strong>Map Fragment:</strong> Altus Plateau map fragment is right near Highway Junction.</li>
+<li data-zh="大量锻造石用于武器升级"><strong>Smithing Stones:</strong> Abundant throughout the zone for weapon upgrades.</li>
+<li data-zh="Windmill Village：附近有独特的Boss和装备可以获取"><strong>Windmill Village:</strong> Nearby unique boss and equipment to discover.</li>
+</ul>
+
+<h3 data-zh="在Leyndell探索的额外收益">Exploring Leyndell (Cookbook Location)</h3>
+<ul>
+<li data-zh="大量锻造石和铃珠：Leyndell是游戏中最富饶的区域之一，有无数锻造石和铃珠"><strong>Smithing Stones &amp; Bell Bearings:</strong> Leyndell is one of the game's most resource-rich zones, with abundant upgrade materials.</li>
+<li data-zh="Golden Seed和Sacred Tear：强化你的圣杯瓶"><strong>Golden Seeds &amp; Sacred Tears:</strong> Upgrade your Flask charges and potency.</li>
+<li data-zh="独特的Leyndell装备：骑士套装和武器"><strong>Leyndell Knight gear:</strong> Unique armor and weapons to collect.</li>
+<li data-zh="通往多个后期区域的路径：Crumbling Farum Azula、Mountaintops等"><strong>Paths to endgame zones:</strong> Leyndell connects to Crumbling Farum Azula, Mountaintops, and more.</li>
+<li data-zh="Erdtree Avatar Boss战：获得独特的追忆兑换"><strong>Erdtree Avatar:</strong> Field boss with unique Remembrance rewards.</li>
+</ul>
+
+<h3 data-zh="长期战略收益">Long-Term Strategic Value</h3>
+<p data-zh="掌握Spark Aromatic的制作意味着你已经征服了Leyndell王城——游戏中的一个主要里程碑。更重要的是，你获得了一个灵活的反群攻工具，这个工具不受任何Build限制，任何角色都可以使用。无论你是纯力量近战、法师还是信仰战士，Spark Aromatic都是你背包中应该常备的应急道具。">Mastering Spark Aromatic means you have conquered Leyndell, Royal Capital — a major milestone. More importantly, you have acquired a flexible anti-swarm tool with <strong>no build restrictions</strong>. Whether you are a pure Strength melee, a sorcerer, or a Faith hybrid, Spark Aromatic belongs in your inventory as an emergency panic button.</p>
+
+<p data-zh="从更深层来看，Spark Aromatic体现了艾尔登法环道具设计的精妙之处。它不是最强大或最 flashy 的道具，但它的存在让特定类型的困难遭遇（被包围）变得可管理。游戏设计者通过这种道具告诉玩家：'是的，我们知道被十个imps包围很烦人，这里有一个优雅的解决方案。'学会识别这些设计意图，并相应地准备你的背包，是成为艾尔登法环高手的关键一步。">At a deeper level, Spark Aromatic embodies Elden Ring's thoughtful item design. It is not the flashiest or most powerful tool, but its existence makes a specific type of difficult encounter (being surrounded) manageable. The game designers are telling you: "Yes, we know being swarmed by ten imps is frustrating — here is an elegant solution." Learning to recognize these design intentions and preparing your inventory accordingly is a key step toward Elden Ring mastery.</p>
+
+<h3 data-zh="PvP中的Spark Aromatic策略">Spark Aromatic in PvP Strategy</h3>
+<p data-zh="在PvP入侵战中，Spark Aromatic有一个被低估的作用：当宿主和他们的召唤灵试图包围你时，一个Spark可以打破他们的阵型，造成硬直并创造反击窗口。由于它不需要任何属性投资，即使是纯PvP build也可以在不浪费点数的情况下携带它。在狭窄的入侵区域（如地下墓穴和城堡走廊）中，它的价值会倍增——这些正是你最可能被包围的地方。">In PvP invasions, Spark Aromatic has an underrated role: when a host and their phantoms try to surround you, a single Spark breaks their formation, causes stagger, and creates counter-attack openings. Since it requires no stat investment, even pure PvP builds can carry it without wasting levels. In narrow invasion areas like catacombs and castle corridors, its value multiplies — these are exactly where you are most likely to be surrounded.</p>
+
+<h3 data-zh="Spark Aromatic的携带建议">Inventory Management Tips</h3>
+<p data-zh="由于Spark Aromatic的堆叠上限是10个，合理管理你的库存很重要。建议将库存维持在8-10个，在进入地下墓穴或狭窄区域之前补充到满。它与Fire Pot、Throwing Dagger等道具共用有限的道具栏位，所以需要根据当前区域的敌人类型来调整携带组合。在impm下水道和骷髅墓地中，Spark Aromatic是首选；而在开阔区域，可以考虑携带其他远程攻击道具。">With a stack limit of 10, inventory management matters. Maintain 8–10 in stock and refill before entering catacombs or narrow zones. It shares limited quick-item slots with Fire Pots and Throwing Daggers, so adjust your loadout based on enemy types. In imp sewers and skeleton tombs, Spark Aromatic is priority; in open areas, consider ranged alternatives instead.</p>
+
+<h3 data-zh="Altus Bloom和Fulgurbloom的高效Farm路线">Efficient Combined Farm Route</h3>
+<p data-zh="由于Spark Aromatic需要同时采集Altus Bloom和Fulgurbloom，制定一条高效的联合farm路线可以大幅节省 time。推荐的路线如下：从Altus Highway Junction赐福点出发，首先采集周围的8-12朵Altus Bloom；然后骑马向Windmill Village方向前进，在沿途的高地上寻找2-3朵Fulgurbloom；接着返回Highway Junction休息重置；重复这个循环。每次完整的循环大约需要5-7分钟，可以产出足够制作3-4个Spark Aromatic的材料。">Since Spark Aromatic requires both Altus Bloom and Fulgurbloom, an efficient combined farming route saves significant time. The recommended loop: start at <strong>Altus Highway Junction</strong>, collect 8–12 Altus Blooms from the surrounding plains, then ride toward <strong>Windmill Village</strong> searching elevated areas for 2–3 Fulgurblooms, return to Highway Junction to rest and reset. Each full cycle takes approximately 5–7 minutes and yields materials for 3–4 Spark Aromatics.</p>
+
+<h3 data-zh="Fulgurbloom的 lore 和世界观">Fulgurbloom Lore and World-Building</h3>
+<p data-zh="Fulgurbloom不仅仅是一个制作材料——它也是一个世界构建的元素。这种在雷电频繁的区域生长的花朵暗示了艾尔登法环世界观中自然元素与魔法力量之间的深层联系。在Altus Plateau的高地上，频繁的雷暴不仅为Fulgurbloom提供了生长环境，也塑造了当地的文化和信仰。调香师们利用这些花朵制作Spark Aromatic，本质上是在将自然界的雷电之力封装在一个小小的瓶子中。这种将自然力量转化为可用道具的设计理念，贯穿了整个艾尔登法环的制作系统。">Fulgurbloom is more than a crafting material — it is a world-building element. This flower, which thrives where lightning strikes frequently, hints at the deep connection between natural elements and magical forces in the Lands Between. On Altus Plateau's highlands, frequent storms provide the environment for Fulgurbloom growth while shaping local culture and beliefs. Perfumers who craft Spark Aromatic from these flowers are essentially bottling nature's lightning power. This philosophy of transforming natural forces into usable items runs throughout Elden Ring's entire crafting system.</p>
+
+<div class="cross-links">
+<a href="warming-stone.html" class="cross-link">→ Next: Warming Stone</a>
+<a href="drawstring-blood-grease.html" class="cross-link">← Drawstring Blood Grease</a>
+<a href="bloodboil-aromatic.html" class="cross-link">← Bloodboil Aromatic</a>
+</div>
+</section>
+
+</main>
+
+<aside class="sidebar">
+<h3>Quick Info</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Effect:</strong> AoE lightning damage + stagger</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Range:</strong> ~3-4 body lengths</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Stacks:</strong> 10</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Cookbook:</strong> Perfumer's [1]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Yield:</strong> 1 per craft</p>
+<div class="quick-nav">
+<h4>Jump to Section</h4>
+<a href="#why">Why It Matters</a>
+<a href="#recipe">Crafting Recipe</a>
+<a href="#cookbook">Cookbook Location</a>
+<a href="#materials">Farm Routes</a>
+<a href="#gotchas">Gotcha Tips</a>
+<a href="#benefits">Free Benefits</a>
+</div>
+<div class="quick-nav">
+<h4>Related Items</h4>
+<a href="warming-stone.html">Warming Stone</a>
+<a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>
+<a href="ironjar-aromatic.html">Ironjar Aromatic</a>
+</div>
+</aside>
+
+</div>
+
+<footer class="site-footer">
+<p>RelicTrek — Crafting guides for the Lands Between and beyond. Not affiliated with FromSoftware.</p>
+<p style="margin-top:8px"><a href="./">← Back to Elden Ring Index</a></p>
+</footer>
+
+</body>
+</html>

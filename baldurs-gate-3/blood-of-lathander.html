@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood of Lathander Guide — Baldur's Gate 3 | CraftHunt</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0d0d0d;color:#e0e0e0;line-height:1.7}
+a{color:#c9a050;text-decoration:none}
+a:hover{color:#f0d080}
+.nav{background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;border-bottom:2px solid #c9a050;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:20px;font-weight:bold;color:#c9a050;margin-right:30px}
+.nav a{color:#e0e0e0;margin-right:20px;font-size:14px}
+.nav a:hover{color:#c9a050}
+.ticker{background:#2a1a00;padding:8px 20px;font-size:13px;border-bottom:1px solid #444;color:#c9a050}
+.container{display:flex;max-width:1600px;margin:0 auto;padding:20px;gap:20px}
+.left-sidebar{width:260px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content;max-height:calc(100vh - 80px);overflow-y:auto}
+.left-sidebar h3{color:#c9a050;margin-bottom:12px;font-size:16px}
+.left-sidebar a{display:block;padding:6px 0;color:#aaa;font-size:14px}
+.left-sidebar a:hover,.left-sidebar a.active{color:#c9a050}
+.left-sidebar .quick-nav{margin-top:15px;padding-top:15px;border-top:1px solid #2a2a2a}
+.left-sidebar .quick-nav h4{color:#c9a050;margin-bottom:10px;font-size:14px}
+.main-content{flex:1;min-width:0}
+.right-sidebar{width:300px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content}
+.right-sidebar h4{color:#c9a050;margin-bottom:12px;font-size:15px}
+.right-sidebar .info-box{background:#1a1a1a;padding:12px;border-radius:6px;margin-bottom:12px;border:1px solid #2a2a2a}
+.right-sidebar .info-box .label{color:#888;font-size:12px;text-transform:uppercase}
+.right-sidebar .info-box .value{color:#e0e0e0;font-size:14px;font-weight:bold}
+.footer{background:#1a1a1a;text-align:center;padding:20px;margin-top:40px;border-top:2px solid #2a2a2a;color:#888;font-size:13px}
+.section{background:#161616;padding:25px;margin-bottom:20px;border-radius:8px;border:1px solid #2a2a2a}
+.section h2{color:#c9a050;margin-bottom:15px;font-size:22px;display:flex;align-items:center;gap:10px}
+.section h3{color:#e0e0e0;margin:18px 0 10px;font-size:18px}
+.item-header{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding:20px;background:#1a1a1a;border-radius:8px;border:2px solid #c9a050}
+.item-icon-legendary{width:80px;height:80px;background:#2a1a00;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #c9a050}
+.item-icon-epic{width:80px;height:80px;background:#1a0a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #9b59b6}
+.item-icon-rare{width:80px;height:80px;background:#0a1a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #3498db}
+.item-icon-accessory{width:80px;height:80px;background:#0a2e1a;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #2ecc71}
+.item-title h1{color:#c9a050;font-size:28px;margin-bottom:5px}
+.item-meta{color:#888;font-size:14px}
+.difficulty{color:#e74c3c;font-weight:bold}
+.gotcha-box{background:#2a1a00;padding:15px;border-radius:6px;border-left:4px solid #c9a050;margin:15px 0}
+.gotcha-box h4{color:#c9a050;margin-bottom:8px}
+.route-tree{padding-left:20px;border-left:2px solid #c9a050;margin:15px 0}
+.route-tree li{margin:10px 0;list-style:none;position:relative;padding-left:15px}
+.route-tree li::before{content:'◆';position:absolute;left:-20px;color:#c9a050}
+.material-item{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;padding:6px 12px;border-radius:4px;margin:4px;border:1px solid #2a2a2a;font-size:13px}
+.tag{display:inline-block;padding:3px 10px;border-radius:3px;font-size:12px;font-weight:bold;margin:2px}
+.tag-act1{background:#2a4a00;color:#7fff00}
+.tag-act2{background:#4a2a00;color:#ffa500}
+.tag-act3{background:#4a002a;color:#ff6b9d}
+.tag-legendary{background:#2a1a00;color:#c9a050;border:1px solid #c9a050}
+.tag-rare{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+.tag-warning{background:#3a1a00;color:#e67e22;border:1px solid #e67e22}
+.tag-info{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+pre{background:#0d0d0d;padding:15px;border-radius:6px;overflow-x:auto;border:1px solid #2a2a2a;color:#c9a050;font-family:Consolas,monospace;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th,td{padding:10px;text-align:left;border-bottom:1px solid #2a2a2a}
+th{background:#1a1a1a;color:#c9a050;font-weight:600}
+tr:hover{background:#1a1a1a}
+.guide-nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.guide-nav a{padding:8px 16px;background:#1a1a1a;border-radius:4px;border:1px solid #2a2a2a;font-size:13px;color:#aaa}
+.guide-nav a:hover,.guide-nav a.active{background:#2a1a00;color:#c9a050;border-color:#c9a050}
+.highlight{color:#c9a050;font-weight:bold}
+.warning-box{background:#3a0000;padding:15px;border-radius:6px;border-left:4px solid #e74c3c;margin:15px 0}
+.warning-box h4{color:#e74c3c;margin-bottom:8px}
+.npc-name{color:#9b59b6;font-weight:bold}
+.location-name{color:#2ecc71;font-weight:bold}
+.item-name{color:#c9a050;font-weight:bold}
+.code-block{background:#0d0d0d;padding:12px 15px;border-radius:4px;border:1px solid #2a2a2a;font-family:Consolas,monospace;color:#c9a050;margin:10px 0;display:block}
+@media(max-width:1200px){.right-sidebar{display:none}}@media(max-width:900px){.left-sidebar{display:none}.container{padding:10px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-logo">⚔ CraftHunt</div>
+<a href="../">Home</a>
+<a href="../">Games</a>
+<a href="../">Guides</a>
+<a href="../">Maps</a>
+<a href="../">Builds</a>
+<a href="../">Items</a>
+</nav>
+<div class="ticker">📍 Current Guide: Blood of Lathander — Legendary Mace — Rosymorn Monastery, Act 1 — Difficulty: ★★★★★ — Estimated Time: 45-90 minutes</div>
+<div class="container">
+<!-- LEFT SIDEBAR -->
+<aside class="left-sidebar">
+<h3>🎮 Game Navigation</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man\'s Sky</a>
+      <a href="../baldurs-gate-3/">Baldur\'s Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="../no-mans-sky/">No Man's Sky</a>
+<a href="./" class="active">Baldur's Gate 3</a>
+<a href="../valheim/">Valheim</a>
+<a href="../path-of-exile-2/">Path of Exile 2</a>
+<div class="quick-nav">
+<h4>BG3 Items</h4>
+<a href="blood-of-lathander.html" class="active">Blood of Lathander</a>
+<a href="gontr-mael.html">Gontr Mael</a>
+<a href="nyrulna.html">Nyrulna</a>
+<a href="shars-spear.html">Shar's Spear of Evening</a>
+<a href="duellist-gloves.html">Duellist's Prismatic Gloves</a>
+<a href="helldusk-armor.html">Helldusk Armor</a>
+<a href="moonlantern.html">Moonlantern</a>
+<a href="silver-sword.html">Silver Sword of the Astral Plane</a>
+<a href="devilfoil-mask.html">Devilfoil Mask</a>
+<a href="shadowheart-spear.html">Shadowheart's Spear of Night</a>
+</div>
+</aside>
+<!-- MAIN CONTENT -->
+<main class="main-content">
+<div class="guide-nav">
+<a href="#overview" class="active">Overview</a>
+<a href="#acquisition">Acquisition</a>
+<a href="#requirements">Requirements</a>
+<a href="#route">Step-by-Step Route</a>
+<a href="#gotcha">Gotcha Tips</a>
+<a href="#benefits">Free Benefits</a>
+</div>
+<div class="item-header">
+<div class="item-icon-legendary">🔨</div>
+<div class="item-title">
+<h1>Blood of Lathander</h1>
+<div class="item-meta">Legendary Mace | Act 1 | <span class="difficulty">Difficulty: ★★★★★</span> | Rosymorn Monastery</div>
+</div>
+</div>
+<!-- MODULE 1: OVERVIEW -->
+<section class="section" id="overview">
+<h2>📋 Overview</h2>
+<p>The <span class="item-name">Blood of Lathander</span> stands as one of the most powerful and sought-after weapons in all of Baldur's Gate 3, a <span class="tag tag-legendary">LEGENDARY</span> mace hidden deep within the crumbling halls of <span class="location-name">Rosymorn Monastery</span> in the <span class="location-name">Mountain Pass</span> region of Act 1. Named after Lathander, the Morninglord — the god of dawn, spring, and renewal — this sacred weapon embodies the divine light that pushes back against the shadows threatening the Sword Coast.</p>
+<p>This legendary mace deals <span class="highlight">1d8 + 2 bludgeoning damage</span> on a successful hit, but its true power lies in its extraordinary magical properties. The Blood of Lathander grants its wielder access to the <span class="item-name">Sunbeam</span> spell, a devastating 6th-level evocation spell that projects a brilliant beam of light dealing 6d8 radiant damage to all creatures in its path. Even more remarkably, the mace possesses a once-per-long-rest <span class="highlight">resurrection ability</span> that can bring a fallen companion back from death with 50% of their hit points — a game-changing feature that can turn the tide of the most desperate battles.</p>
+<p>Beyond its combat applications, the Blood of Lathander carries immense narrative weight. The weapon represents the eternal struggle between light and darkness that defines the Baldur's Gate 3 storyline. Its acquisition requires players to solve one of the most intricate environmental puzzles in the game, navigate the politically complex <span class="location-name">Crèche Y'llek</span> occupied by githyanki warriors, and ultimately prove themselves worthy of wielding a god's blessing.</p>
+<p>What makes this weapon truly exceptional for Act 1 is how dramatically it shifts your party's power curve. Acquiring the Blood of Lathander before venturing into the <span class="location-name">Shadow-Cursed Lands</span> of Act 2 gives your party a massive advantage. The Sunbeam spell alone can decimate groups of shadow creatures vulnerable to radiant damage, while the resurrection ability provides invaluable insurance during difficult encounters. Many veteran players consider this acquisition to be the single most impactful power spike available in the first act of the game.</p>
+<p>The weapon's lore connects deeply to the githyanki storyline involving <span class="npc-name">Lae'zel</span> and the search for the <span class="item-name">Mysterious Artefact</span> (the Astral Prism). The githyanki have occupied Rosymorn Monastery and established Crèche Y'llek in its depths, creating a tense military atmosphere where every conversation can turn hostile. Navigating this environment requires careful diplomacy, strategic thinking, and thorough exploration to uncover the hidden chamber where the Blood of Lathander has rested for centuries.</p>
+<table>
+<thead>
+<tr><th>Property</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Weapon Type</td><td>Mace (Simple Weapon)</td></tr>
+<tr><td>Rarity</td><td>Legendary</td></tr>
+<tr><td>Damage</td><td>1d8 + 2 Bludgeoning</td></tr>
+<tr><td>Enchantment Bonus</td><td>+2</td></tr>
+<tr><td>Special Spells</td><td>Sunbeam (6th-level evocation)</td></tr>
+<tr><td>Special Abilities</td><td>Lathander's Blessing (Resurrection, 1/Long Rest)</td></tr>
+<tr><td>Location</td><td>Rosymorn Monastery, Mountain Pass</td></tr>
+<tr><td>Act</td><td><span class="tag tag-act1">Act 1</span></td></tr>
+<tr><td>Recommended Level</td><td>5-7</td></tr>
+<tr><td>Quest Tied</td><td>Find the Blood of Lathander / Rosymorn Monastery Puzzle</td></tr>
+</tbody>
+</table>
+</section>
+<!-- MODULE 2: ACQUISITION METHOD -->
+<section class="section" id="acquisition">
+<h2>⚔ Acquisition Method</h2>
+<p>Obtaining the Blood of Lathander requires completing a multi-step quest chain that combines environmental puzzle-solving, stealth or combat encounters, and precise timing. The acquisition can be broadly divided into three major phases: <strong>Reaching Rosymorn Monastery</strong>, <strong>Solving the Stained-Glass Window Puzzle</strong>, and <strong>Navigating the Ceremonial Chamber Traps</strong>. Each phase presents unique challenges that test different aspects of your party's capabilities.</p>
+<h3>Phase 1: Reaching Rosymorn Monastery</h3>
+<p>The journey begins at the <span class="location-name">Mountain Pass</span>, accessible after leaving the <span class="location-name">Emerald Grove</span> or <span class="location-name">Blighted Village</span> areas. From the Mountain Pass waypoint, head northeast along the mountain trail. You will encounter a bridge guarded by <span class="npc-name">Eldra Luthrinn</span> and a group of Flaming Fist mercenaries who are investigating strange githyanki activity in the region. You can bypass them through dialogue (Deception or Persuasion checks), or simply sneak past if you prefer to avoid conversation.</p>
+<p>Continue across the bridge and follow the path upward. The monastery becomes visible as a massive stone structure perched on the mountainside, its ancient walls weathered by centuries of wind and snow. Upon entering the monastery grounds, you will encounter several hostile <span class="item-name">Eagles</span> nesting in the courtyard — these are no ordinary birds but surprisingly tough opponents. Clear them or sneak past to gain access to the main building.</p>
+<h3>Phase 2: The Stained-Glass Window Puzzle</h3>
+<p>Inside the monastery, make your way to the main chamber with the massive <span class="highlight">stained-glass window</span> depicting Lathander's symbol — a golden sunrise over mountains. This room contains the first major puzzle. You will notice four pedestals arranged around the chamber, each designed to hold a ceremonial weapon. The puzzle requires placing the correct weapons on the correct pedestals based on clues hidden in the environment.</p>
+<p>The solution comes from examining the <span class="highlight">stained-glass window</span> itself and the <span class="highlight">mural paintings</span> on the walls nearby. Each section of the window depicts a different Dawn Master — ancient monks who once tended this sacred site — along with their associated weapon. The correct placement is:</p>
+<div class="route-tree">
+<li><span class="npc-name">Dawn Master Vaseid</span> — Place the <span class="item-name">Mace</span> (found on a pedestal in the same room)</li>
+<li><span class="npc-name">Dawn Master Seed</span> — Place the <span class="item-name">War Pick</span> (found in a chest on the upper floor, accessed via the broken staircase)</li>
+<li><span class="npc-name">Dawn Master Stockhold</span> — Place the <span class="item-name">Morningstar</span> (found in the room to the east, guarded by traps)</li>
+<li><span class="npc-name">Dawn Master Welkinglory</span> — Place the <span class="item-name">Battleaxe</span> (found in a locked chest in the courtyard area)</li>
+</div>
+<p>When all four weapons are correctly placed, a hidden mechanism activates, granting you the <span class="item-name">Dawnmaster's Crest</span> — a key item that will prove essential for safely claiming the Blood of Lathander later. If you attempt to take the mace without this crest, you will face a catastrophic trap that can easily wipe your entire party.</p>
+<h3>Phase 3: Crèche Y'llek and the Ceremonial Chamber</h3>
+<p>With the Dawnmaster's Crest in hand, proceed to the lower levels of the monastery where <span class="location-name">Crèche Y'llek</span> is located. The githyanki have established a military outpost here, and their leader <span class="npc-name">Kith'rak Therezzyn</span> maintains strict order. You can either fight your way through the crèche or use diplomacy to gain access — if <span class="npc-name">Lae'zel</span> is in your party, special dialogue options become available that can significantly ease navigation.</p>
+<p>The Blood of Lathander is housed in a secret chamber accessed through the <span class="location-name">Inquisitor's Chamber</span>. You must speak with <span class="npc-name">Inquisitor Viconia</span> or find the hidden entrance to the ceremonial chamber. The room itself is protected by multiple layers of magical defenses:</p>
+<div class="route-tree">
+<li>A barrier of radiant energy that damages anyone who approaches</li>
+<li>A failsafe trap that, if triggered, begins charging a devastating explosion</li>
+<li>The Blood of Lathander itself, suspended in a beam of concentrated light</li>
+</div>
+<p>Here is where the Dawnmaster's Crest becomes crucial. Interact with the weapon's housing mechanism and insert the crest to safely deactivate the barriers. Without it, you have approximately <span class="highlight">4 rounds</span> to escape the chamber before the failsafe detonates, destroying the weapon and likely killing your entire party. With the crest, the weapon descends safely into your hands, and you can leave without incident.</p>
+<h3>Alternative: The Theft Route</h3>
+<p>It is technically possible to acquire the Blood of Lathander without solving the stained-glass puzzle, but this route is extremely dangerous and generally not recommended for first-time players. If you have a character with exceptional thievery skills (Sleight of Hand proficiency, high Dexterity, and bonuses from items like the <span class="item-name">Gloves of Thievery</span>), you can attempt to steal the mace directly from its housing. This triggers the failsafe trap immediately, giving you only 4 rounds to escape the blast radius.</p>
+<p>To survive this approach, you must:</p>
+<div class="route-tree">
+<li>Have <span class="npc-name">Gale</span> or another wizard prepared with <span class="item-name">Misty Step</span> or <span class="item-name">Dimension Door</span></li>
+<li>Position your entire party near the exit before attempting the theft</li>
+<li>Successfully pass a high DC Sleight of Hand check (DC 25)</li>
+<li>Use Dash actions or teleportation to clear the blast radius within 4 rounds</li>
+</div>
+<div class="gotcha-box">
+<h4>⚠ Critical Warning</h4>
+<p>The theft route is HIGHLY RISKY. If any party member is caught in the blast, they will take approximately <span class="highlight">100 fire damage</span> — instant death for most Act 1 characters. Always save before attempting this method. The puzzle route using the Dawnmaster's Crest is the intended and significantly safer acquisition method.</p>
+</div>
+</section>
+<!-- MODULE 3: REQUIREMENTS -->
+<section class="section" id="requirements">
+<h2>📋 Requirements</h2>
+<p>Before embarking on the quest for the Blood of Lathander, ensure your party meets the following prerequisites. Failure to prepare adequately can result in missed opportunities, dead companions, or the permanent loss of the weapon itself.</p>
+<h3>Party Composition Recommendations</h3>
+<table>
+<thead>
+<tr><th>Requirement</th><th>Details</th><th>Priority</th></tr>
+</thead>
+<tbody>
+<tr><td>Recommended Level</td><td>Level 5-7 (characters should have Extra Attack and 3rd-level spells)</td><td><span class="tag tag-warning">HIGH</span></td></tr>
+<tr><td>Thieves' Tools</td><td>Multiple sets recommended for locked chests and doors</td><td><span class="tag tag-warning">HIGH</span></td></tr>
+<tr><td>Trap Disarm Kit</td><td>At least 2-3 kits for the trapped areas in the monastery</td><td><span class="tag tag-info">MEDIUM</span></td></tr>
+<tr><td>Lae'zel in Party</td><td>Enables special githyanki dialogue in Crèche Y'llek</td><td><span class="tag tag-info">MEDIUM</span></td></tr>
+<tr><td>High Perception</td><td>Character with 14+ Perception to spot hidden levers and traps</td><td><span class="tag tag-warning">HIGH</span></td></tr>
+<tr><td>Jump or Flight</td><td>Access to Jump spells, Misty Step, or flying characters for vertical areas</td><td><span class="tag tag-info">MEDIUM</span></td></tr>
+<tr><td>Healing Potions</td><td>10+ healing potions for the eagle fights and potential githyanki combat</td><td><span class="tag tag-info">MEDIUM</span></td></tr>
+</tbody>
+</table>
+<h3>Skill Requirements for Key Checks</h3>
+<p>Several important skill checks appear during the Blood of Lathander quest chain. While none are strictly required (there are usually alternative paths), having these skills available significantly smooths the process:</p>
+<div class="route-tree">
+<li><strong>Perception (DC 15)</strong> — Spot the hidden levers and secret passages in the monastery</li>
+<li><strong>Religion (DC 12)</strong> — Understand the significance of the Dawn Masters and gain hints for the puzzle</li>
+<li><strong>Sleight of Hand (DC 20)</strong> — Disarm traps in the weapon storage rooms and pick locks</li>
+<li><strong>History (DC 14)</strong> — Learn about Rosymorn Monastery's past from environmental clues</li>
+<li><strong>Persuasion/Deception (DC 16)</strong> — Navigate conversations with githyanki in the crèche without combat</li>
+<li><strong>Athletics (DC 14)</strong> — Climb broken sections of the monastery and reach upper floors</li>
+</div>
+<h3>Quest Prerequisites</h3>
+<p>The Blood of Lathander quest technically becomes available as soon as you reach the Mountain Pass, but certain story beats affect how you interact with the location:</p>
+<div class="route-tree">
+<li><strong>Primary Quest:</strong> <span class="item-name">Find the Blood of Lathander</span> — Begins automatically when you approach Rosymorn Monastery or speak with certain NPCs in the Mountain Pass about githyanki activity</li>
+<li><strong>Related Quest:</strong> <span class="item-name">The Githyanki Warrior</span> — If Lae'zel is in your party, her personal quest intertwines with the crèche storyline</li>
+<li><strong>Related Quest:</strong> <span class="item-name">Discover the Artefact's Secrets</span> — The githyanki in Crèche Y'llek are hunting the Astral Prism, creating narrative tension</li>
+<li><strong>Related Quest:</strong> <span class="item-name">Chase the Moonlanterns</span> — Shadowheart's story may influence your approach to the monastery depending on her path</li>
+</div>
+<h3>Item Checklist</h3>
+<p>Bring these items to ensure a smooth run through the monastery:</p>
+<div class="material-item">🔧 Thieves' Tools (x3)</div>
+<div class="material-item">⚠️ Trap Disarm Kit (x2)</div>
+<div class="material-item">🧪 Potion of Healing (x10+)</div>
+<div class="material-item">📜 Scroll of Misty Step (x2)</div>
+<div class="material-item">🍗 Camp Supplies (for post-dungeon rest)</div>
+<div class="material-item">🗝️ Adamantine Key (if available, for optional chests)</div>
+</section>
+<!-- MODULE 4: STEP-BY-STEP ROUTE -->
+<section class="section" id="route">
+<h2>🗺 Step-by-Step Route</h2>
+<p>Follow this comprehensive step-by-step guide to acquire the Blood of Lathander from start to finish. Each step includes precise location details, map coordinates, NPC interactions, and the exact dialogue choices required for the optimal path.</p>
+<h3>Step 1: Travel to the Mountain Pass (Act 1)</h3>
+<p>From your camp or any waypoint, fast travel to the <span class="location-name">Mountain Pass</span> waypoint at coordinates <span class="code-block">X: -154, Y: 30</span>. This area becomes accessible after completing or bypassing the Emerald Grove conflict. As you approach the bridge leading to Rosymorn Monastery, you will encounter <span class="npc-name">Eldra Luthrinn</span> (Flaming Fist Scout) and her patrol.</p>
+<p><strong>Dialogue Options with Eldra:</strong></p>
+<div class="route-tree">
+<li>"What are you doing up here?" → <span class="npc-name">Eldra</span> explains the githyanki presence (no check required)</li>
+<li>"I'm looking for the githyanki crèche." → <span class="highlight">Persuasion DC 14</span> to gain information about the monastery layout</li>
+<li>"Stand aside." → <span class="highlight">Intimidation DC 16</span> or initiate combat with the Flaming Fist patrol</li>
+<li>[Rogue] "You didn't see me." → <span class="highlight">Deception DC 18</span> to bypass conversation entirely</li>
+</div>
+<p><strong>Pro Tip:</strong> Passing the Persuasion check with Eldra marks the monastery location on your map and gives you a hint about the githyanki leader, Kith'rak Therezzyn. This information is valuable for the later diplomatic route through the crèche.</p>
+<h3>Step 2: Cross the Bridge and Ascend</h3>
+<p>Proceed across the stone bridge at <span class="code-block">X: -138, Y: 42</span>. Be prepared for a potential encounter with githyanki patrols in this area — if you have not yet encountered githyanki in your playthrough, a squad of warriors may ambush you here. Defeat them or use stealth to bypass.</p>
+<p>Follow the winding mountain path upward. You will pass several stone markers and weathered statues of Lathander. At <span class="code-block">X: -120, Y: 58</span>, the path opens into the <span class="location-name">Rosymorn Monastery Courtyard</span>. Save your game here — the eagle encounter is upcoming.</p>
+<h3>Step 3: Clear the Courtyard Eagles</h3>
+<p>The monastery courtyard is occupied by a nest of <span class="item-name">Giant Eagles</span> (CR 3 beasts, approximately 45 HP each). There are typically 3-4 eagles in the initial encounter, with possible reinforcements arriving if the fight extends too long.</p>
+<p><strong>Eagle Encounter Strategy:</strong></p>
+<div class="route-tree">
+<li>The eagles have high mobility and will use Flyby Attack to hit and retreat without provoking opportunity attacks</li>
+<li>Position ranged characters on the broken walls for elevation advantage (+2 to attack rolls)</li>
+<li>Use spells like <span class="item-name">Hold Animal</span> or <span class="item-name">Web</span> to ground flying enemies</li>
+<li>Focus fire one eagle at a time — their individual damage is moderate but combined attacks can overwhelm a low-level party</li>
+<li>Lightning-based spells deal bonus damage due to the eagles' wet feathers from mountain mist</li>
+</div>
+<p>After defeating the eagles, thoroughly search the courtyard. A locked chest hidden behind a crumbling wall at <span class="code-block">X: -112, Y: 65</span> contains the <span class="item-name">Battleaxe of the Dawn Master</span> — one of the four puzzle weapons. Use Thieves' Tools (DC 15) to open it.</p>
+<h3>Step 4: Enter the Main Monastery Hall</h3>
+<p>The main entrance to the monastery is at <span class="code-block">X: -118, Y: 62</span>. Push open the heavy oak doors (or pick the lock DC 18 if you want to maintain stealth). Inside, you enter the <span class="location-name">Great Hall</span>, a massive chamber with vaulted ceilings and the iconic stained-glass window at the far end.</p>
+<p>Immediately upon entering, have your highest Perception character scout the area. There are several important interactable objects:</p>
+<div class="route-tree">
+<li><span class="item-name">Ceremonial Mace</span> — On the pedestal directly ahead, glowing with faint golden light</li>
+<li><span class="item-name">Ancient Scripture</span> — On a lectern to the left, contains lore about the Dawn Masters</li>
+<li><span class="item-name">Hidden Lever</span> — Behind the collapsed pillar on the right (Perception DC 18), opens a shortcut to the upper floor</li>
+<li><span class="item-name">Trapped Floor Tiles</span> — Leading to the eastern wing (Perception DC 16 to spot, DC 18 Sleight of Hand to disarm)</li>
+</div>
+<h3>Step 5: Solve the Stained-Glass Window Puzzle</h3>
+<p>Examine the stained-glass window at the northern end of the Great Hall. The window depicts four panels, each showing a Dawn Master with their weapon. Reading the Ancient Scripture on the lectern provides additional context. The puzzle requires placing the correct ceremonial weapon on each of the four pedestals arranged in a semicircle before the window.</p>
+<p><strong>Weapon Locations:</strong></p>
+<table>
+<thead>
+<tr><th>Dawn Master</th><th>Weapon</th><th>Location</th><th>How to Obtain</th></tr>
+</thead>
+<tbody>
+<tr><td>Vaseid</td><td>Mace</td><td>Main pedestal in Great Hall</td><td>Already in place, interact to take</td></tr>
+<tr><td>Seed</td><td>War Pick</td><td>Upper floor, broken room</td><td>Climb via broken staircase or use Jump/Misty Step</td></tr>
+<tr><td>Stockhold</td><td>Morningstar</td><td>Eastern wing storage room</td><td>Disarm traps (DC 16), pick lock on weapon rack (DC 18)</td></tr>
+<tr><td>Welkinglory</td><td>Battleaxe</td><td>Courtyard chest</td><td>Thieves' Tools DC 15, obtained in Step 3</td></tr>
+</tbody>
+</table>
+<p><strong>Puzzle Solution Order:</strong> The pedestals are labeled with engravings matching each Dawn Master. Place the weapons in this exact order:</p>
+<ol>
+<li>Take the <span class="item-name">Ceremonial Mace</span> from the center pedestal — this temporarily deactivates the magical barrier protecting the eastern wing</li>
+<li>Travel to the eastern wing (watch for trap tiles) and retrieve the <span class="item-name">Morningstar</span> from the trapped weapon rack</li>
+<li>Use the hidden lever behind the collapsed pillar (or Jump/Misty Step) to reach the upper floor and collect the <span class="item-name">War Pick</span></li>
+<li>If you have not already, retrieve the <span class="item-name">Battleaxe</span> from the courtyard chest</li>
+<li>Return to the Great Hall and place each weapon on its matching pedestal</li>
+</ol>
+<p>When all four weapons are correctly placed, a resonant chime echoes through the hall. The <span class="item-name">Dawnmaster's Crest</span> materializes in a hidden compartment at the base of the central altar. This golden medallion is the key to safely claiming the Blood of Lathander.</p>
+<h3>Step 6: Navigate to Crèche Y'llek</h3>
+<p>With the Dawnmaster's Crest secured, proceed to the lower levels of the monastery. The entrance to <span class="location-name">Crèche Y'llek</span> is through a heavy iron door in the western wing of the monastery, at <span class="code-block">X: -125, Y: 55</span>.</p>
+<p>If <span class="npc-name">Lae'zel</span> is in your party, she will initiate a conversation when you approach the door. Her presence opens unique dialogue options with the githyanki guards:</p>
+<div class="route-tree">
+<li>[Lae'zel] "We are githyanki. Let us pass." → Automatic passage if Lae'zel has been cooperative with githyanki culture</li>
+<li>[Lae'zel] "I am a kith'rak in service to Vlaakith." → <span class="highlight">Deception DC 18</span> (requires knowing about githyanki hierarchy from earlier conversations)</li>
+<li>"We come in peace." → <span class="highlight">Persuasion DC 16</span> to enter without combat</li>
+<li>Attack the guards → Immediate combat encounter with 4 githyanki warriors</li>
+</div>
+<p><strong>Diplomatic Route:</strong> If you successfully pass the dialogue checks, the githyanki allow you to enter the crèche as "honored guests." You can freely explore most areas, though certain sections remain restricted. You can speak with <span class="npc-name">Kith'rak Therezzyn</span> in the command chamber for additional lore and potential side quests.</p>
+<p><strong>Combat Route:</strong> If you choose to fight, prepare for a challenging encounter. The githyanki warriors are highly mobile fighters with multiattack capabilities and resistance to psychic damage. Use crowd control spells and focus fire on the <span class="npc-name">Githyanki Knight</span> first, as their leadership aura buffs nearby allies.</p>
+<h3>Step 7: Enter the Inquisitor's Chamber</h3>
+<p>Make your way through the crèche to the <span class="location-name">Inquisitor's Chamber</span> at the lowest level. If you are on the diplomatic route, you may need to pick a lock (DC 20) or find an alternative entrance through a ventilation shaft (Perception DC 18 to spot the entrance at <span class="code-block">X: -140, Y: 48</span>).</p>
+<p>Inside the Inquisitor's Chamber, you will find <span class="npc-name">Inquisitor Viconia</span> (or her subordinate if she has been dealt with elsewhere in the story). The chamber contains the entrance to the Ceremonial Room where the Blood of Lathander is sealed. Look for a glowing archway at the northern end of the room — this is the sealed entrance.</p>
+<h3>Step 8: Claim the Blood of Lathander</h3>
+<p>Enter the Ceremonial Chamber through the glowing archway. The Blood of Lathander floats in a column of brilliant golden light at the center of the room, suspended above an ornate pedestal. As you approach, a magical barrier crackles with radiant energy — approaching without the Dawnmaster's Crest triggers the failsafe sequence.</p>
+<p><strong>SAFE METHOD (With Dawnmaster's Crest):</strong></p>
+<div class="route-tree">
+<li>Approach the pedestal and interact with the glowing mechanism</li>
+<li>Select the dialogue option: "Insert the Dawnmaster's Crest into the slot"</li>
+<li>The magical barriers dissolve harmlessly, and the weapon slowly descends</li>
+<li>Interact with the Blood of Lathander to add it to your inventory</li>
+<li>A warm golden light washes over your party — Lathander's blessing acknowledges the worthy</li>
+</div>
+<p><strong>DANGER METHOD (Without Crest — NOT RECOMMENDED):</strong></p>
+<div class="route-tree">
+<li>Attempt to grab the weapon directly or use Sleight of Hand to steal it</li>
+<li>The failsafe activates — a loud klaxon sounds and the chamber begins filling with radiant energy</li>
+<li>You have exactly <span class="highlight">4 rounds (24 seconds)</span> to escape before detonation</li>
+<li>Each round, the chamber fills with more damaging radiant light (2d6 radiant damage per round to all inside)</li>
+<li>On round 4, the explosion deals <span class="highlight">10d10 fire + 10d10 radiant damage</span> — instant death for almost any Act 1 character</li>
+</div>
+<h3>Step 9: Escape and Celebrate</h3>
+<p>With the Blood of Lathander safely in your inventory, make your way back out of the crèche. If you took the diplomatic route, the githyanki may become hostile upon realizing their sacred chamber has been breached — be prepared for a running fight through the crèche corridors. If you already cleared the crèche, simply walk out.</p>
+<p>Return to your camp and equip the Blood of Lathander on your chosen character. The weapon is most effective on:</p>
+<div class="route-tree">
+<li><span class="npc-name">Shadowheart</span> — If she remains a cleric of Selûne or Shar, the mace complements her spellcasting and gives her a powerful melee option</li>
+<li><span class="npc-name">Your main character</span> — If you are playing a cleric, paladin, or any class that benefits from Wisdom-based spellcasting</li>
+<li><span class="npc-name">Gale</span> — Surprisingly effective; Gale can use the Sunbeam spell at its highest potency with his high spellcasting modifier</li>
+</div>
+</section>
+<!-- MODULE 5: GOTCHA TIPS -->
+<section class="section" id="gotcha">
+<h2>⚠ Gotcha Tips</h2>
+<p>After guiding hundreds of players through the Blood of Lathander acquisition, we have identified the most common mistakes, hidden dangers, and easily missed details. Read this section carefully to avoid frustrating setbacks.</p>
+<div class="gotcha-box">
+<h4>Gotcha #1: The Failsafe Timer Is REAL</h4>
+<p>Many players assume they can tank the failsafe explosion or out-heal the damage. You cannot. The final detonation deals an average of <span class="highlight">110 damage</span> of mixed fire and radiant types. At Act 1 levels (5-7), even your tankiest character with maximum HP and temporary hit points will be obliterated. Always get the Dawnmaster's Crest. Do not try to be clever about stealing the weapon without it.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #2: You Can Permanently Lose the Weapon</h4>
+<p>If the failsafe detonates while the Blood of Lathander is still in its housing, the weapon is <span class="highlight">DESTROYED</span>. It does not respawn, it does not drop as loot, and there is no way to recover it in that playthrough. This is one of the very few truly missable legendary items in Baldur's Gate 3. Always save before entering the Ceremonial Chamber.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #3: The Eastern Wing Traps Reset</h4>
+<p>The trap tiles in the eastern wing leading to the Morningstar weapon rack <span class="highlight">reset after each long rest</span>. If you leave the monastery to rest and return, you must disarm them again. Additionally, the trapped weapon rack itself has a secondary trap that triggers if you fail the Sleight of Hand check by 5 or more — this deals 3d6 piercing damage and alerts nearby enemies.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #4: Githyanki Diplomacy Has Consequences</h4>
+<p>If you take the diplomatic route through Crèche Y'llek and later betray the githyanki by taking the Blood of Lathander, this can affect Lae'zel's approval and potentially lock you out of certain githyanki-related story paths. Conversely, if you massacre the crèche before claiming the weapon, you lose access to unique dialogue and potential allies later in the game. Consider your roleplay approach carefully.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #5: The Puzzle Weapons Can Be Missed</h4>
+<p>Each of the four ceremonial weapons required for the puzzle can be permanently missed if you are not thorough:</p>
+<div class="route-tree">
+<li>The <span class="item-name">War Pick</span> requires accessing the upper floor — easy to miss if you do not explore vertically</li>
+<li>The <span class="item-name">Morningstar</span> is behind trapped tiles that many players walk around and never investigate</li>
+<li>The <span class="item-name">Battleaxe</span> is in an optional courtyard chest that blends into the environment</li>
+<li>If you accidentally sell or lose any puzzle weapon, there is no replacement — you must reload a save</li>
+</div>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #6: Shadowheart's Reaction Matters</h4>
+<p>If <span class="npc-name">Shadowheart</span> is in your party when you claim the Blood of Lathander, she has unique dialogue about the Morninglord. Depending on whether she has embraced or rejected Shar at this point, her reaction varies significantly. If she is on her dark Shar path, she may voice disapproval about wielding a weapon of light — though this does not prevent equipping it. On her redemption path, she speaks reverently about Lathander and gains a small amount of inspiration.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #7: The Crest Only Works Once</h4>
+<p>The <span class="item-name">Dawnmaster's Crest</span> is consumed when used to deactivate the barriers protecting the Blood of Lathander. If you somehow lose it before reaching the Ceremonial Chamber (for example, by having it stolen by a githyanki pickpocket, which can happen in the crèche), you cannot craft a replacement. Keep the crest on your main character in a protected inventory slot.</p>
+</div>
+<div class="warning-box">
+<h4>⚠ Spoiler Warning: Act 3 Consequences</h4>
+<p>Carrying the Blood of Lathander into certain late-game encounters can trigger unique dialogue options, particularly when dealing with followers of Shar or undead enemies. The weapon's radiant nature makes it especially effective in the Shadow-Cursed Lands and against certain Act 3 bosses. However, there are no negative consequences for wielding it at any point — Lathander's blessing is unconditional.</p>
+</div>
+</section>
+<!-- MODULE 6: FREE BENEFITS -->
+<section class="section" id="benefits">
+<h2>🎁 Free Benefits</h2>
+<p>Acquiring the Blood of Lathander provides far more than just a powerful weapon. The journey itself rewards thorough explorers with substantial loot, experience points, story content, and strategic advantages that persist throughout the entire campaign.</p>
+<h3>Immediate Weapon Benefits</h3>
+<table>
+<thead>
+<tr><th>Benefit</th><th>Details</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>1d8+2 Bludgeoning Damage</td><td>Higher base damage than standard maces (1d6), with +2 enchantment</td><td><span class="tag tag-legendary">LEGENDARY</span></td></tr>
+<tr><td>+2 Weapon Enchantment</td><td>+2 to attack and damage rolls, bypasses resistance of non-magical weapons</td><td><span class="tag tag-legendary">LEGENDARY</span></td></tr>
+<tr><td>Sunbeam Spell</td><td>6th-level evocation, 6d8 radiant damage in 60ft line, Constitution save for half</td><td><span class="tag tag-legendary">LEGENDARY</span></td></tr>
+<tr><td>Lathander's Blessing</td><td>Once per long rest, resurrect a fallen ally at 50% HP within 30ft</td><td><span class="tag tag-legendary">LEGENDARY</span></td></tr>
+<tr><td>Lathander's Light</td><td>Passive 10ft radius of bright light, dispels magical darkness</td><td><span class="tag tag-rare">RARE</span></td></tr>
+</tbody>
+</table>
+<h3>Bonus Loot from the Monastery</h3>
+<p>Thorough exploration of Rosymorn Monastery yields substantial additional rewards beyond the Blood of Lathander itself:</p>
+<div class="route-tree">
+<li><span class="item-name">Potion of Supreme Healing</span> — Hidden in a secret compartment behind the altar (Perception DC 20)</li>
+<li><span class="item-name">Scroll of Greater Restoration</span> — On Inquisitor Viconia's desk in the crèche</li>
+<li><span class="item-name">Githyanki Armor Pieces</span> — Multiple medium armor drops from crèche enemies, excellent for Act 1</li>
+<li><span class="item-name">Silver Sword Fragment</span> — Collectible lore item that connects to Lae'zel's quest</li>
+<li><span class="item-name">Ancient Coin Collection</span> — Valuable vendor items totaling approximately 500 gold</li>
+<li><span class="item-name">Camp Supply Cache</span> — Enough supplies for 3-4 long rests, found in the crèche kitchen area</li>
+</div>
+<h3>Experience Point Breakdown</h3>
+<p>The complete Blood of Lathander quest chain awards approximately <span class="highlight">4,500-6,000 XP</span> depending on your approach:</p>
+<div class="route-tree">
+<li>Eagle courtyard combat: <strong>~800 XP</strong></li>
+<li>Puzzle completion (stained-glass): <strong>~1,200 XP</strong></li>
+<li>Crèche Y'llek exploration: <strong>~1,000 XP</strong></li>
+<li>Githyanki encounters (combat or diplomacy): <strong>~1,500 XP</strong></li>
+<li>Weapon acquisition (safe method): <strong>~1,000 XP</strong></li>
+<li>Optional exploration and secrets: <strong>~500-1,500 XP</strong></li>
+</div>
+<h3>Strategic Campaign Advantages</h3>
+<p>The Blood of Lathander provides benefits that extend far beyond its immediate statistics:</p>
+<div class="route-tree">
+<li><strong>Shadow-Cursed Lands Dominance:</strong> The Sunbeam spell and radiant light aura make Act 2's shadow areas significantly easier. Most shadow creatures are vulnerable to radiant damage, and the built-in light source frees up a cantrip slot normally used for Light</li>
+<li><strong>Party Composition Flexibility:</strong> The built-in resurrection ability means you can safely leave a cleric's Revivify spell unprepared, opening up more versatile spell preparation</li>
+<li><strong>Economic Savings:</strong> The resurrection ability saves approximately 200 gold per use compared to buying Scrolls of Revivify from merchants</li>
+<li><strong>Roleplay Prestige:</strong> NPCs throughout the game recognize the Blood of Lathander when equipped, triggering unique dialogue with priests, paladins, and followers of Shar</li>
+<li><strong>Achievement Progress:</strong> Acquiring any legendary item contributes toward collection-based achievements</li>
+</div>
+<h3>Synergy Builds</h3>
+<p>The Blood of Lathander excels in specific character builds:</p>
+<div class="route-tree">
+<li><strong>Light Domain Cleric:</strong> Doubles down on radiant damage, with the mace providing a powerful melee option when spells are depleted</li>
+<li><strong>Oath of Devotion Paladin:</strong> Flavor-perfect combination; the mace's radiant damage synergizes with the paladin's Divine Smite</li>
+<li><strong>Life Domain Cleric:</strong> The resurrection ability complements the life cleric's healing focus, creating an unmatched support character</li>
+<li><strong>Any Frontline Caster:</strong> Characters who mix melee combat with spellcasting benefit from the versatile weapon-plus-spell combination</li>
+</div>
+</section>
+</main>
+<!-- RIGHT SIDEBAR -->
+<aside class="right-sidebar">
+<h4>📊 Item Info</h4>
+<div class="info-box">
+<div class="label">Game</div>
+<div class="value">Baldur's Gate 3</div>
+</div>
+<div class="info-box">
+<div class="label">Item Type</div>
+<div class="value">Legendary Mace</div>
+</div>
+<div class="info-box">
+<div class="label">Act</div>
+<div class="value"><span class="tag tag-act1">Act 1</span></div>
+</div>
+<div class="info-box">
+<div class="label">Location</div>
+<div class="value">Rosymorn Monastery</div>
+</div>
+<div class="info-box">
+<div class="label">Base Damage</div>
+<div class="value">1d8 + 2 Bludgeoning</div>
+</div>
+<div class="info-box">
+<div class="label">Difficulty</div>
+<div class="value" style="color:#e74c3c">★★★★★</div>
+</div>
+<div class="info-box">
+<div class="label">Est. Time</div>
+<div class="value">45-90 minutes</div>
+</div>
+<div class="info-box">
+<div class="label">Missable?</div>
+<div class="value" style="color:#e74c3c">YES — Permanently</div>
+</div>
+<h4>🔗 Quick Links</h4>
+<div style="margin-bottom:10px"><a href="gontr-mael.html">→ Gontr Mael (Legendary Longbow)</a></div>
+<div style="margin-bottom:10px"><a href="nyrulna.html">→ Nyrulna (Legendary Trident)</a></div>
+<div style="margin-bottom:10px"><a href="shars-spear.html">→ Shar's Spear of Evening</a></div>
+<div style="margin-bottom:10px"><a href="duellist-gloves.html">→ Duellist's Prismatic Gloves</a></div>
+<h4>📅 Guide Updated</h4>
+<div class="info-box">
+<div class="value">Patch 7 Compatible</div>
+</div>
+</aside>
+</div>
+<footer class="footer">
+<p>⚔ CraftHunt — Baldur's Gate 3 Item Guides &copy; 2025 | All game content belongs to Larian Studios</p>
+<p><a href="../privacy.html">Privacy</a> | <a href="../terms.html">Terms</a> | <a href="../about.html">Contact</a> | <a href="../about.html">About</a></p>
+</footer>
+</body>
+</html>

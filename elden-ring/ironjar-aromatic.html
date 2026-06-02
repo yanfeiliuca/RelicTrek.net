@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ironjar Aromatic — Elden Ring Crafting Guide | RelicTrek</title>
+<meta name="description" content="Complete guide to crafting Ironjar Aromatic in Elden Ring. Turn body to metal — super armor and reduced damage. Perfumer's Cookbook [2]. Defensive buff.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e67e22;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="./">Guides</a>
+<a href="./" class="active">Crafting</a>
+<a href="./">Maps</a>
+<a href="./">Tools</a>
+</div>
+</div>
+</nav>
+
+<div class="ticker-bar">
+<div class="ticker-inner">
+🤖 <strong>Ironjar Aromatic</strong> — Metal body super armor, reduced damage | Perfumer's Cookbook [2] from Abandoned Cave, Caelid | Altus Bloom + Living Jar Shard + Miranda Powder | <a href="gold-pickled-fowl-foot.html">Back to Gold-Pickled Fowl Foot →</a>
+</div>
+</div>
+
+<div class="container">
+
+<aside class="sidebar">
+<h3>Game Select</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+<a href="../no-mans-sky/">No Man's Sky</a>
+<a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+<a href="../valheim/">Valheim</a>
+<a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="./" class="active">Elden Ring</a>
+<a href="../stardew-valley/">Stardew Valley</a>
+<a href="../hades-2/">Hades 2</a>
+<a href="../satisfactory/">Satisfactory</a>
+<div class="quick-nav">
+<h4>Elden Ring Items</h4>
+<a href="gold-pickled-fowl-foot.html">Gold-Pickled Fowl Foot</a>
+<a href="exalted-flesh.html">Exalted Flesh</a>
+<a href="uplifting-aromatic.html">Uplifting Aromatic</a>
+<a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>
+<a href="ironjar-aromatic.html" class="active">Ironjar Aromatic</a>
+<a href="preserving-boluses.html">Preserving Boluses</a>
+<a href="drawstring-blood-grease.html">Drawstring Blood Grease</a>
+<a href="spark-aromatic.html">Spark Aromatic</a>
+<a href="warming-stone.html">Warming Stone</a>
+<a href="bewitching-branch.html">Bewitching Branch</a>
+</div>
+</aside>
+
+<main class="main-content">
+
+<div class="item-header">
+<div class="item-icon-accessory">🤖</div>
+<div class="item-title">
+<h1 data-zh="铁壶香">Ironjar Aromatic</h1>
+<div class="item-subtitle" data-zh="将身体变为金属——获得超级护甲和减伤效果">Metal Body Transformation — Super Armor &amp; Damage Reduction</div>
+<div class="item-meta">
+<span class="difficulty">★★★★☆ Hard</span>
+<span>Type: Aromatic (Self Buff)</span>
+<span>Stack: 10</span>
+</div>
+</div>
+</div>
+
+<section class="section" id="why">
+<h2><span>🤖</span> Why Ironjar Aromatic Matters</h2>
+<p data-zh="铁壶香是艾尔登法环中最独特的防御性消耗品之一。使用后，你的身体会变成闪耀的金属，获得极高的韧性（几乎不可能被打断动作）和显著的物理减伤效果。这个效果让你能够在敌人的攻击中从容地挥出重击，而不是被迫翻滚躲避。">The <strong>Ironjar Aromatic</strong> is one of Elden Ring's most distinctive defensive consumables. Upon use, your body transforms into gleaming metal, granting you <span class="highlight">massively increased poise (super armor)</span> and significant <strong>physical damage reduction</strong>. This effect allows you to trade blows with enemies that would normally stagger you, swinging your heaviest attacks through incoming hits without being interrupted. It fundamentally changes your combat approach from evasive to confrontational.</p>
+
+<p data-zh="铁壶香的核心价值在于'超级护甲'（Hyper Armor）——这个机制让你在进行攻击动作时不会被敌人的攻击打断。对于使用超大型武器（如巨剑、大锤、大斧）的玩家来说，这意味着你可以在Boss挥出一击的同时砍出你的满蓄力重击，两者同时命中但你不会被中断。这种以伤换伤的打法在很多情况下比不断翻滚更加有效。">The core value of Ironjar Aromatic lies in its <strong>hyper armor</strong> property — the mechanic that prevents your attack animations from being interrupted by enemy hits. For colossal weapon users (greatswords, greathammers, greataxes), this means you can charge your fully-charged heavy attack while a boss swings at you, <strong>both attacks land simultaneously, but yours is not canceled</strong>. This trading playstyle is often more effective than endless rolling, especially against enemies with long combo chains that are difficult to dodge perfectly.</p>
+
+<h3 data-zh="最佳使用场景">When to Use Ironjar Aromatic</h3>
+<ul>
+<li data-zh="巨武器build：使用大锤/巨剑/大斧时，确保你的重击不会被Boss的小招式打断"><strong>Colossal Weapon Builds:</strong> When wielding greathammers, greatswords, or greataxes — ensures your slow but devastating attacks complete even when taking hits.</li>
+<li data-zh="高韧性Boss战：对抗攻击频率高但单次伤害低的敌人（如Godskin Apostle）"><strong>High-Frequency Bosses:</strong> Against bosses with rapid but individually weak attacks (Godskin Apostle, Morgott) — tank through their flurries and land your counters.</li>
+<li data-zh="配合沸血香：先使用铁壶香获得减伤和韧性，再使用沸血香获得攻击力——成为无敌的重甲战士"><strong>Combo with Bloodboil Aromatic:</strong> Ironjar first for defense and poise, then Bloodboil for attack power. The Ironjar mitigates Bloodboil's defense penalty while both buffs are active.</li>
+<li data-zh="被包围时：被大量小怪包围时使用，让你从容突围"><strong>Getting Swarmed:</strong> When surrounded by mobs — the super armor lets you cleave through groups without being stagger-locked to death.</li>
+<li data-zh="PvP入侵：对手依赖快速武器和连击时，铁壶香可以让他们无从下手"><strong>Invasions (PvP):</strong> Against rapid-attack builds (twinblades, curved swords) — the hyper armor completely negates their primary strategy of stagger-locking you.</li>
+</ul>
+
+<h3 data-zh="铁壶香 vs 其他防御手段">Ironjar Aromatic vs. Other Defensive Options</h3>
+<ul>
+<li data-zh=" vs 振奋香：振奋香抵挡一次攻击；铁壶香在持续时间内提供持续的减伤和韧性。两者互补而非竞争"><strong>vs. Uplifting Aromatic:</strong> Uplifting negates one hit entirely. Ironjar provides sustained damage reduction and poise over time. They complement rather than compete — use Uplifting for insurance, Ironjar for brawling.</li>
+<li data-zh=" vs 铁身躯（法术）：铁身躯祷告提供类似效果但需要18信仰投资；铁壶香不需要任何属性要求"><strong>vs. Iron Flesh (Sorcery):</strong> The Iron Flesh sorcery provides a similar effect but requires 18 Faith and takes an attunement slot. Ironjar Aromatic has no stat requirement.</li>
+<li data-zh=" vs 高韧性装备：即使穿着最重的护甲，你的攻击仍然会被大型敌人的重击打断。铁壶香的超级护甲确保你不会被任何攻击打断"><strong>vs. Heavy Armor:</strong> Even in the heaviest armor (Bull-Goat Set), your attacks can be interrupted by large enemy hits. Ironjar's hyper armor guarantees you will not be staggered out of your swings.</li>
+<li data-zh=" vs 维克的龙雷：维克的龙雷给+15%全伤害和增加韧性但持续时间很短；铁壶香专注防御，持续时间更长"><strong>vs. Vyke's Dragonbolt:</strong> The incantation gives +15% all damage and bonus poise but has a short duration. Ironjar focuses purely on defense with a longer 40-second window and no Faith requirement.</li>
+</ul>
+
+<h3 data-zh="FOMO因素">The FOMO Factor</h3>
+<p data-zh="如果你在整个游戏过程中都不知道铁壶香的存在，你可能错过了体验艾尔登法环中最独特的战斗方式之一。以伤换伤、超级护甲、金属变身——这些概念重新定义了这款游戏的战斗可能性。尤其是那些认为'翻滚是唯一答案'的玩家，铁壶香会打开一扇全新的大门，让你发现原来站着对砍也可以是一种高效的战术。">If you complete Elden Ring without ever discovering Ironjar Aromatic, you have missed one of the game's most unique combat experiences. Trading blows, hyper armor, and metallic transformation — these concepts redefine what is possible in Elden Ring's combat system. For players who believe rolling is the only answer, Ironjar opens an entirely new door, revealing that sometimes the best defense is a metal body and a refusal to flinch. The FOMO is especially strong for colossal weapon users who have been struggling with slow attack speeds getting interrupted — this consumable was quite literally designed for you.</p>
+
+<div class="cross-links">
+<a href="bloodboil-aromatic.html" class="cross-link">← Bloodboil Aromatic (+30% Attack, -25% Def)</a>
+<a href="uplifting-aromatic.html" class="cross-link">Uplifting Aromatic (Same Cookbook [2])</a>
+</div>
+</section>
+
+<section class="section" id="recipe">
+<h2><span>🧪</span> Crafting Recipe</h2>
+<p data-zh="铁壶香的配方需要三种材料。Altus Bloom来自高原采集，Living Jar Shard需要击杀特定的壶类敌人，而Miranda Powder来自花朵敌人。">The Ironjar Aromatic recipe requires <strong>three materials</strong>. Altus Bloom comes from plateau gathering, Living Jar Shard requires killing specific jar enemies, and Miranda Powder drops from flower-type foes. This is one of the more involved aromatic recipes, but each material has reliable farming routes.</p>
+
+<table class="recipe-table">
+<thead>
+<tr><th>Material</th><th>Quantity</th><th>Rarity</th><th>Farmable</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🌸 <strong>Altus Bloom</strong></td>
+<td>1x</td>
+<td data-zh="中等（特定区域）">Medium (Zone-Specific)</td>
+<td>✅ Yes — Altus Plateau flower nodes</td>
+</tr>
+<tr>
+<td>🏺 <strong>Living Jar Shard</strong></td>
+<td>1x</td>
+<td data-zh="中等（敌人掉落）">Medium (Enemy Drop)</td>
+<td>✅ Yes — Living Jar enemies</td>
+</tr>
+<tr>
+<td>🌺 <strong>Miranda Powder</strong></td>
+<td>1x</td>
+<td data-zh="中等（敌人掉落）">Medium (Enemy Drop)</td>
+<td>✅ Yes — Miranda flower enemies</td>
+</tr>
+</tbody>
+</table>
+
+<h3 data-zh="制作产出">Yield</h3>
+<p data-zh="每次制作产出1个铁壶香。堆叠上限为10个。由于材料涉及击杀特定敌人，建议批量farm材料后一次性制作。">Each crafting attempt produces exactly <span class="highlight">1x Ironjar Aromatic</span>. Stack limit is <strong>10</strong>. Since materials involve targeted enemy kills, do a dedicated farming session and craft in bulk.</p>
+
+<div class="gotcha-box">
+<h4>⚠️ Recipe Key Notes</h4>
+<ul>
+<li data-zh="变身为金属效果持续约40秒">Metal body transformation lasts approximately <strong>40 seconds</strong>.</li>
+<li data-zh="获得极高的韧性——几乎不可能被打断攻击动作">Grants <strong>extreme poise/hyper armor</strong> — nearly impossible to stagger out of attacks.</li>
+<li data-zh="物理减伤提升显著——但元素减伤（火、雷、圣）不受影响或略有降低">Significantly boosts <strong>physical damage negation</strong>. Elemental negation (fire, lightning, holy) is unaffected or slightly reduced.</li>
+<li data-zh="移动速度降低——金属身体更重，跑动和翻滚速度变慢"><strong>Movement speed is reduced</strong> — the metal body is heavier, slowing run and roll speed.</li>
+<li data-zh="可以与沸血香同时使用——抵消沸血香的防御惩罚">Can be combined with <a href="bloodboil-aromatic.html">Bloodboil Aromatic</a> — the defense reduction from Bloodboil is mitigated by Ironjar's buff.</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Perfumer's Cookbook [2]</h2>
+<p data-zh="铁壶香与振奋香共用同一本制作笔记——调香师的制作笔记[2]。这意味着如果你已经为了Uplifting Aromatic去了Abandoned Cave，你就已经解锁了铁壶香的配方。">Ironjar Aromatic shares its Cookbook with <a href="uplifting-aromatic.html">Uplifting Aromatic</a> — <strong>Perfumer's Cookbook [2]</strong>. This means if you already braved the Abandoned Cave for Uplifting Aromatic, you have already unlocked Ironjar Aromatic as well. Two powerful defensive tools for the price of one perilous dungeon crawl.</p>
+
+<div class="cookbook-box">
+<h4>📖 Perfumer's Cookbook [2]</h4>
+<p><strong>Location:</strong> Abandoned Cave, central Caelid</p>
+<p><strong>Coordinates:</strong> Southeastern edge of the Swamp of Aeonia, behind a hidden cliff entrance</p>
+<p><strong>Recipes Unlocked:</strong> Uplifting Aromatic + Ironjar Aromatic</p>
+<p><strong>Dungeon Hazards:</strong> Scarlet Rot pools, hidden walls, Cleanrot Knight duo boss</p>
+</div>
+
+<h3 data-zh="如何获取（复习）">Cookbook Acquisition (Review)</h3>
+<p data-zh="如果你还没有获取这本笔记，请参考Uplifting Aromatic指南中的详细攻略。以下是简要版本：">If you have not yet acquired this Cookbook, refer to the <a href="uplifting-aromatic.html#cookbook">Uplifting Aromatic guide</a> for the full walkthrough. Here is the condensed version:</p>
+
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Reach Caelid and locate the <strong>Swamp of Aeonia</strong>.</p>
+<p><span class="step">Step 2:</span> Find the hidden cave entrance on the <strong>southeastern cliff edge</strong> of the swamp.</p>
+<p><span class="step">Step 3:</span> Navigate the Scarlet Rot pools using <strong>Preserving Boluses</strong> or <strong>Flame, Cleanse Me</strong>.</p>
+<p><span class="step">Step 4:</span> Look for <strong>hidden walls</strong> — the Cookbook is in a side chamber behind one.</p>
+<p><span class="step">Step 5:</span> Grab the glowing white item pickup and retreat. No boss kill required.</p>
+</div>
+
+<h3 data-zh="准备工作清单">Preparation Checklist</h3>
+<ul>
+<li data-zh="Preserving Boluses x5：清除猩红腐败积累">• <strong>5x Preserving Boluses</strong> — cure Scarlet Rot buildup.</li>
+<li data-zh="火焰啊净化我（Flame, Cleanse Me）：12信仰要求的无限清毒祷告">• <strong>Flame, Cleanse Me</strong> incantation (12 Faith) — infinite rot cleansing.</li>
+<li data-zh="免疫护符（Immunizing Horn Charm）：提升免疫力">• <strong>Immunizing Horn Charm</strong> — boosts Immunity stat.</li>
+<li data-zh="远程武器：从安全距离击杀毒花">• <strong>Ranged weapon</strong> — kill rot servants from safe distance.</li>
+<li data-zh="火把：照亮隐藏墙壁和暗处">• <strong>Torch</strong> — illuminate hidden walls and dark passages.</li>
+</ul>
+
+<div class="cross-links">
+<a href="uplifting-aromatic.html" class="cross-link">Uplifting Aromatic (Same Cookbook [2])</a>
+<a href="bloodboil-aromatic.html" class="cross-link">Bloodboil Aromatic (Glass Cannon Pairing)</a>
+</div>
+</section>
+
+<section class="section" id="materials">
+<h2><span>🌿</span> Materials &amp; Farm Locations</h2>
+<p data-zh="铁壶香的三种材料覆盖了采集和击杀两种获取方式。Altus Bloom是区域采集，Living Jar Shard和Miranda Powder都是敌人掉落。">Ironjar Aromatic's three materials cover both gathering and combat farming. Altus Bloom is zone gathering, while Living Jar Shard and Miranda Powder both come from specific enemy types. Each has reliable, repeatable farming locations.</p>
+
+<h3>🌸 Material 1: Altus Bloom</h3>
+<div class="material-item">
+<div class="material-icon">🌸</div>
+<div class="material-info">
+<h4>Altus Bloom <span style="color:#e6a817">★ Zone-Specific Target Farm</span></h4>
+<p data-zh="Altus Bloom是所有芳香类道具的基础材料。在Altus Plateau的高原上大量分布，farm方法与其他芳香类道具完全相同。">The <strong>Altus Bloom</strong> is the foundational ingredient for all Perfumer aromatics. Its farming is identical across all aromatic recipes — ride through Altus Plateau and collect the golden flowers. Refer to the <a href="uplifting-aromatic.html#materials">Uplifting Aromatic guide</a> for detailed route maps.</p>
+</div>
+</div>
+
+<h4 data-zh="Altus Bloom 快速Farm路线">Altus Bloom Quick Farm Route</h4>
+<div class="material-farm-route">
+<p><strong>Altus Highway Junction Loop</strong></p>
+<p data-zh="从Altus Highway Junction赐福点出发，骑马向各个方向探索公路两侧。每次循环可以采集8-12朵Altus Bloom。休息赐福，重复。每次循环约3-5分钟。">From <strong>Altus Highway Junction</strong> grace, ride in all directions along the road. Collect <strong>8–12 Altus Blooms</strong> per cycle. Rest at grace, repeat. Each cycle takes 3–5 minutes.</p>
+</div>
+
+<h3>🏺 Material 2: Living Jar Shard</h3>
+<div class="material-item">
+<div class="material-icon">🏺</div>
+<div class="material-info">
+<h4>Living Jar Shard <span style="color:#e6a817">★ Enemy Drop Farm</span></h4>
+<p data-zh="Living Jar Shard由Living Jar敌人掉落——这些看似无害的陶罐实际上是有生命的敌人。它们会在你靠近时活化并攻击，击败后有一定概率掉落碎片。">The <strong>Living Jar Shard</strong> drops from <strong>Living Jar</strong> enemies — seemingly inanimate clay jars that animate and attack when you approach. They come in various sizes, from small jarlets to massive great jars, and each has a chance to drop shards on death.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Living Jar Shard Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Jarburg — The Jar Village</strong></p>
+<p data-zh="Jarburg是位于Liurnia东海岸的一个隐藏村庄，里面全是友好的Living Jar NPC和敌对的jar。这是farm Living Jar Shard的最佳地点——敌人密集、刷新快、难度低。"><strong>Jarburg</strong> on Liurnia's eastern coast is a hidden village filled with Living Jar NPCs and hostile jars. This is the premier Living Jar Shard farm — dense enemy population, quick respawns, and low difficulty. The jars are non-aggressive until attacked, letting you set up each fight on your terms. Expect <strong>3–5 shards per 10-minute run</strong>.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Academy Gate Town — Liurnia</strong></p>
+<p data-zh="Academy Gate Town的废墟中有几个Living Jar分布。不如Jarburg密集，但如果你已经在Liurnia做其他任务可以顺便击杀。">The ruins of <strong>Academy Gate Town</strong> in Liurnia have several Living Jar spawns. Less dense than Jarburg but viable if you are already in the area for other quests.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Leyndell, Royal Capital — Capital Jars</strong></p>
+<p data-zh="Leyndell的某些区域有Living Jar分布，但它们通常与其他强力敌人一起出现，farm效率较低。">Certain areas of <strong>Leyndell</strong> have Living Jars, but they are usually mixed with stronger enemies, making this less efficient for dedicated farming.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🏅 #4: Caelid Jar — Hidden Location</strong></p>
+<p data-zh="Caelid有一个隐藏的Living Jar区域，里面有大量jar敌人。位置较偏但产量很高。">Caelid has a hidden Living Jar area with numerous jar enemies. Remote but high yield — look for jar clusters in the eastern scarlet wastes.</p>
+</div>
+
+<h4 data-zh="Living Jar Shard Farm 技巧">Living Jar Shard Farming Tips</h4>
+<ul>
+<li data-zh="大型Living Jar掉率更高——优先击杀大号的">Larger Living Jars have <strong>higher drop rates</strong> — prioritize the big ones.</li>
+<li data-zh="Jarburg的jar不会主动攻击——你可以逐个引出来击杀">Jarburg jars are <strong>non-hostile until attacked</strong> — pull and kill them one by one.</li>
+<li data-zh="提升发现力可以增加掉率——装备Silver Scarab护符">Higher <strong>Discovery</strong> improves drop rates — equip Silver Scarab.</li>
+<li data-zh="大型jar有高韧性——使用削刃高的武器或战技">Great jars have high poise — use high-poise-break attacks or weapon skills.</li>
+</ul>
+
+<h3>🌺 Material 3: Miranda Powder</h3>
+<div class="material-item">
+<div class="material-icon">🌺</div>
+<div class="material-info">
+<h4>Miranda Powder <span style="color:#e6a817">★ Enemy Drop Farm</span></h4>
+<p data-zh="Miranda Powder由Miranda花敌人掉落——这些是有毒的巨大花朵，会释放毒雾和有毒投射物。它们分布在多个区域，但Altus Plateau的密度最高。">The <strong>Miranda Powder</strong> drops from <strong>Miranda flower</strong> enemies — large, poisonous plant monsters that emit toxic clouds and poison projectiles. They are found across multiple zones, but Altus Plateau has the highest density, making it an efficient farm location.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Miranda Powder Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Altus Plateau — Flower Fields</strong></p>
+<p data-zh="Altus Plateau的各个区域有大量Miranda花分布，尤其是在道路两侧和废墟周围。这是最高效的farm地点，因为你同时可以采集Altus Bloom。">The fields of <strong>Altus Plateau</strong> are dotted with Miranda flowers, especially along roadsides and near ruins. This is the most efficient farm since you are already collecting Altus Bloom in the same zone. A 5-minute sweep nets <strong>4–6 Miranda Powders</strong> and a dozen Altus Blooms.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Tombsward Ruins — Weeping Peninsula</strong></p>
+<p data-zh="Tombsward Ruins周围有几朵Miranda花。适合早期游戏farm，但密度不如Altus。">The area around <strong>Tombsward Ruins</strong> on the Weeping Peninsula has several Miranda flowers. Good for early-game farming but lower density than Altus.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Caelid Swamp — Rot Flowers</strong></p>
+<p data-zh="Caelid的猩红沼泽中有特殊的猩红腐败Miranda花，也会掉落Miranda Powder。但这里的敌人更危险。">The Scarlet Rot swamps of <strong>Caelid</strong> have special rot-infused Miranda flowers that also drop Miranda Powder. More dangerous but viable if you are already in the zone.</p>
+</div>
+
+<h4 data-zh="Miranda Powder Farm 技巧">Miranda Powder Farming Tips</h4>
+<ul>
+<li data-zh="Miranda花对火属性攻击极其脆弱——一个火焰壶或火法术可以秒杀">Miranda flowers are <strong>extremely weak to fire</strong> — a single fire pot or flame spell often one-shots them.</li>
+<li data-zh="保持距离——它们的毒雾范围很大">Stay at range — their poison cloud has a large AoE radius.</li>
+<li data-zh="装备免疫护符减少中毒积累">Equip <strong>Immunizing Horn Charm</strong> to reduce poison buildup.</li>
+<li data-zh="在Altus Plateau farm时一举三得：Altus Bloom + Miranda Powder + 锻造石">Farming in Altus Plateau gives you <strong>triple value</strong>: Altus Bloom + Miranda Powder + Smithing Stones from nearby ore deposits.</li>
+</ul>
+
+<div class="cross-links">
+<a href="uplifting-aromatic.html" class="cross-link">Uplifting Aromatic (Altus Bloom Routes)</a>
+<a href="exalted-flesh.html" class="cross-link">Exalted Flesh (Altus Plateau Farming)</a>
+</div>
+</section>
+
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> Gotcha Tips — What Can Go Wrong</h2>
+<p data-zh="铁壶香虽然强大，但有几个关键的限制和陷阱需要注意。忽视这些问题可能导致悲剧性的结果。">Ironjar Aromatic's power comes with significant limitations and gotchas. Ignoring these can lead to tragic outcomes — here is the complete warning list.</p>
+
+<div class="gotcha-box">
+<h4>🐢 Gotcha 1: You Move SLOW</h4>
+<p data-zh="金属身体严重降低你的移动速度——你的跑动速度类似于穿着超重装备的状态。翻滚距离也大幅缩短。在需要快速移动的Boss战中（如Malenia），这几乎是致命的。">The metal body <strong>severely reduces movement speed</strong> — your run speed drops to the equivalent of heavy-rolling equip load. Your roll distance is also dramatically shortened. In fights requiring quick repositioning (Malenia, Malenia, and especially Malenia), this can be fatal. <strong>Only use Ironjar when you plan to stand and trade blows, not when you need to dodge complex patterns.</strong></p>
+</div>
+
+<div class="gotcha-box">
+<h4>⚡ Gotcha 2: Elemental Damage Still Hurts</h4>
+<p data-zh="铁壶香主要提升物理减伤，但对元素伤害（火、雷、圣、魔）的减伤效果提升有限甚至略有降低。面对属性攻击为主的Boss时（如Elden Beast的圣属性攻击），铁壶香的效果大打折扣。">Ironjar primarily boosts <strong>physical damage negation</strong>. Its effect on elemental damage (fire, lightning, holy, magic) is minimal or even slightly negative. Against elementally-focused bosses like <strong>Elden Beast</strong> (holy damage) or <strong>Fire Giant</strong> (fire damage), Ironjar provides far less protection than you might expect.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>💀 Gotcha 3: Not All Attacks Can Be Traded</h4>
+<p data-zh="虽然铁壶香提供超级护甲，但某些Boss的抓取攻击和处决攻击仍然可以打断你。不要误以为变成金属后就真的无敌了。">While Ironjar grants hyper armor, <strong>certain boss grab attacks and critical hit moves can still interrupt you</strong>. Do not assume you are truly invincible. Moves like Godrick's grab or the Omens' grab-still go through your poise. Learn which attacks are safe to trade and which still require dodging.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🏺 Gotcha 4: Living Jar Drops Are RNG</h4>
+<p data-zh="Living Jar Shard的掉率不是100%。有时候你需要击杀10个jar才能获得3-4个碎片。准备好投入时间，或者提升发现力来加快farm速度。">Living Jar Shard drop rates are not guaranteed. You might need to kill <strong>10+ jars</strong> to get 3–4 shards. Invest in Discovery-boosting gear or allocate time for a dedicated farming session. Jarburg is still the most consistent source.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🌺 Gotcha 5: Miranda Flowers Are Poisonous</h4>
+<p data-zh="farm Miranda Powder时，Miranda花释放的毒雾会在短时间内让你中毒。始终携带解毒道具或装备免疫护符。">Miranda flowers emit a <strong>poison cloud</strong> that builds status rapidly. Always carry neutralizing boluses or equip poison-resistance talismans when farming them. The Immunizing Horn Charm is your best friend here.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>⏱️ Gotcha 6: 40-Second Window</h4>
+<p data-zh="40秒的持续时间意味着你需要在进入战斗前精确计时。提前使用会导致buff在进入Boss雾门后过期；太晚使用则会浪费宝贵的输出时间。">The <strong>40-second duration</strong> requires precise timing. Pop too early and the buff expires before you reach the boss. Pop too late and you waste precious buff time. For boss fights, pop it <strong>immediately after crossing the fog gate</strong> — the buff timer runs during cutscenes.</p>
+</div>
+</section>
+
+<section class="section" id="benefits">
+<h2><span>🎁</span> Free Benefits — What Else You Get Farming These Materials</h2>
+<p data-zh="farm铁壶香的材料时，你会在游戏中最美丽的区域之一进行探索。以下是各farm路线的额外收益。">Farming for Ironjar Aromatic materials takes you through some of Elden Ring's most visually striking areas. Here is what else you will collect:</p>
+
+<h3 data-zh="在Altus Plateau farm时的额外收益">Farming Altus Plateau (Altus Bloom + Miranda Powder)</h3>
+<ul>
+<li data-zh="Arteria Leaf：同区域获取Exalted Flesh的材料">• <strong>Arteria Leaf:</strong> For <a href="exalted-flesh.html">Exalted Flesh</a>.</li>
+<li data-zh="Bloodrose：在高原边缘有少量分布">• <strong>Bloodrose:</strong> Scattered at plateau edges — for <a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>.</li>
+<li data-zh="Budding Cave Moss：如果顺便探索洞穴">• <strong>Budding Cave Moss:</strong> If you explore caves in the zone — for <a href="uplifting-aromatic.html">Uplifting Aromatic</a>.</li>
+<li data-zh="黄金种子和圣杯瓶露滴：区域内的教堂">• <strong>Golden Seeds &amp; Sacred Tears:</strong> Churches throughout the plateau.</li>
+<li data-zh="锻造石[3]和[4]：矿道中的高级锻造石">• <strong>Smithing Stones [3] &amp; [4]:</strong> For mid-to-late-game weapon upgrades.</li>
+<li data-zh="地图碎片：激活Altus Plateau地图石碑">• <strong>Altus Plateau Map Fragment:</strong> On the main road if you have not grabbed it.</li>
+</ul>
+
+<h3 data-zh="在Jarburg farm Living Jar Shard时的额外收益">Farming Jarburg (Living Jar Shard)</h3>
+<ul>
+<li data-zh="Jar-Bairn NPC任务线：Jarburg有一个重要的NPC，完成后获得独特奖励">• <strong>Jar-Bairn NPC questline:</strong> Jarburg has an important NPC with unique quest rewards — do not miss this.</li>
+<li data-zh="大量锻造石：村庄废墟中有矿脉">• <strong>Smithing Stones:</strong> Ore deposits in the village ruins.</li>
+<li data-zh="稀有材料：Potential Hero's Rune drops from great jars">• <strong>Rare materials:</strong> Great jars can occasionally drop valuable rune items.</li>
+<li data-zh="Liurnia东海岸地图探索：Jarburg位置本身就在一个隐藏区域">• <strong>Liurnia east coast exploration:</strong> Jarburg is in a hidden area — enjoy the scenic route.</li>
+</ul>
+
+<h3 data-zh="长期战略收益">Long-Term Strategic Value</h3>
+<p data-zh="掌握铁壶香的制作意味着你已经全面了解了Altus Plateau的资源分布、征服了Caelid的Abandoned Cave、并探索了Liurnia的隐藏角落Jarburg。这些经验和知识是你在艾尔登法环中最宝贵的资产。而且，铁壶香的独特机制——将防御转化为进攻资本——会改变你对整个游戏战斗系统的理解。当你学会何时站着对砍、何时翻滚躲避，你就真正掌握了艾尔登法环的精髓。">Mastering Ironjar Aromatic means you have thoroughly mapped Altus Plateau's resources, conquered the Abandoned Cave in Caelid, and explored the hidden Jarburg in Liurnia. That accumulated knowledge is one of your most valuable assets in the Lands Between. And Ironjar's unique mechanic — converting defense into offensive capital by enabling hyper-armored trades — changes your understanding of Elden Ring's combat system. When you learn when to stand and trade versus when to dodge, you have truly mastered the essence of the game.</p>
+
+<p data-zh="铁壶香与沸血香的组合是游戏中最强大的buff叠加之一——金属超级护甲+30%攻击力，让你成为一个移动的要塞。这套组合在Boss Rush、入侵PvP和高周目挑战中都有无与伦比的表现。学会制作这两种香药，你就掌握了艾尔登法环的终极力量。">The <strong>Ironjar + Bloodboil combo</strong> is one of the most powerful buff stacks in the game — metallic super armor with +30% attack power, turning you into a walking fortress. This combination excels in boss rushes, invasion PvP, and NG+ challenges. Learn to craft both, and you hold the ultimate power of the Lands Between in your flask.</p>
+
+<div class="cross-links">
+<a href="gold-pickled-fowl-foot.html" class="cross-link">← Gold-Pickled Fowl Foot (+30% Runes)</a>
+<a href="exalted-flesh.html" class="cross-link">Exalted Flesh (+20% Physical Damage)</a>
+<a href="bloodboil-aromatic.html" class="cross-link">Bloodboil Aromatic (Perfect Combo Pair)</a>
+</div>
+</section>
+
+</main>
+
+<aside class="sidebar">
+<h3>Quick Info</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Effect:</strong> Metal body, super armor, +physical negation</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Duration:</strong> ~40 seconds</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Stacks:</strong> 10</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Cookbook:</strong> Perfumer's [2]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Yield:</strong> 1 per craft</p>
+<div class="quick-nav">
+<h4>Jump to Section</h4>
+<a href="#why">Why It Matters</a>
+<a href="#recipe">Crafting Recipe</a>
+<a href="#cookbook">Cookbook Location</a>
+<a href="#materials">Farm Routes</a>
+<a href="#gotchas">Gotcha Tips</a>
+<a href="#benefits">Free Benefits</a>
+</div>
+<div class="quick-nav">
+<h4>Related Items</h4>
+<a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>
+<a href="uplifting-aromatic.html">Uplifting Aromatic</a>
+<a href="exalted-flesh.html">Exalted Flesh</a>
+</div>
+</aside>
+
+</div>
+
+<footer class="site-footer">
+<p>RelicTrek — Crafting guides for the Lands Between and beyond. Not affiliated with FromSoftware.</p>
+<p style="margin-top:8px"><a href="./">← Back to Elden Ring Index</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uplifting Aromatic — Elden Ring Crafting Guide | RelicTrek</title>
+<meta name="description" content="Complete guide to crafting Uplifting Aromatic in Elden Ring. Bubble negates one hit for entire party. Perfumer's Cookbook [2] from Abandoned Cave in Caelid. Co-op essential.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#ff4d4d;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="./">Guides</a>
+<a href="./" class="active">Crafting</a>
+<a href="./">Maps</a>
+<a href="./">Tools</a>
+</div>
+</div>
+</nav>
+
+<div class="ticker-bar">
+<div class="ticker-inner">
+🛡️ <strong>Uplifting Aromatic</strong> — Bubble negates one hit for party | Perfumer's Cookbook [2] from Abandoned Cave, Caelid | Altus Bloom + Budding Cave Moss + Silver Tear Husk | <a href="bloodboil-aromatic.html">Next: Bloodboil Aromatic →</a>
+</div>
+</div>
+
+<div class="container">
+
+<aside class="sidebar">
+<h3>Game Select</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+<a href="../no-mans-sky/">No Man's Sky</a>
+<a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+<a href="../valheim/">Valheim</a>
+<a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="./" class="active">Elden Ring</a>
+<a href="../stardew-valley/">Stardew Valley</a>
+<a href="../hades-2/">Hades 2</a>
+<a href="../satisfactory/">Satisfactory</a>
+<div class="quick-nav">
+<h4>Elden Ring Items</h4>
+<a href="gold-pickled-fowl-foot.html">Gold-Pickled Fowl Foot</a>
+<a href="exalted-flesh.html">Exalted Flesh</a>
+<a href="uplifting-aromatic.html" class="active">Uplifting Aromatic</a>
+<a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>
+<a href="ironjar-aromatic.html">Ironjar Aromatic</a>
+<a href="preserving-boluses.html">Preserving Boluses</a>
+<a href="drawstring-blood-grease.html">Drawstring Blood Grease</a>
+<a href="spark-aromatic.html">Spark Aromatic</a>
+<a href="warming-stone.html">Warming Stone</a>
+<a href="bewitching-branch.html">Bewitching Branch</a>
+</div>
+</aside>
+
+<main class="main-content">
+
+<div class="item-header">
+<div class="item-icon-legendary">🛡️</div>
+<div class="item-title">
+<h1 data-zh="振奋香">Uplifting Aromatic</h1>
+<div class="item-subtitle" data-zh="生成一个可以完全抵挡一次攻击的泡泡护盾，覆盖全队——联机必备">Bubble Negates One Hit for Entire Party — Co-op Essential</div>
+<div class="item-meta">
+<span class="difficulty">★★★★★ Very Hard</span>
+<span>Type: Aromatic (Party Buff)</span>
+<span>Stack: 10</span>
+</div>
+</div>
+</div>
+
+<section class="section" id="why">
+<h2><span>🛡️</span> Why Uplifting Aromatic Matters</h2>
+<p data-zh="振奋香是艾尔登法环中最强大的团队支援消耗品，没有之一。当你使用它时，一个金色的泡泡护盾会包裹你和所有附近的队友（包括召唤的骨灰和灵体），这个泡泡可以完全抵挡下一次受到的任何攻击——无论伤害多高。">The <strong>Uplifting Aromatic</strong> is arguably the most powerful team-support consumable in all of Elden Ring. When used, it generates a golden bubble shield around yourself and all nearby allies — including co-op partners, spirit ashes, and summoned phantoms — that <span class="highlight">completely negates the next incoming attack regardless of its damage</span>. This is not a damage reduction. It is not a percentage-based mitigation. It is a <strong>full nullification</strong> of one hit. A boss's ultimate one-shot combo opener? Nullified. An invasion backstab from a dual-wield bleed build? Nullified. An unexpected arrow during a cliffside platforming section? Nullified.</p>
+
+<p data-zh="在联机合作模式下，振奋香的价值被放大到极致。一个协调良好的四人团队每人携带10个振奋香，理论上可以互相抵消40次致命攻击。这在高周目（NG+及以上）的Boss战中尤为重要，因为敌人的伤害在后续周目中呈指数级增长。">In co-operative multiplayer, the value of Uplifting Aromatic scales exponentially. A coordinated team of four, each carrying 10 aromatics, effectively has <strong>40 automatic life saves</strong> distributed across the party. In NG+ and beyond, where enemy damage scales to horrifying levels and even tank builds can be two-shot by endgame bosses, this bubble shield transforms the entire co-op experience from a frantic scramble for survival into a methodical, tactical encounter where one mistake does not mean instant death.</p>
+
+<h3 data-zh="最佳使用场景">When to Use Uplifting Aromatic</h3>
+<ul>
+<li data-zh="Boss战开场：所有队友进入Boss房间后使用，确保全队有一层保险"><strong>Boss Fight Openers:</strong> Pop immediately upon entering a boss arena, before the engagement begins. Every player starts with a safety net.</li>
+<li data-zh="高伤害招式预警前：当Boss开始蓄力大招时立即补一个"><strong>Before Known One-Shots:</strong> When you see a boss winding up their signature ultimate (Fire Giant's fireball, Malenia's Waterfowl Dance opener, Elden Beast's Elden Stars), pop a fresh bubble.</li>
+<li data-zh="入侵PvP：被入侵时使用，可以抵挡背刺或处决"><strong>During Invasions:</strong> When invaded, the bubble can absorb a backstab or critical hit that would otherwise delete half your health bar.</li>
+<li data-zh="危险平台跳跃：在需要跳跃的悬崖边缘使用，防止跌落秒杀"><strong>Hazardous Platforming:</strong> Before challenging jumps across pitfalls — a fall counts as a hit, and the bubble will save you from death.</li>
+<li data-zh="护送任务：保护NPC不被一击秒杀"><strong>NPC Escort Quests:</strong> When escorting fragile NPCs through dangerous areas, the bubble can save them from a fatal blow.</li>
+</ul>
+
+<h3 data-zh="为什么难度是五星">Why the ★★★★★ Difficulty Rating</h3>
+<p data-zh="振奋香的难度评级是五星，原因有三：第一，制作笔记位于Caelid的Abandoned Cave——一个充满猩红腐败的极其危险的地下洞窟；第二，Budding Cave Moss只在特定的洞穴中刷新，采集路线复杂；第三，Silver Tear Husk需要从特定的史莱姆敌人身上farm，掉率不稳定。">The maximum difficulty rating comes from three converging challenges: First, the <strong>Abandoned Cave in Caelid</strong> is one of the most punishing minor dungeons in the game, filled with Scarlet Rot pools that drain your health rapidly. Second, <strong>Budding Cave Moss</strong> only spawns in specific cave biomes, making it a rare, targeted material. Third, <strong>Silver Tear Husk</strong> drops from mimetic tear slimes with inconsistent rates. Together, these factors make Uplifting Aromatic a significant crafting commitment — but one that pays off enormously for dedicated co-op players.</p>
+
+<div class="cross-links">
+<a href="exalted-flesh.html" class="cross-link">← Exalted Flesh (+20% Physical Damage)</a>
+<a href="ironjar-aromatic.html" class="cross-link">Ironjar Aromatic (Super Armor)</a>
+</div>
+</section>
+
+<section class="section" id="recipe">
+<h2><span>🧪</span> Crafting Recipe</h2>
+<p data-zh="振奋香的配方需要三种材料，每种都有独特的获取挑战。每次制作产出1个振奋香，这意味着每次使用都是实质性的材料投入。">The Uplifting Aromatic recipe requires exactly <strong>three materials</strong>, each with its own unique acquisition challenge. Each craft yields <strong>1x Uplifting Aromatic</strong>, making every use a meaningful investment of materials. Plan your crafting sessions carefully.</p>
+
+<table class="recipe-table">
+<thead>
+<tr><th>Material</th><th>Quantity</th><th>Rarity</th><th>Farmable</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🌸 <strong>Altus Bloom</strong></td>
+<td>1x</td>
+<td data-zh="中等（特定区域）">Medium (Zone-Specific)</td>
+<td>✅ Yes — Altus Plateau flower nodes</td>
+</tr>
+<tr>
+<td>🌿 <strong>Budding Cave Moss</strong></td>
+<td>1x</td>
+<td data-zh="稀有（洞穴限定）">Rare (Cave-Only)</td>
+<td>✅ Yes — Specific cave biomes</td>
+</tr>
+<tr>
+<td>🥈 <strong>Silver Tear Husk</strong></td>
+<td>1x</td>
+<td data-zh="中等（敌人掉落）">Medium (Enemy Drop)</td>
+<td>✅ Yes — Silver Tear slimes</td>
+</tr>
+</tbody>
+</table>
+
+<h3 data-zh="制作产出">Yield</h3>
+<p data-zh="每次制作产出1个振奋香。由于堆叠上限只有10个，建议不要一次制作太多——保持库存5-10个即可，用完再补充。">Each crafting attempt produces exactly <span class="highlight">1x Uplifting Aromatic</span>. The stack limit is <strong>10</strong>, so do not overcraft — keep a stockpile of 5–10 on hand and replenish as needed.</p>
+
+<div class="gotcha-box">
+<h4>⚠️ Recipe Key Notes</h4>
+<ul>
+<li data-zh="堆叠上限只有10个——不要过度制作">Stack limit is <strong>10</strong> — higher than most aromatics but still a hard cap.</li>
+<li data-zh="泡泡护盾不叠加——重复使用者只会刷新已有的泡泡">The bubble <strong>does not stack</strong> — repeated uses refresh the existing bubble, not add a second layer.</li>
+<li data-zh="效果范围约10米——确保队友在范围内">Range is approximately <strong>10 meters</strong> — make sure allies are nearby when using.</li>
+<li data-zh="可以被任何伤害触发——包括环境伤害如毒沼和坠落">Triggers on <strong>any damage source</strong>, including environmental hazards like poison swamps and fall damage.</li>
+<li data-zh="联机时所有队友都能看到泡泡视觉特效">All affected players see a visible golden bubble effect — easy to confirm the buff applied.</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Perfumer's Cookbook [2]</h2>
+<p data-zh="要制作振奋香，你需要调香师的制作笔记[2]。这本笔记位于Caelid的Abandoned Cave——一个以猩红腐败和隐藏墙壁闻名的危险地下洞窟。">To unlock the Uplifting Aromatic recipe, you must acquire <strong>Perfumer's Cookbook [2]</strong>. This Cookbook is located in the <strong>Abandoned Cave</strong> in Caelid — a punishing underground dungeon notorious for its Scarlet Rot hazards and illusory walls. This is not a casual pickup; it is a full expedition requiring preparation and caution.</p>
+
+<div class="cookbook-box">
+<h4>📖 Perfumer's Cookbook [2]</h4>
+<p><strong>Location:</strong> Abandoned Cave, central Caelid</p>
+<p><strong>Coordinates:</strong> Southeastern edge of the Swamp of Aeonia, hidden behind a cliff face</p>
+<p><strong>Recipe Unlocked:</strong> Uplifting Aromatic</p>
+<p><strong>Also Unlocks:</strong> Ironjar Aromatic (see <a href="ironjar-aromatic.html">Ironjar Aromatic guide</a>)</p>
+</div>
+
+<h3 data-zh="如何找到Abandoned Cave">How to Find Abandoned Cave</h3>
+<p data-zh="Abandoned Cave的入口被完美地隐藏在Caelid猩红沼泽东南边缘的悬崖壁上。没有地图标记，没有NPC指引——你需要知道确切的寻找位置。">The Abandoned Cave entrance is <strong>perfectly hidden</strong> in the cliff face at the southeastern edge of the Swamp of Aeonia. There is no map marker, no NPC hint — you need to know exactly where to look.</p>
+
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Start from the <strong>Smoldering Wall</strong> Site of Grace in central Caelid (the same area where you get Missionary's Cookbook [2]).</p>
+<p><span class="step">Step 2:</span> Head south into the <strong>Swamp of Aeonia</strong> — the massive red lake of Scarlet Rot.</p>
+<p><span class="step">Step 3:</span> Ride Torrent southeast across the swamp, hugging the southern cliff wall. The rot will damage you — bring <strong>Preserving Boluses</strong> or the <strong>Flame, Cleanse Me</strong> incantation.</p>
+<p><span class="step">Step 4:</span> Look for a break in the cliff wall with a small overhang. The entrance appears as a dark patch in the rock — it is extremely easy to miss.</p>
+<p><span class="step">Step 5:</span> Dismount and walk into the dark crevice. You will find the dungeon entrance lift inside.</p>
+<p><span class="step">Step 6:</span> Take the lift down and rest at the Abandoned Cave Site of Grace.</p>
+</div>
+
+<h3 data-zh="Abandoned Cave内部攻略">Navigating Abandoned Cave</h3>
+<p data-zh="Abandoned Cave虽然不算一个大型地下城，但它的猩红腐败机制让它极其危险。以下是完整攻略。">The Abandoned Cave is not a large dungeon, but its Scarlet Rot mechanics make it exceptionally dangerous. Here is the full walkthrough:</p>
+
+<div class="route-tree">
+<p><span class="step">Step 1:</span> From the grace, proceed through the narrow tunnel. You will encounter <strong>Servants of Rot</strong> — humanoid enemies that inflict Scarlet Rot with their attacks. Kill them from range if possible.</p>
+<p><span class="step">Step 2:</span> The main chamber has a <strong>floor covered in Scarlet Rot</strong>. Standing in it builds rot rapidly. Use Preserving Boluses, equip the <strong>Immunizing Horn Charm</strong> talisman, or cast Flame, Cleanse Me to manage buildup.</p>
+<p><span class="step">Step 3:</span> Cross the rot pool quickly — hug the right wall where the rot is shallowest. There are raised platforms you can stand on to let the rot bar drain.</p>
+<p><span class="step">Step 4:</span> Look for <strong>illusions and hidden passages</strong>. The cave has breakable walls and hidden alcoves. The Cookbook is in a side chamber accessed through a hidden path — hit suspicious walls with your weapon.</p>
+<p><span class="step">Step 5:</span> The Cookbook is a <strong>glowing white item pickup</strong> on a corpse in a small alcove. Grab it and retreat — there is a boss door deeper in, but you do not need to fight it for the Cookbook.</p>
+</div>
+
+<h3 data-zh="进入Abandoned Cave的准备工作">Essential Preparation</h3>
+<ul>
+<li data-zh="至少携带3-5个 preserving boluses 用于清除猩红腐败">Bring <strong>3–5 Preserving Boluses</strong> to cure Scarlet Rot buildup.</li>
+<li data-zh="装备免疫护符（Immunizing Horn Charm）减少异常状态积累">Equip <strong>Immunizing Horn Charm</strong> (+Immunity/robustness).</li>
+<li data-zh="学会'火焰啊，净化我'祷告是最理想的准备">Learn the incantation <strong>Flame, Cleanse Me</strong> (12 Faith) — infinite rot cleansing.</li>
+<li data-zh="穿着轻甲可以提高在毒沼中的移动速度">Light armor improves movement speed through the swamp sections.</li>
+<li data-zh="召唤灵体可以帮你分散敌人注意力">Summon spirit ashes to draw enemy aggro while you navigate.</li>
+</ul>
+
+<div class="cross-links">
+<a href="bloodboil-aromatic.html" class="cross-link">Next: Perfumer's Cookbook [1] (Bloodboil)</a>
+<a href="ironjar-aromatic.html" class="cross-link">Ironjar Aromatic (Same Cookbook [2])</a>
+</div>
+</section>
+
+<section class="section" id="materials">
+<h2><span>🌿</span> Materials &amp; Farm Locations</h2>
+<p data-zh="振奋香的三种材料各有其独特的获取挑战。Altus Bloom在高原上相对容易找到，Budding Cave Moss需要深入特定洞穴，而Silver Tear Husk的farm效率取决于你的发现力数值。">Each of the three Uplifting Aromatic materials presents its own acquisition puzzle. Altus Bloom is straightforward zone-specific gathering, Budding Cave Moss requires dedicated cave expeditions, and Silver Tear Husk farming efficiency scales directly with your Discovery stat.</p>
+
+<h3>🌸 Material 1: Altus Bloom</h3>
+<div class="material-item">
+<div class="material-icon">🌸</div>
+<div class="material-info">
+<h4>Altus Bloom <span style="color:#e6a817">★ Zone-Specific Target Farm</span></h4>
+<p data-zh="Altus Bloom是一种生长在Altus Plateau的黄色花朵。它是所有芳香类道具的基础材料，在高原上大量分布。">The <strong>Altus Bloom</strong> is a golden-yellow flower that grows exclusively in the <strong>Altus Plateau</strong> region. It serves as the foundational ingredient for all Perfumer aromatics and is reasonably abundant across the plateau — though you will want to learn the densest clusters for efficient bulk farming.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Altus Bloom Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Altus Highway Junction — Densest Field</strong></p>
+<p data-zh="从Altus Highway Junction赐福点出发，向各个方向探索道路两侧。这里通常有8-12朵Altus Bloom，是整个高原最密集的采集点。">From the <strong>Altus Highway Junction</strong> grace, explore all directions along the road. This area reliably holds <strong>8–12 Altus Blooms</strong> within a 3-minute riding radius — the densest field on the entire plateau. Rest at grace, repeat.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Road of Iniquity Side Path — Hidden Clusters</strong></p>
+<p data-zh="从Road of Iniquity赐福点出发，向东北方向的侧路探索。这里人迹罕至但花朵密度很高。">From the <strong>Road of Iniquity Side Path</strong> grace, head northeast along the side paths. Less trafficked but high flower density. Expect <strong>5–7 blooms</strong> per cycle.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Lux Ruins — Garden Beds</strong></p>
+<p data-zh="Lux Ruins周围的花园区域有3-5朵Altus Bloom，可以与其他材料的farm路线结合。">The gardens surrounding <strong>Lux Ruins</strong> hold <strong>3–5 Altus Blooms</strong>. Combine this route with your Arteria Leaf farming for maximum efficiency.</p>
+</div>
+
+<h3>🌿 Material 2: Budding Cave Moss</h3>
+<div class="material-item">
+<div class="material-icon">🌿</div>
+<div class="material-info">
+<h4>Budding Cave Moss <span style="color:#ff4d4d">★★ Rare — Cave Biome Only</span></h4>
+<p data-zh="Budding Cave Moss是所有振奋香材料中最难大量获取的。它只生长在特定洞穴的潮湿岩壁上，外观是发出微弱绿光的苔藓簇。采集后不会立刻刷新，需要赐福休息重置。">The <strong>Budding Cave Moss</strong> is your Uplifting Aromatic bottleneck material. This faintly glowing green moss only grows on damp cave walls in specific cave biomes. Its limited spawn points and cave-locked availability make it the most challenging material to acquire in bulk.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Budding Cave Moss Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Tombsward Cave — Weeping Peninsula</strong></p>
+<p data-zh="Tombsward Cave是farm Budding Cave Moss的最佳地点。从入口开始沿着主通道前进，岩壁上会刷新3-4簇苔藓。这个洞穴难度较低，适合反复farm。"><strong>Tombsward Cave</strong> in the Weeping Peninsula is the best Budding Cave Moss farm. From the entrance, follow the main passage — <strong>3–4 moss clusters</strong> grow on the cave walls. This cave is low-difficulty, making it ideal for repeated farming runs. Rest at the Site of Grace inside, repeat.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Coastal Cave — Limgrave</strong></p>
+<p data-zh="海岸洞窟的入口通道两侧岩壁上有2-3簇Budding Cave Moss。由于入口赐福点很近，farm效率不错。">The entrance passage of <strong>Coastal Cave</strong> in Limgrave has <strong>2–3 moss clusters</strong> on its walls. The grace is right at the entrance, making this an efficient backup farm.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Groveside Cave — Limgrave</strong></p>
+<p data-zh="Groveside Cave洞窟内部有2簇Budding Cave Moss。这是一个非常早期就能到达的洞穴。"><strong>Groveside Cave</strong> near the Church of Elleh has <strong>2 moss clusters</strong> inside. Very early-game accessible.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🏅 #4: Lakeside Crystal Cave — Liurnia</strong></p>
+<p data-zh="Liurnia的Lakeside Crystal Cave有3-4簇Budding Cave Moss，但洞穴较长且敌人较多。">The <strong>Lakeside Crystal Cave</strong> in Liurnia holds <strong>3–4 moss clusters</strong>, though the cave is longer and more enemy-dense than the Limgrave options.</p>
+</div>
+
+<h4 data-zh="Budding Cave Moss 采集技巧">Budding Cave Moss Farming Tips</h4>
+<ul>
+<li data-zh="苔藓在岩壁上呈微弱的绿色发光——使用火把可以更清楚地看到">Moss appears as faintly glowing green patches — use a <strong>torch</strong> for better visibility.</li>
+<li data-zh="每次赐福休息后刷新——可以在同一个洞穴内无限重复">Respawns on grace rest — infinitely repeatable within the same cave.</li>
+<li data-zh="不要跑太快——苔藓很容易错过，慢慢探索岩壁">Do not rush — moss is easy to miss on the walls. Scan carefully.</li>
+<li data-zh="多个洞穴轮换farm可以避免无聊，同时获取不同洞穴的其他材料">Rotate between multiple caves to avoid boredom and collect different cave-specific materials.</li>
+</ul>
+
+<h3>🥈 Material 3: Silver Tear Husk</h3>
+<div class="material-item">
+<div class="material-icon">🥈</div>
+<div class="material-info">
+<h4>Silver Tear Husk <span style="color:#e6a817">★ Enemy Drop Farm</span></h4>
+<p data-zh="Silver Tear Husk由Silver Tear史莱姆敌人掉落——这些银色的变形生物可以在多个地下区域找到。掉率中等（约30-50%），但敌人数量很多。">The <strong>Silver Tear Husk</strong> drops from <strong>Silver Tear</strong> slime enemies — silvery, shape-shifting blobs found in multiple underground zones. Drop rates are moderate (roughly 30–50%), but enemy density is high in the right locations.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Silver Tear Husk Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Nokron, Eternal City — Highest Density</strong></p>
+<p data-zh="永恒之城Nokron是farm Silver Tear Husk的最佳地点。整个城市充满了Silver Tear敌人，而且还有很多发光的白色Silver Tear尸体可以直接拾取。"><strong>Nokron, Eternal City</strong> is the premier Silver Tear Husk farm. The entire city is filled with Silver Tear enemies, and many glowing white corpses hold <strong>direct Silver Tear Husk pickups</strong>. You will collect 10+ husks in a single 10-minute sweep of the aqueduct area.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Siofra River — Early-Game Alternative</strong></p>
+<p data-zh="Siofra River的上层区域有少量Silver Tear敌人，适合还没有解锁Nokron的玩家。">The upper levels of <strong>Siofra River</strong> have scattered Silver Tear enemies. Lower density than Nokron but accessible much earlier in a playthrough.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Deeproot Depths — Late-Game Backup</strong></p>
+<p data-zh="Deeproot Depths深层区域有Silver Tear分布，但距离赐福点较远，效率不如Nokron。">The <strong>Deeproot Depths</strong> have Silver Tear spawns, but the distances between graces are longer, making this less efficient than Nokron farming.</p>
+</div>
+
+<div class="cross-links">
+<a href="ironjar-aromatic.html" class="cross-link">Ironjar Aromatic (Altus Bloom + Living Jar Shard)</a>
+<a href="bloodboil-aromatic.html" class="cross-link">Bloodboil Aromatic (Altus Bloom + Bloodrose)</a>
+</div>
+</section>
+
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> Gotcha Tips — What Can Go Wrong</h2>
+<p data-zh="振奋香虽然极其强大，但有几个关键陷阱需要注意。忽视这些问题可能导致浪费珍贵的材料。">Uplifting Aromatic's power comes with significant gotchas that can waste your precious materials if ignored. Here is the complete warning list.</p>
+
+<div class="gotcha-box">
+<h4>🦶 Gotcha 1: Bubble Triggers on Any Damage</h4>
+<p data-zh="泡泡护盾会在受到任何伤害时破裂——包括毒沼的1点伤害、坠落的擦伤、甚至是环境中的火星。在毒沼或火海中使用时，泡泡可能在几秒钟内就被浪费掉。">The bubble pops on <strong>any damage whatsoever</strong> — poison swamp tick damage, a tiny fall scrape, even environmental fire embers. Using Uplifting Aromatic while standing in a hazard zone wastes the bubble within seconds. <strong>Pop it on clean, safe ground only.</strong></p>
+</div>
+
+<div class="gotcha-box">
+<h4>🏃 Gotcha 2: Range Is Limited</h4>
+<p data-zh="泡泡的范围只有约10米。如果你的队友分散站位（如远程法师在远处），他们可能不会被泡泡覆盖。使用时确保所有人都在范围内。">The bubble only extends roughly <strong>10 meters</strong>. If your co-op partner is a ranged mage standing far back, they may not receive the buff. <strong>Group up before popping</strong>, or communicate the buff application.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>💀 Gotcha 3: Abandoned Cave Is Brutal</h4>
+<p data-zh="Abandoned Cave的猩红腐败机制可以在几秒钟内杀死未准备的玩家。进入前务必携带足够的Preserving Boluses或学会净化祷告。">The Abandoned Cave's Scarlet Rot can kill an unprepared player in under 10 seconds. <strong>Never enter without Preserving Boluses or the Flame, Cleanse Me incantation.</strong> The rot buildup is relentless, and the pool section requires precise movement.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🌿 Gotcha 4: Budding Cave Moss Is the Real Bottleneck</h4>
+<p data-zh="虽然Altus Bloom和Silver Tear Husk相对容易farm，但Budding Cave Moss的洞穴限定刷新机制让它成为真正的瓶颈。始终优先farm苔藓。">While Altus Bloom and Silver Tear Husk are relatively accessible, <strong>Budding Cave Moss is your true limiting reagent</strong>. Its cave-locked spawn restriction means you cannot efficiently farm it while doing other activities. Prioritize cave runs specifically for moss collection.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🧱 Gotcha 5: Hidden Walls in Abandoned Cave</h4>
+<p data-zh="制作笔记藏在Abandoned Cave的隐藏墙壁后面。如果你只是沿着主路走，会直接错过。记得击打所有可疑的岩壁。">The Cookbook is behind a <strong>hidden/illusory wall</strong> in the Abandoned Cave. If you follow the main path without checking side passages, you will walk right past it. <strong>Hit every suspicious wall</strong> — the telltale sound and visual cue will reveal the hidden chamber.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>⚔️ Gotcha 6: Cave Boss Is Optional but Tough</h4>
+<p data-zh="Abandoned Cave的Boss是一对Cleanrot Knights——非常强力的敌人。好消息是你不需要击败他们来获取制作笔记。拿到笔记就可以离开。">The Abandoned Cave boss is a <strong>duo of Cleanrot Knights</strong> — powerful, aggressive enemies with rot-inflicting attacks. The good news: <strong>you do not need to fight them</strong> to get the Cookbook. Grab the item and leave through the entrance.</p>
+</div>
+</section>
+
+<section class="section" id="benefits">
+<h2><span>🎁</span> Free Benefits — What Else You Get Farming These Materials</h2>
+<p data-zh="farm振奋香的材料会带你穿越艾尔登法环最美丽和最危险的区域。以下是各farm路线的额外收益。">The material farming routes for Uplifting Aromatic take you through some of Elden Ring's most beautiful and dangerous areas. Here is what else you will collect along the way:</p>
+
+<h3 data-zh="在Altus Plateau farm Altus Bloom时的额外收益">Farming Altus Plateau (Altus Bloom)</h3>
+<ul>
+<li data-zh="Arteria Leaf：同区域farm Exalted Flesh的材料">• <strong>Arteria Leaf:</strong> Same zone — needed for <a href="exalted-flesh.html">Exalted Flesh</a>.</li>
+<li data-zh=" Miranda Powder：Miranda花敌人掉落，制作铁壶香药的材料">• <strong>Miranda Powder:</strong> From Miranda flowers — needed for <a href="ironjar-aromatic.html">Ironjar Aromatic</a>.</li>
+<li data-zh="黄金种子和圣杯瓶露滴：区域内的教堂">• <strong>Golden Seeds &amp; Sacred Tears:</strong> Churches in Altus hold these upgrades.</li>
+<li data-zh="锻造石[3]和[4]：矿道中的高级锻造石">• <strong>Smithing Stones [3] &amp; [4]:</strong> Mining tunnels for weapon upgrades.</li>
+<li data-zh="火山官邸的邀请函：NPC任务触发">• <strong>Volcano Manor invitation:</strong> An NPC in the zone triggers the manor questline.</li>
+</ul>
+
+<h3 data-zh="在洞穴farm Budding Cave Moss时的额外收益">Farming Caves (Budding Cave Moss)</h3>
+<ul>
+<li data-zh="洞穴苔藓：普通洞穴苔藓，用于多种制作配方">• <strong>Cave Moss:</strong> Regular moss used in multiple crafting recipes.</li>
+<li data-zh="锻造石：所有洞穴都有矿脉">• <strong>Smithing Stones:</strong> Every cave has ore deposits.</li>
+<li data-zh="卢恩：洞穴敌人提供不错的卢恩收入">• <strong>Runes:</strong> Cave enemies provide solid rune income.</li>
+<li data-zh="独特道具：每个洞穴都有独特的战利品">• <strong>Unique items:</strong> Each cave has unique loot — check walkthroughs for your chosen cave.</li>
+</ul>
+
+<h3 data-zh="在Nokron farm Silver Tear Husk时的额外收益">Farming Nokron (Silver Tear Husk)</h3>
+<ul>
+<li data-zh="灵依采摘工的铃珠：升级骨灰的材料">• <strong>Ghost Gloveworts:</strong> Spirit ash upgrade materials abundant in Nokron.</li>
+<li data-zh="大量卢恩：永恒之城的敌人提供丰厚的卢恩">• <strong>Massive rune gains:</strong> Nokron enemies are rune-rich.</li>
+<li data-zh=" Mimic Tear Ashes：最强召唤骨灰之一">• <strong>Mimic Tear Ashes:</strong> One of the best spirit ashes, found in a hidden area of Nokron.</li>
+<li data-zh="黑夜彗星等强力魔法和战灰">• <strong>Powerful spells and ashes:</strong> Nokron holds endgame-tier magic.</li>
+</ul>
+
+<h3 data-zh="长期战略收益">Long-Term Strategic Value</h3>
+<p data-zh="学会制作振奋香意味着你已经征服了Caelid最危险的洞窟之一，掌握了Altus Plateau的采集路线，并深入了永恒之城Nokron。这些知识和经验是你在艾尔登法环中成长的证明。更重要的是，一旦你掌握了Uplifting Aromatic的制作，你就同时为制作Ironjar Aromatic打开了大门——因为两者共用同一本Perfumer's Cookbook [2]。">Learning to craft Uplifting Aromatic means you have conquered one of Caelid's most dangerous dungeons, mastered the farming routes of Altus Plateau, and delved into the Eternal City of Nokron. That knowledge and experience are badges of growth in the Lands Between. More practically, once you have Perfumer's Cookbook [2], you have also unlocked the <a href="ironjar-aromatic.html">Ironjar Aromatic</a> — sharing the same Cookbook means two powerful defensive tools for the price of one perilous cave dive.</p>
+
+<div class="cross-links">
+<a href="bloodboil-aromatic.html" class="cross-link">→ Next: Bloodboil Aromatic (+30% Attack, -25% Defense)</a>
+<a href="ironjar-aromatic.html" class="cross-link">Ironjar Aromatic (Metal Body Super Armor)</a>
+<a href="gold-pickled-fowl-foot.html" class="cross-link">Gold-Pickled Fowl Foot (+30% Runes)</a>
+</div>
+</section>
+
+</main>
+
+<aside class="sidebar">
+<h3>Quick Info</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Effect:</strong> Bubble negates 1 hit</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Duration:</strong> Until triggered</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Stacks:</strong> 10</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Cookbook:</strong> Perfumer's [2]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Yield:</strong> 1 per craft</p>
+<div class="quick-nav">
+<h4>Jump to Section</h4>
+<a href="#why">Why It Matters</a>
+<a href="#recipe">Crafting Recipe</a>
+<a href="#cookbook">Cookbook Location</a>
+<a href="#materials">Farm Routes</a>
+<a href="#gotchas">Gotcha Tips</a>
+<a href="#benefits">Free Benefits</a>
+</div>
+<div class="quick-nav">
+<h4>Related Items</h4>
+<a href="ironjar-aromatic.html">Ironjar Aromatic</a>
+<a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>
+<a href="gold-pickled-fowl-foot.html">Gold-Pickled Fowl Foot</a>
+</div>
+</aside>
+
+</div>
+
+<footer class="site-footer">
+<p>RelicTrek — Crafting guides for the Lands Between and beyond. Not affiliated with FromSoftware.</p>
+<p style="margin-top:8px"><a href="./">← Back to Elden Ring Index</a></p>
+</footer>
+
+</body>
+</html>

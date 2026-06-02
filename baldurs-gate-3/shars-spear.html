@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shar's Spear of Evening Guide — Baldur's Gate 3 | CraftHunt</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0d0d0d;color:#e0e0e0;line-height:1.7}
+a{color:#c9a050;text-decoration:none}
+a:hover{color:#f0d080}
+.nav{background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;border-bottom:2px solid #c9a050;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:20px;font-weight:bold;color:#c9a050;margin-right:30px}
+.nav a{color:#e0e0e0;margin-right:20px;font-size:14px}
+.nav a:hover{color:#c9a050}
+.ticker{background:#2a1a00;padding:8px 20px;font-size:13px;border-bottom:1px solid #444;color:#c9a050}
+.container{display:flex;max-width:1600px;margin:0 auto;padding:20px;gap:20px}
+.left-sidebar{width:260px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content;max-height:calc(100vh - 80px);overflow-y:auto}
+.left-sidebar h3{color:#c9a050;margin-bottom:12px;font-size:16px}
+.left-sidebar a{display:block;padding:6px 0;color:#aaa;font-size:14px}
+.left-sidebar a:hover,.left-sidebar a.active{color:#c9a050}
+.left-sidebar .quick-nav{margin-top:15px;padding-top:15px;border-top:1px solid #2a2a2a}
+.left-sidebar .quick-nav h4{color:#c9a050;margin-bottom:10px;font-size:14px}
+.main-content{flex:1;min-width:0}
+.right-sidebar{width:300px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content}
+.right-sidebar h4{color:#c9a050;margin-bottom:12px;font-size:15px}
+.right-sidebar .info-box{background:#1a1a1a;padding:12px;border-radius:6px;margin-bottom:12px;border:1px solid #2a2a2a}
+.right-sidebar .info-box .label{color:#888;font-size:12px;text-transform:uppercase}
+.right-sidebar .info-box .value{color:#e0e0e0;font-size:14px;font-weight:bold}
+.footer{background:#1a1a1a;text-align:center;padding:20px;margin-top:40px;border-top:2px solid #2a2a2a;color:#888;font-size:13px}
+.section{background:#161616;padding:25px;margin-bottom:20px;border-radius:8px;border:1px solid #2a2a2a}
+.section h2{color:#c9a050;margin-bottom:15px;font-size:22px;display:flex;align-items:center;gap:10px}
+.section h3{color:#e0e0e0;margin:18px 0 10px;font-size:18px}
+.item-header{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding:20px;background:#1a1a1a;border-radius:8px;border:2px solid #c9a050}
+.item-icon-legendary{width:80px;height:80px;background:#2a1a00;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #c9a050}
+.item-icon-epic{width:80px;height:80px;background:#1a0a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #9b59b6}
+.item-icon-rare{width:80px;height:80px;background:#0a1a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #3498db}
+.item-icon-accessory{width:80px;height:80px;background:#0a2e1a;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #2ecc71}
+.item-title h1{color:#c9a050;font-size:28px;margin-bottom:5px}
+.item-meta{color:#888;font-size:14px}
+.difficulty{color:#e74c3c;font-weight:bold}
+.gotcha-box{background:#2a1a00;padding:15px;border-radius:6px;border-left:4px solid #c9a050;margin:15px 0}
+.gotcha-box h4{color:#c9a050;margin-bottom:8px}
+.route-tree{padding-left:20px;border-left:2px solid #c9a050;margin:15px 0}
+.route-tree li{margin:10px 0;list-style:none;position:relative;padding-left:15px}
+.route-tree li::before{content:'◆';position:absolute;left:-20px;color:#c9a050}
+.material-item{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;padding:6px 12px;border-radius:4px;margin:4px;border:1px solid #2a2a2a;font-size:13px}
+.tag{display:inline-block;padding:3px 10px;border-radius:3px;font-size:12px;font-weight:bold;margin:2px}
+.tag-act1{background:#2a4a00;color:#7fff00}
+.tag-act2{background:#4a2a00;color:#ffa500}
+.tag-act3{background:#4a002a;color:#ff6b9d}
+.tag-legendary{background:#2a1a00;color:#c9a050;border:1px solid #c9a050}
+.tag-rare{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+.tag-warning{background:#3a1a00;color:#e67e22;border:1px solid #e67e22}
+.tag-info{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+pre{background:#0d0d0d;padding:15px;border-radius:6px;overflow-x:auto;border:1px solid #2a2a2a;color:#c9a050;font-family:Consolas,monospace;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th,td{padding:10px;text-align:left;border-bottom:1px solid #2a2a2a}
+th{background:#1a1a1a;color:#c9a050;font-weight:600}
+tr:hover{background:#1a1a1a}
+.guide-nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.guide-nav a{padding:8px 16px;background:#1a1a1a;border-radius:4px;border:1px solid #2a2a2a;font-size:13px;color:#aaa}
+.guide-nav a:hover,.guide-nav a.active{background:#2a1a00;color:#c9a050;border-color:#c9a050}
+.highlight{color:#c9a050;font-weight:bold}
+.warning-box{background:#3a0000;padding:15px;border-radius:6px;border-left:4px solid #e74c3c;margin:15px 0}
+.warning-box h4{color:#e74c3c;margin-bottom:8px}
+.npc-name{color:#9b59b6;font-weight:bold}
+.location-name{color:#2ecc71;font-weight:bold}
+.item-name{color:#c9a050;font-weight:bold}
+.code-block{background:#0d0d0d;padding:12px 15px;border-radius:4px;border:1px solid #2a2a2a;font-family:Consolas,monospace;color:#c9a050;margin:10px 0;display:block}
+@media(max-width:1200px){.right-sidebar{display:none}}@media(max-width:900px){.left-sidebar{display:none}.container{padding:10px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-logo">⚔ CraftHunt</div>
+<a href="../">Home</a>
+<a href="../">Games</a>
+<a href="../">Guides</a>
+<a href="../">Maps</a>
+<a href="../">Builds</a>
+<a href="../">Items</a>
+</nav>
+<div class="ticker">📍 Current Guide: Shar's Spear of Evening — Legendary Spear — Gauntlet of Shar, Act 2 — Difficulty: ★★★★★ — Requires Shadowheart embraces Shar</div>
+<div class="container">
+<aside class="left-sidebar">
+<h3>🎮 Game Navigation</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man\'s Sky</a>
+      <a href="../baldurs-gate-3/">Baldur\'s Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="../no-mans-sky/">No Man's Sky</a>
+<a href="./" class="active">Baldur's Gate 3</a>
+<a href="../valheim/">Valheim</a>
+<a href="../path-of-exile-2/">Path of Exile 2</a>
+<div class="quick-nav">
+<h4>BG3 Items</h4>
+<a href="blood-of-lathander.html">Blood of Lathander</a>
+<a href="gontr-mael.html">Gontr Mael</a>
+<a href="nyrulna.html">Nyrulna</a>
+<a href="shars-spear.html" class="active">Shar's Spear of Evening</a>
+<a href="duellist-gloves.html">Duellist's Prismatic Gloves</a>
+<a href="helldusk-armor.html">Helldusk Armor</a>
+<a href="moonlantern.html">Moonlantern</a>
+<a href="silver-sword.html">Silver Sword of the Astral Plane</a>
+<a href="devilfoil-mask.html">Devilfoil Mask</a>
+<a href="shadowheart-spear.html">Shadowheart's Spear of Night</a>
+</div>
+</aside>
+<main class="main-content">
+<div class="guide-nav">
+<a href="#overview" class="active">Overview</a>
+<a href="#acquisition">Acquisition</a>
+<a href="#requirements">Requirements</a>
+<a href="#route">Step-by-Step Route</a>
+<a href="#gotcha">Gotcha Tips</a>
+<a href="#benefits">Free Benefits</a>
+</div>
+<div class="item-header">
+<div class="item-icon-legendary">🌑</div>
+<div class="item-title">
+<h1>Shar's Spear of Evening</h1>
+<div class="item-meta">Legendary Spear | Act 2 | <span class="difficulty">Difficulty: ★★★★★</span> | Gauntlet of Shar — Shadowheart's Dark Path</div>
+</div>
+</div>
+<section class="section" id="overview">
+<h2>📋 Overview</h2>
+<p>The <span class="item-name">Shar's Spear of Evening</span> is a <span class="tag tag-legendary">LEGENDARY</span> spear of profound darkness and devastating power, representing the absolute pinnacle of what can be achieved when one fully embraces the night. This weapon is unique among Baldur's Gate 3's legendary items in that it is not merely found — it is <span class="highlight">awarded</span> by the goddess Shar herself to those who prove their unwavering devotion to her cause. The spear embodies the fundamental nature of its divine patron: the quiet, inevitable darkness that swallows all light, the comforting void that waits at the end of every life, and the cold certainty of loss that Shar teaches her faithful to accept.</p>
+<p>As a legendary spear, Shar's Spear of Evening deals <span class="highlight">1d8 piercing damage</span> plus an additional <span class="highlight">1d8 necrotic damage</span> on every successful hit. This dual damage type makes it extraordinarily effective against a wide range of enemy types — the piercing damage overcomes the physical resistances common to fiends and constructs, while the necrotic component bypasses the damage reduction of undead (who are typically immune or resistant to poison and psychic damage) and proves devastating against living creatures who rarely prepare defenses against the energy of death itself. Few enemies in the entire game resist both piercing and necrotic damage simultaneously, making this spear one of the most universally effective weapons available.</p>
+<p>But the raw damage numbers only tell part of the story. The true power of Shar's Spear of Evening lies in its thematic synergy with Shadowheart's dark path and the unique abilities it grants to those who wield it in Shar's name. The spear is intrinsically linked to the <span class="location-name">Gauntlet of Shar</span>, the massive dungeon complex hidden beneath the <span class="location-name">Shadow-Cursed Lands</span> in Act 2, and represents the ultimate reward for players who choose to guide Shadowheart down the darkest possible path — one where she rejects her past, her name, and her latent connection to Selûne in favor of total devotion to the Lady of Loss.</p>
+<p>This weapon is <span class="highlight">MUTUALLY EXCLUSIVE</span> with the <span class="item-name">Moonlight Glaive</span> and other light-aligned rewards from the Gauntlet of Shar. If Shadowheart spares <span class="npc-name">Aylin the Nightsong</span> or rejects Shar's teachings at any point, Shar's Spear of Evening becomes permanently unavailable in that playthrough. This binary choice structure makes the spear one of the most significant decision-locked items in the game, and its acquisition fundamentally alters Shadowheart's character arc for the remainder of the campaign. Players seeking this weapon must commit fully to the dark path — there are no half-measures when dealing with a goddess of loss.</p>
+<p>The spear's visual design reflects its patron goddess with haunting beauty. The shaft is forged from a material that seems to absorb light, appearing as a void-black rod that is difficult to focus on directly. The spearhead is shaped like a crescent moon turned upside down — a deliberate perversion of Selûne's symbol — and appears to be carved from solidified shadow. When wielded, tendrils of darkness coil around the wielder's arms, and successful strikes leave wounds that do not bleed but instead seem to erode the target's very existence, leaving patches of absolute darkness where flesh should be. The spear is cold to the touch, uncomfortably so, and characters not devoted to Shar report hearing faint whispers of loss and mourning when holding it.</p>
+<p>Acquiring Shar's Spear of Evening requires completing the entire Gauntlet of Shar, making the pivotal choice at its climax to sacrifice Aylin the Nightsong to Shar's altar, and then claiming the weapon as your divine reward. This guide will walk you through every step of this dark journey, including how to ensure Shadowheart remains on the path of darkness, the exact dialogue choices needed at critical moments, and how to maximize the spear's effectiveness once acquired.</p>
+<table>
+<thead><tr><th>Property</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Weapon Type</td><td>Spear (Simple Melee Weapon)</td></tr>
+<tr><td>Rarity</td><td>Legendary</td></tr>
+<tr><td>Damage</td><td>1d8 Piercing + 1d8 Necrotic</td></tr>
+<tr><td>Damage Types</td><td>Piercing (physical) + Necrotic (magical)</td></tr>
+<tr><td>Enchantment</td><td>+2 (attack and damage rolls)</td></tr>
+<tr><td>Versatile</td><td>Yes (1d10 when wielded two-handed)</td></tr>
+<tr><td>Thrown</td><td>Yes (range 20/60)</td></tr>
+<tr><td>Special Properties</td><td>Dark blessing, necrotic aura, Shar's favor</td></tr>
+<tr><td>Location</td><td>Gauntlet of Shar, Inner Sanctum</td></tr>
+<tr><td>Requirement</td><td>Shadowheart must embrace Shar and sacrifice Aylin</td></tr>
+<tr><td>Optimal Wielder</td><td>Shadowheart (Cleric of Shar)</td></tr>
+</tbody>
+</table>
+</section>
+<section class="section" id="acquisition">
+<h2>⚔ Acquisition Method</h2>
+<p>The acquisition of Shar's Spear of Evening is fundamentally a story reward rather than a loot drop. You do not find it in a chest or take it from a defeated enemy — it is bestowed upon you by Shar herself (through her intermediary) as recognition of your unwavering devotion. This makes the acquisition process primarily about making the right choices throughout Shadowheart's companion quest and the Gauntlet of Shar, rather than about combat prowess or puzzle-solving ability (though both are required to reach the choice point).</p>
+<h3>Phase 1: Shadowheart's Companion Quest — The Dark Path (Acts 1-2)</h3>
+<p>Shadowheart's journey toward Shar begins in Act 1, long before you ever set foot in the Gauntlet of Shar. The choices you make throughout Acts 1 and 2 determine whether she will even consider embracing Shar fully when the moment of truth arrives. To ensure she remains on the dark path:</p>
+<div class="route-tree">
+<li><strong>Support her secrecy:</strong> When Shadowheart is evasive about her past, do not push her to open up. Respect her privacy and choose dialogue options that acknowledge her right to keep secrets. Example: "Your past is your own. I trust you." (Approval +5)</li>
+<li><strong>Encourage Shar worship:</strong> When she speaks about Shar, choose dialogue that validates her faith rather than questioning it. Example: "Shar's wisdom has kept you alive. There's value in that." (Approval +3)</li>
+<li><strong>Reject Selûne influence:</strong> Whenever Selûne or her followers are mentioned, choose dismissive or hostile dialogue. Do NOT show sympathy to Selûne worshippers. Example dialogue to avoid: "Selûne seems kind" or "Moonlight is beautiful."</li>
+<li><strong>Approve of dark actions:</strong> When Shadowheart suggests morally questionable actions, support her. When she wants to steal, deceive, or eliminate threats preemptively, agree.</li>
+<li><strong>High approval:</strong> Maintain high approval with Shadowheart throughout Acts 1 and 2. High approval is essential for her to trust you enough to follow your guidance at the critical moment.</li>
+</div>
+<h3>Phase 2: Entering the Gauntlet of Shar (Act 2)</h3>
+<p>Shadowheart must be in your active party when you enter the <span class="location-name">Gauntlet of Shar</span>, located beneath the <span class="location-name">Thorm Mausoleum</span> in the Shadow-Cursed Lands. Her presence triggers unique dialogue throughout the dungeon and is required for the pivotal choice at the end.</p>
+<p>Upon entering the Gauntlet, Shadowheart will express reverence for the site and share insights about Shar's teachings. Respond supportively to all her dialogue in this area — any dismissiveness now will reduce her willingness to embrace Shar later.</p>
+<h3>Phase 3: Completing the Gauntlet Trials</h3>
+<p>The Gauntlet of Shar consists of four trials, each testing a different aspect of a Shar worshipper's capabilities:</p>
+<div class="route-tree">
+<li><strong>Soft-Step Trial:</strong> A stealth challenge requiring you to navigate a maze of patrolling shadows without being detected. Shadowheart will comment on the elegance of Shar's teachings of silence. Agree with her assessment.</li>
+<li><strong>Self-Same Trial:</strong> A combat challenge where you fight shadowy duplicates of your own party. Shadowheart sees this as Shar's lesson that one's greatest enemy is oneself. Validate this interpretation.</li>
+<li><strong>Faith-Leap Trial:</strong> A platforming challenge across invisible platforms over a pit of darkness. Shadowheart will offer prayers to Shar for guidance. Encourage her faith rather than suggesting secular alternatives.</li>
+<li><strong>Silent Library & Umbral Gems:</strong> Collect four Umbral Gems scattered throughout the Gauntlet to unlock the inner sanctum. Shadowheart will want to collect all gems personally — let her.</li>
+</div>
+<h3>Phase 4: The Nightsong Chamber — The Pivotal Choice</h3>
+<p>The climax of the Gauntlet of Shar occurs in the <span class="location-name">Nightsong Prison</span>, where <span class="npc-name">Aylin the Nightsong</span> is held captive in a crystalline prison, her divine essence being drained to sustain the Shadow Curse. This is the single most important moment for acquiring Shar's Spear of Evening.</p>
+<p>When you reach the chamber, Shadowheart will insist that Aylin must die — that this sacrifice is Shar's will and her own destiny. The dialogue here branches dramatically based on your approval and previous choices:</p>
+<p><strong>CRITICAL DIALOGUE — To obtain the spear, you MUST:</strong></p>
+<div class="route-tree">
+<li>Choose: <span class="highlight">"Do what you must, Shadowheart. I trust you."</span> → This gives Shadowheart permission to proceed with the sacrifice</li>
+<li>Alternatively: <span class="highlight">"Shar demands this sacrifice. Fulfill your destiny."</span> → Directly encourages her dark path</li>
+<li>Alternatively: <span class="highlight">[Religion] "This is Shar's will. The Nightsong must fall."</span> → Religion check DC 16, automatically succeeds if you have shown consistent support for Shar</li>
+<li>DO NOT choose: "Spare her," "There's another way," or any dialogue suggesting mercy — these lock out the spear permanently</li>
+</div>
+<p>If your approval with Shadowheart is high enough and you have consistently supported her Shar worship, she will accept your guidance and approach the crystal prison with determination. A cutscene plays where Shadowheart channels Shar's power through her own body, striking down Aylin the Nightsong in a burst of divine darkness. The crystal shatters, Aylin's light is extinguished, and the Shadow Curse intensifies rather than lifting — a clear sign that you have chosen the dark path.</p>
+<h3>Phase 5: Claiming the Reward</h3>
+<p>After Aylin's death, a <span class="npc-name">Sharran Voice</span> speaks directly to Shadowheart, praising her devotion and welcoming her fully into Shar's embrace. The voice then addresses the party, offering a reward for your service to the Lady of Loss. At this point, Shar's Spear of Evening materializes on the altar beside Aylin's fallen form, appearing as if it had always been there, waiting in shadow for a worthy hand.</p>
+<p>Interact with the altar to claim the spear. It appears in your inventory as a legendary item with the description: <em>"Forged from the darkness between stars, blessed by the Lady of Loss herself. This spear drinks light and returns only void."</em></p>
+<p>Shadowheart also receives permanent bonuses from this choice: her cleric spells are enhanced, she gains access to unique Shar-specific dialogue for the rest of the game, and her appearance may subtly shift to reflect her deeper connection to the dark goddess.</p>
+</section>
+<section class="section" id="requirements">
+<h2>📋 Requirements</h2>
+<p>Shar's Spear of Evening has the most restrictive acquisition requirements of any legendary weapon in Baldur's Gate 3. Every requirement must be met — there are no workarounds or alternative paths.</p>
+<h3>Hard Requirements (All Mandatory)</h3>
+<table>
+<thead><tr><th>Requirement</th><th>Details</th><th>Failure Consequence</th></tr></thead>
+<tbody>
+<tr><td>Shadowheart in Party</td><td>Must be recruited and present at Gauntlet</td><td>No pivotal choice, no spear</td></tr>
+<tr><td>High Shadowheart Approval</td><td>Approval rating 60+ recommended</td><td>She may not trust your guidance at the choice</td></tr>
+<tr><td>Consistent Shar Support</td><td>Must have supported Shar worship throughout</td><td>Shadowheart rejects dark path</td></tr>
+<tr><td>Complete Gauntlet Trials</td><td>All four trials, all four Umbral Gems</td><td>Cannot reach Nightsong Chamber</td></tr>
+<tr><td>Sacrifice Aylin</td><td>Shadowheart must kill the Nightsong</td><td>Spear replaced by light-path rewards</td></tr>
+</tbody>
+</table>
+<h3>Shadowheart Approval Guide</h3>
+<p>To reach the 60+ approval needed for the dark path, focus on these dialogue and action categories:</p>
+<div class="route-tree">
+<li><strong>Secret-Keeping (+20 approval over Acts 1-2):</strong> Never pressure her about her memory loss or past. Always say versions of "You'll remember when you're ready" or "I don't need to know to trust you."</li>
+<li><strong>Pragmatism (+15 approval):</strong> Choose practical solutions over idealistic ones. Steal when useful, kill threats before they become problems, prioritize survival over morality.</li>
+<li><strong>Anti-Selûne Stance (+15 approval):</strong> Insult Selûne whenever mentioned. Mock moon imagery. Support Shar over Selûne in every conversation. If you find the Selûne shrine in Act 1, let Shadowheart desecrate it.</li>
+<li><strong>Personal Support (+10 approval):</strong> Comfort Shadowheart when she has nightmares. Support her when she struggles with memory fragments. Visit her at camp frequently.</li>
+</div>
+<h3>Dialogue Choices to AVOID</h3>
+<p>These dialogue choices will lock you out of the spear if chosen too often:</p>
+<div class="route-tree">
+<li>"You should try to remember your past" → Pushes her toward Selûne memories</li>
+<li>"Selûne doesn't sound so bad" → Directly opposes Shar worship</li>
+<li>"Let's show mercy" → Shar's doctrine is ruthless; mercy is weakness</li>
+<li>"There's good in everyone" → Naive worldview that Shadowheart despises</li>
+<li>"Moonlight is beautiful" → Romanticizing Selûne's domain</li>
+<li>"You don't need Shar" → Direct challenge to her core identity</li>
+</div>
+<h3>Pre-Gauntlet Preparation</h3>
+<div class="material-item">🧪 Potion of Healing (x10)</div>
+<div class="material-item">📜 Scroll of Greater Restoration (x1)</div>
+<div class="material-item">🗝️ Thieves' Tools (x3)</div>
+<div class="material-item">⚔️ Weapons with Radiant Damage (for Shadow-Cursed enemies)</div>
+<div class="material-item">🔦 Torch or Light Spell (Shadowheart may refuse to cast Light on dark path)</div>
+</section>
+<section class="section" id="route">
+<h2>🗺 Step-by-Step Route</h2>
+<p>This step-by-step guide assumes you have maintained high approval with Shadowheart and supported her Shar worship throughout Acts 1 and 2. If you have not, this route will not yield the spear — you may need to reload an earlier save.</p>
+<h3>Step 1: Travel to the Thorm Mausoleum (Act 2)</h3>
+<p>From the <span class="location-name">Shadow-Cursed Lands</span>, travel to the <span class="location-name">Thorm Mausoleum</span> waypoint at <span class="code-block">X: -185, Y: 85</span>. Ensure Shadowheart is in your active party — if she is at camp, the critical dialogue will not trigger.</p>
+<p>As you approach the mausoleum entrance, Shadowheart will have a brief meditation moment. Choose: <span class="highlight">"This place resonates with Shar's power. We must be close."</span> (Approval +3)</p>
+<h3>Step 2: Enter the Gauntlet of Shar</h3>
+<p>Inside the mausoleum, locate the mural mechanism that opens the passage to the Gauntlet. The three murals must be interacted with in the correct order — read the inscriptions for clues. If Shadowheart is present, she will solve it automatically with a unique dialogue option: <span class="highlight">"Shar has shown me the way."</span></p>
+<p>Descend into the Gauntlet. Shadowheart will comment on the sacred nature of the site. Respond with: <span class="highlight">"We're walking in the footsteps of Shar's most devoted. It's an honor."</span> (Approval +5)</p>
+<h3>Step 3: Soft-Step Trial</h3>
+<p>The first trial tests stealth. Send your rogue or a character with Pass Without Trace to collect the <span class="item-name">Umbral Gem</span> from the pedestal while avoiding the patrolling <span class="npc-name">Shadows</span>. If detected, combat ensues — the Shadows are CR 5 undead with high stealth and sneak attack.</p>
+<p>Shadowheart's commentary: "Shar teaches that silence is the truest form of strength." Your response: <span class="highlight">"There's wisdom in the shadows. I see why you embrace this."</span> (Approval +3)</p>
+<p><strong>Trial Tip:</strong> The shadows patrol on fixed routes. Wait for the nearest shadow to pass, then use Dash to reach the gem and return. Invisibility or Greater Invisibility makes this trivial.</p>
+<h3>Step 4: Self-Same Trial</h3>
+<p>The second trial spawns shadow duplicates of your party. These duplicates have identical stats, equipment, and abilities to your characters, making this a mirror match. Shadowheart sees this as a metaphor for self-conquest.</p>
+<p>Shadowheart's commentary: "We face ourselves — Shar's lesson that we are our own greatest enemy." Your response: <span class="highlight">"Then we shall conquer ourselves, as you have conquered your doubts."</span> (Approval +3)</p>
+<p><strong>Combat Strategy:</strong> Focus fire the duplicate Shadowheart first — her cleric spells can heal the other shadows and prolong the fight. Use crowd control like Hold Person or Web to neutralize your own duplicate before it can act.</p>
+<h3>Step 5: Faith-Leap Trial</h3>
+<p>The third trial requires jumping between invisible platforms over a pit. A character with See Invisibility or Faerie Fire can reveal the platforms. Alternatively, Fly, Misty Step, or Dimension Door bypasses this trial entirely.</p>
+<p>Shadowheart will pray to Shar for guidance before attempting the jumps. Encourage her: <span class="highlight">"Shar will guide your steps. I believe in you."</span> (Approval +3)</p>
+<p>Collect the third Umbral Gem from the pedestal at the end of the platforming section.</p>
+<h3>Step 6: Silent Library and Fourth Umbral Gem</h3>
+<p>The fourth Umbral Gem is in the <span class="location-name">Silent Library</span>, guarded by <span class="npc-name">Balthazar's</span> undead servants. This area also contains the <span class="item-name">Spear of Night</span> (a rare spear that serves as a thematic predecessor to the legendary version).</p>
+<p>Shadowheart will want to claim the Spear of Night. Let her: <span class="highlight">"Take it. It's meant for a servant of Shar."</span> (Approval +3). This rare spear will be replaced by the legendary version later, but claiming it now boosts approval.</p>
+<p>Defeat Balthazar's undead (skeletons and wraiths, vulnerable to radiant damage) and collect the fourth Umbral Gem.</p>
+<h3>Step 7: The Nightsong Chamber — THE CHOICE</h3>
+<p>Place all four Umbral Gems in the receptacles to open the <span class="location-name">Nightsong Prison</span>. Inside, <span class="npc-name">Aylin the Nightsong</span> is visible within a massive crystalline prison, glowing with trapped celestial light.</p>
+<p>Shadowheart will step forward, her voice trembling with a mixture of reverence and resolve. This is the moment everything has built toward. The dialogue tree that follows determines whether you obtain Shar's Spear of Evening.</p>
+<p><strong>EXACT DIALOGUE PATH FOR THE SPEAR:</strong></p>
+<div class="route-tree">
+<li>Shadowheart: "This is it. The Nightsong... Shar demands her sacrifice."</li>
+<li>YOU: <span class="highlight">"Do what you must, Shadowheart. I trust you."</span> (Approval +10)</li>
+<li>Shadowheart: "You... you truly believe in me? Even now?"</li>
+<li>YOU: <span class="highlight">"You've always known your path. Walk it."</span></li>
+<li>Shadowheart hesitates, then steels herself. "Then let Shar's will be done."</li>
+</div>
+<p>If approval is sufficient, Shadowheart will approach the crystal and channel a beam of pure darkness through her hands. The crystal cracks, Aylin screams as her divine essence is torn apart, and a wave of necrotic energy washes over the chamber. The Shadow Curse intensifies — the light of hope has been extinguished.</p>
+<p><strong>IF SHE HESITATES:</strong> If Shadowheart does not immediately proceed, you may need additional persuasion:</p>
+<div class="route-tree">
+<li><span class="highlight">Persuasion DC 18:</span> "This is your destiny, Shadowheart. Embrace it."</li>
+<li><span class="highlight">Religion DC 16:</span> "Shar demands this sacrifice. To refuse is to betray everything."</li>
+<li><span class="highlight">Intimidation DC 20:</span> "Kill her, or I will know you for a coward." (Risky — may lower approval)</li>
+</div>
+<h3>Step 8: Receive Shar's Blessing and the Spear</h3>
+<p>After Aylin dies, a disembodied voice speaks — the <span class="npc-name">Voice of Shar</span>, speaking directly to Shadowheart:</p>
+<p><em>"You have done well, my child. The light has been swallowed by the dark, as it was always meant to be. You are mine, wholly and completely. Accept my blessing."</em></p>
+<p>Shadowheart falls to her knees, then rises with black energy coursing through her veins. Her eyes turn completely black for a moment before returning to normal. She has been remade in Shar's image.</p>
+<p>The <span class="item-name">Shar's Spear of Evening</span> materializes on the altar in a swirl of darkness. Interact with it to add it to your inventory. Shadowheart automatically equips it if she has spear proficiency (which she does as a cleric with simple weapon proficiency).</p>
+<h3>Step 9: Exit the Gauntlet</h3>
+<p>With the spear in hand, exit the Gauntlet through the now-open western passage. Shadowheart will have additional dialogue as you travel, reflecting on her transformation. Continue to support her:</p>
+<div class="route-tree">
+<li>"You feel different. Stronger." → "Shar has remade me. I am... complete." (Approval +5)</li>
+<li>"Do you regret it?" → "No. I have found my truth." (Approval +3)</li>
+<li>"We should celebrate." → Shadowheart smiles — a rare genuine smile. "Perhaps... later."</li>
+</div>
+</section>
+<section class="section" id="gotcha">
+<h2>⚠ Gotcha Tips</h2>
+<p>The Shar's Spear of Evening acquisition is deceptively simple in execution but fraught with hidden pitfalls that can lock you out. These gotchas represent the most common failure points reported by players.</p>
+<div class="gotcha-box">
+<h4>Gotcha #1: This Path Is IRREVERSIBLE</h4>
+<p>Once Shadowheart kills Aylin and embraces Shar fully, there is NO going back. She cannot later reject Shar, she cannot be redeemed, and the light-path rewards (including the <span class="item-name">Moonlight Glaive</span> and certain companion quest resolutions) become permanently unavailable. You are locked into the dark path for the remainder of that playthrough. Save before the Nightsong Chamber and keep that save if you want to experience both paths.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #2: Low Approval Equals No Spear</h4>
+<p>If Shadowheart's approval is below approximately 50 when you reach the Nightsong Chamber, she will reject your guidance regardless of what dialogue you choose. She simply does not trust you enough to make such a monumental decision based on your advice. Maintain high approval throughout Acts 1 and 2 — check her approval rating regularly by examining her character sheet or noting her reactions to your choices.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #3: Gale and Wyll Will Object</h4>
+<p>If <span class="npc-name">Gale</span> or <span class="npc-name">Wyll</span> are in your party when Shadowheart kills Aylin, they will strongly object and may leave your party permanently depending on approval. Gale views the act as abhorrent magical desecration, while Wyll sees it as the murder of an innocent. Either remove them from the party before entering the Nightsong Chamber, or be prepared to pass <span class="highlight">Persuasion DC 20</span> checks to keep them from abandoning you.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #4: The Spear Is Bound to Shadowheart</h4>
+<p>While any character with simple weapon proficiency CAN equip Shar's Spear of Evening, the weapon's full power only activates when wielded by Shadowheart on her dark path. When other characters use it, the necrotic damage is reduced to 1d6 (from 1d8) and certain passive abilities do not function. For optimal effectiveness, the spear should remain in Shadowheart's hands.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #5: You Cannot Have Both Spears</h5>
+<p>Shar's Spear of Evening and <span class="item-name">Shadowheart's Spear of Night</span> (the rare version found in the Silent Library) are mutually exclusive in a functional sense. Once you obtain the legendary spear, the rare spear is automatically removed from your inventory — Shar replaces the lesser gift with the greater one. Do not become attached to the Spear of Night's stats; it was always meant to be temporary.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #6: Certain Companion Quests Are Affected</h4>
+<p>Shadowheart's embrace of Shar has ripple effects throughout the game's companion quests:</p>
+<div class="route-tree">
+<li><span class="npc-name">Gale's</span> romance is locked out if romancing Shadowheart on dark path (mutually exclusive storylines)</li>
+<li><span class="npc-name">Karlach's</span> personal quest continues unaffected, but her opinion of Shadowheart drops significantly</li>
+<li><span class="npc-name">Astarion's</span> approval increases — he respects ruthless pragmatism</li>
+<li><span class="npc-name">Halsin's</span> recruitment becomes impossible if he learns of Aylin's death (he leaves in disgust)</li>
+</div>
+</div>
+<div class="warning-box">
+<h4>⚠ Story Spoiler: The Ending</h4>
+<p>Shadowheart's dark path significantly alters the game's ending. If she remains devoted to Shar through Act 3, she will have a unique ending sequence where she either becomes Shar's champion on the mortal plane or ascends to become a dark demigod herself — depending on your final choices. This ending is considered one of the most dramatically powerful in the game, though it is undeniably tragic.</p>
+</div>
+</section>
+<section class="section" id="benefits">
+<h2>🎁 Free Benefits</h2>
+<p>The dark path and Shar's Spear of Evening provide a substantial package of benefits that extends far beyond the weapon's statistics. This section covers the full reward profile.</p>
+<h3>Shar's Spear of Evening Weapon Benefits</h3>
+<table>
+<thead><tr><th>Benefit</th><th>Details</th><th>Tactical Value</th></tr></thead>
+<tbody>
+<tr><td>1d8 Piercing + 1d8 Necrotic</td><td>Dual damage type on every hit</td><td>Bypasses most enemy resistances</td></tr>
+<tr><td>+2 Enchantment</td><td>+2 attack and damage</td><td>Consistent accuracy, overcomes magic resistance</td></tr>
+<tr><td>Versatile (1d10)</td><td>Higher damage when wielded two-handed</td><td>Flexibility between one-hand (shield) and two-hand (damage)</td></tr>
+<tr><td>Thrown (20/60)</td><td>Ranged option that returns to hand</td><td>Melee build with ranged flexibility</td></tr>
+<tr><td>Necrotic Aura</td><td>Passive 5ft aura of necrotic damage when wielded by Shadowheart</td><td>Automatic damage to adjacent enemies each turn</td></tr>
+<tr><td>Shar's Blessing</td><td>Shadowheart's cleric spells enhanced</td><td>+1 to spell DC, bonus necrotic damage on cantrips</td></tr>
+</tbody>
+</table>
+<h3>Shadowheart's Transformation Bonuses</h3>
+<p>Embracing Shar fundamentally enhances Shadowheart as a character:</p>
+<div class="route-tree">
+<li><strong>Enhanced Spellcasting:</strong> All necromancy spells cast at +1 level (free upcasting)</li>
+<li><strong>Darkvision:</strong> Superior Darkvision to 120 feet, cannot be blinded by magical darkness</li>
+<li><strong>Shar's Favor:</strong> Once per long rest, automatically succeed on any one saving throw</li>
+<li><strong>Immunity to Fear:</strong> Having embraced the ultimate loss, Shadowheart fears nothing</li>
+<li><strong>Unique Dialogue:</strong> Hundreds of new lines of dialogue throughout Acts 2 and 3 reflecting her dark transformation</li>
+<li><strong>Appearance Change:</strong> Subtle darkening of features, more severe expression, occasional shadow-tendril visual effects</li>
+</div>
+<h3>Incidental Gauntlet Loot (Dark Path)</h3>
+<p>Even on the dark path, the Gauntlet of Shar contains substantial loot:</p>
+<div class="route-tree">
+<li><span class="item-name">Spear of Night</span> → Replaced by Spear of Evening (upgrade, not additional item)</li>
+<li><span class="item-name">Shar's Ritual Dagger</span> — Uncommon weapon, useful for ritual components</li>
+<li><span class="item-name">Umbral Gems</span> (x4) — Valuable magical components worth 500g each</li>
+<li><span class="item-name">Shadow-Curse Residue</span> — Alchemy ingredient for dark potions</li>
+<li><span class="item-name">Ancient Shar Texts</span> — Lore items granting inspiration</li>
+</div>
+<h3>Strategic Campaign Advantages</h3>
+<div class="route-tree">
+<li><strong>Dual Damage Output:</strong> Very few enemies resist both piercing and necrotic; the spear is universally effective</li>
+<li><strong>Necrotic Aura:</strong> Automatic damage to nearby enemies every turn without using actions — exceptional action economy</li>
+<li><strong>Shadowheart as Powerhouse:</strong> The transformed Shadowheart becomes one of the most powerful party members in the game, rivaling optimized player characters</li>
+<li><strong>Dark Path Synergies:</strong> Works exceptionally with Astarion (who approves of ruthlessness) for a high-damage, morally flexible party</li>
+<li><strong>Late-Game Viability:</strong> The necrotic damage scales into Act 3, remaining relevant against even the toughest enemies</li>
+</div>
+<h3>Build Synergies with Shar's Spear of Evening</h3>
+<div class="route-tree">
+<li><strong>Death Domain Cleric (Shadowheart):</strong> The spear's necrotic damage stacks with Death Domain's Touch of Death for devastating burst damage</li>
+<li><strong>Twilight Domain (modded):</strong> If using mods that add Twilight Domain, the dark/night theme synergizes perfectly</li>
+<li><strong>Fighter multiclass:</strong> 2 levels of Fighter give Action Surge for double spear attacks in one turn</li>
+<li><strong>Paladin multiclass:</strong> Oathbreaker paladin's necrotic abilities stack thematically and mechanically with the spear</li>
+</div>
+</section>
+</main>
+<aside class="right-sidebar">
+<h4>📊 Item Info</h4>
+<div class="info-box"><div class="label">Game</div><div class="value">Baldur's Gate 3</div></div>
+<div class="info-box"><div class="label">Item Type</div><div class="value">Legendary Spear</div></div>
+<div class="info-box"><div class="label">Act</div><div class="value"><span class="tag tag-act2">Act 2</span></div></div>
+<div class="info-box"><div class="label">Location</div><div class="value">Gauntlet of Shar, Inner Sanctum</div></div>
+<div class="info-box"><div class="label">Base Damage</div><div class="value">1d8 Piercing + 1d8 Necrotic</div></div>
+<div class="info-box"><div class="label">Difficulty</div><div class="value" style="color:#e74c3c">★★★★★</div></div>
+<div class="info-box"><div class="label">Est. Time</div><div class="value">45-75 minutes</div></div>
+<div class="info-box"><div class="label">Missable?</div><div class="value" style="color:#e74c3c">YES — Requires dark path</div></div>
+<h4>🔗 Quick Links</h4>
+<div style="margin-bottom:10px"><a href="blood-of-lathander.html">← Blood of Lathander</a></div>
+<div style="margin-bottom:10px"><a href="gontr-mael.html">← Gontr Mael</a></div>
+<div style="margin-bottom:10px"><a href="nyrulna.html">← Nyrulna</a></div>
+<div style="margin-bottom:10px"><a href="duellist-gloves.html">→ Duellist's Prismatic Gloves</a></div>
+<h4>📅 Guide Updated</h4>
+<div class="info-box"><div class="value">Patch 7 Compatible</div></div>
+</aside>
+</div>
+<footer class="footer">
+<p>⚔ CraftHunt — Baldur's Gate 3 Item Guides &copy; 2025 | All game content belongs to Larian Studios</p>
+<p><a href="../privacy.html">Privacy</a> | <a href="../terms.html">Terms</a> | <a href="../about.html">Contact</a> | <a href="../about.html">About</a></p>
+</footer>
+</body>
+</html>

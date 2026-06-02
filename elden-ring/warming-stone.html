@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warming Stone — Elden Ring Crafting Guide | RelicTrek</title>
+<meta name="description" content="Complete guide to crafting Warming Stone in Elden Ring. Healing zone restores HP over time. Sanctuary Stone + Erdleaf Flower. Nomadic Warrior's Cookbook [22]. Mountaintops essential.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-tool{font-size:48px;line-height:1}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e67e22;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="./">Guides</a>
+<a href="./" class="active">Crafting</a>
+<a href="./">Maps</a>
+<a href="./">Tools</a>
+</div>
+</div>
+</nav>
+
+<div class="ticker-bar">
+<div class="ticker-inner">
+🔥 <strong>Warming Stone</strong> — Healing zone restores HP over time | Nomadic Warrior's Cookbook [22] | Sanctuary Stone + Erdleaf Flower | <a href="bewitching-branch.html">Next: Bewitching Branch →</a>
+</div>
+</div>
+
+<div class="container">
+
+<aside class="sidebar">
+<h3>Game Select</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+<a href="../no-mans-sky/">No Man's Sky</a>
+<a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+<a href="../valheim/">Valheim</a>
+<a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="./" class="active">Elden Ring</a>
+<a href="../stardew-valley/">Stardew Valley</a>
+<a href="../hades-2/">Hades 2</a>
+<a href="../satisfactory/">Satisfactory</a>
+<div class="quick-nav">
+<h4>Elden Ring Items</h4>
+<a href="gold-pickled-fowl-foot.html">Gold-Pickled Fowl Foot</a>
+<a href="exalted-flesh.html">Exalted Flesh</a>
+<a href="uplifting-aromatic.html">Uplifting Aromatic</a>
+<a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>
+<a href="ironjar-aromatic.html">Ironjar Aromatic</a>
+<a href="preserving-boluses.html">Preserving Boluses</a>
+<a href="drawstring-blood-grease.html">Drawstring Blood Grease</a>
+<a href="spark-aromatic.html">Spark Aromatic</a>
+<a href="warming-stone.html" class="active" style="color: var(--accent); font-weight: 600;">Warming Stone</a>
+<a href="bewitching-branch.html">Bewitching Branch</a>
+</div>
+</aside>
+
+<main class="main-content">
+
+<div class="item-header">
+<div class="item-icon-accessory">🔥</div>
+<div class="item-title">
+<h1 data-zh="温暖石">Warming Stone</h1>
+<div class="item-subtitle" data-zh="持续治疗区域——巨人山顶的 survival 神器，放置后恢复范围内所有友方的HP">Healing Zone Restores HP Over Time — Mountaintops of the Giants Survival Essential</div>
+<div class="item-meta">
+<span class="difficulty">★★★☆☆ Medium</span>
+<span>Type: Tool (Healing)</span>
+<span>Stack: 10</span>
+</div>
+</div>
+</div>
+
+<section class="section" id="why">
+<h2><span>🔥</span> Why Warming Stone Matters</h2>
+<p data-zh="巨人山顶（Mountaintops of the Giants）是艾尔登法环中最恶劣的环境之一。极寒的风暴会持续削减你的生命值，而且区域内的敌人都极为强大。在这样的环境中，能够持续恢复HP的手段变得无比珍贵——而Warming Stone就是这样一个道具。它在放置后创造一个小型的持续治疗区域，站在范围内的所有友方单位都会缓慢恢复生命值。">The <strong>Mountaintops of the Giants</strong> is one of Elden Ring's harshest environments. Freezing storms constantly drain your HP, and the enemies are among the strongest in the game. In such conditions, sustained healing becomes priceless — and <strong>Warming Stone</strong> delivers exactly that. When placed, it creates a small persistent healing zone. All allies standing within the radius regenerate HP over time. It is a campfire you can carry in your pocket.</p>
+
+<p data-zh="Warming Stone的价值远不止于巨人山顶。在任何长时间的战斗中——特别是Boss战和入侵防御战——能够在战场上创造一个安全的治疗区域，意味着你可以在不消耗 flask 的情况下恢复生命值。这对于 flask 紧张的持久战来说意义重大。">Warming Stone's value extends far beyond the Mountaintops. In any prolonged fight — boss battles, invasion defenses, extended dungeon runs — being able to create a safe healing zone on the battlefield means you can recover HP <strong>without consuming flask charges</strong>. This is massive for endurance fights where every flask sip counts. The ability to "create a safe spot" on demand changes how you approach difficult encounters.</p>
+
+<h3 data-zh="最佳使用场景">When to Use Warming Stone</h3>
+<ul>
+<li data-zh="巨人山顶探索：在暴风雪中创造安全区域，抵消环境伤害"><strong>Mountaintops Exploration:</strong> Create safe zones in blizzards to counteract environmental frost damage.</li>
+<li data-zh="Boss战中的持续恢复：在Boss房角落放置，在Boss攻击间隙跑回恢复"><strong>Boss Fight Sustainability:</strong> Place in a corner of the boss arena and retreat to it during attack windows for free healing.</li>
+<li data-zh="入侵防御战：在防守位置放置，让防守方获得持续恢复优势"><strong>Invasion Defense:</strong> Place at a defensive position for continuous healing advantage while holding ground.</li>
+<li data-zh="联机合作中的团队支援：为所有队友提供持续恢复，相当于一个移动治疗站"><strong>Co-Op Team Support:</strong> Functions as a portable healing station for the entire party. Invaluable in group play.</li>
+<li data-zh="探索高难度区域时的安全保障：在清理一个区域后放置恢复，节省 flask"><strong>Hard Zone Exploration:</strong> Place after clearing an area to recover before the next engagement — saves flask charges.</li>
+</ul>
+
+<h3 data-zh="与其他治疗手段的对比">Comparison with Other Healing Options</h3>
+<ul>
+<li data-zh=" vs 红瓶（Flask of Crimson Tears）： flask 是有限的，而Warming Stone可以制作无限量（只要材料足够）"><strong>vs. Flask of Crimson Tears:</strong> Flask charges are limited. Warming Stones can be crafted in theoretically unlimited quantities.</li>
+<li data-zh=" vs 温热石（Warming Stone vs Heal spells）：治疗祷告需要信仰投资和FP；Warming Stone不需要任何属性">vs. <strong>Heal Incantations:</strong> Healing spells require Faith investment and FP. Warming Stone requires <strong>zero stats and no FP</strong>.</li>
+<li data-zh=" vs 肉干（Cured Meat）：肉干提升生命恢复速度但依赖已有恢复机制；Warming Stone直接提供恢复"><strong>vs. Cured Meat:</strong> Cured meats boost existing regeneration but require a base heal source. Warming Stone provides direct healing.</li>
+<li data-zh=" vs 坐赐福恢复：战斗中无法坐赐福；Warming Stone可以在战斗中放置和使用"><strong>vs. Sitting at Grace:</strong> Cannot grace-heal during combat. Warming Stone works mid-fight.</li>
+</ul>
+
+<h3 data-zh="团队支援的终极价值">The Ultimate Co-Op Support Value</h3>
+<p data-zh="在四人合作模式中，一个Warming Stone的治疗区域可以同时恢复所有玩家的HP。这意味着一个人放置石头，四个人受益。相比每个人都喝 flask，这种效率提升是巨大的。如果你是一个支援型玩家，携带10个Warming Stone进入合作Boss战，相当于为团队提供了数百点额外的HP恢复——这可能就是一个团队能否击败Boss的关键因素。">In four-player co-op, a single Warming Stone heals <strong>all four players simultaneously</strong>. One person places the stone, everyone benefits. Compared to each player sipping their flask individually, this efficiency gain is enormous. If you play a support role, carrying 10 Warming Stones into a co-op boss fight effectively gives your team hundreds of extra HP in healing — that can be the difference between a team wipe and victory. The Warming Stone turns one inventory slot into a team-wide regeneration fountain.</p>
+
+<h3 data-zh="FOMO因素——为什么你不应该错过">The FOMO Factor</h3>
+<p data-zh="Nomadic Warrior's Cookbook [22]位于巨人山顶——游戏后期区域。很多玩家到达这里时已经用光了所有 flask 升级材料，正为恶劣环境和高难度敌人而苦恼。如果你不知道Warming Stone的存在，你会错过这个能够让你的山顶探索体验从'痛苦求生'变为'从容应对'的关键道具。而且，一旦你学会制作Warming Stone，你的整个游戏方式都会改变——你不再害怕持久战，因为你知道你可以在任何时候创造一个安全的治疗区域。">Nomadic Warrior's Cookbook [22] is in the <strong>Mountaintops of the Giants</strong> — a late-game zone. Many players arrive here having exhausted their flask upgrades and are struggling with the harsh environment and brutal enemies. If you do not know about Warming Stone, you miss the item that transforms your Mountaintops experience from "miserable survival" to "confident exploration." And once you learn to craft Warming Stones, your entire approach to the game changes — you no longer fear endurance fights because you know you can create a safe healing zone at any time.</p>
+
+<div class="cross-links">
+<a href="spark-aromatic.html" class="cross-link">← Spark Aromatic</a>
+<a href="bewitching-branch.html" class="cross-link">Bewitching Branch →</a>
+</div>
+</section>
+
+<section class="section" id="recipe">
+<h2><span>🧪</span> Crafting Recipe</h2>
+<p data-zh="Warming Stone的配方只需要两种材料——一个来自巨人山顶的稀有矿石和一个在整个交界地都很常见的花朵。这是后期游戏中最值得掌握的配方之一。">The Warming Stone recipe requires only <strong>two materials</strong> — a rare stone from the Mountaintops and a flower common across the entire Lands Between. It is one of the most worthwhile late-game recipes to master.</p>
+
+<table class="recipe-table">
+<thead>
+<tr><th>Material</th><th>Quantity</th><th>Rarity</th><th>Farmable</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🪨 <strong>Sanctuary Stone</strong></td>
+<td>1x</td>
+<td data-zh="稀有（巨人山顶）">Rare (Mountaintops)</td>
+<td>✅ Yes — Mountaintops ore nodes</td>
+</tr>
+<tr>
+<td>🌼 <strong>Erdleaf Flower</strong></td>
+<td>1x</td>
+<td data-zh="低（全交界地）">Low (Worldwide)</td>
+<td>✅ Yes — Everywhere</td>
+</tr>
+</tbody>
+</table>
+
+<h3 data-zh="制作产出">Yield</h3>
+<p data-zh="每次制作产出1个Warming Stone。堆叠上限为10个。建议保持满库存10个用于探索和治疗支援。">Each crafting attempt produces <span class="highlight">1x Warming Stone</span>. The stack limit is <strong>10</strong>. Recommended stockpile: <strong>keep a full stack of 10</strong> for exploration and support purposes.</p>
+
+<div class="gotcha-box">
+<h4>⚠️ Recipe Key Notes</h4>
+<ul>
+<li data-zh="范围效果：以放置点为中心的中等范围治疗区域——覆盖约3个身位的半径">Healing radius is approximately <strong>3 character lengths</strong> around the placement point.</li>
+<li data-zh="持续时间：治疗区域持续约45秒——足够覆盖一个Boss阶段">Duration is approximately <strong>45 seconds</strong> — enough for most boss phases.</li>
+<li data-zh="恢复速度：每秒恢复约10-15 HP——不是很快但稳定可靠">Heals approximately <strong>10–15 HP per second</strong> — not fast but steady and reliable.</li>
+<li data-zh="影响所有友方：包括玩家、召唤的Spirit Ashes和NPC">Affects <strong>all allies</strong> — players, summoned Spirit Ashes, and friendly NPCs.</li>
+<li data-zh="放置后有短暂延迟：石头放置后约1秒开始生效">Has a <strong>1-second delay</strong> after placement before healing begins.</li>
+<li data-zh="可以被破坏：敌人可以摧毁Warming Stone——放置在安全位置">Can be <strong>destroyed by enemies</strong> — place in a safe spot away from enemy reach.</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Nomadic Warrior's Cookbook [22]</h2>
+<p data-zh="要解锁Warming Stone的配方，你需要流浪战士的制作笔记[22]。这本笔记位于巨人山顶（Mountaintops of the Giants）——游戏的后期区域。">To unlock the Warming Stone recipe, you must acquire <strong>Nomadic Warrior's Cookbook [22]</strong>. This Cookbook is located in the <strong>Mountaintops of the Giants</strong> — a late-game area requiring significant progression to reach.</p>
+
+<div class="cookbook-box">
+<h4>📖 Nomadic Warrior's Cookbook [22]</h4>
+<p><strong>Location:</strong> Mountaintops of the Giants</p>
+<p><strong>Coordinates:</strong> On a corpse near the Fire Giant's arena approach, close to the Forge of the Giants grace area</p>
+<p><strong>Recipe Unlocked:</strong> Warming Stone</p>
+<p><strong>Also Unlocks:</strong> Additional stone-based utility recipes</p>
+</div>
+
+<h3 data-zh="如何到达Cookbook位置">How to Reach Nomadic Warrior's Cookbook [22]</h3>
+<p data-zh="巨人山顶是游戏后期才能到达的区域。你需要通过Grand Lift of Rold（使用Rold Medallion）从Capital Outskirts上升，或者通过其他后期路径进入。">The Mountaintops of the Giants is a late-game zone. You must ascend via the <strong>Grand Lift of Rold</strong> (using the <strong>Rold Medallion</strong>) from Capital Outskirts, or find another late-game path. This is not accessible until you have progressed through Leyndell and defeated the necessary story bosses.</p>
+
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Progress through <strong>Leyndell, Royal Capital</strong> to obtain the <strong>Rold Medallion</strong>.</p>
+<p><span class="step">Step 2:</span> Travel to the <strong>Grand Lift of Rold</strong> at the eastern edge of the capital outskirts.</p>
+<p><span class="step">Step 3:</span> Use the Rold Medallion at the lift to ascend to the <strong>Mountaintops of the Giants</strong>.</p>
+<p><span class="step">Step 4:</span> Navigate through the snowy wastes toward the <strong>Forge of the Giants</strong> area.</p>
+<p><span class="step">Step 5:</span> The Cookbook is on a <strong>corpse near the approach to Fire Giant's arena</strong> — a glowing white item on the ground near the giant forge structures.</p>
+</div>
+
+<h3 data-zh="巨人山顶的危险">Mountaintops of the Giants Hazards</h3>
+<ul>
+<li data-zh="极寒风暴：会持续削减HP的环境效果——Warming Stone正是为此而生">• <strong>Freezing storms:</strong> Constant HP drain environmental effect — Warming Stone exists to counter this.</li>
+<li data-zh="火焰巨人（Fire Giant）：区域Boss，极其强大">• <strong>Fire Giant (boss):</strong> The zone's main boss — extremely powerful and a major progression gate.</li>
+<li data-zh="Troll和巨型敌人：山顶区域有大量巨型敌人，伤害极高">• <strong>Trolls and giant enemies:</strong> Massive damage output. Avoid direct engagement when possible.</li>
+<li data-zh="死亡鸟（Death Rite Bird）：夜间出现的恐怖Boss级敌人">• <strong>Death Rite Bird:</strong> A terrifying night-time field boss. Avoid at lower levels.</li>
+<li data-zh="难度评级高：这是游戏中最难的区域之一——做好准备再来">• <strong>High difficulty rating:</strong> One of the hardest zones in the game — come prepared.</li>
+</ul>
+
+<div class="cross-links">
+<a href="spark-aromatic.html" class="cross-link">← Spark Aromatic</a>
+<a href="bewitching-branch.html" class="cross-link">Bewitching Branch →</a>
+</div>
+</section>
+
+<section class="section" id="materials">
+<h2><span>🌿</span> Materials &amp; Farm Locations</h2>
+<p data-zh="Warming Stone的两种材料代表了极端的稀有度差异：Sanctuary Stone是巨人山顶的稀有矿石，而Erdleaf Flower是整个交界地最常见花朵之一。这种差异意味着你的farm时间几乎完全取决于Sanctuary Stone的获取速度。">Warming Stone's two materials represent extreme rarity disparity: Sanctuary Stone is a rare Mountaintops ore, while Erdleaf Flower is among the most common flowers in the game. This means your farming time is almost entirely determined by Sanctuary Stone acquisition.</p>
+
+<h3>🪨 Material 1: Sanctuary Stone</h3>
+<div class="material-item">
+<div class="material-icon">🪨</div>
+<div class="material-info">
+<h4>Sanctuary Stone <span style="color:#ff4d4d">★★★ Rare — Mountaintops Exclusive</span></h4>
+<p data-zh="Sanctuary Stone是一种只在巨人山顶区域产出的淡蓝色矿石。它的外观像一块发光的冰晶，在雪地中不太好辨认——需要仔细寻找。"><strong>Sanctuary Stone</strong> is a pale blue crystalline ore that only spawns in the Mountaintops of the Giants. Its appearance resembles glowing ice, which makes it somewhat difficult to spot against the snowy landscape — careful searching is required.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Sanctuary Stone Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Mountaintops of the Giants — Snowfield Ore Nodes</strong></p>
+<p data-zh="巨人山顶的雪原上散布着矿石采集点，其中约三分之一会产出Sanctuary Stone（其余产出锻造石）。从Giants' Gravepost赐福点出发，骑马在雪原上巡回采集矿石点，每次循环可以获得2-4个Sanctuary Stone。"><strong>Giants' Gravepost</strong> grace is the best starting point. The surrounding snowfield has ore nodes — roughly one-third yield Sanctuary Stone (others give Smithing Stones). Ride in a circuit collecting ore deposits, rest, and repeat. Each cycle yields <strong>2–4 Sanctuary Stones</strong>.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Forge of the Giants — Surrounding Area</strong></p>
+<p data-zh="Forge of the Giants区域周围的矿石点也有Sanctuary Stone产出。这里的敌人更强但矿石点更密集。">The area around <strong>Forge of the Giants</strong> also has Sanctuary Stone ore nodes. Stronger enemies but denser ore deposits.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Guardians' Garrison — Interior</strong></p>
+<p data-zh="Guardians' Garrison要塞内部有几个Sanctuary Stone刷新点，但需要清怪才能安全采集。">Inside <strong>Guardians' Garrison</strong> — several spawns but requires clearing enemies to collect safely.</p>
+</div>
+
+<h4 data-zh="Sanctuary Stone Farm技巧">Sanctuary Stone Farming Tips</h4>
+<ul>
+<li data-zh="矿石点在赐福休息后刷新——可以无限farm">Ore nodes respawn on grace rest — <strong>infinitely farmable</strong>.</li>
+<li data-zh="Sanctuary Stone也用于其他后期配方——不会浪费">Used in other late-game recipes — excess never goes to waste.</li>
+<li data-zh="在farm矿石时顺便刷卢恩——山顶的敌人给很多卢恩">Farm runes simultaneously — Mountaintops enemies give substantial runes.</li>
+<li data-zh="矿石点可能产出锻造石而非Sanctuary Stone——保持耐心">Nodes may yield Smithing Stones instead of Sanctuary Stone — <strong>be patient</strong>.</li>
+<li data-zh="Sanctuary Stone不能从商人购买——必须farm">Cannot be purchased from merchants — <strong>must be farmed</strong>.</li>
+</ul>
+
+<h3>🌼 Material 2: Erdleaf Flower</h3>
+<div class="material-item">
+<div class="material-icon">🌼</div>
+<div class="material-info">
+<h4>Erdleaf Flower <span style="color:#4caf50">★ Common — Worldwide</span></h4>
+<p data-zh="Erdleaf Flower是艾尔登法环中最常见的花朵之一——金色的花瓣在整个交界地的每一个角落都能找到。你可能已经有数百个在背包里了。"><strong>Erdleaf Flower</strong> is one of the most common flowers in Elden Ring. Its golden petals can be found in every corner of the Lands Between. You likely already have hundreds in your inventory from normal exploration.</p>
+</div>
+</div>
+
+<h4 data-zh="Erdleaf Flower获取提示">Erdleaf Flower Notes</h4>
+<ul>
+<li data-zh="几乎不需要专门farm——正常探索就能收集大量">Virtually never needs dedicated farming — accumulates naturally during exploration.</li>
+<li data-zh="也是Furlcalling Finger Remedy的制作材料——多人游戏必备">Also used for crafting <strong>Furlcalling Finger Remedy</strong> — essential for multiplayer.</li>
+<li data-zh="Limgrave的初始区域就有大量分布——新角色也能轻松获取">Abundant in starting Limgrave areas — accessible from the very beginning.</li>
+<li data-zh="如果确实需要farm，任何有草地的区域都有">If you genuinely need to farm it, any grassy area in any zone has ample supply.</li>
+</ul>
+
+<div class="cross-links">
+<a href="bewitching-branch.html" class="cross-link">Bewitching Branch →</a>
+<a href="spark-aromatic.html" class="cross-link">← Spark Aromatic</a>
+</div>
+</section>
+
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> Gotcha Tips — What Can Go Wrong</h2>
+<p data-zh="Warming Stone虽然看似简单，但在实际使用中有几个重要的陷阱需要注意。以下是完整的问题清单。">Warming Stone seems simple, but several important pitfalls exist in practice. Here is the complete warning list.</p>
+
+<div class="gotcha-box">
+<h4>🪨 Gotcha 1: Sanctuary Stone Is Late-Game Only</h4>
+<p data-zh="Sanctuary Stone只在巨人山顶产出——这意味着在到达这个后期区域之前，你无法制作Warming Stone。不要指望在早期或中期游戏使用这个道具。不过好消息是，早期游戏的环境伤害没有那么严重，你也不太需要它。">Sanctuary Stone only spawns in the Mountaintops — meaning <strong>you cannot craft Warming Stone until reaching this late-game zone</strong>. Do not expect to use this item in early or mid-game. The good news: environmental damage is less severe in earlier zones, so you do not need it yet.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>💨 Gotcha 2: The Stone Can Be Destroyed</h4>
+<p data-zh="Warming Stone放置后是一个实体物体——敌人可以攻击并摧毁它。这意味着你不能把它放在战斗的正中央。最佳策略是在Boss房的角落或战场边缘放置，确保你在跑回恢复时不会被追击的敌人踩碎石头。">The placed stone is a physical object — <strong>enemies can attack and destroy it</strong>. You cannot place it in the middle of combat. <strong>Best practice:</strong> Place in a corner of the boss arena or at the battlefield's edge, ensuring you can retreat to it without the pursuing enemy destroying it.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>⏱️ Gotcha 3: The Healing Is Slow</h4>
+<p data-zh="Warming Stone的恢复速度是每秒10-15HP——在40血（1500HP）的情况下，这意味着需要100秒以上才能从空血恢复到满血。这不是急救工具，而是持久战中的 sustain 工具。不要指望在濒死时放一个石头就能救你——它的价值在于减少 flask 消耗，而非替代 flask。">The healing rate of 10–15 HP/second means restoring from near-death to full at 40 Vigor (~1500 HP) takes <strong>100+ seconds</strong>. This is not an emergency heal — it is a sustainability tool. <strong>Do not expect it to save you when near death</strong>. Its value is in reducing flask consumption over time, not replacing flask in emergencies.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🏔️ Gotcha 4: Mountaintops Enemies Are Brutal</h4>
+<p data-zh="farm Sanctuary Stone意味着你需要在巨人山顶的开放世界中巡回采集。这个区域的敌人——包括Troll、巨型狼和火焰主题敌人——都极为强大。建议在farm时骑马快速移动，避免不必要的战斗。">Farming Sanctuary Stone means touring the Mountaintops' open world. The enemies — trolls, giant wolves, fire-themed foes — are brutally strong. <strong>Farm on Torrent</strong>, moving quickly between nodes and avoiding unnecessary fights. Dying and losing runes during a farming run is frustrating beyond words.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>📍 Gotcha 5: Placement Matters Immensely</h4>
+<p data-zh="Warming Stone的放置位置决定了它的价值。放在Boss的攻击范围内=被摧毁。放在离你太远的地方=来不及跑回去恢复。放在地形起伏处=可能无法触发恢复效果。理想的位置是：一个你可以快速到达、敌人不太可能追入的角落或凹陷处。">Placement determines the stone's value. In the boss's attack range = destroyed. Too far from you = cannot reach in time. On uneven terrain = may not trigger healing. <strong>Ideal placement:</strong> A corner or nook you can quickly reach where enemies are unlikely to follow. Practice placement in each boss arena to find the sweet spot.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>📖 Gotcha 6: Cookbook [22] Is Near the Fire Giant</h4>
+<p data-zh="流浪战士的制作笔记[22]位于Fire Giant竞技场附近——这意味着你需要推进到巨人山顶的核心区域才能获取它。对于想要尽早获得配方的玩家，这是不可能的——先推进主线吧。">Cookbook [22] is near the Fire Giant's arena — you must progress deep into the Mountaintops to acquire it. No early access possible — advance the main story first.</p>
+</div>
+</section>
+
+<section class="section" id="benefits">
+<h2><span>🎁</span> Free Benefits — What Else You Get Farming These Materials</h2>
+<p data-zh="farm Warming Stone的材料本身就是一次深入巨人山顶的探险。以下是额外收益。">Farming Warming Stone materials doubles as a deep exploration of the Mountaintops. Here is what else you will collect:</p>
+
+<h3 data-zh="在巨人山顶Farm的额外收益">Farming Mountaintops of the Giants</h3>
+<ul>
+<li data-zh="锻造石[5]和[6]：山顶区域有大量中高级锻造石"><strong>Smithing Stones [5] &amp; [6]:</strong> Abundant mid-to-high tier upgrade stones.</li>
+<li data-zh="Somber锻造石：用于升级特殊武器"><strong>Somber Smithing Stones:</strong> For upgrading special weapons.</li>
+<li data-zh="大量的卢恩：山顶的敌人给很多卢恩"><strong>Substantial runes:</strong> Enemies here give significant rune rewards.</li>
+<li data-zh="火焰巨人的记忆：击败Boss后获得强力Boss武器/法术"><strong>Fire Giant's Remembrance:</strong> Defeat the boss for a powerful Remembrance weapon or spell.</li>
+<li data-zh="通往Crumbling Farum Azula的路径：击败Fire Giant后开启新区域"><strong>Path to Crumbling Farum Azula:</strong> Defeating Fire Giant opens a new major zone.</li>
+<li data-zh="独特的山顶装备：多个独特的武器和护甲可以获取"><strong>Unique Mountaintops gear:</strong> Multiple unique weapons and armor sets to discover.</li>
+</ul>
+
+<h3 data-zh="在巨人山顶Farm的额外收益（续）">Additional Mountaintops Rewards</h3>
+<ul>
+<li data-zh="Zamor套装：独特的轻甲套装，外观炫酷"><strong>Zamor armor set:</strong> A unique light armor set with a striking appearance.</li>
+<li data-zh="Borealis the Freezing Fog：野外Boss战，奖励龙之心脏"><strong>Borealis the Freezing Fog:</strong> An open-world dragon boss rewarding Dragon Hearts.</li>
+<li data-zh="多种守护者武器：山顶的敌人掉落独特的武器"><strong>Guardian weapons:</strong> Multiple unique armaments drop from zone enemies.</li>
+<li data-zh="通往隐藏区域的路径：山顶有多条通往秘密区域的路径"><strong>Hidden area paths:</strong> The Mountaintops has multiple routes to secret zones.</li>
+<li data-zh="Bell Bearing：山顶的Boss会掉落重要的铃珠"><strong>Bell Bearings:</strong> Bosses here drop important bearings for the Twin Maiden Husks shop.</li>
+</ul>
+
+<h3 data-zh="长期战略收益">Long-Term Strategic Value</h3>
+<p data-zh="掌握Warming Stone的制作意味着你已经征服了艾尔登法环中最具挑战性的区域之一——巨人山顶。这个区域不仅环境恶劣，敌人强大，而且还是通往游戏终局内容的关键路径。能够在这里自如地farm材料，本身就证明了你的实力。">Mastering Warming Stone means you have conquered one of Elden Ring's most challenging zones. The Mountaintops is not just harsh and enemy-dense — it is the gateway to the game's endgame content. Being able to farm here comfortably is proof of your growth as a player.</p>
+
+<p data-zh="更重要的是，Warming Stone改变了你对持久战的看法。在拥有这个道具之前，长时间的战斗让你焦虑——你担心 flask 会用完。在学会制作Warming Stone之后，你获得了 confidence：即使 flask 见底，你还有后备的治疗手段。这种心理转变让你在面对高难度内容时更加从容，而这种从容往往是胜利的关键。">More importantly, Warming Stone changes how you view endurance fights. Before having this item, long battles created anxiety about running out of flask charges. After learning to craft Warming Stones, you gain confidence: even if flasks run dry, you have backup healing. This mental shift makes you calmer when facing difficult content, and that calm is often the key to victory.</p>
+
+<h3 data-zh="Warming Stone的战术进阶用法">Advanced Warming Stone Tactics</h3>
+<p data-zh="除了基础的治疗功能，Warming Stone在高级战术中有更多用法。例如，在Boss战中，你可以故意将石头放在Boss的远侧，吸引Boss移动到那个位置，然后利用这段时间攻击Boss的另一侧。这种'治疗诱饵'战术在对抗移动较慢的Boss时特别有效。另外，在合作模式中，与队友协调放置多个Warming Stone可以创建一个'治疗走廊'，让你们在长线作战中始终保持高血量状态。">Beyond basic healing, Warming Stones have advanced tactical applications. In boss fights, you can deliberately place the stone on the boss's far side to draw them toward it, buying time to attack from the opposite flank — a "healing bait" tactic especially effective against slower bosses. In co-op, coordinating multiple Warming Stones with teammates creates a "healing corridor" for sustained high-HP status during long fights.</p>
+
+<h3 data-zh="Sanctuary Stone的 lore 背景">Sanctuary Stone Lore Background</h3>
+<p data-zh="Sanctuary Stone不仅是一个实用的制作材料，它还承载着艾尔登法环的 lore 深度。这种在巨人山顶的极端寒冷环境中形成的矿石，据说是由远古巨人的神圣力量结晶而成。它的温暖特性——能够制作出持续散发治疗能量的Warming Stone——可能正是巨人族远古力量的残留。在游戏的世界观中，Fire Giant是最后的巨人，而Sanctuary Stone则可能是他族人曾经存在的物证。当你采集这些石头并制作Warming Stone时，你实际上是在利用一个已逝文明的遗产来治愈自己——这是一个美丽而略带忧伤的概念。">Sanctuary Stone carries Elden Ring's lore depth beyond practical crafting. This ore, formed in the Mountaintops' extreme cold, is said to be crystallized sacred power from ancient giants. Its warming properties — enabling the creation of healing-emitting Warming Stones — may be residual traces of giantkind's ancient power. In the game's lore, the Fire Giant is the last of his kind, and Sanctuary Stones may be physical evidence of his people's existence. When you harvest these stones and craft Warming Stones, you are essentially using a fallen civilization's legacy to heal yourself — a beautiful and bittersweet concept.</p>
+
+<h3 data-zh="Mountaintops的环境叙事">Mountaintops Environmental Storytelling</h3>
+<p data-zh="巨人山顶是艾尔登法环中环境叙事最出色的区域之一。当你在这里farm Sanctuary Stone时，你会注意到到处都是巨大的骨骼、残破的建筑和被冰雪覆盖的战场遗迹。这些元素共同讲述了一个关于巨人族兴衰的史诗故事。Fire Giant守着Erdtree的火焰，而他的族人早已消逝。Warming Stone的制作配方藏在这个区域，某种程度上是对这个已逝文明的一种致敬——用他们留下的矿石来制作温暖与治疗，这是对巨人族遗产最恰当的纪念方式。">The Mountaintops represents some of Elden Ring's finest environmental storytelling. While farming Sanctuary Stone, you will notice giant bones, ruined structures, and snow-covered battlefield remnants everywhere. These elements collectively tell an epic story of giantkind's rise and fall. The Fire Giant tends the Erdtree's flame while his people are long gone. The Warming Stone recipe being hidden in this zone serves as a tribute to this fallen civilization — using their remnants to craft warmth and healing is the most fitting memorial to giantkind's legacy.</p>
+
+<h3 data-zh="Erdleaf Flower的获取策略">Erdleaf Flower Acquisition Strategy</h3>
+<p data-zh="虽然Erdleaf Flower是整个交界地最常见的花朵之一，但当你需要大量制作Warming Stone时，有策略地采集仍然是明智的。推荐的路线是从Limgrave的The First Step赐福点开始，骑马沿着通往Church of Elleh的道路采集，然后向北穿过树林，最后向东沿着河流采集。这条路线每次循环可以获得15-20朵Erdleaf Flower，而且沿途几乎没有危险。">While Erdleaf Flower is among the most common flowers, strategic collection is still wise when crafting Warming Stones in bulk. The recommended route starts at <strong>The First Step</strong> grace in Limgrave, riding toward the <strong>Church of Elleh</strong> while collecting, then north through the woods, and finally east along the river. This circuit yields <strong>15–20 Erdleaf Flowers</strong> per pass with minimal danger along the way.</p>
+
+<div class="cross-links">
+<a href="bewitching-branch.html" class="cross-link">→ Next: Bewitching Branch</a>
+<a href="spark-aromatic.html" class="cross-link">← Spark Aromatic</a>
+<a href="preserving-boluses.html" class="cross-link">← Preserving Boluses</a>
+</div>
+</section>
+
+</main>
+
+<aside class="sidebar">
+<h3>Quick Info</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Effect:</strong> AoE healing zone ~10-15 HP/s</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Duration:</strong> ~45 seconds</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Stacks:</strong> 10</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Cookbook:</strong> Nomadic [22]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Yield:</strong> 1 per craft</p>
+<div class="quick-nav">
+<h4>Jump to Section</h4>
+<a href="#why">Why It Matters</a>
+<a href="#recipe">Crafting Recipe</a>
+<a href="#cookbook">Cookbook Location</a>
+<a href="#materials">Farm Routes</a>
+<a href="#gotchas">Gotcha Tips</a>
+<a href="#benefits">Free Benefits</a>
+</div>
+<div class="quick-nav">
+<h4>Related Items</h4>
+<a href="bewitching-branch.html">Bewitching Branch</a>
+<a href="preserving-boluses.html">Preserving Boluses</a>
+<a href="uplifting-aromatic.html">Uplifting Aromatic</a>
+</div>
+</aside>
+
+</div>
+
+<footer class="site-footer">
+<p>RelicTrek — Crafting guides for the Lands Between and beyond. Not affiliated with FromSoftware.</p>
+<p style="margin-top:8px"><a href="./">← Back to Elden Ring Index</a></p>
+</footer>
+
+</body>
+</html>

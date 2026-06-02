@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bewitching Branch — Elden Ring Crafting Guide | RelicTrek</title>
+<meta name="description" content="Complete guide to crafting Bewitching Branch in Elden Ring. Turn enemies into allies for 20 seconds. Miquella's Lily + Sacramental Bud. Frenzied's Cookbook from Mohgwyn Palace. Ultra rare.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-tool{font-size:48px;line-height:1}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e67e22;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="./">Guides</a>
+<a href="./" class="active">Crafting</a>
+<a href="./">Maps</a>
+<a href="./">Tools</a>
+</div>
+</div>
+</nav>
+
+<div class="ticker-bar">
+<div class="ticker-inner">
+✨ <strong>Bewitching Branch</strong> — Turn enemies into allies for 20s | Frenzied's Cookbook from Mohgwyn Palace | Miquella's Lily + Sacramental Bud | ★★★★★ Ultra Rare
+</div>
+</div>
+
+<div class="container">
+
+<aside class="sidebar">
+<h3>Game Select</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+<a href="../no-mans-sky/">No Man's Sky</a>
+<a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+<a href="../valheim/">Valheim</a>
+<a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="./" class="active">Elden Ring</a>
+<a href="../stardew-valley/">Stardew Valley</a>
+<a href="../hades-2/">Hades 2</a>
+<a href="../satisfactory/">Satisfactory</a>
+<div class="quick-nav">
+<h4>Elden Ring Items</h4>
+<a href="gold-pickled-fowl-foot.html">Gold-Pickled Fowl Foot</a>
+<a href="exalted-flesh.html">Exalted Flesh</a>
+<a href="uplifting-aromatic.html">Uplifting Aromatic</a>
+<a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>
+<a href="ironjar-aromatic.html">Ironjar Aromatic</a>
+<a href="preserving-boluses.html">Preserving Boluses</a>
+<a href="drawstring-blood-grease.html">Drawstring Blood Grease</a>
+<a href="spark-aromatic.html">Spark Aromatic</a>
+<a href="warming-stone.html">Warming Stone</a>
+<a href="bewitching-branch.html" class="active" style="color: var(--accent); font-weight: 600;">Bewitching Branch</a>
+</div>
+</aside>
+
+<main class="main-content">
+
+<div class="item-header">
+<div class="item-icon-legendary">✨</div>
+<div class="item-title">
+<h1 data-zh="魅惑树枝">Bewitching Branch</h1>
+<div class="item-subtitle" data-zh="将敌人转化为盟友20秒——游戏中最稀有、最独特的道具之一">Turn Enemies into Allies for 20 Seconds — One of the Rarest and Most Unique Items in the Game</div>
+<div class="item-meta">
+<span class="difficulty">★★★★★ Very Hard</span>
+<span>Type: Legendary Tool</span>
+<span>Stack: 5</span>
+</div>
+</div>
+</div>
+
+<section class="section" id="why">
+<h2><span>✨</span> Why Bewitching Branch Matters</h2>
+<p data-zh="魅惑树枝是艾尔登法环中最独特、最稀有的道具之一。它的效果是独一无二的：当你对一个敌人使用它时，那个敌人会被魅惑，转而攻击它的同伴20秒。想象一下，在一个充满强大敌人的房间中，你让其中一个最强壮的敌人突然倒戈——这种战术价值是无法用数字衡量的。">The <strong>Bewitching Branch</strong> is one of the most unique and rare items in all of Elden Ring. Its effect is genuinely one-of-a-kind: when used on an enemy, that enemy becomes <strong>charmed and turns on its allies for 20 seconds</strong>. Imagine a room full of powerful foes, and suddenly the strongest one among them switches sides — the tactical value is immeasurable. There is simply nothing else in the game that replicates this effect. It is chaos incarnate, packaged as a consumable.</p>
+
+<p data-zh="这个道具不仅仅是一个战斗工具——它还是一个谜题解决方案。艾尔登法环中有某些遭遇战，其设计意图就是利用魅惑机制来简化。当你面对两个强大的敌人同时攻击时，让其中一个转而攻击另一个，相当于瞬间将1v2的不利局面变为2v1的优势局面。这种局面逆转的快感是独一无二的。">This item is not just a combat tool — it is a puzzle solution. Certain encounters in Elden Ring are designed with charm mechanics in mind as a intended simplification strategy. When facing two powerful enemies simultaneously, converting one to attack the other instantly turns a 1v2 disadvantage into a 2v1 advantage. The satisfaction of this reversal is unmatched by any other item in the game.</p>
+
+<h3 data-zh="最佳使用场景">When to Use Bewitching Branch</h3>
+<ul>
+<li data-zh="双Boss/强力敌人遭遇战：面对两个强大敌人时，魅惑其中一个让它攻击另一个"><strong>Dual-Boss Encounters:</strong> When facing two powerful enemies, charm one and watch them fight each other while you pick off the survivor.</li>
+<li data-zh="入侵战中的混乱制造：在入侵其他玩家时，魅惑世界中的强力敌人来攻击宿主"><strong>Invasion Chaos:</strong> When invading, charm a powerful world enemy to attack the host. Nothing creates panic like a suddenly-hostile knight turning on its "allies."</li>
+<li data-zh="高难度区域的敌人削减：在敌人密集的高难度区域，逐个魅惑来减少威胁"><strong>Hard Zone Enemy Reduction:</strong> In enemy-dense areas, charm the strongest foe first and let them thin the herd.</li>
+<li data-zh="PvE中的战术实验：魅惑不同类型的敌人，观察它们之间的战斗——这本身就是一种乐趣"><strong>Tactical Experimentation:</strong> Charm different enemy types and watch them fight each other — this is entertainment in itself.</li>
+<li data-zh="特定任务需求：某些NPC任务线可能需要或建议使用魅惑树枝"><strong>Questline Requirements:</strong> Certain NPC questlines may require or recommend using Bewitching Branches.</li>
+</ul>
+
+<h3 data-zh="魅惑机制的深层解析">Understanding the Charm Mechanic</h3>
+<p data-zh="魅惑树枝的效果持续整整20秒——这在艾尔登法环的战斗中是一个很长的时间。被魅惑的敌人会：主动攻击它之前的同伴、吸引敌人的攻击火力（相当于一个临时召唤灵）、保留它全部的攻击力和生命值——这意味着一个你魅惑的强力敌人造成的伤害远超任何召唤灵。">The 20-second charm duration is an <strong>eternity</strong> in Elden Ring combat. A charmed enemy will: actively attack its former allies; draw enemy aggro (functioning as a temporary Spirit Ash); and <strong>retain its full attack power and HP</strong> — meaning a powerful enemy you charm deals far more damage than any summon. A charmed knight can kill three or four lesser enemies before falling. A charmed troll can demolish an entire encampment. The value scales directly with the strength of the enemy you charm — always target the strongest available foe.</p>
+
+<h3 data-zh="与其他召唤/支援手段的对比">Comparison with Other Summon/Support Options</h3>
+<ul>
+<li data-zh=" vs Spirit Ashes：召唤灵需要FP且受限于已收集的骨灰；魅惑树枝不需要FP且可以使用任何遇到的敌人"><strong>vs. Spirit Ashes:</strong> Ashes require FP and are limited to what you have collected. Bewitching Branch requires no FP and can use <strong>any enemy you encounter</strong>.</li>
+<li data-zh=" vs NPC召唤印记：NPC召唤只在特定Boss房可用；魅惑树枝在任何有敌人的地方都可用">vs. <strong>NPC Summon Signs:</strong> Only available at specific boss doors. Bewitching Branch works <strong>anywhere there are enemies</strong>.</li>
+<li data-zh=" vs 其他道具控制效果：没有其他道具能提供相同的效果——魅惑树枝是独一无二的"><strong>vs. Other Status Effects:</strong> No other item provides this exact effect. Bewitching Branch is <strong>truly unique</strong>.</li>
+<li data-zh=" vs 直接战斗：有时候魅惑一个强力敌人比自己打更高效"><strong>vs. Direct Combat:</strong> Sometimes charming a powerful enemy is more efficient than fighting it yourself — especially when outnumbered.</li>
+</ul>
+
+<h3 data-zh="FOMO因素——为什么你不应该错过">The FOMO Factor</h3>
+<p data-zh="魅惑树枝的制作配方来自Frenzied's Cookbook，位于Mohgwyn Palace——游戏中最隐秘、最高级的区域之一。很多玩家根本没有到达过Mohgwyn Palace，更不用说找到制作笔记了。这个道具的独特性和稀有性意味着，绝大多数玩家在一周目中完全不知道它的存在。当你在某个视频或论坛中看到有人用魅惑树枝让两个Boss互相残杀时，那种'我为什么不知道这个'的感觉会非常强烈。而且，魅惑树枝的效果如此独特和有趣，错过它等于错过了艾尔登法环中最具创意的游戏机制之一。">The Bewitching Branch recipe comes from <strong>Frenzied's Cookbook</strong> in <strong>Mohgwyn Palace</strong> — one of the game's most secret and highest-level areas. Many players never reach Mohgwyn Palace at all, let alone find the Cookbook. The item's uniqueness and rarity mean the vast majority of first-playthrough players have no idea it exists. When you see a video of someone making two bosses fight each other with a Bewitching Branch, the "why did I not know about this" feeling is intense. And because the effect is so unique and genuinely fun, missing it means missing one of Elden Ring's most creative mechanics.</p>
+
+<div class="cross-links">
+<a href="warming-stone.html" class="cross-link">← Warming Stone</a>
+<a href="preserving-boluses.html" class="cross-link">← Preserving Boluses</a>
+</div>
+</section>
+
+<section class="section" id="recipe">
+<h2><span>🧪</span> Crafting Recipe</h2>
+<p data-zh="魅惑树枝的配方需要两种极其稀有的材料——Miquella's Lily和Sacramental Bud。两者都是整个游戏中最稀有的制作材料之一，这也是魅惑树枝如此珍贵的原因。">The Bewitching Branch recipe requires two of the rarest materials in the game: <strong>Miquella's Lily</strong> and <strong>Sacramental Bud</strong>. Both are among the most limited crafting materials in the entire Lands Between, which is why Bewitching Branches are so precious.</p>
+
+<table class="recipe-table">
+<thead>
+<tr><th>Material</th><th>Quantity</th><th>Rarity</th><th>Farmable</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🌸 <strong>Miquella's Lily</strong></td>
+<td>1x</td>
+<td data-zh="极稀有（有限刷新）">Extremely Rare (Limited Spawns)</td>
+<td>⚠️ Limited — Finite spawns</td>
+</tr>
+<tr>
+<td>🌺 <strong>Sacramental Bud</strong></td>
+<td>1x</td>
+<td data-zh="稀有（危险区域）">Rare (Danger Zones)</td>
+<td>✅ Yes — Limited respawns</td>
+</tr>
+</tbody>
+</table>
+
+<h3 data-zh="制作产出">Yield</h3>
+<p data-zh="每次制作产出1个魅惑树枝。堆叠上限仅为5个——这是游戏对如此强大效果的平衡限制。每一个魅惑树枝都应该被精心使用，因为材料补充极其困难。">Each crafting attempt produces <span class="highlight">1x Bewitching Branch</span>. The stack limit is only <strong>5</strong> — a deliberate balance restriction for such a powerful effect. <strong>Every Bewitching Branch should be used thoughtfully</strong> because material replenishment is extremely difficult.</p>
+
+<div class="gotcha-box">
+<h4>⚠️ Recipe Key Notes</h4>
+<ul>
+<li data-zh="魅惑持续时间：整整20秒——被魅惑的敌人会全力攻击它的前同伴">Charm duration is exactly <strong>20 seconds</strong> — the charmed enemy fights its former allies with full commitment.</li>
+<li data-zh="对Boss无效：魅惑树枝不能对Boss级敌人使用——只能对普通敌人和精英敌人使用">Does <strong>not work on bosses</strong> — only affects regular and elite enemies.</li>
+<li data-zh="堆叠上限5个：游戏强制限制库存——不能囤积">Stack limit of <strong>5</strong> is hard-capped by the game — cannot stockpile beyond this.</li>
+<li data-zh="材料有限供应：Miquella's Lily的刷新点极其有限——这是真正的瓶颈">Material supply is genuinely limited — <strong>Miquella's Lily spawn points are extremely scarce</strong>.</li>
+<li data-zh="魅惑效果视觉上很明显：被魅惑的敌人头顶会有粉色粒子效果">Visual indicator: Charmed enemies have a <strong>pink particle effect</strong> above their heads.</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Frenzied's Cookbook</h2>
+<p data-zh="要解锁魅惑树枝的配方，你需要发狂者的制作笔记（Frenzied's Cookbook）。这本笔记位于Mohgwyn Palace——血王朝的宫殿，游戏中最隐秘和最危险的区域之一。">To unlock the Bewitching Branch recipe, you must acquire <strong>Frenzied's Cookbook</strong>. This Cookbook is located in <strong>Mohgwyn Palace</strong> — the blood dynasty's palace, one of the most secret and dangerous zones in the entire game.</p>
+
+<div class="cookbook-box">
+<h4>📖 Frenzied's Cookbook</h4>
+<p><strong>Location:</strong> Mohgwyn Palace, blood dynasty area</p>
+<p><strong>Coordinates:</strong> On a corpse in the palace interior, near the dynasty's central altar structures</p>
+<p><strong>Recipe Unlocked:</strong> Bewitching Branch</p>
+<p><strong>Also Unlocks:</strong> Other frenzy-themed utility recipes</p>
+</div>
+
+<h3 data-zh="如何到达Mohgwyn Palace">How to Reach Mohgwyn Palace</h3>
+<p data-zh="Mohgwyn Palace是位于地下区域的隐藏地图，有两个主要入口。最常用的方法是通过White Mask Varré的入侵任务线，另一种是通过Consecrated Snowfield的传送门。">Mohgwyn Palace is a hidden underground zone with two primary entrances. The most common method is through <strong>White Mask Varré's questline</strong>. Alternatively, find the teleporter gate in the western <strong>Consecrated Snowfield</strong>.</p>
+
+<div class="route-tree">
+<p><span class="step">Method 1 — Varré's Questline (Recommended):</span></p>
+<p><span class="step">Step 1:</span> Meet <strong>White Mask Varré</strong> at the First Step site of grace in Limgrave.</p>
+<p><span class="step">Step 2:</span> Progress to the <strong>Rose Church</strong> in Liurnia (south of the Academy). Varré will be there.</p>
+<p><span class="step">Step 3:</span> Complete <strong>three invasions</strong> using the Festering Bloody Finger he provides. You do not need to win — just complete three invasion attempts.</p>
+<p><span class="step">Step 4:</span> Return to Varré. He gives you the <strong>Pureblood Knight's Medal</strong>, which teleports you directly to Mohgwyn Palace.</p>
+<p><span class="step">Method 2 — Snowfield Portal:</span></p>
+<p><span class="step">Step 1:</span> Obtain both halves of the <strong>Haligtree Secret Medallion</strong> (one from Village of the Albinaurics, one from Castle Sol).</p>
+<p><span class="step">Step 2:</span> Use the medallion at the <strong>Grand Lift of Rold</strong> to access the <strong>Consecrated Snowfield</strong>.</p>
+<p><span class="step">Step 3:</span> Find the teleporter gate in the western snowfield. It transports you to Mohgwyn Palace.</p>
+</div>
+
+<h3 data-zh="Mohgwyn Palace的危险">Mohgwyn Palace Hazards</h3>
+<ul>
+<li data-zh="白面贵族（Albinaurics）：数量极多，出血攻击累积速度快">• <strong>Albinaurics:</strong> Massive numbers with rapid bleed buildup. They swarm aggressively.</li>
+<li data-zh="血王骑士：重型骑士敌人，攻击力强且会出血">• <strong>Blood Knights:</strong> Heavy knights with strong attacks and bleed infliction.</li>
+<li data-zh="血沼环境：地面上的血沼会累积出血状态">• <strong>Blood swamp:</strong> The ground itself builds bleed status. Equip immunity gear.</li>
+<li data-zh="Mohg, Lord of Blood（Boss）：宫殿深处的半神Boss——极其强大">• <strong>Mohg, Lord of Blood (Boss):</strong> The demigod at the palace's depths — an extremely powerful and spectacular boss fight.</li>
+<li data-zh="高等级区域：敌人等级与后期游戏区域相当">• <strong>High-level zone:</strong> Enemy scaling matches late-game areas. Come prepared.</li>
+</ul>
+
+<h3 data-zh="在Mohgwyn Palace中找到Frenzied's Cookbook">Finding Frenzied's Cookbook in Mohgwyn Palace</h3>
+<p data-zh="Frenzied's Cookbook位于Mohgwyn Palace的内部区域——不是在入口处的血沼，而是在宫殿建筑内部。从Palace Approach Ledge-Road赐福点出发，向宫殿深处推进。Cookbook在一个尸体上，靠近宫殿中央的祭坛结构附近。你需要穿过Albinauric密集区域才能到达，建议使用潜行或骑马快速通过。">Frenzied's Cookbook is in Mohgwyn Palace's <strong>interior</strong> — not at the entrance blood swamp, but inside the palace structures. From the <strong>Palace Approach Ledge-Road</strong> grace, push deeper into the palace. The Cookbook is on a corpse near the central altar structures. You must pass through Albinauric-dense areas to reach it — <strong>use stealth or ride Torrent quickly through</strong>. The corpse is on an elevated platform near the dynasty's ritual sites.</p>
+
+<div class="cross-links">
+<a href="warming-stone.html" class="cross-link">← Warming Stone</a>
+<a href="preserving-boluses.html" class="cross-link">← Preserving Boluses</a>
+</div>
+</section>
+
+<section class="section" id="materials">
+<h2><span>🌿</span> Materials &amp; Farm Locations</h2>
+<p data-zh="魅惑树枝的两种材料是整个游戏中最稀有的制作材料。Miquella's Lily的刷新点有限，Sacramental Bud虽然可以farm但也很困难。这意味着你的魅惑树枝产量受到严格限制——每一个都是珍贵的战略资源。">Bewitching Branch's two materials are among the rarest crafting materials in the game. Miquella's Lily has limited spawn points, and Sacramental Bud, while farmable, is difficult. Your Bewitching Branch production is <strong>strictly limited</strong> — each one is a precious strategic resource.</p>
+
+<h3>🌸 Material 1: Miquella's Lily</h3>
+<div class="material-item">
+<div class="material-icon">🌸</div>
+<div class="material-info">
+<h4>Miquella's Lily <span style="color:#ff4d4d">★★★★★ Extremely Rare — Finite Spawns</span></h4>
+<p data-zh="Miquella's Lily是整个游戏中最稀有的制作材料之一。这种纯白色的百合花只在与Miquella相关的特定地点刷新，而且总数量有限——不能像普通材料那样无限farm。每一个Miquella's Lily都应该被珍惜使用。"><strong>Miquella's Lily</strong> is one of the rarest crafting materials in the entire game. This pure white lily only spawns in specific locations related to <strong>Miquella</strong>, and the total number of spawns is <strong>finite</strong> — it cannot be infinitely farmed like ordinary materials. <strong>Every Miquella's Lily should be treasured and used carefully.</strong></p>
+</div>
+</div>
+
+<h4 data-zh="已知Miquella's Lily刷新点">Known Miquella's Lily Spawn Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Haligtree Area — Most Concentrated Source</strong></p>
+<p data-zh="Miquella's Haligtree区域是Miquella's Lily最集中的产地。在这个巨大的地下/树上区域中，你可以找到5-8朵Miquella's Lily。但这意味着你需要推进到游戏最后期才能到达Haligtree——需要完成Hidden Path to Haligtree和整个Haligtree区域。"><strong>Miquella's Haligtree</strong> is the most concentrated source — <strong>5–8 lilies</strong> can be found in this massive late-game zone. But reaching the Haligtree requires endgame progression through the <strong>Hidden Path to Haligtree</strong> dungeon. This is the final major zone of the game.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Consecrated Snowfield — Scattered Spawns</strong></p>
+<p data-zh="Consecrated Snowfield区域有2-3朵Miquella's Lily分布。这个区域本身就需要Secret Medallion才能进入，所以也是后期内容。"><strong>Consecrated Snowfield</strong> has <strong>2–3 scattered lilies</strong>. This zone itself requires the Secret Medallion to access, making it late-game content as well.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Various Locations Across the Lands Between</strong></p>
+<p data-zh="少量Miquella's Lily可以在其他与Miquella相关的地点找到——例如某些教堂和地下区域。总数非常有限。">A small number of lilies can be found at other Miquella-related sites — certain churches and underground areas. The <strong>total global supply is extremely limited</strong>.</p>
+</div>
+
+<h4 data-zh="Miquella's Lily获取关键提示">Miquella's Lily Critical Notes</h4>
+<ul>
+<li data-zh="⚠️ 总数量有限：整个游戏中的Miquella's Lily刷新点是有限的——不能无限farm"><strong>⚠️ Finite global supply:</strong> The total number of Miquella's Lily spawns across the entire game is limited. <strong>It cannot be infinitely farmed.</strong></li>
+<li data-zh="计划使用：每一个Miquella's Lily都意味着一个魅惑树枝——务必在使用前三思"><strong>Plan every use:</strong> Each lily equals one Bewitching Branch. Think twice before crafting.</li>
+<li data-zh="优先使用在非关键战斗：保存魅惑树枝用于真正值得的场合">Do not waste on trivial encounters. Save Bewitching Branches for truly worthy moments.</li>
+<li data-zh="进入New Game+可以重新收集：二周目所有材料刷新">New Game+ refreshes all material spawns — this is how you replenish your supply.</li>
+</ul>
+
+<h3>🌺 Material 2: Sacramental Bud</h3>
+<div class="material-item">
+<div class="material-icon">🌺</div>
+<div class="material-info">
+<h4>Sacramental Bud <span style="color:#ff4d4d">★★★ Rare — Dangerous Zones</span></h4>
+<p data-zh="Sacramental Bud是一种暗红色的花苞，只在特定的危险区域刷新——主要是Caelid的Divine Tower周边和Sellia魔法镇。虽然可以无限farm，但刷新点有限且区域危险。"><strong>Sacramental Bud</strong> is a dark crimson bud that spawns in specific dangerous zones — primarily around <strong>Caelid's Divine Tower</strong> and <strong>Sellia, Town of Sorcery</strong>. While respawnable, spawn points are limited and the zones are dangerous.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Sacramental Bud Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Caelid Divine Tower — Exterior Grounds</strong></p>
+<p data-zh="Caelid Divine Tower周围的区域有2-4个Sacramental Bud刷新点。从Divine Tower of Caelid: Basement赐福点出发，在塔周围的废墟中采集。"><strong>Caelid Divine Tower exterior</strong> — <strong>2–4 spawn points</strong> around the tower grounds. From the <strong>Divine Tower of Caelid: Basement</strong> grace, collect buds in the surrounding ruins.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Sellia, Town of Sorcery</strong></p>
+<p data-zh="Sellia魔法镇内有Sacramental Bud刷新点。需要先点燃三个火焰灯柱才能自由移动。注意隐形刺客敌人。"><strong>Sellia, Town of Sorcery</strong> — has Sacramental Bud spawns. Light <strong>three braziers</strong> to unseal the town. Beware invisible assassins.</p>
+</div>
+
+<h4 data-zh="Sacramental Bud Farm技巧">Sacramental Bud Farming Tips</h4>
+<ul>
+<li data-zh="在赐福休息后刷新——可以无限farm，但每次跑图产量有限">Respawns on grace rest — infinitely farmable, but low yield per run.</li>
+<li data-zh="Caelid的敌人等级较高——建议40级以上再来farm">Caelid enemies are high-level — recommend <strong>level 40+</strong>.</li>
+<li data-zh="提升discovery属性以增加采集效率">Equip Discovery-boosting items for better farming efficiency.</li>
+</ul>
+
+<div class="cross-links">
+<a href="warming-stone.html" class="cross-link">← Warming Stone</a>
+<a href="preserving-boluses.html" class="cross-link">← Preserving Boluses</a>
+</div>
+</section>
+
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> Gotcha Tips — What Can Go Wrong</h2>
+<p data-zh="魅惑树枝是游戏中最珍贵的道具之一，使用时任何一个错误都可能让你追悔莫及。以下是完整的问题清单和规避方法。">Bewitching Branches are among the game's most precious items. A single mistake in usage can be devastating. Here is the complete warning list.</p>
+
+<div class="gotcha-box">
+<h4>💎 Gotcha 1: Miquella's Lily Is FINITE — Use Wisely</h4>
+<p data-zh="这是最重要的事项，值得反复强调：Miquella's Lily在整个游戏中的总供应量是有限的。这意味着你在一周目中能制作的魅惑树枝数量是有上限的。每一个魅惑树枝都应该是经过深思熟虑的战略决策，而不是随意使用的玩具。建议保存用于：入侵战中的关键时刻、双精英敌人遭遇战、以及纯粹的娱乐价值（比如让两个巨魔互殴）。">This bears repeating: <strong>Miquella's Lily has a finite global supply</strong>. The number of Bewitching Branches you can craft per playthrough is capped. Each branch should be a deliberate strategic decision, not a casual toy. Save for: critical invasion moments, dual-elite encounters, and maximum entertainment value (making two trolls fight each other).</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🚫 Gotcha 2: Does Not Work on Bosses</h4>
+<p data-zh="魅惑树枝对Boss级敌人完全无效。不要浪费珍贵的道具尝试魅惑Boss——你会失去材料且没有任何效果。它只对普通敌人和精英敌人（有名字的非Boss敌人）有效。">Bewitching Branch <strong>does not work on boss enemies</strong>. Do not waste this precious item attempting to charm a boss — you will lose the branch with zero effect. It only works on regular enemies and named mini-bosses (but not full boss encounters).</p>
+</div>
+
+<div class="gotcha-box">
+<h4>⏱️ Gotcha 3: 20 Seconds Feels Long But Is Not</h4>
+<p data-zh="20秒的魅惑时间在战斗中是一个很长的时间——足够被魅惑的敌人杀死多个同伴。但它的结束往往是突然的：你的'盟友'突然又变回敌人，可能正在你身边。时刻注意魅惑效果的剩余时间，在效果结束前拉开距离，避免被反咬一口。">Twenty seconds is long in combat — enough for a charmed enemy to kill multiple allies. But its ending is abrupt: your "ally" suddenly reverts to enemy, possibly right next to you. <strong>Track the timer</strong> and create distance before the charm expires to avoid a nasty surprise.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🎯 Gotcha 4: Choose Your Target Carefully</h4>
+<p data-zh="魅惑最强大/血量最高的敌人并不总是最佳策略。有时候魅惑一个快速攻击的敌人更有效，因为它可以更频繁地干扰其他敌人。或者魅惑一个持盾敌人，让它吸收伤害。根据战场局势灵活选择目标，而不是机械地选择最强敌人。">Charming the strongest enemy is not always optimal. Sometimes a <strong>fast-attacking enemy</strong> is better because it disrupts more frequently. Or charm a shield-bearing enemy to absorb damage. Adapt your target selection to the battlefield, not just enemy power level.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🗺️ Gotcha 5: Mohgwyn Palace Access Is Complicated</h4>
+<p data-zh="到达Mohgwyn Palace需要完成入侵任务（需要联机功能）或者获取Secret Medallion的两半（需要击败Castle Sol的Boss）。这两个条件都不简单——如果你无法联机入侵，你需要走Snowfield路线，这本身就是一个漫长的过程。">Mohgwyn Palace access requires either <strong>invasion functionality</strong> (online play) or <strong>both Secret Medallion halves</strong> (including defeating the Castle Sol boss). Neither is trivial. If you cannot invade, the Snowfield route is a lengthy process in itself.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>📦 Gotcha 6: Stack Limit of 5 Is Strict</h4>
+<p data-zh="即使你farm了大量的Miquella's Lily和Sacramental Bud，你也只能携带5个魅惑树枝。这是游戏的硬限制，无法突破。这意味着你需要在使用和储存之间做出选择——用掉一些才能制作更多。">Even with abundant materials, you can only carry <strong>5 Bewitching Branches</strong>. This is a hard cap. You must use some to make room for more — the game forces you to spend this resource rather than hoard it indefinitely.</p>
+</div>
+</section>
+
+<section class="section" id="benefits">
+<h2><span>🎁</span> Free Benefits — What Else You Get Farming These Materials</h2>
+<p data-zh="farm魅惑树枝的材料意味着你已经深入了艾尔登法环最核心的后期区域。这本身就是巨大的成就。以下是额外收益。">Farming Bewitching Branch materials means you have penetrated Elden Ring's deepest late-game areas. This is an achievement in itself. Here is what else you gain:</p>
+
+<h3 data-zh="探索Mohgwyn Palace的额外收益">Exploring Mohgwyn Palace (Cookbook Location)</h3>
+<ul>
+<li data-zh="最佳刷卢恩地点：Mohgwyn Palace是游戏中最 famous 的卢恩farm地点"><strong>Best rune farm:</strong> Mohgwyn Palace is the game's most famous rune farming location.</li>
+<li data-zh="Mohg, Lord of Blood Boss战：挑战半神Mohg，获得他的追忆兑换强力武器/法术"><strong>Mohg, Lord of Blood:</strong> Challenge a demigod for a powerful Remembrance weapon/spell.</li>
+<li data-zh="血王相关的独特装备：血王朝有独特的护甲和武器可以获取"><strong>Unique Blood gear:</strong> Blood-themed unique armor and weapons to collect.</li>
+<li data-zh="White Mask头盔：Varré任务线的奖励——出血build核心装备"><strong>White Mask helm:</strong> Varré questline reward — core bleed build equipment.</li>
+</ul>
+
+<h3 data-zh="探索Haligtree的额外收益">Exploring Miquella's Haligtree (Miquella's Lily)</h3>
+<ul>
+<li data-zh="Malenia, Blade of Miquella：游戏中最 famous 的Boss——技术考验的终极舞台"><strong>Malenia, Blade of Miquella:</strong> The game's most famous boss — the ultimate skill test.</li>
+<li data-zh="独特的Haligtree主题装备：Elphael区域有大量独特装备"><strong>Haligtree gear:</strong> Elphael area has extensive unique equipment.</li>
+<li data-zh="高级锻造材料：Somber Ancient Dragon Smithing Stone等"><strong>Top-tier upgrade materials:</strong> Including Somber Ancient Dragon Smithing Stones.</li>
+<li data-zh=" Lore深度：Haligtree区域揭示了Miquella和Malenia的背景故事"><strong>Lore depth:</strong> The Haligtree reveals extensive backstory for Miquella and Malenia.</li>
+</ul>
+
+<h3 data-zh="探索Caelid的额外收益">Farming Caelid (Sacramental Bud)</h3>
+<ul>
+<li data-zh="Bloodrose：Caelid也是Bloodrose的产地——用于制作出血相关道具"><strong>Bloodrose:</strong> For bleed-themed crafting.</li>
+<li data-zh="大量卢恩和独特装备"><strong>Runes and unique gear:</strong> Abundant in Caelid.</li>
+<li data-zh="Radahn Festival：Caelid有游戏中最壮观的Boss战之一"><strong>Radahn Festival:</strong> One of the game's most spectacular boss encounters.</li>
+</ul>
+
+<h3 data-zh="长期战略收益——为什么魅惑树枝改变一切">Long-Term Strategic Value — Why Bewitching Branch Changes Everything</h3>
+<p data-zh="掌握魅惑树枝的制作意味着你已经完成了艾尔登法环中最艰难的挑战之一：到达Mohgwyn Palace和Haligtree。这标志着你已经是游戏的高手。更重要的是，魅惑树枝为你打开了一个全新的战术维度——不再是单纯的砍杀，而是操纵战场、利用敌人之间的矛盾来取得胜利。">Mastering Bewitching Branch means you have completed one of Elden Ring's toughest challenges: reaching Mohgwyn Palace and the Haligtree. You are a master of the game. More importantly, the Bewitching Branch opens an entirely new tactical dimension — no longer just hacking and slashing, but <strong>manipulating the battlefield</strong>, turning enemy against enemy, and watching chaos unfold while you sit back and enjoy the show.</p>
+
+<p data-zh="魅惑树枝代表了艾尔登法环设计哲学的巅峰：给玩家一个独特的、强大的、有趣的工具，然后用稀有性和获取难度来平衡它。当你终于收集到足够的材料制作第一个魅惑树枝，然后在一个艰难的遭遇战中使用它，看着原本要杀你的敌人转而为你战斗——那种成就感和乐趣是无与伦比的。这就是艾尔登法环的魅力：探索、发现、准备、然后在完美的时刻释放你的创造力。">The Bewitching Branch represents the pinnacle of Elden Ring's design philosophy: give the player a unique, powerful, and genuinely fun tool, then balance it through rarity and acquisition difficulty. When you finally gather enough materials to craft your first branch, use it in a difficult encounter, and watch an enemy that was about to kill you turn to fight for you instead — the sense of triumph and pure joy is unmatched. This is Elden Ring's magic: explore, discover, prepare, and then unleash your creativity at the perfect moment.</p>
+
+<div class="cross-links">
+<a href="warming-stone.html" class="cross-link">← Warming Stone</a>
+<a href="preserving-boluses.html" class="cross-link">← Preserving Boluses</a>
+<a href="gold-pickled-fowl-foot.html" class="cross-link">Gold-Pickled Fowl Foot (+30% Runes at Mohgwyn)</a>
+</div>
+</section>
+
+</main>
+
+<aside class="sidebar">
+<h3>Quick Info</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Effect:</strong> Charm enemy for 20s</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Duration:</strong> 20 seconds</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Stacks:</strong> 5 (hard cap)</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Cookbook:</strong> Frenzied's</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Yield:</strong> 1 per craft</p>
+<div class="quick-nav">
+<h4>Jump to Section</h4>
+<a href="#why">Why It Matters</a>
+<a href="#recipe">Crafting Recipe</a>
+<a href="#cookbook">Cookbook Location</a>
+<a href="#materials">Farm Routes</a>
+<a href="#gotchas">Gotcha Tips</a>
+<a href="#benefits">Free Benefits</a>
+</div>
+<div class="quick-nav">
+<h4>Related Items</h4>
+<a href="warming-stone.html">Warming Stone</a>
+<a href="preserving-boluses.html">Preserving Boluses</a>
+<a href="gold-pickled-fowl-foot.html">Gold-Pickled Fowl Foot</a>
+</div>
+</aside>
+
+</div>
+
+<footer class="site-footer">
+<p>RelicTrek — Crafting guides for the Lands Between and beyond. Not affiliated with FromSoftware.</p>
+<p style="margin-top:8px"><a href="./">← Back to Elden Ring Index</a></p>
+</footer>
+
+</body>
+</html>

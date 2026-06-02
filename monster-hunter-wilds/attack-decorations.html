@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Boost Decorations - Monster Hunter Wilds 攻略 | RelicTrek</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --bg-dark: #0d0d0d;
+            --bg-card: #1a1a1a;
+            --bg-card-alt: #242424;
+            --bg-code: #2d2d2d;
+            --accent: #6b4ee6;
+            --accent2: #a855f7;
+            --accent3: #4f46e5;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --border: #2a2a2a;
+            --border-light: #3a3a3a;
+            --danger: #e74c3c;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #3498db;
+            --jewel-gold: #d4a843;
+            --jewel-glow: #ffd700;
+            --jewel-dark: #8b6914;
+            --rng-red: #c0392b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text);
+            font-family: 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0;
+            position: relative;
+        }
+        .header-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+        .header-slogan {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 13px;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .header-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .header-nav a:hover { color: var(--accent2); }
+
+        /* ===== LAYOUT ===== */
+        .page-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            gap: 20px;
+            flex: 1;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: 220px;
+            flex-shrink: 0;
+        }
+        .sidebar-nav {
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .sidebar-title {
+            padding: 14px 18px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--border);
+        }
+        .sidebar-nav a {
+            display: block;
+            padding: 12px 18px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        .sidebar-nav a:hover {
+            background: var(--bg-card-alt);
+            color: var(--accent2);
+        }
+        .sidebar-nav a.active {
+            background: var(--bg-card-alt);
+            border-left-color: var(--accent2);
+            color: var(--accent2);
+            font-weight: 600;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content { flex: 1; min-width: 0; }
+
+        /* ===== ITEM HERO ===== */
+        .item-hero {
+            background: linear-gradient(135deg, #2a1a00 0%, var(--bg-card) 60%, #1a1a1a 100%);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            border: 1px solid var(--jewel-dark);
+            position: relative;
+            overflow: hidden;
+        }
+        .item-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212,168,67,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .item-header-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .item-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            flex-shrink: 0;
+        }
+        .item-icon-accessory {
+            background: linear-gradient(135deg, #2d4a3e, #4a7c59);
+            border: 2px solid #7fb069;
+            box-shadow: 0 0 20px rgba(127,176,105,0.3);
+        }
+        .item-icon-weapon {
+            background: linear-gradient(135deg, #8b4513, #cd853f);
+            border: 2px solid #daa520;
+            box-shadow: 0 0 20px rgba(218,165,32,0.3);
+        }
+        .item-icon-legendary {
+            background: linear-gradient(135deg, #4a1a6b, #8b2fc9);
+            border: 2px solid #da70d6;
+            box-shadow: 0 0 25px rgba(218,112,214,0.4);
+        }
+        .item-title-group { flex: 1; }
+        .item-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .item-subtitle {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+        .item-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .tag {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .tag-primary {
+            background: rgba(107, 78, 230, 0.2);
+            color: var(--accent2);
+            border: 1px solid rgba(107, 78, 230, 0.3);
+        }
+        .tag-difficulty {
+            background: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
+            border: 1px solid rgba(231, 76, 60, 0.25);
+        }
+        .tag-value {
+            background: rgba(46, 204, 113, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(46, 204, 113, 0.25);
+        }
+
+        .difficulty-bar {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+        .difficulty-star {
+            color: var(--warning);
+            font-size: 16px;
+        }
+        .difficulty-star.empty { color: #444; }
+
+        .item-value-section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid var(--border-light);
+        }
+        .item-value-title {
+            font-size: 13px;
+            color: var(--jewel-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .item-value-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        /* ===== MODULES ===== */
+        .module {
+            background: var(--bg-card);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+        .module-header {
+            padding: 16px 24px;
+            background: var(--bg-card-alt);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .module-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .module-title {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .module-body {
+            padding: 24px;
+        }
+
+        /* ===== OVERVIEW SPECIAL ===== */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+        }
+        .overview-card {
+            background: var(--bg-card-alt);
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .overview-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .overview-value {
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        /* ===== DROP SOURCES ===== */
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 14px;
+        }
+        .source-card {
+            background: var(--bg-card-alt);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+        .source-card:hover {
+            border-color: var(--jewel-gold);
+            transform: translateY(-2px);
+        }
+        .source-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .source-emoji {
+            font-size: 28px;
+        }
+        .source-name {
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .source-rate {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .source-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .source-note {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-muted);
+            border-left: 2px solid var(--jewel-dark);
+        }
+
+        /* ===== MATERIALS TABLE ===== */
+        .mat-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .mat-table th {
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .mat-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .mat-table tr:hover td { background: rgba(255,255,255,0.02); }
+        .mat-icon {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        .mat-icon-investigation { background: rgba(212,168,67,0.2); }
+        .mat-icon-melding { background: rgba(138,43,226,0.2); }
+        .mat-icon-tempered { background: rgba(220,20,60,0.2); }
+        .mat-icon-event { background: rgba(0,191,255,0.2); }
+
+        /* ===== ROUTE STEPS ===== */
+        .route-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .route-step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 16px;
+            background: var(--bg-card-alt);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .step-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--jewel-dark), var(--jewel-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .step-content { flex: 1; }
+        .step-title {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .step-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ===== TIPS ===== */
+        .tips-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .tip-item {
+            display: flex;
+            gap: 12px;
+            padding: 14px 18px;
+            background: var(--bg-card-alt);
+            border-radius: 10px;
+            border-left: 3px solid var(--danger);
+        }
+        .tip-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .tip-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .tip-label {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+        .tip-deadly {
+            background: rgba(231,76,60,0.2);
+            color: #ff6b6b;
+        }
+        .tip-warning {
+            background: rgba(243,156,18,0.2);
+            color: #f0ad4e;
+        }
+        .tip-info {
+            background: rgba(52,152,219,0.2);
+            color: #5bc0de;
+        }
+
+        /* ===== BENEFITS ===== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 14px;
+        }
+        .benefit-card {
+            background: var(--bg-card-alt);
+            border-radius: 10px;
+            padding: 18px;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+        .benefit-card:hover {
+            border-color: var(--success);
+        }
+        .benefit-emoji {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .benefit-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .benefit-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 20px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .page-container { flex-direction: column; }
+            .sidebar { width: 100%; }
+        }
+        @media (max-width: 768px) {
+            .header-slogan { display: none; }
+            .item-title { font-size: 20px; }
+            .source-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="header-main">
+            <a href="../index.html" class="logo">RelicTrek</a>
+            <span class="header-slogan">Your Ultimate Crafting & Hunting Guide</span>
+            <!-- Top Navigation -->
+  <nav class="top-nav">
+    <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+    <a href="../" class="logo">RelicTrek</a>
+    <input type="search" placeholder="Search items (e.g. Ankh Shield)..." aria-label="Search">
+    <div class="lang-switch">
+      <button data-lang="en" title="English">EN</button>
+      <button data-lang="zh" title="Chinese">中文</button>
+    </div>
+    <div class="nav-links">
+      <a href="../blog/">Blog</a>
+      <a href="../" class="active">Games</a>
+      <a href="../about.html">About</a>
+    </div>
+  </nav>
+
+  <!-- Scrolling Ticker (Slogan Bar) -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span class="ticker-item">
+        <span class="slogan-main-text">What You Don't Know You're Missing</span>
+        <span class="sep">|</span>
+        <span class="slogan-sub-text">The Best Items Hide in Plain Sight</span>
+        <span class="sep">//</span>
+        <span data-en="And the Shortest Way to Get It All" data-zh="获取它们的最短路径">And the Shortest Way to Get It All</span>
+      </span>
+      <span class="ticker-item">
+        <span class="slogan-main-text">What You Don't Know You're Missing</span>
+        <span class="sep">|</span>
+        <span class="slogan-sub-text">The Best Items Hide in Plain Sight</span>
+        <span class="sep">//</span>
+        <span data-en="Every Material. Every Drop Rate. Every Shortcut." data-zh="每个材料。每个掉率。每个捷径。">Every Material. Every Drop Rate. Every Shortcut.</span>
+      </span>
+      <span class="ticker-item">
+        <span class="slogan-main-text">What You Don't Know You're Missing</span>
+        <span class="sep">|</span>
+        <span class="slogan-sub-text">The Best Items Hide in Plain Sight</span>
+        <span class="sep">//</span>
+        <span data-en="No Grind. No Guesswork. Just Results." data-zh="无需刷怪。无需猜测。只有结果。">No Grind. No Guesswork. Just Results.</span>
+      </span>
+      <span class="ticker-item">
+        <span class="slogan-main-text">What You Don't Know You're Missing</span>
+        <span class="sep">|</span>
+        <span class="slogan-sub-text">The Best Items Hide in Plain Sight</span>
+        <span class="sep">//</span>
+        <span data-en="Guides that actually save you time." data-zh="真正能节省你时间的攻略。">Guides that actually save you time.</span>
+      </span>
+    </div>
+  </div>
+        </div>
+    </header>
+
+    <!-- ===== PAGE CONTAINER ===== -->
+    <div class="page-container">
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="sidebar-title">Game Select</div>
+                <a href="../terraria/index.html">Terraria</a>
+                <a href="../subnautica2/">Subnautica 2</a>
+                <a href="./index.html" class="active">Monster Hunter Wilds</a>
+            </nav>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <aside class="left-sidebar" style="position: relative; top: 0;">
+          <h3>Games</h3>
+          <a href="../terraria/">Terraria</a>
+          <a href="../subnautica2/">Subnautica 2</a>
+          <a href="./">Monster Hunter Wilds</a>
+          <a href="../zelda-totk/">Zelda: TOTK</a>
+      <a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man\'s Sky</a>
+      <a href="../baldurs-gate-3/">Baldur\'s Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+        </aside>
+
+        <main class="main-content">
+            <!-- ===== ITEM HERO ===== -->
+            <section class="item-hero">
+                <div class="item-header-row">
+                    <div class="item-icon item-icon-legendary">&#x1F48E;</div>
+                    <div class="item-title-group">
+                        <h1 class="item-title">Attack Boost Decorations</h1>
+                        <p class="item-subtitle">攻击珠装饰品 &#x2014; 游戏最稀有的珍宝</p>
+                        <div class="item-tags">
+                            <span class="tag tag-primary">The Rarest Jewels</span>
+                            <span class="tag tag-difficulty">Endgame</span>
+                            <span class="tag tag-value">Attack Jewel 1/2/4</span>
+                        </div>
+                        <div class="difficulty-bar">
+                            <span class="difficulty-star">&#x2605;</span>
+                            <span class="difficulty-star">&#x2605;</span>
+                            <span class="difficulty-star">&#x2605;</span>
+                            <span class="difficulty-star">&#x2605;</span>
+                            <span class="difficulty-star">&#x2605;</span>
+                            <span style="margin-left:8px; font-size:13px; color:var(--text-muted);">Endgame</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-value-section">
+                    <div class="item-value-title">Item Value</div>
+                    <p class="item-value-desc">
+                        <strong>Attack Jewel 1/2/4</strong>&#xFF0C;&#x6E38;&#x620F;&#x4E2D;&#x6700;&#x7A00;&#x6709;&#x7684;&#x88C5;&#x9970;&#x54C1;&#x3002;&#x88C5;&#x5907;&#x540E;&#x53EF;&#x63D0;&#x4F9B;Attack Boost&#x6280;&#x80FD;&#x7B49;&#x7EA7;&#xFF0C;&#x662F;&#x6240;&#x6709;DPS&#x6784;&#x5EFA;&#x7684;&#x6838;&#x5FC3;&#x3002;&#x4E3B;&#x8981;&#x83B7;&#u53D6;&#u65B9;&#u5F0F;&#uFF1A;&#u5A01;&#u80C13调查;&#u4EFB务（金框1%)、;&#x7194;&#x70BC;&#x7089;&#x7528;&#x9F99;&#x8109;&#x77F3;&#x4EA4;&#x6362;&#xFF08;~0.5%)、;&#x5386;&#x6218;&#x738B;&#x8C03;&#x67E5（;~2%)、活动任务特殊奖励。纯RNG，每;&#x4E00;&#x5C0F;&#x65F6;&#x7684;&#x5237;&#u730e;&#u90FD;&#u503C得。
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== MODULE 1: OVERVIEW ===== -->
+            <section class="module" id="overview">
+                <div class="module-header">
+                    <span class="module-num">1</span>
+                    <span class="module-title">Overview</span>
+                </div>
+                <div class="module-body">
+                    <p style="line-height: 1.8; margin-bottom: 16px;">
+                        Attack Boost Decorations（攻击珠）是Monster Hunter Wilds中最令人垂涎的装饰品。不同于普通装备可以通过 deterministic（确定性）方式获取，Attack Jewel完全依赖<strong style="color: var(--jewel-gold);">纯RNG（随机数生成）</strong>掉落。它们是区分"好装备"和"顶级装备"的关键，也是endgame阶段数以百计小时狩猎的主要动力。
+                    </p>
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <div class="overview-label">装饰品种类</div>
+                            <div class="overview-value" style="color: var(--jewel-gold);">Attack Jewel 1/2/4</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">数字=占用的插槽等级</div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-label">提供技能</div>
+                            <div class="overview-value" style="color: var(--danger);">Attack Boost</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">基础攻击力+3/级</div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-label">获取方式</div>
+                            <div class="overview-value" style="color: var(--accent2);">纯RNG掉落</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">无法直接合成制作</div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-label">稀有度</div>
+                            <div class="overview-value" style="color: var(--warning);">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">游戏最稀有物品之一</div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-label">推荐优先级</div>
+                            <div class="overview-value" style="color: var(--success);">最高</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">所有武器类型都需要</div>
+                        </div>
+                        <div class="overview-card">
+                            <div class="overview-label">预期获取时间</div>
+                            <div class="overview-value" style="color: var(--danger);">100-500小时</div>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">完全看脸，无保底</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== MODULE 2: CRAFTING RECIPE ===== -->
+            <section class="module" id="crafting-recipe">
+                <div class="module-header">
+                    <span class="module-num">2</span>
+                    <span class="module-title">Crafting Recipe</span>
+                </div>
+                <div class="module-body">
+                    <div style="background: rgba(231,76,60,0.08); border: 1px solid rgba(231,76,60,0.2); border-radius: 10px; padding: 16px; margin-bottom: 20px;">
+                        <p style="color: var(--danger); font-weight: 700; margin-bottom: 6px;">&#x26A0;&#xFE0F; 注意：Attack Jewel不适合传统合成！</p>
+                        <p style="font-size: 14px; line-height: 1.6;">攻击珠无法通过普通材料合成获得。它是Monster Hunter Wilds中最稀有的装饰品之一，只能通过以下RNG途径获取。将其视为一个长期 farming 目标，而非一次性 crafting 项目。</p>
+                    </div>
+                    <div class="source-grid">
+                        <div class="source-card">
+                            <div class="source-header">
+                                <span class="source-emoji">&#x1F3C6;</span>
+                                <span class="source-name">威胁等级3调查</span>
+                            </div>
+                            <span class="source-rate" style="background: rgba(243,156,18,0.15); color: var(--warning);">金框 1%</span>
+                            <p class="source-desc">完成威胁等级3（Tempered Elder Dragon）调查任务后，金框奖励有1%概率开出Attack Jewel。</p>
+                            <div class="source-note">需要HR 50+解锁。推荐目标：Nergigante、Kushala Daora、Teostra</div>
+                        </div>
+                        <div class="source-card">
+                            <div class="source-header">
+                                <span class="source-emoji">&#x1F525;</span>
+                                <span class="source-name">熔炼炉交换</span>
+                            </div>
+                            <span class="source-rate" style="background: rgba(231,76,60,0.15); color: var(--danger);">~0.5%</span>
+                            <p class="source-desc">在熔炼炉处消耗龙脉石（Streamstone/Warrior/Hero）进行装饰品鉴定，有约0.5%概率获得Attack Jewel。</p>
+                            <div class="source-note">纯粹的赌博机制。大量消耗龙脉石，建议留够自己用的再赌</div>
+                        </div>
+                        <div class="source-card">
+                            <div class="source-header">
+                                <span class="source-emoji">&#x1F47F;</span>
+                                <span class="source-name">历战王调查</span>
+                            </div>
+                            <span class="source-rate" style="background: rgba(46,204,113,0.15); color: var(--success);">~2%</span>
+                            <p class="source-desc">历战王（Arch-Tempered）Elder Dragon调查任务的奖励框有更高的掉率，约2%。</p>
+                            <div class="source-note">高难度内容，需要顶级装备和技巧。推荐组队挑战</div>
+                        </div>
+                        <div class="source-card">
+                            <div class="source-header">
+                                <span class="source-emoji">&#x1F389;</span>
+                                <span class="source-name">活动任务</span>
+                            </div>
+                            <span class="source-rate" style="background: rgba(52,152,219,0.15); color: var(--info);">特殊</span>
+                            <p class="source-desc">限时活动任务有时会提供更高的装饰品掉率，或直接将Attack Jewel作为特殊奖励。</p>
+                            <div class="source-note">关注官方活动公告。The Greatest Jagras等活动是刷珠良机</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== MODULE 3: MATERIALS ===== -->
+            <section class="module" id="materials">
+                <div class="module-header">
+                    <span class="module-num">3</span>
+                    <span class="module-title">Materials</span>
+                </div>
+                <div class="module-body" style="padding: 0;">
+                    <table class="mat-table">
+                        <thead>
+                            <tr>
+                                <th>获取途径</th>
+                                <th>Type</th>
+                                <th>掉率</th>
+                                <th>效率评级</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="mat-icon mat-icon-investigation">&#x1F3C6;</span><strong>威胁等级3调查</strong></td>
+                                <td>金框奖励</td>
+                                <td><span style="background: rgba(243,156,18,0.15); color: var(--warning); padding: 2px 8px; border-radius: 6px; font-weight: 700;">1%</span></td>
+                                <td style="color: var(--warning);">&#x2605;&#x2605;&#x2605;&#x2605;&#x2606;</td>
+                                <td style="color: var(--text-muted);">最稳定的 farming 方式</td>
+                            </tr>
+                            <tr>
+                                <td><span class="mat-icon mat-icon-melding">&#x1F525;</span><strong>熔炼炉交换</strong></td>
+                                <td>消耗龙脉石</td>
+                                <td><span style="background: rgba(231,76,60,0.15); color: var(--danger); padding: 2px 8px; border-radius: 6px; font-weight: 700;">~0.5%</span></td>
+                                <td style="color: var(--danger);">&#x2605;&#x2606;&#x2606;&#x2606;&#x2606;</td>
+                                <td style="color: var(--text-muted);">纯赌博，大量消耗资源</td>
+                            </tr>
+                            <tr>
+                                <td><span class="mat-icon mat-icon-tempered">&#x1F47F;</span><strong>历战王调查</strong></td>
+                                <td>任务奖励</td>
+                                <td><span style="background: rgba(46,204,113,0.15); color: var(--success); padding: 2px 8px; border-radius: 6px; font-weight: 700;">~2%</span></td>
+                                <td style="color: var(--success);">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</td>
+                                <td style="color: var(--text-muted);">掉率最高但难度极大</td>
+                            </tr>
+                            <tr>
+                                <td><span class="mat-icon mat-icon-event">&#x1F389;</span><strong>活动任务</strong></td>
+                                <td>特殊奖励</td>
+                                <td><span style="background: rgba(52,152,219,0.15); color: var(--info); padding: 2px 8px; border-radius: 6px; font-weight: 700;">特殊</span></td>
+                                <td style="color: var(--info);">&#x2605;&#x2605;&#x2605;&#x2605;&#x2606;</td>
+                                <td style="color: var(--text-muted);">限时，错过等很久</td>
+                            </tr>
+                            <tr>
+                                <td><span class="mat-icon" style="background: rgba(255,215,0,0.2);">&#x1F31F;</span><strong>Shiny捡取</strong></td>
+                                <td>战斗中掉落</td>
+                                <td><span style="background: rgba(128,128,128,0.15); color: #999; padding: 2px 8px; border-radius: 6px; font-weight: 700;">&lt;0.1%</span></td>
+                                <td style="color: #999;">&#x2605;&#x2606;&#x2606;&#x2606;&#x2606;</td>
+                                <td style="color: var(--text-muted);">怪物掉落shiny极低概率</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ===== MODULE 4: OPTIMAL ROUTE ===== -->
+            <section class="module" id="optimal-route">
+                <div class="module-header">
+                    <span class="module-num">4</span>
+                    <span class="module-title">Optimal Route</span>
+                </div>
+                <div class="module-body">
+                    <div class="route-steps">
+                        <div class="route-step">
+                            <span class="step-num">1</span>
+                            <div class="step-content">
+                                <div class="step-title">解锁威胁等级3调查（HR 50+）</div>
+                                <div class="step-desc">首先需要达到<strong style="color: var(--warning);">HR 50</strong>才能解锁威胁等级3（Tempered Elder Dragon）调查任务。通过完成主线和常规调查任务提升HR。到达HR 50后，狩猎历战古龙获得威胁3调查票券。</div>
+                            </div>
+                        </div>
+                        <div class="route-step">
+                            <span class="step-num">2</span>
+                            <div class="step-content">
+                                <div class="step-title">刷威胁3 Elder Dragon</div>
+                                <div class="step-desc">推荐目标：<strong style="color: var(--danger);">灭尽龙(Nergigante)</strong>、<strong style="color: var(--info);">钢龙(Kushala Daora)</strong>、<strong style="color: var(--warning);">炎王龙(Teostra)</strong>。选择你最容易打的反复 farming。每次狩猎后记得保存所有金框奖励的调查票券。</div>
+                            </div>
+                        </div>
+                        <div class="route-step">
+                            <span class="step-num">3</span>
+                            <div class="step-content">
+                                <div class="step-title">捡取所有Shinies</div>
+                                <div class="step-desc">战斗中Elder Dragon掉落的<strong style="color: var(--jewel-gold);">闪亮掉落物(Shinies)</strong>也有极低概率出Attack Jewel，虽然&lt;0.1%但积少成多。战斗时注意捡取所有掉落，同时这也是调查点数的来源。</div>
+                            </div>
+                        </div>
+                        <div class="route-step">
+                            <span class="step-num">4</span>
+                            <div class="step-content">
+                                <div class="step-title">熔炼炉消耗龙脉石</div>
+                                <div class="step-desc">将多余的龙脉石投入熔炼炉进行装饰品鉴定。建议优先保留<strong>Warrior's/Hero's Streamstone</strong>用于武器克制强化，多余的部分再投入熔炼。心理预期：200-400次熔炼可能出一个Attack Jewel。</div>
+                            </div>
+                        </div>
+                        <div class="route-step">
+                            <span class="step-num">5</span>
+                            <div class="step-content">
+                                <div class="step-title">活动任务集中刷</div>
+                                <div class="step-desc">关注官方活动日历。像<strong style="color: var(--success);">The Greatest Jagras</strong>这样的活动任务会大量掉落装饰品，是刷Attack Jewel的黄金机会。活动期间集中精力刷，效率比常规 farming 高数倍。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== MODULE 5: GOTCHA TIPS ===== -->
+            <section class="module" id="gotcha-tips">
+                <div class="module-header">
+                    <span class="module-num">5</span>
+                    <span class="module-title">Gotcha Tips</span>
+                </div>
+                <div class="module-body">
+                    <div class="tips-list">
+                        <div class="tip-item">
+                            <span class="tip-icon">&#x1F48E;</span>
+                            <div class="tip-text">
+                                <span class="tip-label tip-deadly">极端稀有</span>
+                                <strong>Attack Jewel 4是游戏最稀有物品之一！</strong>相比Attack Jewel 1和2，4级攻击珠的掉率更低，可能只有0.1%甚至更低。如果你幸运地获得一个，务必妥善使用。
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">&#x1F3B0;</span>
+                            <div class="tip-text">
+                                <span class="tip-label tip-deadly">赌博机制</span>
+                                <strong>熔炼炉是纯粹的赌博！</strong>不要期望短期内靠熔炼出货。建议只在有多余龙脉石时才投入，切勿将自己需要的强化材料也赌掉。
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">&#x1F3AB;</span>
+                            <div class="tip-text">
+                                <span class="tip-label tip-warning">票券有限</span>
+                                <strong>威胁3调查票券数量有限！</strong>每次完成威胁3狩猎可能只获得1-2张票券，且金色奖励框数量也有限。要精打细算使用，优先选择有多个金框的调查任务。
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">&#x1F6AB;</span>
+                            <div class="tip-text">
+                                <span class="tip-label tip-warning">没有保底</span>
+                                <strong>没有保底机制！</strong>不像某些游戏有"XX抽必出"的保底系统，MHW的装饰品掉落完全独立随机。你可能500小时不出一个，也可能第一次就出。
+                            </div>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">&#x23F3;</span>
+                            <div class="tip-text">
+                                <span class="tip-label tip-info">时间预期</span>
+                                <strong>可能500小时才出一个！</strong>根据社区统计，Attack Jewel的平均获取时间在100-500小时之间。保持耐心，把它当作endgame的额外奖励而非目标。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== MODULE 6: FREE BENEFITS ===== -->
+            <section class="module" id="free-benefits">
+                <div class="module-header">
+                    <span class="module-num">6</span>
+                    <span class="module-title">Free Benefits</span>
+                </div>
+                <div class="module-body">
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-emoji">&#x1F409;</div>
+                            <div class="benefit-title">刷威胁3同时积累所有Elder Dragon材料</div>
+                            <div class="benefit-desc">在反复刷威胁3调查的过程中，你会积累大量Elder Dragon素材——鳞、爪、宝玉等，可用于制作所有Elder Dragon系列武器和防具。</div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-emoji">&#x1F4B0;</div>
+                            <div class="benefit-title">大量调查点数</div>
+                            <div class="benefit-desc">每次Elder Dragon狩猎都会提供丰厚的调查点数奖励。长期 farming 下来，你的调查点数将永远充裕，不会再为缺pts而烦恼。</div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-emoji">&#x2694;&#xFE0F;</div>
+                            <div class="benefit-title">练习endgame狩猎</div>
+                            <div class="benefit-desc">威胁3 Elder Dragon是游戏最高难度的常规内容。反复挑战将极大提升你的操作水平、反应速度和对怪物招式的理解。</div>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-emoji">&#x1F4E6;</div>
+                            <div class="benefit-title">获得大量龙脉石用于其他熔炼</div>
+                            <div class="benefit-desc">即使没有直接获得Attack Jewel，你也会积累大量龙脉石。这些可以用于熔炼其他需要的装饰品，或用于武器的克制强化系统。</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <p>RelicTrek &copy; 2025 - Your Ultimate Crafting & Hunting Guide. Monster Hunter Wilds is a trademark of Capcom Co., Ltd.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

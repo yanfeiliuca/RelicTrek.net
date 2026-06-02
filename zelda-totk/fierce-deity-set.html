@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fierce Deity Armor Set — Zelda: TOTK CraftHunt Guide</title>
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f0;
+    color: #333;
+    line-height: 1.6;
+  }
+  a { color: #2c7a3e; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Navigation ── */
+  .main-nav {
+    background: #1a1a1a;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .main-nav .logo { font-weight: bold; font-size: 1.2rem; color: #4CAF50; }
+  .main-nav a { color: #ccc; font-size: 0.9rem; }
+  .main-nav a:hover { color: #fff; }
+
+  /* ── News Ticker ── */
+  .news-ticker {
+    background: #e8e8e0;
+    padding: 0.4rem 2rem;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #d0d0c8;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  /* ── Layout ── */
+  .page-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ── Left Sidebar ── */
+  .sidebar-left {
+    width: 260px;
+    background: #fff;
+    border-right: 1px solid #d0d0c8;
+    padding: 1.5rem 1rem;
+    position: sticky;
+    top: 48px;
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+  .sidebar-left h3 { font-size: 0.85rem; color: #888; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+  .sidebar-left ul { list-style: none; }
+  .sidebar-left li { margin-bottom: 0.4rem; }
+  .sidebar-left a {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    color: #555;
+  }
+  .sidebar-left a:hover, .sidebar-left a.active { background: #f0f0e8; color: #2c7a3e; text-decoration: none; }
+
+  /* ── Content ── */
+  .content-area {
+    flex: 1;
+    padding: 2rem;
+    min-width: 0;
+  }
+
+  /* ── Breadcrumb ── */
+  .breadcrumb { font-size: 0.8rem; color: #888; margin-bottom: 1rem; }
+  .breadcrumb a { color: #666; }
+
+  /* ── Item Header ── */
+  .item-header {
+    background: #fff;
+    border: 1px solid #d0d0c8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .item-icon-legendary {
+    width: 80px; height: 80px;
+    background: #4a148c;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+  .item-meta { flex: 1; }
+  .item-meta h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  .item-meta .tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .tag-rarity-legendary { background: #4a148c; color: #fff; }
+  .tag-type { background: #e8e8e0; color: #555; }
+  .tag-difficulty { background: #b71c1c; color: #fff; }
+  .item-meta .desc { color: #666; font-size: 0.95rem; }
+
+  /* ── Sections ── */
+  .section {
+    background: #fff;
+    border: 1px solid #d0d0c8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #4CAF50;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: #2c7a3e; }
+  .section p { margin-bottom: 0.75rem; }
+
+  /* ── Tables ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid #e0e0d8; }
+  th { background: #f5f5f0; font-weight: 600; }
+  tr:hover { background: #fafaf5; }
+
+  /* ── Material Items ── */
+  .material-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #fafaf5;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid #4CAF50;
+  }
+  .material-item .mat-icon {
+    width: 48px; height: 48px;
+    background: #e8e8e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .material-item .mat-info { flex: 1; }
+  .material-item .mat-info strong { display: block; margin-bottom: 0.25rem; }
+  .material-item .mat-info span { font-size: 0.85rem; color: #888; }
+
+  /* ── Gotcha Box ── */
+  .gotcha-box {
+    background: #fff8e1;
+    border-left: 4px solid #ff8f00;
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+  }
+  .gotcha-box strong { color: #e65100; }
+
+  /* ── Route Tree ── */
+  .route-tree {
+    background: #f5f5f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+  }
+  .route-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0d8;
+  }
+  .route-step:last-child { border-bottom: none; }
+  .route-num {
+    width: 32px; height: 32px;
+    background: #4CAF50;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .route-info { flex: 1; }
+  .route-info strong { display: block; margin-bottom: 0.2rem; }
+  .route-info span { font-size: 0.85rem; color: #888; }
+
+  /* ── Right Sidebar ── */
+  .sidebar-right {
+    width: 220px;
+    padding: 1.5rem 1rem;
+  }
+  .sidebar-right .panel {
+    background: #fff;
+    border: 1px solid #d0d0c8;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-right .panel h4 { font-size: 0.85rem; margin-bottom: 0.5rem; color: #888; text-transform: uppercase; }
+  .sidebar-right .panel a { display: block; font-size: 0.88rem; padding: 0.3rem 0; }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-top: 1px solid #d0d0c8;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    background: #fff;
+  }
+
+  /* ── Utility ── */
+  .inline-icon { display: inline-block; width: 20px; height: 20px; background: #e8e8e0; border-radius: 4px; text-align: center; line-height: 20px; font-size: 0.75rem; vertical-align: middle; }
+  code { background: #f0f0e8; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85rem; }
+  .highlight { background: #e8f5e9; padding: 0.8rem 1rem; border-radius: 6px; margin: 0.75rem 0; border-left: 4px solid #4CAF50; }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="main-nav">
+  <div class="logo">🛠️ CraftHunt</div>
+  <a href="../index.html">Home</a>
+  <a href="../">Games</a>
+  <a href="./">Zelda: TOTK</a>
+      <a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man's Sky</a>
+      <a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+      <a href="../minecraft/">Minecraft</a>
+  <a href="../about.html">About</a>
+</nav>
+
+<!-- News Ticker -->
+<div class="news-ticker">
+  📰 New guide: Fierce Deity Armor Set — the ultimate Attack Up build from Majora's Mask is hiding in four secret caves across Hyrule. Updated for TOTK v1.2.1.
+</div>
+
+<!-- Page Container -->
+<div class="page-container">
+
+  <!-- Left Sidebar -->
+  <aside class="sidebar-left">
+    <h3>Zelda: TOTK Items</h3>
+    <ul>
+      <li><a href="./master-sword.html">Master Sword</a></li>
+      <li><a href="./hylian-shield.html">Hylian Shield</a></li>
+      <li><a href="./">Hero of Time Set</a></li>
+      <li><a href="./">Royal Guard Set</a></li>
+      <li><a href="./">Miner's Armor</a></li>
+      <li><a href="./">Stealth Armor Set</a></li>
+      <li><a href="./barbarian-set.html">Barbarian Armor Set</a></li>
+      <li><a href="./">Champion's Tunic</a></li>
+      <li><a href="./">Zonaite Armor Set</a></li>
+      <li><a href="./fierce-deity-set.html" class="active">Fierce Deity Set</a></li>
+    </ul>
+
+    <h3 style="margin-top: 1.5rem;">Quick Links</h3>
+    <ul>
+      <li><a href="https://www.zeldadungeon.net/tears-of-the-kingdom/">Zelda Dungeon</a></li>
+      <li><a href="https://mapgenie.io/zelda-tears-of-the-kingdom">Interactive Map</a></li>
+      <li><a href="https://www.ign.com/wikis/the-legend-of-zelda-tears-of-the-kingdom/">IGN Wiki</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content-area">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="../">Home</a> / <a href="../">Games</a> / <a href="./">Zelda: TOTK</a>
+      <a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man's Sky</a>
+      <a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../minecraft/">Minecraft</a> / Fierce Deity Armor Set
+    </div>
+
+    <!-- Item Header -->
+    <div class="item-header">
+      <div class="item-icon-legendary">😈</div>
+      <div class="item-meta">
+        <h1>Fierce Deity Armor Set</h1>
+        <span class="tag tag-rarity-legendary">Legendary</span>
+        <span class="tag tag-type">Armor (3 Pieces)</span>
+        <span class="tag tag-difficulty">★★★★★ Late Game</span>
+        <p class="desc" data-zh="梅祖拉的假面联动防具，三件套叠满攻击力加成，游戏最强战斗build">Majora's Mask crossover armor. Attack Up ×3 for the strongest combat build in the game. Requires completing a 4-part hidden quest chain across multiple regions.</p>
+      </div>
+    </div>
+
+    <!-- Section 1: Why This Item Matters -->
+    <section class="section" id="overview">
+      <h2><span>1</span> Why This Item Matters</h2>
+
+      <p>The <strong>Fierce Deity Armor Set</strong> is the single most powerful offensive armor set in <em>The Legend of Zelda: Tears of the Kingdom</em>. Consisting of three pieces — the <strong>Fierce Deity Mask</strong>, <strong>Fierce Deity Armor</strong>, and <strong>Fierce Deity Boots</strong> — each piece grants the <strong>Attack Up</strong> set bonus, stacking cumulatively when multiple pieces are worn together.</p>
+
+      <div class="highlight">
+        <strong>Attack Up ×3 = Highest raw damage output in the game.</strong> When fully upgraded to ★4 at a Great Fairy Fountain, the Fierce Deity Set outperforms every other armor set for raw combat effectiveness. Combine it with a high-damage weapon (like the Fierce Deity Sword or the Master Sword) and Mighty Simmered Fruit for a temporary Attack Up buff, and you can reach damage numbers that trivially one-shot Silver Bokoblins and melt Golden Lynels in seconds.
+      </div>
+
+      <p>Beyond raw stats, this set is a beloved <strong>Majora's Mask crossover</strong> — one of the darkest and most iconic entries in the Zelda franchise. The armor's design, with its deep blue body and menacing white mask, is instantly recognizable to any long-time series fan. Wearing it isn't just about optimization; it's about paying homage to one of Link's most powerful and mysterious forms across the entire franchise.</p>
+
+      <p>Here's the catch: <strong>this set is completely hidden</strong>. There is no quest marker, no NPC points you to it directly, and the game gives absolutely no indication that it even exists until you stumble across the first clue. The acquisition method involves <strong>Misko's Treasure: The Fierce Deity</strong>, a four-part treasure hunt that sends you to four separate caves scattered across Hyrule — each containing a clue that leads to the next.</p>
+
+      <p>For min-maxers, completionists, and Majora's Mask fans alike, the Fierce Deity Set is non-negotiable. The quest chain is long and requires preparation, but the payoff is unmatched. If you have any intention of facing the game's hardest encounters — Depths Chasms, the Final Trial in the Coliseum, or the Demon King himself — this set should be at the top of your priority list.</p>
+
+      <h3>Set Bonus Breakdown</h3>
+      <table>
+        <tr><th>Pieces Worn</th><th>Bonus</th><th>Upgrade Cost (Total)</th></tr>
+        <tr><td>1 piece</td><td>Attack Up (×1)</td><td>—</td></tr>
+        <tr><td>2 pieces</td><td>Attack Up (×2)</td><td>—</td></tr>
+        <tr><td>3 pieces</td><td>Attack Up (×3) + Set Bonus: Charge Attack Stamina Up</td><td>—</td></tr>
+        <tr><td>3 pieces (★4 upgraded)</td><td>Attack Up ×3 + 28 defense per piece = 84 total DEF</td><td>9 × 3 = 27 total (see upgrade table below)</td></tr>
+      </table>
+
+      <p>At ★4, each piece provides <strong>28 defense</strong>, totaling <strong>84 defense</strong> for the full set — competitive with most upgraded endgame armor while maintaining the highest offensive bonuses in the game. This is the armor set worn by speedrunners and challenge runners for a reason.</p>
+    </section>
+
+    <!-- Section 2: Fuse / Craft Recipe -->
+    <section class="section" id="recipe">
+      <h2><span>2</span> Acquisition: Misko's Treasure — The Fierce Deity</h2>
+
+      <p>Unlike most items in TOTK, the Fierce Deity Armor Set <strong>cannot be crafted at a workbench</strong>. Instead, you must complete a hidden four-part treasure hunt chain called <strong>"Misko's Treasure: The Fierce Deity."</strong> This quest is initiated by finding a series of letters left by <strong>Misko</strong>, the legendary bandit from Breath of the Wild who has returned with even more hidden treasures in TOTK.</p>
+
+      <p>The chain works as follows: you find Misko's first letter, which contains a cryptic clue pointing to a cave. Inside that cave, you find one piece of the Fierce Deity Set AND another letter with a clue to the next location. Rinse and repeat four times to collect all three armor pieces plus the bonus <strong>Fierce Deity Sword</strong>.</p>
+
+      <h3>The Four Treasure Locations</h3>
+      <table>
+        <tr><th>Step</th><th>Location</th><th>Reward</th><th>Clue Origin</th></tr>
+        <tr>
+          <td><strong>1</strong></td>
+          <td>Cephla Lake Cave <code>(2581, 1303, 0134)</code></td>
+          <td>Fierce Deity Mask + Letter #2</td>
+          <td>Outskirt Stable Well (Misko's first letter)</td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td>Akkala Foothills Cave <code>(3320, 1315, 0206)</code></td>
+          <td>Fierce Deity Armor + Letter #3</td>
+          <td>Letter found in Cephla Lake Cave</td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td>Dalite Forest Cave <code>(-0912, -0135, 0036)</code></td>
+          <td>Fierce Deity Boots + Letter #4</td>
+          <td>Letter found in Akkala Foothills Cave</td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td>Tempest Gulch <code>(2340, 2560, 0150)</code></td>
+          <td>Fierce Deity Sword (38 ATK)</td>
+          <td>Letter found in Dalite Forest Cave</td>
+        </tr>
+      </table>
+
+      <h3>Upgrade Materials (★1 to ★4 per piece)</h3>
+      <p>Once acquired, upgrade the set at any <strong>Great Fairy Fountain</strong>. Each piece requires the same materials:</p>
+      <table>
+        <tr><th>Level</th><th>Materials Needed</th><th>Total per Piece</th></tr>
+        <tr><td>★0 → ★1</td><td>Hinox Tooth ×1, Hinox Guts ×1, Rupees ×10</td><td>1 of each</td></tr>
+        <tr><td>★1 → ★2</td><td>Blue Hinox Tooth ×2, Hinox Guts ×2, Rupees ×50</td><td>3 total</td></tr>
+        <tr><td>★2 → ★3</td><td>Black Hinox Tooth ×3, Hinox Guts ×3, Rupees ×200</td><td>6 total</td></tr>
+        <tr><td>★3 → ★4</td><td>Stalnox Tooth ×4, Hinox Guts ×4, Rupees ×500</td><td>10 total</td></tr>
+      </table>
+
+      <div class="gotcha-box">
+        <strong>⚠ Hinox Farming Required:</strong> To fully upgrade all three pieces to ★4, you will need a total of <strong>30 Hinox Guts</strong>, <strong>3 Hinox Teeth</strong>, <strong>6 Blue Hinox Teeth</strong>, <strong>9 Black Hinox Teeth</strong>, and <strong>12 Stalnox Teeth</strong>. This is a significant farming commitment — plan multiple Hinox hunts across Hyrule. The best farming route is circling the fields around Hyrule Castle and the Lanayru Wetlands at night for Stalnox spawns, plus checking known Hinox locations in Akkala and Hebra during daytime.
+      </div>
+    </section>
+
+    <!-- Section 3: Materials & Locations -->
+    <section class="section" id="materials">
+      <h2><span>3</span> Materials &amp; Locations — The Full Quest Chain</h2>
+
+      <p>Each step of the Fierce Deity quest chain has a specific starting point, a cave to explore, a puzzle to solve, and a reward at the end. Below is the complete breakdown of every step with exact landmarks, coordinates, and what to expect.</p>
+
+      <h3>📍 Step 1: Outskirt Stable Well — Finding the First Clue</h3>
+      <div class="material-item">
+        <div class="mat-icon">📜</div>
+        <div class="mat-info">
+          <strong>Misko's First Letter — "The Fierce Deity"</strong>
+          <span>Coordinates: <code>-1432, -1258, 0032</code> | Location: Inside Outskirt Stable Well</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">The Outskirt Stable is directly southwest of Hyrule Field, northwest of the Great Plateau. Enter the well behind the stable (use Ascend or climb down). At the bottom, you'll find a small camp with Misko's letter sitting on a wooden crate. Read it to begin the quest chain. The letter references a "lake where flames watch over" — this points to <strong>Cephla Lake</strong> in Eldin, where four torch-lit stone pillars surround the water.</p>
+        </div>
+      </div>
+
+      <h3>📍 Step 2: Cephla Lake Cave — The Fierce Deity Mask</h3>
+      <div class="material-item">
+        <div class="mat-icon">😈</div>
+        <div class="mat-info">
+          <strong>Cephla Lake Cave</strong>
+          <span>Coordinates: <code>2581, 1303, 0134</code> | Region: Eldin, northeast of Foothill Stable</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">Cephla Lake sits in the Eldin Canyon region, easily reached by gliding northeast from Foothill Stable or using the Cephla Lake Skyview Tower. The cave entrance is on the south side of the lake, partially hidden behind some bombable rocks. Inside, you'll find a torch-lighting puzzle: light all the torches in the central chamber using Fire Fruit, Fire Arrows, or a Torch. Once all torches are lit, a stone gate opens revealing a chest containing the <strong>Fierce Deity Mask</strong> and Misko's second letter. The letter references "a hill in Akkala where the ancient machines once walked" — pointing to the Akkala Foothills near the Akkala Ancient Tech Lab.</p>
+        </div>
+      </div>
+
+      <h3>📍 Step 3: Akkala Foothills Cave — The Fierce Deity Armor</h3>
+      <div class="material-item">
+        <div class="mat-icon">🛡️</div>
+        <div class="mat-info">
+          <strong>Akkala Foothills Cave</strong>
+          <span>Coordinates: <code>3320, 1315, 0206</code> | Region: Akkala, west of Akkala Ancient Tech Lab</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">The Akkala Foothills are the rolling hills west of the Akkala Ancient Tech Lab and south of Tarrey Town. The cave entrance is tucked into a cliff face — look for the telltale dark opening with some glowing mushrooms. This cave has a <strong>boulder-pushing puzzle</strong>: use Ultrahand to move large rocks into designated slots to unlock the treasure room. <strong>Warning:</strong> This area is Guardian territory. Decayed Guardians patrol the foothills above the cave, and while they can't move, their laser beams still hurt. Approach from the south or use the cliffside for cover. The chest contains the <strong>Fierce Deity Armor</strong> and Misko's third letter, which hints at "a forest of Dalite trees where the heroes rest" — pointing to Dalite Forest southwest of Lookout Landing.</p>
+        </div>
+      </div>
+
+      <h3>📍 Step 4: Dalite Forest Cave — The Fierce Deity Boots</h3>
+      <div class="material-item">
+        <div class="mat-icon">👢</div>
+        <div class="mat-info">
+          <strong>Dalite Forest Cave</strong>
+          <span>Coordinates: <code>-0912, -0135, 0036</code> | Region: Central Hyrule, southwest of Lookout Landing</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">Dalite Forest is a small woodland area southwest of Lookout Landing, just past the Manhala Bridge. The cave entrance is under a large overhang on the eastern edge of the forest. This cave requires a <strong>stamina climb</strong> — bring stamina-recovery food or have at least two full wheels of stamina. Inside, navigate the vertical chamber by climbing the walls and using platforms. At the top, a chest contains the <strong>Fierce Deity Boots</strong> and Misko's fourth and final letter. This letter speaks of "a gulch where tempests rage and the mighty fall" — pointing to <strong>Tempest Gulch</strong> in the northern Eldin Mountains.</p>
+        </div>
+      </div>
+
+      <h3>📍 Step 5: Tempest Gulch — The Fierce Deity Sword</h3>
+      <div class="material-item">
+        <div class="mat-icon">⚔️</div>
+        <div class="mat-info">
+          <strong>Tempest Gulch</strong>
+          <span>Coordinates: <code>2340, 2560, 0150</code> | Region: Eldin Mountains, far northeast of Goron City</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">Tempest Gulch is a dangerous canyon in the far northern Eldin Mountains. The area is populated by <strong>strong enemy camps</strong> including Black Bokoblins and a potential Lynel spawn nearby. The treasure is in a small cave at the back of the gulch — fight or sneak past the enemies, enter the cave, and open the final chest to receive the <strong>Fierce Deity Sword</strong>. This weapon has <strong>38 base attack</strong>, decent durability, and the same aesthetic as the armor set. While not the highest-attack weapon in the game, it matches the set visually and is a solid mid-to-late-game blade.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Optimal Route -->
+    <section class="section" id="route">
+      <h2><span>4</span> Optimal Route — Complete Walkthrough</h2>
+
+      <p>Below is the most time-efficient route to complete the entire Fierce Deity quest chain, starting from <strong>Lookout Landing</strong> as your base of operations. Total estimated time: <strong>2.5 to 4 hours</strong> depending on your fast-travel unlocks and whether you fight or avoid enemies.</p>
+
+      <div class="route-tree">
+        <div class="route-step">
+          <div class="route-num">1</div>
+          <div class="route-info">
+            <strong>Start: Outskirt Stable Well</strong>
+            <span>Fast-travel to Jiosin Shrine (southeast of Hyrule Field) or Tsutsu-um Shrine (near the stable). The Outskirt Stable is at <code>-1432, -1280</code>. Walk behind the stable to the well, drop down, and read Misko's letter. Set a map pin on Cephla Lake (northeast Eldin).</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">2</div>
+          <div class="route-info">
+            <strong>Cephla Lake Cave → Fierce Deity Mask</strong>
+            <span>Fast-travel to Cephla Lake Skyview Tower or Jiotakyam Lightroot. The cave entrance is on the south shore at <code>2581, 1303</code>. Solve the torch puzzle (use 4 Fire Fruit arrows to light all braziers quickly). Claim the Mask + Letter #2. Pin Akkala Foothills on your map.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">3</div>
+          <div class="route-info">
+            <strong>Akkala Foothills Cave → Fierce Deity Armor</strong>
+            <span>Fast-travel to Jochi-ihiga Shrine (Tarrey Town area) Narusu Lightroot if you've unlocked the Depths path. Surface approach: glide from Ulri Mountain Skyview Tower southward. Cave entrance at <code>3320, 1315</code>. Solve the boulder puzzle with Ultrahand. <strong>Bring a strong weapon</strong> — Gloom-infected enemies may spawn inside. Claim Armor + Letter #3.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">4</div>
+          <div class="route-info">
+            <strong>Dalite Forest Cave → Fierce Deity Boots</strong>
+            <span>Return to Central Hyrule — fast-travel to Kyononis Shrine (Lookout Landing) and glide southwest. Cave at <code>-0912, -0135</code>. This is the climbing section — eat Enduring food or have 2+ stamina wheels. Claim Boots + Letter #4.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">5</div>
+          <div class="route-info">
+            <strong>Tempest Gulch → Fierce Deity Sword</strong>
+            <span>Final leg: fast-travel to Sibajitak Shrine (Eldin Canyon) or the nearest Depths Lightroot. Head far northeast into the Eldin Mountains. Approach Tempest Gulch from the south using high ground. The cave is at the back of the gulch. Clear the enemy camp or sneak in at night. Claim the Fierce Deity Sword. Quest chain complete.</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Fast-Travel Preparation Checklist</h3>
+      <p>Before starting this quest chain, unlock these fast-travel points to save significant time:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>Cephla Lake Skyview Tower</strong> — essential for Step 2</li>
+        <li><strong>Ulri Mountain Skyview Tower</strong> — best entry point for Akkala (Step 3)</li>
+        <li><strong>Lookout Landing Skyview Tower / Kyononis Shrine</strong> — your home base</li>
+        <li><strong>Eldin Canyon Skyview Tower</strong> — use for Tempest Gulch approach (Step 5)</li>
+        <li><strong>Nearby shrines</strong> — unlock any shrines you pass during the route for return trips</li>
+      </ul>
+
+      <p><strong>Recommended loadout:</strong> Bring at least 20 Fire Fruit for the Cephla Lake torch puzzle, 10 Brightbloom Seeds for cave visibility, 3 Enduring meals for the Dalite Forest climb, and your best combat gear for Akkala and Tempest Gulch. A Rocket Shield or hoverbike made with Zonai devices will dramatically speed up overland travel between caves.</p>
+    </section>
+
+    <!-- Section 5: Gotcha Tips -->
+    <section class="section" id="gotcha">
+      <h2><span>5</span> Gotcha Tips — What Can Go Wrong</h2>
+
+      <p>The Fierce Deity quest chain is notorious for frustrating players who aren't prepared. Here are every major pitfall and how to avoid them.</p>
+
+      <div class="gotcha-box">
+        <strong>🔴 The Quest Is Completely Hidden</strong><br>
+        Unlike virtually every other side quest in TOTK, "Misko's Treasure: The Fierce Deity" does <strong>NOT</strong> appear in your Adventure Log until you read the first letter in Outskirt Stable Well. There is no quest giver NPC, no map marker, and no hint from Purah Pad or any character. You must physically go to the well and find the letter yourself. Many players complete the entire main story without ever knowing this set exists. This is by design — Misko's treasures are meant to be secrets.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 Akkala Has Guardians — Decayed But Deadly</strong><br>
+        The Akkala Foothills area surrounding the cave entrance still contains <strong>Decayed Guardians</strong>. These stationary turrets will lock onto you with a laser if you enter their line of sight, dealing massive damage. They can and will one-shot you if you're under 8 hearts. Approach the cave from the cliffside to the west, using the rock formations as cover. Alternatively, glide down from Ulri Mountain Skyview Tower — you'll land north of the Guardian patrol radius and can walk to the cave safely.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 Dalite Forest Cave Requires Stamina</strong><br>
+        Many players get stuck at the Dalite Forest Cave because the treasure chest is at the top of a tall vertical shaft that requires significant climbing. If you only have one stamina wheel, you will <strong>not</strong> make it to the top without stamina recovery food. Craft <strong>Enduring Fried Wild Greens</strong> (Endura Shroom + Hyrule Herb) or any meal with an Endura Carrot for extra stamina wheels. Alternatively, if you have the Climbing Gear set or the Climbing Buff from certain meals, the climb becomes manageable even with low base stamina.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 Tempest Gulch Has Strong Enemies</strong><br>
+        The final step at Tempest Gulch is not a peaceful treasure pickup. The gulch contains a <strong>full enemy camp</strong> with Black Bokoblins, Moblins, and potentially a Lynel in the surrounding area. If you're under-leveled (fewer than 10 hearts, weapons under 30 ATK), you will struggle here. Two strategies: (1) come fully prepared with your best weapons and Mighty meals, or (2) sneak in at <strong>night</strong> when most enemies sleep, using the Stealth Armor or Sneaky meals to reach the cave undetected. The chest itself is just inside the cave past the camp, so you don't need to clear every enemy.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 You Need the Full Set Before It Shines</strong><br>
+        A single piece of Fierce Deity armor gives only a modest Attack Up boost. The set truly comes online with all three pieces equipped simultaneously, unlocking the full ×3 attack multiplier and the Charge Attack Stamina Up set bonus. Don't judge the set by its first piece alone — commit to completing the entire chain before evaluating its power.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 Hinox Parts Are Hard to Farm in Bulk</strong><br>
+        The upgrade materials for this set are some of the most demanding in the game. Hinox Guts have a low drop rate (roughly 40% from regular Hinox, higher from Blue/Black variants), and you need 30 total for all three pieces to ★4. Stalnox only spawn at night, making their teeth particularly time-gated. Plan dedicated farming runs — mark every Hinox location on your map and do circuit runs, sleeping at inns to advance time between hunts.
+      </div>
+    </section>
+
+    <!-- Section 6: Free Benefits -->
+    <section class="section" id="benefits">
+      <h2><span>6</span> Free Benefits — What Else You Get Along the Way</h2>
+
+      <p>The Fierce Deity quest chain doesn't just give you the best attack armor in the game — it takes you across four diverse regions of Hyrule, each packed with additional loot, discoveries, and unlocks. Here's everything you should grab while following this route.</p>
+
+      <h3>Cave Treasures Beyond the Fierce Deity Set</h3>
+      <p>Each of the four caves in this quest chain contains <strong>multiple treasure chests</strong> in addition to the Fierce Deity pieces:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>Cephla Lake Cave:</strong> Bomb Flowers, Brightbloom Seeds, and a chest with a Ruby — worth 110 rupees or useful for fire-based weapon Fuses</li>
+        <li><strong>Akkala Foothills Cave:</strong> A Soldier's Broadblade (Fuse-ready), Amber deposits, and a chest with Topaz (worth 180 rupees)</li>
+        <li><strong>Dalite Forest Cave:</strong> Crates with arrows, a bundle of 10 Fire Arrows in a side chest, and several ore deposits with Flint</li>
+        <li><strong>Tempest Gulch:</strong> Enemy camp chests containing Mighty Bananas, a Sapphire (260 rupees), and various cooking ingredients</li>
+      </ul>
+
+      <h3>Bubbul Gem &amp; Brightbloom Seed Collection</h3>
+      <p>Each cave has a <strong>Bubbulfrog</strong> — the glowing creatures that drop <strong>Bubbul Gems</strong> when defeated. These gems are traded to Koltin for the Bokoblin Mask, Moblin Mask, and eventually Mystic Armor set. Killing all four Bubbulfrogs during this quest gives you 4 Bubbul Gems right off the bat. Additionally, each cave contains 5–15 Brightbloom Seeds, which are invaluable for Depths exploration. Stock up — you'll need them later.</p>
+
+      <h3>Stable Fast-Travel Unlocks</h3>
+      <p>Passing through the regions on this route naturally takes you near multiple stables. Make sure to register and activate the following:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>Outskirt Stable</strong> — right at the quest start, essential for Central Hyrule travel</li>
+        <li><strong>Foothill Stable</strong> — near Cephla Lake, key entry point for Eldin</li>
+        <li><strong>South Akkala Stable</strong> — southeast of the Akkala Foothills Cave</li>
+        <li><strong>Tarrey Town</strong> — if you haven't visited, the nearby shrine is a must-have fast-travel point</li>
+      </ul>
+
+      <h3>Depths Lightroot Discoveries</h3>
+      <p>Two of the cave locations (Cephla Lake and Akkala Foothills) have corresponding <strong>Lightroots</strong> directly below them in the Depths. If you've already unlocked the Depths, dropping down from these caves reveals new areas and activates the Lightroots, permanently illuminating large sections of the underground map:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>Jiotakyam Lightroot</strong> — beneath Cephla Lake Cave at Depths coordinates</li>
+        <li><strong>Narusu Lightroot</strong> — beneath Akkala Foothills Cave</li>
+      </ul>
+
+      <h3>The Fierce Deity Sword — Bonus Weapon</h3>
+      <div class="highlight">
+        <strong>38 Base Attack, bonus weapon from the final step.</strong> The Fierce Deity Sword is not technically part of the armor set, but it completes the aesthetic and is a solid weapon for mid-to-late game. It can be re-obtained by re-visiting the Tempest Gulch cave after a Blood Moon if you need a replacement. While not as strong as a Savage Lynel Crusher or the Lightscale Trident, the 38 ATK puts it comfortably above most standard weapons and makes it excellent for Fuse experiments since it respawns.
+      </div>
+
+      <h3>Map Exploration Rewards</h3>
+      <p>Simply traveling to all four locations will significantly fill out your map in four different regions: <strong>Eldin Canyon, Akkala, Central Hyrule,</strong> and <strong>Eldin Mountains.</strong> You'll likely discover 5–10 new Korok Seeds just by passing through, plus multiple new shrine locations to pin for later. The Akkala region in particular is under-explored by most players until late game, so this quest is an excellent excuse to fill in that northeast corner of your map.</p>
+
+      <h3>Misko's Other Treasures</h3>
+      <p>While at the Outskirt Stable Well, take note: Misko has <strong>multiple treasure series</strong> hidden across Hyrule, each with its own letter chain. The well also contains references to Misko's Treasure: Twilight (for the Twilight Hero set) and Misko's Treasure: Heroines (for the Gerudo Vai set). If you're a completionist, use this opportunity to start those chains as well — the clues are all in the same well.</p>
+    </section>
+
+    <!-- Recommended Next -->
+    <section class="section" id="recommended">
+      <h2>Recommended Next</h2>
+      <p>Now that you've got the strongest attack armor in the game, you'll need the weapons to match it. Head to our <a href="./barbarian-set.html"><strong>Barbarian Armor Set Guide</strong></a> — another Attack Up armor set found in the three massive Labyrinths of Hyrule. While the Fierce Deity Set is superior for raw attack, the Barbarian Set offers a higher defense ceiling and a different aesthetic, and collecting both gives you options for different builds. Alternatively, check out our <a href="./master-sword.html">Master Sword Guide</a> to pair your new armor with the Sword that Seals the Darkness for the most iconic loadout in the game.</p>
+    </section>
+
+  </main>
+
+  <!-- Right Sidebar -->
+  <aside class="sidebar-right">
+    <div class="panel">
+      <h4>Item Stats</h4>
+      <p style="font-size:0.88rem;"><strong>Set Bonus:</strong> Attack Up ×3</p>
+      <p style="font-size:0.88rem;"><strong>Max DEF (★4):</strong> 84</p>
+      <p style="font-size:0.88rem;"><strong>Pieces:</strong> 3</p>
+      <p style="font-size:0.88rem;"><strong>Quest Steps:</strong> 4</p>
+    </div>
+    <div class="panel">
+      <h4>Quick Stats</h4>
+      <p style="font-size:0.88rem;"><strong>Bonus Weapon:</strong> Fierce Deity Sword (38 ATK)</p>
+      <p style="font-size:0.88rem;"><strong>Upgrade Cost:</strong> 30 Hinox Guts (total)</p>
+      <p style="font-size:0.88rem;"><strong>Est. Time:</strong> 2.5–4 hours</p>
+    </div>
+    <div class="panel">
+      <h4>Related Guides</h4>
+      <a href="./barbarian-set.html">Barbarian Armor Set</a>
+      <a href="./master-sword.html">Master Sword</a>
+      <a href="./">Hero of Time Set</a>
+    </div>
+    <div class="panel">
+      <h4>External Resources</h4>
+      <a href="https://mapgenie.io/zelda-tears-of-the-kingdom">Interactive Map</a>
+      <a href="https://www.zeldadungeon.net">Zelda Dungeon</a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>🛠️ CraftHunt — Zelda: Tears of the Kingdom Crafting Guides</p>
+  <p style="font-size:0.8rem; margin-top:0.5rem;">Not affiliated with Nintendo. All game content and materials are trademarks of Nintendo.</p>
+</footer>
+
+</body>
+</html>

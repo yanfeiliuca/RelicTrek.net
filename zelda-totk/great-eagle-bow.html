@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Great Eagle Bow Crafting Guide — Zelda: Tears of the Kingdom | CraftHunt</title>
+<meta name="description" content="Complete guide to crafting the Great Eagle Bow in Zelda: TOTK. Full recipe, material locations, optimal route, and tips to forge Revali's signature 3-shot bow.">
+<style>
+:root {
+  --bg: #f0ece4;
+  --card: #fffef8;
+  --ink: #1a1a1a;
+  --muted: #5a5a5a;
+  --rule: #2c3e50;
+  --accent: #2c3e50;
+  --danger: #8b0000;
+  --success: #1b5e20;
+  --nav: #2c3e50;
+  --sidebar: #e8e4dc;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; }
+
+/* Header */
+.site-header { background: var(--nav); color: #fff; padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+.site-header h1 { font-size: 1.25rem; letter-spacing: 0.5px; }
+.header-link { color: #fff; text-decoration: none; font-size: 0.85rem; margin-left: auto; opacity: 0.85; }
+.header-link:hover { opacity: 1; text-decoration: underline; }
+
+/* Scrolling ticker */
+.ticker { background: var(--nav); color: #fff; border-top: 1px solid rgba(255,255,255,0.15); padding: 0.35rem 1rem; font-size: 0.8rem; overflow: hidden; white-space: nowrap; }
+.ticker span { display: inline-block; padding-left: 100%; animation: ticker-scroll 30s linear infinite; }
+@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+/* Layout */
+.page-wrap { display: grid; grid-template-columns: 240px 1fr 220px; min-height: calc(100vh - 110px); }
+
+/* Left sidebar */
+.left-sidebar { background: var(--sidebar); border-right: 1px solid #ccc; padding: 1rem; }
+.left-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+.left-sidebar ul { list-style: none; }
+.left-sidebar li { margin-bottom: 0.15rem; }
+.left-sidebar a { display: block; padding: 0.35rem 0.5rem; font-size: 0.85rem; color: var(--ink); text-decoration: none; border-radius: 4px; }
+.left-sidebar a:hover { background: rgba(0,0,0,0.05); }
+.left-sidebar a.active { background: var(--nav); color: #fff; }
+
+/* Main content */
+main.content-area { padding: 1.5rem 2rem; max-width: 900px; }
+.breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* Item header */
+.item-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--rule); }
+.item-icon-weapon { width: 64px; height: 64px; background: var(--nav); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+.item-header h1 { font-size: 1.6rem; color: var(--rule); }
+.item-header .rarity-badge { display: inline-block; background: var(--rule); color: #fff; padding: 0.15rem 0.6rem; font-size: 0.75rem; border-radius: 3px; margin-left: 0.5rem; vertical-align: middle; }
+.item-meta { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+
+/* Sections */
+.section { margin-bottom: 2rem; padding: 1.25rem; background: var(--card); border: 1px solid #d5d0c8; }
+.section h2 { font-size: 1.15rem; color: var(--rule); margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #d5d0c8; display: flex; align-items: center; gap: 0.5rem; }
+.section h2 .num { background: var(--rule); color: #fff; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.85rem; flex-shrink: 0; }
+.section p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+.section strong { color: var(--rule); }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.9rem; }
+th, td { border: 1px solid #c0b8a8; padding: 0.55rem 0.75rem; text-align: left; }
+th { background: var(--nav); color: #fff; font-weight: 600; }
+tr:nth-child(even) { background: #f5f3ee; }
+
+/* Material item blocks */
+.material-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; background: #f5f3ee; border-left: 4px solid var(--rule); margin-bottom: 0.75rem; }
+.material-item .mat-icon { width: 40px; height: 40px; background: var(--nav); color: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.material-item .mat-info { flex: 1; }
+.material-item .mat-name { font-weight: 600; color: var(--rule); font-size: 0.95rem; }
+.material-item .mat-detail { font-size: 0.85rem; color: var(--muted); }
+
+/* Route tree */
+.route-tree { margin: 0.75rem 0; }
+.route-step { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px dashed #c0b8a8; }
+.route-step:last-child { border-bottom: none; }
+.route-step .step-num { background: var(--rule); color: #fff; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.8rem; flex-shrink: 0; }
+.route-step .step-body { flex: 1; font-size: 0.9rem; }
+
+/* Gotcha box */
+.gotcha-box { background: #faf5f0; border: 1px solid #d4a574; border-left: 4px solid #d4a574; padding: 0.75rem 1rem; margin: 0.75rem 0; }
+.gotcha-box .gotcha-title { font-weight: 600; color: #8b4513; margin-bottom: 0.25rem; font-size: 0.9rem; }
+.gotcha-box ul { margin-left: 1.25rem; font-size: 0.88rem; color: var(--muted); }
+.gotcha-box li { margin-bottom: 0.3rem; }
+
+/* Right sidebar */
+.right-sidebar { background: var(--sidebar); border-left: 1px solid #ccc; padding: 1rem; }
+.right-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+.right-sidebar .info-card { background: var(--card); border: 1px solid #ccc; padding: 0.75rem; margin-bottom: 0.75rem; font-size: 0.85rem; }
+.right-sidebar .info-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; }
+.right-sidebar .info-card .value { font-weight: 600; color: var(--rule); }
+
+/* Footer */
+.site-footer { background: var(--nav); color: #fff; padding: 1rem 1.5rem; font-size: 0.8rem; text-align: center; }
+
+/* Responsive */
+@media (max-width: 1024px) { .page-wrap { grid-template-columns: 200px 1fr; } .right-sidebar { display: none; } }
+@media (max-width: 768px) { .page-wrap { grid-template-columns: 1fr; } .left-sidebar { display: none; } }
+
+[data-zh] { position: relative; cursor: help; border-bottom: 1px dotted var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+<h1>🎮 CraftHunt</h1>
+<span style="opacity:0.7; font-size:0.85rem;">Zelda: Tears of the Kingdom — Item Crafting Guides</span>
+<a class="header-link" href="../index.html">← All Games</a>
+</header>
+
+<!-- Ticker -->
+<div class="ticker">
+<span>🔥 TOTK Tip: Fuse a Ruby to your weapon for cold resistance + fire damage | Great Eagle Bow fires 3 arrows for 84 total damage | Bring Snowquill armor to Rito Village | Always mine rare ore deposits in Hebra | 💎</span>
+</div>
+
+<!-- Layout -->
+<div class="page-wrap">
+
+<!-- LEFT SIDEBAR -->
+<aside class="left-sidebar">
+<h3>🏹 Champion Weapons</h3>
+<ul>
+<li><a class="active" href="great-eagle-bow.html">Great Eagle Bow</a></li>
+<li><a href="boulder-breaker.html">Boulder Breaker</a></li>
+<li><a href="./">Scimitar of the Seven</a></li>
+<li><a href="lightscale-trident.html">Lightscale Trident</a></li>
+<li><a href="./boulder-breaker.html">Daybreaker Shield</a></li>
+</ul>
+<h3>⚔️ Best Gear</h3>
+<ul>
+<li><a href="master-sword.html">Master Sword</a></li>
+<li><a href="hylian-shield.html">Hylian Shield</a></li>
+<li><a href="fierce-deity-set.html">Fierce Deity Set</a></li>
+<li><a href="barbarian-set.html">Barbarian Set</a></li>
+<li><a href="./">Sand Boots</a></li>
+</ul>
+<h3>🔗 Quick Links</h3>
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="https://www.zelda.com/tears-of-the-kingdom/" target="_blank">Official Site</a></li>
+</ul>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="content-area">
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+<a href="../index.html">CraftHunt</a> / <a href="../index.html">Zelda: TOTK</a> / Great Eagle Bow
+</div>
+
+<!-- Item Header -->
+<div class="item-header">
+<div class="item-icon-weapon">🏹</div>
+<div>
+<h1>Great Eagle Bow <span class="rarity-badge">Rare</span></h1>
+<div class="item-meta">Item Type: Weapon (Bow) | Difficulty: ★★★☆☆ Mid Game | 28×3 Damage</div>
+</div>
+</div>
+
+<!-- MODULE 1: Why This Item Matters -->
+<div class="section">
+<h2><span class="num">1</span> Why This Item Matters</h2>
+<p data-zh="为什么这把弓值得你去获取">The Great Eagle Bow is arguably the most devastating ranged weapon in <em>Zelda: Tears of the Kingdom</em>, and every serious adventurer should prioritize crafting it as soon as they unlock the ability to repair Champion weapons. This isn't just a bow — it's Revali's signature weapon, a masterpiece of Rito craftsmanship that fires <strong>three arrows simultaneously</strong> for a staggering <strong>28 base damage per arrow</strong>, totaling 84 damage per shot when all three connect.</p>
+
+<p data-zh="极致的DPS输出">What makes the Great Eagle Bow truly exceptional is its raw DPS potential. While other bows may boast higher single-arrow damage numbers, none match the sheer volume of projectiles this weapon unleashes. When fused with high-damage materials — a Gibdo Bone, Mighty Puffshroom, or Silver Lynel Hoof, for example — each of the three arrows carries the fused material's damage bonus. This multiplicative effect means the Great Eagle Bow scales harder than any other bow in the game. A well-fused Great Eagle Bow can output over 200 damage per shot, making it the go-to weapon for Lynel farming, Gloom-infused boss encounters, and the Depths' toughest challenges.</p>
+
+<p data-zh="三段射击的机制优势">The triple-shot mechanic isn't just about damage, either. Firing three arrows at once means three chances to trigger critical hits, three chances to apply elemental effects, and three times the projectile coverage for hitting airborne or fast-moving targets. If you struggle with precision aiming, the spread pattern actually <em>helps</em> — you're more likely to land at least one hit. For players who rely on Fuse to attach elemental items like Shock Fruit or Ice Fruit, the Great Eagle Bow effectively becomes an elemental shotgun, applying status effects across a wide area of effect.</p>
+
+<p data-zh="获取的代价与回报">There's a FOMO angle here too: the Great Eagle Bow is <strong>not</strong> found in chests or dropped by enemies. It must be crafted by the Rito artisan in Rito Village, and that artisan only becomes available after resolving the Blizzard crisis through the <strong>Wind Temple</strong> main quest. This means you can't just stumble upon it — you have to earn it. The journey to Rito Village is long, cold, and dangerous, but the payoff is one of the most satisfying weapons in the entire game. Every other bow feels like a toy once you've experienced the raw power of Revali's creation.</p>
+
+<p data-zh="与其他弓的对比">Compare the Great Eagle Bow to the Royal Bow (38 damage, single shot) or the Mighty Lynel Bow (also 3-shot, but lower durability and harder to farm consistently). The Great Eagle Bow offers the best balance of high base damage, reliable multi-shot, and the ability to reforge it infinitely — as long as you have the materials. Once you have the recipe memorized and a stockpile of Diamonds, this bow becomes a permanent fixture in your inventory, something you can always fall back on when the going gets tough.</p>
+</div>
+
+<!-- MODULE 2: Fuse / Craft Recipe -->
+<div class="section">
+<h2><span class="num">2</span> Fuse / Craft Recipe</h2>
+<p data-zh="制作配方">Take the following materials to the <strong>Rito artisan</strong> in Rito Village, located in the workshop near the village center. The artisan will forge the Great Eagle Bow for you free of charge — you only need to provide the materials.</p>
+
+<table>
+<tr><th>Material</th><th>Qty</th><th>Source</th></tr>
+<tr><td>🦅 Swallow Bow</td><td>1</td><td>Rito Village, Rito enemies in Tabantha (Tabantha Frontier)</td></tr>
+<tr><td>💎 Diamond</td><td>1</td><td>Rare ore deposits, Stone Talus (Rare), Yiga Clan drops</td></tr>
+<tr><td>🪵 Wood</td><td>5</td><td>Chop any tree with an axe weapon or bomb</td></tr>
+</table>
+
+<p data-zh="制作地点">The Rito artisan's workshop is marked by a forge and anvil icon on your map once you've unlocked Rito Village. Look for a bird-like craftsman near the center of the village, standing beside a workbench with feathers and woodworking tools. Speak to them with the materials in your inventory to trigger the crafting dialogue. The artisan will also repair a broken Great Eagle Bow if you've already crafted one and it shattered — same materials required.</p>
+
+<p><strong>Total material cost per craft:</strong> 1 Swallow Bow + 1 Diamond + 5 Wood. This is relatively cheap for a weapon of this caliber. The main bottleneck is the Diamond, which is a rare drop from ore deposits. However, compared to other Champion weapons, the Great Eagle Bow has one of the most affordable material lists, making it practical to reforge multiple times throughout your playthrough.</p>
+</div>
+
+<!-- MODULE 3: Materials & Locations -->
+<div class="section">
+<h2><span class="num">3</span> Materials &amp; Locations</h2>
+
+<div class="material-item">
+<div class="mat-icon">🦅</div>
+<div class="mat-info">
+<div class="mat-name">Swallow Bow &times; 1</div>
+<div class="mat-detail">
+<strong>Where to find:</strong> The Swallow Bow can be found inside Rito Village itself — check the weapons rack in the village's upper levels near the armor shop. It also drops from Rito enemies patrolling the Tabantha Frontier region, particularly around <strong>Tabantha Great Bridge</strong> (coordinates approximately <strong>-3600, 0980, 0240</strong>) and the <strong>Flight Range</strong>. Some Rito archers also carry it near <strong>Hebra Peak</strong> and <strong>Cuho Mountain</strong>. If you've already broken the one in Rito Village, it will respawn after a Blood Moon. Keep in mind that this is a relatively fragile bow, so handle it carefully and don't use it as your main weapon until you've crafted the Great Eagle Bow.
+<br><strong>Drop rate:</strong> Guaranteed from the Rito Village rack (respawns). ~30% chance from Rito archers in Tabantha.
+<br><strong>Tip:</strong> Mark the weapon rack location on your map with a stamp so you can easily check for respawns after each Blood Moon.
+</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">💎</div>
+<div class="mat-info">
+<div class="mat-name">Diamond &times; 1</div>
+<div class="mat-detail">
+<strong>Where to find:</strong> Diamonds are rare gems that drop from specific ore deposits with a sparkling golden sheen. The best farming locations include: (1) <strong>Rare Stone Talus</strong> enemies — these golden-glowing Talus variants are guaranteed to drop at least one Diamond upon defeat. They appear in multiple locations across Hyrule, including near <strong>Gerudo Summit</strong>, <strong>Hebra West Summit</strong>, and the <strong>Depths</strong>. (2) <strong>Yiga Clan Hideout</strong> — Yiga Blademasters and Yiga Footsoldiers occasionally drop Diamonds. (3) <strong>Ore deposits in the Depths</strong> — look for rare golden ore deposits near Abandoned Mines; these have a higher Diamond drop rate than surface deposits. (4) <strong>Talus hunting</strong> — the Rare Stone Talus at <strong>Lake Ferona</strong> in Eldin and <strong>Glaive Pass</strong> in Gerudo are reliable respawning sources. (5) <strong>Gemstone merchants</strong> — you can purchase Diamonds from NPCs like <strong>Ramella</strong> in Goron City, but expect to pay a premium price of around 1,000 rupees each.
+<br><strong>Drop rate:</strong> ~5% from normal rare ore deposits, 100% from Rare Stone Talus, ~8% from Yiga Blademasters.
+<br><strong>Tip:</strong> Use the Sensor+ on your Purah Pad to set "Diamond" as a tracked material. This helps immensely when exploring caves and the Depths.
+</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🪵</div>
+<div class="mat-info">
+<div class="mat-name">Wood &times; 5</div>
+<div class="mat-detail">
+<strong>Where to find:</strong> Wood is the most abundant material in the game. Simply chop any tree using a weapon, an axe, or a bomb. Every tree drops 1–3 pieces of Wood. The forests around <strong>Hyrule Field</strong>, <strong>Hyrule Forest Park</strong> near Lookout Landing, and the <strong>Great Hyrule Forest</strong> are excellent spots for bulk wood collection. If you're already traveling to Rito Village, the forests in <strong>Tabantha Hills</strong> and the lower elevations of <strong>Hebra</strong> are packed with trees. You can also find pre-chopped Wood bundles at many monster camps and abandoned stables. Need a fast method? Drop a Bomb Flower at the base of a cluster of trees — you'll harvest Wood from multiple trees at once. Alternatively, use a two-handed weapon with wide swings to cut down trees efficiently.
+<br><strong>Drop rate:</strong> 100% from trees (1–3 per tree).
+<br><strong>Tip:</strong> Wood stacks up to 999 and is used in many recipes, so don't hesitate to farm 50+ pieces while you're at it. You'll need it for cooking, building, and other Champion weapon repairs.
+</div>
+</div>
+</div>
+</div>
+
+<!-- MODULE 4: Optimal Route -->
+<div class="section">
+<h2><span class="num">4</span> Optimal Route</h2>
+<p data-zh="最优路线">This route assumes you're starting from <strong>Lookout Landing</strong> in central Hyrule, which is the natural early-game hub. Total estimated time: <strong>25–40 minutes</strong> depending on whether you fight enemies or run past them. Make sure you have <strong>Cold Resistance Level 2</strong> before attempting — see Gotcha Tips below.</p>
+
+<div class="route-tree">
+<div class="route-step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Start at Lookout Landing Skyview Tower</strong> — Launch into the sky and glide northwest toward <strong>Hyrule Ridge</strong>. Your goal is the <strong>Lindor's Brow Skyview Tower</strong> (coordinates approximately <strong>-1901, 1243, 0297</strong>), which provides a fantastic vantage point for gliding deep into the Tabantha region. If this tower isn't unlocked yet, ride northwest on foot or by horse through Hyrule Field.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Unlock Lindor's Brow Skyview Tower</strong> — If needed, activate this tower. The launch will reveal a huge portion of the northwest map, including the Tabantha Frontier and Hebra Mountains. From the sky, look for the distinct silhouette of <strong>Rito Village</strong> — it's a tall, spiral wooden structure built into the side of a canyon wall, impossible to miss from altitude.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Glide or travel to Tabantha Great Bridge</strong> — The bridge (coordinates <strong>-3600, 0980, 0240</strong>) marks the entrance to Rito territory. This area is often patrolled by Rito enemies carrying Swallow Bows — if you don't already have one, this is your chance to grab it. Check enemy camps on both sides of the bridge. The Rito archers here respawn, so you can farm if needed.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>Follow the canyon road to Rito Village</strong> — From Tabantha Great Bridge, follow the winding path upward through <strong>Tabantha Frontier</strong>. The road is clearly marked and passes through several points of interest: <strong>Tabantha Village Ruins</strong> (good for scavenging), <strong>Rito Stable</strong> (rest and stock up on arrows), and <strong>Flight Range</strong> (a Rito training area with weapon racks). Continue climbing — the temperature drops sharply as you ascend.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">5</div>
+<div class="step-body">
+<strong>Enter Rito Village</strong> — The village entrance is at approximately <strong>-3619, 1813, 0218</strong>. You'll know you're close when you see the massive spiral pillar structure. Before entering, make sure your cold resistance is active — without it, the cold will sap your health rapidly. The village is beautiful but frigid, built into the canyon walls with multiple vertical levels connected by ramps and updrafts.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">6</div>
+<div class="step-body">
+<strong>Collect the Swallow Bow</strong> — Once inside Rito Village, head to the upper levels near the armor shop. Look for a weapon rack — the Swallow Bow is typically displayed here. If it's not there (you may have already taken it), check the Flight Range outside the village or farm Rito archers in Tabantha. Grab it and stow it safely — don't break it before crafting!
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">7</div>
+<div class="step-body">
+<strong>Gather 5 Wood</strong> — If you don't already have Wood, exit the village and chop trees in the lower Tabantha Hills where it's warmer. You need only 5 pieces — two or three trees will suffice. Alternatively, check nearby monster camps for pre-chopped Wood bundles.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">8</div>
+<div class="step-body">
+<strong>Obtain 1 Diamond</strong> — If you don't have a Diamond already, the most reliable method is to hunt a <strong>Rare Stone Talus</strong>. The nearest one to Rito Village is located in the <strong>Hebra Mountains</strong> region — consult your map for the Rare Stone Talus marker, or use Sensor+ to track Diamonds in nearby caves. Alternatively, if you're short on time, purchase one from <strong>Ramella</strong> in Goron City (though this requires a detour). Depths exploration near the Tabantha area can also yield Diamonds from rare ore deposits.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">9</div>
+<div class="step-body">
+<strong>Visit the Rito artisan</strong> — With Swallow Bow, Diamond, and 5 Wood in your inventory, locate the Rito artisan in the village center workshop. The forge area is marked on your map with an anvil icon after the Wind Temple quest is complete. Speak to the artisan and select "Forge the Great Eagle Bow." Watch the crafting animation and claim your new weapon.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">10</div>
+<div class="step-body">
+<strong>Test your new bow!</strong> — Exit the village and find a target. The Great Eagle Bow feels incredible the first time you fire it — three arrows streaking toward your target in a tight spread. Head to the Flight Range nearby to practice your aim and get used to the triple-shot arc. Welcome to the big leagues.
+</div>
+</div>
+</div>
+</div>
+
+<!-- MODULE 5: Gotcha Tips -->
+<div class="section">
+<h2><span class="num">5</span> Gotcha Tips</h2>
+<p data-zh="注意事项与常见陷阱">The road to the Great Eagle Bow is straightforward but packed with potential pitfalls. Here's everything that can go wrong — and how to avoid it.</p>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🥶 The Cold Will Kill You — Bring Cold Resistance Level 2</div>
+<ul>
+<li>Rito Village and the entire Hebra region inflict severe cold that rapidly drains health. Level 1 cold resistance is <strong>not enough</strong> for extended exploration.</li>
+<li>The <strong>Snowquill armor set</strong> (purchased in Rito Village itself) provides Level 2 cold resistance when wearing 2+ pieces. If you can't afford it, cook <strong>Cold-Resist Elixirs</strong> using Spicy Peppers, Sunshrooms, or Warm Safflina.</li>
+<li>Equipping a <strong>fire-element weapon</strong> (like a Ruby-fused sword) provides minor warmth but is NOT a substitute for proper cold resistance.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🌪️ The Blizzard Quest Must Be Completed First</div>
+<ul>
+<li>The Rito artisan <strong>will NOT be available</strong> until you complete the <strong>Tulin of Rito Village</strong> main quest and clear the <strong>Wind Temple</strong>.</li>
+<li>This means fighting the Colgera boss, navigating the sky islands above Hebra, and resolving the endless blizzard covering the region.</li>
+<li>Attempting to visit the artisan before this quest results in the workshop being closed and the craftsman nowhere to be found.</li>
+<li>Plan accordingly — you can't just rush to Rito Village and grab the bow in the first hour of the game. This is a mid-game weapon.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🏹 The Swallow Bow Can Break Before Crafting</div>
+<ul>
+<li>It's surprisingly easy to accidentally break or drop the Swallow Bow while fighting your way to Rito Village. If this happens, you'll need to farm a replacement from Rito enemies or wait for the village weapon rack to respawn after a Blood Moon.</li>
+<li><strong>Pro tip:</strong> Store the Swallow Bow in your horse's saddlebags or at your house until you're ready to craft. Don't use it in combat — use a disposable weapon instead.</li>
+<li>The Swallow Bow has low durability (30 hits), so treat it like the precious crafting material it is.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🎒 Inventory Space Issues</div>
+<ul>
+<li>Wood stacks to 999 but takes up a precious inventory slot. If you're carrying multiple bow types already, make sure you have room for both the Swallow Bow and the Great Eagle Bow after crafting.</li>
+<li>Consider expanding your bow inventory slots at Hestu before making this trip. You'll want the extra space for all the powerful bows you'll collect in Hebra anyway.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🗺️ Getting Lost in Hebra</div>
+<ul>
+<li>The Hebra region is massive and vertically complex. It's easy to wander into areas you're not prepared for, especially around Hebra Peak and the Rospro Pass.</li>
+<li>Always have a stash of Sundelions for Gloom exposure (if dipping into Depths entrances), and bring plenty of stamina-restoring food for climbing.</li>
+<li>Use Ascend liberally in the canyon areas — there are many overhangs and hidden paths that shortcut the main road.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">⏳ Diamond Farming Takes Time</div>
+<ul>
+<li>Don't expect to find a Diamond in the first ore deposit you crack. With only a ~5% drop rate from rare deposits, you may need to smash 20+ deposits to get one.</li>
+<li>The most reliable source is a Rare Stone Talus (100% drop), but these are mini-boss fights that require preparation. Bring a strong two-handed weapon fused with a Boulder or another blunt object for maximum damage against the Talus's ore weak point.</li>
+</ul>
+</div>
+</div>
+
+<!-- MODULE 6: Free Benefits -->
+<div class="section">
+<h2><span class="num">6</span> Free Benefits Along the Route</h2>
+<p data-zh="沿途的额外收获">The journey to Rito Village isn't just about the Great Eagle Bow — it's one of the most rewarding expedition routes in the entire game. Here's what else you'll unlock and collect along the way:</p>
+
+<div class="material-item">
+<div class="mat-icon">🛒</div>
+<div class="mat-info">
+<div class="mat-name">Rito Village Shops — Best Arrow Vendors in the Game</div>
+<div class="mat-detail">Rito Village hosts the <strong>Brazen Beak</strong> armor shop (Snowquill set) and an excellent general store with a <strong>high-volume arrow restock</strong>. The general store sells bundles of arrows at competitive prices, and the inventory refreshes with every Blood Moon. This is arguably the best place in Hyrule to stock up on arrows before a major dungeon or boss fight. You'll also find <strong>Arrows x 10</strong> bundles here that are hard to find elsewhere.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🌪️</div>
+<div class="mat-info">
+<div class="mat-name">Wind Temple Access</div>
+<div class="mat-detail">Completing the Wind Temple quest to unlock the artisan also grants you access to one of the most visually stunning dungeons in the game. Beyond the story progress, the Wind Temple contains multiple treasure chests, a <strong>Heart Container</strong>, and unlocks <strong>Tulin as a Sage companion</strong>. Tulin's gust ability is invaluable for exploration, combat, and puzzle-solving across all of Hyrule.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">⛩️</div>
+<div class="mat-info">
+<div class="mat-name">Hebra Region Shrines</div>
+<div class="mat-detail">The route to Rito Village passes by or near numerous shrines: <strong>Gatakis Shrine</strong> (near Rito Village itself, a Rauru's Blessing shrine), <strong>Orochium Shrine</strong>, <strong>Osuan Shrine</strong>, and several others in the Tabantha Frontier. Each shrine grants a <strong>Light of Blessing</strong> (collect 4 to upgrade hearts or stamina) and provides a fast-travel point for future trips. Hebra shrines often contain valuable cold-weather equipment and rupee caches.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🍄</div>
+<div class="mat-info">
+<div class="mat-name">Rare Cold-Region Materials</div>
+<div class="mat-detail">Hebra is home to some of the most valuable crafting materials in the game. While traveling, collect <strong>Chillshrooms</strong> (used in cold-resist cooking and armor upgrades), <strong>Cold Darners</strong> (dragonflies that sell for good rupees or make excellent elixirs), <strong>Spicy Peppers</strong>, <strong>Sizzlefin Trout</strong>, and <strong>Ice Fruit</strong>. These materials are essential for late-game armor upgrades and high-level cooking recipes that you can't easily obtain in warmer regions.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🦅</div>
+<div class="mat-info">
+<div class="mat-name">Tulin — Sage of Wind Companion</div>
+<div class="mat-detail">Completing the Rito Village questline unlocks <strong>Tulin</strong> as a permanent Sage companion. His ability creates a powerful gust of wind that propels you forward while gliding, effectively extending your glide range by 50% or more. This ability transforms how you explore Hyrule, making previously unreachable sky islands accessible and turning long climbs into effortless glides. Tulin also fights alongside you, providing ranged support with his own bow attacks.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">💰</div>
+<div class="mat-info">
+<div class="mat-name">Loot from the Journey</div>
+<div class="mat-detail">The Tabantha Frontier is rich with monster camps, treasure chests, and hidden caves. You'll pass through areas with <strong>Lynel</strong> spawns (for high-end weapons and Lynel parts), <strong>Black and Silver Moblin</strong> camps (strong fused weapons), and numerous caves containing ore deposits with gems. The Flight Range itself contains practice targets that reward arrows. Expect to return from this trip with your inventory overflowing, not just with the Great Eagle Bow but with a full haul of rupees, gems, weapons, and cooking materials.</div>
+</div>
+</div>
+</div>
+
+<!-- Recommended Next -->
+<div class="section">
+<h2>🔗 Recommended Next Guide</h2>
+<p>Now that you have the best bow in the game, why not forge the strongest two-handed weapon to pair with it? Head to our <a href="boulder-breaker.html"><strong>Boulder Breaker Guide</strong></a> to learn how to craft Daruk's signature 36-attack crusher in Goron City. With the Great Eagle Bow for ranged dominance and the Boulder Breaker for melee destruction, you'll be prepared for anything the Depths throw at you.</p>
+</div>
+
+</main>
+
+<!-- RIGHT SIDEBAR -->
+<aside class="right-sidebar">
+<h3>📊 Item Stats</h3>
+<div class="info-card">
+<div class="label">Base Damage</div>
+<div class="value">28 &times; 3 arrows = 84 total</div>
+</div>
+<div class="info-card">
+<div class="label">Weapon Type</div>
+<div class="value">Bow (Champion)</div>
+</div>
+<div class="info-card">
+<div class="label">Durability</div>
+<div class="value">60 shots (high for multi-shot)</div>
+</div>
+<div class="info-card">
+<div class="label">Special Effect</div>
+<div class="value">Triple Shot</div>
+</div>
+<div class="info-card">
+<div class="label">Can Be Reforged</div>
+<div class="value">Yes — same materials</div>
+</div>
+
+<h3>⏱️ Time Estimate</h3>
+<div class="info-card">
+<div class="label">Speedrun (materials ready)</div>
+<div class="value">5 minutes (craft only)</div>
+</div>
+<div class="info-card">
+<div class="label">Full route from Lookout</div>
+<div class="value">25–40 minutes</div>
+</div>
+<div class="info-card">
+<div class="label">With Diamond farming</div>
+<div class="value">45–90 minutes</div>
+</div>
+
+<h3>🗺️ Key Coordinates</h3>
+<div class="info-card">
+<div class="label">Rito Village</div>
+<div class="value">-3619, 1813, 0218</div>
+</div>
+<div class="info-card">
+<div class="label">Tabantha Great Bridge</div>
+<div class="value">-3600, 0980, 0240</div>
+</div>
+<div class="info-card">
+<div class="label">Lindor's Brow Tower</div>
+<div class="value">-1901, 1243, 0297</div>
+</div>
+
+<h3>⚠️ Prerequisites</h3>
+<div class="info-card">
+<div class="label">Required Quest</div>
+<div class="value">Wind Temple complete</div>
+</div>
+<div class="info-card">
+<div class="label">Required Gear</div>
+<div class="value">Cold Resist Lv. 2</div>
+</div>
+</aside>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+CraftHunt — Zelda: Tears of the Kingdom guides written by players, for players. Not affiliated with Nintendo.
+</footer>
+
+</body>
+</html>

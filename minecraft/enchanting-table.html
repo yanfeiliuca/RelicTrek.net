@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enchanting Table + 15 Bookshelves — CraftHunt Minecraft Guide</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --surface2: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #d4d4d4;
+    --text2: #888;
+    --accent: #c9a96e;
+    --accent2: #8b7355;
+    --link: #7ab8e8;
+    --gotcha: #d46060;
+    --success: #5aaa6e;
+    --nav-bg: #0a0a0a;
+    --ticker-bg: #181818;
+    --sidebar-w: 210px;
+    --rightbar-w: 180px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; line-height: 1.7; overflow-x: hidden; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .top-nav { background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 20px; height: 48px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; left: 0; right: 0; z-index: 200; }
+  .nav-brand { font-size: 18px; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 20px; list-style: none; }
+  .nav-links a { color: var(--text2); font-size: 13px; }
+  .nav-links a:hover { color: var(--text); }
+  .ticker-bar { background: var(--ticker-bg); border-bottom: 1px solid var(--border); height: 32px; display: flex; align-items: center; overflow: hidden; position: fixed; top: 48px; left: 0; right: 0; z-index: 199; padding: 0 20px; font-size: 12px; color: var(--text2); }
+  .ticker-content { display: flex; gap: 40px; animation: ticker-scroll 40s linear infinite; white-space: nowrap; }
+  @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .ticker-item span { color: var(--accent); margin-right: 6px; }
+  .page-layout { display: flex; margin-top: 80px; min-height: calc(100vh - 80px); }
+  .left-sidebar { width: var(--sidebar-w); background: var(--nav-bg); border-right: 1px solid var(--border); padding: 16px 0; position: fixed; top: 80px; bottom: 0; left: 0; overflow-y: auto; z-index: 100; }
+  .sidebar-title { padding: 0 16px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text2); border-bottom: 1px solid var(--border); }
+  .sidebar-list { list-style: none; padding: 8px 0; }
+  .sidebar-list li a { display: block; padding: 8px 16px; color: var(--text2); font-size: 13px; border-left: 3px solid transparent; }
+  .sidebar-list li a:hover, .sidebar-list li a.active { background: var(--surface); color: var(--text); border-left-color: var(--accent); }
+  .sidebar-list li a .emoji { margin-right: 6px; }
+  .right-sidebar { width: var(--rightbar-w); background: var(--nav-bg); border-left: 1px solid var(--border); padding: 16px; position: fixed; top: 80px; bottom: 0; right: 0; overflow-y: auto; z-index: 100; font-size: 12px; }
+  .right-section { margin-bottom: 24px; }
+  .right-section h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .stat-row { display: flex; justify-content: space-between; margin-bottom: 6px; color: var(--text2); }
+  .stat-value { color: var(--text); font-weight: 600; }
+  .tag { display: inline-block; padding: 2px 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 3px; font-size: 11px; color: var(--text2); margin: 2px; }
+  .content-area { margin-left: var(--sidebar-w); margin-right: var(--rightbar-w); padding: 24px 32px; flex: 1; max-width: 860px; }
+  .breadcrumb { font-size: 12px; color: var(--text2); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text2); }
+  .breadcrumb a:hover { color: var(--text); }
+  .breadcrumb span { margin: 0 6px; color: var(--border); }
+  .item-header { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: var(--surface); border: 1px solid var(--border); margin-bottom: 24px; }
+  .item-icon-accessory { width: 64px; height: 64px; background: var(--surface2); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
+  .item-meta h1 { font-size: 22px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+  .item-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .tag-rarity { background: #3a2a1a; color: var(--accent); border: 1px solid var(--accent2); padding: 2px 8px; font-size: 11px; }
+  .tag-type { background: var(--surface2); color: var(--text2); border: 1px solid var(--border); padding: 2px 8px; font-size: 11px; }
+  .tag-diff { background: var(--surface2); color: var(--gotcha); border: 1px solid var(--border); padding: 2px 8px; font-size: 11px; }
+  .item-desc { color: var(--text2); font-size: 13px; line-height: 1.6; }
+  .section { background: var(--surface); border: 1px solid var(--border); margin-bottom: 20px; padding: 24px; }
+  .section h2 { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .section h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 20px 0 10px; }
+  .section p { margin-bottom: 12px; color: var(--text); }
+  .recipe-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  .recipe-table th { background: var(--surface2); padding: 10px 12px; text-align: left; color: var(--accent); font-weight: 600; border: 1px solid var(--border); }
+  .recipe-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text); }
+  .recipe-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+  .crafting-ascii { background: var(--surface2); border: 1px solid var(--border); padding: 16px; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.8; color: var(--text); margin: 16px 0; overflow-x: auto; }
+  .crafting-ascii .grid-label { color: var(--accent); font-weight: bold; }
+  .gotcha-box { background: rgba(212, 96, 96, 0.08); border: 1px solid var(--gotcha); border-left: 4px solid var(--gotcha); padding: 16px; margin: 16px 0; }
+  .gotcha-box strong { color: var(--gotcha); }
+  .gotcha-box ul { margin: 8px 0 0 20px; }
+  .gotcha-box li { margin-bottom: 6px; color: var(--text); }
+  .route-tree { list-style: none; padding: 0; margin: 16px 0; }
+  .route-tree li { padding: 14px 16px 14px 44px; margin-bottom: 8px; background: var(--surface2); border: 1px solid var(--border); border-left: 4px solid var(--accent); position: relative; }
+  .route-tree li::before { content: attr(data-step); position: absolute; left: 0; top: 0; bottom: 0; width: 32px; background: var(--accent); color: #000; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+  .route-tree .step-title { font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+  .route-tree .step-detail { color: var(--text2); font-size: 13px; }
+  .material-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); margin-bottom: 10px; }
+  .material-icon { width: 40px; height: 40px; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .material-info h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .material-info p { font-size: 13px; color: var(--text2); margin-bottom: 4px; }
+  .material-meta { font-size: 12px; color: var(--accent); }
+  .benefit-list { list-style: none; padding: 0; margin: 16px 0; }
+  .benefit-list li { padding: 12px 16px; background: rgba(90, 170, 110, 0.06); border: 1px solid var(--success); margin-bottom: 8px; font-size: 13px; color: var(--text); position: relative; padding-left: 36px; }
+  .benefit-list li::before { content: "[+]"; position: absolute; left: 12px; color: var(--success); font-weight: 700; }
+  .footer { text-align: center; padding: 20px; font-size: 12px; color: var(--text2); border-top: 1px solid var(--border); margin-top: 20px; }
+  .next-rec { padding: 16px; background: var(--surface2); border: 1px solid var(--accent); margin-top: 8px; }
+  .next-rec a { color: var(--accent); font-weight: 600; }
+  .highlight { color: var(--accent); font-weight: 600; }
+  code { background: var(--surface2); padding: 2px 6px; font-family: 'Courier New', monospace; font-size: 12px; color: var(--accent); border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="top-nav">
+  <div class="nav-brand">CRAFT<span style="color:var(--text);">HUNT</span></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="./">Recipes</a></li>
+    <li><a href="./">Materials</a></li>
+    <li><a href="./">Routes</a></li>
+    <li><a href="../about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- Ticker -->
+<div class="ticker-bar">
+  <div class="ticker-content">
+    <span class="ticker-item"><span>Now trending:</span> Fortune III pickaxe demand up 200%</span>
+    <span class="ticker-item"><span>Tip:</span> Sugar cane grows 1 block every 16 random ticks</span>
+    <span class="ticker-item"><span>Market:</span> Leather prices steady at emerald parity</span>
+    <span class="ticker-item"><span>News:</span> Mending books found in stronghold libraries</span>
+    <span class="ticker-item"><span>Now trending:</span> Fortune III pickaxe demand up 200%</span>
+    <span class="ticker-item"><span>Tip:</span> Sugar cane grows 1 block every 16 random ticks</span>
+    <span class="ticker-item"><span>Market:</span> Leather prices steady at emerald parity</span>
+    <span class="ticker-item"><span>News:</span> Mending books found in stronghold libraries</span>
+  </div>
+</div>
+
+<!-- Page Layout -->
+<div class="page-layout">
+
+<!-- Left Sidebar -->
+<aside class="left-sidebar">
+  <div class="sidebar-title">Minecraft Items</div>
+  <ul class="sidebar-list">
+    <li><a href="./"><span class="emoji">⛏️</span> Netherite Pickaxe</a></li>
+    <li><a href="enchanting-table.html" class="active"><span class="emoji">📖</span> Enchanting Table</a></li>
+    <li><a href="./"><span class="emoji">🦋</span> Elytra</a></li>
+    <li><a href="beacon.html"><span class="emoji">💡</span> Beacon</a></li>
+    <li><a href="conduit.html"><span class="emoji">🔱</span> Conduit</a></li>
+    <li><a href="ender-chest.html"><span class="emoji">📦</span> Ender Chest</a></li>
+    <li><a href="./"><span class="emoji">⚗️</span> Brewing Stand</a></li>
+    <li><a href="./"><span class="emoji">🟪</span> Shulker Box</a></li>
+    <li><a href="./"><span class="emoji">🪬</span> Totem of Undying</a></li>
+    <li><a href="./"><span class="emoji">🛡️</span> Diamond Armor</a></li>
+  </ul>
+</aside>
+
+<!-- Main Content -->
+<main class="content-area">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a> <span>/</span> <a href="./">Recipes</a> <span>/</span> Enchanting Table + Bookshelves
+  </div>
+
+  <!-- Item Header -->
+  <div class="item-header">
+    <div class="item-icon-accessory">📖</div>
+    <div class="item-meta">
+      <h1 data-zh="附魔台+15个书架">Enchanting Table + 15 Bookshelves</h1>
+      <div class="item-tags">
+        <span class="tag-rarity">Rare</span>
+        <span class="tag-type">Utility Block</span>
+        <span class="tag-diff">&#9733;&#9733;&#9733;&#9734;&#9734; Mid Game</span>
+      </div>
+      <p class="item-desc">Level 30 enchantments — Fortune III, Efficiency V, Protection IV, Mending. The foundation of every powerful Minecraft build. <span data-zh="30级附魔——时运III、效率V、保护IV、经验修补。每个强力Minecraft建筑的基础。">Once placed, this single structure permanently unlocks the highest tier of tool and armor enchantments, transforming every piece of gear you own.</span></p>
+    </div>
+  </div>
+
+  <!-- Section 1: Why This Item Matters -->
+  <div class="section">
+    <h2><span data-zh="为什么值得制作">1. Why This Item Matters</span></h2>
+    <p>The Enchanting Table surrounded by 15 Bookshelves is the single most impactful mid-game structure you can build. It unlocks <strong>Level 30 enchantments</strong> — the maximum power tier available for nearly every enchantment in Minecraft. Without this setup, you are permanently locked out of the game-defining enchantments that separate early-game survival from mid-to-late game dominance.</p>
+
+    <p>Here is what Level 30 enchantments actually give you:</p>
+
+    <table class="recipe-table">
+      <tr><th>Enchantment</th><th>Max Level</th><th>Effect at Max</th><th>Game Impact</th></tr>
+      <tr><td>Fortune III</td><td>III</td><td>2.2x average ore drops (up to 4x)</td><td>Transforms mining from grind to wealth generation</td></tr>
+      <tr><td>Efficiency V</td><td>V</td><td>+45% mining speed</td><td>Instant-mining stone with haste; near-instant with beacon</td></tr>
+      <tr><td>Protection IV</td><td>IV</td><td>64% damage reduction</td><td>Survive falls, explosions, and mob swarms</td></tr>
+      <tr><td>Unbreaking III</td><td>III</td><td>4x tool durability</td><td>Your diamond/netherite gear lasts 4x longer</td></tr>
+      <tr><td>Sharpness V</td><td>V</td><td>+3 damage hearts</td><td>Two-shot most hostile mobs</td></tr>
+      <tr><td>Power V</td><td>V</td><td>+150% arrow damage</td><td>One-shot most mobs; two-shot Ender Dragon</td></tr>
+      <tr><td>Mending</td><td>I</td><td>Repairs with XP orbs</td><td>Permanent, self-repairing gear (treasure enchant only)</td></tr>
+    </table>
+
+    <p>Fortune III alone changes your entire resource economy. A single diamond ore block with Fortune III drops an average of 2.2 diamonds, with a chance of up to 4. This means your mining trips produce more than double the resources. Ancient Debris in the Nether, despite being unaffected by Fortune, becomes the bottleneck while diamond and coal become abundant. Efficiency V on a Netherite Pickaxe with Haste II from a Beacon lets you <strong>instant-mine stone and deepslate</strong> — blocks break the instant you click, turning massive excavation projects from hours into minutes.</p>
+
+    <p>The Enchanting Table is also the gateway to acquiring <strong>Mending</strong>. While Mending itself does not appear directly on the enchanting table (it is a "treasure enchantment" found in loot chests, fishing, or librarian villager trading), the enchanting table generates the XP orbs through enchanting activity that makes Mending functional once obtained. Furthermore, the Lapis Lazuli and book infrastructure you build for the enchanting table directly feeds into librarian villager trading — the most reliable source of specific enchanted books including Mending.</p>
+
+    <p>In multiplayer servers and competitive environments, the player who builds their Level 30 enchanting setup first gains a permanent resource acceleration advantage. Every tool, weapon, and armor piece they craft from that point forward operates at maximum efficiency. The 2-3 hour investment to build the full enchanting setup pays dividends across hundreds of hours of subsequent gameplay.</p>
+  </div>
+
+  <!-- Section 2: Crafting Recipe -->
+  <div class="section">
+    <h2><span data-zh="合成配方">2. Crafting Recipe</span></h2>
+
+    <h3>Enchanting Table</h3>
+    <div class="crafting-ascii">
+      <span class="grid-label">Crafting Table — 3x3 Grid:</span>
+      +---+---+---+
+      |<span style="color:var(--accent)">   | B |   </span>|
+      | D | O | D |
+      | O | O | O |
+      +---+---+---+
+
+      B = Book (1)
+      D = Diamond (2 total)
+      O = Obsidian (4 total)
+
+      Output: 1x Enchanting Table
+    </div>
+
+    <p>The Enchanting Table recipe is a book placed in the top-middle slot, two diamonds flanking a central obsidian block in the middle row, and three obsidian blocks filling the bottom row. The shape is distinctive — the "pyramid" of obsidian with diamonds on the shoulders and a book representing knowledge at the peak.</p>
+
+    <h3>Bookshelves (15 Total)</h3>
+    <div class="crafting-ascii">
+      <span class="grid-label">Crafting Table — Bookshelf Recipe (repeat 15x):</span>
+      +---+---+---+
+      | W | W | W |
+      | B | B | B |
+      | W | W | W |
+      +---+---+---+
+
+      W = Wood Planks (any type, 6 per bookshelf = 90 total)
+      B = Book (3 per bookshelf = 45 total)
+
+      Output: 1x Bookshelf (x15)
+    </div>
+
+    <h3>Books (45 Total)</h3>
+    <div class="crafting-ascii">
+      <span class="grid-label">Crafting Table — Book Recipe (repeat 45x):</span>
+      +---+---+---+
+      | P | P | P |
+      | L |   |   |
+      |   |   |   |
+      +---+---+---+
+
+      P = Paper (3 per book = 135 total)
+      L = Leather (1 per book = 45 total)
+
+      Output: 1x Book (x45)
+    </div>
+
+    <h3>Paper (135 Total)</h3>
+    <div class="crafting-ascii">
+      <span class="grid-label">Crafting Table — Paper Recipe:</span>
+      +---+---+---+
+      | S | S | S |
+      |   |   |   |
+      |   |   |   |
+      +---+---+---+
+
+      S = Sugar Cane (3 per paper = 135 total)
+
+      Output: 3x Paper
+    </div>
+
+    <h3>Grand Total Raw Materials</h3>
+    <table class="recipe-table">
+      <tr><th>Material</th><th>Total Qty</th><th>Source</th><th>Gathering Method</th></tr>
+      <tr><td>Diamond</td><td>2</td><td>Y=-59 (deepslate diamond ore)</td><td>Mine with Iron+ Pickaxe</td></tr>
+      <tr><td>Obsidian</td><td>4</td><td>Water + Lava Source</td><td>Mine with Diamond Pickaxe (~10s each)</td></tr>
+      <tr><td>Leather</td><td>45</td><td>Cows, Mooshrooms, Horses, Llamas</td><td>Kill cows (0-2 per cow, Looting III helps)</td></tr>
+      <tr><td>Sugar Cane</td><td>135</td><td>Rivers, lakes, ocean shores</td><td>Farm near water; grows to 3 blocks tall</td></tr>
+      <tr><td>Wood Logs</td><td>24</td><td>Any forest biome</td><td>Chop trees, craft into 96+ planks</td></tr>
+      <tr><td>Lapis Lazuli</td><td>1-3 per enchant</td><td>Y=-2 to Y=32</td><td>Mine; need ~30 for initial enchanting sessions</td></tr>
+    </table>
+
+    <p>Wood type does not matter for bookshelves — oak, birch, spruce, jungle, acacia, dark oak, mangrove, cherry, and even bamboo planks and crimson/warped planks all work interchangeably. Use whatever is most abundant in your base area.</p>
+  </div>
+
+  <!-- Section 3: Materials & Locations -->
+  <div class="section">
+    <h2><span data-zh="材料与获取位置">3. Materials & Locations</span></h2>
+
+    <div class="material-item">
+      <div class="material-icon">💎</div>
+      <div class="material-info">
+        <h4 data-zh="钻石">Diamond ×2</h4>
+        <p>Diamond ore generates between Y=-64 and Y=16, with peak density at <strong>Y=-59</strong> in the deepslate layers. Strip mining at Y=-59 (standing on deepslate, mining at feet/eye level) exposes the maximum number of diamond-bearing blocks. Each ore drops 1 diamond (Fortune increases this).</p>
+        <p class="material-meta">Location: Deepslate layers | Best Y: -59 | Tool: Iron Pickaxe minimum | Drop: 1 diamond per ore</p>
+      </div>
+    </div>
+
+    <p>For the Enchanting Table, you only need 2 diamonds — a trivial amount if you have done any branch mining. If you are starting fresh, expect to find your first 2 diamonds within 5-15 minutes of strip mining at Y=-59. Bring at least an Iron Pickaxe (diamond ore requires iron or better to drop). Always bring Torches and food. Deepslate takes 2x longer to mine than stone, so bring multiple pickaxes or Unbreaking enchantments if available.</p>
+
+    <div class="material-item">
+      <div class="material-icon">🌑</div>
+      <div class="material-info">
+        <h4 data-zh="黑曜石">Obsidian ×4</h4>
+        <p>Created when a lava source block contacts flowing water. Requires a <strong>Diamond Pickaxe</strong> to mine (takes ~9.6 seconds per block). Each obsidian block mined drops itself.</p>
+        <p class="material-meta">Creation: Water bucket + lava source | Mine: Diamond Pickaxe required | Time: ~10 seconds per block</p>
+      </div>
+    </div>
+
+    <p>The easiest obsidian farming method: find a surface lava pool (common in savanna, desert, and badlands biomes), pour a water bucket on a block adjacent to the lava source blocks (not directly on top — that creates cobblestone), and the water flow converts adjacent lava sources into obsidian. Mine 4 blocks. Bring multiple pickaxes — obsidian is extremely hard on durability, consuming roughly 10% of a diamond pickaxe per block. Alternatively, if you have already found a Ruined Portal structure in the overworld, it contains 6-14 obsidian blocks already placed — just mine them with your diamond pickaxe.</p>
+
+    <div class="material-item">
+      <div class="material-icon">🐄</div>
+      <div class="material-info">
+        <h4 data-zh="皮革">Leather ×45</h4>
+        <p>Cows drop 0-2 leather per kill (Looting III increases to 0-5). Breeding cows with wheat produces calves that mature in 20 minutes. Each cow killed averages 1.5 leather without looting.</p>
+        <p class="material-meta">Source: Cows | Drop: 0-2 leather | Looting: Increases drops | Breed: Wheat | Spawn: Plains, forests</p>
+      </div>
+    </div>
+
+    <p>Without Looting III, expect to kill approximately 30-45 cows for 45 leather. With Looting III, this drops to 15-25 cows. The most efficient approach: find 4-6 cows in a Plains or Forest biome, breed them with wheat until you have 20+ cows, then systematically kill half while keeping the other half for continued breeding. A simple fenced pen with a wheat auto-feeder makes this trivial. Leather also drops from horses, llamas, mooshrooms, and hoglins, but cows are by far the most reliable source due to their common spawn rates and ease of breeding.</p>
+
+    <div class="material-item">
+      <div class="material-icon">🎋</div>
+      <div class="material-info">
+        <h4 data-zh="甘蔗">Sugar Cane ×135</h4>
+        <p>Sugar cane generates naturally adjacent to water blocks in most biomes. It grows from 1 block to a maximum of 3 blocks tall. Harvest by breaking only the top two blocks, leaving the bottom to regrow. Growth rate: 1 block every ~16 random ticks (~12-18 minutes real time on average).</p>
+        <p class="material-meta">Location: River/ocean shores | Grows: Adjacent to water | Max height: 3 blocks | Harvest: Top 2 blocks only</p>
+      </div>
+    </div>
+
+    <p>Each sugar cane plant, when fully grown to 3 blocks, yields 2 sugar cane items per harvest (breaking top two blocks). To collect 135 sugar cane items, you need approximately 68 harvests from fully grown plants. Plant a long row of sugar cane along a riverbank or build an elevated farm with water channels underneath — sugar cane must be adjacent to water to grow. A row of 20 plants will produce enough for all 45 books in roughly 2-3 growth cycles (40-60 minutes of waiting while you do other tasks). This is the most time-gated material but requires zero active effort once planted.</p>
+
+    <div class="material-item">
+      <div class="material-icon">🪵</div>
+      <div class="material-info">
+        <h4 data-zh="木头">Wood Logs ×24</h4>
+        <p>Craft into 96 planks (4 planks per log). 90 planks used for bookshelves; 6 extra for crafting tables or other uses. Any wood type works — oak is most common. A single large oak tree can drop 40-60 logs.</p>
+        <p class="material-meta">Source: Any tree | Craft: 4 planks per log | Need: 90 planks (22.5 logs, round up to 24)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Optimal Route -->
+  <div class="section">
+    <h2><span data-zh="最优路线">4. Optimal Route</span></h2>
+    <p>This route is designed for a player with basic gear (stone/iron tools, basic shelter, food supply). The total active time is roughly 2-3 hours, but much of that is waiting for sugar cane growth and cow breeding — plan to do other activities (mining, exploring) during the downtime. <strong>Parallel processing is key to efficiency here.</strong></p>
+
+    <ul class="route-tree">
+      <li data-step="1">
+        <div class="step-title">Plant Sugar Cane Farm (Start Immediately)</div>
+        <div class="step-detail">Find a river, lake, or ocean shore with existing sugar cane. Collect at least 20 sugar cane items (break fully grown 3-block stalks, replant the bottom). Build a farm row along the water's edge — place sand/dirt/grass blocks adjacent to water, plant sugar cane on top. <strong>Do this FIRST</strong> because sugar cane growth is the longest time gate. A 20-plant farm produces ~40 sugar cane per growth cycle. You need 135 total. Plant, then go do other steps while it grows. Harvest only the top 2 blocks, leave the bottom to regrow indefinitely.</div>
+      </li>
+      <li data-step="2">
+        <div class="step-title">Build a Cow Pen and Start Breeding</div>
+        <div class="step-detail">Locate 4-6 cows in a Plains or Forest biome. Lure them into a fenced 8x8 pen using wheat (hold wheat, they follow). Breed two cows by feeding each wheat — they produce a calf and enter 5-minute cooldown. Breed until you have 12-16 cows. This provides enough population to kill half for leather while maintaining breeding stock. <strong>Key tip:</em> Always leave at least 6 cows alive to continue breeding. Cows take 20 minutes to mature from calf to adult. With 12 adult cows, killing 6 yields ~9 leather per harvest cycle. You need 45 leather total — plan for 3-4 kill cycles across your gameplay session.</div>
+      </li>
+      <li data-step="3">
+        <div class="step-title">Craft Paper and Books in Batches</div>
+        <div class="step-detail">As sugar cane grows and you harvest it, craft it into paper immediately (3 sugar cane = 3 paper). When you accumulate 9 paper and have leather available, craft 3 books (3 paper + 1 leather each). Crafting in batches prevents inventory clutter and gives you a clear progress count. Target: 45 books total (15 bookshelves × 3 books each). Store completed books in a chest — they stack to 64.</div>
+      </li>
+      <li data-step="4">
+        <div class="step-title">Mine 2 Diamonds and 4 Obsidian</div>
+        <div class="step-detail">Two tasks, one trip. For diamonds: strip mine at Y=-59 (feet on deepslate). Dig 1x2 tunnels spaced 3 blocks apart. With average luck, find 2+ diamond ore within 10-15 minutes. For obsidian: either find a surface lava pool and convert with water, or locate a Ruined Portal and mine the existing obsidian (6-14 blocks available). <strong>Critical:</em> Obsidian requires a Diamond Pickaxe to mine. Bring at least 2 pickaxes — obsidian destroys durability rapidly. Each block takes ~10 seconds to mine. If using a Ruined Portal, also loot the chest — it often contains a golden pickaxe (not useful for obsidian but sellable) and iron nuggets.</div>
+      </li>
+      <li data-step="5">
+        <div class="step-title">Craft the Enchanting Table</div>
+        <div class="step-detail">With 2 diamonds, 4 obsidian, and 1 book: open a crafting table. Place the book top-middle, diamonds in middle-left and middle-right, obsidian filling the bottom row and center-middle. The Enchanting Table block is your reward — place it temporarily while you build bookshelves.</div>
+      </li>
+      <li data-step="6">
+        <div class="step-title">Craft All 15 Bookshelves</div>
+        <div class="step-detail">By this point, your sugar cane should be fully grown and harvested, and your cows bred and slaughtered. Craft 90 wood planks (22-24 logs), combine with your 45 books. Each bookshelf = 6 planks + 3 books. Craft all 15 at once. Bookshelves are placeable blocks that also function as fuel in furnace emergencies (though this is wasteful).</div>
+      </li>
+      <li data-step="7">
+        <div class="step-title">Place the 15×15×1 Bookshelf Setup</div>
+        <div class="step-detail">The final and most precision-critical step. Place your Enchanting Table first, then arrange the 15 Bookshelves around it with exactly a 1-block air gap. The valid pattern is a "U" shape or full rectangle:
+          <br><strong>Top-down view (B = Bookshelf, A = Air gap, T = Table):</strong>
+          <br><code>B B B B B</code>
+          <br><code>B A A A B</code>
+          <br><code>B A T A B</code>
+          <br><code>B A A A B</code>
+          <br><code>B B B _ B</code>
+          <br>The table must be centered. Bookshelves can be on the same Y-level as the table, or one block above (stacked). Corners count. The 5x5 perimeter minus the corners and gaps = exactly 15 bookshelves when you fill the U-shape. The bookshelf at bottom-left is optional — 15 bookshelves fit in a U-shape with corners. Check that the enchanting table GUI shows "Enchantment Cost: 30" as the top option — this confirms correct placement.</div>
+      </li>
+    </ul>
+
+    <p><strong>Time Estimate Breakdown:</strong> Sugar cane planting: 5 min. Cow pen + initial breeding: 15 min. Waiting for growth/breeding cycles: 60-90 min (do other tasks during this). Mining diamonds + obsidian: 20-30 min. Crafting everything: 10 min. Building the setup: 10 min. Total active time: ~2 hours; total elapsed time: 3-4 hours including growth waiting periods.</p>
+  </div>
+
+  <!-- Section 5: Gotcha Tips -->
+  <div class="section">
+    <h2><span data-zh="注意事项">5. Gotcha Tips</span></h2>
+
+    <div class="gotcha-box">
+      <strong>WARNING: Bookshelf Placement Precision</strong>
+      <ul>
+        <li>The 15 Bookshelves must be placed within a <strong>5x5x2 area</strong> centered on the Enchanting Table, with exactly 1 block of air between the table and any bookshelf. Placing bookshelves directly adjacent (touching) to the table does <strong>not</strong> count. Placing them more than 2 blocks away does not count.</li>
+        <li>Valid bookshelf positions: same Y-level as table, or one block above. Diagonal positions count. Corner positions count. You can stack bookshelves on top of each other — a bookshelf at Y+1 above a valid Y-level position still contributes.</li>
+        <li>Blocks between the table and bookshelves (even partial blocks like carpets, torches, or item frames) will <strong>break the line of sight</strong> and invalidate those bookshelves. Keep the air gap completely clear.</li>
+        <li>Common mistake: placing exactly 15 bookshelves but having one blocked by a torch or decorative item. The enchanting table only shows level 29 or lower. Check every block in the radius.</li>
+      </ul>
+    </div>
+
+    <div class="gotcha-box">
+      <strong>WARNING: Obsidian Mining Requirements</strong>
+      <ul>
+        <li>Obsidian absolutely requires a <strong>Diamond Pickaxe</strong> — Netherite works too. Mining with iron or lower drops nothing. Do not attempt obsidian mining until you have diamonds.</li>
+        <li>Each obsidian block takes approximately <strong>9.6 seconds</strong> to mine with an unenchanted diamond pickaxe. With Efficiency V and Haste II (beacon), this drops to ~1.8 seconds. Bring at least 2 pickaxes for the 4 blocks.</li>
+        <li>When creating obsidian from lava, pour the water on a block <strong>adjacent to</strong> the lava source, not on top. Pouring water directly on lava creates cobblestone (if flowing) or obsidian (if source) — but doing it adjacent lets you create multiple obsidian blocks from a single water placement by converting a whole lava pool edge.</li>
+        <li>Ruined Portals are the easiest obsidian source — they spawn with 6-14 obsidian already formed. Just mine them. The chests also contain useful loot.</li>
+      </ul>
+    </div>
+
+    <div class="gotcha-box">
+      <strong>WARNING: Cow Farming Efficiency</strong>
+      <ul>
+        <li>Without Looting on your sword, each cow drops an average of 1 leather (0-2 range, uniform distribution). To get 45 leather, you need to kill approximately 45 cows. With Looting III, the average rises to ~2.5 leather per cow, dropping the requirement to ~18 cows.</li>
+        <li>Cows only breed when you feed them <strong>wheat</strong>. Each use of wheat puts them on a 5-minute cooldown. A calf takes 20 minutes to mature. Plan your breeding schedule — start with 6 cows, breed all pairs, wait 20 minutes, breed again, then begin killing excess adults while keeping 6 breeders.</li>
+        <li>Build your cow pen within render distance of where you spend most of your time (base, mine entrance, sugar cane farm) so they continue breeding/growing while you do other tasks.</li>
+        <li>If cows are scarce in your seed, alternative leather sources: horses (0-2 leather), llamas (0-2), mooshrooms (0-2), hoglins (0-1), or fishing for leather boots (can be smelted to leather — 1 boot = 1 leather). But cow farming remains the most efficient renewable source.</li>
+      </ul>
+    </div>
+
+    <div class="gotcha-box">
+      <strong>WARNING: Enchantment Table RNG and Lapis Lazuli</strong>
+      <ul>
+        <li>The Enchanting Table shows 3 enchantment options with random enchantments from the available pool. The actual enchantment you get is revealed only after spending levels and lapis. If you do not like the options, enchant a cheap disposable item (wooden shovel, level 1 book) to reset the seed — the options will reroll.</li>
+        <li><strong>Lapis Lazuli is required</strong> for enchanting — 1-3 pieces per enchantment depending on level. Mine lapis at Y=-2 to Y=32 (it is extremely common in deepslate and stone layers). You need roughly 30 lapis for a full enchanting session. Lapis ore drops 4-9 pieces per block (Fortune increases this dramatically).</li>
+        <li>The "enchantment seed" mechanic: the three visible options are determined by your player seed, tool type, and bookshelf count. Enchanting ANY item resets this seed. Savvy players enchant a throwaway wooden shovel at level 1 repeatedly until they see a desirable top-tier enchantment (like Fortune III or Protection IV) on their actual target tool.</li>
+        <li>For guaranteed specific enchantments (like Mending, which never appears on the table), you must use an <strong>Anvil + Enchanted Book</strong>. Librarian villagers trade enchanted books — level a Librarian to Expert/Master and reroll trades by breaking and replacing the lectern until Mending appears. This is the most reliable endgame enchanting strategy.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 6: Free Benefits -->
+  <div class="section">
+    <h2><span data-zh="附带收益">6. Free Benefits</span></h2>
+    <p>Building an Enchanting Table setup is never just about the table itself. The infrastructure and farming systems you build along the way become permanent assets that accelerate every aspect of your Minecraft progression. Here is everything else you gain from this project:</p>
+
+    <ul class="benefit-list">
+      <li><strong>Permanent Cow Farm + Steak Supply:</strong> The cow pen you build for leather becomes an infinite food source. Cows drop raw beef when killed, which smelts into steak — the best food item in Minecraft (8 saturation, 8 hunger points). A well-maintained 12-cow pen provides unlimited steak and leather for the rest of your world. This alone justifies the entire project.</li>
+
+      <li><strong>Self-Sustaining Sugar Cane Farm:</strong> The sugar cane row you plant for paper becomes a permanent source of sugar cane — essential not just for bookshelves but for crafting rockets (paper + gunpowder = firework rockets for Elytra flight), maps (paper + compass), and trading with Librarian villagers who buy paper for emeralds. A 40-plant sugar cane farm generates stacks of paper passively.</li>
+
+      <li><strong>Redstone Automation Introduction:</strong> Upgrading your sugar cane farm to automatic collection (using observer blocks, pistons, and hopper minecarts) teaches fundamental redstone mechanics that apply to automated crop farms, mob farms, and sorting systems. The same observer-piston combo used for sugar cane works for bamboo, cactus, and pumpkin/melon farms.</li>
+
+      <li><strong>Extra Bookshelves for Decoration:</strong> If you ever need to move your enchanting setup, the bookshelves you crafted are reusable. They also make excellent decorative blocks for libraries, wizard towers, and study rooms. Their detailed 3D model adds visual richness to interior builds.</li>
+
+      <li><strong>Permanent Power Upgrade for All Gear:</strong> The Enchanting Table is a one-time build that benefits every single tool, weapon, armor piece, and book you ever craft. Unlike consumable items, it never runs out, never breaks, and never needs maintenance. Every diamond pickaxe, every bow, every chestplate — all enchanted at maximum level.</li>
+
+      <li><strong>Librarian Villager Trading Unlock:</strong> The paper and book infrastructure directly enables Librarian villager trading. Librarians buy paper (24 paper = 1 emerald at Novice level) and sell enchanted books — including the ultra-rare Mending enchantment. A cured zombie Librarian (discount) selling Mending books for 5-10 emeralds each is considered endgame essential by most players.</li>
+
+      <li><strong>Lapis Lazuli Mining Byproduct:</strong> While mining for lapis at Y=0 to Y=32, you will inevitably encounter iron, redstone, gold, and copper ore. A single lapis mining trip typically yields 2-3 stacks of iron ore as a byproduct. Lapis itself becomes abundant — you will likely never need to mine for it again after one dedicated trip.</li>
+
+      <li><strong>XP Farming Knowledge:</strong> The enchanting process requires experience levels (1-30 depending on enchant tier). Building an enchanting setup teaches you how to efficiently generate XP — whether through mining (coal/redstone/diamonds give XP), smelting (cactus to green dye, potatoes to baked potatoes), mob farming, or fishing. This knowledge feeds into every other advanced system in the game.</li>
+    </ul>
+
+    <p>The Enchanting Table project is, in essence, a mandatory tutorial for mid-game Minecraft automation and resource management. By the time you place that 15th bookshelf, you will have built a cow farm, a sugar cane farm, a mining operation, and a crafting pipeline. These are not side effects — they are the foundation of everything that comes after, from Netherite upgrades to Ender Dragon fights to mega-base construction.</p>
+  </div>
+
+  <!-- Recommended Next -->
+  <div class="section">
+    <h2>Recommended Next</h2>
+    <div class="next-rec">
+      <p>With Level 30 enchantments unlocked, your next priority is portable, secure item storage that works across dimensions. The <a href="ender-chest.html">Ender Chest Guide</a> shows you how to craft this unique linked storage system using Blaze Rods from the Nether and an Eye of Ender — giving you access to your most valuable items from anywhere in the world, including the Nether and End dimensions.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    CraftHunt Minecraft Guides &copy; 2025. Not affiliated with Mojang Studios. Minecraft is a trademark of Microsoft Corporation.
+  </div>
+
+</main>
+
+<!-- Right Sidebar -->
+<aside class="right-sidebar">
+  <div class="right-section">
+    <h4>Item Stats</h4>
+    <div class="stat-row"><span class="stat-label">Rarity</span><span class="stat-value">Rare</span></div>
+    <div class="stat-row"><span class="stat-label">Type</span><span class="stat-value">Utility Block</span></div>
+    <div class="stat-row"><span class="stat-label">Max Enchant</span><span class="stat-value">Level 30</span></div>
+    <div class="stat-row"><span class="stat-label">Bookshelves</span><span class="stat-value">15 required</span></div>
+    <div class="stat-row"><span class="stat-label">Renewable</span><span class="stat-value">Yes</span></div>
+    <div class="stat-row"><span class="stat-label">Stack</span><span class="stat-value">64</span></div>
+  </div>
+  <div class="right-section">
+    <h4>Required Tools</h4>
+    <div class="stat-row"><span class="stat-label">Pickaxe</span><span class="stat-value">Diamond (obsidian)</span></div>
+    <div class="stat-row"><span class="stat-label">Sword</span><span class="stat-value">Any (Looting III)</span></div>
+    <div class="stat-row"><span class="stat-label">Hoe</span><span class="stat-value">Any (sugar cane)</span></div>
+    <div class="stat-row"><span class="stat-label">Wheat</span><span class="stat-value">For breeding</span></div>
+  </div>
+  <div class="right-section">
+    <h4>Top Enchantments</h4>
+    <div class="stat-row"><span class="stat-label">Fortune III</span><span class="stat-value">Pickaxe</span></div>
+    <div class="stat-row"><span class="stat-label">Efficiency V</span><span class="stat-value">Tools</span></div>
+    <div class="stat-row"><span class="stat-label">Protection IV</span><span class="stat-value">Armor</span></div>
+    <div class="stat-row"><span class="stat-label">Unbreaking III</span><span class="stat-value">All gear</span></div>
+    <div class="stat-row"><span class="stat-label">Mending</span><span class="stat-value">Treasure only</span></div>
+  </div>
+  <div class="right-section">
+    <h4>Tags</h4>
+    <span class="tag">Enchanting</span>
+    <span class="tag">Mid Game</span>
+    <span class="tag">Permanent</span>
+    <span class="tag">Farming</span>
+    <span class="tag">Essential</span>
+  </div>
+  <div class="right-section">
+    <h4>Version</h4>
+    <div class="stat-row"><span class="stat-label">Java</span><span class="stat-value">All</span></div>
+    <div class="stat-row"><span class="stat-label">Bedrock</span><span class="stat-value">All</span></div>
+    <div class="stat-row"><span class="stat-label">Updated</span><span class="stat-value">1.20</span></div>
+  </div>
+</aside>
+
+</div>
+
+</body>
+</html>

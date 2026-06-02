@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exalted Orb Crafting Guide — Path of Exile 2 | CraftHunt</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#0a0a0a;color:#d4d4d4;line-height:1.6}
+a{color:#ff3333;text-decoration:none}
+a:hover{color:#ff6666}
+.nav{background:#111;padding:15px 30px;display:flex;align-items:center;border-bottom:2px solid #ff3333;position:sticky;top:0;z-index:100}
+.nav a{margin-right:20px;color:#ccc;font-size:13px}.nav a:hover{color:#fff}
+.ticker{background:#1a0000;padding:8px 30px;font-size:12px;border-bottom:1px solid #330000;overflow:hidden;white-space:nowrap}
+.ticker span{color:#ff3333}
+.container{display:flex;max-width:1400px;margin:0 auto}
+.left-sidebar{width:220px;background:#111;padding:20px;border-right:1px solid #222;position:sticky;top:55px;height:calc(100vh - 55px);overflow-y:auto}
+.left-sidebar a{display:block;padding:6px 10px;margin:2px 0;font-size:13px;color:#999;border-radius:3px}
+.left-sidebar a:hover{background:#1a1a1a;color:#fff}
+.left-sidebar a.active{background:#1a0000;color:#ff3333;border-left:3px solid #ff3333}
+.quick-nav{margin-top:15px;padding-top:15px;border-top:1px solid #222}
+.quick-nav h4{color:#ff3333;margin-bottom:8px;font-size:14px}
+.main-content{flex:1;padding:30px;background:#0d0d0d;min-height:calc(100vh - 55px)}
+.section{background:#111;margin-bottom:25px;padding:25px;border:1px solid #222;border-radius:4px}
+.section h2{color:#ff3333;margin-bottom:15px;font-size:22px;border-bottom:1px solid #222;padding-bottom:8px}
+.section h3{color:#ff9999;margin:15px 0 10px;font-size:16px}
+.item-header{display:flex;align-items:center;margin-bottom:20px;padding:20px;background:#1a0000;border:1px solid #330000;border-radius:4px}
+.item-icon-legendary{width:64px;height:64px;background:#1a0500;border:2px solid #ff3333;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-right:20px}
+.item-icon-tech{width:64px;height:64px;background:#001a1a;border:2px solid #00cccc;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-right:20px}
+.item-icon-rare{width:64px;height:64px;background:#1a1500;border:2px solid #ffcc00;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-right:20px}
+.item-title h1{font-size:28px;color:#fff}
+.item-meta{font-size:14px;color:#999;margin-top:4px}
+.diff{color:#ffcc00}
+.gotcha-box{background:#1a0000;border:2px solid #ff3333;padding:15px;margin:15px 0;border-radius:4px}
+.gotcha-box h4{color:#ff3333;margin-bottom:8px}
+.route-tree{padding:15px;background:#0a0a0a;border:1px solid #222;border-radius:4px;margin:10px 0}
+.route-step{padding:8px 12px;margin:5px 0;background:#111;border-left:3px solid #ff3333;font-size:14px}
+.material-item{display:flex;align-items:center;padding:8px 12px;background:#111;margin:5px 0;border-radius:3px;border-left:3px solid #666}
+.material-item.rare{border-left-color:#ffcc00}
+.material-item.legendary{border-left-color:#ff3333}
+.material-item.magic{border-left-color:#6666ff}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th,td{padding:10px;border:1px solid #222;text-align:left}
+th{background:#1a0000;color:#ff3333}
+tr:nth-child(even){background:#111}
+.right-sidebar{width:300px;background:#111;padding:20px;border-left:1px solid #222;position:sticky;top:55px;height:calc(100vh - 55px);overflow-y:auto}
+.right-sidebar h3{color:#ff3333;font-size:16px;margin-bottom:12px}
+.right-sidebar a{display:block;padding:6px 0;font-size:13px;color:#ccc;border-bottom:1px solid #222}
+.footer{background:#111;padding:30px;text-align:center;border-top:2px solid #ff3333;font-size:13px;color:#666;margin-top:30px}
+.footer a{color:#999;margin:0 10px}
+.current-indicator{background:#ff3333;color:#fff;padding:2px 8px;font-size:11px;border-radius:3px;margin-left:10px}
+ul,ol{margin-left:20px;margin-bottom:15px}
+li{margin:5px 0}
+p{margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../">CraftHunt</a>
+  <a href="../">Guides</a>
+  <a href="../">Games</a>
+  <a href="../">Maps</a>
+  <a href="../">Trade</a>
+  <a href="../about.html">About</a>
+</nav>
+
+<div class="ticker">
+  <span>Latest:</span> Meta-crafting bench recipes updated for 0.5.0 | Prefixes Cannot Be Changed cost reduced | New influenced modifier pool additions | Exalted Orb drop rate in maps confirmed stable
+</div>
+
+<div class="container">
+  <aside class="left-sidebar">
+    <a href="../terraria/">Terraria</a>
+    <a href="../subnautica2/">Subnautica 2</a>
+    <a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+    <a href="../zelda-totk/">Zelda: TOTK</a>
+      <a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man's Sky</a>
+      <a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+    <a href="../minecraft/">Minecraft</a>
+    <a href="../no-mans-sky/">No Man's Sky</a>
+    <a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+    <a href="../valheim/">Valheim</a>
+    <a href="./" class="active">Path of Exile 2</a>
+    <div class="quick-nav">
+      <h4>PoE 2 Items</h4>
+      <a href="tabula-rasa.html">Tabula Rasa</a>
+      <a href="headhunter.html">Headhunter</a>
+      <a href="mageblood.html">Mageblood</a>
+      <a href="mirror-kalandra.html">Mirror of Kalandra</a>
+      <a href="exalted-crafting.html" class="active">Exalted Orb Crafting</a>
+      <a href="six-link-armor.html">Six-Link Armor</a>
+      <a href="uncorrupted-vessel.html">Uncorrupted Vessel</a>
+      <a href="regal-orb.html">Regal Orb Farming</a>
+      <a href="skill-gem.html">21/23 Skill Gem</a>
+      <a href="divine-orb.html">Divine Orb Farming</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="item-header">
+      <div class="item-icon-tech">⚙️</div>
+      <div class="item-title">
+        <h1>Exalted Orb Crafting <span class="current-indicator">CURRENT</span></h1>
+        <div class="item-meta">Meta-Crafting System | Currency Crafting | Difficulty: <span class="diff">★★★★☆</span></div>
+      </div>
+    </div>
+
+    <!-- Section 1: Overview -->
+    <section class="section" id="overview">
+      <h2>1. Overview</h2>
+      <p>The Exalted Orb represents the cornerstone of Path of Exile 2's complex and rewarding crafting system. This gleaming golden currency item, when used on a rare item, adds one new random modifier from the available mod pool for that item type. Unlike simpler crafting methods such as Orb of Alteration re-rolling or Essence deterministic crafting, the Exalted Orb introduces true randomness into the equation — the modifier that lands on your item could be a game-changing tier-one affix that completes your perfect build, or a near-worthless low-tier stat that effectively bricks the item. This high-stakes, high-reward mechanic sits at the heart of PoE 2's endgame item progression and forms the foundation upon which the entire meta-crafting system is built.</p>
+
+      <p>Meta-crafting — the strategic use of crafting bench recipes in combination with Exalted Orbs, Orb of Annulment, Divine Orbs, and other currency items — represents the pinnacle of player-driven item creation in Path of Exile 2. Through careful application of the "Prefixes Cannot Be Changed" and "Suffixes Cannot Be Changed" bench crafts, combined with targeted Exalted Orb slams, Annulment Orb gambles, and Harvest reforge mechanics, experienced crafters can systematically push items toward statistical perfection. A meta-crafted item may go through 20-50 individual crafting steps, consuming dozens of Exalted Orbs, hundreds of Orbs of Alteration, and thousands of lower-tier currencies to achieve a result that commands premium prices on the trade market.</p>
+
+      <p>The significance of Exalted Orb crafting extends far beyond individual player gear upgrades. The Exalted Orb serves as the primary economic bridge between casual and hardcore players in Path of Exile 2's trade ecosystem. Casual players who find Exalted Orbs through natural mapping can sell them to hardcore crafters who consume them by the stack. This currency flow sustains the entire crafting economy, with Exalted Orbs changing hands thousands of times per hour on the trade market as players buy, sell, and consume them for their crafting projects.</p>
+
+      <p>In Path of Exile 2, the crafting system has been refined and expanded with new influenced modifiers, additional bench recipes, and redesigned crafting material requirements. While the fundamental principles established in PoE 1 remain intact, the specific modifier pools, item level requirements, and optimal strategies have evolved. Understanding the current state of Exalted Orb crafting — including which mods are available at which item levels, how the prefix and suffix blocking mechanics work, and when to Exalt slam versus when to use deterministic alternatives — is essential for any player looking to maximize their character's gear potential or generate wealth through the crafting market.</p>
+
+      <p>This guide covers the full spectrum of Exalted Orb crafting knowledge, from the basic "when should I Exalt slam?" question that every new player asks, to the advanced meta-crafting sequences used to create mirror-tier items worth hundreds of Divine Orbs. Whether you are crafting your first endgame rare or planning a complex multi-step project, the principles outlined here will save you currency, reduce frustration, and improve your crafting outcomes.</p>
+    </section>
+
+    <!-- Section 2: Recipe / Crafting Method -->
+    <section class="section" id="recipe">
+      <h2>2. Crafting Method — The Exalted Orb System</h2>
+
+      <h3>2.1 Exalted Orb — Basic Function</h3>
+      <p>When an Exalted Orb is used on a rare item with fewer than six modifiers (three prefixes and three suffixes maximum), it adds one random modifier from the item's available mod pool. The modifier is randomly selected from all eligible prefixes or suffixes, weighted by their tier probabilities and item level restrictions. The added modifier cannot be an existing modifier on the item (no duplicates) and must be from a pool that is not already full (if all three prefix slots are filled, only suffixes can be added, and vice versa).</p>
+
+      <table>
+        <tr><th>Item State Before Exalt</th><th>Possible Outcomes</th><th>Strategy Consideration</th></tr>
+        <tr><td>Rare with 4 mods (2 prefix, 2 suffix)</td><td>Adds 1 prefix OR 1 suffix</td><td>50% chance of prefix/suffix — acceptable odds</td></tr>
+        <tr><td>Rare with 5 mods (2 prefix, 3 suffix)</td><td>Adds 1 prefix only</td><td>100% prefix — good for targeting prefixes</td></tr>
+        <tr><td>Rare with 5 mods (3 prefix, 2 suffix)</td><td>Adds 1 suffix only</td><td>100% suffix — good for targeting suffixes</td></tr>
+        <tr><td>Rare with 6 mods (3 prefix, 3 suffix)</td><td>Cannot use Exalted Orb</td><td>Item is full — must Annul or start over</td></tr>
+        <tr><td>Magic item (1-2 mods)</td><td>Upgrades to rare, adds mods</td><td>Use Regal Orb first, then Exalt</td></tr>
+      </table>
+
+      <h3>2.2 Meta-Crafting: Prefixes/Suffixes Cannot Be Changed</h3>
+      <p>The crafting bench in PoE 2 offers two critical meta-crafting recipes:</p>
+      <ul>
+        <li><strong>"Prefixes Cannot Be Changed"</strong> — Costs 2 Exalted Orbs (PoE 1 cost, subject to change in PoE 2). Protects all existing prefixes from modification during subsequent crafting actions.</li>
+        <li><strong>"Suffixes Cannot Be Changed"</strong> — Costs 2 Exalted Orbs. Protects all existing suffixes from modification during subsequent crafting actions.</li>
+      </ul>
+      <p>These two recipes, when combined with Exalted Orbs and Orb of Annulment, create the foundation of meta-crafting. The general principle is:</p>
+      <ol>
+        <li>Craft or roll your desired prefix(es) onto the item</li>
+        <li>Apply "Prefixes Cannot Be Changed" from the bench</li>
+        <li>Use Orb of Scouring (removes all mods except protected prefixes) or craft/annul suffixes</li>
+        <li>Exalt slam for new suffixes, knowing prefixes are safe</li>
+        <li>Repeat the process for prefixes if needed</li>
+      </ol>
+
+      <h3>2.3 The Augment Craft (Harvest)</h3>
+      <p>In Path of Exile 2, the Harvest crafting system has been redesigned but retains the powerful "Augment" craft:</p>
+      <ul>
+        <li><strong>Augment Physical:</strong> Adds a guaranteed physical modifier</li>
+        <li><strong>Augment Fire/Cold/Lightning:</strong> Adds a guaranteed elemental modifier of the chosen type</li>
+        <li><strong>Augment Life:</strong> Adds a guaranteed life modifier</li>
+        <li><strong>Augment Critical:</strong> Adds a guaranteed critical modifier</li>
+        <li><strong>Augment Speed:</strong> Adds a guaranteed attack/cast speed modifier</li>
+      </ul>
+      <p>These crafts are functionally similar to Exalted Orbs but with a guaranteed mod type. They are significantly more expensive and harder to acquire than Exalted Orbs, making Exalts the workhorse of general crafting while Augment crafts are reserved for specific finishing touches.</p>
+
+      <h3>2.4 Multi-Step Meta-Crafting Sequence</h3>
+      <p>A typical meta-crafting project for a high-end rare item follows this sequence:</p>
+      <ol>
+        <li><strong>Base Selection:</strong> Acquire an item level 86+ influenced base with the correct implicit</li>
+        <li><strong>Essence Spam:</strong> Use Deafening Essences to force a tier-1 prefix (e.g., Deafening Essence of Greed for +flat life)</li>
+        <li><strong>Bench Lock:</strong> Apply "Prefixes Cannot Be Changed" (2 Exalted Orbs)</li>
+        <li><strong>Scour Suffixes:</strong> Use Orb of Scouring to wipe suffixes, preserving locked prefixes</li>
+        <li><strong>Exalt Slam #1:</strong> Add first suffix (e.g., resistance). If bad, Annul and retry</li>
+        <li><strong>Exalt Slam #2:</strong> Add second suffix (e.g., another resistance or stat)</li>
+        <li><strong>Bench Craft:</strong> Craft remaining suffix from bench (e.g., missing resistance)</li>
+        <li><strong>Divine Orb:</strong> Roll values on all modifiers to high tiers</li>
+        <li><strong>Lock and Re-craft:</strong> If Divine rolls poorly on a critical mod, lock and Divine again</li>
+        <li><strong>Quality:</strong> Apply Perfect Fossil or Hillock bench for 30% quality</li>
+      </ol>
+      <p>This sequence can cost anywhere from 10 Exalted Orbs for a "good enough" item to 200+ Exalted Orbs for a true mirror-tier piece. Understanding when to stop — recognizing that "good enough" is often better than chasing perfection — is one of the most important skills in crafting.</p>
+
+      <h3>2.5 When to Exalt Slam vs. Deterministic Crafting</h3>
+      <table>
+        <tr><th>Crafting Goal</th><th>Recommended Method</th><th>Cost Estimate</th></tr>
+        <tr><td>Early endgame gear (T12-T14 maps)</td><td>Essence crafting + bench</td><td>1-5 Chaos Orbs</td></tr>
+        <tr><td>Mid-tier gear (T15-T16 maps)</td><td>Fossil crafting or Essence spam</td><td>5-20 Chaos Orbs</td></tr>
+        <tr><td>High-tier gear (early bossing)</td><td>Essence + targeted Exalt slams</td><td>2-5 Exalted Orbs</td></tr>
+        <tr><td>Endgame mirror-tier chasing</td><td>Full meta-crafting sequence</td><td>20-200+ Exalted Orbs</td></tr>
+        <tr><td>Specific mod guarantee</td><td>Harvest Augment crafts</td><td>1-5 Divine Orbs equivalent</td></tr>
+        <tr><td>Budget crafting for resists</td><td>Orb of Alteration spam + Regal + bench</td><td>10-50 Chaos Orbs</td></tr>
+      </table>
+    </section>
+
+    <!-- Section 3: Materials / Drop Sources -->
+    <section class="section" id="materials">
+      <h2>3. Materials & Drop Sources</h2>
+
+      <h3>3.1 Exalted Orb — Primary Crafting Currency</h3>
+      <div class="material-item legendary">
+        <strong>Exalted Orb</strong> — Currency | Stack Size: 20 (10 in Currency Tab) | Adds random modifier to rare item
+      </div>
+      <p>Exalted Orbs drop from any monster, chest, or container that can drop currency items. The drop rate is low but significantly higher than Divine Orbs or Mirrors. In Tier 16 maps with good item quantity, expect approximately 1 Exalted Orb per 2-5 hours of mapping for an average player. Higher clear speed, more juiced maps, and party play increase this rate substantially.</p>
+
+      <h3>3.2 Core Crafting Materials</h3>
+      <div class="material-item legendary">
+        <strong>Orb of Annulment</strong> — Removes one random modifier from a rare item. Essential for meta-crafting to remove bad mods.
+      </div>
+      <div class="material-item legendary">
+        <strong>Divine Orb</strong> — Rerolls the numerical values of all explicit modifiers on an item. Used after Exalt slams to perfect modifier tiers.
+      </div>
+      <div class="material-item rare">
+        <strong>Orb of Scouring</strong> — Removes all modifiers from an item, downgrading it to normal. Used with bench locks to wipe undesired mods.
+      </div>
+      <div class="material-item rare">
+        <strong>Regal Orb</strong> — Upgrades a magic item to rare, adding one random modifier. Used as the bridge between Alteration spam and Exalt slamming.
+      </div>
+      <div class="material-item magic">
+        <strong>Orb of Alteration</strong> — Rerolls modifiers on a magic item. Used in bulk (100-1000) for initial mod rolling before Regaling and Exalting.
+      </div>
+      <div class="material-item magic">
+        <strong>Orb of Transmutation</strong> — Upgrades a normal item to magic. The starting point for most crafting sequences.
+      </div>
+
+      <h3>3.3 Essence Crafting Materials</h3>
+      <p>Essences provide deterministic prefixes/suffixes, making them ideal starting points for Exalt-based finishing:</p>
+      <table>
+        <tr><th>Essence Type</th><th>Modifier Granted</th><th>Best Used On</th></tr>
+        <tr><td>Essence of Greed (Deafening)</td><td>Tier 1 flat Life (+90-99)</td><td>Body armors, helmets, belts</td></tr>
+        <tr><td>Essence of Woe (Deafening)</td><td>Tier 1 flat Energy Shield</td><td>ES body armors, shields, helmets</td></tr>
+        <tr><td>Essence of Contempt</td><td>Flat Physical Damage</td><td>Weapons, rings, amulets</td></tr>
+        <tr><td>Essence of Anger/Wrath/Hatred</td><td>Flat Elemental Damage</td><td>Weapons, rings, amulets</td></tr>
+        <tr><td>Essence of Dread</td><td>+1 to Level of Socketed Minion Gems</td><td>Helmets, weapons (minion builds)</td></tr>
+        <tr><td>Essence of Fear</td><td>Minion Movement/Cast Speed</td><td>Minion-focused gear</td></tr>
+        <tr><td>Essence of Misery</td><td>Cast Speed / Mana Regen</td><td>Wands, amulets, rings (caster builds)</td></tr>
+      </table>
+
+      <h3>3.4 Exalted Orb Drop Sources and Rates</h3>
+      <p>Understanding where Exalted Orbs come from helps with both acquisition and pricing:</p>
+      <ul>
+        <li><strong>Monster Drops (Tier 16 maps):</strong> ~1 Exalted per 500-2000 map kills depending on quantity mods</li>
+        <li><strong>Currency Chests (Heist):</strong> Currency-focused Heist contracts have elevated Exalted drop rates</li>
+        <li><strong>Expedition Currency Explosions:</strong> Logbook remnants with "(20-40)% increased Currency item drops" can yield multiple Exalts</li>
+        <li><strong>Divination Cards:</strong> "The Hoarder" (1 Exalted, 50 cards), "The Saint's Treasure" (2 Exalted, 10 cards), "The Thief" (1 Exalted, 20 cards)</li>
+        <li><strong>Vendor Recipe:</strong> Sell a full set of shaped or elder items (ilvl 75+) for 2 Exalted Orbs</li>
+        <li><strong>Map Boss Drops:</strong> Tier 16 map bosses have elevated currency drop rates</li>
+        <li><strong>League Mechanics:</strong> Ritual, Delirium, and Harbinger encounters frequently reward Exalted Orbs</li>
+      </ul>
+
+      <h3>3.5 The Exalted Shard Recipe</h3>
+      <p>A full set of identified rare items (one of each equipment slot: helm, body, gloves, boots, belt, amulet, two rings, weapon/shield) with a total item rarity of 75%+ can be vendored for 2 Exalted Shards. Twenty Exalted Shards combine into one Exalted Orb. While slow, this deterministic recipe provides a reliable (if tedious) source of Exalted Orbs for dedicated players.</p>
+    </section>
+
+    <!-- Section 4: Route -->
+    <section class="section" id="route">
+      <h2>4. Crafting Route — Step-by-Step Projects</h2>
+      <p>This section provides concrete crafting routes for common endgame items. Each route includes material requirements, expected costs, and step-by-step instructions.</p>
+
+      <h3>4.1 Route: Crafting a +3 Minion Helmet</h3>
+      <div class="route-tree">
+        <div class="route-step"><strong>Step 1:</strong> Acquire an ilvl 86+ Bone Helmet (base minion damage implicit). Ensure it is uncorrupted and not already crafted.</div>
+        <div class="route-step"><strong>Step 2:</strong> Apply Orb of Scouring if needed to make it a normal item. Use an Orb of Transmutation to make it magic.</div>
+        <div class="route-step"><strong>Step 3:</strong> Spam Deafening Essence of Dread until you hit "+2 to Level of Socketed Minion Gems" (this is the Essence mod). This may take 20-50 Essences depending on luck.</div>
+        <div class="route-step"><strong>Step 4:</strong> Use a Regal Orb to upgrade to rare and add one random modifier. If the Regal hits a bad mod, you can Annul it or start over with a new base.</div>
+        <div class="route-step"><strong>Step 5:</strong> Apply "Suffixes Cannot Be Changed" from the crafting bench (costs 2 Exalted Orbs).</div>
+        <div class="route-tree"><strong>Step 6:</strong> Use Orb of Scouring to remove all prefixes. Your suffixes (including the +2 minion gems) are protected.</div>
+        <div class="route-step"><strong>Step 7:</strong> Bench craft "Can have up to 3 Crafted Modifiers" (2 Exalted Orbs) + "+1 to Level of Socketed Support Gems" (1 Exalted Orb) + "Minions deal (20-30)% increased Damage" (1 Divine Orb equivalent).</div>
+        <div class="route-step"><strong>Step 8:</strong> Alternatively, Exalt slam for natural prefixes instead of bench crafting, then finish with a single bench mod for the missing stat.</div>
+        <div class="route-step"><strong>Step 9:</strong> Use Divine Orbs to roll high values on all modifiers. Target tier-1 rolls on life and resistance values.</div>
+        <div class="route-step"><strong>Step 10:</strong> Hillock craft in Transportation Safehouse for 28-30% quality, then apply Armourer's Scraps to reach 30%.</div>
+      </div>
+
+      <h3>4.2 Route: Crafting a Physical Weapon (Eclipse Staff / Exquisite Blade)</h3>
+      <div class="route-tree">
+        <div class="route-step"><strong>Step 1:</strong> Acquire an ilvl 83+ influenced base (Crusader, Warlord, or Hunter depending on desired influence mods). Ensure 30% quality via Perfect Fossil crafting.</div>
+        <div class="route-step"><strong>Step 2:</strong> Use Aberrant + Jagged Fossils in a Resonator to roll flat physical damage and attack speed. Target: tier-1 "% increased Physical Damage" + tier-1 "Adds X to Y Physical Damage" + open suffix for "+% to Critical Strike Chance."</div>
+        <div class="route-step"><strong>Step 3:</strong> If you hit 2 good prefixes and 1 bad suffix, apply "Suffixes Cannot Be Changed" and Scour the bad prefix.</div>
+        <div class="route-step"><strong>Step 4:</strong> Exalt slam for a suffix. Desired outcomes: "+% to Critical Strike Multiplier," "+% to Global Critical Strike Chance," or "+X to Strength/Dexterity." If you hit a bad suffix, Annul and retry.</div>
+        <div class="route-step"><strong>Step 5:</strong> Bench craft the missing modifier — typically "(16-20)% increased Attack Speed" if not already present as a natural roll.</div>
+        <div class="route-step"><strong>Step 6:</strong> Divine Orb for perfect values: 170%+ increased physical damage, maximum flat phys, high crit chance/multi.</div>
+        <div class="route-step"><strong>Step 7:</strong> Link to 6-sockets using Jeweller's Orbs, then 6-link using Orb of Fusing. Average cost: 150-350 Fusings.</div>
+        <div class="route-step"><strong>Step 8:</strong> Apply "(20-30)% increased Quality" via Hillock bench if not already at 30%.</div>
+      </div>
+
+      <h3>4.3 Route: Crafting a Caster Amulet</h3>
+      <div class="route-tree">
+        <div class="route-step"><strong>Step 1:</strong> Acquire an ilvl 82+ Agate Amulet (all-attributes base) or Turquoise Amulet (dex/int base). Shaper or Hunter influence preferred.</div>
+        <div class="route-step"><strong>Step 2:</strong> Alt-Regal method: Spam Orbs of Alteration until you hit tier-1 "+1 to Level of All Skill Gems" or "+1 to Level of All [Element] Skill Gems" as a prefix.</div>
+        <div class="route-step"><strong>Step 3:</strong> Regal Orb to add a suffix. If the Regal hits a good suffix (crit multi, life, resistance), proceed. If bad, consider Annuling or restarting.</div>
+        <div class="route-step"><strong>Step 4:</strong> Apply "Prefixes Cannot Be Changed" bench craft (2 Exalted Orbs).</div>
+        <div class="route-step"><strong>Step 5:</strong> Scour off all suffixes, preserving your +1 gems prefix.</div>
+        <div class="route-step"><strong>Step 6:</strong> Exalt slam for suffix #1 (crit multi preferred). If good, proceed. If bad, Annul and retry (protected prefixes are safe from Annul).</div>
+        <div class="route-step"><strong>Step 7:</strong> Exalt slam for suffix #2 (life or resistance). Bench craft the remaining suffix slot.</div>
+        <div class="route-step"><strong>Step 8:</strong> Divine Orb for perfect gem level rolls and high-tier suffix values.</div>
+      </div>
+
+      <h3>4.4 Expected Costs Summary</h3>
+      <table>
+        <tr><th>Project Type</th><th>Expected Exalted Orbs</th><th>Expected Divine Orbs</th><th>Other Materials</th></tr>
+        <tr><td>Entry endgame rare (resists + life)</td><td>0-2</td><td>1-3</td><td>50-200 Chaos Orbs equivalent</td></tr>
+        <tr><td>Mid-tier weapon (T2+ mods)</td><td>5-15</td><td>5-10</td><td>50 Essences, 20 Fossils</td></tr>
+        <tr><td>High-tier body armor (6-link, T1 life, triple res)</td><td>10-25</td><td>10-20</td><td>100 Essences, 30 Fusings</td></tr>
+        <tr><td>Mirror-tier amulet (+1 gems, crit multi, life, res)</td><td>50-100</td><td>50-100</td><td>500+ Alterations, 50 Annuls</td></tr>
+        <tr><td>Mirror-tier weapon (T1 everything)</td><td>100-200</td><td>100-200</td><td>1000+ Alterations, 100+ Annuls</td></tr>
+      </table>
+    </section>
+
+    <!-- Section 5: Gotcha -->
+    <section class="section" id="gotcha">
+      <h2>5. Gotchas & Common Crafting Mistakes</h2>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #1: The Annulment Gamble</h4>
+        <p>Orb of Annulment removes ONE random modifier from a rare item. When you have 3 good mods and 1 bad mod, the Annul has a 25% chance to remove the bad one — and a 75% chance to remove a good one. Many crafters lose entire projects to a string of bad Annul luck. Always consider whether starting over with a fresh base would be cheaper than repeatedly Annuling and re-Exalting. The sunk cost fallacy has destroyed more crafting projects than bad RNG.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #2: Item Level Requirements</h4>
+        <p>Every modifier has an item level (ilvl) requirement — the minimum item level of the base item for that modifier to appear. For example, tier-1 "+99 to maximum Life" requires ilvl 86. If you Exalt slam an ilvl 82 body armor, the tier-1 life mod CANNOT roll, no matter how lucky you are. Always verify your base item level before starting an expensive craft. Check the Path of Exile wiki or Craft of Exile tool for exact ilvl thresholds for your target modifiers.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #3: Influence Modifier Conflicts</h4>
+        <p>Different item influences (Shaper, Elder, Crusader, Hunter, Redeemer, Warlord) have different modifier pools. Some modifiers are exclusive to specific influences. You cannot roll a Crusader modifier on a Hunter-influenced item. When planning a craft, verify that all your target modifiers can actually coexist on the same influence type. Some mirror-tier items require Awakener's Orb combinations to merge two different influence mod pools onto a single item.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #4: Bench Craft Overwriting</h4>
+        <p>When you bench craft a modifier (e.g., "+30 to maximum Life"), it occupies a mod slot. If you later Exalt slam and hit the same mod type naturally, it cannot land because the bench-crafted version already occupies that slot. However, you can remove the bench craft and the slot becomes open again. Some crafters intentionally bench craft "dummy" mods to block bad Exalt outcomes, then remove the dummy and Exalt again — though this is an expensive technique.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #5: The "Yolo Exalt" Trap</h4>
+        <p>New players often use their first Exalted Orb on whatever rare item they are currently wearing, hoping for a lucky upgrade. This is almost always a waste. A single Exalted Orb on a mediocre rare has a 90%+ chance of adding a low-tier, irrelevant modifier. Save your Exalted Orbs for targeted meta-crafting on high-quality bases, or sell them for Chaos Orbs to buy better gear outright. The only exception is if you have a genuinely good item with one open mod slot where multiple possible Exalt outcomes would be acceptable.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #6: Not Using Craft of Exile Simulator</h4>
+        <p>Before committing expensive currency to a real crafting project, ALWAYS simulate it on Craft of Exile (craftofexile.com). This free web tool simulates thousands of crafting attempts and shows you the average cost, success rate, and probability distribution for your target outcome. Many "simple" crafts that look easy on paper turn out to have 5% success rates that would cost 50+ Exalted Orbs on average. Simulation saves you from catastrophic crafting decisions.</p>
+      </div>
+
+      <div class="gotcha-box">
+        <h4>⚠ GATCHA #7: Quality Before Crafting</h4>
+        <p>Item quality affects the defense or attack values of the base item BEFORE modifiers are applied. If you add 30% quality via Perfect Fossils or Hillock bench AFTER crafting all your modifiers, the quality only affects the base values — not the crafted mods. For maximum effect, get your item to 28-30% quality BEFORE rolling modifiers, especially on armor pieces where quality affects the base armor/evasion/ES that modifiers scale from.</p>
+      </div>
+    </section>
+
+    <!-- Section 6: Free Benefits -->
+    <section class="section" id="benefits">
+      <h2>6. Free Benefits & Advanced Knowledge</h2>
+
+      <h3>6.1 Crafting as a Currency Generation Method</h3>
+      <p>Beyond personal gear upgrades, crafting is one of the most powerful wealth-generation methods in Path of Exile 2:</p>
+      <ul>
+        <li><strong>Crafting for Profit:</strong> Buy bases cheaply, craft with Essences + bench, sell completed items at 2-5x material cost. The key is crafting items that many builds want (life + resist gear, +1 amulets, minion helmets).</li>
+        <li><strong>Meta-Crafting Services:</strong> Offer your Exalted Orbs and crafting knowledge as a service. Players bring you their nearly-perfect items and pay a fee for the final Exalt slams and Divine Orb rolling.</li>
+        <li><strong>Bulk Crafting:</strong> Buy 10-20 similar bases (e.g., ilvl 84 Stygian Vises), Essence craft them all, and sell the best outcomes. This averages out RNG across multiple attempts.</li>
+        <li><strong>Harvest Farming:</strong> Dedicated Harvest farmers sell Augment and Reforge crafts to meta-crafters for 1-5 Divine Orbs per craft. This requires deep atlas investment in Harvest spawn rate.</li>
+      </ul>
+
+      <h3>6.2 The Craft of Exile Tool — Essential Resource</h3>
+      <p>Craft of Exile (craftofexile.com) is the single most valuable external tool for PoE 2 crafting. Its features include:</p>
+      <ul>
+        <li><strong>Crafting Simulator:</strong> Run 10,000 simulated crafting attempts to estimate average costs</li>
+        <li><strong>Mod Database:</strong> Search all available modifiers by item type, influence, and item level</li>
+        <li><strong>Emulator:</strong> Practice crafting sequences without spending real currency</li>
+        <li><strong>Price Checker:</strong> Integration with trade sites to estimate the value of crafted items</li>
+      </ul>
+      <p>Using this tool before any Exalted Orb investment of 5+ Exalts is non-negotiable for serious crafters.</p>
+
+      <h3>6.3 PoE 2 Crafting Changes from PoE 1</h3>
+      <p>Path of Exile 2 introduces several changes that affect Exalted Orb crafting:</p>
+      <ul>
+        <li><strong>New Modifiers:</strong> PoE 2 adds new modifier types for the redesigned gem system and new Ascendancy classes</li>
+        <li><strong>Item Level Changes:</strong> Some tier thresholds have been adjusted for the new campaign structure</li>
+        <li><strong>Bench Recipe Updates:</strong> Several crafting bench recipes have new costs and unlock conditions</li>
+        <li><strong>Socket System:</strong> The new socket system (independent of item links) removes the need to craft links, but quality still affects base values</li>
+        <li><strong>Influence System:</strong> Influenced items work differently in PoE 2 — some old influence combos are no longer possible</li>
+        <li><strong>Currency Stack Sizes:</strong> Increased stack sizes for Exalted Orbs (20) and Divine Orbs (50) in currency tabs</li>
+      </ul>
+
+      <h3>6.4 The "Rule of Three" for Exalt Slamming</h3>
+      <p>When deciding whether to Exalt slam an item, apply the Rule of Three: only Exalt if at least 3 of the possible outcomes would be acceptable improvements. If your item has one open suffix slot and only 2 of the 40+ possible suffixes are desirable, do not Exalt — the odds are terrible. If 10+ outcomes would be acceptable (e.g., any resistance on a resistance-starved character), the Exalt becomes a reasonable gamble. This simple heuristic prevents the vast majority of bad Exalt decisions.</p>
+
+      <h3>6.5 When to Stop Crafting</h3>
+      <p>The most important crafting skill is knowing when to stop. Set a budget before starting any craft and stick to it religiously. A common rule among experienced crafters:</p>
+      <ul>
+        <li><strong>Budget crafts:</strong> Set limit at 5 Exalted Orbs. If not done by then, sell the半成品 (half-finished item) and start over.</li>
+        <li><strong>Mid-tier crafts:</strong> Set limit at 20 Exalted Orbs. Chasing perfection beyond this point usually costs more than buying the finished item.</li>
+        <li><strong>Mirror-tier crafts:</strong> Set limit at 100 Exalted Orbs per crafting session. Walk away and return with fresh perspective if you hit the limit.</li>
+      </ul>
+      <p>The difference between a profitable crafter and a currency-drained one is often discipline, not luck. The best crafters in Path of Exile are the ones who know when to fold and start fresh.</p>
+
+      <h3>6.6 Related Guides</h3>
+      <p>Expand your Path of Exile 2 knowledge with these interconnected guides:</p>
+      <ul>
+        <li><a href="tabula-rasa.html">Tabula Rasa Guide</a> — Six-link white socket armor for leveling</li>
+        <li><a href="headhunter.html">Headhunter Guide</a> — Chase unique belt for mapping dominance</li>
+        <li><a href="mageblood.html">Mageblood Guide</a> — Permanent flask effects for QoL</li>
+        <li><a href="mirror-kalandra.html">Mirror of Kalandra</a> — The economy of perfect items</li>
+        <li><a href="divine-orb.html">Divine Orb Farming</a> — Currency generation for your crafting fund</li>
+        <li><a href="six-link-armor.html">Six-Link Armor Crafting</a> — Advanced body armor crafting strategies</li>
+      </ul>
+
+      <h3>6.7 Final Words on Crafting Mastery</h3>
+      <p>Exalted Orb crafting is the deepest and most rewarding system in Path of Exile 2. It transforms the game from a simple "kill monsters, get loot" ARPG into a complex economic simulation where knowledge, planning, and statistical understanding are rewarded as much as mechanical skill. The journey from your first hesitant Exalt slam on a mediocre rare to orchestrating a 50-step meta-craft that produces a mirror-tier item is one of the most satisfying progression arcs in all of gaming. Every Exalted Orb you spend teaches you something — about mod pools, about probability, about when to push your luck and when to walk away. Master this system, and you will never want for currency, gear, or build options for the rest of your Path of Exile 2 career. The crafting bench awaits, exile. Make something legendary.</p>
+    </section>
+  </main>
+
+  <aside class="right-sidebar">
+    <h3>Quick Stats</h3>
+    <a>Type: Currency / Crafting System</a>
+    <a>Primary Currency: Exalted Orb</a>
+    <a>Function: Adds random mod to rare item</a>
+    <a>Meta-Craft: Prefix/Suffix Lock (2 Ex each)</a>
+    <a>Max Mods: 3 Prefix + 3 Suffix</a>
+    <a>Key Tool: Craft of Exile simulator</a>
+    <a>Avg. Drop: 1 per 2-5 hrs (T16 maps)</a>
+    <a>Stack Size: 20</a>
+
+    <h3 style="margin-top:20px">Essential Materials</h3>
+    <a>Exalted Orb (primary)</a>
+    <a>Orb of Annulment (correction)</a>
+    <a>Divine Orb (value rolling)</a>
+    <a>Orb of Scouring (reset)</a>
+    <a>Essences (deterministic base)</a>
+    <a>Fossils (targeted rolling)</a>
+
+    <h3 style="margin-top:20px">Related Items</h3>
+    <a href="tabula-rasa.html">Tabula Rasa</a>
+    <a href="headhunter.html">Headhunter</a>
+    <a href="mageblood.html">Mageblood</a>
+    <a href="mirror-kalandra.html">Mirror of Kalandra</a>
+    <a href="six-link-armor.html">Six-Link Armor</a>
+    <a href="divine-orb.html">Divine Orb Farming</a>
+
+    <h3 style="margin-top:20px">PoE 2 Navigation</h3>
+    <a href="./">← Back to PoE 2 Hub</a>
+  </aside>
+</div>
+
+<footer class="footer">
+  <p>CraftHunt — Path of Exile 2 Item Guides | Written for patch 0.5.x Early Access</p>
+  <p><a href="./">PoE 2 Hub</a> | <a href="tabula-rasa.html">Tabula Rasa</a> | <a href="headhunter.html">Headhunter</a> | <a href="mageblood.html">Mageblood</a> | <a href="mirror-kalandra.html">Mirror</a> | <a href="exalted-crafting.html">Exalted Crafting</a></p>
+</footer>
+
+</body>
+</html>

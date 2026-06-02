@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boulder Breaker Crafting Guide — Zelda: Tears of the Kingdom | CraftHunt</title>
+<meta name="description" content="Complete guide to crafting the Boulder Breaker in Zelda: TOTK. Full recipe, material locations, optimal route, and tips to forge Daruk's signature 36-attack crusher.">
+<style>
+:root {
+  --bg: #f0ece4;
+  --card: #fffef8;
+  --ink: #1a1a1a;
+  --muted: #5a5a5a;
+  --rule: #2c3e50;
+  --accent: #2c3e50;
+  --danger: #8b0000;
+  --success: #1b5e20;
+  --nav: #2c3e50;
+  --sidebar: #e8e4dc;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; }
+
+/* Header */
+.site-header { background: var(--nav); color: #fff; padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+.site-header h1 { font-size: 1.25rem; letter-spacing: 0.5px; }
+.header-link { color: #fff; text-decoration: none; font-size: 0.85rem; margin-left: auto; opacity: 0.85; }
+.header-link:hover { opacity: 1; text-decoration: underline; }
+
+/* Scrolling ticker */
+.ticker { background: var(--nav); color: #fff; border-top: 1px solid rgba(255,255,255,0.15); padding: 0.35rem 1rem; font-size: 0.8rem; overflow: hidden; white-space: nowrap; }
+.ticker span { display: inline-block; padding-left: 100%; animation: ticker-scroll 30s linear infinite; }
+@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+/* Layout */
+.page-wrap { display: grid; grid-template-columns: 240px 1fr 220px; min-height: calc(100vh - 110px); }
+
+/* Left sidebar */
+.left-sidebar { background: var(--sidebar); border-right: 1px solid #ccc; padding: 1rem; }
+.left-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+.left-sidebar ul { list-style: none; }
+.left-sidebar li { margin-bottom: 0.15rem; }
+.left-sidebar a { display: block; padding: 0.35rem 0.5rem; font-size: 0.85rem; color: var(--ink); text-decoration: none; border-radius: 4px; }
+.left-sidebar a:hover { background: rgba(0,0,0,0.05); }
+.left-sidebar a.active { background: var(--nav); color: #fff; }
+
+/* Main content */
+main.content-area { padding: 1.5rem 2rem; max-width: 900px; }
+.breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* Item header */
+.item-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--rule); }
+.item-icon-weapon { width: 64px; height: 64px; background: var(--nav); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+.item-header h1 { font-size: 1.6rem; color: var(--rule); }
+.item-header .rarity-badge { display: inline-block; background: var(--rule); color: #fff; padding: 0.15rem 0.6rem; font-size: 0.75rem; border-radius: 3px; margin-left: 0.5rem; vertical-align: middle; }
+.item-meta { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+
+/* Sections */
+.section { margin-bottom: 2rem; padding: 1.25rem; background: var(--card); border: 1px solid #d5d0c8; }
+.section h2 { font-size: 1.15rem; color: var(--rule); margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #d5d0c8; display: flex; align-items: center; gap: 0.5rem; }
+.section h2 .num { background: var(--rule); color: #fff; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.85rem; flex-shrink: 0; }
+.section p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+.section strong { color: var(--rule); }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.9rem; }
+th, td { border: 1px solid #c0b8a8; padding: 0.55rem 0.75rem; text-align: left; }
+th { background: var(--nav); color: #fff; font-weight: 600; }
+tr:nth-child(even) { background: #f5f3ee; }
+
+/* Material item blocks */
+.material-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; background: #f5f3ee; border-left: 4px solid var(--rule); margin-bottom: 0.75rem; }
+.material-item .mat-icon { width: 40px; height: 40px; background: var(--nav); color: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.material-item .mat-info { flex: 1; }
+.material-item .mat-name { font-weight: 600; color: var(--rule); font-size: 0.95rem; }
+.material-item .mat-detail { font-size: 0.85rem; color: var(--muted); }
+
+/* Route tree */
+.route-tree { margin: 0.75rem 0; }
+.route-step { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px dashed #c0b8a8; }
+.route-step:last-child { border-bottom: none; }
+.route-step .step-num { background: var(--rule); color: #fff; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.8rem; flex-shrink: 0; }
+.route-step .step-body { flex: 1; font-size: 0.9rem; }
+
+/* Gotcha box */
+.gotcha-box { background: #faf5f0; border: 1px solid #d4a574; border-left: 4px solid #d4a574; padding: 0.75rem 1rem; margin: 0.75rem 0; }
+.gotcha-box .gotcha-title { font-weight: 600; color: #8b4513; margin-bottom: 0.25rem; font-size: 0.9rem; }
+.gotcha-box ul { margin-left: 1.25rem; font-size: 0.88rem; color: var(--muted); }
+.gotcha-box li { margin-bottom: 0.3rem; }
+
+/* Right sidebar */
+.right-sidebar { background: var(--sidebar); border-left: 1px solid #ccc; padding: 1rem; }
+.right-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+.right-sidebar .info-card { background: var(--card); border: 1px solid #ccc; padding: 0.75rem; margin-bottom: 0.75rem; font-size: 0.85rem; }
+.right-sidebar .info-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; }
+.right-sidebar .info-card .value { font-weight: 600; color: var(--rule); }
+
+/* Footer */
+.site-footer { background: var(--nav); color: #fff; padding: 1rem 1.5rem; font-size: 0.8rem; text-align: center; }
+
+/* Responsive */
+@media (max-width: 1024px) { .page-wrap { grid-template-columns: 200px 1fr; } .right-sidebar { display: none; } }
+@media (max-width: 768px) { .page-wrap { grid-template-columns: 1fr; } .left-sidebar { display: none; } }
+
+[data-zh] { position: relative; cursor: help; border-bottom: 1px dotted var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+<h1>🎮 CraftHunt</h1>
+<span style="opacity:0.7; font-size:0.85rem;">Zelda: Tears of the Kingdom — Item Crafting Guides</span>
+<a class="header-link" href="../index.html">← All Games</a>
+</header>
+
+<!-- Ticker -->
+<div class="ticker">
+<span>🔥 TOTK Tip: Boulder Breaker one-shots ore deposits with 36 base attack | Bring Flamebreaker armor to Death Mountain | 5 Flint drops from every gray ore deposit | Yunobo's Sage ability breaks rocks instantly | 💎</span>
+</div>
+
+<!-- Layout -->
+<div class="page-wrap">
+
+<!-- LEFT SIDEBAR -->
+<aside class="left-sidebar">
+<h3>🏹 Champion Weapons</h3>
+<ul>
+<li><a href="great-eagle-bow.html">Great Eagle Bow</a></li>
+<li><a class="active" href="boulder-breaker.html">Boulder Breaker</a></li>
+<li><a href="./">Scimitar of the Seven</a></li>
+<li><a href="lightscale-trident.html">Lightscale Trident</a></li>
+<li><a href="./boulder-breaker.html">Daybreaker Shield</a></li>
+</ul>
+<h3>⚔️ Best Gear</h3>
+<ul>
+<li><a href="master-sword.html">Master Sword</a></li>
+<li><a href="hylian-shield.html">Hylian Shield</a></li>
+<li><a href="fierce-deity-set.html">Fierce Deity Set</a></li>
+<li><a href="barbarian-set.html">Barbarian Set</a></li>
+<li><a href="./">Sand Boots</a></li>
+</ul>
+<h3>🔗 Quick Links</h3>
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="https://www.zelda.com/tears-of-the-kingdom/" target="_blank">Official Site</a></li>
+</ul>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="content-area">
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+<a href="../index.html">CraftHunt</a> / <a href="../index.html">Zelda: TOTK</a> / Boulder Breaker
+</div>
+
+<!-- Item Header -->
+<div class="item-header">
+<div class="item-icon-weapon">🔨</div>
+<div>
+<h1>Boulder Breaker <span class="rarity-badge">Rare</span></h1>
+<div class="item-meta">Item Type: Weapon (Two-handed) | Difficulty: ★★★★☆ Mid Game | 36 Base Attack</div>
+</div>
+</div>
+
+<!-- MODULE 1: Why This Item Matters -->
+<div class="section">
+<h2><span class="num">1</span> Why This Item Matters</h2>
+<p data-zh="为什么这把武器值得你去获取">The Boulder Breaker is the undisputed king of raw two-handed power in <em>Zelda: Tears of the Kingdom</em>. With a staggering <strong>36 base attack</strong>, it outclasses every other Champion weapon in terms of sheer damage per swing. This isn't just a big hammer — it's Daruk's signature weapon, a hulking slab of Goron-forged metal designed to shatter anything and everything that stands in your path. If the Great Eagle Bow is the ultimate ranged weapon, the Boulder Breaker is its melee counterpart, delivering devastating blows that turn Lynels, Gloom Spawn, and dungeon bosses into paste.</p>
+
+<p data-zh="矿石一击粉碎">What truly sets the Boulder Breaker apart from other two-handed weapons is its <strong>unique ability to destroy ore deposits and weak rocks in a single hit</strong>. No other weapon in the game — not even other two-handers of comparable attack power — offers this level of mining efficiency. Normally, cracking open ore deposits takes multiple hits and wears down your weapon's durability. With the Boulder Breaker, one swing is all it takes. This translates to massive time savings when farming for Diamonds, Rubies, Sapphires, and other gems, especially in the Depths where ore deposits are plentiful but enemies are relentless. You won't need to carry a separate mining tool anymore — the Boulder Breaker is your weapon and your pickaxe rolled into one devastating package.</p>
+
+<p data-zh="耐久度的价值">Durability is another major selling point. Two-handed weapons typically have lower durability counts due to their high damage output, but the Boulder Breaker is engineered to last. At <strong>60 durability points</strong>, it can withstand prolonged combat encounters and extensive mining sessions before needing a reforge. When you factor in the Fuse system — attaching a high-damage material like a Silver Lynel Hoof (+55 attack) or a Mighty Puffshroom — the Boulder Breaker's effective damage climbs into the triple digits. A fused Boulder Breaker with endgame materials can reach 90+ attack per swing, making it one of the highest DPS weapons in the entire game.</p>
+
+<p data-zh="与其他的双手武器对比">Let's compare the Boulder Breaker to other heavy hitters. The <strong>Royal Claymore</strong> (base 36 attack) matches the Boulder Breaker's damage but lacks the ore-breaking passive ability. The <strong>Mighty Lynel Crusher</strong> can technically reach higher attack numbers with Fuse, but Lynel weapons are notoriously fragile and difficult to farm consistently. The <strong>Fierce Deity Sword</strong> is faster but requires a full armor set bonus to truly shine. None of these alternatives offer the Boulder Breaker's perfect storm of high base damage, durability, mining utility, and the ability to be reforged infinitely. Once you've experienced the convenience of one-shotting every ore deposit you see while wielding a weapon that also obliterates Silver Lynels, going back to anything else feels like a downgrade.</p>
+
+<p data-zh="中期的核心武器">From a progression standpoint, the Boulder Breaker arrives at the perfect time. By the time you've completed the Yunobo questline and reached Goron City, you're firmly in the mid-game and facing tougher enemies that require more powerful gear. The Boulder Breaker represents a significant power spike that carries you comfortably into the late game. It's the kind of weapon that becomes a permanent fixture in your inventory — a reliable, reforgeable powerhouse that you can always count on when the situation demands overwhelming force. Whether you're clearing Gloom-infested chasms in the Depths, farming Stone Taluses for gems, or simply enjoying the cathartic satisfaction of pancaking Bokoblins into the dirt, the Boulder Breaker delivers every single time.</p>
+</div>
+
+<!-- MODULE 2: Fuse / Craft Recipe -->
+<div class="section">
+<h2><span class="num">2</span> Fuse / Craft Recipe</h2>
+<p data-zh="制作配方">Take the following materials to the <strong>Goron smith</strong> in Goron City, located in the main forge area near the center of the settlement. The smith will craft the Boulder Breaker for you once you've completed the prerequisite quest — see the Gotcha Tips section for details.</p>
+
+<table>
+<tr><th>Material</th><th>Qty</th><th>Source</th></tr>
+<tr><td>🔨 Cobble Crusher</td><td>1</td><td>Goron City area, Black Moblins near Death Mountain</td></tr>
+<tr><td>💎 Diamond</td><td>1</td><td>Rare ore deposits, Rare Stone Talus, Yiga Clan</td></tr>
+<tr><td>⚪ Flint</td><td>5</td><td>Common drop from all ore deposits (gray rocks)</td></tr>
+</table>
+
+<p data-zh="制作地点">The Goron smith operates the main forge in Goron City, marked by a prominent anvil and roaring furnace. You'll find him working the forge in the lower-central area of the city, identifiable by his distinctive Goron proportions and soot-stained apron. After completing the Yunobo of Goron City questline and resolving the Marbled Gohma crisis at the Fire Temple, the smith becomes available for crafting and repairs. Simply approach with the materials in your inventory and select the crafting option from the dialogue menu.</p>
+
+<p><strong>Total material cost per craft:</strong> 1 Cobble Crusher + 1 Diamond + 5 Flint. The Cobble Crusher and Diamond are the main hurdles here — Flint is so common that you'll likely have 50+ pieces by the time you reach Goron City. The Diamond remains the primary bottleneck (as it does for all Champion weapons), but the Boulder Breaker's recipe is otherwise straightforward and cost-effective for the power it delivers.</p>
+
+<p>Like all Champion weapons, the Boulder Breaker can be reforged indefinitely as long as you have the materials. When your current one breaks, simply return to the Goron smith with another set of ingredients to forge a replacement. This infinite reforgeability makes the initial investment of time and effort to unlock the recipe pay dividends throughout your entire playthrough.</p>
+</div>
+
+<!-- MODULE 3: Materials & Locations -->
+<div class="section">
+<h2><span class="num">3</span> Materials &amp; Locations</h2>
+
+<div class="material-item">
+<div class="mat-icon">🔨</div>
+<div class="mat-info">
+<div class="mat-name">Cobble Crusher &times; 1</div>
+<div class="mat-detail">
+<strong>Where to find:</strong> The Cobble Crusher is a two-handed weapon commonly found in the Goron City area and surrounding Eldin region. Your best bet is to check the weapon racks inside <strong>Goron City</strong> itself — particularly near the armor shop and the training area. If those have already been looted, head to the roads around <strong>Death Mountain</strong> and <strong>Eldin Canyon</strong> where <strong>Black Moblins</strong> and higher-tier Bokoblins frequently wield this weapon. The Moblin camp near <strong>Eldin Great Skeleton</strong> (coordinates approximately <strong>1400, 3300, 0180</strong>) and the camps along the <strong>Death Mountain Trail</strong> are reliable farming spots. The Cobble Crusher also has a chance to spawn in treasure chests within Eldin-region caves and in some Abandoned Mine sites in the Depths near Death Mountain.
+<br><strong>Drop rate:</strong> ~60% from Black Moblins in Eldin region. Guaranteed from specific Goron City weapon racks (respawns after Blood Moon).
+<br><strong>Tip:</strong> If you're already in Goron City and the racks are empty, the quickest respawn farm is the Black Moblin camp south of the city along the main road. Fast-travel to a nearby shrine, clear the camp, and repeat as needed.
+</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">💎</div>
+<div class="mat-info">
+<div class="mat-name">Diamond &times; 1</div>
+<div class="mat-detail">
+<strong>Where to find:</strong> Diamonds are the rarest gem in Hyrule and the universal bottleneck for all Champion weapon recipes. Here are the most reliable acquisition methods: (1) <strong>Rare Stone Talus</strong> — the golden-glowing Talus variants are a guaranteed Diamond drop. Near Goron City, check the <strong>Rare Stone Talus at Lake Ferona</strong> (coordinates approximately <strong>2650, 1200, 0150</strong>) and another near <strong>Glaive Pass</strong> in the western Eldin region. These respawn after each Blood Moon. (2) <strong>Depths rare ore deposits</strong> — explore the Abandoned Mines beneath Death Mountain. The ore deposits here have a noticeably higher gem drop rate, and golden-shining deposits occasionally yield Diamonds. (3) <strong>Yiga Clan encounters</strong> — Yiga Blademasters have an approximately 8% Diamond drop rate. Ambush squads appear randomly across Hyrule, especially after you've progressed the main story. (4) <strong>Gemstone merchant</strong> — <strong>Ramella</strong> in Goron City will sell you Diamonds for roughly 1,000 rupees each, making this the most reliable but expensive option. (5) <strong>Ore deposit farming</strong> — with a ~5% drop rate from rare (golden-shining) ore deposits, smash every golden deposit you see while exploring caves and the Depths. Equip the Sensor+ to track Diamonds passively.
+<br><strong>Drop rate:</strong> 100% from Rare Stone Talus, ~5% from rare ore deposits, ~8% from Yiga Blademasters.
+<br><strong>Tip:</strong> Before making the trip to Goron City specifically for the Boulder Breaker, check your inventory — you may already have a Diamond from earlier exploration. Many players pick one up without realizing it.
+</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">⚪</div>
+<div class="mat-info">
+<div class="mat-name">Flint &times; 5</div>
+<div class="mat-detail">
+<strong>Where to find:</strong> Flint is one of the most abundant materials in the game and you'll almost certainly have more than enough by the time you reach Goron City. It drops from <strong>every gray ore deposit</strong> (the non-glowing, common rock formations) with near-certainty. Each deposit yields 1–2 Flint. The Death Mountain region is absolutely packed with ore deposits — literally every cave, cliff face, and mining tunnel has dozens of them. Use any blunt weapon (hammers, two-handed weapons, or rocks fused to sticks) to break deposits efficiently. If for some reason you're short on Flint, the <strong>Abandoned Mines in the Depths</strong> beneath Death Mountain are an inexhaustible source — you'll collect 30+ Flint in a single sweep of any reasonably-sized mine. Flint also drops from some Stone Pebblits and can be purchased cheaply from general stores across Hyrule.
+<br><strong>Drop rate:</strong> ~95% from gray ore deposits (1–2 per deposit). Effectively guaranteed from Death Mountain mining tunnels.
+<br><strong>Tip:</strong> Flint stacks to 999 and is used in starting fires (drop + hit with metal weapon), so having a large stockpile is useful beyond just this recipe. Don't hesitate to farm extra while you're in the mines.
+</div>
+</div>
+</div>
+</div>
+
+<!-- MODULE 4: Optimal Route -->
+<div class="section">
+<h2><span class="num">4</span> Optimal Route</h2>
+<p data-zh="最优路线">This route starts from <strong>Lookout Landing</strong> in central Hyrule and heads northeast into the Eldin region. Total estimated time: <strong>30–50 minutes</strong> depending on combat and exploration choices. <strong>Fire/heat protection is absolutely required</strong> — read the Gotcha Tips before attempting this journey.</p>
+
+<div class="route-tree">
+<div class="route-step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Start at Lookout Landing — head northeast toward Eldin Canyon</strong> — Your destination is the <strong>Eldin Canyon Skyview Tower</strong> (coordinates approximately <strong>1630, 1180, 0230</strong>), which provides an excellent launch point into the Death Mountain region. If this tower isn't unlocked yet, travel northeast on foot or by horse along the main road. The path takes you through <strong>Hyrule Field</strong>, past <strong>Kakariko Village</strong> (worth a stop for the armor shop and quest hub), and into the increasingly volcanic Eldin Canyon.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Unlock Eldin Canyon Skyview Tower</strong> — Activate the tower if you haven't already. The launch reveals the full Death Mountain landscape — look for the massive smoking volcano to the northeast and the network of rails, mine cart tracks, and rope bridges that crisscross the terrain. From the sky, <strong>Goron City</strong> is visible as a cluster of stone buildings built into the mountainside, with plumes of smoke rising from its forges.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Follow the main road through Eldin Canyon toward Goron City</strong> — The road is clearly marked and relatively safe at lower elevations. You'll pass <strong>Foothill Stable</strong> — stop here to rest, cook Fireproof Elixirs if needed, and stock up on supplies. The stable also has a cooking pot and a bed for resting. From here, the road begins ascending noticeably, and the temperature rises dramatically. Make sure your Flamebreaker armor is equipped or your Fireproof Elixir is active.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>Navigate the Death Mountain Trail — watch for broken rails</strong> — The traditional rail cart system that once made this route easy is now in disrepair due to the Upheaval. You'll need to use <strong>Ultrahand</strong> to repair broken rail sections, attach fans to mine carts for propulsion, or simply climb and glide your way up the mountain. The path has multiple segments: first the lower switchbacks (enemy camps with Fire-Breath Lizalfos), then the mid-elevation lava fields (watch for Like Likes and lava geysers), and finally the upper approach to Goron City.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">5</div>
+<div class="step-body">
+<strong>Cross the final rope bridges into Goron City</strong> — The city entrance is at approximately <strong>1650, 2440, 0380</strong>. You'll know you're close when you see the massive stone archway and the distinctive orange glow of Goron forges. The final approach involves crossing a series of rope bridges suspended over lava pools — use your paraglider to shortcut if you have the stamina, or carefully cross on foot, watching for broken planks.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">6</div>
+<div class="step-body">
+<strong>Reach Goron City — purchase Flamebreaker armor if needed</strong> — Once inside Goron City, your first stop should be the <strong>armor shop</strong> if you don't already have the Flamebreaker set. The shop sells individual pieces (600 rupees each) or the full set. Even one piece of Flamebreaker armor completely negates the extreme heat damage on Death Mountain, making this a worthwhile investment. The shop is clearly marked on your map.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">7</div>
+<div class="step-body">
+<strong>Collect the Cobble Crusher</strong> — Locate the weapon racks in Goron City — one is near the armor shop and another is in the training area by the city entrance. If both have already been looted (or if you're unlucky), fast-travel to a nearby shrine and farm the Black Moblin camps along the Death Mountain Trail. The Cobble Crusher has decent durability but treat it carefully — don't use it in combat before crafting your Boulder Breaker.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">8</div>
+<div class="step-body">
+<strong>Gather 5 Flint</strong> — This should take approximately 60 seconds. Exit Goron City and smash any 3–5 gray ore deposits along the cliff faces. Death Mountain ore deposits are incredibly dense — you literally cannot walk 20 steps without passing one. If you want to be thorough, descend into any nearby cave or Depths entrance for an overabundance of ore deposits.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">9</div>
+<div class="step-body">
+<strong>Obtain 1 Diamond</strong> — If you don't already have a Diamond, your best bet near Goron City is to hunt the <strong>Rare Stone Talus at Lake Ferona</strong>. Fast-travel to the nearest shrine, equip a strong two-handed weapon fused with a Boulder or Rock for blunt damage, and attack the Talus's ore deposit weak point. Alternatively, explore the Depths beneath Death Mountain — the Abandoned Mines have golden ore deposits that occasionally yield Diamonds. As a last resort, purchase one from <strong>Ramella</strong> in Goron City for ~1,000 rupees.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">10</div>
+<div class="step-body">
+<strong>Visit the Goron smith and forge the Boulder Breaker</strong> — With Cobble Crusher, Diamond, and 5 Flint in your inventory, locate the smith at the central forge. The anvil icon appears on your map after completing the Yunobo questline. Initiate the crafting dialogue and select the Boulder Breaker option. The smith will hammer away at the forge, and moments later you'll hold Daruk's legendary weapon in your hands.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">11</div>
+<div class="step-body">
+<strong>Test it on the nearest ore deposit!</strong> — Walk out of Goron City, find the closest gray ore deposit, and swing. Watch in satisfaction as it shatters in a single hit, showering you with gems and Flint. Then find the nearest powerful enemy and experience what 36 base damage (plus your Fuse material) feels like. Welcome to the heavy-hitting league.
+</div>
+</div>
+</div>
+</div>
+
+<!-- MODULE 5: Gotcha Tips -->
+<div class="section">
+<h2><span class="num">5</span> Gotcha Tips</h2>
+<p data-zh="注意事项与常见陷阱">The journey to forge the Boulder Breaker is one of the most treacherous in the game. Death Mountain doesn't forgive unprepared adventurers. Here's every trap, pitfall, and gotcha you need to know about:</p>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🔥 EXTREME HEAT — Flamebreaker Armor Is Essentially Required</div>
+<ul>
+<li>The heat on Death Mountain inflicts continuous, rapid damage that will kill an unprepared player in seconds. This isn't the mild warmth of lower Eldin — this is <strong>extreme heat</strong> that ignores regular heat-resistant food.</li>
+<li>The <strong>Flamebreaker armor set</strong> (sold in Goron City) provides complete immunity to extreme heat when wearing at least one piece. Two pieces provide additional defense bonuses. Each piece costs 600 rupees.</li>
+<li>If you can't afford Flamebreaker armor, craft <strong>Fireproof Elixirs</strong> using Fireproof Lizards or Smotherwing Butterflies. You'll need multiple elixirs for the full trip — one lasts about 6 minutes and 30 seconds.</li>
+<li>Equipping a <strong> Sapphire-fused weapon</strong> or wearing the Sapphire circlet provides heat resistance but <strong>NOT</strong> fireproofing. Do not confuse heat resistance with fire immunity — they are different mechanics, and fireproofing is what you need on Death Mountain.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🛤️ Broken Rail Sections — Bring Zonai Devices</div>
+<ul>
+<li>The mine cart rail system that leads up Death Mountain is severely damaged in TOTK. Multiple sections have gaps, broken supports, or missing carts entirely.</li>
+<li>Bring <strong>Fan Zonai Devices</strong> and <strong>Cart Zonai Devices</strong> in your inventory. You'll need to Ultrahandassemble working carts on broken sections, attach Fans for propulsion, and sometimes build bridges using available materials.</li>
+<li>Alternatively, skip the rails entirely and use a combination of climbing, Ascend, and Revali's Gale (if unlocked) to scale the mountain manually. This is often faster and less frustrating than wrestling with the rail system.</li>
+<li>Save your game before attempting difficult cart segments — falling into lava means instant death and a long walk back.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🦎 Fire Like-Lizards and Flamepees Are Deadly</div>
+<ul>
+<li>Death Mountain is home to some of the most dangerous enemy variants in the game. <strong>Fire Like-Likes</strong> blend into the lava and rocky terrain, ambushing players who get too close. They deal massive fire damage and have high health pools.</li>
+<li><strong>Flamepees</strong> (fire-based Octoroks) launch explosive fireballs with homing capabilities. Their projectiles can knock you off cliffs or into lava.</li>
+<li><strong>Fire-Breath Lizalfos</strong> patrol the trails in groups and can overwhelm you with coordinated fire attacks. Ice-element weapons and arrows are highly effective against them — bring a supply of Ice Fruit or White Chuchu Jelly.</li>
+<li>Always have a backup plan for falling into lava —Mipha's Grace can save you once, but don't rely on it.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🔨 The Cobble Crusher Can Be Hard to Find</div>
+<ul>
+<li>Unlike the Swallow Bow which has a guaranteed spawn in Rito Village, the Cobble Crusher's guaranteed spawns are less reliable and may already be looted.</li>
+<li>If the Goron City racks are empty, your best farming method is Black Moblins along the Death Mountain Trail. These are tough enemies — don't underestimate them. Bring strong weapons and healing items.</li>
+<li>The Cobble Crusher has 30 durability, which is low for a two-handed weapon. Store it safely and don't use it for combat or mining before crafting the Boulder Breaker.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🗿 Yunobo Quest Line Must Be Completed First</div>
+<ul>
+<li>The Goron smith <strong>will NOT craft the Boulder Breaker</strong> until you've completed the <strong>Yunobo of Goron City</strong> main quest and defeated <strong>Marbled Gohma</strong> at the Fire Temple.</li>
+<li>This questline involves investigating the Goron mining operations, dealing with the marbled rock plague affecting the Gorons, and ultimately ascending Death Mountain to enter the Fire Temple.</li>
+<li>The Fire Temple dungeon is a multi-floor vertical climb with rail cart puzzles and a challenging boss fight at the top. Come prepared with healing items, strong weapons, and plenty of Zonai charges for your devices.</li>
+<li>Completing this quest also unlocks <strong>Yunobo as a Sage companion</strong>, which is an excellent bonus (see Free Benefits below).</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">💎 Diamond Shortage — Plan Ahead</div>
+<ul>
+<li>The Diamond requirement is the biggest bottleneck for this recipe. With only a ~5% drop rate from rare ore deposits, you could spend an hour farming without success if RNG isn't on your side.</li>
+<li>Always prioritize hunting <strong>Rare Stone Talus</strong> over smashing random deposits. The Rare Stone Talus at Lake Ferona (near Goron City) respawns every Blood Moon and is a guaranteed Diamond source.</li>
+<li>If you have Sensor+, set it to track "Diamond" before exploring the Depths. This will ping whenever you're near a Diamond-containing deposit, saving enormous amounts of time.</li>
+<li>Consider purchasing Diamonds from Ramella as a last resort — 1,000 rupees is expensive but guarantees the material when you need it most.</li>
+</ul>
+</div>
+</div>
+
+<!-- MODULE 6: Free Benefits -->
+<div class="section">
+<h2><span class="num">6</span> Free Benefits Along the Route</h2>
+<p data-zh="沿途的额外收获">The trek to Goron City and Death Mountain is one of the most resource-rich expeditions in the game. Beyond the Boulder Breaker itself, you'll walk away with an enormous haul of valuable items, unlocks, and permanent upgrades. Here's the full breakdown:</p>
+
+<div class="material-item">
+<div class="mat-icon">🛒</div>
+<div class="mat-info">
+<div class="mat-name">Goron City Shops — Flamebreaker Armor + Gem Dealer</div>
+<div class="mat-detail">Goron City features one of the most important armor shops in the game, selling the <strong>Flamebreaker armor set</strong>. This set is not only essential for Death Mountain exploration but also invaluable for Eldin Depths, certain shrine challenges, and any situation involving fire hazards. Additionally, <strong>Ramella</strong> the gemstone merchant operates here, offering a reliable (if expensive) source of Diamonds, Rubies, and Sapphires. She'll also buy your gems at premium prices if you sell in bulk, making Goron City a key economic hub for your playthrough.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🕳️</div>
+<div class="mat-info">
+<div class="mat-name">Death Mountain Depths Entrance</div>
+<div class="mat-detail">The Depths entrance beneath Death Mountain is one of the most rewarding exploration zones in the game. This area is packed with <strong>Abandoned Mines</strong> containing massive quantities of ore deposits, Zonai charge dispensers, and Poes for trading with Bargainer Statues. The Depths under Eldin also contain unique enemies, rare materials, and the <strong>Lightroot network</strong> that, once activated, reveals the entire underground region. Having the Boulder Breaker makes mining in the Depths significantly faster and more efficient.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">💎</div>
+<div class="mat-info">
+<div class="mat-name">Rare Ore Collection — Sapphires, Rubies, Diamonds</div>
+<div class="mat-detail">The Death Mountain region is a gem hunter's paradise. Every cave, cliff face, and Abandoned Mine is studded with ore deposits that drop <strong>Sapphires</strong>, <strong>Rubies</strong>, <strong>Topaz</strong>, <strong>Amber</strong>, <strong>Opal</strong>, and occasionally <strong>Diamonds</strong>. Sapphires are particularly abundant here and are essential for armor upgrades (especially the Zora armor set and the Champion's Leathers). Rubies are used in fire-element cooking and weapon fusing. By the time you've completed the route to Goron City and back, expect to have collected 10+ gems worth several thousand rupees.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🦍</div>
+<div class="mat-info">
+<div class="mat-name">Yunobo — Sage of Fire Companion</div>
+<div class="mat-detail">Completing the Goron City questline unlocks <strong>Yunobo</strong> as a permanent Sage companion. Yunobo's ability allows you to summon him as a rolling boulder that smashes through rocks, enemies, and obstacles with tremendous force. This ability is incredibly versatile — use it to break through cracked walls (saving bomb flowers), charge into enemies for heavy damage, clear paths through rubble, and even launch yourself into the air when used at the right angle. Yunobo also fights alongside you in combat, providing melee support and drawing enemy aggro. His Sage stone is one of the most useful in the entire game.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">⛏️</div>
+<div class="mat-info">
+<div class="mat-name">Abundant Mining Sites with Massive Ore Deposits</div>
+<div class="mat-detail">Eldin Canyon and Death Mountain are covered in mining tunnels, caves, and cliff-side deposit clusters. Notable locations include the <strong>Goronbi River cave system</strong>, the <strong>Death Mountain Summit mines</strong>, and numerous smaller caves along the main trail. These sites contain <strong>dozens</strong of ore deposits each, yielding hundreds of Flint, numerous gems, and occasionally Zonai devices. With your new Boulder Breaker, you can clear these mines in record time, turning a single expedition into a massive resource haul. Many of these caves also contain hidden Korok seeds and treasure chests.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">⛩️</div>
+<div class="mat-info">
+<div class="mat-name">Eldin Region Shrines + Kakariko Village</div>
+<div class="mat-detail">The route to Goron City passes near or through multiple shrines: <strong>Isisim Shrine</strong> (near the Eldin Canyon Tower), <strong>Sibajitak Shrine</strong>, <strong>Shae Mo'sah Shrine</strong>, and several others within Death Mountain itself. Each shrine grants a <strong>Light of Blessing</strong> for heart/stamina upgrades and serves as a permanent fast-travel point. Additionally, the route takes you past <strong>Kakariko Village</strong>, one of the game's major quest hubs, home to the <strong>Great Fairy Fountain</strong> (armor upgrades), multiple side quests, and unique shops. Stop here on your way to or from Goron City — it's well worth the detour.</div>
+</div>
+</div>
+</div>
+
+<!-- Recommended Next -->
+<div class="section">
+<h2>🔗 Recommended Next Guide</h2>
+<p>With the Boulder Breaker in hand, you've got the ultimate melee weapon for crushing enemies and mining ore. Now it's time to complete your Champion weapon collection with the ultimate ranged option. Check out our <a href="great-eagle-bow.html"><strong>Great Eagle Bow Guide</strong></a> to learn how to craft Revali's signature triple-shot bow in Rito Village. Wielding both the Boulder Breaker for close-range devastation and the Great Eagle Bow for ranged supremacy gives you the perfect one-two punch for any encounter in Hyrule.</p>
+</div>
+
+</main>
+
+<!-- RIGHT SIDEBAR -->
+<aside class="right-sidebar">
+<h3>📊 Item Stats</h3>
+<div class="info-card">
+<div class="label">Base Damage</div>
+<div class="value">36 (highest Champion weapon)</div>
+</div>
+<div class="info-card">
+<div class="label">Weapon Type</div>
+<div class="value">Two-handed (Champion)</div>
+</div>
+<div class="info-card">
+<div class="label">Durability</div>
+<div class="value">60 swings (high)</div>
+</div>
+<div class="info-card">
+<div class="label">Special Effect</div>
+<div class="value">Ore deposits break in 1 hit</div>
+</div>
+<div class="info-card">
+<div class="label">Can Be Reforged</div>
+<div class="value">Yes — same materials</div>
+</div>
+
+<h3>⏱️ Time Estimate</h3>
+<div class="info-card">
+<div class="label">Speedrun (materials ready)</div>
+<div class="value">5 minutes (craft only)</div>
+</div>
+<div class="info-card">
+<div class="label">Full route from Lookout</div>
+<div class="value">30–50 minutes</div>
+</div>
+<div class="info-card">
+<div class="label">With Diamond farming</div>
+<div class="value">50–100 minutes</div>
+</div>
+
+<h3>🗺️ Key Coordinates</h3>
+<div class="info-card">
+<div class="label">Goron City</div>
+<div class="value">1650, 2440, 0380</div>
+</div>
+<div class="info-card">
+<div class="label">Eldin Canyon Tower</div>
+<div class="value">1630, 1180, 0230</div>
+</div>
+<div class="info-card">
+<div class="label">Lake Ferona (Rare Talus)</div>
+<div class="value">2650, 1200, 0150</div>
+</div>
+<div class="info-card">
+<div class="label">Eldin Great Skeleton</div>
+<div class="value">1400, 3300, 0180</div>
+</div>
+
+<h3>⚠️ Prerequisites</h3>
+<div class="info-card">
+<div class="label">Required Quest</div>
+<div class="value">Fire Temple + Yunobo quest</div>
+</div>
+<div class="info-card">
+<div class="label">Required Gear</div>
+<div class="value">Flamebreaker armor (1pc min)</div>
+</div>
+</aside>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+CraftHunt — Zelda: Tears of the Kingdom guides written by players, for players. Not affiliated with Nintendo.
+</footer>
+
+</body>
+</html>

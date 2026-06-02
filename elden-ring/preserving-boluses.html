@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preserving Boluses — Elden Ring Crafting Guide | RelicTrek</title>
+<meta name="description" content="Complete guide to crafting Preserving Boluses in Elden Ring. Cures and prevents scarlet rot status effect. Crystal Cave Moss + Dewkissed Herba + Sacramental Bud. Nomadic Warrior's Cookbook [18] from Siofra River Well.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-icon-tool{font-size:48px;line-height:1}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e67e22;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">Home</a>
+<a href="./">Guides</a>
+<a href="./" class="active">Crafting</a>
+<a href="./">Maps</a>
+<a href="./">Tools</a>
+</div>
+</div>
+</nav>
+
+<div class="ticker-bar">
+<div class="ticker-inner">
+🛡️ <strong>Preserving Boluses</strong> — Cures and prevents scarlet rot | Nomadic Warrior's Cookbook [18] from Siofra River Well | Crystal Cave Moss + Dewkissed Herba + Sacramental Bud | <a href="drawstring-blood-grease.html">Next: Drawstring Blood Grease →</a>
+</div>
+</div>
+
+<div class="container">
+
+<aside class="sidebar">
+<h3>Game Select</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+<a href="../no-mans-sky/">No Man's Sky</a>
+<a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+<a href="../valheim/">Valheim</a>
+<a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="./" class="active">Elden Ring</a>
+<a href="../stardew-valley/">Stardew Valley</a>
+<a href="../hades-2/">Hades 2</a>
+<a href="../satisfactory/">Satisfactory</a>
+<div class="quick-nav">
+<h4>Elden Ring Items</h4>
+<a href="gold-pickled-fowl-foot.html">Gold-Pickled Fowl Foot</a>
+<a href="exalted-flesh.html">Exalted Flesh</a>
+<a href="uplifting-aromatic.html">Uplifting Aromatic</a>
+<a href="bloodboil-aromatic.html">Bloodboil Aromatic</a>
+<a href="ironjar-aromatic.html">Ironjar Aromatic</a>
+<a href="preserving-boluses.html" class="active" style="color: var(--accent); font-weight: 600;">Preserving Boluses</a>
+<a href="drawstring-blood-grease.html">Drawstring Blood Grease</a>
+<a href="spark-aromatic.html">Spark Aromatic</a>
+<a href="warming-stone.html">Warming Stone</a>
+<a href="bewitching-branch.html">Bewitching Branch</a>
+</div>
+</aside>
+
+<main class="main-content">
+
+<div class="item-header">
+<div class="item-icon-tech">🛡️</div>
+<div class="item-title">
+<h1 data-zh="防腐丸">Preserving Boluses</h1>
+<div class="item-subtitle" data-zh="治愈并预防猩红腐败——地下迷宫和腐败湖的生存必需品">Cures and Prevents Scarlet Rot — Essential Survival Tool for Underground Dungeons and Lake of Rot</div>
+<div class="item-meta">
+<span class="difficulty">★★★★☆ Hard</span>
+<span>Type: Bolus (Remedy)</span>
+<span>Stack: 99</span>
+</div>
+</div>
+</div>
+
+<section class="section" id="why">
+<h2><span>🛡️</span> Why Preserving Boluses Matter</h2>
+<p data-zh="猩红腐败是艾尔登法环中最致命的状态效果之一，一旦累积满条，会快速消耗玩家的生命值——其速度远超中毒。更糟糕的是，中招后你几乎无法在自然环境中恢复，只能使用特定道具或祷告来解除。而防腐丸正是为此而生的终极解药。">Scarlet Rot is one of the most lethal status effects in Elden Ring. Once the meter fills, it drains your health at a devastating rate — <strong>far faster than poison</strong> and with equally punishing persistence. Unlike poison, which you might be able to outheal with regen, scarlet rot demands immediate attention. Without a cure, you are watching your health bar melt while frantically rolling away from enemies. <strong>Preserving Boluses</strong> are the ultimate answer to this nightmare — they not only cure scarlet rot instantly but also <em>prevent</em> it from building up for a generous duration afterward.</p>
+
+<p data-zh="在整个交界地中，有大量区域充满了猩红腐败的环境危害。从Caelid的腐败沼泽到地下区域Lake of Rot，再到各种腐败主题的地下城——没有防腐丸，这些区域几乎是不可探索的。即使是最高等级的玩家，在面对猩红腐败时也需要格外小心，因为这个状态效果的伤害是基于百分比的最大生命值，而非固定数值。">Across the Lands Between, numerous zones are saturated with scarlet rot hazards. From the rotting swamps of <strong>Caelid</strong> to the infamous <strong>Lake of Rot</strong> deep underground, to countless rot-themed dungeons — without Preserving Boluses, these areas border on unnavigable. Even max-level characters must respect scarlet rot because its damage scales as a <strong>percentage of maximum HP</strong>, not a flat number. Whether you have 20 Vigor or 60, the rot will chew through your health bar with terrifying efficiency.</p>
+
+<h3 data-zh="最佳使用场景">When to Use Preserving Boluses</h3>
+<ul>
+<li data-zh="探索腐败湖（Lake of Rot）：艾尔登法环中最著名的腐败区域，几乎不可能不穿水走过"><strong>Lake of Rot Exploration:</strong> The most notorious scarlet rot zone in the game. Walking through the knee-deep filth without protection is essentially a death sentence. Preserving Boluses let you traverse it with confidence.</li>
+<li data-zh="Caelid沼泽探索：Caelid南部的腐败沼泽地带充满了猩红腐败和危险的敌人"><strong>Caelid Swamp Traversal:</strong> The southern swamps of Caelid are filled with scarlet rot buildup and dangerous enemies. Boluses let you focus on combat instead of panicking about your health bar.</li>
+<li data-zh="对抗腐败主题Boss：如Malenia, Blade of Miquella的腐败攻击"><strong>Anti-Rot Boss Battles:</strong> Against bosses like <strong>Malenia, Blade of Miquella</strong>, whose attacks inflict scarlet rot, having boluses ready can mean the difference between victory and watching your HP disappear mid-fight.</li>
+<li data-zh="地下城探索：许多地下墓穴和隧道都有腐败陷阱和腐败池"><strong>Catacomb and Tunnel Runs:</strong> Many underground dungeons feature rot traps, rot pools, and rot-infused enemies. Keep a stack on hand for any subterranean expedition.</li>
+<li data-zh="预防性使用：在进入腐败区域前服用，可以获得腐败免疫buff"><strong>Preventive Application:</strong> Consuming a bolus <em>before</em> entering a rot zone grants temporary immunity, preventing the meter from building at all. This is the pro move — cure before you need to cure.</li>
+</ul>
+
+<h3 data-zh="猩红腐败机制深度解析">Understanding Scarlet Rot Mechanics</h3>
+<p data-zh="猩红腐败的伤害机制非常残酷。一旦状态完全累积，它会以每秒约1%最大生命值+固定值的速度持续削减HP，持续时间极长（约3分钟）。这意味着一个40血（1500HP）的角色会在几分钟内损失上千点生命值。而且猩红腐败可以与其他状态效果同时存在——你可以在流血、中毒<em>和</em>猩红腐败的三重折磨下 simultaneously 失去生命。">Scarlet rot's damage mechanics are brutal. Once fully inflicted, it drains approximately <strong>1% max HP + a flat value per second</strong>, lasting roughly <strong>3 minutes</strong>. A character with 40 Vigor (~1500 HP) will lose well over a thousand health over the duration. Furthermore, scarlet rot <strong>stacks with other status effects</strong> — you can be bleeding, poisoned, <em>and</em> rotting simultaneously, creating a symphony of health drain that no flask can outpace. The only solutions are: Preserving Boluses, the Flame, Cleanse Me incantation (requires 12 Faith), or theImmutable Shield skill (extremely niche). Of these, Preserving Boluses are the most universally accessible.</p>
+
+<h3 data-zh="与其他治愈手段的对比">Comparison with Other Scarlet Rot Cures</h3>
+<ul>
+<li data-zh=" vs 火焰啊，净化我吧（Flame, Cleanse Me）：祷告，需要12信仰和记忆空格；防腐丸不需要任何属性投资"><strong>vs. Flame, Cleanse Me (Incantation):</strong> Requires 12 Faith and a memory slot. Preserving Boluses require <strong>zero stat investment</strong> — any build can use them.</li>
+<li data-zh=" vs 免疫肉干（Immunizing Cured Meat）：只提升免疫力减缓累积速度，不治愈已中的腐败"><strong>vs. Immunizing Cured Meat:</strong> Only raises immunity <em>resistance</em> — it slows buildup but does not cure active rot. Preserving Boluses do both: cure active rot AND prevent future buildup.</li>
+<li data-zh=" vs 直接喝血瓶硬抗：在轻微腐败时可行，但在重度腐败区域（如Lake of Rot） impossible"><strong>vs. Raw Healing (Flask Spam):</strong> Viable against minor rot exposure, but impossible in heavy rot zones like the Lake of Rot where the buildup speed outpaces any healing.</li>
+<li data-zh=" vs 绕路避开腐败区域：很多时候腐败区域是必经之路，无法绕过"><strong>vs. Avoidance:</strong> Often not an option. Many rot zones are on critical paths to key items, bosses, or questlines.</li>
+</ul>
+
+<h3 data-zh="FOMO因素——为什么你不应该错过">The FOMO Factor</h3>
+<p data-zh="Lake of Rot是通往龙教堂（Crumbling Farum Azula）和完成几条重要NPC任务线（包括Ranni任务线的关键部分）的必经之路。如果你没有防腐丸，你可能会在这个区域卡上数小时，或者被迫回头去farm材料。更糟糕的是，Siofra River Well的调香师制作笔记需要专门前往地下区域——很多玩家在一周目时根本不知道它的存在。想象一下，你的Ranni任务线推进到了关键时刻，却因为缺防腐丸而被Lake of Rot挡住去路——这就是FOMO的残酷现实。">The <strong>Lake of Rot</strong> is a gateway to <strong>Crumbling Farum Azula</strong> and several critical questlines, including key portions of <strong>Ranni's quest</strong>. Without Preserving Boluses, you can be stuck for hours, forced to backtrack and farm materials while your quest progress stalls. Worse yet, the <strong>Nomadic Warrior's Cookbook [18]</strong> in Siofra River Well is easy to miss — many first-playthrough players have no idea it exists. Imagine reaching the pivotal moment in Ranni's questline, only to be stopped dead by a lake of flesh-eating sludge because you lack the recipe for the one item that trivializes it. The FOMO is real, and the fix is straightforward: venture into the well, grab the cookbook, and never fear the rot again.</p>
+
+<div class="cross-links">
+<a href="ironjar-aromatic.html" class="cross-link">← Ironjar Aromatic</a>
+<a href="drawstring-blood-grease.html" class="cross-link">Drawstring Blood Grease →</a>
+</div>
+</section>
+
+<section class="section" id="recipe">
+<h2><span>🧪</span> Crafting Recipe</h2>
+<p data-zh="防腐丸的配方需要三种材料——每种都代表不同类型的farm挑战。洞穴苔藓来自地下洞穴，药草来自水边，而Sacramental Bud是危险区域的稀有采集物。">The Preserving Boluses recipe requires <strong>three distinct materials</strong> — each representing a different type of farming challenge. Cave moss from subterranean grottos, riverside herbs from waterways, and Sacramental Bud from dangerous zones.</p>
+
+<table class="recipe-table">
+<thead>
+<tr><th>Material</th><th>Quantity</th><th>Rarity</th><th>Farmable</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🌿 <strong>Crystal Cave Moss</strong></td>
+<td>1x</td>
+<td data-zh="中等（洞穴特定）">Medium (Cave-Specific)</td>
+<td>✅ Yes — Crystal cave nodes</td>
+</tr>
+<tr>
+<td>🌸 <strong>Dewkissed Herba</strong></td>
+<td>1x</td>
+<td data-zh="低（水边常见）">Low (Common Near Water)</td>
+<td>✅ Yes — River/lake shores</td>
+</tr>
+<tr>
+<td>🌺 <strong>Sacramental Bud</strong></td>
+<td>1x</td>
+<td data-zh="稀有（危险区域）">Rare (Danger Zones)</td>
+<td>✅ Yes — Limited spawns</td>
+</tr>
+</tbody>
+</table>
+
+<h3 data-zh="制作产出">Yield</h3>
+<p data-zh="每次制作产出1个防腐丸。堆叠上限为99个。建议保持库存20-30个用于探索腐败区域和Boss战。">Each crafting attempt produces <span class="highlight">1x Preserving Boluses</span>. The stack limit is <strong>99</strong>. Recommended stockpile: <strong>20–30</strong> for rot-zone exploration and boss encounters. If you are planning a Lake of Rot expedition, bring at least 10–15.</p>
+
+<div class="gotcha-box">
+<h4>⚠️ Recipe Key Notes</h4>
+<ul>
+<li data-zh="治愈效果：立即清除已累积的猩红腐败状态">Cures <strong>active scarlet rot instantly</strong> — the meter drops to zero the moment you consume it.</li>
+<li data-zh="预防效果：服用后获得暂时的猩红腐败免疫，免疫期间腐败条不会累积">Grants <strong>temporary immunity</strong> after consumption — the rot meter will not build during this window.</li>
+<li data-zh="持续时间：预防效果持续约3-4分钟">Immunity duration is approximately <strong>3–4 minutes</strong> — enough for most rot-zone traversal.</li>
+<li data-zh="堆叠上限99：可以大量制作而不占用太多背包空间">Stack limit of 99 means you can craft in bulk without inventory pressure.</li>
+<li data-zh="与免疫护符叠加：配合Immunizing Horn Charm可以大幅延长在腐败区域的停留时间">Stacks with immunity-boosting talismans like <strong>Immunizing Horn Charm</strong> for extended rot-zone exploration.</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Nomadic Warrior's Cookbook [18]</h2>
+<p data-zh="要解锁防腐丸的配方，你需要流浪战士的制作笔记[18]。这本笔记位于Siofra River Well地下区域——一个广阔的地下河区域，充满了独特的敌人和环境。">To unlock the Preserving Boluses recipe, you must acquire <strong>Nomadic Warrior's Cookbook [18]</strong>. This Cookbook is located in the <strong>Siofra River Well</strong> — a massive underground river zone filled with unique enemies, ancient architecture, and its own mini-boss encounters.</p>
+
+<div class="cookbook-box">
+<h4>📖 Nomadic Warrior's Cookbook [18]</h4>
+<p><strong>Location:</strong> Siofra River Well, underground zone</p>
+<p><strong>Coordinates:</strong> On a corpse near the main elevator shaft area, close to where the Siofra River Bank grace is located</p>
+<p><strong>Recipe Unlocked:</strong> Preserving Boluses</p>
+<p><strong>Also Unlocks:</strong> Additional bolus and utility crafting recipes</p>
+</div>
+
+<h3 data-zh="如何到达Siofra River Well">How to Reach Siofra River Well</h3>
+<p data-zh="Siofra River Well是位于Limgrave东部的一个巨大的地下区域。要进入它，你需要找到位于Mistwood的Siofra River Well Depths入口井，乘坐巨大的升降梯下降到地下世界。">The Siofra River Well is a vast underground zone located beneath eastern Limgrave. To access it, find the <strong>Siofra River Well Depths</strong> entrance well in the <strong>Mistwood</strong> area of Limgrave. A massive elevator platform descends into the underground world, opening into a cavernous river basin unlike anything on the surface.</p>
+
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Start from the <strong>Third Church of Marika</strong> in east Limgrave, or the <strong>Fort Haight West</strong> grace.</p>
+<p><span class="step">Step 2:</span> Head southeast into <strong>Mistwood</strong>. Look for a large ruined structure with a well entrance — this is the Siofra River Well Depths lift.</p>
+<p><span class="step">Step 3:</span> Activate the lift and ride the massive elevator all the way down. This takes approximately 30 seconds — one of the longest elevator rides in the game.</p>
+<p><span class="step">Step 4:</span> At the bottom, follow the tunnel forward until you emerge into the vast underground river cavern. The <strong>Siofra River Bank</strong> Site of Grace is directly ahead.</p>
+<p><span class="step">Step 5:</span> From the Siofra River Bank grace, explore the surrounding area. The Cookbook is on a <strong>corpse near the central support pillar</strong> and elevator shaft structures — look for glowing white items on bodies near the main architecture.</p>
+</div>
+
+<h3 data-zh="Siofra River Well的危险">Siofra River Well Hazards</h3>
+<ul>
+<li data-zh="远古战士幽灵：身穿古代铠甲的幽灵战士，攻击力强且有一定血量">• <strong>Ancestral Follower spirits:</strong> Ghostly warriors in ancient armor with strong attacks and solid HP pools. They respawn like normal enemies.</li>
+<li data-zh="大角鹿：巨大的鹿类生物，冲锋攻击伤害很高">• <strong>Giant horned deer:</strong> Massive creatures with devastating charge attacks. They are surprisingly fast for their size.</li>
+<li data-zh="飞空的火焰罐：悬浮的火焰罐敌人会爆炸">• <strong>Floating flame pots:</strong> Hovering enemies that explode when approached. Deal significant fire damage.</li>
+<li data-zh="灵火灯柱：需要点燃才能驱散幽灵敌人的灯柱">• <strong>Spiritflame braziers:</strong> Must be lit by shooting them with flame arrows or spells to dispel certain spirit enemies in the area.</li>
+<li data-zh="无需击败Boss：制作笔记在开放区域，可以直接拾取">• <strong>No boss required:</strong> The Cookbook is in an open area — no boss kill needed, though the area's enemies are dangerous enough.</li>
+<li data-zh="坠落的危险：地下河区域有很多悬崖和落差，小心不要掉下去">• <strong>Fall hazards:</strong> The underground river has many cliffs and drops. Watch your step near the water's edge.</li>
+</ul>
+
+<h3 data-zh="Siofra River Well的额外探索价值">Why Explore Siofra River Well Beyond the Cookbook</h3>
+<p data-zh="Siofra River Well不仅仅是一个制作笔记的拾取点。这个区域还包含了：Ancestor Spirit Boss战（一场美丽而独特的战斗，奖励强大的召唤骨灰）、大量的锻造石和墓地铃兰用于升级、多条通往其他地下区域的连接通道、以及独特的风景和氛围体验。即使你只为了防腐丸而来，也建议好好探索这个区域——它是艾尔登法环地下世界设计的典范。">Siofra River Well is far more than just a cookbook pickup. The zone also contains: the <strong>Ancestor Spirit boss fight</strong> — one of the most visually stunning and unique encounters in the game, rewarding a powerful Spirit Ash summon; abundant <strong>Smithing Stones and Grave Gloveworts</strong> for weapon and spirit upgrades; connections to other underground zones; and an atmosphere that exemplifies Elden Ring's subterranean world design. Even if you come only for the Preserving Boluses recipe, take time to explore — this is one of the most memorable areas in the game.</p>
+
+<div class="cross-links">
+<a href="bloodboil-aromatic.html" class="cross-link">← Bloodboil Aromatic</a>
+<a href="drawstring-blood-grease.html" class="cross-link">Drawstring Blood Grease →</a>
+</div>
+</section>
+
+<section class="section" id="materials">
+<h2><span>🌿</span> Materials &amp; Farm Locations</h2>
+<p data-zh="防腐丸的三种材料分别来自三种完全不同的环境：阴暗的洞穴、湿润的河岸、以及危险的高等级区域。这意味着farm防腐丸的材料本身就是一次穿越交界地的旅程。">Preserving Boluses require three materials from three completely different environments: dark crystalline caves, moist riverbanks, and dangerous high-level zones. Farming for these materials is itself a journey across the Lands Between.</p>
+
+<h3>🌿 Material 1: Crystal Cave Moss</h3>
+<div class="material-item">
+<div class="material-icon">🌿</div>
+<div class="material-info">
+<h4>Crystal Cave Moss <span style="color:#e6a817">★★ Medium — Cave Exclusive</span></h4>
+<p data-zh="Crystal Cave Moss是一种只在有水晶生长的洞穴中才能找到的苔藓。它的蓝白色外观让它在阴暗的洞穴环境中相对容易辨认，但需要专门前往地下区域采集。"><strong>Crystal Cave Moss</strong> is a pale blue-white moss that grows exclusively in caves where crystals form. Its distinctive coloration makes it relatively easy to spot against dark cave walls, but you must deliberately seek out subterranean crystal grottos to farm it.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Crystal Cave Moss Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Academy Crystal Cave — Liurnia</strong></p>
+<p data-zh="位于Liurnia Lakes北部的Academy Crystal Cave是farm Crystal Cave Moss的最佳地点。洞穴内的水晶柱和水晶簇旁边通常会长出2-4株苔藓。从洞穴赐福点出发，跑一圈可以采集3-5株，休息后重复。"><strong>Academy Crystal Cave</strong> in northern Liurnia is the best farm. Crystal pillars and clusters throughout the cave have <strong>2–4 moss nodes</strong> each per sweep. From the cave's grace, a full circuit yields <strong>3–5 moss</strong>. Rest and repeat. This cave is also a good source of <strong>Smithing Stones</strong>.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Sellia Crystal Tunnel — Caelid</strong></p>
+<p data-zh="Caelid的Sellia Crystal Tunnel是另一个富含Crystal Cave Moss的矿洞。这里的敌人更强但苔藓刷新量更大，每次跑图可以采集5-7株。注意洞穴里的fallingstar beast——如果你还没有准备好，避开洞穴深处的Boss房。"><strong>Sellia Crystal Tunnel</strong> in Caelid has higher moss density — <strong>5–7 per run</strong> — but stronger enemies. Be cautious of the <strong>Fallingstar Beast</strong> at the tunnel's depths; avoid the boss chamber unless you are prepared for that fight.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Any Crystal Cave in the Mountaintops</strong></p>
+<p data-zh="Mountaintops of the Giants区域有数个水晶洞穴，都有Crystal Cave Moss分布。这些洞穴通常还包含高等级的锻造石。">Various crystal caves in the <strong>Mountaintops of the Giants</strong> also contain Crystal Cave Moss, often alongside high-tier Smithing Stones.</p>
+</div>
+
+<h4 data-zh="Crystal Cave Moss Farm技巧">Crystal Cave Moss Farming Tips</h4>
+<ul>
+<li data-zh="在Academy Crystal Cave farm时顺便收集Smithing Stone[2]和[3]">While farming Academy Crystal Cave, also grab <strong>Smithing Stone [2]</strong> and <strong>[3]</strong> from the mining spots.</li>
+<li data-zh="苔藓在赐福休息后刷新——可以无限farm">Moss respawns on grace rest — <strong>infinitely farmable</strong>.</li>
+<li data-zh="水晶洞穴中的矿工敌人会掉落锻造石——一举两得">Crystal cave miners drop Smithing Stones — dual-purpose farming.</li>
+<li data-zh="使用范围攻击可以快速清除成群的水晶蜗牛">Use AoE attacks to clear groups of <strong>crystal snails</strong> efficiently.</li>
+</ul>
+
+<h3>🌸 Material 2: Dewkissed Herba</h3>
+<div class="material-item">
+<div class="material-icon">🌸</div>
+<div class="material-info">
+<h4>Dewkissed Herba <span style="color:#4caf50">★ Common — Water Edge</span></h4>
+<p data-zh="Dewkissed Herba是一种在河流、湖泊和沼泽岸边常见的药草。它的白色小花在水边很容易辨认，是三种材料中最容易获取的。"><strong>Dewkissed Herba</strong> is a common herb found along riverbanks, lake shores, and swamp edges throughout the Lands Between. Its small white flowers are easy to spot near water and it is by far the easiest of the three materials to acquire.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Dewkissed Herba Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Liurnia of the Lakes — Every Shoreline</strong></p>
+<p data-zh="Liurnia of the Lakes是Dewkissed Herba的天堂。从Liurnia Lakeshore赐福点开始，沿着湖岸骑马采集，可以轻松获得10-15株每次循环。整个Liurnia区域的水边都有分布，几乎没有竞争。"><strong>Liurnia of the Lakes</strong> is Dewkissed Herba paradise. Starting from the <strong>Liurnia Lakeshore</strong> grace, ride along the shoreline and collect <strong>10–15 per circuit</strong>. The entire region's waterways are covered in this herb. It is so abundant that you will likely pick up hundreds just from normal exploration.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Stormveil Castle — Moat Area</strong></p>
+<p data-zh="Stormveil Castle的护城河周边也有Dewkissed Herba分布，适合早期游戏farm。数量不如Liurnia多，但胜在距离近。">The moat area around <strong>Stormveil Castle</strong> also has Dewkissed Herba for early-game farming. Lower quantity than Liurnia but conveniently close.</p>
+</div>
+
+<h4 data-zh="Dewkissed Herba Farm技巧">Dewkissed Herba Farming Tips</h4>
+<ul>
+<li data-zh="骑马采集效率最高——Torrent可以快速沿水边移动">Mount up on <strong>Torrent</strong> for maximum collection speed along shorelines.</li>
+<li data-zh="Liurnia的每次跑图都能获得大量——通常不需要专门farm">Liurnia circuits yield so many you typically <strong>do not need dedicated farming</strong> — just grab them while passing through.</li>
+<li data-zh="也是多种其他配方的材料——多多益善">Used in multiple other recipes — there is no such thing as too many.</li>
+</ul>
+
+<h3>🌺 Material 3: Sacramental Bud</h3>
+<div class="material-item">
+<div class="material-icon">🌺</div>
+<div class="material-info">
+<h4>Sacramental Bud <span style="color:#ff4d4d">★★★ Rare — Dangerous Zones</span></h4>
+<p data-zh="Sacramental Bud是防腐丸配方中最稀有的材料。这种暗红色的花苞只在特定的危险区域刷新——主要是在Caelid的神授塔和周边区域，以及部分地下墓地中。它是整个配方的 bottleneck。"><strong>Sacramental Bud</strong> is the rarest component of the Preserving Boluses recipe. This dark crimson bud only spawns in specific dangerous zones — primarily around <strong>Caelid's Divine Tower</strong> and surrounding areas, plus certain catacombs. It is the <strong>bottleneck material</strong> for bulk crafting.</p>
+</div>
+</div>
+
+<h4 data-zh="最佳Farm地点">Best Sacramental Bud Farm Locations</h4>
+
+<div class="material-farm-route">
+<p><strong>🥇 #1: Caelid Divine Tower — Exterior</strong></p>
+<p data-zh="Caelid的Divine Tower（神授塔）外墙和周围区域是farm Sacramental Bud的最佳地点。塔周围的地面上通常有2-4个刷新点。从Divine Tower of Caelid Basement赐福点出发，乘坐升降梯或从旁边跳下，在塔周围的废墟中采集。"><strong>Caelid Divine Tower exterior</strong> is the best farm. The grounds around the tower have <strong>2–4 spawn points</strong>. From the <strong>Divine Tower of Caelid: Basement</strong> grace, ride the lift or drop down nearby, then collect the buds scattered around the tower's base ruins. Be cautious — Caelid's wildlife is aggressive and high-level.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥈 #2: Sellia, Town of Sorcery — Caelid</strong></p>
+<p data-zh="Sellia魔法镇内有几处Sacramental Bud刷新点。要在镇上自由移动需要先点燃三个火焰灯柱解除封印。镇上的隐形法师非常危险，建议骑马快速采集。"><strong>Sellia, Town of Sorcery</strong> has several Sacramental Bud spawns. You must light <strong>three flame braziers</strong> to unseal the town before freely moving about. The invisible assassins are deadly — use Torrent for hit-and-run collection.</p>
+</div>
+
+<div class="material-farm-route">
+<p><strong>🥉 #3: Various Catacombs in Caelid</strong></p>
+<p data-zh="Caelid区域的一些地下墓地内有Sacramental Bud刷新，但数量不多且需要清怪。">Various catacombs throughout Caelid have Sacramental Bud nodes, but quantities are low and require clearing enemies.</p>
+</div>
+
+<h4 data-zh="Sacramental Bud Farm技巧">Sacramental Bud Farming Tips</h4>
+<ul>
+<li data-zh="Sacramental Bud在赐福休息后刷新——可以无限farm，但刷新点数量有限">Respawns on grace rest — <strong>infinitely farmable</strong>, but limited spawn points per zone.</li>
+<li data-zh="Caelid的敌人等级较高——建议在40级以后再来farm">Caelid enemies are high-level — recommend <strong>level 40+</strong> for comfortable farming.</li>
+<li data-zh="使用金色鸡爪增加discovery属性以提高采集效率">Equip items that boost <strong>Discovery</strong> (Arcane-boosting gear, Silver Scarab Talisman).</li>
+<li data-zh="在farm Sacramental Bud时顺便采集Bloodrose——Caelid也产Bloodrose">While in Caelid, also collect <strong>Bloodrose</strong> — the zone produces both materials.</li>
+</ul>
+
+<div class="cross-links">
+<a href="spark-aromatic.html" class="cross-link">Spark Aromatic →</a>
+<a href="drawstring-blood-grease.html" class="cross-link">Drawstring Blood Grease →</a>
+</div>
+</section>
+
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> Gotcha Tips — What Can Go Wrong</h2>
+<p data-zh="防腐丸虽然功能强大，但在获取和使用过程中有很多容易踩坑的地方。以下是完整的问题清单和规避方法。">Preserving Boluses are powerful but come with numerous pitfalls in acquisition and usage. Here is the complete warning list.</p>
+
+<div class="gotcha-box">
+<h4>🌊 Gotcha 1: Siofra River Well Is Easy to Miss</h4>
+<p data-zh="很多玩家在一周目时根本不知道Siofra River Well的存在。入口井在Mistwood的一个废墟中，没有明显的标记。如果你不去刻意探索Limgrave的东部森林区域，你很可能会错过整个地下区域和制作笔记[18]。">Many first-playthrough players have no idea Siofra River Well exists. The entrance well is in a ruin in Mistwood with no obvious signage. If you do not deliberately explore eastern Limgrave's forest, you will miss the entire underground zone and Cookbook [18]. <strong>Proactively seek out well entrances</strong> in every zone — they are gateways to hidden content.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🌺 Gotcha 2: Sacramental Bud Is the Bottleneck</h4>
+<p data-zh="三种材料中，Sacramental Bud是唯一真正稀有的。Crystal Cave Moss和Dewkissed Herba都相对容易大量获取，但Sacramental Bud的刷新点有限且位于危险的Caelid区域。这意味着你的防腐丸产量完全取决于你能farm多少Sacramental Bud。">Sacramental Bud is the true bottleneck. Crystal Cave Moss and Dewkissed Herba are easy to stockpile, but Sacramental Bud's limited spawn points in dangerous Caelid cap your production rate. Your boluses output is limited by how much Sacramental Bud you can farm. Plan accordingly — <strong>farm Sacramental Bud first</strong>, then grab the other two materials in bulk.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🏊 Gotcha 3: Lake of Rot Still Hurts — Boluses Do Not Make You Invincible</h4>
+<p data-zh="防腐丸的预防效果虽然强大，但在Lake of Rot中仍然需要谨慎。湖中的腐败累积速度极快，而且预防效果有时间限制。在湖中央停留太久仍然会突破免疫。建议配合Immunizing Horn Charm护符和免疫度高的装备一起使用，并规划好路线，尽量减少在水中的时间。">The immunity window is powerful but not infinite. Lake of Rot's buildup is <strong>extremely aggressive</strong>, and the immunity duration is finite. Standing in the center too long will overwhelm even bolus protection. Combine with <strong>Immunizing Horn Charm</strong> and high-immunity armor, and plan your route to minimize time in the sludge.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>📖 Gotcha 4: The Cookbook Is Not on the Main Path</h4>
+<p data-zh="流浪战士的制作笔记[18]位于Siofra River Well的开放区域，但它不在你通常探索的主要路径上。它靠近中央支柱和升降梯结构，在一个尸体上。很多玩家探索了Siofra River Well但漏掉了这个制作笔记，因为它不在通往Ancestor Spirit或主要区域的必经之路上。">Cookbook [18] is in Siofra River Well's open area but <strong>not on the main exploration path</strong>. It is near the central pillars and lift structures, on a corpse. Many players explore Siofra River Well but miss this cookbook because it is not on the route to the Ancestor Spirit or major areas. <strong>Search thoroughly around the central architecture</strong>.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>⏱️ Gotcha 5: The Immunity Timer Is Easy to Forget</h4>
+<p data-zh="预防效果持续3-4分钟，但在激烈的战斗或紧张的探索中很容易忘记时间。建议在进入腐败区域时设置一个计时器，或者在效果即将消失时注意腐败条是否开始重新累积。当预防效果消失时，腐败条会从0开始重新累积——给你一些反应时间，但不多。">The 3–4 minute immunity window is easy to lose track of during tense exploration. When the buff expires, the rot meter starts building from zero — giving you a brief grace period, but not much. <strong>Set a mental timer</strong> when entering rot zones, or keep an eye on your status bar for the immunity icon disappearing.</p>
+</div>
+
+<div class="gotcha-box">
+<h4>🧪 Gotcha 6: Do Not Confuse with Other Boluses</h4>
+<p data-zh="艾尔登法环有多种丸药（Boluses）：防腐丸治腐败、止血丸治出血、解冻丸治冻伤、催眠丸治睡眠。在紧张的战斗中很容易选错。建议在快捷栏中只放你当前需要的丸药类型，避免按错。">Elden Ring has multiple bolus types: Preserving (scarlet rot), Stanching (bleed), Thawing (frostbite), and Sleep (sleep). In the heat of combat, it is easy to pop the wrong one. <strong>Keep only the bolus type you currently need on your quick bar</strong> to avoid tragic mistakes.</p>
+</div>
+</section>
+
+<section class="section" id="benefits">
+<h2><span>🎁</span> Free Benefits — What Else You Get Farming These Materials</h2>
+<p data-zh="farm防腐丸的材料本身就是一次全面的交界地探索之旅。以下是你在farm过程中会获得的额外收益。">The farming routes for Preserving Boluses double as a comprehensive tour of the Lands Between. Here is what else you will collect:</p>
+
+<h3 data-zh="在Siofra River Well的额外收益">Exploring Siofra River Well (Cookbook Location)</h3>
+<ul>
+<li data-zh="Ancestor Spirit Boss战：击败这个Boss获得Ancestral Follower的骨灰，一个强力的远程召唤灵"><strong>Ancestor Spirit Boss:</strong> Defeat this majestic boss for the <strong>Ancestral Follower's Ashes</strong> — a powerful ranged Spirit Ash summon.</li>
+<li data-zh="大量锻造石和墓地铃兰：升级武器和召唤灵的关键材料"><strong>Smithing Stones &amp; Grave Gloveworts:</strong> Key materials for weapon and Spirit Ash upgrades.</li>
+<li data-zh=" Golden Seed：地下区域有多个Golden Seed可以强化圣杯瓶"><strong>Golden Seeds:</strong> Multiple seeds to upgrade your Flask charges.</li>
+<li data-zh="通往Nokron的连接：Siofra River Well是通往永恒之城Nokron的关键通道"><strong>Path to Nokron:</strong> Siofra River Well connects to the Eternal City <strong>Nokron</strong>, essential for Ranni's questline and other major content.</li>
+</ul>
+
+<h3 data-zh="在水晶洞穴Farm Crystal Cave Moss的额外收益">Farming Crystal Caves (Crystal Cave Moss)</h3>
+<ul>
+<li data-zh="锻造石[2]和[3]：Academy Crystal Cave有大量中等级锻造石"><strong>Smithing Stones [2] &amp; [3]:</strong> Academy Crystal Cave is rich in mid-tier upgrade stones.</li>
+<li data-zh="Somber Smithing Stone：某些水晶洞穴有稀有的Somber锻造石"><strong>Somber Smithing Stones:</strong> Certain crystal caves contain rare special weapon upgrade stones.</li>
+<li data-zh="矿工铃珠：击败洞穴Boss可以获得铃珠用于商人购买锻造石"><strong>Miner's Bell Bearings:</strong> Crystal cave bosses drop bell bearings for purchasing Smithing Stones from the Twin Maiden Husks.</li>
+</ul>
+
+<h3 data-zh="在Caelid Farm Sacramental Bud的额外收益">Farming Caelid (Sacramental Bud)</h3>
+<ul>
+<li data-zh="Bloodrose：Caelid也是Bloodrose的产地之一，用于制作出血相关道具"><strong>Bloodrose:</strong> Caelid also produces Bloodrose for bleed-themed crafting.</li>
+<li data-zh="大量卢恩：Caelid的敌人给很多卢恩，适合早期升级"><strong>Runes:</strong> Caelid enemies give substantial runes for early leveling.</li>
+<li data-zh="独特装备：Caelid有很多独特的武器和装备可以拾取"><strong>Unique Gear:</strong> Caelid has many unique weapons and armor pieces to discover.</li>
+<li data-zh="Sellia魔法镇的宝藏：点燃三个火焰后可以获得多个魔法卷轴和装备"><strong>Sellia Town Treasures:</strong> Lighting the three braziers unlocks multiple sorcery scrolls and equipment pieces.</li>
+</ul>
+
+<h3 data-zh="长期战略收益">Long-Term Strategic Value</h3>
+<p data-zh="掌握防腐丸的制作意味着你已经征服了Siofra River Well并深入了Caelid的核心区域。这本身就标志着你的游戏进程已经进入中期。更重要的是，你获得了一个可以治愈游戏中最可怕状态效果的工具——这让你可以自信地探索任何腐败区域，不再被猩红腐败的恐惧所束缚。">Mastering Preserving Boluses means you have conquered Siofra River Well and penetrated the heart of Caelid. That alone marks significant mid-game progression. More importantly, you have acquired a tool that counters the game's most feared status effect — enabling you to explore any rot zone with confidence, no longer shackled by scarlet rot anxiety.</p>
+
+<p data-zh="从更深层来看，farm防腐丸的材料让你体验到了艾尔登法环设计哲学的核心：不同的区域有不同的资源，而你需要在广阔的世界上旅行来收集它们。这不是一个你可以在同一个地方刷完所有材料的游戏——它鼓励你探索每一个角落，每一种环境。当你为了三种不同的材料穿越洞穴、湖泊和荒地时，你就是在体验这款游戏最核心的魅力。">At a deeper level, farming Preserving Boluses material embodies Elden Ring's core design: different regions yield different resources, and you must travel the world to gather them. This is not a game where you farm everything in one spot — it encourages exploration of every corner, every environment. When you traverse caves, lakes, and wastelands for three different materials, you are experiencing the game's central appeal.</p>
+
+<div class="cross-links">
+<a href="drawstring-blood-grease.html" class="cross-link">→ Next: Drawstring Blood Grease</a>
+<a href="bloodboil-aromatic.html" class="cross-link">← Bloodboil Aromatic</a>
+<a href="ironjar-aromatic.html" class="cross-link">← Ironjar Aromatic</a>
+</div>
+</section>
+
+</main>
+
+<aside class="sidebar">
+<h3>Quick Info</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Effect:</strong> Cures scarlet rot + prevents buildup</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Duration:</strong> ~3-4 min immunity</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Stacks:</strong> 99</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Cookbook:</strong> Nomadic [18]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>Yield:</strong> 1 per craft</p>
+<div class="quick-nav">
+<h4>Jump to Section</h4>
+<a href="#why">Why It Matters</a>
+<a href="#recipe">Crafting Recipe</a>
+<a href="#cookbook">Cookbook Location</a>
+<a href="#materials">Farm Routes</a>
+<a href="#gotchas">Gotcha Tips</a>
+<a href="#benefits">Free Benefits</a>
+</div>
+<div class="quick-nav">
+<h4>Related Items</h4>
+<a href="drawstring-blood-grease.html">Drawstring Blood Grease</a>
+<a href="spark-aromatic.html">Spark Aromatic</a>
+<a href="ironjar-aromatic.html">Ironjar Aromatic</a>
+</div>
+</aside>
+
+</div>
+
+<footer class="site-footer">
+<p>RelicTrek — Crafting guides for the Lands Between and beyond. Not affiliated with FromSoftware.</p>
+<p style="margin-top:8px"><a href="./">← Back to Elden Ring Index</a></p>
+</footer>
+
+</body>
+</html>
