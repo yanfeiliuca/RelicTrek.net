@@ -818,6 +818,10 @@ body.lang-zh .bilingual .en { display: none; }
 body.lang-zh .bilingual .zh { display: inline; color: var(--text); }
 body.lang-en .bilingual .zh { display: none; }
 
+/* Note: elements with both data-en + data-zh are switched by JS via textContent.
+   Do NOT add body.lang-* [data-*] { display: none } rules here —
+   that would hide elements that happen to carry both attributes. */
+
 /* ============================================
    SCROLLBAR — Stone aesthetic
    ============================================ */
