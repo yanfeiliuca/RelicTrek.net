@@ -807,10 +807,6 @@ tr:hover td { background: rgba(232,185,35,0.04); }
 /* ============================================
    BILINGUAL CONTENT
    ============================================ */
-[data-en], [data-zh] { transition: opacity 0.2s; }
-body.lang-en [data-zh] { display: none; }
-body.lang-zh [data-en] { display: none; }
-
 /* Inline bilingual */
 .bilingual .en { }
 .bilingual .zh { color: var(--text-dim); font-size: 0.92em; }
