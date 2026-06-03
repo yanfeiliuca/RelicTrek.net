@@ -1,4 +1,4 @@
-// RelicTrek — Main JavaScript (Pure C Edition)
+// RelicTrek — Main JavaScript
 // Handles: language switch, ticker, mobile menu, search
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -6,18 +6,46 @@ document.addEventListener('DOMContentLoaded', function() {
   // ============================================
   // LANGUAGE SWITCHER
   // ============================================
+
+  function applyLanguage(lang) {
+    // Update all elements with data-en / data-zh attributes
+    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-en-placeholder][data-zh-placeholder]').forEach(el => {
+      el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
+    });
+
+    // Update document lang attribute
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  }
+
   const savedLang = localStorage.getItem('relictrek-lang') || 'en';
+
+  // Apply saved language on load
+  applyLanguage(savedLang);
   document.body.classList.add('lang-' + savedLang);
 
+  // Set active button
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     if (btn.dataset.lang === savedLang) btn.classList.add('active');
 
     btn.addEventListener('click', function() {
       const lang = this.dataset.lang;
+      const prevLang = document.body.classList.contains('lang-en') ? 'en' : 'zh';
+      if (lang === prevLang) return;
+
+      // Switch
       document.body.classList.remove('lang-en', 'lang-zh');
       document.body.classList.add('lang-' + lang);
       localStorage.setItem('relictrek-lang', lang);
 
+      // Apply translations
+      applyLanguage(lang);
+
+      // Update active button
       document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
       this.classList.add('active');
     });
@@ -28,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // ============================================
   const tickerTrack = document.querySelector('.ticker-track');
   if (tickerTrack) {
-    // Clone all children and append for infinite scroll
     const items = Array.from(tickerTrack.children);
     items.forEach(item => {
       const clone = item.cloneNode(true);
@@ -48,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Close sidebar when clicking outside on mobile
   document.addEventListener('click', (e) => {
     if (window.innerWidth <= 768 && leftSidebar && leftSidebar.classList.contains('open')) {
       if (!leftSidebar.contains(e.target) && e.target !== menuToggle) {
@@ -75,9 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (href) { window.location.href = href; return; }
           }
         }
+        const currentLang = document.body.classList.contains('lang-zh') ? 'zh' : 'en';
         const msgEn = 'Item not found. Try: ankh shield, zenith, cell phone...';
-        const msgZh = '未找到物品。试试：ankh shield, zenith, cell phone...';
-        alert(savedLang === 'zh' ? msgZh : msgEn);
+        const msgZh = '\u672a\u627e\u5230\u7269\u54c1\u3002\u8bd5\u8bd5\uff1aankh shield, zenith, cell phone...';
+        alert(currentLang === 'zh' ? msgZh : msgEn);
       }
     });
   }
