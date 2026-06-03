@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dungeon Delver — RelicTrek</title>
+<style>
+/* ═══════════════════════════════════════════════
+   DUNGEON DELVER — RelicTrek Visual Prototype
+   Theme: Arcane Dungeon Explorer
+   ═══════════════════════════════════════════════ */
+
+/* ── 1. CSS VARIABLES ── */
+:root {
+  --bg-primary: #0a0714;
+  --bg-secondary: #140f24;
+  --bg-tertiary: #1e1635;
+  --accent: #9b59b6;
+  --accent-deep: #7d3c98;
+  --accent-glow: #c084fc;
+  --rune-cyan: #00d4ff;
+  --text-primary: #ece8f5;
+  --text-secondary: #8b7fab;
+  --text-muted: #5d537a;
+  --border: #2a2040;
+  --border-light: #3d3060;
+  --success: #5dbe7a;
+  --warning: #e74c3c;
+  --gold: #f0c040;
+  --nav-height: 52px;
+  --slogan-height: 32px;
+  --sidebar-width: 210px;
+  --rightbar-width: 260px;
+}
+
+/* ── 2. RESET & BASE ── */
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%; height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  /* Subtle rune pattern background */
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239b59b6' fill-opacity='0.04'%3E%3Cpath d='M30 0l15 26h-30z'/%3E%3Ccircle cx='30' cy='38' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ── 3. SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent-deep); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── 4. NAVIGATION BAR ── */
+.top-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: linear-gradient(180deg, #0f0a1e 0%, #0a0714 100%);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 12px rgba(155,89,182,0.25), inset 0 -1px 0 rgba(155,89,182,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 22px;
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(155,89,182,0.6);
+}
+
+.logo-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(155,89,182,0.5), 0 0 30px rgba(155,89,182,0.2);
+  letter-spacing: 0.5px;
+}
+
+.nav-center {
+  flex: 1;
+  max-width: 420px;
+  margin: 0 24px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-box::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.search-box:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(155,89,182,0.3);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lang-btn {
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+.lang-btn.active {
+  color: var(--accent);
+  background: rgba(155,89,182,0.1);
+  border-color: var(--accent-deep);
+}
+
+.lang-sep {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* ── 5. SLOGAN SCROLL BAR ── */
+.slogan-bar {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0; right: 0;
+  height: var(--slogan-height);
+  background: linear-gradient(90deg, #0d0818 0%, #1a1030 50%, #0d0818 100%);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.slogan-text {
+  white-space: nowrap;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--accent);
+  text-shadow: 0 0 6px rgba(155,89,182,0.5);
+  letter-spacing: 2px;
+  animation: scrollSlogan 20s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes scrollSlogan {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ── 6. MAIN LAYOUT ── */
+.main-layout {
+  display: flex;
+  margin-top: calc(var(--nav-height) + var(--slogan-height));
+  min-height: calc(100vh - var(--nav-height) - var(--slogan-height));
+}
+
+/* ── 7. LEFT SIDEBAR ── */
+.left-sidebar {
+  width: var(--sidebar-width);
+  position: fixed;
+  top: calc(var(--nav-height) + var(--slogan-height));
+  left: 0;
+  bottom: 0;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 16px 0;
+  z-index: 100;
+}
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.rune-icon {
+  font-size: 12px;
+  color: var(--accent-glow);
+  text-shadow: 0 0 6px rgba(192,132,252,0.5);
+}
+
+.game-list {
+  list-style: none;
+  padding: 0 8px;
+}
+
+.game-item {
+  margin-bottom: 2px;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.game-header:hover {
+  background: rgba(155,89,182,0.08);
+  color: var(--accent);
+}
+
+.game-header.active {
+  background: rgba(155,89,182,0.12);
+  border-left: 3px solid var(--accent);
+  box-shadow: inset 2px 0 8px rgba(155,89,182,0.15);
+  color: var(--accent);
+}
+
+.game-icon {
+  font-size: 10px;
+  width: 16px;
+  text-align: center;
+}
+
+.game-icon.terraria { color: #5dbe7a; }
+.game-icon.zelda { color: #e74c3c; }
+.game-icon.hades { color: #f0c040; }
+.game-icon.elden { color: #e67e22; }
+.game-icon.mhw { color: #00d4ff; }
+
+.chevron { font-size: 10px; color: var(--text-muted); margin-left: auto; transition: transform 0.2s; }
+.game-header:hover .chevron { color: var(--accent); }
+
+.sub-list {
+  list-style: none;
+  padding: 4px 0 4px 28px;
+}
+
+.sub-list li {
+  padding: 6px 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sub-list li:hover {
+  color: var(--accent);
+  background: rgba(155,89,182,0.06);
+}
+
+.sub-list li.active {
+  color: var(--accent);
+  background: rgba(155,89,182,0.1);
+  font-weight: 500;
+}
+
+.sub-list li.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 3px; height: 14px;
+  background: var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(155,89,182,0.5);
+}
+
+/* ── 8. CENTER CONTENT AREA ── */
+.center-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  margin-right: var(--rightbar-width);
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.breadcrumb .sep { color: var(--text-muted); font-size: 10px; }
+
+.breadcrumb .current { color: var(--accent); font-weight: 500; }
+
+/* Title Section */
+.title-section {
+  margin-bottom: 28px;
+  position: relative;
+}
+
+/* Magic particles */
+.particle {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--accent), 0 0 12px var(--accent-glow);
+  pointer-events: none;
+}
+
+.particle:nth-child(1) { top: 10px; left: 10%; animation: floatParticle 4s ease-in-out infinite; }
+.particle:nth-child(2) { top: 30px; left: 70%; animation: floatParticle 5s ease-in-out infinite 1s; width: 2px; height: 2px; }
+.particle:nth-child(3) { top: 60px; left: 40%; animation: floatParticle 6s ease-in-out infinite 0.5s; width: 2px; height: 2px; background: var(--rune-cyan); box-shadow: 0 0 6px var(--rune-cyan); }
+
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-12px) scale(1.3); opacity: 1; }
+}
+
+.page-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow:
+    0 0 10px rgba(155,89,182,0.5),
+    0 0 40px rgba(155,89,182,0.2),
+    0 0 80px rgba(155,89,182,0.1);
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.page-subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+/* Zenith Icon — CSS Rainbow Sword */
+.zenith-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px; height: 80px;
+  margin-top: 16px;
+  font-size: 48px;
+  color: #fff;
+  text-shadow:
+    0 0 4px #ff0000,
+    0 0 8px #ff7f00,
+    0 0 12px #ffff00,
+    0 0 16px #00ff00,
+    0 0 20px #0000ff,
+    0 0 24px #4b0082,
+    0 0 28px #9400d3;
+  animation: rainbowPulse 3s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes rainbowPulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.08); filter: brightness(1.2); }
+}
+
+/* ── 9. MODULE CARDS ── */
+.module-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-light);
+  box-shadow: 0 4px 20px rgba(155,89,182,0.15), 0 0 40px rgba(155,89,182,0.05);
+}
+
+.module-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 24px; right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.3;
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.module-icon {
+  font-size: 18px;
+  color: var(--accent);
+  text-shadow: 0 0 6px rgba(155,89,182,0.4);
+}
+
+.module-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.module-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.module-body p {
+  margin-bottom: 12px;
+}
+
+/* Stats Table */
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.stats-table th,
+.stats-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-table th {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(155,89,182,0.06);
+}
+
+.stats-table td {
+  color: var(--text-primary);
+}
+
+.stats-table tr:hover td {
+  background: rgba(155,89,182,0.04);
+}
+
+/* ── 10. CRAFTING RECIPE ── */
+.recipe-intro {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Circular arrangement of 13 swords */
+.recipe-circle {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  margin: 20px auto;
+}
+
+.recipe-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px; height: 70px;
+  background: radial-gradient(circle, var(--accent-deep), var(--bg-primary));
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 0 20px rgba(155,89,182,0.4);
+  z-index: 5;
+}
+
+.sword-item {
+  position: absolute;
+  padding: 6px 12px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  cursor: default;
+  z-index: 2;
+}
+
+.sword-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(155,89,182,0.3);
+  transform: scale(1.08);
+  z-index: 10;
+}
+
+/* Color-coded swords */
+.sword-pre     { color: #5dbe7a; border-color: rgba(93,190,122,0.3); }
+.sword-hard    { color: #00d4ff; border-color: rgba(0,212,255,0.3); }
+.sword-post    { color: #f0c040; border-color: rgba(240,192,64,0.3); }
+.sword-special { color: #e74c3c; border-color: rgba(231,76,60,0.3); }
+
+/* Position 13 swords in a circle */
+.sword-item:nth-child(2)  { top: 5%;   left: 50%; transform: translateX(-50%); }
+.sword-item:nth-child(3)  { top: 12%;  right: 8%; }
+.sword-item:nth-child(4)  { top: 28%;  right: 0; transform: translateX(30%); }
+.sword-item:nth-child(5)  { top: 45%;  right: -5%; }
+.sword-item:nth-child(6)  { top: 62%;  right: 2%; }
+.sword-item:nth-child(7)  { bottom: 12%; right: 8%; }
+.sword-item:nth-child(8)  { bottom: 5%;  left: 50%; transform: translateX(-50%); }
+.sword-item:nth-child(9)  { bottom: 12%; left: 8%; }
+.sword-item:nth-child(10) { top: 62%;   left: 2%; }
+.sword-item:nth-child(11) { top: 45%;   left: -5%; }
+.sword-item:nth-child(12) { top: 28%;   left: 0; transform: translateX(-30%); }
+.sword-item:nth-child(13) { top: 12%;   left: 8%; }
+.sword-item:nth-child(14) { top: 20%;   left: 50%; transform: translateX(-50%); }
+
+/* Recipe steps */
+.recipe-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.step-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.step-badge:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(155,89,182,0.2);
+}
+
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; height: 22px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.step-arrow {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ── 11. MATERIALS LIST ── */
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.material-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.material-item:hover {
+  border-color: var(--border-light);
+}
+
+.material-tag {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-pre  { background: rgba(93,190,122,0.15); color: #5dbe7a; }
+.tag-hard { background: rgba(0,212,255,0.15); color: #00d4ff; }
+.tag-post { background: rgba(240,192,64,0.15); color: #f0c040; }
+.tag-boss { background: rgba(231,76,60,0.15); color: #e74c3c; }
+
+/* ── 12. TIMELINE ── */
+.timeline {
+  position: relative;
+  margin-top: 16px;
+  padding-left: 24px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-deep), var(--border));
+}
+
+.timeline-item {
+  position: relative;
+  padding: 14px 0 14px 20px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -22px; top: 20px;
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 8px rgba(155,89,182,0.5);
+  transition: all 0.2s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  box-shadow: 0 0 14px rgba(155,89,182,0.8);
+  transform: scale(1.2);
+}
+
+.timeline-content {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.timeline-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.timeline-desc {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+/* ── 13. WARNING CARDS ── */
+.warning-card {
+  background: linear-gradient(135deg, rgba(231,76,60,0.08), rgba(155,89,182,0.05));
+  border: 1px solid rgba(231,76,60,0.3);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.warning-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--warning), var(--accent));
+}
+
+.warning-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--warning);
+  margin-bottom: 8px;
+}
+
+.warning-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tips-list {
+  list-style: none;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.tips-list li {
+  position: relative;
+  padding: 8px 0 8px 24px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+.tips-list li:hover {
+  color: var(--text-primary);
+  padding-left: 28px;
+}
+
+.tips-list li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 10px;
+}
+
+/* ── 14. BENEFIT CARDS ── */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.benefit-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(155,89,182,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.benefit-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(155,89,182,0.15);
+  transform: translateY(-2px);
+}
+
+.benefit-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.benefit-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.benefit-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── 15. RIGHT SIDEBAR ── */
+.right-sidebar {
+  width: var(--rightbar-width);
+  position: fixed;
+  top: calc(var(--nav-height) + var(--slogan-height));
+  right: 0;
+  bottom: 0;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 16px;
+  z-index: 100;
+}
+
+.right-section {
+  margin-bottom: 20px;
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ad-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 12px;
+  text-align: center;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ad-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(155,89,182,0.15);
+}
+
+.ad-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.ad-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.ad-placeholder {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 12px;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  background: rgba(155,89,182,0.03);
+}
+
+/* Hot items list */
+.hot-list {
+  list-style: none;
+}
+
+.hot-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hot-list li:hover {
+  color: var(--accent);
+  padding-left: 4px;
+}
+
+.hot-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px; height: 18px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
+
+.hot-rank.top {
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  color: #fff;
+}
+
+/* Oracle tip */
+.oracle-tip {
+  background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(155,89,182,0.05));
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+}
+
+.oracle-tip::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rune-cyan), var(--accent));
+}
+
+.oracle-quote {
+  font-style: italic;
+  color: var(--rune-cyan);
+  text-shadow: 0 0 6px rgba(0,212,255,0.3);
+}
+
+/* ── 16. Rune Border Decoration ── */
+.rune-border {
+  position: relative;
+}
+
+.rune-border::after {
+  content: '◆ ◆ ◆';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  letter-spacing: 8px;
+  color: var(--accent);
+  opacity: 0.4;
+  background: var(--bg-secondary);
+  padding: 0 12px;
+}
+
+/* ── 17. RESPONSIVE ── */
+@media (max-width: 1200px) {
+  .right-sidebar { display: none; }
+  .center-content { margin-right: 0; }
+}
+
+@media (max-width: 768px) {
+  .left-sidebar { display: none; }
+  .center-content { margin-left: 0; padding: 20px; }
+  .recipe-circle { transform: scale(0.8); }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TOP NAVIGATION                            -->
+<!-- ═══════════════════════════════════════════ -->
+<nav class="top-nav">
+  <div class="nav-left">
+    <span class="logo-icon">&#10024;</span>
+    <span class="logo-text">RelicTrek</span>
+  </div>
+  <div class="nav-center">
+    <input type="text" class="search-box" placeholder="Search items, games...">
+  </div>
+  <div class="nav-right">
+    <button class="lang-btn active">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn">&#20013;&#25991;</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SLOGAN SCROLL BAR                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="slogan-bar">
+  <div class="slogan-text">
+    &#10013; Ancient power sleeps in the dark. Only the worthy may claim it. &#10013;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &#10013; Ancient power sleeps in the dark. Only the worthy may claim it. &#10013;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &#10013; Ancient power sleeps in the dark. Only the worthy may claim it. &#10013;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &#10013; Ancient power sleeps in the dark. Only the worthy may claim it. &#10013;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- MAIN LAYOUT                               -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="main-layout">
+
+  <!-- ── LEFT SIDEBAR ── -->
+  <aside class="left-sidebar">
+    <div class="sidebar-title">
+      <span class="rune-icon">&#10022;</span>
+      <span>Realms</span>
+    </div>
+    <ul class="game-list">
+      <!-- Terraria -->
+      <li class="game-item">
+        <div class="game-header active">
+          <span class="game-icon terraria">&#10022;</span>
+          <span>Terraria</span>
+          <span class="chevron">&#9660;</span>
+        </div>
+        <ul class="sub-list">
+          <li class="active">Zenith</li>
+          <li>Cell Phone</li>
+          <li>Ankh Shield</li>
+        </ul>
+      </li>
+      <!-- Zelda -->
+      <li class="game-item">
+        <div class="game-header">
+          <span class="game-icon zelda">&#10022;</span>
+          <span>The Legend of Zelda: TOTK</span>
+          <span class="chevron">&#9660;</span>
+        </div>
+        <ul class="sub-list">
+          <li>Master Sword</li>
+          <li>Hylian Shield</li>
+        </ul>
+      </li>
+      <!-- Hades II -->
+      <li class="game-item">
+        <div class="game-header">
+          <span class="game-icon hades">&#10022;</span>
+          <span>Hades II</span>
+          <span class="chevron">&#9660;</span>
+        </div>
+        <ul class="sub-list">
+          <li>Argent Skull</li>
+          <li>Black Coat</li>
+        </ul>
+      </li>
+      <!-- Elden Ring -->
+      <li class="game-item">
+        <div class="game-header">
+          <span class="game-icon elden">&#10022;</span>
+          <span>Elden Ring</span>
+          <span class="chevron">&#9660;</span>
+        </div>
+        <ul class="sub-list">
+          <li>Rivers of Blood</li>
+          <li>Moonveil Katana</li>
+        </ul>
+      </li>
+      <!-- MHW -->
+      <li class="game-item">
+        <div class="game-header">
+          <span class="game-icon mhw">&#10022;</span>
+          <span>Monster Hunter Wilds</span>
+          <span class="chevron">&#9660;</span>
+        </div>
+        <ul class="sub-list">
+          <li>Imperial Shield</li>
+          <li>Dragoon's Pride</li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- ── CENTER CONTENT ── -->
+  <main class="center-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="#">Home</a>
+      <span class="sep">&#8250;</span>
+      <a href="#">Terraria</a>
+      <span class="sep">&#8250;</span>
+      <span class="current">Zenith</span>
+    </nav>
+
+    <!-- Title Section -->
+    <section class="title-section">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <h1 class="page-title">Zenith</h1>
+      <p class="page-subtitle">The Ultimate Sword &mdash; A journey through all of Terraria</p>
+      <div class="zenith-icon">&#9876;</div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MODULE 1: OVERVIEW                        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <article class="module-card">
+      <div class="module-header">
+        <span class="module-icon">&#9830;</span>
+        <h2 class="module-title">Overview</h2>
+      </div>
+      <div class="module-body">
+        <p>Zenith is the most powerful sword in Terraria, forged by combining <strong>13 different swords</strong> from across the game's progression. It's the ultimate flex and a true journey through the entire game. When swung, it summons a cascading arc of every sword in its recipe, tearing through enemies with devastating force.</p>
+        <table class="stats-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Damage</td><td>190 <span style="color:var(--text-muted)">(Melee)</span></td></tr>
+            <tr><td>Knockback</td><td>6.5 <span style="color:var(--text-muted)">(Strong)</span></td></tr>
+            <tr><td>Use Time</td><td>30 <span style="color:var(--text-muted)">(Slow speed)</span></td></tr>
+            <tr><td>Velocity</td><td>32 <span style="color:var(--text-muted)">(Effective)</span></td></tr>
+            <tr><td>Rarity</td><td><span style="color:var(--accent)">&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733;&#9733; Red</span></td></tr>
+            <tr><td>Sell Value</td><td><span style="color:var(--gold)">20 Gold</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MODULE 2: CRAFTING RECIPE                 -->
+    <!-- ═══════════════════════════════════════════ -->
+    <article class="module-card">
+      <div class="module-header">
+        <span class="module-icon">&#9874;</span>
+        <h2 class="module-title">Crafting Recipe</h2>
+      </div>
+      <div class="module-body">
+        <p class="recipe-intro">Zenith requires 13 swords crafted or obtained throughout the entire game. They must be collected in order of progression &mdash; each phase builds upon the last. The final combination takes place at a Mythril Anvil after defeating Moon Lord.</p>
+
+        <div class="recipe-circle">
+          <div class="recipe-center">&#9876;</div>
+          <span class="sword-item sword-pre">Copper Shortsword</span>
+          <span class="sword-item sword-pre">Enchanted Sword</span>
+          <span class="sword-item sword-pre">Starfury</span>
+          <span class="sword-item sword-pre">Bee Keeper</span>
+          <span class="sword-item sword-hard">Blade of Grass</span>
+          <span class="sword-item sword-hard">Fiery Greatsword</span>
+          <span class="sword-item sword-hard">Muramasa</span>
+          <span class="sword-item sword-hard">Night's Edge</span>
+          <span class="sword-item sword-post">Excalibur</span>
+          <span class="sword-item sword-post">Breaker Blade</span>
+          <span class="sword-item sword-special">Seedler</span>
+          <span class="sword-item sword-special">Star Wrath</span>
+          <span class="sword-item sword-special">Meowmere</span>
+        </div>
+
+        <div class="recipe-steps">
+          <div class="step-badge">
+            <span class="step-num">1</span>
+            <span>Pre-Hardmode Swords</span>
+          </div>
+          <span class="step-arrow">&#10148;</span>
+          <div class="step-badge">
+            <span class="step-num">2</span>
+            <span>Hardmode Swords</span>
+          </div>
+          <span class="step-arrow">&#10148;</span>
+          <div class="step-badge">
+            <span class="step-num">3</span>
+            <span>Post-Plantera</span>
+          </div>
+          <span class="step-arrow">&#10148;</span>
+          <div class="step-badge">
+            <span class="step-num">4</span>
+            <span>Mythril Anvil</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MODULE 3: MATERIALS & LOCATIONS           -->
+    <!-- ═══════════════════════════════════════════ -->
+    <article class="module-card">
+      <div class="module-header">
+        <span class="module-icon">&#9686;</span>
+        <h2 class="module-title">Materials &amp; Locations</h2>
+      </div>
+      <div class="module-body">
+        <p>Every sword and where to find it &mdash; organized by game phase for efficient collection:</p>
+        <div class="materials-grid">
+          <div class="material-item">
+            <span class="material-tag tag-pre">Pre-HM</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Copper Shortsword</div>
+              <div style="font-size:11px;color:var(--text-muted);">Craft at start / Wooden Table</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-pre">Pre-HM</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Enchanted Sword</div>
+              <div style="font-size:11px;color:var(--text-muted);">Underground shrines (rare)</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-pre">Pre-HM</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Starfury</div>
+              <div style="font-size:11px;color:var(--text-muted);">Floating Islands chests</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-pre">Pre-HM</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Bee Keeper</div>
+              <div style="font-size:11px;color:var(--text-muted);">Queen Bee drop (33%)</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-hard">Hard</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Blade of Grass</div>
+              <div style="font-size:11px;color:var(--text-muted);">Jungle Spores + Stingers</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-hard">Hard</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Fiery Greatsword</div>
+              <div style="font-size:11px;color:var(--text-muted);">Hellstone Bars at Anvil</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-hard">Hard</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Muramasa</div>
+              <div style="font-size:11px;color:var(--text-muted);">Dungeon Gold Chests (lock)</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-boss">Craft</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Night's Edge</div>
+              <div style="font-size:11px;color:var(--text-muted);">Combine 4 swords at altar</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-post">Post</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Excalibur</div>
+              <div style="font-size:11px;color:var(--text-muted);">Hallowed Bars (all 3 mech)</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-post">Post</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Breaker Blade</div>
+              <div style="font-size:11px;color:var(--text-muted);">Wall of Flesh drop (16%)</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-boss">Boss</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Seedler</div>
+              <div style="font-size:11px;color:var(--text-muted);">Plantera drop (14%)</div>
+            </div>
+          </div>
+          <div class="material-item">
+            <span class="material-tag tag-boss">Boss</span>
+            <div>
+              <div style="color:var(--text-primary);font-weight:500;">Star Wrath</div>
+              <div style="font-size:11px;color:var(--text-muted);">Moon Lord drop (33%)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MODULE 4: OPTIMAL ROUTE                   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <article class="module-card">
+      <div class="module-header">
+        <span class="module-icon">&#10148;</span>
+        <h2 class="module-title">Optimal Route</h2>
+      </div>
+      <div class="module-body">
+        <p>The most efficient order to collect all 13 swords &mdash; minimize backtracking and prepare ahead:</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Start: Craft Copper Shortsword</div>
+              <div class="timeline-desc">First thing after spawning. Keep it safe in a chest.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Early Exploration: Starfury + Enchanted Sword</div>
+              <div class="timeline-desc">Check Floating Islands and Underground shrines while exploring. Build sky bridges early.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Jungle Phase: Blade of Grass + Bee Keeper</div>
+              <div class="timeline-desc">Farm Jungle Spores and Stingers. Build an arena and defeat Queen Bee.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Underworld: Fiery Greatsword</div>
+              <div class="timeline-desc">Mine Hellstone at the bottom of the world. Need 60 Hellstone Bars total.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Dungeon: Muramasa + Craft Night's Edge</div>
+              <div class="timeline-desc">Beat Skeletron, loot Dungeon chests. Combine all 4 at Demon/Crimson Altar.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Hardmode: Excalibur + Breaker Blade</div>
+              <div class="timeline-desc">Defeat all 3 Mechanical Bosses for Hallowed Bars. Breaker Blade from WoF.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-title">Endgame: Seedler + Star Wrath + Meowmere</div>
+              <div class="timeline-desc">Defeat Plantera and Moon Lord. These are the rarest drops &mdash; may need multiple attempts.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--gold);box-shadow:0 0 10px rgba(240,192,64,0.6);"></div>
+            <div class="timeline-content">
+              <div class="timeline-title" style="color:var(--gold)">Final: Forge Zenith at Mythril Anvil</div>
+              <div class="timeline-desc">Combine all 13 swords. The ultimate weapon is yours!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MODULE 5: GOTCHA TIPS                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <article class="module-card rune-border">
+      <div class="module-header">
+        <span class="module-icon" style="color:var(--warning)">&#9888;</span>
+        <h2 class="module-title">Gotcha Tips</h2>
+      </div>
+      <div class="module-body">
+        <div class="warning-card">
+          <div class="warning-title">
+            <span>&#9888;</span>
+            <span>Critical Warning</span>
+          </div>
+          <div class="warning-text">
+            <strong>Enchanted Sword</strong> is the rarest pre-Hardmode component. It only spawns in Underground shrines, and not every world generates a shrine. You may need to search multiple worlds or fish for Titanium Crates in Hardmode as an alternative!
+          </div>
+        </div>
+        <ul class="tips-list">
+          <li>Don't throw away your Copper Shortsword &mdash; you'll need it for the final craft!</li>
+          <li>Build an item storage system early. You'll collect many swords along the journey.</li>
+          <li>Enchanted Sword shrines are easier to find using a Starfury or Light Pets for visibility.</li>
+          <li>In Journey Mode, you can duplicate swords after researching them to help friends.</li>
+          <li>Meowmere and Star Wrath only drop from Moon Lord &mdash; expect 3-5 attempts on average.</li>
+          <li>Create a dedicated chest near your anvil labeled "Zenith Components" to stay organized.</li>
+          <li>Some swords (like Night's Edge) are crafting ingredients &mdash; craft them as soon as possible.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MODULE 6: FREE BENEFITS                   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <article class="module-card">
+      <div class="module-header">
+        <span class="module-icon" style="color:var(--gold)">&#9733;</span>
+        <h2 class="module-title">Free Benefits</h2>
+      </div>
+      <div class="module-body">
+        <p>While collecting all 13 swords, you'll naturally obtain powerful gear and resources along the way:</p>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">&#127941;</div>
+            <div class="benefit-name">Night's Edge</div>
+            <div class="benefit-desc">A powerful pre-Hardmode sword you'll craft along the way</div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">&#128737;</div>
+            <div class="benefit-name">Dungeon Loot</div>
+            <div class="benefit-desc">Full dungeon exploration yields rare accessories and weapons</div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">&#127758;</div>
+            <div class="benefit-name">World Explorer</div>
+            <div class="benefit-desc">You'll see every biome and defeat every major boss</div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">&#128142;</div>
+            <div class="benefit-name">Hallowed Gear</div>
+            <div class="benefit-desc">Defeating all 3 mech bosses unlocks full Hallowed equipment</div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">&#127793;</div>
+            <div class="benefit-name">Plantera Drops</div>
+            <div class="benefit-desc">Grenade Launcher, Venus Magnum, and other powerful loot</div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">&#127775;</div>
+            <div class="benefit-name">Lunar Fragments</div>
+            <div class="benefit-desc">Moon Lord fights yield fragments for endgame armor sets</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ── RIGHT SIDEBAR ── -->
+  <aside class="right-sidebar">
+
+    <!-- Arcane Knowledge -->
+    <div class="right-section">
+      <div class="right-header">
+        <span>&#128302;</span>
+        <span>Arcane Knowledge</span>
+      </div>
+      <div class="ad-card">
+        <div class="ad-label">Ad Space</div>
+        <div class="ad-placeholder">
+          <div style="font-size:24px;margin-bottom:8px;">&#127922;</div>
+          <div>Your magical ad here</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">260 x 200 px</div>
+        </div>
+      </div>
+      <div class="ad-card">
+        <div class="ad-label">Ad Space</div>
+        <div class="ad-placeholder">
+          <div style="font-size:24px;margin-bottom:8px;">&#127922;</div>
+          <div>Enchant your audience</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">260 x 200 px</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Forbidden Tomes -->
+    <div class="right-section">
+      <div class="right-header">
+        <span>&#128214;</span>
+        <span>Forbidden Tomes</span>
+      </div>
+      <ul class="hot-list">
+        <li>
+          <span class="hot-rank top">1</span>
+          <span>Zenith Guide</span>
+        </li>
+        <li>
+          <span class="hot-rank top">2</span>
+          <span>Cell Phone Recipe</span>
+        </li>
+        <li>
+          <span class="hot-rank top">3</span>
+          <span>Ankh Shield Parts</span>
+        </li>
+        <li>
+          <span class="hot-rank">4</span>
+          <span>Terraprisma Farm</span>
+        </li>
+        <li>
+          <span class="hot-rank">5</span>
+          <span>Empress of Light</span>
+        </li>
+        <li>
+          <span class="hot-rank">6</span>
+          <span>Lunar Event Tips</span>
+        </li>
+        <li>
+          <span class="hot-rank">7</span>
+          <span>Master Mode Builds</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Oracle's Whisper -->
+    <div class="right-section">
+      <div class="right-header">
+        <span>&#10024;</span>
+        <span>Oracle's Whisper</span>
+      </div>
+      <div class="oracle-tip">
+        <p class="oracle-quote">&ldquo;The journey to Zenith is the true reward.&rdquo;</p>
+        <p style="margin-top:8px;font-size:11px;color:var(--text-muted);">
+          Did you know? Zenith's name comes from the Arabic word &ldquo;samt,&rdquo; meaning path or direction. In Terraria, it represents the pinnacle of melee weaponry.
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="right-section">
+      <div class="right-header">
+        <span>&#9874;</span>
+        <span>Quick Links</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <a href="#" style="display:block;padding:8px 12px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:6px;color:var(--text-secondary);text-decoration:none;font-size:12px;transition:all 0.2s;">
+          &#10148; Terraria Wiki
+        </a>
+        <a href="#" style="display:block;padding:8px 12px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:6px;color:var(--text-secondary);text-decoration:none;font-size:12px;transition:all 0.2s;">
+          &#10148; Item Database
+        </a>
+        <a href="#" style="display:block;padding:8px 12px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:6px;color:var(--text-secondary);text-decoration:none;font-size:12px;transition:all 0.2s;">
+          &#10148; Crafting Calculator
+        </a>
+        <a href="#" style="display:block;padding:8px 12px;background:var(--bg-tertiary);border:1px solid var(--border);border-radius:6px;color:var(--text-secondary);text-decoration:none;font-size:12px;transition:all 0.2s;">
+          &#10148; World Seed Search
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer mini -->
+    <div style="margin-top:24px;padding-top:12px;border-top:1px solid var(--border);text-align:center;font-size:11px;color:var(--text-muted);">
+      <p>&#169; 2025 RelicTrek.net</p>
+      <p style="margin-top:4px;">Crafted with &#10024; for adventurers</p>
+    </div>
+
+  </aside>
+
+</div>
+<!-- End main-layout -->
+
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RelicTrek — Choose Your Adventure Theme</title>
+  <style>
+    /* ============================================
+       RelicTrek Design Selection — Cave Hub Theme
+       A crossroads where all paths begin...
+       ============================================ */
+    :root {
+      --bg: #0c0a08;
+      --bg-card: #161410;
+      --bg-card-hover: #1e1a14;
+      --border: #2a2418;
+      --gold: #d4a843;
+      --gold-bright: #e8c868;
+      --gold-dim: #8b7340;
+      --text: #e8ddd0;
+      --text-muted: #8b7d6e;
+      --fire: #e87040;
+      --purple: #9b59b6;
+      --blue: #4a8eca;
+      --copper: #e8b923;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Fire glow at top center */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(212,168,67,0.12) 0%, rgba(232,112,64,0.06) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Cave wall texture */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+    .header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    .logo {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-shadow: 0 0 40px rgba(212,168,67,0.3), 0 2px 4px rgba(0,0,0,0.8);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 16px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .desc {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 560px;
+      margin: 0 auto 8px;
+      line-height: 1.7;
+      font-family: system-ui, sans-serif;
+    }
+
+    .desc-note {
+      color: var(--gold-dim);
+      font-size: 13px;
+      font-family: system-ui, sans-serif;
+      margin-bottom: 40px;
+    }
+
+    /* ============================================
+       DIVIDER
+       ============================================ */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .divider-line {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+    }
+    .divider-icon {
+      color: var(--gold-dim);
+      font-size: 18px;
+    }
+
+    /* ============================================
+       THEME CARDS GRID
+       ============================================ */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 28px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .theme-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .theme-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      opacity: 0.8;
+      transition: height 0.3s ease;
+    }
+
+    .theme-card:hover::before {
+      height: 4px;
+    }
+
+    .theme-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-dim);
+    }
+
+    /* Preview area */
+    .preview {
+      height: 180px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .preview-title {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .preview-sub {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 6px;
+      opacity: 0.6;
+      position: relative;
+      z-index: 2;
+      font-family: system-ui, sans-serif;
+    }
+
+    /* Decorative elements in preview */
+    .preview-deco {
+      position: absolute;
+      z-index: 1;
+      opacity: 0.12;
+    }
+
+    /* Card body */
+    .card-body {
+      padding: 22px 24px 24px;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+      font-family: system-ui, sans-serif;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-family: system-ui, sans-serif;
+      border: 1px solid;
+    }
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-text {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: system-ui, sans-serif;
+    }
+
+    .cta-arrow {
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .theme-card:hover .cta-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ============================================
+       THEME 1: CAVE EXPLORER
+       ============================================ */
+    .cave::before { background: linear-gradient(to right, var(--gold), var(--fire), var(--gold)); }
+    .cave .preview {
+      background: linear-gradient(160deg, #1a0f0a 0%, #2d1b0e 40%, #1a0f0a 100%);
+    }
+    .cave .preview-title { color: var(--gold); text-shadow: 0 0 30px rgba(212,168,67,0.4); }
+    .cave .preview-sub { color: var(--fire); }
+    .cave:hover { box-shadow: 0 20px 60px rgba(212,168,67,0.12); border-color: rgba(212,168,67,0.3); }
+    .cave .tag { background: rgba(212,168,67,0.08); color: var(--gold); border-color: rgba(212,168,67,0.25); }
+    .cave .cta-text { color: var(--gold); }
+    .cave .cta-arrow { color: var(--gold); }
+
+    /* Torch glow decoration */
+    .cave .preview::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, rgba(232,112,64,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: torchFlicker 3s ease-in-out infinite;
+    }
+    @keyframes torchFlicker {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    /* ============================================
+       THEME 2: PIRATE TREASURE
+       ============================================ */
+    .pirate::before { background: linear-gradient(to right, #c9a227, #4a8eca, #c9a227); }
+    .pirate .preview {
+      background: linear-gradient(160deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%);
+    }
+    .pirate .preview-title { color: #c9a227; text-shadow: 0 0 30px rgba(201,162,39,0.4); }
+    .pirate .preview-sub { color: #7a9ab8; }
+    .pirate:hover { box-shadow: 0 20px 60px rgba(201,162,39,0.12); border-color: rgba(201,162,39,0.3); }
+    .pirate .tag { background: rgba(201,162,39,0.08); color: #c9a227; border-color: rgba(201,162,39,0.25); }
+    .pirate .cta-text { color: #c9a227; }
+    .pirate .cta-arrow { color: #c9a227; }
+
+    /* Wave decoration */
+    .pirate .preview::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 10px,
+        rgba(201,162,39,0.06) 10px,
+        rgba(201,162,39,0.06) 20px
+      );
+      clip-path: polygon(0 100%, 5% 20%, 10% 100%, 15% 40%, 20% 100%, 25% 25%, 30% 100%, 35% 35%, 40% 100%, 45% 20%, 50% 100%, 55% 40%, 60% 100%, 65% 25%, 70% 100%, 75% 35%, 80% 100%, 85% 20%, 90% 100%, 95% 40%, 100% 100%);
+    }
+
+    /* ============================================
+       THEME 3: DUNGEON DELVER
+       ============================================ */
+    .dungeon::before { background: linear-gradient(to right, #9b59b6, #00d4ff, #9b59b6); }
+    .dungeon .preview {
+      background: linear-gradient(160deg, #0f0a1a 0%, #1a0f2e 50%, #0f0a1a 100%);
+    }
+    .dungeon .preview-title { color: #b47dd1; text-shadow: 0 0 30px rgba(155,89,182,0.4); }
+    .dungeon .preview-sub { color: #7d6ba0; }
+    .dungeon:hover { box-shadow: 0 20px 60px rgba(155,89,182,0.12); border-color: rgba(155,89,182,0.3); }
+    .dungeon .tag { background: rgba(155,89,182,0.08); color: #b47dd1; border-color: rgba(155,89,182,0.25); }
+    .dungeon .cta-text { color: #b47dd1; }
+    .dungeon .cta-arrow { color: #b47dd1; }
+
+    /* Rune decoration */
+    .dungeon .preview::after {
+      content: '✦';
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 48px;
+      color: rgba(155,89,182,0.15);
+      animation: runePulse 4s ease-in-out infinite;
+    }
+    @keyframes runePulse {
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ============================================
+       THEME 4: RELIC RUINS
+       ============================================ */
+    .ruins::before { background: linear-gradient(to right, #e8b923, #8b6914, #e8b923); }
+    .ruins .preview {
+      background: linear-gradient(160deg, #1c1810 0%, #2a2318 50%, #1c1810 100%);
+    }
+    .ruins .preview-title { color: #e8b923; text-shadow: 0 0 30px rgba(232,185,35,0.4); }
+    .ruins .preview-sub { color: #8b7d6e; }
+    .ruins:hover { box-shadow: 0 20px 60px rgba(232,185,35,0.12); border-color: rgba(232,185,35,0.3); }
+    .ruins .tag { background: rgba(232,185,35,0.08); color: #e8b923; border-color: rgba(232,185,35,0.25); }
+    .ruins .cta-text { color: #e8b923; }
+    .ruins .cta-arrow { color: #e8b923; }
+
+    /* Sand particle decoration */
+    .ruins .preview::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 20px,
+        rgba(232,185,35,0.03) 20px,
+        rgba(232,185,35,0.03) 21px
+      );
+    }
+
+    /* ============================================
+       THEME 5: CURRENT (PURE C)
+       ============================================ */
+    .current::before { background: linear-gradient(to right, #484f58, #58a6ff, #484f58); }
+    .current .preview {
+      background: #111820;
+      border-bottom: 1px dashed #1e2730;
+    }
+    .current .preview-title { color: #58a6ff; font-size: 24px; letter-spacing: 2px; }
+    .current .preview-sub { color: #484f58; }
+    .current:hover { box-shadow: 0 20px 60px rgba(88,166,255,0.08); border-color: rgba(88,166,255,0.2); }
+    .current .tag { background: rgba(88,166,255,0.08); color: #58a6ff; border-color: rgba(88,166,255,0.2); }
+    .current .cta-text { color: #58a6ff; }
+    .current .cta-arrow { color: #58a6ff; }
+
+    /* Grid lines decoration */
+    .current .preview::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(88,166,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(88,166,255,0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      text-align: center;
+      padding: 0 20px 50px;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-family: system-ui, sans-serif;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer .divider {
+      margin-bottom: 20px;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px 40px;
+      }
+      .logo { font-size: 32px; }
+      .preview { height: 150px; }
+      .preview-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">RelicTrek</div>
+    <div class="subtitle">Choose Your Adventure Theme</div>
+    <p class="desc">
+      Five unique visual directions for your legendary journey. Each prototype is a fully-built guide page — click any theme to explore it live.
+    </p>
+    <p class="desc-note">� Click a card to see the full interactive prototype</p>
+  </header>
+
+  <!-- Divider -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon">◈</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- Theme Cards Grid -->
+  <div class="grid">
+
+    <!-- Theme 1: Cave Explorer -->
+    <a href="cave-explorer.html" class="theme-card cave">
+      <div class="preview">
+        <div class="preview-title">Cave Explorer</div>
+        <div class="preview-sub">Torchlight & Amber Gold</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">
+          Warm torchlight flickering in dark caverns. Deep amber and gold tones evoke the feeling of descending into a Minecraft cave, discovering veins of rare ore by torchlight. Mysterious, warm, inviting.
+        </p>
+        <div class="tags">
+          <span class="tag">Torchlight Warmth</span>
+          <span class="tag">Amber & Gold</span>
+          <span class="tag">Minecraft Vibes</span>
+        </div>
+        <div class="cta">
+          <span class="cta-text">View Prototype</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Theme 2: Pirate Treasure -->
+    <a href="pirate-treasure.html" class="theme-card pirate">
+      <div class="preview">
+        <div class="preview-title">Pirate Treasure</div>
+        <div class="preview-sub">Ocean Blue & Gold</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">
+          Deep ocean blues and weathered gold. The feel of a treasure map spread on a captain's table, searching for buried loot across uncharted islands. Classic adventure with a nautical edge.
+        </p>
+        <div class="tags">
+          <span class="tag">Treasure Map Feel</span>
+          <span class="tag">Nautical Adventure</span>
+          <span class="tag">Classic Gold</span>
+        </div>
+        <div class="cta">
+          <span class="cta-text">View Prototype</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Theme 3: Dungeon Delver -->
+    <a href="dungeon-delver.html" class="theme-card dungeon">
+      <div class="preview">
+        <div class="preview-title">Dungeon Delver</div>
+        <div class="preview-sub">Arcane Purple Glow</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">
+          Mystical purples and arcane glow. The feeling of exploring a Terraria dungeon or Zelda shrine — magic in the air, ancient runes pulsing with power, secrets hidden in the dark corners.
+        </p>
+        <div class="tags">
+          <span class="tag">Mystical Runes</span>
+          <span class="tag">Magic Particles</span>
+          <span class="tag">Zelda / Terraria</span>
+        </div>
+        <div class="cta">
+          <span class="cta-text">View Prototype</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Theme 4: Relic Ruins -->
+    <a href="relic-ruins.html" class="theme-card ruins">
+      <div class="preview">
+        <div class="preview-title">Relic Ruins</div>
+        <div class="preview-sub">Sandstone & Bronze</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">
+          Desert sandstone and ancient bronze. The atmosphere of uncovering forgotten civilizations — Elden Ring's underground ruins, ancient temples, glyphs carved into stone. Timeless and epic.
+        </p>
+        <div class="tags">
+          <span class="tag">Ancient Glyphs</span>
+          <span class="tag">Stone Texture</span>
+          <span class="tag">Elden Ring Ruins</span>
+        </div>
+        <div class="cta">
+          <span class="cta-text">View Prototype</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Theme 5: Current Pure C -->
+    <a href="current.html" class="theme-card current">
+      <div class="preview">
+        <div class="preview-title">Pure C (Current)</div>
+        <div class="preview-sub">Code Editor Minimal</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">
+          The existing design — minimalist code-editor dark theme. Clean, functional, but lacks personality and adventure atmosphere. Think VS Code meets a spreadsheet. Included as a baseline comparison.
+        </p>
+        <div class="tags">
+          <span class="tag">Minimal</span>
+          <span class="tag">Functional</span>
+          <span class="tag">Baseline</span>
+        </div>
+        <div class="cta">
+          <span class="cta-text">View Baseline</span>
+          <span class="cta-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-icon">⚔</div>
+      <div class="divider-line"></div>
+    </div>
+    <p>RelicTrek.net — Every legendary item has a story. We map the journey.</p>
+  </footer>
+
+</body>
+</html>

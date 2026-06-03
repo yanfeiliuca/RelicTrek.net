@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rivers of Blood — Elden Ring Guide | RelicTrek</title>
+  <style>
+    /* ============================================================
+       RELICTREK — CAVE EXPLORER THEME
+       A dark, immersive cave exploration visual design prototype
+       for the RelicTrek.net game guide website.
+       ============================================================ */
+
+    /* ---- 1. CSS RESET & BASE ---- */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* Core cave palette */
+      --bg-cave: #0d0a07;
+      --bg-card: #1a1410;
+      --bg-card-hover: #221a14;
+      --bg-nav: #14100c;
+      --bg-slogan: #0f0c08;
+      --bg-sidebar: #16120e;
+
+      /* Accent — torch gold */
+      --gold: #d4a843;
+      --gold-bright: #e8c86a;
+      --gold-dim: #a08030;
+      --gold-glow: rgba(212, 168, 67, 0.35);
+
+      /* Secondary accent — torch orange */
+      --orange: #e87040;
+      --orange-glow: rgba(232, 112, 64, 0.3);
+
+      /* Text */
+      --text-primary: #e8ddd0;
+      --text-secondary: #9e8e7e;
+      --text-muted: #6b5e52;
+
+      /* Utility colours */
+      --success: #6bb85c;
+      --success-bg: rgba(107, 184, 92, 0.1);
+      --warning: #e0553d;
+      --warning-bg: rgba(224, 85, 61, 0.1);
+      --border: #2d2218;
+      --border-light: #3d3024;
+
+      /* Spacing */
+      --nav-height: 52px;
+      --slogan-height: 32px;
+      --sidebar-width: 210px;
+      --rightbar-width: 260px;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-cave);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ---- 2. TORCH GLOW OVERLAY (cave atmosphere) ---- */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(212,168,67,0.06) 0%, rgba(232,112,64,0.03) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ---- 3. CAVE WALL TEXTURE (subtle noise) ---- */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ---- 4. SCROLLBAR (cave style) ---- */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-cave); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+
+    /* ============================================================
+       5. TOP NAVIGATION BAR (fixed, 52px)
+       ============================================================ */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: var(--bg-nav);
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1000;
+    }
+    /* Rock texture border at bottom of nav */
+    .top-nav::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
+      opacity: 0.4;
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px var(--gold-glow), 0 0 30px rgba(212,168,67,0.15);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo:hover {
+      text-shadow: 0 0 16px var(--gold-glow), 0 0 40px rgba(212,168,67,0.25);
+      filter: brightness(1.15);
+    }
+    .logo svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Search box */
+    .search-box {
+      position: relative;
+      width: 340px;
+      max-width: 40vw;
+    }
+    .search-box input {
+      width: 100%;
+      height: 34px;
+      background: #1c1610;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0 34px 0 12px;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .search-box input::placeholder { color: var(--text-muted); }
+    .search-box input:focus {
+      border-color: var(--gold-dim);
+      box-shadow: 0 0 0 2px var(--gold-glow);
+    }
+    .search-box svg {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      fill: var(--text-muted);
+    }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: flex;
+      gap: 2px;
+      background: #1c1610;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 2px;
+    }
+    .lang-toggle button {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+    .lang-toggle button.active {
+      background: var(--gold);
+      color: #1a1410;
+    }
+    .lang-toggle button:not(.active):hover {
+      color: var(--gold);
+    }
+
+    /* ============================================================
+       6. SCROLLING SLOGAN BAR (32px)
+       ============================================================ */
+    .slogan-bar {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      height: var(--slogan-height);
+      background: var(--bg-slogan);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      z-index: 999;
+    }
+    .slogan-track {
+      display: flex;
+      white-space: nowrap;
+      animation: scrollSlogan 18s linear infinite;
+    }
+    .slogan-text {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold-bright), var(--gold-dim));
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding: 0 60px;
+      font-weight: 600;
+    }
+    @keyframes scrollSlogan {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ============================================================
+       7. MAIN LAYOUT (three columns)
+       ============================================================ */
+    .main-layout {
+      display: flex;
+      margin-top: calc(var(--nav-height) + var(--slogan-height));
+      min-height: calc(100vh - var(--nav-height) - var(--slogan-height));
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- 7a. LEFT SIDEBAR (game nav, 210px) ---- */
+    .left-sidebar {
+      width: var(--sidebar-width);
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
+      padding: 16px 0;
+      position: fixed;
+      top: calc(var(--nav-height) + var(--slogan-height));
+      bottom: 0;
+      overflow-y: auto;
+      z-index: 100;
+    }
+    .sidebar-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 0 16px 10px;
+    }
+    .game-item { margin-bottom: 2px; }
+    .game-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-left: 3px solid transparent;
+      user-select: none;
+    }
+    .game-header:hover {
+      background: rgba(212,168,67,0.05);
+    }
+    .game-header.active {
+      background: rgba(212,168,67,0.08);
+      border-left-color: var(--gold);
+      box-shadow: inset 4px 0 12px rgba(212,168,67,0.06);
+    }
+    .game-icon {
+      width: 8px;
+      height: 8px;
+      flex-shrink: 0;
+      border-radius: 1px;
+    }
+    .game-name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      flex: 1;
+    }
+    .game-header.active .game-name {
+      color: var(--gold);
+      text-shadow: 0 0 8px var(--gold-glow);
+    }
+    .game-toggle {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+    }
+    .game-item.open .game-toggle {
+      transform: rotate(180deg);
+      color: var(--gold-dim);
+    }
+    .game-submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+    }
+    .game-item.open .game-submenu {
+      max-height: 200px;
+    }
+    .submenu-item {
+      display: block;
+      padding: 6px 16px 6px 35px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border-left: 2px solid transparent;
+    }
+    .submenu-item:hover {
+      color: var(--gold);
+      background: rgba(212,168,67,0.04);
+    }
+    .submenu-item.active {
+      color: var(--gold-bright);
+      border-left-color: var(--gold-dim);
+      background: rgba(212,168,67,0.06);
+    }
+
+    /* ---- 7b. CENTER CONTENT (flexible, scrollable) ---- */
+    .center-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      margin-right: var(--rightbar-width);
+      padding: 24px 28px 40px;
+      min-height: calc(100vh - var(--nav-height) - var(--slogan-height));
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .breadcrumb a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb .current {
+      color: var(--gold-dim);
+    }
+    .breadcrumb-sep {
+      color: var(--border-light);
+    }
+
+    /* Hero title section */
+    .hero-section {
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--gold);
+      text-shadow: 0 0 16px var(--gold-glow), 0 0 40px rgba(212,168,67,0.12);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+
+    /* Katana icon (CSS/SVG) */
+    .hero-icon {
+      width: 100px;
+      height: 100px;
+      margin: 16px 0;
+      position: relative;
+    }
+    .hero-icon svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 12px rgba(224,85,61,0.4));
+    }
+
+    /* ---- CONTENT MODULE CARDS ---- */
+    .module-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-bottom: 18px;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .module-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-light);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3), 0 0 20px rgba(212,168,67,0.06);
+    }
+    /* Ore sparkle — card variant 1 */
+    .module-card.sparkle::after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      right: 20%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold-bright);
+      box-shadow: 0 0 6px 2px var(--gold-glow);
+      animation: oreSparkle 3s ease-in-out infinite;
+    }
+    @keyframes oreSparkle {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .module-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      text-shadow: 0 0 8px var(--gold-glow);
+      width: 24px;
+      text-align: center;
+    }
+    .module-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .module-body {
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    .module-body p {
+      margin-bottom: 12px;
+    }
+
+    /* Attribute table */
+    .attr-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.82rem;
+    }
+    .attr-table th,
+    .attr-table td {
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .attr-table th {
+      color: var(--gold-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      background: rgba(212,168,67,0.04);
+    }
+    .attr-table td {
+      color: var(--text-primary);
+    }
+    .attr-table tr:last-child th,
+    .attr-table tr:last-child td {
+      border-bottom: none;
+    }
+    .attr-table tr:hover td {
+      background: rgba(212,168,67,0.03);
+    }
+
+    /* Step cards (horizontal flow) */
+    .step-flow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .step-card {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212,168,67,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+    .step-card:hover {
+      border-color: var(--gold-dim);
+      background: rgba(212,168,67,0.1);
+    }
+    .step-num {
+      font-size: 1rem;
+    }
+    .step-arrow {
+      color: var(--gold-dim);
+      font-size: 0.9rem;
+    }
+
+    /* Location cards grid */
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .location-card {
+      background: rgba(212,168,67,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      transition: all 0.2s ease;
+    }
+    .location-card:hover {
+      border-color: var(--gold-dim);
+      box-shadow: 0 0 12px rgba(212,168,67,0.06);
+    }
+    .location-name {
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+    .location-coords {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: 'Courier New', monospace;
+    }
+    .location-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* Timeline (vertical) */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      margin-top: 14px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold-dim), var(--border), var(--gold-dim));
+      border-radius: 1px;
+    }
+    .timeline-node {
+      position: relative;
+      padding-bottom: 18px;
+    }
+    .timeline-node:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -24px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--bg-card);
+      box-shadow: 0 0 6px var(--gold-glow);
+    }
+    .timeline-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.88rem;
+    }
+    .timeline-detail {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+    .timeline-time {
+      font-size: 0.72rem;
+      color: var(--gold-dim);
+      margin-top: 2px;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Warning card */
+    .warning-card {
+      background: var(--warning-bg);
+      border: 1px solid rgba(224,85,61,0.3);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .warning-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--warning);
+    }
+    .warning-title {
+      font-weight: 700;
+      color: var(--warning);
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .warning-text {
+      font-size: 0.82rem;
+      color: var(--text-primary);
+    }
+
+    /* Tip list */
+    .tip-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+    .tip-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+    .tip-list li:last-child { border-bottom: none; }
+    .tip-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Benefit card */
+    .benefit-card {
+      background: var(--success-bg);
+      border: 1px solid rgba(107,184,92,0.25);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 14px;
+      position: relative;
+    }
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--success);
+    }
+    .benefit-title {
+      font-weight: 700;
+      color: var(--success);
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+    .benefit-list {
+      list-style: none;
+    }
+    .benefit-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      font-size: 0.82rem;
+      color: var(--text-primary);
+    }
+    .benefit-check {
+      color: var(--success);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* ---- 7c. RIGHT SIDEBAR (ads & info, 260px) ---- */
+    .right-sidebar {
+      width: var(--rightbar-width);
+      background: var(--bg-sidebar);
+      border-left: 1px solid var(--border);
+      padding: 16px;
+      position: fixed;
+      top: calc(var(--nav-height) + var(--slogan-height));
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+      z-index: 100;
+    }
+    .right-section {
+      margin-bottom: 20px;
+    }
+    .right-section-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    /* Sponsored label */
+    .sponsored-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    /* Ad placeholder */
+    .ad-card {
+      background: #1e1812;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      padding: 28px 16px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      transition: all 0.2s ease;
+    }
+    .ad-card:hover {
+      border-color: var(--border-light);
+      color: var(--text-secondary);
+    }
+    .ad-card .ad-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    /* Popular guides list */
+    .guide-list {
+      list-style: none;
+    }
+    .guide-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .guide-item:last-child { border-bottom: none; }
+    .guide-item:hover .guide-name { color: var(--gold); }
+    .guide-rank {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--gold-dim);
+      width: 18px;
+      text-align: center;
+    }
+    .guide-name {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    /* Community tips */
+    .community-tip {
+      background: rgba(212,168,67,0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+    .community-tip::before {
+      content: '"';
+      font-size: 1.2rem;
+      color: var(--gold-dim);
+      line-height: 0;
+      margin-right: 2px;
+      vertical-align: middle;
+    }
+    .tip-author {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-style: normal;
+      text-align: right;
+    }
+
+    /* ============================================================
+       8. RESPONSIVE (basic)
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .right-sidebar { display: none; }
+      .center-content { margin-right: 0; }
+    }
+    @media (max-width: 768px) {
+      .left-sidebar { display: none; }
+      .center-content { margin-left: 0; padding: 16px; }
+      .search-box { width: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== TOP NAVIGATION ==================== -->
+  <nav class="top-nav">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- Pickaxe icon SVG -->
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 20L8 16M8 16L14 10L12 8L6 14L8 16Z" fill="currentColor" opacity="0.6"/>
+        <path d="M14 10L20 4M17 7L19 5L15 1L13 3L17 7Z" fill="currentColor"/>
+        <rect x="2" y="18" width="4" height="4" rx="1" fill="currentColor" opacity="0.4"/>
+      </svg>
+      RelicTrek
+    </a>
+
+    <!-- Search -->
+    <div class="search-box">
+      <input type="text" placeholder="Search items, games...">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Language toggle -->
+    <div class="lang-toggle">
+      <button class="active">EN</button>
+      <button>中文</button>
+    </div>
+  </nav>
+
+  <!-- ==================== SCROLLING SLOGAN ==================== -->
+  <div class="slogan-bar">
+    <div class="slogan-track">
+      <span class="slogan-text">Every legendary item has a story. We map the journey.</span>
+      <span class="slogan-text">Every legendary item has a story. We map the journey.</span>
+      <span class="slogan-text">Every legendary item has a story. We map the journey.</span>
+      <span class="slogan-text">Every legendary item has a story. We map the journey.</span>
+      <span class="slogan-text">Every legendary item has a story. We map the journey.</span>
+      <span class="slogan-text">Every legendary item has a story. We map the journey.</span>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN 3-COLUMN LAYOUT ==================== -->
+  <div class="main-layout">
+
+    <!-- ===== LEFT SIDEBAR: GAME NAVIGATION ===== -->
+    <aside class="left-sidebar">
+      <div class="sidebar-title">Games</div>
+
+      <!-- Elden Ring -->
+      <div class="game-item open">
+        <div class="game-header active">
+          <span class="game-icon" style="background:#b8860b;"></span>
+          <span class="game-name">Elden Ring</span>
+          <span class="game-toggle">&#9662;</span>
+        </div>
+        <div class="game-submenu">
+          <a href="#" class="submenu-item active">Rivers of Blood</a>
+          <a href="#" class="submenu-item">Moonveil Katana</a>
+        </div>
+      </div>
+
+      <!-- Minecraft -->
+      <div class="game-item open">
+        <div class="game-header">
+          <span class="game-icon" style="background:#5d8c3a;"></span>
+          <span class="game-name">Minecraft</span>
+          <span class="game-toggle">&#9662;</span>
+        </div>
+        <div class="game-submenu">
+          <a href="#" class="submenu-item">Beacon</a>
+          <a href="#" class="submenu-item">Netherite Armor</a>
+        </div>
+      </div>
+
+      <!-- Zelda TOTK -->
+      <div class="game-item open">
+        <div class="game-header">
+          <span class="game-icon" style="background:#2a7cc0;"></span>
+          <span class="game-name">The Legend of Zelda: TOTK</span>
+          <span class="game-toggle">&#9662;</span>
+        </div>
+        <div class="game-submenu">
+          <a href="#" class="submenu-item">Master Sword</a>
+          <a href="#" class="submenu-item">Hylian Shield</a>
+        </div>
+      </div>
+
+      <!-- Terraria -->
+      <div class="game-item open">
+        <div class="game-header">
+          <span class="game-icon" style="background:#8b5e83;"></span>
+          <span class="game-name">Terraria</span>
+          <span class="game-toggle">&#9662;</span>
+        </div>
+        <div class="game-submenu">
+          <a href="#" class="submenu-item">Zenith</a>
+          <a href="#" class="submenu-item">Cell Phone</a>
+        </div>
+      </div>
+
+      <!-- Monster Hunter -->
+      <div class="game-item open">
+        <div class="game-header">
+          <span class="game-icon" style="background:#c4512c;"></span>
+          <span class="game-name">Monster Hunter Wilds</span>
+          <span class="game-toggle">&#9662;</span>
+        </div>
+        <div class="game-submenu">
+          <a href="#" class="submenu-item">Imperial Shield</a>
+          <a href="#" class="submenu-item">Dragoon's Pride</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== CENTER CONTENT: GUIDE ===== -->
+    <main class="center-content">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="#">Home</a>
+        <span class="breadcrumb-sep">&gt;</span>
+        <a href="#">Elden Ring</a>
+        <span class="breadcrumb-sep">&gt;</span>
+        <span class="current">Rivers of Blood</span>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h1 class="hero-title">Rivers of Blood</h1>
+        <p class="hero-subtitle">Legendary Arcane Katana</p>
+        <div class="hero-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Glowing red katana -->
+            <defs>
+              <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff6b5a"/>
+                <stop offset="50%" style="stop-color:#e83030"/>
+                <stop offset="100%" style="stop-color:#8b1a1a"/>
+              </linearGradient>
+              <linearGradient id="hiltGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:var(--gold-dim,#a08030)"/>
+                <stop offset="100%" style="stop-color:#4a3a18"/>
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="4" result="b"/>
+                <feMerge>
+                  <feMergeNode in="b"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <!-- Outer glow -->
+            <path d="M35 65 L75 25" stroke="#e83030" stroke-width="14" opacity="0.2" stroke-linecap="round" filter="url(#glow)"/>
+            <path d="M35 65 L75 25" stroke="#ff6b5a" stroke-width="8" opacity="0.3" stroke-linecap="round" filter="url(#glow)"/>
+            <!-- Blade -->
+            <path d="M32 68 L78 22" stroke="url(#bladeGrad)" stroke-width="6" stroke-linecap="round"/>
+            <path d="M35 65 L75 25" stroke="#ff9999" stroke-width="1.5" opacity="0.6" stroke-linecap="round"/>
+            <!-- Hilt -->
+            <rect x="24" y="64" width="18" height="5" rx="1" fill="url(#hiltGrad)" transform="rotate(-45 33 66.5)"/>
+            <rect x="26" y="66" width="10" height="4" rx="1" fill="#6b5020" transform="rotate(-45 31 68)"/>
+            <!-- Guard -->
+            <rect x="30" y="60" width="12" height="3" rx="0.5" fill="var(--gold,#d4a843)" transform="rotate(-45 36 61.5)"/>
+            <!-- Blood drip -->
+            <circle cx="72" cy="26" r="2.5" fill="#e83030" opacity="0.8">
+              <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="68" cy="30" r="1.5" fill="#e83030" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Module 1: Overview -->
+      <article class="module-card sparkle">
+        <div class="module-header">
+          <span class="module-icon">&#9830;</span>
+          <span class="module-title">Overview</span>
+        </div>
+        <div class="module-body">
+          <p>Rivers of Blood is one of the most powerful katanas in Elden Ring, infamous for its Corpse Piler weapon skill that unleashes a flurry of blood-coated strikes. A must-have for Arcane bleed builds.</p>
+          <table class="attr-table">
+            <tr>
+              <th>Damage Type</th>
+              <th>Weapon Skill</th>
+              <th>Weight</th>
+              <th>Requirements</th>
+            </tr>
+            <tr>
+              <td>Slash / Pierce (Bleed)</td>
+              <td>Corpse Piler</td>
+              <td>6.5</td>
+              <td>STR 12 / DEX 18 / ARC 20</td>
+            </tr>
+          </table>
+        </div>
+      </article>
+
+      <!-- Module 2: Crafting Recipe -->
+      <article class="module-card">
+        <div class="module-header">
+          <span class="module-icon">&#9874;</span>
+          <span class="module-title">Crafting Recipe</span>
+        </div>
+        <div class="module-body">
+          <p>Rivers of Blood is obtained by defeating Bloody Finger Okina at the Church of Repose in Mountaintops of the Giants. No crafting required &mdash; but getting there is the real challenge.</p>
+          <div class="step-flow">
+            <div class="step-card">
+              <span class="step-num">&#10122;</span>
+              <span>Reach Mountaintops</span>
+            </div>
+            <span class="step-arrow">&#10132;</span>
+            <div class="step-card">
+              <span class="step-num">&#10123;</span>
+              <span>Find Church of Repose</span>
+            </div>
+            <span class="step-arrow">&#10132;</span>
+            <div class="step-card">
+              <span class="step-num">&#10124;</span>
+              <span>Defeat Okina</span>
+            </div>
+            <span class="step-arrow">&#10132;</span>
+            <div class="step-card">
+              <span class="step-num">&#10125;</span>
+              <span>Loot the katana</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Module 3: Materials & Locations -->
+      <article class="module-card sparkle">
+        <div class="module-header">
+          <span class="module-icon">&#9672;</span>
+          <span class="module-title">Materials &amp; Locations</span>
+        </div>
+        <div class="module-body">
+          <p>This weapon doesn't require materials, but reaching Okina does. You'll need to traverse some of the most dangerous areas in the Lands Between.</p>
+          <div class="location-grid">
+            <div class="location-card">
+              <div class="location-name">Grand Lift of Rold</div>
+              <div class="location-coords">[128, -92]</div>
+              <div class="location-desc">Use the Medallion to access the Mountaintops from Leyndell.</div>
+            </div>
+            <div class="location-card">
+              <div class="location-name">Church of Repose</div>
+              <div class="location-coords">[185, -145]</div>
+              <div class="location-desc">Okina invades here. Light the site of grace first.</div>
+            </div>
+            <div class="location-card">
+              <div class="location-name">Fire Giant</div>
+              <div class="location-coords">[210, -180]</div>
+              <div class="location-desc">Optional boss along the path. Grants access to Forge of the Giants.</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Module 4: Optimal Route -->
+      <article class="module-card">
+        <div class="module-header">
+          <span class="module-icon">&#10148;</span>
+          <span class="module-title">Optimal Route</span>
+        </div>
+        <div class="module-body">
+          <p>Fastest path from Limgrave to Church of Repose. Follow this route to minimise backtracking and unnecessary fights.</p>
+          <div class="timeline">
+            <div class="timeline-node">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Limgrave — The First Step</div>
+              <div class="timeline-detail">Starting point. Grab Torrent and the map.</div>
+              <div class="timeline-time">~0 min</div>
+            </div>
+            <div class="timeline-node">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Stormveil Castle</div>
+              <div class="timeline-detail">Defeat Godrick. Required to enter Leyndell.</div>
+              <div class="timeline-time">~45 min</div>
+            </div>
+            <div class="timeline-node">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Leyndell, Royal Capital</div>
+              <div class="timeline-detail">Defeat Morgott. Collect Rold Medallion.</div>
+              <div class="timeline-time">~2 hrs</div>
+            </div>
+            <div class="timeline-node">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Grand Lift of Rold</div>
+              <div class="timeline-detail">Use Medallion. Ride the lift up.</div>
+              <div class="timeline-time">~2.5 hrs</div>
+            </div>
+            <div class="timeline-node">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Church of Repose</div>
+              <div class="timeline-detail">Okina invades. Defeat him for the katana.</div>
+              <div class="timeline-time">~3 hrs total</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Module 5: Gotcha Tips -->
+      <article class="module-card">
+        <div class="module-header">
+          <span class="module-icon">&#9888;</span>
+          <span class="module-title">Gotcha Tips</span>
+        </div>
+        <div class="module-body">
+          <div class="warning-card">
+            <div class="warning-title">
+              <span>&#9888;</span> Invasion Warning
+            </div>
+            <div class="warning-text">Okina invades instantly upon approaching the church &mdash; be prepared for a PvP-style fight before you can summon help.</div>
+          </div>
+          <ul class="tip-list">
+            <li>
+              <span class="tip-icon">&#128161;</span>
+              <span>Okina is vulnerable to frost. Freezing Pot can interrupt his moves.</span>
+            </li>
+            <li>
+              <span class="tip-icon">&#127758;</span>
+              <span>If you burn the Erdtree before killing Okina, he will NOT spawn. Do this first!</span>
+            </li>
+            <li>
+              <span class="tip-icon">&#128737;</span>
+              <span>Bring high bleed resistance gear — Okina's own Rivers of Blood will proc bleed fast.</span>
+            </li>
+            <li>
+              <span class="tip-icon">&#128099;</span>
+              <span>Light the Church of Repose site of grace BEFORE triggering the invasion.</span>
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Module 6: Free Benefits -->
+      <article class="module-card sparkle">
+        <div class="module-header">
+          <span class="module-icon">&#9733;</span>
+          <span class="module-title">Free Benefits</span>
+        </div>
+        <div class="module-body">
+          <p>While collecting Rivers of Blood, you'll also pick up these valuable items along the way:</p>
+          <div class="benefit-card">
+            <div class="benefit-title">Bonus Loot Along the Route</div>
+            <ul class="benefit-list">
+              <li>
+                <span class="benefit-check">&#10003;</span>
+                <span>Rune Arcs (x3) — from the path to the Mountaintops</span>
+              </li>
+              <li>
+                <span class="benefit-check">&#10003;</span>
+                <span>Smithing Stone [6] x6 — behind giants near the church</span>
+              </li>
+              <li>
+                <span class="benefit-check">&#10003;</span>
+                <span>Golden Seed — by the Church of Repose site of grace</span>
+              </li>
+              <li>
+                <span class="benefit-check">&#10003;</span>
+                <span>Okina Mask — unique headgear dropped by Okina</span>
+              </li>
+              <li>
+                <span class="benefit-check">&#10003;</span>
+                <span>+80,000 Runes from Okina's defeat</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- ===== RIGHT SIDEBAR: ADS & INFO ===== -->
+    <aside class="right-sidebar">
+
+      <!-- Sponsored Ads -->
+      <div class="right-section">
+        <div class="sponsored-label">Sponsored</div>
+        <div class="ad-card">
+          <div class="ad-label">Ad Space</div>
+          <div>300 x 250</div>
+        </div>
+        <div class="ad-card">
+          <div class="ad-label">Ad Space</div>
+          <div>300 x 250</div>
+        </div>
+      </div>
+
+      <!-- Popular Guides -->
+      <div class="right-section">
+        <div class="right-section-title">Popular Guides</div>
+        <div class="guide-list">
+          <a href="#" class="guide-item">
+            <span class="guide-rank">1</span>
+            <span class="guide-name">How to Get the Zenith Sword</span>
+          </a>
+          <a href="#" class="guide-item">
+            <span class="guide-rank">2</span>
+            <span class="guide-name">Netherite Armor Full Route</span>
+          </a>
+          <a href="#" class="guide-item">
+            <span class="guide-rank">3</span>
+            <span class="guide-name">Master Sword Guide (TOTK)</span>
+          </a>
+          <a href="#" class="guide-item">
+            <span class="guide-rank">4</span>
+            <span class="guide-name">Cell Phone Crafting Steps</span>
+          </a>
+          <a href="#" class="guide-item">
+            <span class="guide-rank">5</span>
+            <span class="guide-name">Dragoon's Pride Armour Set</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Community Tips -->
+      <div class="right-section">
+        <div class="right-section-title">Community Tips</div>
+        <div class="community-tip">
+          If you approach from the west side of the church, Okina's invasion has a slight delay. Use it to buff!
+          <div class="tip-author">— Tarnished_Wanderer</div>
+        </div>
+        <div class="community-tip">
+          Dual-wield Rivers of Blood with a Cold Uchigatana for absolutely insane bleed procs.
+          <div class="tip-author">— BleedKing99</div>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+</body>
+</html>
