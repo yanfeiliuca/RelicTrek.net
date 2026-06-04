@@ -23,6 +23,55 @@ echo "  Blog directory: $BLOG_DIR"
 echo "  Repository: $REPO_DIR"
 echo "  Python: $PYTHON"
 
+# Create catch-up script (runs on boot if a blog was missed)
+CATCHUP="$BLOG_DIR/catch_up.sh"
+cat > "$CATCHUP" << 'EOF'
+#!/bin/bash
+# Blog Catch-Up: Generate missed blog posts
+BLOG_DIR="__BLOG_DIR__"
+PYTHON="__PYTHON__"
+LOG_FILE="$BLOG_DIR/.blog_catchup.log"
+
+exec >> "$LOG_FILE" 2>&1
+echo "Catch-up check: $(date)"
+
+cd "$BLOG_DIR"
+
+# Load last post date from database
+DB_FILE="$BLOG_DIR/.blog_database.json"
+if [ -f "$DB_FILE" ]; then
+    LAST_DATE=$(python3 -c "import json; d=json.load(open('$DB_FILE')); print(d.get('last_post_date',''))" 2>/dev/null)
+    TODAY=$(date +%Y-%m-%d)
+    
+    if [ -n "$LAST_DATE" ] && [ "$LAST_DATE" != "$TODAY" ] && [ "$LAST_DATE" != "" ]; then
+        # Check if yesterday's blog exists
+        YESTERDAY=$(date -d "yesterday" +%Y-%m-%d 2>/dev/null || date -v-1d +%Y-%m-%d 2>/dev/null)
+        if [ "$LAST_DATE" = "$YESTERDAY" ] || [ "$LAST_DATE" \< "$TODAY" ]; then
+            echo "Missed blog detected. Last: $LAST_DATE, Today: $TODAY"
+            echo "Generating catch-up blog..."
+            $PYTHON generate_daily_blog.py --force
+            
+            # Git push
+            cd "__REPO_DIR__"
+            if [ -d .git ] && git diff --quiet HEAD -- blog/ 2>/dev/null; then
+                git add blog/
+                git commit -m "Catch-up blog: $(date +%Y-%m-%d)"
+                git push origin main
+            fi
+        fi
+    fi
+fi
+echo "Catch-up check done: $(date)"
+echo ""
+EOF
+
+sed -i "s|__BLOG_DIR__|$BLOG_DIR|g" "$CATCHUP"
+sed -i "s|__REPO_DIR__|$REPO_DIR|g" "$CATCHUP"
+sed -i "s|__PYTHON__|$PYTHON|g" "$CATCHUP"
+chmod +x "$CATCHUP"
+
+echo "Created catch-up script: $CATCHUP"
+
 # Create a wrapper script that generates blog + commits + pushes
 WRAPPER="$BLOG_DIR/daily_blog_wrapper.sh"
 cat > "$WRAPPER" << 'EOF'
@@ -82,6 +131,7 @@ if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; t
     echo "=== Windows Task Scheduler Setup ==="
     echo "Since you're on Windows, please set up Task Scheduler manually:"
     echo ""
+    echo "=== TASK 1: Daily 3:00 AM Blog ==="
     echo "1. Open Task Scheduler (Win+R → taskschd.msc)"
     echo "2. Click 'Create Basic Task'"
     echo "3. Name: RelicTrek Daily Blog"
@@ -91,6 +141,14 @@ if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; t
     echo "7. Arguments: $BLOG_DIR/generate_daily_blog.py"
     echo "8. Working directory: $BLOG_DIR"
     echo "9. Click Finish"
+    echo ""
+    echo "=== TASK 2: Boot Catch-Up (if missed) ==="
+    echo "1. Create another task named: RelicTrek Blog Catch-Up"
+    echo "2. Trigger: At startup (delay 2 minutes)"
+    echo "3. Action: Start a program"
+    echo "4. Program: $PYTHON"
+    echo "5. Arguments: $BLOG_DIR/catch_up.sh"
+    echo "6. Working directory: $BLOG_DIR"
     echo ""
     echo "Or run this PowerShell command as Administrator:"
     echo ""
@@ -160,15 +218,4 @@ echo "========================================"
 echo "Setup complete!"
 echo "========================================"
 echo ""
-echo "Blog database: $BLOG_DIR/.blog_database.json"
-echo "Cron log:      $BLOG_DIR/.blog_cron.log"
-echo ""
-echo "To test manually:"
-echo "  cd $BLOG_DIR && python generate_daily_blog.py"
-echo ""
-echo "To see all available items:"
-echo "  cd $BLOG_DIR && python generate_daily_blog.py --list"
-echo ""
-echo "To force regenerate today's blog:"
-echo "  cd $BLOG_DIR && python generate_daily_blog.py --force"
-echo ""
+echo "Blog database: $BLO

@@ -37,27 +37,27 @@
   .top-nav { background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 20px; height: 48px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; left: 0; right: 0; z-index: 200; }
   .nav-brand { font-size: 18px; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
   .nav-links { display: flex; gap: 20px; list-style: none; }
-  .nav-links a { color: var(--text2); font-size: 13px; }
+  .nav-links a { color: var(--text2); font-size: 15px; }
   .nav-links a:hover { color: var(--text); }
-  .ticker-bar { background: var(--ticker-bg); border-bottom: 1px solid var(--border); height: 32px; display: flex; align-items: center; overflow: hidden; position: fixed; top: 48px; left: 0; right: 0; z-index: 199; padding: 0 20px; font-size: 12px; color: var(--text2); }
+  .ticker-bar { background: var(--ticker-bg); border-bottom: 1px solid var(--border); height: 32px; display: flex; align-items: center; overflow: hidden; position: fixed; top: 48px; left: 0; right: 0; z-index: 199; padding: 0 20px; font-size: 14px; color: var(--text2); }
   .ticker-content { display: flex; gap: 40px; animation: ticker-scroll 40s linear infinite; white-space: nowrap; }
   @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   .ticker-item span { color: var(--accent); margin-right: 6px; }
   .page-layout { display: flex; margin-top: 80px; min-height: calc(100vh - 80px); }
   .left-sidebar { width: var(--sidebar-w); background: var(--nav-bg); border-right: 1px solid var(--border); padding: 16px 0; position: fixed; top: 80px; bottom: 0; left: 0; overflow-y: auto; z-index: 100; }
-  .sidebar-title { padding: 0 16px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text2); border-bottom: 1px solid var(--border); }
+  .sidebar-title { padding: 0 16px 12px; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text2); border-bottom: 1px solid var(--border); }
   .sidebar-list { list-style: none; padding: 8px 0; }
-  .sidebar-list li a { display: block; padding: 8px 16px; color: var(--text2); font-size: 13px; border-left: 3px solid transparent; }
+  .sidebar-list li a { display: block; padding: 8px 16px; color: var(--text2); font-size: 15px; border-left: 3px solid transparent; }
   .sidebar-list li a:hover, .sidebar-list li a.active { background: var(--surface); color: var(--text); border-left-color: var(--accent); }
   .sidebar-list li a .emoji { margin-right: 6px; }
-  .right-sidebar { width: var(--rightbar-w); background: var(--nav-bg); border-left: 1px solid var(--border); padding: 16px; position: fixed; top: 80px; bottom: 0; right: 0; overflow-y: auto; z-index: 100; font-size: 12px; }
+  .right-sidebar { width: var(--rightbar-w); background: var(--nav-bg); border-left: 1px solid var(--border); padding: 16px; position: fixed; top: 80px; bottom: 0; right: 0; overflow-y: auto; z-index: 100; font-size: 14px; }
   .right-section { margin-bottom: 24px; }
-  .right-section h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .right-section h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
   .stat-row { display: flex; justify-content: space-between; margin-bottom: 6px; color: var(--text2); }
   .stat-value { color: var(--text); font-weight: 600; }
-  .tag { display: inline-block; padding: 2px 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 3px; font-size: 11px; color: var(--text2); margin: 2px; }
+  .tag { display: inline-block; padding: 2px 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 3px; font-size: 14px; color: var(--text2); margin: 2px; }
   .content-area { margin-left: var(--sidebar-w); margin-right: var(--rightbar-w); padding: 24px 32px; flex: 1; max-width: 860px; }
-  .breadcrumb { font-size: 12px; color: var(--text2); margin-bottom: 20px; }
+  .breadcrumb { font-size: 14px; color: var(--text2); margin-bottom: 20px; }
   .breadcrumb a { color: var(--text2); }
   .breadcrumb a:hover { color: var(--text); }
   .breadcrumb span { margin: 0 6px; color: var(--border); }
@@ -65,19 +65,19 @@
   .item-icon-tech { width: 64px; height: 64px; background: var(--surface2); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
   .item-meta h1 { font-size: 22px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
   .item-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
-  .tag-rarity { background: #3a2a1a; color: var(--accent); border: 1px solid var(--accent2); padding: 2px 8px; font-size: 11px; }
-  .tag-type { background: var(--surface2); color: var(--text2); border: 1px solid var(--border); padding: 2px 8px; font-size: 11px; }
-  .tag-diff { background: var(--surface2); color: var(--gotcha); border: 1px solid var(--border); padding: 2px 8px; font-size: 11px; }
-  .item-desc { color: var(--text2); font-size: 13px; line-height: 1.6; }
+  .tag-rarity { background: #3a2a1a; color: var(--accent); border: 1px solid var(--accent2); padding: 2px 8px; font-size: 14px; }
+  .tag-type { background: var(--surface2); color: var(--text2); border: 1px solid var(--border); padding: 2px 8px; font-size: 14px; }
+  .tag-diff { background: var(--surface2); color: var(--gotcha); border: 1px solid var(--border); padding: 2px 8px; font-size: 14px; }
+  .item-desc { color: var(--text2); font-size: 15px; line-height: 1.6; }
   .section { background: var(--surface); border: 1px solid var(--border); margin-bottom: 20px; padding: 24px; }
   .section h2 { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
   .section h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 20px 0 10px; }
   .section p { margin-bottom: 12px; color: var(--text); }
-  .recipe-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  .recipe-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
   .recipe-table th { background: var(--surface2); padding: 10px 12px; text-align: left; color: var(--accent); font-weight: 600; border: 1px solid var(--border); }
   .recipe-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text); }
   .recipe-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
-  .crafting-ascii { background: var(--surface2); border: 1px solid var(--border); padding: 16px; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.8; color: var(--text); margin: 16px 0; overflow-x: auto; }
+  .crafting-ascii { background: var(--surface2); border: 1px solid var(--border); padding: 16px; font-family: 'Courier New', monospace; font-size: 15px; line-height: 1.8; color: var(--text); margin: 16px 0; overflow-x: auto; }
   .crafting-ascii .grid-label { color: var(--accent); font-weight: bold; }
   .gotcha-box { background: rgba(212, 96, 96, 0.08); border: 1px solid var(--gotcha); border-left: 4px solid var(--gotcha); padding: 16px; margin: 16px 0; }
   .gotcha-box strong { color: var(--gotcha); }
@@ -85,22 +85,22 @@
   .gotcha-box li { margin-bottom: 6px; color: var(--text); }
   .route-tree { list-style: none; padding: 0; margin: 16px 0; }
   .route-tree li { padding: 14px 16px 14px 44px; margin-bottom: 8px; background: var(--surface2); border: 1px solid var(--border); border-left: 4px solid var(--accent); position: relative; }
-  .route-tree li::before { content: attr(data-step); position: absolute; left: 0; top: 0; bottom: 0; width: 32px; background: var(--accent); color: #000; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+  .route-tree li::before { content: attr(data-step); position: absolute; left: 0; top: 0; bottom: 0; width: 32px; background: var(--accent); color: #000; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
   .route-tree .step-title { font-weight: 600; color: var(--accent); margin-bottom: 4px; }
-  .route-tree .step-detail { color: var(--text2); font-size: 13px; }
+  .route-tree .step-detail { color: var(--text2); font-size: 15px; }
   .material-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); margin-bottom: 10px; }
   .material-icon { width: 40px; height: 40px; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
   .material-info h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-  .material-info p { font-size: 13px; color: var(--text2); margin-bottom: 4px; }
-  .material-meta { font-size: 12px; color: var(--accent); }
+  .material-info p { font-size: 15px; color: var(--text2); margin-bottom: 4px; }
+  .material-meta { font-size: 14px; color: var(--accent); }
   .benefit-list { list-style: none; padding: 0; margin: 16px 0; }
-  .benefit-list li { padding: 12px 16px; background: rgba(90, 170, 110, 0.06); border: 1px solid var(--success); margin-bottom: 8px; font-size: 13px; color: var(--text); position: relative; padding-left: 36px; }
+  .benefit-list li { padding: 12px 16px; background: rgba(90, 170, 110, 0.06); border: 1px solid var(--success); margin-bottom: 8px; font-size: 15px; color: var(--text); position: relative; padding-left: 36px; }
   .benefit-list li::before { content: "[+]"; position: absolute; left: 12px; color: var(--success); font-weight: 700; }
-  .footer { text-align: center; padding: 20px; font-size: 12px; color: var(--text2); border-top: 1px solid var(--border); margin-top: 20px; }
+  .footer { text-align: center; padding: 20px; font-size: 14px; color: var(--text2); border-top: 1px solid var(--border); margin-top: 20px; }
   .next-rec { padding: 16px; background: var(--surface2); border: 1px solid var(--accent); margin-top: 8px; }
   .next-rec a { color: var(--accent); font-weight: 600; }
   .highlight { color: var(--accent); font-weight: 600; }
-  code { background: var(--surface2); padding: 2px 6px; font-family: 'Courier New', monospace; font-size: 12px; color: var(--accent); border: 1px solid var(--border); }
+  code { background: var(--surface2); padding: 2px 6px; font-family: 'Courier New', monospace; font-size: 14px; color: var(--accent); border: 1px solid var(--border); }
 </style>
 </head>
 <body>

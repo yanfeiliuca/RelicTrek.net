@@ -373,12 +373,12 @@ def generate_blog_html(content, lang="en", is_zh=False):
     if is_zh:
         en_link = f"../{date_str}.html"
         zh_link = "./"
-        css_path = "../css/style.css"
-        js_path = "../js/main.js"
-        root_link = "../"
+        css_path = "../../css/style.css"  # blog/zh/ -> need ../../ to reach root
+        js_path = "../../js/main.js"
+        root_link = "../../"
         blog_link = "./"
-        about_link = "../about.html"
-        game_nav_prefix = "../"
+        about_link = "../../about.html"
+        game_nav_prefix = "../../"
     else:
         en_link = "./"
         zh_link = f"./zh/{date_str}.html"
