@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>决斗者的棱彩手套攻略 — 博德之门3 | CraftHunt</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0d0d0d;color:#e0e0e0;line-height:1.7}
+a{color:#c9a050;text-decoration:none}
+a:hover{color:#f0d080}
+.nav{background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;border-bottom:2px solid #c9a050;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:20px;font-weight:bold;color:#c9a050;margin-right:30px}
+.nav a{color:#e0e0e0;margin-right:20px;font-size:14px}
+.nav a:hover{color:#c9a050}
+.ticker{background:#2a1a00;padding:8px 20px;font-size:13px;border-bottom:1px solid #444;color:#c9a050}
+.container{display:flex;max-width:1600px;margin:0 auto;padding:20px;gap:20px}
+.left-sidebar{width:260px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content;max-height:calc(100vh - 80px);overflow-y:auto}
+.left-sidebar h3{color:#c9a050;margin-bottom:12px;font-size:16px}
+.left-sidebar a{display:block;padding:6px 0;color:#aaa;font-size:14px}
+.left-sidebar a:hover,.left-sidebar a.active{color:#c9a050}
+.left-sidebar .quick-nav{margin-top:15px;padding-top:15px;border-top:1px solid #2a2a2a}
+.left-sidebar .quick-nav h4{color:#c9a050;margin-bottom:10px;font-size:14px}
+.main-content{flex:1;min-width:0}
+.right-sidebar{width:300px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content}
+.right-sidebar h4{color:#c9a050;margin-bottom:12px;font-size:15px}
+.right-sidebar .info-box{background:#1a1a1a;padding:12px;border-radius:6px;margin-bottom:12px;border:1px solid #2a2a2a}
+.right-sidebar .info-box .label{color:#888;font-size:12px;text-transform:uppercase}
+.right-sidebar .info-box .value{color:#e0e0e0;font-size:14px;font-weight:bold}
+.footer{background:#1a1a1a;text-align:center;padding:20px;margin-top:40px;border-top:2px solid #2a2a2a;color:#888;font-size:13px}
+.section{background:#161616;padding:25px;margin-bottom:20px;border-radius:8px;border:1px solid #2a2a2a}
+.section h2{color:#c9a050;margin-bottom:15px;font-size:22px;display:flex;align-items:center;gap:10px}
+.section h3{color:#e0e0e0;margin:18px 0 10px;font-size:18px}
+.item-header{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding:20px;background:#1a1a1a;border-radius:8px;border:2px solid #c9a050}
+.item-icon-legendary{width:80px;height:80px;background:#2a1a00;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #c9a050}
+.item-icon-epic{width:80px;height:80px;background:#1a0a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #9b59b6}
+.item-icon-rare{width:80px;height:80px;background:#0a1a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #3498db}
+.item-icon-accessory{width:80px;height:80px;background:#0a2e1a;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #2ecc71}
+.item-title h1{color:#c9a050;font-size:28px;margin-bottom:5px}
+.item-meta{color:#888;font-size:14px}
+.difficulty{color:#e74c3c;font-weight:bold}
+.gotcha-box{background:#2a1a00;padding:15px;border-radius:6px;border-left:4px solid #c9a050;margin:15px 0}
+.gotcha-box h4{color:#c9a050;margin-bottom:8px}
+.route-tree{padding-left:20px;border-left:2px solid #c9a050;margin:15px 0}
+.route-tree li{margin:10px 0;list-style:none;position:relative;padding-left:15px}
+.route-tree li::before{content:'◆';position:absolute;left:-20px;color:#c9a050}
+.material-item{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;padding:6px 12px;border-radius:4px;margin:4px;border:1px solid #2a2a2a;font-size:13px}
+.tag{display:inline-block;padding:3px 10px;border-radius:3px;font-size:12px;font-weight:bold;margin:2px}
+.tag-act1{background:#2a4a00;color:#7fff00}
+.tag-act2{background:#4a2a00;color:#ffa500}
+.tag-act3{background:#4a002a;color:#ff6b9d}
+.tag-legendary{background:#2a1a00;color:#c9a050;border:1px solid #c9a050}
+.tag-rare{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+.tag-warning{background:#3a1a00;color:#e67e22;border:1px solid #e67e22}
+.tag-info{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+pre{background:#0d0d0d;padding:15px;border-radius:6px;overflow-x:auto;border:1px solid #2a2a2a;color:#c9a050;font-family:Consolas,monospace;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th,td{padding:10px;text-align:left;border-bottom:1px solid #2a2a2a}
+th{background:#1a1a1a;color:#c9a050;font-weight:600}
+tr:hover{background:#1a1a1a}
+.guide-nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.guide-nav a{padding:8px 16px;background:#1a1a1a;border-radius:4px;border:1px solid #2a2a2a;font-size:13px;color:#aaa}
+.guide-nav a:hover,.guide-nav a.active{background:#2a1a00;color:#c9a050;border-color:#c9a050}
+.highlight{color:#c9a050;font-weight:bold}
+.warning-box{background:#3a0000;padding:15px;border-radius:6px;border-left:4px solid #e74c3c;margin:15px 0}
+.warning-box h4{color:#e74c3c;margin-bottom:8px}
+.npc-name{color:#9b59b6;font-weight:bold}
+.location-name{color:#2ecc71;font-weight:bold}
+.item-name{color:#c9a050;font-weight:bold}
+.code-block{background:#0d0d0d;padding:12px 15px;border-radius:4px;border:1px solid #2a2a2a;font-family:Consolas,monospace;color:#c9a050;margin:10px 0;display:block}
+@media(max-width:1200px){.right-sidebar{display:none}}@media(max-width:900px){.left-sidebar{display:none}.container{padding:10px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-logo">⚔ CraftHunt</div>
+<a href="../">首页</a>
+<a href="../">游戏</a>
+<a href="../">攻略</a>
+<a href="../">地图</a>
+<a href="../">Build</a>
+<a href="../">物品</a>
+</nav>
+<div class="ticker">📍 Current Guide: Duellist's Prismatic Gloves — Legendary Accessory — House of Hope / Merchants, Act 3 — 难度： ★★★★☆ — Estimated Time: 20-45 minutes</div>
+<div class="container">
+<aside class="left-sidebar">
+<h3>🎮 游戏导航</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man\'s Sky</a>
+      <a href="../baldurs-gate-3/">Baldur\'s Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="./" class="active">博德之门3</a>
+<div class="quick-nav">
+<h4>BG3 物品</h4>
+<a href="blood-of-lathander.html">洛山达之血</a>
+<a href="gontr-mael.html">冈特·梅尔</a>
+<a href="nyrulna.html">尼鲁纳</a>
+<a href="shars-spear.html">莎尔的黄昏之矛</a>
+<a href="duellist-gloves.html" class="active">决斗者的棱彩手套</a>
+<a href="helldusk-armor.html">地狱黄昏护甲</a>
+<a href="moonlantern.html">月亮提灯</a>
+<a href="silver-sword.html">星界银剑</a>
+<a href="devilfoil-mask.html">魔鬼箔面具</a>
+<a href="shadowheart-spear.html">暗影之心的夜之矛</a>
+</div>
+</aside>
+<main class="main-content">
+<div class="guide-nav">
+<a href="#overview" class="active">概览</a>
+<a href="#acquisition">获取方式</a>
+<a href="#requirements">前置需求</a>
+<a href="#route">详细路线</a>
+<a href="#gotcha">易踩坑提示</a>
+<a href="#benefits">额外收益</a>
+</div>
+<div class="item-header">
+<div class="item-icon-accessory">🧤</div>
+<div class="item-title">
+<h1>决斗者的棱彩手套</h1>
+<div class="item-meta">Legendary Gloves (Accessory) | Act 3 | <span class="difficulty">难度： ★★★★☆</span> | House of Hope / Merchants</div>
+</div>
+</div>
+<section class="section" id="overview">
+<h2>📋 Overview</h2>
+<p>The <span class="item-name">Duellist's Prismatic Gloves</span> are a pair of <span class="tag tag-legendary">LEGENDARY</span> handwear items that represent the absolute pinnacle of spellcasting augmentation in 博德之门3. Unlike the dramatic weapons that dominate discussions of legendary gear, these unassuming gloves quietly transform any spellcaster into a precision instrument of arcane destruction. Their deceptive simplicity — a +2 bonus to spell attack rolls and the ability to add your proficiency bonus to spell damage — adds up to one of the most significant raw power increases available for any character who relies on spell attacks rather than saving throws.</p>
+<p>What makes the Duellist's Prismatic Gloves extraordinary is how universally applicable they are. While a legendary mace only benefits clerics and paladins, and a legendary longbow only serves rangers and fighters, these gloves enhance EVERY class that uses spell attacks. Wizards firing <span class="item-name">Scorching Ray</span>, sorcerers channeling <span class="item-name">Chromatic Orb</span>, warlocks blasting with <span class="item-name">Eldritch Blast</span>, clerics striking with <span class="item-name">Guiding Bolt</span>, and druids launching <span class="item-name">Ice Knife</span> — all of them benefit equally from the precision and power these gloves provide. In a game where spell attack rolls often determine whether your most powerful spells hit or miss entirely, a +2 bonus is transformative.</p>
+<p>The proficiency bonus addition to spell damage is equally significant, though less immediately visible. In Act 3, your proficiency bonus is +4 or +5, meaning every spell attack deals an additional 4-5 damage per hit. For multi-hit spells like Scorching Ray (3 rays) or Eldritch Blast with Agonizing Blast (multiple beams at higher levels), this bonus applies to EACH hit, potentially adding 12-20 damage to a single spellcasting action. Over the course of a full dungeon, this damage accumulation is staggering.</p>
+<p>The gloves' aesthetic lives up to their "Prismatic" name. They appear to be crafted from interwoven threads of crystallized light, each strand shifting through the full color spectrum as the angle changes. When the wearer casts a spell, the gloves flare with matching chromatic energy — red for fire spells, blue for cold, green for acid, yellow for lightning, and violet for psychic or force damage. This visual feedback is not merely cosmetic; experienced players can use it to quickly identify which damage type they are currently focusing on, helping with elemental synergy in complex encounters.</p>
+<p>The Duellist's Prismatic Gloves are part of the broader "Duellist" equipment family in 博德之门3, a collection of items themed around precision and single-target excellence. While other pieces exist (such as the <span class="item-name">Duellist's Cape</span> and <span class="item-name">Duellist's Boots</span>), the gloves are universally considered the crown jewel of the set due to their raw numerical power. Unlike the other pieces, which provide situational or defensive bonuses, the gloves offer direct, always-active damage and accuracy increases — the most valuable commodity in any D&D-based system.</p>
+<p>The acquisition of these gloves is less restrictive than many legendary items but still requires Act 3 progression. Multiple sources exist, giving players flexibility in how they obtain the item. This guide covers all known acquisition methods, with detailed routes for each.</p>
+<table>
+<thead><tr><th>属性</th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>物品类型</td><td>Gloves (Handwear / Accessory)</td></tr>
+<tr><td>Rarity</td><td>传奇</td></tr>
+<tr><td>Armor Class</td><td>None (cosmetic gloves slot)</td></tr>
+<tr><td>主效果</td><td>+2 to Spell Attack Rolls</td></tr>
+<tr><td>次效果</td><td>Add Proficiency Bonus to Spell Damage</td></tr>
+<tr><td>Prerequisites</td><td>Act 3, House of Hope access OR specific merchant</td></tr>
+<tr><td>Optimal Users</td><td>Wizard, Sorcerer, Warlock, Cleric (spell attack focus), Druid</td></tr>
+<tr><td>Classes That Benefit Least</td><td>Barbarian, Fighter (non-Eldritch Knight), Rogue (non-Arcane Trickster)</td></tr>
+<tr><td>Stackable</td><td>No (unique item, only one pair exists per playthrough)</td></tr>
+</tbody>
+</table>
+</section>
+<section class="section" id="acquisition">
+<h2>⚔ Acquisition Method</h2>
+<p>Unlike most legendary items with a single fixed location, the Duellist's Prismatic Gloves have <span class="highlight">multiple potential sources</span> in Act 3. This gives players flexibility but also creates confusion about the "best" or most reliable method. This section details every confirmed acquisition path, ranked by reliability.</p>
+<h3>Method 1: House of Hope Vault (Most Reliable)</h3>
+<p>The most consistent method of obtaining the Duellist's Prismatic Gloves is looting them from the <span class="location-name">House of Hope</span>, specifically from a locked vault in the <span class="location-name">Hall of Treasures</span>. This method is guaranteed — the gloves always spawn in this location on every playthrough, provided you access the House of Hope.</p>
+<p>The House of Hope becomes accessible in Act 3 after progressing the main storyline to the point where planar travel becomes relevant. Specifically:</p>
+<div class="route-tree">
+<li>Complete the main quest through the initial Baldur's Gate city exploration</li>
+<li>Progress <span class="npc-name">Hope's</span> questline ("The imprisoned angel" storyline)</li>
+<li>Complete <span class="npc-name">Karlach's</span> infernal engine quest to the point of planar involvement</li>
+<li>Access the House of Hope through the portal in the Devil's Fee district or equivalent entry point</li>
+</div>
+<p>Once inside the House of Hope, navigate to the <span class="location-name">Hall of Treasures</span> — a chamber where the archdevil stores items taken from the souls imprisoned in his domain. The Duellist's Prismatic Gloves are in a <span class="highlight">Gilded Vault Chest</span> (DC 22 lock, DC 20 trap) in the eastern wing of the Hall. The chest also contains 800 gold and a <span class="item-name">Diamond</span>.</p>
+<p><strong>Reliability Rating: 10/10</strong> — Always spawns, no conditions beyond House of Hope access.</p>
+<h3>Method 2: Helsik of the Devil's Fee (Merchant)</h3>
+<p><span class="npc-name">Helsik</span> is a tiefling merchant who operates in the <span class="location-name">Devil's Fee</span> tavern in the Lower City. She sells a rotating stock of magical items, and the Duellist's Prismatic Gloves can appear in her inventory under certain conditions:</p>
+<div class="route-tree">
+<li>Reach Act 3 and unlock the Devil's Fee area</li>
+<li>Complete at least one of Helsik's side quests (fetch quests for rare components)</li>
+<li>Long rest at least 3 times after unlocking her shop (inventory refreshes)</li>
+<li>The gloves have approximately a <span class="highlight">30-40% chance</span> to appear in her refreshed stock</li>
+<li>If they do not appear, continue long-resting — each rest triggers a new inventory roll</li>
+</div>
+<p>Helsik sells the gloves for approximately <span class="highlight">2,400-3,200 gold</span> depending on your Persuasion and trading bonuses. With a high Charisma character and the <span class="item-name">Merchant's Friend</span> background feature, you can reduce this to roughly 1,800 gold.</p>
+<p><strong>Reliability Rating: 6/10</strong> — RNG-dependent inventory, but guaranteed to appear eventually with enough rests.</p>
+<h3>Method 3: Entharl Danthelon (Act 3 Merchant)</h3>
+<p><span class="npc-name">Entharl Danthelon</span> is a drow merchant who appears in <span class="location-name">Wyrm's Crossing</span> in Act 3, selling high-end magical equipment. Like Helsik, his inventory rotates and can include the Duellist's Prismatic Gloves:</p>
+<div class="route-tree">
+<li>Reach Wyrm's Crossing in Act 3 (unlocked through main quest progression)</li>
+<li>Speak with Entharl and browse his initial inventory</li>
+<li>Long rest and return — his stock refreshes</li>
+<li>Approximately <span class="highlight">25% chance</span> per refresh for the gloves to appear</li>
+<li>Price range: 2,800-3,600 gold (slightly more expensive than Helsik)</li>
+</div>
+<p><strong>Reliability Rating: 5/10</strong> — Lower spawn rate than Helsik, and Wyrm's Crossing is accessed later in Act 3.</p>
+<h3>Method 4: Dropped by Specific Act 3 Enemies</h3>
+<p>There are unconfirmed reports that the Duellist's Prismatic Gloves can drop from specific named enemies in Act 3, particularly:</p>
+<div class="route-tree">
+<li><span class="npc-name">Cazador Szarr's</span> lieutenants during the vampire dungeon assault</li>
+<li>The <span class="npc-name">Steel Watch Titan</span> in the Foundry</li>
+<li>Certain devil enemies in the House of Hope (independent of the vault)</li>
+</div>
+<p>These drops are NOT guaranteed and appear to have very low drop rates (<5%). This method should be considered a bonus possibility rather than a reliable acquisition path.</p>
+<p><strong>Reliability Rating: 2/10</strong> — Not recommended as a primary strategy.</p>
+</section>
+<section class="section" id="requirements">
+<h2>📋 Requirements</h2>
+<p>The Duellist's Prismatic Gloves have relatively straightforward requirements compared to legendary weapons, but certain prerequisites must still be met. The requirements vary by acquisition method.</p>
+<h3>Universal Requirements</h3>
+<table>
+<thead><tr><th>Requirement</th><th>Details</th><th>All Methods?</th></tr></thead>
+<tbody>
+<tr><td>Reach Act 3</td><td>Complete Acts 1 and 2</td><td>Yes</td></tr>
+<tr><td>Access Lower City</td><td>Baldur's Gate Lower City unlocked</td><td>Yes</td></tr>
+<tr><td>Character Level 9+</td><td>Gloves only appear at character level 9+</td><td>Yes</td></tr>
+</tbody>
+</table>
+<h3>House of Hope Vault Method Requirements</h3>
+<div class="route-tree">
+<li><strong>House of Hope Access:</strong> Complete prerequisite quests to unlock the planar portal</li>
+<li><strong>Thieves' Tools Proficiency:</strong> DC 22 lock on the vault chest</li>
+<li><strong>Trap Disarm Capability:</strong> DC 20 trap on the vault chest</li>
+<li><strong>Combat Capability:</strong> Must defeat House of Hope guardians to reach the Hall of Treasures</li>
+</div>
+<h3>Merchant Method Requirements</h3>
+<div class="route-tree">
+<li><strong>Gold:</strong> 1,800-3,600 gold depending on method and discounts</li>
+<li><strong>Merchant Access:</strong> Unlock the relevant merchant's location</li>
+<li><strong>Inventory RNG:</strong> Patience for inventory refreshes (merchant method only)</li>
+<li><strong>Trading Bonuses:</strong> High Charisma, Persuasion, or trade discount items recommended</li>
+</div>
+<h3>Optimal Preparation</h3>
+<div class="material-item">🧪 Potion of Healing (x5) — For House of Hope combat</div>
+<div class="material-item">🔧 Thieves' Tools (x4) — For vault lock (multiple attempts at DC 22)</div>
+<div class="material-item">⚠️ Trap Disarm Kit (x2) — For vault trap</div>
+<div class="material-item">💰 Gold (x3000) — For merchant purchase backup</div>
+<div class="material-item">📜 Scroll of Knock — Alternative to Thieves' Tools for vault</div>
+<div class="material-item">🗝️ Inspiration (Luck points) — For rerolling failed checks</div>
+</section>
+<section class="section" id="route">
+<h2>🗺 Step-by-Step Route</h2>
+<p>This guide provides detailed walkthroughs for the two most reliable acquisition methods: the House of Hope vault route and the merchant purchase route.</p>
+<h3>ROUTE A: House of Hope Vault (Recommended)</h3>
+<h3>Step 1: Unlock the House of Hope</h3>
+<p>Progress through Act 3 until you gain access to the House of Hope. The exact trigger point varies based on your quest choices, but typically occurs after:</p>
+<div class="route-tree">
+<li>Completing the Steel Watch Foundry sequence</li>
+<li>Resolving or advancing Karlach's infernal engine storyline</li>
+<li>Encountering Hope in your dreams or at camp</li>
+<li>Receiving the quest prompt directing you to the Devil's Fee district</li>
+</div>
+<p>The House of Hope portal appears in the Devil's Fee district at approximately <span class="code-block">X: -15, Y: 45</span> in the Lower City.</p>
+<h3>Step 2: Enter the House of Hope</h3>
+<p>Approach the planar portal and interact with it to enter the House of Hope. Upon arrival, you find yourself in a deceptively beautiful courtyard with manicured gardens and soothing music. Do not be deceived — every soul here is imprisoned.</p>
+<p>Save your game immediately upon entry. The House of Hope is a challenging area and you will want a clean save point.</p>
+<h3>Step 3: Navigate to the Hall of Treasures</h3>
+<p>From the entry courtyard, head north through the main doors into the central hall. The Hall of Treasures is located in the eastern wing — follow these directions:</p>
+<div class="route-tree">
+<li>Enter the main hall and turn <strong>right (east)</strong></li>
+<li>Pass through the Gallery of Portraits (defeat or bypass the pleasure demons here)</li>
+<li>Continue east past the Garden of Delights</li>
+<li>The Hall of Treasures entrance is a large door with a golden lock (DC 18 Thieves' Tools to open)</li>
+<li>Enter the Hall of Treasures</li>
+</div>
+<h3>Step 4: Locate the Gilded Vault Chest</h3>
+<p>Inside the Hall of Treasures, you will see numerous display cases and pedestals containing stolen valuables. The Gilded Vault Chest is at the far eastern end of the hall, behind a decorative screen. Its location: <span class="code-block">X: 45, Y: 120</span> within the House of Hope map.</p>
+<p>The chest is clearly distinguished by its ornate golden trim and the magical shimmer around its lock. Approach carefully — it is trapped.</p>
+<h3>Step 5: Disarm the Trap and Open the Lock</h3>
+<p><strong>Trap Disarm:</strong> Perception DC 18 to spot the trap (should be automatic with a high Perception character). Disarm with <span class="highlight">Sleight of Hand DC 20</span>. If you fail, the trap triggers a <span class="item-name">Cloudkill</span> spell centered on the chest — immediately move your party away if this happens and wait for the cloud to dissipate.</p>
+<p><strong>Lock Picking:</strong> <span class="highlight">Sleight of Hand DC 22</span> with Thieves' Tools. This is a difficult lock; expect 3-5 attempts. Each failed attempt consumes one set of Thieves' Tools. Bring at least 4 sets. If you run out, use a <span class="item-name">Scroll of Knock</span> (2nd-level spell) as an alternative.</p>
+<p><strong>Alternative:</strong> A character with the <span class="item-name">Knock</span> spell prepared can bypass the lock entirely, though this alerts nearby enemies if any are present.</p>
+<h3>Step 6: Claim the Gloves</h3>
+<p>Inside the Gilded Vault Chest, you find:</p>
+<div class="route-tree">
+<li><span class="item-name">Duellist's Prismatic Gloves</span> — Primary reward</li>
+<li><span class="item-name">800 Gold</span> — Partial refund for your troubles</li>
+<li><span class="item-name">Diamond</span> (x1) — Valuable gem for crafting or selling</li>
+<li><span class="item-name">Scroll of Greater Restoration</span> — Useful utility scroll</li>
+</div>
+<p>Equip the gloves immediately on your primary spellcaster to enjoy the benefits.</p>
+<h3>ROUTE B: Helsik Merchant Purchase</h3>
+<h3>Step 1: Reach the Devil's Fee</h3>
+<p>Travel to the <span class="location-name">Devil's Fee</span> tavern in the Lower City. The waypoint is at <span class="code-block">X: -20, Y: 50</span>. Helsik is inside, standing near the bar.</p>
+<h3>Step 2: Unlock Helsik's Shop</h3>
+<p>Speak with Helsik. If this is your first meeting, she will have introductory dialogue. Complete any available side quests she offers — typically fetch quests for planar components. These are simple and unlock her full inventory.</p>
+<h3>Step 3: Check Inventory and Refresh</h3>
+<p>Browse Helsik's current stock. Look for the Duellist's Prismatic Gloves — they appear as a rainbow-colored glove icon with "Legendary" rarity highlighted in gold. If they are not present:</p>
+<div class="route-tree">
+<li>Complete a long rest (return to camp)</li>
+<li>Travel back to the Devil's Fee</li>
+<li>Check Helsik's refreshed inventory</li>
+<li>Repeat until the gloves appear (typically 3-6 rests)</li>
+</div>
+<h3>Step 4: Purchase the Gloves</h3>
+<p>When the gloves appear, negotiate:</p>
+<div class="route-tree">
+<li>Base price: ~2,800 gold</li>
+<li>With Persuasion DC 16: ~2,400 gold (10% discount)</li>
+<li>With high Charisma (18+) and Persuasion proficiency: ~2,000 gold</li>
+<li>With trade discount items (e.g., <span class="item-name">Ring of the Merchant</span>): ~1,800 gold</li>
+</div>
+<p>Purchase and equip. The merchant route is significantly faster than the House of Hope if the RNG cooperates.</p>
+</section>
+<section class="section" id="gotcha">
+<h2>⚠ Gotcha Tips</h2>
+<p>The Duellist's Prismatic Gloves acquisition is generally straightforward, but several gotchas can cause frustration or wasted time.</p>
+<div class="gotcha-box">
+<h4>Gotcha #1: The Gloves Only Affect SPELL ATTACKS</h4>
+<p>The +2 bonus and proficiency damage ONLY apply to spells that require attack rolls (roll against AC). They do NOT apply to spells that use saving throws (where the target rolls to resist). This means:</p>
+<div class="route-tree">
+<li><strong>AFFECTED:</strong> Eldritch Blast, Scorching Ray, Chromatic Orb, Guiding Bolt, Ice Knife, Ray of Sickness, Melf's Acid Arrow</li>
+<li><strong>否T AFFECTED:</strong> Fireball, Lightning Bolt, Hold Person, Hypnotic Pattern, Web, Cloudkill (these use saving throws)</li>
+</div>
+<p>Before farming for these gloves, ensure your spellcaster build actually uses attack-roll spells. A pure control wizard who only casts Web and Hypnotic Pattern will gain almost no benefit.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #2: House of Hope Vault Lock Is Extremely Difficult</h4>
+<p>DC 22 is one of the highest lock difficulties in the entire game. At character level 10 with +5 Dexterity and Thieves' Tools proficiency, you still need to roll a 13 or higher on a d20 (40% success rate per attempt). With 4 sets of Thieves' Tools, you have approximately an 87% chance of success. Without proficiency or with low Dexterity, bring 6+ sets or use Knock.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #3: Merchant Inventory Is Shared Between Methods</h4>
+<p>The game uses a shared legendary item pool for merchant inventories. If you see the Duellist's Prismatic Gloves at Helsik, they will NOT appear at Entharl Danthelon in the same rest cycle, and vice versa. The game tries to distribute legendary items across different merchants. If you are farming merchants, check ALL available merchants each rest cycle rather than focusing on one.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #4: Do NOT Sell the Gloves</h4>
+<p>Legendary accessories are unique items. If you sell the Duellist's Prismatic Gloves to a merchant, they may disappear from that merchant's inventory permanently (a known bug in some patches). The merchant inventory system does not always retain sold unique items. If you must unequip them, store them in your camp chest rather than selling.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #5: The Proficiency Bonus Stacks Incorrectly in Some Cases</h4>
+<p>There is a known interaction where the proficiency bonus to spell damage does not apply correctly to certain spell modifiers, particularly:</p>
+<div class="route-tree">
+<li><span class="item-name">Hex</span> damage — The bonus damage from Hex is NOT increased by the gloves (intended behavior)</li>
+<li><span class="item-name">Hunter's Mark</span> — Similarly unaffected</li>
+<li><span class="item-name">Sneak Attack</span> (Arcane Trickster) — Only the spell's base damage gets the bonus, not the Sneak Attack dice</li>
+</div>
+<p>The gloves are still incredibly powerful even with these limitations, but understand their scope to avoid disappointment.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #6: Patches May Change Merchant Availability</h4>
+<p>Larian has adjusted merchant inventories in multiple patches. The Duellist's Prismatic Gloves were added to merchant pools in Patch 5 and their spawn rates were adjusted in Patch 6. This guide reflects Patch 7 behavior. If playing on an older patch, the gloves may only be available through the House of Hope vault.</p>
+</div>
+</section>
+<section class="section" id="benefits">
+<h2>🎁 Free Benefits</h2>
+<p>The Duellist's Prismatic Gloves provide some of the most significant and measurable power increases of any single item in 博德之门3. This section breaks down the full scope of benefits.</p>
+<h3>Direct Statistical Benefits</h3>
+<table>
+<thead><tr><th>收益</th><th>数值影响</th><th>实战效果</th></tr></thead>
+<tbody>
+<tr><td>+2 Spell Attack</td><td>+10% hit chance against typical Act 3 AC</td><td>Spells hit more consistently, fewer wasted spell slots</td></tr>
+<tr><td>+Proficiency to Spell Damage</td><td>+4 to +5 damage per hit (Act 3 levels)</td><td>Scorching Ray deals +12-15 more damage total</td></tr>
+<tr><td>Combined Effect</td><td>~25-30% DPS increase for attack-roll spells</td><td>Higher damage output than most legendary weapons provide to their users</td></tr>
+</tbody>
+</table>
+<h3>Spell-by-Spell Damage Comparison (Level 10 Character)</h3>
+<p>These numbers show the damage increase provided by the gloves for common spells:</p>
+<table>
+<thead><tr><th>Spell</th><th>基础伤害</th><th>With Gloves</th><th>Increase</th></tr></thead>
+<tbody>
+<tr><td>Eldritch Blast (1 beam)</td><td>1d10 + Cha (avg 10.5)</td><td>1d10 + Cha + 4 (avg 14.5)</td><td>+38%</td></tr>
+<tr><td>Scorching Ray (all 3 rays hit)</td><td>6d6 + 0 (avg 21)</td><td>6d6 + 12 (avg 33)</td><td>+57%</td></tr>
+<tr><td>Chromatic Orb</td><td>3d8 + 0 (avg 13.5)</td><td>3d8 + 4 (avg 17.5)</td><td>+30%</td></tr>
+<tr><td>Guiding Bolt</td><td>4d6 + 0 (avg 14)</td><td>4d6 + 4 (avg 18)</td><td>+29%</td></tr>
+<tr><td>Ice Knife (direct hit)</td><td>1d10 + 0 (avg 5.5)</td><td>1d10 + 4 (avg 9.5)</td><td>+73%</td></tr>
+</tbody>
+</table>
+<h3>Incidental House of Hope Loot (Vault Method)</h3>
+<div class="route-tree">
+<li><span class="item-name">800 Gold</span> — Partial cost offset</li>
+<li><span class="item-name">Diamond</span> — 250-300 gold value or crafting component</li>
+<li><span class="item-name">Scroll of Greater Restoration</span> — Utility value</li>
+<li><span class="item-name">Hall of Treasures Access</span> — Multiple other valuable items in the hall</li>
+</div>
+<h3>Strategic Campaign Advantages</h3>
+<div class="route-tree">
+<li><strong>Action Economy:</strong> More damage per spell means fewer spells needed per encounter, preserving spell slots</li>
+<li><strong>Slot Efficiency:</strong> Low-level spells become viable damage options even in Act 3, conserving high-level slots</li>
+<li><strong>Multi-Target Scaling:</strong> Scorching Ray, Eldritch Blast (multiple beams), and Magic Missile apply the bonus PER HIT, making these spells extraordinarily efficient</li>
+<li><strong>Legendary Rarity Synergy:</strong> Wearing legendary gloves contributes to achievement progress and certain dialogue checks</li>
+<li><strong>Universal Spellcaster Benefit:</strong> Works for wizard, sorcerer, warlock, cleric, druid, bard, and even half-casters like paladin and ranger</li>
+</div>
+<h3>Optimal Builds with Duellist's Prismatic Gloves</h3>
+<div class="route-tree">
+<li><strong>Draconic Sorcerer (Fire):</strong> Fire Chromatic Orb + gloves + Draconic ancestry + Empowered Spell = 40+ damage from a 1st-level slot</li>
+<li><strong>Agonizing Blast Warlock:</strong> Eldritch Blast + Agonizing Blast + gloves = 1d10 + Cha + Proficiency per beam. At level 11 with 3 beams, that's 3d10 + 3*Cha + 12 damage per action</li>
+<li><strong>Light Domain Cleric:</strong> Guiding Bolt + gloves for damage, then follow up with the advantage-generated attack</li>
+<li><strong>Arcane Trickster Rogue:</strong> Booming Blade or Green-Flame Blade + gloves + Sneak Attack. The spell attack boost improves cantrip accuracy while the damage bonus adds to the spell component</li>
+</div>
+</section>
+</main>
+<aside class="right-sidebar">
+<h4>📊 物品信息</h4>
+<div class="info-box"><div class="label">游戏</div><div class="value">博德之门3</div></div>
+<div class="info-box"><div class="label">物品类型</div><div class="value">传奇手套（饰品）</div></div>
+<div class="info-box"><div class="label">章节</div><div class="value"><span class="tag tag-act3">Act 3</span></div></div>
+<div class="info-box"><div class="label">主效果</div><div class="value">+2 Spell Attack Rolls</div></div>
+<div class="info-box"><div class="label">次效果</div><div class="value">+Proficiency Bonus to Spell Damage</div></div>
+<div class="info-box"><div class="label">Difficulty</div><div class="value" style="color:#e67e22">★★★★☆</div></div>
+<div class="info-box"><div class="label">预计用时</div><div class="value">20-45 minutes</div></div>
+<div class="info-box"><div class="label">可错过？</div><div class="value" style="color:#e67e22">No — Multiple sources</div></div>
+<h4>🔗 快速链接</h4>
+<div style="margin-bottom:10px"><a href="blood-of-lathander.html">← Blood of Lathander</a></div>
+<div style="margin-bottom:10px"><a href="gontr-mael.html">← Gontr Mael</a></div>
+<div style="margin-bottom:10px"><a href="nyrulna.html">← Nyrulna</a></div>
+<div style="margin-bottom:10px"><a href="shars-spear.html">← Shar's Spear of Evening</a></div>
+<h4>📅 攻略更新</h4>
+<div class="info-box"><div class="value">兼容补丁7</div></div>
+</aside>
+</div>
+<footer class="footer">
+<p>⚔ CraftHunt — 博德之门3 Item Guides &copy; 2025 | 所有游戏内容版权归拉瑞安工作室所有</p>
+<p><a href="../privacy.html">隐私</a> | <a href="../terms.html">条款</a> | <a href="../about.html">联系</a> | <a href="../about.html">关于</a></p>
+</footer>
+</body>
+</html>

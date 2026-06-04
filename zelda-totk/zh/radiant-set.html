@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夜光套装 - 塞尔达 王国之泪 制作攻略</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0f0f0f;color:#e0e0e0;line-height:1.7}
+a{color:#4fc3f7;text-decoration:none}
+a:hover{color:#81d4fa}
+.container{display:flex;min-height:100vh}
+.left-sidebar{width:260px;background:#1a1a1a;border-right:1px solid #333;padding:20px 0;position:fixed;height:100vh;overflow-y:auto}
+.left-sidebar h2{font-size:14px;text-transform:uppercase;color:#888;padding:0 20px;margin-bottom:15px;letter-spacing:1px}
+.left-sidebar ul{list-style:none}
+.left-sidebar li a{display:block;padding:10px 20px;color:#aaa;font-size:14px;border-left:3px solid transparent;transition:all .2s}
+.left-sidebar li a:hover,.left-sidebar li a.active{color:#fff;background:#252525;border-left-color:#4fc3f7}
+.left-sidebar .emoji{margin-right:8px}
+.main-wrapper{flex:1;margin-left:260px;margin-right:300px}
+.top-nav{background:#1a1a1a;border-bottom:1px solid #333;padding:15px 30px;display:flex;align-items:center;gap:25px;position:sticky;top:0;z-index:100}
+.top-nav a{color:#aaa;font-size:14px;padding:5px 0}
+.top-nav a:hover{color:#fff}
+.ticker-bar{background:#1e2a1e;border-bottom:1px solid #2a3a2a;padding:10px 30px;font-size:13px;color:#7cb97c;overflow:hidden;white-space:nowrap}
+.ticker-bar span{margin-right:30px}
+.content-area{padding:35px 40px;max-width:900px}
+.right-sidebar{width:300px;background:#1a1a1a;border-left:1px solid #333;padding:25px;position:fixed;right:0;height:100vh;overflow-y:auto}
+.right-sidebar h3{font-size:14px;text-transform:uppercase;color:#888;margin-bottom:15px;letter-spacing:1px}
+.right-sidebar .stat-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #2a2a2a;font-size:14px}
+.right-sidebar .stat-label{color:#888}
+.right-sidebar .stat-value{color:#ccc}
+.related-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #2a2a2a}
+.related-item .ri-icon{font-size:24px}
+.related-item .ri-name{font-size:14px;color:#ccc}
+.related-item .ri-desc{font-size:12px;color:#666}
+h1{font-size:32px;margin-bottom:10px;color:#fff}
+h2{font-size:22px;margin:30px 0 15px;color:#4fc3f7;border-bottom:1px solid #333;padding-bottom:8px}
+h3{font-size:17px;margin:22px 0 10px;color:#ccc}
+p{margin-bottom:14px;color:#c0c0c0}
+.item-header{display:flex;align-items:center;gap:18px;margin-bottom:25px;padding:20px;background:#1a1a1a;border:1px solid #333;border-radius:6px}
+.item-icon-tech{font-size:48px;background:#1a2a1a;border-radius:8px;padding:10px}
+.item-meta{display:flex;gap:15px;flex-wrap:wrap;margin-top:8px}
+.item-meta span{font-size:13px;padding:4px 12px;background:#252525;border-radius:4px;color:#aaa}
+.item-meta .rare{background:#2a1a2a;color:#d48aff}
+.item-meta .difficulty{background:#1a2a1a;color:#7cb97c}
+.section{margin-bottom:40px}
+.gotcha-box{background:#2a1a1a;border:1px solid #4a2a2a;border-radius:6px;padding:20px;margin:15px 0}
+.gotcha-box h4{color:#e57373;margin-bottom:10px;font-size:15px}
+.gotcha-box ul{list-style:none;padding-left:0}
+.gotcha-box li{padding:8px 0;border-bottom:1px solid #3a2a2a;color:#d0a0a0;font-size:14px}
+.gotcha-box li:last-child{border-bottom:none}
+.route-tree{background:#1a1a2a;border:1px solid #2a2a3a;border-radius:6px;padding:20px;margin:15px 0}
+.route-step{display:flex;align-items:flex-start;gap:15px;padding:15px 0;border-bottom:1px solid #2a2a3a}
+.route-step:last-child{border-bottom:none}
+.step-num{background:#4fc3f7;color:#0f0f0f;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.route-step h4{color:#81d4fa;margin-bottom:5px;font-size:15px}
+.route-step p{margin-bottom:4px;font-size:14px}
+.material-item{display:flex;align-items:flex-start;gap:15px;padding:15px;background:#1a1a1a;border:1px solid #333;border-radius:6px;margin:12px 0}
+.mat-icon{font-size:28px;flex-shrink:0}
+.mat-info h4{color:#ccc;margin-bottom:5px}
+.mat-info p{font-size:14px;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th{background:#252525;color:#4fc3f7;padding:12px;text-align:left;border-bottom:2px solid #4fc3f7}
+td{padding:12px;border-bottom:1px solid #2a2a2a;color:#c0c0c0}
+tr:hover td{background:#1a1a1a}
+.coord{font-family:'Courier New',monospace;color:#7cb97c;background:#1a2a1a;padding:2px 8px;border-radius:4px;font-size:13px}
+.tag{display:inline-block;padding:3px 10px;background:#252525;border-radius:4px;font-size:12px;color:#aaa;margin-right:6px}
+.footer{text-align:center;padding:40px;color:#555;font-size:13px;border-top:1px solid #222;margin-top:60px}
+.breadcrumb{color:#666;font-size:13px;margin-bottom:20px}
+.breadcrumb a{color:#888}
+.next-page{display:block;margin-top:30px;padding:20px;background:#1a2a1a;border:1px solid #2a3a2a;border-radius:6px;text-align:center;color:#7cb97c;font-weight:600}
+.next-page:hover{background:#1e321e}
+.warning-box{background:#2a1a1a;border:1px solid #4a2a2a;border-radius:6px;padding:15px;margin:15px 0;color:#d0a0a0;font-size:14px}
+.info-box{background:#1a1a2a;border:1px solid #2a2a3a;border-radius:6px;padding:15px;margin:15px 0;color:#a0a0d0;font-size:14px}
+.tip-list{list-style:none;padding-left:0}
+.tip-list li{padding:10px 0;border-bottom:1px solid #2a2a2a;font-size:14px;color:#c0c0c0}
+.tip-list li:last-child{border-bottom:none}
+.pro-tip{background:#1a2a1a;border-left:4px solid #7cb97c;padding:15px;margin:15px 0;border-radius:0 6px 6px 0}
+.pro-tip strong{color:#7cb97c}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- LEFT SIDEBAR -->
+<nav class="left-sidebar">
+<h2>塞尔达 王国之泪 物品</h2>
+<ul>
+<li><a href="champions-leathers.html"><span class="emoji">👕</span>勇者皮衣</a></li>
+<li><a href="radiant-set.html" class="active"><span class="emoji">💀</span>夜光套装</a></li>
+<li><a href="#"><span class="emoji">⚡</span>大师之剑</a></li>
+<li><a href="#"><span class="emoji">🛡️</span>海利亚盾</a></li>
+<li><a href="#"><span class="emoji">🌿</span>Hearty Elixir</a></li>
+<li><a href="#"><span class="emoji">🔥</span>耐火石铠</a></li>
+<li><a href="#"><span class="emoji">❄️</span>羽饰套装</a></li>
+<li><a href="#"><span class="emoji">🏹</span>大鹫弓</a></li>
+<li><a href="#"><span class="emoji">💎</span>钻石 Circlet</a></li>
+<li><a href="#"><span class="emoji">🧪</span> 强力药 </a></li>
+</ul>
+</nav>
+
+<!-- MAIN AREA -->
+<div class="main-wrapper">
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+<a href="./">制作ing Hub</a>
+<a href="./">防具</a>
+<a href="./">武器</a>
+<a href="./">药剂</a>
+<a href="./">材料</a>
+<a href="./">地底 Guide</a>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+<span>👕 勇者皮衣 — boosts 大师之剑 beam</span>
+<span>💀 夜光套装 — 骷髅伪装 + bone attack up</span>
+<span>⚡ 大师之剑 — dragon scale required</span>
+<span>🛡️ 海利亚盾 — highest defense</span>
+<span>🌿 生命药 — 完全恢复 + 额外心心</span>
+</div>
+
+<!-- CONTENT -->
+<main class="content-area">
+
+<div class="breadcrumb">
+<a href="./">制作ing Hub</a> / <a href="./">防具</a> / 夜光套装
+</div>
+
+<div class="item-header">
+<div class="item-icon-tech">💀</div>
+<div>
+<h1>夜光套装</h1>
+<p data-zh="光辉套装">Bone-themed glow-in-the-dark armor. Stal Skeleton disguise + attack boost at night. 制作ed by the mysterious stylist using 魄 from the 地底.</p>
+<div class="item-meta">
+<span class="rare">Rarity: 稀有</span>
+<span>Item 类型: 防具（3件）</span>
+<span class="difficulty">难度: ★★★☆☆ 前中期</span>
+</div>
+</div>
+</div>
+
+<!-- MODULE 1 -->
+<section class="section" id="overview">
+<h2>1. 为什么这件物品重要</h2>
+<p data-zh="为什么这件物品重要">The <strong>夜光套装</strong> is one of the most visually distinctive and mechanically unique armor collections in <em>塞尔达传说：王国之泪</em>. Comprising three pieces — the <strong>夜光面罩</strong>, <strong>夜光紧身服</strong>, and <strong>夜光紧身裤</strong> — this bone-themed ensemble transforms 林克 into a literal walking skeleton, glowing with an eerie luminescence that cuts through the darkest corners of 海拉鲁. But this is far more than a cosmetic novelty. The 夜光套装 is a legitimate combat powerhouse for a very specific and surprisingly effective playstyle: <strong>the bone weapon build</strong>.</p>
+
+<p data-zh="骨骼攻击加成">When all three pieces are equipped, the 夜光套装 grants the <strong>"Bone 攻击力提升"</strong> set bonus. This passive effect significantly increases the damage output of any weapon that has been 余料建造d with a bone-based material — 波克布林 Arms, 莫力布林 Arms, Stal heads, and other skeletal components. In practical terms, this means a simple stick fused with a 波克布林 arm can outperform many mid-tier standard weapons. The damage scaling is substantial enough that bone-fused weapons become competitive with fully upgraded metal weapons, and they are far easier and cheaper to acquire in large quantities.</p>
+
+<p data-zh="斯塔尔伪装">Beyond the damage boost, the 夜光套装 provides a unique utility effect: <strong>骷髅伪装</strong>. When wearing any piece of the set, Stal-type enemies — the dismembered skeletons that rise from the ground at night — will not attack 林克 on sight. They will regard you as one of their own, allowing you to walk through Stal encampments unmolested, set up ambushes, or simply ignore them while focusing on other threats. This is particularly valuable in regions dense with Stal enemies, such as the 地底 and certain nighttime areas of 海拉鲁平原.</p>
+
+<p data-zh="夜间战斗">The third major benefit is the <strong>nighttime glow</strong>. Every piece of the 夜光套装 emits a bright green luminescence that acts as a constant light source in dark environments. When exploring the 地底 (where darkness is pervasive and dangerous), the caves beneath 海拉鲁, or any unlit underground area, this built-in illumination saves inventory space on 光亮花的种子s and reduces the need for the 采矿套装 set. The glow is bright enough to reveal terrain details, enemy positions, and collectible items in a respectable radius around 林克.</p>
+
+<p data-zh="错过了就没有">The FOMO factor: <strong>The 夜光套装 can only be obtained from a single hidden NPC in the 地底 who accepts only 魄 as currency.</strong> There is no shop in the surface world that sells this armor, no shrine that rewards it, and no quest that gives it as a prize. If you never venture into the 地底 — or if you explore them without knowing where to look — you will never see this armor. For players who enjoy unique builds, nighttime combat, or 地底 exploration, missing the 夜光套装 means losing access to one of the most creative armor concepts in the entire game.</p>
+
+<div class="pro-tip">
+<strong>PRO TIP:</strong> The 夜光套装's bone damage boost stacks with weapon base damage and any additional 余料建造 effects. A high-durability base weapon (like a Gnarled Long Stick or Soldier's Claymore) fused with a high-tier Stal skull and wielded with the full 夜光套装 equipped can deal damage comparable to endgame weapons. This makes it one of the most cost-efficient damage builds in 王国之泪, since bone materials are infinitely renewable from Stal enemies that respawn every night.
+</div>
+</section>
+
+<!-- MODULE 2 -->
+<section class="section" id="recipe">
+<h2>2. 余料建造 / 制作 配方</h2>
+<p data-zh="合成配方">The 夜光套装 is not crafted in the traditional sense, nor is it found in chests or purchased with 卢比. Instead, each of the three pieces must be <strong>purchased from a mysterious stylist NPC</strong> who resides in a hidden location deep within the 地底. This vendor accepts <strong>魄</strong> exclusively — the ghostly spirit currency found only in the 地底. No 卢比, no materials, no barter. 魄 only.</p>
+
+<table>
+<tr>
+<th>防具 Piece</th>
+<th>Cost</th>
+<th>魄 Currency</th>
+<th>Set Bonus Progress</th>
+</tr>
+<tr>
+<td>夜光面罩</td>
+<td>150 魄</td>
+<td>Small 魄 ×150 OR Large 魄 ×30 OR Grand 魄 ×8 (mix allowed)</td>
+<td>1/3 pieces</td>
+</tr>
+<tr>
+<td>夜光紧身服</td>
+<td>200 魄</td>
+<td>Small 魄 ×200 OR Large 魄 ×40 OR Grand 魄 ×10 (mix allowed)</td>
+<td>2/3 pieces</td>
+</tr>
+<tr>
+<td>夜光紧身裤</td>
+<td>150 魄</td>
+<td>Small 魄 ×150 OR Large 魄 ×30 OR Grand 魄 ×8 (mix allowed)</td>
+<td>3/3 pieces — Set Bonus Unlocked</td>
+</tr>
+<tr>
+<td style="background:#252525;font-weight:700">TOTAL</td>
+<td style="background:#252525;font-weight:700;color:#d48aff">500 魄</td>
+<td style="background:#252525;font-weight:700" colspan="2">Mix any combination of Small/Large/Grand 魄 to reach 500 total</td>
+</tr>
+</table>
+
+<p data-zh="购买位置">The purchase location is the <strong>神秘造型师</strong> found in the 地底, near the <strong>平原魔人像</strong>. This vendor is located in the central region of the 地底, roughly beneath the 海拉鲁平原 area. The exact coordinates are approximately <span class="coord">0000, 0000, -0800</span> (slight variations depending on your depth measurement). The stylist stands beside a 魔人像 — the stone figures that accept 魄 in exchange for various goods.</p>
+
+<div class="info-box">
+<strong>How 魄 Work:</strong> 魄 are spectral orbs that float in the darkness of the 地底. Walking near them automatically collects them and adds to your 魄 counter. There are three tiers: Small 魄 (blue, worth 1), Large 魄 (green, worth 5), and Grand 魄 (red, worth 20). Your total 魄 count is displayed in your inventory and persists across deaths and sessions. You do not lose 魄 when you die. They function identically to 卢比 but are only accepted by 地底 vendors.
+</div>
+
+<p data-zh="套装奖励">Equipping all three pieces simultaneously unlocks the <strong>"Bone 攻击力提升"</strong> set bonus, which is the primary reason to collect the full set. Individual pieces provide only the base defense and the 骷髅伪装 effect — the damage boost requires the complete ensemble. Each piece provides 3 base defense (9 total for the set), which is respectable for early-to-mid game but falls off in the late game. The set cannot be upgraded at 大妖精之泉s, so plan your build accordingly.</p>
+</section>
+
+<!-- MODULE 3 -->
+<section class="section" id="materials">
+<h2>3. 材料与位置</h2>
+
+<h3>魄 — The 地底 Currency</h3>
+<div class="material-item">
+<div class="mat-icon">👻</div>
+<div class="mat-info">
+<h4>魄 Spirits <span class="tag">Need: 500 total</span> <span class="tag">Found Only: 地底</span></h4>
+<p data-zh="魄">魄 are the exclusive currency of the 地底 — ghostly, glowing spirits that drift through the perpetual darkness below 海拉鲁. They are not items you pick up in the traditional sense; instead, they are automatically absorbed when 林克 walks close enough to them. Your 魄 total is tracked separately from 卢比 and is displayed in your inventory screen. The only way to spend 魄 is at 魔人像s and special vendors like the 神秘造型师.</p>
+<p>There are <strong>three tiers of 魄</strong>, each with a different point value:</p>
+<ul class="tip-list">
+<li><strong>Small 魄 (Blue):</strong> Worth <strong>1 魄 point</strong>. The most common variety. These faint blue orbs are scattered throughout the 地底 in massive quantities. They appear individually or in small clusters near 破魔之根s, along travel paths, and around abandoned structures. Easy to spot — they emit a soft blue glow.</li>
+<li><strong>Large 魄 (Green):</strong> Worth <strong>5 魄 points</strong>. Less common but noticeably more valuable. Large 魄 appear as larger, brighter green orbs and are typically found in slightly more dangerous or out-of-the-way areas. They often spawn near mini-boss encounters, in the center of wide-open 地底 plains, and near abandoned mines. A single Large 魄 is equivalent to five Small 魄, so prioritize these when routing.</li>
+<li><strong>Grand 魄 (Red):</strong> Worth <strong>20 魄 points</strong>. The rarest and most valuable. Grand 魄 are brilliant red orbs that stand out dramatically against the dark 地底 environment. They are typically found in hard-to-reach locations: atop rock formations, inside half-buried ruins, near boss arenas, and in areas protected by 瘴气 pools or strong enemies. Finding just 25 Grand 魄 covers half your total requirement. Always go out of your way to collect these.</li>
+</ul>
+<p><strong>Best farming locations:</strong></p>
+<ul class="tip-list">
+<li><strong>Near 破魔之根s:</strong> Every 破魔之根 in the 地底 has a cluster of Small 魄 (3-8) in its immediate vicinity. Since 破魔之根s are your primary fast travel network in the 地底, you will passively collect hundreds of 魄 just by activating them. Always circle the area after activating a new 破魔之根.</li>
+<li><strong>Flat open areas:</strong> The wide, flat plains of the central 地底 (beneath 海拉鲁平原 and the surrounding regions) are densely populated with 魄 of all sizes. These areas are relatively safe, have minimal 瘴气 coverage, and offer high visibility. Run in a sweeping pattern to collect dozens per pass.</li>
+<li><strong>Abandoned mines:</strong> The various abandoned mine structures scattered throughout the 地底 consistently spawn Large and Grand 魄. These locations often have 左纳乌能源 deposits as well, making them dual-purpose farming spots. Check inside buildings, on elevated platforms, and near broken mining equipment.</li>
+<li><strong>瘴气 edges:</strong> The boundaries between 瘴气-covered and safe terrain often have higher 魄 concentrations, particularly Large 魄. Approach carefully — 瘴气 reduces your maximum hearts while you stand in it.</li>
+<li><strong>Beneath major surface settlements:</strong> The 地底 directly beneath 卡卡利科村, 哈特诺村, 格鲁德小镇, and 利特村 tend to have elevated 魄 spawn rates. The area beneath 海拉鲁城堡 is exceptionally dense with Grand 魄 but is also extremely dangerous.</li>
+</ul>
+<p><strong>Respawn mechanic:</strong> 魄 respawn after every 血月, just like surface enemies and materials. If you thoroughly clear a farming route, you can return after the next 血月 to collect the same 魄 again. This makes the 500 魄 target very achievable over multiple sessions — you do not need to marathon-farm them all in one trip.</p>
+</div>
+</div>
+
+<h3>Navigating the 地底 — 需要 Preparation</h3>
+<div class="material-item">
+<div class="mat-icon">🕯️</div>
+<div class="mat-info">
+<h4>光亮花的种子s / 采矿套装 <span class="tag">Essential</span></h4>
+<p data-zh="照明需求">The 地底 are pitch black. Without a light source, you cannot see terrain features, enemy positions, or even 魄 spirits beyond a few feet from 林克. Before attempting to farm 500 魄, ensure you have at least one of the following:</p>
+<ul class="tip-list">
+<li><strong>光亮花的种子s (minimum 30-50):</strong> Throw these on the ground or fuse them to arrows to create permanent light sources in the 地底. They grow into glowing plants that illuminate a wide radius. Farm them from surface caves (almost every cave has 2-5 seeds) or purchase from Beedle at stables.</li>
+<li><strong>采矿套装 (full set preferred):</strong> This armor set provides a constant glow effect when equipped, eliminating the need for 光亮花的种子s. The pieces are found in chests at various 地底 locations. Even one piece (the Mask is easiest to find) provides enough light for basic navigation.</li>
+<li><strong>破魔之根s as anchors:</strong> Each activated 破魔之根 illuminates a massive circular area around it. Your farming route should hop between 破魔之根s, collecting 魄 in each illuminated zone before moving to the next.</li>
+</ul>
+</div>
+</div>
+
+<h3>瘴气防护</h3>
+<div class="material-item">
+<div class="mat-icon">🖤</div>
+<div class="mat-info">
+<h4>瘴气 Protection <span class="tag">Highly Recommended</span></h4>
+<p data-zh=" gloom防护">瘴气 is the pervasive dark substance that covers much of the 地底 floor. Standing in 瘴气 slowly reduces your maximum hearts — not just your current health, but your maximum health pool. This reduction persists until you return to the surface or stand in 破魔之根 illumination. To mitigate 瘴气:</p>
+<ul class="tip-list">
+<li><strong>向阳草 cooking:</strong> Cook meals with 向阳草s (found on 天空 Islands) to create dishes that restore hearts lost to 瘴气. These are essential for extended 地底 exploration.</li>
+<li><strong>Deep Firefly elixirs:</strong> Cook Deep Fireflies (found in the 地底 near water) to create 瘴气防护 elixirs that temporarily prevent 瘴气 damage.</li>
+<li><strong>Stick to high ground:</strong> 瘴气 tends to pool in low-lying areas. Stay on elevated terrain, rock formations, and ruins to avoid it entirely.</li>
+<li><strong>破魔之根 proximity:</strong> Standing near an active 破魔之根 nullifies 瘴气 in its radius. Plan your route to stay within 破魔之根 illumination as much as possible.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- MODULE 4 -->
+<section class="section" id="route">
+<h2>4. 最优路线</h2>
+<p data-zh="最优路线">This route is designed to be completed in the early-to-mid game, as soon as you have access to the 地底 and at least one active 破魔之根. You do not need any story progression beyond the initial tutorial and the ability to reach a chasm entrance. Total time varies significantly based on how many 魄 you have already collected passively.</p>
+
+<div class="route-tree">
+
+<div class="route-step">
+<div class="step-num">1</div>
+<div>
+<h4 data-zh="准备阶段">Preparation — 地面 收集ion (10-15 minutes)</h4>
+<p><strong>Start point:</strong> 监视堡垒 or any stable.</p>
+<p>Before descending, gather supplies: <strong>30-50 光亮花的种子s</strong> (check caves near your starting point — caves almost always have Brightbloom plants inside), <strong>5-10 向阳草s</strong> (cook into 瘴气-healing meals — farm from nearby 天空 Islands if needed), a bow with at least 20 arrows (for attaching 光亮花的种子s to illuminate distant areas), and any healing items you have stockpiled.</p>
+<p>If you have already obtained any piece of the 采矿套装 from previous 地底 trips, equip it now. If not, 光亮花的种子s will carry you through this route.</p>
+<p class="coord">Recommended entry: The chasm near 海拉鲁城堡 <span class="coord">-0253, 1011, 0005</span> or the one near 监视堡垒 itself.</p>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">2</div>
+<div>
+<h4 data-zh="进入地底">Enter the 地底 — First 破魔之根 (10 minutes)</h4>
+<p><strong>Fast travel to your chosen chasm entrance</strong> and drop in. Use your paraglider to slow descent. As you fall, look for a faint blue-white glow below — this is a 破魔之根. Aim for it and land nearby.</p>
+<p>Activate the 破魔之根 immediately. This does three things: illuminates the surrounding area (making navigation possible), adds a fast travel point, and nullifies 瘴气 in its radius. Circle the 破魔之根 and collect all nearby Small 魄 — there are usually 3-8 per 破魔之根.</p>
+<p>Throw a 光亮花的种子 in each cardinal direction from the 破魔之根 to extend your visible range. Look for additional 魄 in the illuminated areas and collect them. Mark any Grand 魄 or Large 魄 you spot but cannot safely reach — you will return later if needed.</p>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">3</div>
+<div>
+<h4 data-zh="地底 farming 路线">魄 Farming Loop — Central 地底 (30-60 minutes)</h4>
+<p>Using your activated 破魔之根 as a hub, expand outward in a spiral pattern. The goal is to reach and activate additional 破魔之根s while collecting every 魄 along the way. Follow this priority system:</p>
+<p><strong>Priority 1 — Grand 魄 (red, 20 points):</strong> These are unmistakable — bright red orbs visible from great distances. If you spot one, alter your route to collect it immediately. They are rare enough that missing even one is a significant setback. Common locations: atop rock spires, inside ruined structures, near abandoned mine equipment, at the edge of 瘴气 pools.</p>
+<p><strong>Priority 2 — Large 魄 (green, 5 points):</strong> Bright green orbs, visible at medium range. These are your workhorse currency — collecting 40 Large 魄 covers the entire 500 point requirement with no Small 魄 needed. Check near abandoned mines, mini-boss spawn points, and open plain areas.</p>
+<p><strong>Priority 3 — Small 魄 (blue, 1 point):</strong> Abundant but individually weak. 收集 them as you pass but do not go far out of your way for individual Small 魄. Clusters of 5+ are worth a detour; single 魄 are not.</p>
+<p><strong>路线 pattern:</strong> Move from 破魔之根 to 破魔之根 in a chain. At each 破魔之根, activate it, circle for nearby 魄, throw 光亮花的种子s to scout the perimeter, then move to the next visible 破魔之根 on the horizon. The central 地底 (beneath 海拉鲁平原) has enough 破魔之根s spaced closely enough that you can hop between them without spending more than a minute in true darkness.</p>
+<div class="pro-tip">
+<strong>PRO TIP:</strong> Bring 左纳乌 charges and a Fan/Wing device. In wide-open 地底 areas, you can attach a Fan to a wing and glide long distances at high speed, covering massive areas quickly and spotting 魄 from the air. This is the fastest way to farm large regions. Build a simple aircraft at any 左纳乌 Device Dispenser in the 地底.
+</div>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">4</div>
+<div>
+<h4 data-zh="找到神秘造型师">Locate the 神秘造型师 (10-15 minutes)</h4>
+<p>Once you have accumulated <strong>500 魄</strong>, it is time to find the vendor. The 神秘造型师 is located near the <strong>平原魔人像</strong> in the central 地底. From any central 地底 破魔之根, navigate toward the coordinates <span class="coord">0000, 0000, -0800</span> (approximate — look for the 魔人像 icon on your 地底 map if you have revealed the area).</p>
+<p>魔人像s appear as large stone figures with outstretched hands, visible from a distance even in the dark. They are always illuminated by a soft light. The 神秘造型师 stands directly beside one of these statues. If you have not revealed the map section yet, follow 破魔之根s northward from your starting position until the statue comes into view.</p>
+<p>Approach the stylist and interact. The purchase menu will show all three Radiant 防具 pieces. Buy them in any order, though we recommend Mask → Tights → Shirt to spread the cost evenly. Each purchase is confirmed individually and the armor piece is added to your inventory immediately.</p>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">5</div>
+<div>
+<h4 data-zh="返回地面">Return to 地面 and Test (5 minutes)</h4>
+<p>Fast travel back to the surface via any activated 破魔之根. Find a safe spot, open your inventory, and equip all three Radiant 防具 pieces. Observe 林克's appearance — he should now look like a glowing skeleton. If you have any bone materials in your inventory (波克布林 Arm, 莫力布林 Arm, Stal skull), fuse one to a weapon and test the damage output against a nearby enemy. The damage numbers should be noticeably higher than without the set.</p>
+<p>Wait until nightfall and approach a Stal enemy spawn point. The Stals should ignore you unless you attack first. The disguise is working. Congratulations — you now have one of the most unique and fun armor sets in Tears of the Kingdom.</p>
+</div>
+</div>
+
+</div>
+
+<p data-zh="总时间"><strong>Total estimated route time:</strong> 60-100 minutes for the full 500 魄 farm and purchase, assuming you start from zero 魄. If you have already collected some 魄 from casual 地底 exploration, adjust downward accordingly. The route is designed to be done in segments — farm 魄 across multiple sessions, returning to the surface to restock 光亮花的种子s as needed. There is no time pressure.</p>
+</section>
+
+<!-- MODULE 5 -->
+<section class="section" id="gotchas">
+<h2>5. 注意事项</h2>
+<p data-zh="注意事项">The 地底 are unforgiving, and the 夜光套装 acquisition has several pitfalls that can waste hours of progress or get you killed. Study this section before your first descent.</p>
+
+<div class="gotcha-box">
+<h4>⚠️ 地底 Survival — The Hard Truths</h4>
+<ul>
+<li><strong>The 地底 are DARK:</strong> This cannot be overstated. Without 光亮花的种子s or the 采矿套装, you are essentially blind. You will walk into 瘴气 pools, fall into chasms, stumble into enemy camps, and miss 魄 that are inches from your face. Do not enter the 地底 without at least 20 光亮花的种子s. Ever.</li>
+<li><strong>瘴气 reduces MAXIMUM hearts:</strong> Not current health — maximum health. If you have 10 hearts and stand in 瘴气 long enough, your maximum might drop to 4 hearts. This effect persists until you either return to the surface, stand in 破魔之根 light, or eat 瘴气-healing food. In the worst case, a single hit from an enemy can kill you because your maximum health has been reduced to almost nothing. Check your heart container count constantly while in the 地底.</li>
+<li><strong>No natural light:</strong> Unlike the surface world, there is no day/night cycle in the 地底. It is permanently dark. Your only light sources are 光亮花的种子s, 破魔之根s, the 采矿套装, and weapon effects. Plan accordingly.</li>
+<li><strong>Falling is fatal:</strong> The 地底 have bottomless pits just like the surface. Falling into one means death and a respawn at your last surface save point, losing all unsaved progress. Use your paraglider liberally when navigating uncertain terrain in the dark.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<h4>⚠️ 魄 Farming Efficiency — Common Mistakes</h4>
+<ul>
+<li><strong>Farming without a route:</strong> Wandering randomly in the 地底 is inefficient and dangerous. Always move from 破魔之根 to 破魔之根 in a planned pattern. This ensures you have fast travel points, 瘴气 protection, and illuminated areas for safe collection.</li>
+<li><strong>Ignoring Grand 魄:</strong> Many players focus on collecting every Small 魄 they see and skip risky-looking Grand 魄 locations. This is backwards. A single Grand 魄 is worth 20 Small 魄. Spending two minutes climbing a rock spire for one Grand 魄 is vastly more efficient than spending two minutes collecting 20 individual Small 魄. Always prioritize Grand 魄, even if they look out of the way.</li>
+<li><strong>Not using 左纳乌 vehicles:</strong> The central 地底 are wide-open plains perfect for 左纳乌 aircraft. A simple Fan+Wing glider lets you cover 10x the ground area in the same time, spotting 魄 from the air that would be invisible on foot. If you are not using vehicles, you are farming inefficiently.</li>
+<li><strong>Forgetting 血月 respawns:</strong> If you clear a farming area and do not have enough 魄, remember that ALL 魄 respawn on the next 血月. There is no need to search for "fresh" areas — just re-run your previous route after the 血月 cutscene plays.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<h4>⚠️ Stylist Location &amp; Purchase Issues</h4>
+<ul>
+<li><strong>The stylist is NOT marked on your map:</strong> There is no quest marker, no map icon, and no NPC indicator for the 神秘造型师 until you are practically standing next to him. You must navigate to the 平原魔人像 manually. The statue itself is visible on the 地底 map once you have activated nearby 破魔之根s — look for the stone hand icon.</li>
+<li><strong>魔人像s look similar:</strong> There are multiple 魔人像s throughout the 地底. The 神秘造型师 is specifically at the <strong>Plains</strong> statue in the central region. Other statues have different vendors or no stylist at all. Do not waste 魄 at the wrong statue.</li>
+<li><strong>魄 are NOT 卢比:</strong> You cannot use 卢比 to buy the 夜光套装. You cannot use 左纳乌能源, materials, or any other currency. Only 魄 count. If you do not have enough 魄, the purchase option will be grayed out. Farm more and return.</li>
+<li><strong>Individual piece purchases:</strong> Each armor piece must be bought separately with its own confirmation. There is no "buy all" option. Make sure you have 500 魄 total before committing to purchases — if you buy the Mask and Shirt first (150 + 200 = 350 魄) but only had 400 魄, you will be 50 short for the Tights and need to farm again.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<h4>⚠️ 防具 Set Limitations</h4>
+<ul>
+<li><strong>Cannot be upgraded:</strong> The 夜光套装 has fixed stats and cannot be enhanced at 大妖精之泉s. The 3 defense per piece (9 total) is all you get. This makes it less viable for late-game hard content where enemy damage scales up significantly. Treat it as a specialized build piece, not your main tank armor.</li>
+<li><strong>Bone 攻击力提升 requires all 3 pieces:</strong> The set bonus ONLY activates when wearing the complete Mask, Shirt, and Tights simultaneously. Wearing one or two pieces gives you the 骷髅伪装 and glow but NOT the damage boost. Do not buy individual pieces expecting partial benefits — commit to the full set.</li>
+<li><strong>骷髅伪装 breaks on attack:</strong> Stal enemies will ignore you while you walk past, but the moment you attack ANY enemy (Stal or otherwise), all nearby Stals will aggro. Use the disguise for positioning and ambush setup, not as a permanent immunity.</li>
+<li><strong>Bone weapons have low durability:</strong> Even with the damage boost, bone-fused weapons tend to break faster than metal weapons. Bring multiple backup weapons for extended combat. The good news is that bone materials are infinitely renewable — every night, new Stals rise from the ground.</li>
+</ul>
+</div>
+</section>
+
+<!-- MODULE 6 -->
+<section class="section" id="free-benefits">
+<h2>6. Free 收益</h2>
+<p data-zh="额外收益">Farming 500 魄 in the 地底 is not a single-purpose errand. The journey to acquire the 夜光套装 will inevitably reward you with far more than just the armor. Every minute spent in the 地底 yields permanent upgrades, new abilities, and valuable materials. Here is everything else you will walk away with:</p>
+
+<h3>破魔之根s — Permanent Fast Travel Network</h3>
+<div class="material-item">
+<div class="mat-icon">🗼</div>
+<div class="mat-info">
+<h4>破魔之根 Activation</h4>
+<p data-zh="灯根">Every 破魔之根 you activate during your 魄 farming route becomes a <strong>permanent fast travel point</strong> in the 地底. This is arguably the most valuable secondary benefit. The 地底 are massive — roughly the same size as the surface map — and without 破魔之根s, navigation is agonizingly slow. By the time you have collected 500 魄, you will likely have activated 10-20 new 破魔之根s, giving you comprehensive fast travel coverage of the central and surrounding 地底 regions.</p>
+<p>破魔之根s also: illuminate massive areas (making future exploration trivial), nullify 瘴气 in their radius (creating safe zones for healing and restocking), and reveal the 地底 map in their light circle. Each one is a permanent upgrade to your account that persists across all future play sessions.</p>
+</div>
+</div>
+
+<h3>左纳乌能源 — Energy Cell Upgrades</h3>
+<div class="material-item">
+<div class="mat-icon">⚙️</div>
+<div class="mat-info">
+<h4>左纳乌能源 Ore and Crystals</h4>
+<p data-zh="佐奈特">The 地底 are the only source of <strong>左纳乌能源</strong> — the green crystalline ore used to upgrade your Energy Cell at crystal refining stations. An upgraded Energy Cell means more 左纳乌 device usage time, which means longer flight durations, more powerful vehicle builds, and extended combat with 左纳乌-powered weapons.</p>
+<p>While farming 魄, you will pass dozens of 左纳乌能源 deposits. Mine them all. By the end of your farming route, you will likely have enough 左纳乌能源 for 2-3 Energy Cell upgrades, effectively doubling or tripling your 左纳乌 operational time. This alone is worth the trip — the 夜光套装 is almost a bonus by comparison.</p>
+<p>Also collect <strong>Large 左纳乌能源</strong> deposits (distinguished by their larger size and brighter glow) — these refine into more crystal charges per unit.</p>
+</div>
+</div>
+
+<h3>Schema Stones — 自动组装 Unlock</h3>
+<div class="material-item">
+<div class="mat-icon">📜</div>
+<div class="mat-info">
+<h4>自动组装 Blueprints</h4>
+<p data-zh="自动建造">Scattered throughout the 地底, particularly near abandoned mines and ruins, are <strong>Schema Stones</strong> — stone tablets that unlock blueprints for the 自动组装 ability. 自动组装 lets you instantly construct pre-designed 左纳乌 vehicles and structures without manual assembly, saving massive amounts of time.</p>
+<p>While 魄 farming, keep an eye out for these tablets. Each one unlocks a new blueprint: simple boats, hot-air balloons, combat vehicles, and more. The convenience of 自动组装 cannot be overstated — instead of spending 5 minutes attaching parts, you press one button and a functional vehicle materializes in seconds. 地底 exploration is the primary source of Schema Stones, and your farming route will take you past several guaranteed spawn points.</p>
+</div>
+</div>
+
+<h3>炸弹花s and 地底-Exclusive 材料</h3>
+<div class="material-item">
+<div class="mat-icon">💣</div>
+<div class="mat-info">
+<h4>稀有 Combat 材料</h4>
+<p data-zh="炸弹花">The 地底 are the sole source of <strong>炸弹花s</strong> — the most powerful explosive material in the game. When fused to arrows or weapons, 炸弹花s create massive area-of-effect explosions capable of destroying rock walls, blasting enemy camps, and dealing heavy damage to bosses. 地面 farming yields only a handful; a single 地底 trip can net you 20-30+ 炸弹花s.</p>
+<p>Additionally, you will collect: <strong>烟雾蘑菇s</strong> (create smoke clouds for stealth), <strong>混乱花s</strong> (confuse enemies), <strong>Dark Clumps</strong> (制作 material for dark-themed items), and various rare ores. All of these are either unavailable or extremely scarce on the surface.</p>
+</div>
+</div>
+
+<h3>普尔亚平板 Sensor Upgrade</h3>
+<div class="material-item">
+<div class="mat-icon">📱</div>
+<div class="mat-info">
+<h4>Sensor+ from 洛贝利</h4>
+<p data-zh="传感器升级">In the <strong>地底 beneath 哈特诺村</strong>, you can find <strong>洛贝利</strong> (yes, that 洛贝利 from Breath of the Wild). Speaking with him here unlocks the <strong>Sensor+</strong> upgrade for your 普尔亚平板 — an incredibly useful tool that lets you search for ANY material in your 海拉鲁 Compendium, not just shrines. Want to find 静谧公主? Set the sensor to detect it and follow the beeping. Need more Razorshroom? The sensor will lead you directly to the nearest spawn.</p>
+<p>洛贝利's 地底 location is a short detour from most central farming routes. The Sensor+ is a permanent account upgrade that fundamentally changes how you gather materials for the rest of the game. Do not skip this.</p>
+</div>
+</div>
+
+<h3>Additional 地底 Discoveries</h3>
+<div class="material-item">
+<div class="mat-icon">🏴</div>
+<div class="mat-info">
+<h4>Hidden Treasures and Bosses</h4>
+<p data-zh="隐藏宝藏">地底 exploration inevitably leads to unexpected discoveries: <strong>treasure chests</strong> containing high-tier weapons and bows (地底 chests have unique loot tables with better gear), <strong>mini-boss encounters</strong> that reward valuable 余料建造 materials, <strong>Yiga Clan hideouts</strong> with their own questlines and rewards, and <strong>secret areas</strong> accessible only through creative 左纳乌 vehicle use.</p>
+<p>The 地底 also contain the <strong>Forge Construct</strong> stations, where you can exchange 左纳乌能源 for rare 左纳乌 capsules (Fan, Rocket, Cannon, Beam Emitter, etc.). These capsules are the building blocks of vehicle creation, and stocking up on them while farming 魄 is highly efficient.</p>
+</div>
+</div>
+
+<div class="pro-tip">
+<strong>PRO TIP:</strong> Treat your 夜光套装 farming trip as a full 地底 expedition, not a quick errand. Bring extra weapons, maximum healing items, and all the 光亮花的种子s you can carry. Spend 2-3 hours fully exploring each region rather than rushing from 魄 to 魄. You will emerge with the 夜光套装, a fully upgraded Energy Cell, 20+ 破魔之根s activated, a dozen Schema Stones, hundreds of 炸弹花s and rare materials, the Sensor+ upgrade, and permanent fast travel coverage of the entire 地底. The armor is just the beginning.
+</div>
+</section>
+
+<!-- NEXT PAGE -->
+<section class="section">
+<a href="champions-leathers.html" class="next-page" data-zh="推荐下一篇">推荐下一步 → 勇者皮衣 — Unique chest armor that enhances the 大师之剑's beam attack. A must-have for any 大师之剑 build.</a>
+</section>
+
+</main>
+
+<div class="footer">
+<p>塞尔达传说：王国之泪 — 制作攻略 Database</p>
+<p>社区编写，服务社区。</p>
+</div>
+
+</div>
+
+<!-- RIGHT SIDEBAR -->
+<aside class="right-sidebar">
+<h3>物品数据</h3>
+<div class="stat-row">
+<span class="stat-label">Pieces</span>
+<span class="stat-value">3 (Mask, Shirt, Tights)</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">防御力 (each)</span>
+<span class="stat-value">3 (9 total)</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Set Bonus</span>
+<span class="stat-value">Bone 攻击力提升</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Upgradeable</span>
+<span class="stat-value">No</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Dyeable</span>
+<span class="stat-value">No</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Glow Effect</span>
+<span class="stat-value">Yes (permanent)</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Stal Disguise</span>
+<span class="stat-value">Yes (per piece)</span>
+</div>
+
+<h3 style="margin-top:30px">费用汇总</h3>
+<div class="stat-row">
+<span class="stat-label">夜光面罩</span>
+<span class="stat-value">150 魄</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">夜光紧身服</span>
+<span class="stat-value">200 魄</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">夜光紧身裤</span>
+<span class="stat-value">150 魄</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Total</span>
+<span class="stat-value" style="color:#d48aff;font-weight:700">500 魄</span>
+</div>
+
+<h3 style="margin-top:30px">相关攻略</h3>
+<div class="related-item">
+<div class="ri-icon">👕</div>
+<div>
+<div class="ri-name"><a href="champions-leathers.html">勇者皮衣</a></div>
+<div class="ri-desc">大师之剑 beam boost</div>
+</div>
+</div>
+<div class="related-item">
+<div class="ri-icon">🕯️</div>
+<div>
+<div class="ri-name"><a href="#">Brightbloom Farming</a></div>
+<div class="ri-desc">地底 lighting essentials</div>
+</div>
+</div>
+<div class="related-item">
+<div class="ri-icon">⚙️</div>
+<div>
+<div class="ri-name"><a href="#">左纳乌能源 &amp; Energy Cell</a></div>
+<div class="ri-desc">Upgrade your 左纳乌 power</div>
+</div>
+</div>
+<div class="related-item">
+<div class="ri-icon">🗼</div>
+<div>
+<div class="ri-name"><a href="#">地底 破魔之根 Map</a></div>
+<div class="ri-desc">All 120+ 破魔之根 locations</div>
+</div>
+</div>
+</aside>
+
+</div>
+</body>
+</html>

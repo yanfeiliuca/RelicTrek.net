@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>勇者皮衣 - 塞尔达 王国之泪 制作攻略</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0f0f0f;color:#e0e0e0;line-height:1.7}
+a{color:#4fc3f7;text-decoration:none}
+a:hover{color:#81d4fa}
+.container{display:flex;min-height:100vh}
+.left-sidebar{width:260px;background:#1a1a1a;border-right:1px solid #333;padding:20px 0;position:fixed;height:100vh;overflow-y:auto}
+.left-sidebar h2{font-size:14px;text-transform:uppercase;color:#888;padding:0 20px;margin-bottom:15px;letter-spacing:1px}
+.left-sidebar ul{list-style:none}
+.left-sidebar li a{display:block;padding:10px 20px;color:#aaa;font-size:14px;border-left:3px solid transparent;transition:all .2s}
+.left-sidebar li a:hover,.left-sidebar li a.active{color:#fff;background:#252525;border-left-color:#4fc3f7}
+.left-sidebar .emoji{margin-right:8px}
+.main-wrapper{flex:1;margin-left:260px;margin-right:300px}
+.top-nav{background:#1a1a1a;border-bottom:1px solid #333;padding:15px 30px;display:flex;align-items:center;gap:25px;position:sticky;top:0;z-index:100}
+.top-nav a{color:#aaa;font-size:14px;padding:5px 0}
+.top-nav a:hover{color:#fff}
+.ticker-bar{background:#1e2a1e;border-bottom:1px solid #2a3a2a;padding:10px 30px;font-size:13px;color:#7cb97c;overflow:hidden;white-space:nowrap}
+.ticker-bar span{margin-right:30px}
+.content-area{padding:35px 40px;max-width:900px}
+.right-sidebar{width:300px;background:#1a1a1a;border-left:1px solid #333;padding:25px;position:fixed;right:0;height:100vh;overflow-y:auto}
+.right-sidebar h3{font-size:14px;text-transform:uppercase;color:#888;margin-bottom:15px;letter-spacing:1px}
+.right-sidebar .stat-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #2a2a2a;font-size:14px}
+.right-sidebar .stat-label{color:#888}
+.right-sidebar .stat-value{color:#ccc}
+.related-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #2a2a2a}
+.related-item .ri-icon{font-size:24px}
+.related-item .ri-name{font-size:14px;color:#ccc}
+.related-item .ri-desc{font-size:12px;color:#666}
+h1{font-size:32px;margin-bottom:10px;color:#fff}
+h2{font-size:22px;margin:30px 0 15px;color:#4fc3f7;border-bottom:1px solid #333;padding-bottom:8px}
+h3{font-size:17px;margin:22px 0 10px;color:#ccc}
+p{margin-bottom:14px;color:#c0c0c0}
+.item-header{display:flex;align-items:center;gap:18px;margin-bottom:25px;padding:20px;background:#1a1a1a;border:1px solid #333;border-radius:6px}
+.item-icon-accessory{font-size:48px;background:#2a1a2a;border-radius:8px;padding:10px}
+.item-meta{display:flex;gap:15px;flex-wrap:wrap;margin-top:8px}
+.item-meta span{font-size:13px;padding:4px 12px;background:#252525;border-radius:4px;color:#aaa}
+.item-meta .rare{background:#2a1a2a;color:#d48aff}
+.item-meta .difficulty{background:#1a2a1a;color:#7cb97c}
+.section{margin-bottom:40px}
+.gotcha-box{background:#2a1a1a;border:1px solid #4a2a2a;border-radius:6px;padding:20px;margin:15px 0}
+.gotcha-box h4{color:#e57373;margin-bottom:10px;font-size:15px}
+.gotcha-box ul{list-style:none;padding-left:0}
+.gotcha-box li{padding:8px 0;border-bottom:1px solid #3a2a2a;color:#d0a0a0;font-size:14px}
+.gotcha-box li:last-child{border-bottom:none}
+.route-tree{background:#1a1a2a;border:1px solid #2a2a3a;border-radius:6px;padding:20px;margin:15px 0}
+.route-step{display:flex;align-items:flex-start;gap:15px;padding:15px 0;border-bottom:1px solid #2a2a3a}
+.route-step:last-child{border-bottom:none}
+.step-num{background:#4fc3f7;color:#0f0f0f;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.route-step h4{color:#81d4fa;margin-bottom:5px;font-size:15px}
+.route-step p{margin-bottom:4px;font-size:14px}
+.material-item{display:flex;align-items:flex-start;gap:15px;padding:15px;background:#1a1a1a;border:1px solid #333;border-radius:6px;margin:12px 0}
+.mat-icon{font-size:28px;flex-shrink:0}
+.mat-info h4{color:#ccc;margin-bottom:5px}
+.mat-info p{font-size:14px;margin-bottom:4px}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th{background:#252525;color:#4fc3f7;padding:12px;text-align:left;border-bottom:2px solid #4fc3f7}
+td{padding:12px;border-bottom:1px solid #2a2a2a;color:#c0c0c0}
+tr:hover td{background:#1a1a1a}
+.coord{font-family:'Courier New',monospace;color:#7cb97c;background:#1a2a1a;padding:2px 8px;border-radius:4px;font-size:13px}
+.tag{display:inline-block;padding:3px 10px;background:#252525;border-radius:4px;font-size:12px;color:#aaa;margin-right:6px}
+.footer{text-align:center;padding:40px;color:#555;font-size:13px;border-top:1px solid #222;margin-top:60px}
+.breadcrumb{color:#666;font-size:13px;margin-bottom:20px}
+.breadcrumb a{color:#888}
+.next-page{display:block;margin-top:30px;padding:20px;background:#1a2a1a;border:1px solid #2a3a2a;border-radius:6px;text-align:center;color:#7cb97c;font-weight:600}
+.next-page:hover{background:#1e321e}
+.warning-box{background:#2a1a1a;border:1px solid #4a2a2a;border-radius:6px;padding:15px;margin:15px 0;color:#d0a0a0;font-size:14px}
+.info-box{background:#1a1a2a;border:1px solid #2a2a3a;border-radius:6px;padding:15px;margin:15px 0;color:#a0a0d0;font-size:14px}
+.tip-list{list-style:none;padding-left:0}
+.tip-list li{padding:10px 0;border-bottom:1px solid #2a2a2a;font-size:14px;color:#c0c0c0}
+.tip-list li:last-child{border-bottom:none}
+.pro-tip{background:#1a2a1a;border-left:4px solid #7cb97c;padding:15px;margin:15px 0;border-radius:0 6px 6px 0}
+.pro-tip strong{color:#7cb97c}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- LEFT SIDEBAR -->
+<nav class="left-sidebar">
+<h2>塞尔达 王国之泪 物品</h2>
+<ul>
+<li><a href="champions-leathers.html" class="active"><span class="emoji">👕</span>勇者皮衣</a></li>
+<li><a href="radiant-set.html"><span class="emoji">💀</span>夜光套装</a></li>
+<li><a href="#"><span class="emoji">⚡</span>大师之剑</a></li>
+<li><a href="#"><span class="emoji">🛡️</span>海利亚盾</a></li>
+<li><a href="#"><span class="emoji">🌿</span>Hearty Elixir</a></li>
+<li><a href="#"><span class="emoji">🔥</span>耐火石铠</a></li>
+<li><a href="#"><span class="emoji">❄️</span>羽饰套装</a></li>
+<li><a href="#"><span class="emoji">🏹</span>大鹫弓</a></li>
+<li><a href="#"><span class="emoji">💎</span>钻石 Circlet</a></li>
+<li><a href="#"><span class="emoji">🧪</span> 强力药 </a></li>
+</ul>
+</nav>
+
+<!-- MAIN AREA -->
+<div class="main-wrapper">
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+<a href="./">制作ing Hub</a>
+<a href="./">防具</a>
+<a href="./">武器</a>
+<a href="./">药剂</a>
+<a href="./">材料</a>
+<a href="./">地底 Guide</a>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+<span>👕 勇者皮衣 — boosts 大师之剑 beam</span>
+<span>💀 夜光套装 — Stal disguise + bone attack up</span>
+<span>⚡ 大师之剑 — dragon scale required</span>
+<span>🛡️ 海利亚盾 — highest defense</span>
+<span>🌿 生命药 — 完全恢复 + 额外心心</span>
+</div>
+
+<!-- CONTENT -->
+<main class="content-area">
+
+<div class="breadcrumb">
+<a href="./">制作ing Hub</a> / <a href="./">防具</a> / 勇者皮衣
+</div>
+
+<div class="item-header">
+<div class="item-icon-accessory">👕</div>
+<div>
+<h1>勇者皮衣</h1>
+<p data-zh="冠军皮衣">5 defense, boosts 大师之剑 beam attack. Requires finding the hidden tailor and collecting rare materials from across 海拉鲁.</p>
+<div class="item-meta">
+<span class="rare">Rarity: 稀有</span>
+<span>Item 类型: 防具（胸甲）</span>
+<span class="difficulty">难度: ★★★☆☆ 中期</span>
+</div>
+</div>
+</div>
+
+<!-- MODULE 1 -->
+<section class="section" id="overview">
+<h2>1. 为什么这件物品重要</h2>
+<p data-zh="为什么这件物品重要">The <strong>勇者皮衣</strong> is not just another chest armor piece in <em>塞尔达传说：王国之泪</em> — it is one of the most build-defining items for any player who relies on the 大师之剑 as their primary weapon. While its base defense of 5 is modest compared to fully upgraded heavy armor sets, the unique passive effect it provides is found nowhere else in the game: <strong>it dramatically amplifies the 大师之剑's sword beam attack</strong>, turning an occasionally useful ranged option into a genuine combat strategy.</p>
+
+<p data-zh="大师之剑光束">When 林克 is at full health and equipped with the 勇者皮衣, the 大师之剑's beam projectile — normally a weak, situational attack used for distant targets — becomes a powerful ranged strike capable of dealing significant damage across long distances. This fundamentally changes how you can approach combat encounters. Enemies on cliffs, across chasms, or guarding camps from elevated positions can now be engaged and eliminated before you ever close the distance. For players who enjoy a more tactical, ranged-melee hybrid playstyle, this armor is essential.</p>
+
+<p data-zh="独特效果">Beyond the beam boost, the 勇者皮衣 carries significant lore weight. It is crafted by a reclusive tailor with deep connections to 海拉鲁's history, and the materials required tie directly into the game's central dragon mythology. Obtaining this piece of armor feels like a genuine quest rather than a simple purchase — you must hunt rare flowers that only bloom under moonlight, face one of the four great dragons circling 海拉鲁's sky, and track down a hidden NPC whose location is never marked on your map.</p>
+
+<p data-zh="错过了就没有">Here is the FOMO angle: <strong>the 勇者皮衣 cannot be obtained through any shop, shrine, or standard questline.</strong> There is no map marker pointing you toward it, no quest log entry guiding your steps. If you do not know what to look for — a hidden well behind a stable, a tailor who only appears after story progression, flowers that vanish during daylight — you can easily complete the entire game without ever knowing this armor exists. For completionists and anyone running a 大师之剑 build, that is an unacceptable miss.</p>
+
+<div class="pro-tip">
+<strong>PRO TIP:</strong> The 大师之剑 beam boost from 勇者皮衣 stacks with the sword's own scaling (it grows stronger as you complete more main quests). At endgame, a full-health beam shot with this armor equipped can one-shot many standard 波克布林 and 莫力布林 variants from extreme range. This makes it one of the most efficient open-world traversal and cleanup tools available.
+</div>
+</section>
+
+<!-- MODULE 2 -->
+<section class="section" id="recipe">
+<h2>2. 余料建造 / 制作 配方</h2>
+<p data-zh="合成配方">The 勇者皮衣 is not found in a chest, won from a boss, or purchased with standard currency. It must be <strong>crafted by a hidden tailor NPC</strong> who resides in a secret location. The 制作 process requires three specific materials plus a 卢比 payment. Below is the complete recipe table:</p>
+
+<table>
+<tr>
+<th>Material</th>
+<th>Qty</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>静谧公主</td>
+<td>3</td>
+<td>稀有 wildflower — 海拉鲁丘陵, 阿卡莱, 萨托利山</td>
+<td>Only blooms at night; glows faintly</td>
+</tr>
+<tr>
+<td>白龙的鳞片</td>
+<td>1</td>
+<td>Shoot the 白龙 with an arrow</td>
+<td>Dragon circles entire map; requires all 12 龙之泪s</td>
+</tr>
+<tr>
+<td>卢比</td>
+<td>500</td>
+<td>Any standard source (mining, selling, chests)</td>
+<td>Easily obtained; no special farming needed</td>
+</tr>
+</table>
+
+<p data-zh="裁缝位置">The 制作 itself is performed by the <strong>隐藏裁缝</strong> located inside the <strong>湿地驿站井</strong>. This NPC does not appear on the map, does not have a quest marker, and will not even be present at the location until you have progressed the main quest to the point where all 12 龙之泪s geoglyphs have been revealed and the 大师之剑 has been recovered from the 白龙. If you visit the well before this point, you will find it empty.</p>
+
+<div class="info-box">
+<strong>制作ing 位置：</strong> 湿地驿站井 — enter the well behind Wetland Stable in the 拉聂尔 Wetlands region. The tailor is in the underground chamber at the bottom. Bring all materials and 500 卢比. Interact with the tailor to trigger the 制作 dialogue. The armor is added to your inventory immediately upon confirmation.
+</div>
+
+<p data-zh="无法购买">Unlike most armor in 王国之泪, the 勇者皮衣 <strong>cannot be purchased from a standard shop, cannot be dyed at the Kochi Dye Shop</strong> (it has a unique coloration tied to its 制作), and <strong>cannot be upgraded at 大妖精之泉s</strong>. Its stats are fixed: 5 defense, 大师之剑 beam boost passive. This is a one-and-done acquisition — make it count.</p>
+</section>
+
+<!-- MODULE 3 -->
+<section class="section" id="materials">
+<h2>3. 材料与位置</h2>
+
+<h3>静谧公主</h3>
+<div class="material-item">
+<div class="mat-icon">🌸</div>
+<div class="mat-info">
+<h4>静谧公主 <span class="tag">Need: 3</span> <span class="tag">Rarity: 稀有</span></h4>
+<p data-zh="寂静公主">The 静谧公主 is one of the most visually striking and mechanically elusive collectible plants in Tears of the Kingdom. It is a pale, glowing wildflower with translucent petals that emit a soft blue-white luminescence. In the lore of Breath of the Wild and 王国之泪, this flower holds deep symbolic meaning — it was Princess 塞尔达's favorite flower and is strongly associated with her presence across 海拉鲁.</p>
+<p><strong>Critical mechanic:</strong> The 静谧公主 <strong>only blooms at night</strong>. During daylight hours, the flower either does not appear at all or appears as a closed, uncollectible bud. You must wait until nightfall (or sit at a campfire until night) for the flowers to open and become interactable. This applies to every single spawn point across the map.</p>
+<p><strong>Best farming locations:</strong></p>
+<ul class="tip-list">
+<li><strong>塔邦挞 Frontier — 大妖精之泉:</strong> Several 静谧公主 spawn around the entrance to the 大妖精之泉 in this region. Coordinates roughly <span class="coord">-1366, 1072, 0221</span>. Fast travel to the nearby shrine, then glide down. Check the flower beds surrounding the fountain structure.</li>
+<li><strong>阿卡莱 Highlands:</strong> The elevated, peaceful regions of 阿卡莱 hold multiple spawn points. Check near ancient ruins and along cliff edges with clear sightlines. The area around the 阿卡莱 Citadel Ruins occasionally spawns 静谧公主 among other rare flora.</li>
+<li><strong>萨托利山 (when glowing):</strong> When the 山神 appears on 萨托利山 (indicated by a glowing green aura visible from a distance), the entire mountain becomes a treasure trove of rare materials including numerous 静谧公主 flowers. This event is random but frequent enough to camp for. Coordinates <span class="coord">-2233, -0627, 0910</span> for the mountain peak.</li>
+<li><strong>海拉鲁丘陵:</strong> Scattered across the higher elevations of 海拉鲁丘陵, particularly near ridges and overlooks. These are more spread out but worth checking if you are already in the region.</li>
+<li><strong>Near 大妖精之泉s (all four):</strong> Each 大妖精之泉 location has a small chance to spawn 静谧公主 in the surrounding garden areas. The 塔邦挞 fountain is the most reliable, but check all four if you are struggling.</li>
+</ul>
+<p><strong>Drop rate / respawn:</strong> 静谧公主 uses the rare plant respawn timer. After collecting, you must wait for a 血月 for the flower to reappear at that location. If you need three and a location only has two, you will need to either find multiple spawn points or wait for a 血月 after collecting the first batch.</p>
+<p><strong>收集ion tip:</strong> The flower glows faintly even from a distance at night. Use 究极手 or your scope to scan areas from high ground — the pale glow is visible against dark grass. Cooking a meal with a 静谧公主 provides no special effect (it is classified as a "neutral" cooking ingredient), so do not waste it in recipes — save all collected flowers for the armor craft.</p>
+</div>
+</div>
+
+<h3>白龙的鳞片</h3>
+<div class="material-item">
+<div class="mat-icon">🐉</div>
+<div class="mat-info">
+<h4>白龙的鳞片 <span class="tag">Need: 1</span> <span class="tag">Rarity: 传说</span></h4>
+<p data-zh="光龙之鳞">The 白龙的鳞片 is a legendary 制作 material dropped by the <strong>白龙</strong> (also known as the Dragon of Light), one of four great dragons that circle the skies of 海拉鲁. This particular dragon is unique because it is intrinsically tied to the 大师之剑 questline — in fact, the 大师之剑 is embedded in the dragon's head for a significant portion of the game.</p>
+<p><strong>How to obtain:</strong> To acquire a scale, you must <strong>shoot the 白龙 with an arrow</strong> while it is flying. Any bow will work — you do not need a special weapon. When struck, the dragon will drop a scale (or occasionally a different dragon part depending on where you hit it). The scale will glow and fall slowly, emitting a bright light that makes it easy to spot against the landscape. Use your paraglider to chase it down and collect it mid-air, or mark the landing spot and travel there on foot.</p>
+<p><strong>前置条件 — ALL 12 龙之泪s:</strong> This is absolutely critical. <strong>The 白龙 will NOT appear in the sky until you have collected all 12 龙之泪s</strong> from the geoglyph locations across 海拉鲁 and completed the associated memory sequences. Before this point, the dragon simply does not spawn. If you are trying to get the 勇者皮衣 early in your playthrough, you are wasting your time — this is a mid-to-late game acquisition by design.</p>
+<p><strong>Dragon flight path:</strong> After being freed from the 大师之剑 quest, the 白龙 follows a massive, predictable circular route around the entire map of 海拉鲁. It flies at high altitude, typically well above most mountain peaks. The route passes near or over multiple 鸟望台s, making those the ideal camping spots. The dragon emits a brilliant golden-white glow visible from extreme distances, so spotting it is usually not difficult — the challenge is positioning yourself to intercept.</p>
+<p><strong>Best interception points:</strong></p>
+<ul class="tip-list">
+<li><strong>Mount 拉聂尔 鸟望台:</strong> Launch from this tower and glide toward the dragon as it passes. The height advantage gives you ample time to line up a shot. Coordinates <span class="coord">3846, -1307, 0539</span>.</li>
+<li><strong>塔邦挞 鸟望台:</strong> Another excellent vantage point on the western side of the dragon's route. Launch and paraglide to intercept. Coordinates <span class="coord">-2898, 0990, 0359</span>.</li>
+<li><strong>Any high 天空 Island:</strong> If you have unlocked 天空 Islands along or above the dragon's flight path, these provide even better positioning than 鸟望台s. The dragon flies below the highest 天空 Islands, giving you a top-down shot angle.</li>
+<li><strong>Wait on a mountain peak:</strong> If no tower is available, camp on any sufficiently high mountain along the route. The dragon's altitude is high but not extreme — most major mountain ranges put you within bow range.</li>
+</ul>
+<p><strong>Hit confirmation:</strong> When you successfully hit the dragon, you will hear a distinct impact sound and see a burst of light particles. The dropped scale will shine brilliantly as it falls. If you do not see a drop, you may have missed — the dragon has a cooldown between part drops, so you may need to wait and shoot again on its next pass.</p>
+</div>
+</div>
+
+<h3>卢比 × 500</h3>
+<div class="material-item">
+<div class="mat-icon">💰</div>
+<div class="mat-info">
+<h4>卢比 <span class="tag">Need: 500</span> <span class="tag">Rarity: Common</span></h4>
+<p data-zh="卢比">The 500 卢比 cost is the easiest requirement to meet and should not require any dedicated farming. By the mid-game point when you are eligible to craft the 勇者皮衣, you have almost certainly accumulated thousands of 卢比 through normal play. If you are somehow short, here are the fastest methods:</p>
+<ul class="tip-list">
+<li><strong>Sell gemstones:</strong> Mining ore deposits (common in caves and around rocky areas) yields 琥珀, 蛋白石, 黄玉, 红宝石, and 蓝宝石. A handful of Rubies or 蓝宝石s alone will cover the 500 卢比 cost.</li>
+<li><strong>Sell cooked meals:</strong> High-end meals cooked with multiple ingredients sell for significant 卢比. A 5-ingredient gourmet meat skewer can sell for 100+ 卢比. Cook in bulk and sell to any shopkeeper.</li>
+<li><strong>Chests and enemy drops:</strong> Silver and gold enemy variants frequently drop 卢比. Treasure chests scattered across 海拉鲁 (underwater, in caves, on 天空 Islands) commonly contain 100-300 卢比 each.</li>
+<li><strong>Side quests:</strong> Many side quests reward 50-200 卢比 upon completion. If you have uncompleted quests in your log, they are easy money.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- MODULE 4 -->
+<section class="section" id="route">
+<h2>4. 最优路线</h2>
+<p data-zh="最优路线">This route assumes you have already completed the main quest to the point where all 12 龙之泪s are collected and the 白龙 is active in the sky. If you have not reached this point, bookmark this guide and return later — the armor is literally impossible to obtain before then.</p>
+
+<div class="route-tree">
+
+<div class="route-step">
+<div class="step-num">1</div>
+<div>
+<h4 data-zh="准备阶段">Preparation 阶段 — Gear and Supplies (5 minutes)</h4>
+<p><strong>Start point:</strong> Any 鸟望台 or major settlement.</p>
+<p>Before beginning the hunt, ensure you have: a bow with at least 20 arrows (any bow works), the paraglider (essential for chasing dropped scales), at least one campfire or access to one (for time-skipping to night), and 500 卢比 in your wallet. If you plan to use a 鸟望台 launch, make sure the tower in your chosen region is activated.</p>
+<p class="coord">Recommended base: 监视堡垒 鸟望台 (central 海拉鲁, easy fast travel)</p>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">2</div>
+<div>
+<h4 data-zh="猎杀光龙">Hunt the 白龙 — Acquire the Scale (10-20 minutes)</h4>
+<p><strong>Fast travel to Mount 拉聂尔 鸟望台</strong> <span class="coord">3846, -1307, 0539</span>. Launch from the tower and use your scope to scan the sky for the 白龙's telltale golden-white glow. If it is not immediately visible, wait on the tower platform — the dragon's route is predictable and it will pass within sight eventually.</p>
+<p>When spotted, launch from the tower and paraglide toward the dragon. You do not need to land on it (though you can if you want to farm multiple parts). Simply get within bow range, aim carefully, and fire an arrow at any part of its body. When struck, the dragon will drop a glowing part. A 白龙的鳞片 is the most common drop from body shots.</p>
+<p>Watch the scale fall and track its landing point. Paraglide after it or mark the location on your map. 收集 the scale. If you accidentally get a claw or horn piece instead, you can use those for other crafts — just shoot the dragon again on its next circuit for another drop (there is a short cooldown between drops, roughly 10 minutes of in-game time).</p>
+<div class="pro-tip">
+<strong>PRO TIP:</strong> If you are having trouble hitting the dragon while gliding, try using a long-range bow like the Steel Lizal 弓 or a Knight's 弓. The phrenic bow also works well. You do not need to be particularly close — just within standard arrow range. Time your shot when the dragon is flying straight, not during turns.
+</div>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">3</div>
+<div>
+<h4 data-zh="采集寂静公主">收集 静谧公主 Flowers (15-25 minutes)</h4>
+<p>With the scale in your inventory, fast travel to <strong>塔邦挞 Frontier</strong>. Head to the 大妖精之泉 in this region <span class="coord">-1366, 1072, 0221</span>. If it is daytime, sit at the nearest campfire and select "Wait until night."</p>
+<p>When night falls, search the flower beds and grassy areas surrounding the 大妖精之泉. You should find <strong>1-2 静谧公主</strong> flowers here. 收集 them. If you need more, continue to the next location.</p>
+<p>Fast travel to <strong>萨托利山</strong> <span class="coord">-2233, -0627, 0910</span>. Check if the mountain is glowing green (indicating the 山神 event is active). If yes, climb the mountain and collect <strong>2-3 静谧公主</strong> flowers scattered across the summit. If the mountain is not glowing, proceed to the backup location.</p>
+<p>Fast travel to <strong>阿卡莱 Highlands</strong>. Search the elevated regions near the 阿卡莱 Citadel Ruins and cliff edges. You should find at least <strong>1 静谧公主</strong> here at night. By now you should have all 3 required flowers.</p>
+<div class="pro-tip">
+<strong>PRO TIP:</strong> Use your 普尔亚平板 camera to photograph a 静谧公主 when you find your first one. This adds it to your 海拉鲁 Compendium, which allows you to use the sensor to detect nearby 静谧公主 at other locations. This dramatically speeds up farming if you need more.
+</div>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">4</div>
+<div>
+<h4 data-zh="找到隐藏裁缝">Find the 隐藏裁缝 (5-10 minutes)</h4>
+<p><strong>Fast travel to Wetland Stable</strong> in the 拉聂尔 Wetlands region <span class="coord">0844, -0190, 0012</span>. The stable is on the road between 卡卡利科村 and 卓拉领地, so you have likely passed it many times. Walk around to the <strong>back of the stable</strong> and locate the well. Wells are marked by a wooden structure with a rope and bucket.</p>
+<p>Drop down into the well. At the bottom, you will find an underground chamber. If you have met the quest prerequisites (all 12 龙之泪s collected), the 隐藏裁缝 will be standing here, waiting. If the room is empty, you have not progressed far enough in the main story — complete more 龙之泪 geoglyphs and return.</p>
+<p>Talk to the tailor. Select the dialogue option to craft the 勇者皮衣. Confirm that you have all materials (3 静谧公主, 1 白龙的鳞片, 500 卢比). The armor is crafted instantly and added to your inventory.</p>
+</div>
+</div>
+
+<div class="route-step">
+<div class="step-num">5</div>
+<div>
+<h4 data-zh="装备">Equip and Test (2 minutes)</h4>
+<p>Open your inventory, navigate to the 防具 tab, and equip the 勇者皮衣. Switch to the 大师之剑 (ensure it is at full health). Find a distant target — a tree, a rock, an enemy camp — and swing the sword. You will see the beam projectile launch with noticeably increased size, speed, and damage compared to without the armor. Congratulations. You now have one of the most unique armor pieces in the game.</p>
+</div>
+</div>
+
+</div>
+
+<p data-zh="总时间"><strong>Total estimated route time:</strong> 35-60 minutes depending on 白龙 spawn timing and 静谧公主 RNG. The dragon is the biggest variable — if you are lucky enough to catch it passing near a tower immediately, the total time drops significantly. If you need to wait for its circuit, add 10-15 minutes.</p>
+</section>
+
+<!-- MODULE 5 -->
+<section class="section" id="gotchas">
+<h2>5. 注意事项</h2>
+<p data-zh="注意事项">The 勇者皮衣 acquisition is riddled with prerequisites, hidden requirements, and easily missed details. Read this section carefully before attempting the craft — it will save you hours of frustration.</p>
+
+<div class="gotcha-box">
+<h4>⚠️ Critical 前置条件 &amp; Blockers</h4>
+<ul>
+<li><strong>龙之泪s requirement:</strong> The 白龙 does not appear in the sky until ALL 12 龙之泪s geoglyphs have been collected and viewed. This is a hard story lock. You cannot bypass it, glitch it, or work around it. If the dragon is not flying, you are not far enough in the main quest. Period.</li>
+<li><strong>大师之剑 recovery:</strong> The 白龙 carries the 大师之剑 embedded in its head for much of the game. You must pull the 大师之剑 from the dragon during the main quest (which itself requires sufficient stamina). This happens during the 龙之泪s sequence. Only AFTER the sword is pulled does the dragon begin its free flight pattern and become farmable for parts.</li>
+<li><strong>Tailor appearance condition:</strong> The 隐藏裁缝 inside 湿地驿站井 does not appear until the 白龙 is freed (i.e., after the 大师之剑 is pulled). Visiting the well before this point reveals an empty room. This is a common source of confusion — players find the well via guides but assume the tailor is bugged when he is simply not there yet.</li>
+<li><strong>静谧公主 nighttime ONLY:</strong> This cannot be overstated. 静谧公主 flowers ONLY appear at night. If you visit a known spawn location during the day, you will see nothing. Many players assume they are at the wrong location or that the flower has been collected already, when in reality they simply need to wait for sunset. Use a campfire to skip to night instantly.</li>
+<li><strong>静谧公主 血月 respawn:</strong> If you already collected the 静谧公主 from a location, it will NOT reappear until the next 血月. Do not waste time rechecking the same spot hoping it respawned early. Mark collected locations on your map and rotate between different spawn points.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<h4>⚠️ Common Mistakes &amp; How to Avoid Them</h4>
+<ul>
+<li><strong>Shooting the wrong dragon:</strong> 海拉鲁 has FOUR dragons — 白龙 (golden-white), Farosh (electric/green), Dinraal (fire/red), and Naydra (ice/blue). Only the 白龙 drops 白龙的鳞片s. The others drop their own elementally-themed parts. If your scale has a different name or elemental effect, you shot the wrong dragon.</li>
+<li><strong>Missing the dropped scale:</strong> Dragon parts fall slowly and glow, but if you shoot the dragon from extreme height (like a 天空 Island), the part can fall into a river, into a chasm, or onto terrain you cannot reach. Always try to shoot from moderate height and immediately track the fall path. Mark the landing spot on your map if you cannot collect it mid-air.</li>
+<li><strong>Using the scale for something else:</strong> A 白龙的鳞片 is also a valid 余料建造 material (it adds a light effect and moderate damage to a weapon). Do NOT fuse your only scale to a stick or sword. You need it for the armor craft. The game does not warn you that the material is quest-relevant.</li>
+<li><strong>Expecting to upgrade the armor:</strong> The 勇者皮衣 has a fixed 5 defense and cannot be upgraded at 大妖精之泉s. Do not waste 卢比 and materials trying to enhance it. The trade-off for the unique beam boost is the lack of upgrade potential.</li>
+<li><strong>Beam only works at full health:</strong> The 大师之剑 beam (enhanced or not) ONLY fires when 林克 is at full health. If you have taken any damage, the beam will not activate. This means the armor's primary benefit is nullified during extended combat where you cannot heal. Plan accordingly — stock up on healing items or retreat to heal before engaging at range.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<h4>⚠️ Timing &amp; Progression Issues</h4>
+<ul>
+<li><strong>Do not attempt before mid-game:</strong> The 勇者皮衣 is firmly a mid-to-late game item. Between the 龙之泪s requirement, the 大师之剑 pull, and the 500 卢比 cost, a new player cannot realistically obtain this armor within the first 15-20 hours of play. Focus on main story progression first.</li>
+<li><strong>Wetland Stable well access:</strong> The well behind Wetland Stable requires you to climb over or around the stable building. It is not visible from the front entrance. Walk around to the back and look for the wooden well structure.</li>
+<li><strong>静谧公主 despawn on approach:</strong> In rare cases, 静谧公主 flowers can despawn if you approach too quickly (running or using Rewind). Walk slowly toward them to ensure they load properly.</li>
+</ul>
+</div>
+</section>
+
+<!-- MODULE 6 -->
+<section class="section" id="free-benefits">
+<h2>6. Free 收益</h2>
+<p data-zh="额外收益">The journey to acquire the 勇者皮衣 takes you across some of the most rewarding regions in 海拉鲁. Even if you are focused solely on the armor, you will pick up significant secondary benefits along the way. Do not ignore these — they often exceed the value of the armor itself.</p>
+
+<h3>白龙 路线 收益</h3>
+<div class="material-item">
+<div class="mat-icon">🗼</div>
+<div class="mat-info">
+<h4>鸟望台 and 神庙 Discoveries</h4>
+<p data-zh="塔和神庙">Tracking the 白龙's flight path will take you near multiple 鸟望台s and shrines you may not have activated yet. The Mount 拉聂尔 Tower alone reveals a massive portion of the southeastern map. As you camp on towers waiting for the dragon, take the opportunity to launch and glide toward any unexplored map markers. Each tower unlocks the regional map; each shrine gives a Light of Blessing for heart/stamina upgrades.</p>
+<p>Specific unlocks along the dragon's route: <strong>Mount 拉聂尔 鸟望台</strong> (southeast 拉聂尔), <strong>塔邦挞 鸟望台</strong> (northwest 海布拉/塔邦挞), <strong>Upland Zorana 鸟望台</strong> (拉聂尔 region), and numerous shrines in 阿卡莱, 拉聂尔, and 塔邦挞 that are visible from high vantage points during your dragon hunt.</p>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🌿</div>
+<div class="mat-info">
+<h4>稀有 Material Gathering at 静谧公主 Locations</h4>
+<p data-zh="稀有材料">The locations where 静谧公主 grows are among the most bountiful flora spawn points in the game. While collecting the flowers, you will inevitably gather: <strong>Hearty Radishes, 毅力胡萝卜s, Stamella Shrooms, and other high-value cooking ingredients</strong>. The 大妖精之泉 locations in particular are surrounded by premium plants. The 萨托利山 summit during a 山神 event is arguably the best single location in the entire game for rare material farming — you can collect dozens of premium items in a single visit.</p>
+<p>Also keep an eye out for <strong>fairies</strong> near 大妖精之泉s. These act as auto-revive items when kept in your inventory and are among the most valuable survival tools in the game.</p>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">✂️</div>
+<div class="mat-info">
+<h4>Tailor Unlock — Additional 制作ing Options</h4>
+<p data-zh="裁缝解锁">Discovering the 隐藏裁缝 at 湿地驿站井 does more than enable the 勇者皮衣 craft. The tailor also offers <strong>additional unique armor 制作 options</strong> not available anywhere else in 海拉鲁. While the specific inventory varies based on your progression, many players report access to unique cosmetic variants and specialty pieces after 制作 the 勇者皮衣. Talk to the tailor again after receiving the armor to see if new dialogue options or 制作 recipes have opened up.</p>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🧚</div>
+<div class="mat-info">
+<h4>大妖精之泉 Visits</h4>
+<p data-zh="大妖精之泉">Since the best 静谧公主 farming spot is near the 塔邦挞 大妖精之泉, you have a natural opportunity to visit and upgrade your other armor pieces while in the area. If you have not yet unlocked all four Great Fairies, the 塔邦挞 fairy is one of the easier ones to access — her fountain is not locked behind a quest gate like some others. Bring 卢比 and materials to upgrade your primary combat armor while you are already in the neighborhood.</p>
+<p>Visiting 大妖精之泉s also unlocks <strong>armor dye options</strong> at the Kochi Dye Shop and progresses any side quests related to the fairy questline.</p>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">⭐</div>
+<div class="mat-info">
+<h4>地底 and 天空 Island Exploration</h4>
+<p data-zh="地底和空岛">Hunting the 白龙 at high altitude will inevitably take you near or onto 天空 Islands you have not explored. These islands contain: <strong>左纳乌 devices</strong> (fan, wheel, rocket, steering stick, etc.), <strong>左纳乌 charges</strong> for your Energy Cell, <strong>treasure chests</strong> with weapons and bows, and <strong>神庙 of Light</strong> entrances. Each 天空 Island you clear is a permanent fast travel point and resource node.</p>
+<p>If your dragon hunt takes you over chasm entrances, consider dropping into the 地底 as well. The 地底 contain <strong>左纳乌能源 ore</strong> (for Energy Cell upgrades), <strong>光亮花的种子s</strong>, <strong>魄</strong> (currency for the 地底 vendor), and <strong>破魔之根s</strong> that serve as fast travel points for the underground map.</p>
+</div>
+</div>
+
+<div class="pro-tip">
+<strong>PRO TIP:</strong> The full 勇者皮衣 acquisition route, if done thoroughly, can yield 5-10 new fast travel points (towers, shrines, 天空 Islands, 破魔之根s), hundreds of 卢比 in sellable materials, multiple heart/stamina upgrades from shrine completions, and potentially a fully upgraded Energy Cell if you mine 左纳乌能源 along the way. Treat this as a major expedition, not a quick errand.
+</div>
+</section>
+
+<!-- NEXT PAGE -->
+<section class="section">
+<a href="radiant-set.html" class="next-page" data-zh="推荐下一篇">推荐下一步 → 夜光套装 — Bone-themed glow-in-the-dark armor with Stal disguise and bone attack boost. Perfect for nighttime combat builds.</a>
+</section>
+
+</main>
+
+<div class="footer">
+<p>塞尔达传说：王国之泪 — 制作攻略 Database</p>
+<p>社区编写，服务社区。</p>
+</div>
+
+</div>
+
+<!-- RIGHT SIDEBAR -->
+<aside class="right-sidebar">
+<h3>物品数据</h3>
+<div class="stat-row">
+<span class="stat-label">防御力</span>
+<span class="stat-value">5 (fixed)</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Set Bonus</span>
+<span class="stat-value">大师之剑 Beam Up</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Upgradeable</span>
+<span class="stat-value">No</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Dyeable</span>
+<span class="stat-value">No</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Item 类型</span>
+<span class="stat-value">Chest 防具</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Rarity</span>
+<span class="stat-value">稀有 / Unique</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Quest Locked</span>
+<span class="stat-value">Yes (12 Tears)</span>
+</div>
+
+<h3 style="margin-top:30px">材料 Summary</h3>
+<div class="stat-row">
+<span class="stat-label">静谧公主</span>
+<span class="stat-value">× 3</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">白龙的鳞片</span>
+<span class="stat-value">× 1</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">卢比</span>
+<span class="stat-value">× 500</span>
+</div>
+
+<h3 style="margin-top:30px">相关攻略</h3>
+<div class="related-item">
+<div class="ri-icon">💀</div>
+<div>
+<div class="ri-name"><a href="radiant-set.html">夜光套装</a></div>
+<div class="ri-desc">Stal disguise + bone attack boost</div>
+</div>
+</div>
+<div class="related-item">
+<div class="ri-icon">⚡</div>
+<div>
+<div class="ri-name"><a href="#">大师之剑 Guide</a></div>
+<div class="ri-desc">Pull location &amp; beam mechanics</div>
+</div>
+</div>
+<div class="related-item">
+<div class="ri-icon">🐉</div>
+<div>
+<div class="ri-name"><a href="#">Dragon Farming Guide</a></div>
+<div class="ri-desc">All 4 dragons, parts &amp; routes</div>
+</div>
+</div>
+<div class="related-item">
+<div class="ri-icon">🌸</div>
+<div>
+<div class="ri-name"><a href="#">稀有 Plants Guide</a></div>
+<div class="ri-desc">静谧公主 &amp; more</div>
+</div>
+</div>
+</aside>
+
+</div>
+</body>
+</html>

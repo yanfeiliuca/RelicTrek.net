@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>勇猛肉块 — 艾尔登法环制作攻略 | RelicTrek</title>
+<meta content="艾尔登法环勇猛肉块完整制作攻略。+20%物理伤害持续60秒。工匠笔记[6]，动脉叶、罗亚果实和肉块的采集路线。" name="description"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e6a817;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">首页</a>
+<a href="./">攻略</a>
+<a class="active" href="./">制作</a>
+<a href="./">地图</a>
+<a href="./">工具</a>
+</div>
+<div class="lang-switch">
+<button data-lang="en" onclick="window.location.href='../exalted-flesh.html'">EN</button>
+<button class="active" data-lang="zh">中文</button>
+</div>
+</div>
+</nav>
+<div class="ticker-bar">
+<div class="ticker-inner">
+🥩 <strong>勇猛肉块</strong> — +20% physical damage for 60s | Armorer's Cookbook [6] from Siofra River | Farm Arteria Leaf in Altus Plateau | <a href="uplifting-aromatic.html">Next: Uplifting Aromatic →</a>
+</div>
+</div>
+<div class="container">
+<aside class="sidebar">
+<h3>游戏选择</h3>
+<a href="../terraria/zh/">泰拉瑞亚</a>
+<a href="../subnautica2/zh/">深海迷航2</a>
+<a href="../monster-hunter-wilds/zh/">怪物猎人荒野</a>
+<a href="../zelda-totk/zh/">塞尔达：王国之泪</a>
+<a href="../minecraft/zh/">我的世界</a>
+<a href="../no-mans-sky/zh/">无人深空</a>
+<a href="../baldurs-gate-3/zh/">博德之门3</a>
+<a href="../valheim/zh/">英灵神殿</a>
+<a href="../path-of-exile-2/zh/">流放之路2</a>
+<a href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<a class="active" href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<div class="quick-nav">
+<h4>艾尔登法环物品</h4>
+<a href="gold-pickled-fowl-foot.html">黄金鸡爪</a>
+<a class="active" href="exalted-flesh.html">勇猛肉块</a>
+<a href="uplifting-aromatic.html">振奋香药</a>
+<a href="bloodboil-aromatic.html">狂热香药</a>
+<a href="ironjar-aromatic.html">铁壶香药</a>
+<a href="preserving-boluses.html">腐败苔药</a>
+<a href="drawstring-blood-grease.html">缚血油脂</a>
+<a href="spark-aromatic.html">火花香药</a>
+<a href="warming-stone.html">暖石</a>
+<a href="bewitching-branch.html">魅惑树枝</a>
+</div>
+</aside>
+<main class="main-content">
+<div class="item-header">
+<div class="item-icon-accessory">🥩</div>
+<div class="item-title">
+<h1>崇高肉身</h1>
+<div class="item-subtitle">提升20%物理伤害，持续60秒——近战DPS必备</div>
+<div class="item-meta">
+<span class="difficulty">★★★☆☆ Moderate</span>
+<span>Type: Consumable Buff</span>
+<span>Stack: 99</span>
+</div>
+</div>
+</div>
+<section class="section" id="why">
+<h2><span>🥩</span> Why Exalted Flesh Matters</h2>
+<p>崇高肉身是艾尔登法环中最可靠的物理伤害增益消耗品。它提供+20%全物理伤害加成，持续整整60秒，适用于所有物理攻击类型——普通、突刺、打击和斩击。</p>
+<p>与其他增益不同，崇高肉身的效果可以与武器附魔（如血焰刀刃、雷电刀刃）和护符叠加。这意味着一个准备充分的近战角色可以在Boss战中同时享受武器附魔+护符+崇高肉身的三重加成。</p>
+<h3>最佳使用场景</h3>
+<ul>
+<li>Boss战开场：进入Boss房间后立即使用，配合rush战术打出一波爆发</li>
+<li>入侵PvP：作为鲜血指入侵时，开场buff可以给你决定性优势</li>
+<li>高血量敌人：对抗骑士类、巨人类等肉盾敌人时加速击杀</li>
+<li>伤害检测Boss：如玛莲妮亚等需要快速压制的Boss</li>
+</ul>
+<h3>对比其他物理增益</h3>
+<ul>
+<li> vs 火焰油脂：火焰油脂给武器附加火属性伤害但降低物理面板；崇高肉身直接提升物理伤害，更适合纯物理build</li>
+<li> vs 军队的呐喊战灰：军队呐喊给+10%全伤害但持续时间很短；崇高肉身是+20%且持续60秒</li>
+<li> vs 切腹：切腹给出血build用，但会消耗HP；崇高肉身没有副作用</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="gold-pickled-fowl-foot.html">← 黄金鸡爪（+30% Runes)</a>
+<a class="cross-link" href="bloodboil-aromatic.html">狂热香药（+30% Attack, -25% Def)</a>
+</div>
+</section>
+<section class="section" id="recipe">
+<h2><span>🧪</span> 制作配方</h2>
+<p>崇高肉身需要三种材料。Arteria Leaf是唯一需要专门farm的稀有材料，Rowa Fruit遍地都是，Lump of Flesh从特定敌人身上掉落。</p>
+<table class="recipe-table">
+<thead>
+<tr><th>材料</th><th>数量</th><th>稀有度</th><th>可采集</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🍃 <strong>Arteria Leaf</strong></td>
+<td>1x</td>
+<td>稀有（需专门farm）</td>
+<td>✅ Yes — Specific plant nodes</td>
+</tr>
+<tr>
+<td>🍎 <strong>Rowa Fruit</strong></td>
+<td>1x</td>
+<td>极常见</td>
+<td>✅ Yes — Bushes everywhere</td>
+</tr>
+<tr>
+<td>🥩 <strong>Lump of Flesh</strong></td>
+<td>1x</td>
+<td>中等（敌人掉落）</td>
+<td>✅ Yes — Large mammal enemies</td>
+</tr>
+</tbody>
+</table>
+<h3>制作产出</h3>
+<p>每次制作产出1个崇高肉身。这意味着每次消耗都需要1个Arteria Leaf——相对昂贵，因此建议只在关键战斗中使用。</p>
+<div class="gotcha-box">
+<h4>⚠️ 配方关键说明</h4>
+<ul>
+<li>每次制作只产出1个崇高肉身</li>
+<li>效果可以与武器附魔、护符和其他消耗品叠加</li>
+<li>死亡后效果消失</li>
+<li>效果不叠加——使用第二个只会重置60秒计时器</li>
+<li>只影响物理伤害——对魔法、火焰、雷电等属性伤害无效</li>
+</ul>
+</div>
+</section>
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Armorer's Cookbook [6]</h2>
+<p>要制作崇高肉身，你需要铁匠的制作笔记[6]。这本笔记位于地下区域Siofra River，需要通过特定方式进入。</p>
+<div class="cookbook-box">
+<h4>📖 Armorer's Cookbook [6]</h4>
+<p><strong>Location:</strong> Siofra River, near the Worshipper's Woods Site of Grace</p>
+<p><strong>Coordinates:</strong> On a corpse near a wooden platform in the forested area</p>
+<p><strong>Recipe Unlocked:</strong>勇猛肉块</p>
+<p><strong>Also Unlocks:</strong> Various fire/physical grease recipes if not already known</p>
+</div>
+<h3>如何进入Siofra River</h3>
+<p>Siofra River是艾尔登法环的地下永恒之城区域，有两个主要入口。对于获取这本制作笔记，推荐的入口是：</p>
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Travel to the <strong>Third Church of Marika</strong> in East Limgrave (use the Gatefront Ruins grace and ride east if needed).</p>
+<p><span class="step">Step 2:</span> Head slightly northeast to find the <strong>Siofra River Well</strong> — a stone tower with a lift inside. It is marked on the map once you have picked up the East Limgrave map fragment.</p>
+<p><span class="step">Step 3:</span> Take the lift all the way down. You will emerge in Siofra River Bank.</p>
+<p><span class="step">Step 4:</span> Rest at the <strong>Siofra River Bank</strong> Site of Grace immediately for fast travel.</p>
+<p><span class="step">Step 5:</span> Ride east through the underground forest. The terrain is filled with ancient ruins and spectral enemies.</p>
+<p><span class="step">Step 6:</span> Look for the <strong>Worshipper's Woods</strong> Site of Grace — it is a small grace hidden among the trees.</p>
+<p><span class="step">Step 7:</span> From Worshipper's Woods, explore the nearby wooden platforms. The Cookbook is a glowing white item on a corpse near one of the raised walkways.</p>
+</div>
+<h3>Siofra River的危险</h3>
+<ul>
+<li>祖先之灵追随者：使用弓箭的幽灵敌人，射程很远</li>
+<li>大角鹿：冲撞伤害极高，但掉落有价值的材料</li>
+<li>无重力区域：部分区域有水景，注意坠落</li>
+<li>区域Boss：祖灵之王——可选Boss，不需要击杀来获取笔记</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="uplifting-aromatic.html">Next: Perfumer's Cookbook [2]</a>
+<a class="cross-link" href="gold-pickled-fowl-foot.html">Missionary's Cookbook [2]</a>
+</div>
+</section>
+<section class="section" id="materials">
+<h2><span>🌿</span> 材料与采集地点</h2>
+<p>崇高肉身的三种材料获取难度不同。Arteria Leaf是唯一真正的瓶颈，而Rowa Fruit和Lump of Flesh相对容易获取。</p>
+<h3>🍃 Material 1: Arteria Leaf</h3>
+<div class="material-item">
+<div class="material-icon">🍃</div>
+<div class="material-info">
+<h4>Arteria Leaf <span style="color:#e6a817">★ Target Farm Required</span></h4>
+<p>Arteria Leaf是崇高肉身的瓶颈材料。它是一种发着微光的绿叶植物，只生长在Altus Plateau及其周边高等级区域。每株植物产出1片叶子。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Altus Plateau Roadside — Densest Cluster</strong></p>
+<p>从Altus Highway Junction赐福点出发，向北和向西沿着公路两侧搜索。这里通常刷新5-7株Arteria Leaf，是整个游戏中最密集的采集点。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Lux Ruins — Ruin Gardens</strong></p>
+<p>Lux Ruins周围的花园和废墟边缘生长着3-4株Arteria Leaf。同时可以获取废墟内的其他战利品。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Mt. Gelmir Foothills — Late-Game Backup</strong></p>
+<p>Gelmir山的山脚下有几株Arteria Leaf散落分布。虽然数量不多，但如果你已经在火山区域做其他任务，可以顺便采集。</p>
+</div>
+<h4>提升采集效率的技巧</h4>
+<ul>
+<li>使用银色腌鸡脚提升发现力，增加每次采集的数量</li>
+<li>装备银色粪金龟护符进一步提升发现力</li>
+<li>Arteria Leaf可以在部分商人处购买——Altus Plateau的商人有售</li>
+<li>每次赐福休息后植物会重新刷新——可以无限采集</li>
+</ul>
+<h3>🍎 Material 2: Rowa Fruit</h3>
+<div class="material-item">
+<div class="material-icon">🍎</div>
+<div class="material-info">
+<h4>Rowa Fruit <span style="color:#4caf50">★ Extremely Common</span></h4>
+<p>罗亚果实是整个游戏中最常见的采集物之一。Altus Plateau虽然灌木密度不如Limgrave，但farm Arteria Leaf时你会顺路采集到足够的Rowa Fruit。</p>
+</div>
+</div>
+<h3>🥩 Material 3: Lump of Flesh</h3>
+<div class="material-item">
+<div class="material-icon">🥩</div>
+<div class="material-info">
+<h4>Lump of Flesh <span style="color:#4caf50">★ Common (Enemy Drop)</span></h4>
+<p>Lump of Flesh由大型哺乳动物敌人掉落——包括巨熊、巨型陆生螃蟹、和某些大型野兽。掉落率约25-40%。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Limgrave Bears — Most Accessible</strong></p>
+<p>Limgrave的森林区域（尤其是Agheel湖西侧的树林）有多只熊刷新。每只熊有约30-40%概率掉落1-2个Lump of Flesh。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Caelid Giant Crabs — High Volume</strong></p>
+<p>Caelid的沼泽和海岸线上有大量巨型螃蟹。它们数量多、刷新快，而且掉落Lump of Flesh的概率较高。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Weeping Peninsula Trolls — Bonus Drops</strong></p>
+<p>啜泣半岛的巨型敌人也有概率掉落Lump of Flesh，虽然掉率不如熊和螃蟹稳定。</p>
+</div>
+<h4>Lump of Flesh farm 技巧</h4>
+<ul>
+<li>骑马战斗是对付熊的最佳方式——它们转身慢，可以用Torrent的机动性放风筝</li>
+<li>发现力（Discovery）直接影响掉落率——装备提升发现力的道具</li>
+<li>旅行商人 occasionally 出售Lump of Flesh，如果急需可以购买</li>
+<li>大型敌人掉落1-2个——不要只杀了第一个就离开</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="ironjar-aromatic.html">铁壶香药（Altus Bloom Routes)</a>
+<a class="cross-link" href="bloodboil-aromatic.html">狂热香药（Glass Cannon Buff)</a>
+</div>
+</section>
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> 注意事项 — What Can Go Wrong</h2>
+<p>虽然崇高肉身是一个强大的消耗品，但有几个隐藏的陷阱需要注意。以下是完整的问题清单。</p>
+<div class="gotcha-box">
+<h4>🍃 Gotcha 1: Arteria Leaf Is the Bottleneck</h4>
+<p>你会很快积累大量的Rowa Fruit和Lump of Flesh，但Arteria Leaf的采集速度跟不上其他两种材料。始终优先farm Arteria Leaf。</p>
+</div>
+<div class="gotcha-box">
+<h4>⏱️ Gotcha 2: 60 Seconds Feels Short</h4>
+<p>60秒对某些多阶段Boss来说可能不够——如拉达冈/艾尔登之兽。在这些战斗中，留到第二阶段再使用可能是更好的选择。</p>
+</div>
+<div class="gotcha-box">
+<h4>💀 Gotcha 3: Death Wastes the Buff (and the Materials)</h4>
+<p>因为每次制作只产出1个崇高肉身，死亡浪费的代价很高。对于不熟悉的Boss，先进去摸清招式再使用。</p>
+</div>
+<div class="gotcha-box">
+<h4>🔥 Gotcha 4: Only Physical Damage</h4>
+<p>如果你使用混伤build（如火焰质变武器或附加了魔法伤害），崇高肉身只提升物理部分，属性伤害不受影响。</p>
+</div>
+<div class="gotcha-box">
+<h4>🐻 Gotcha 5: Bear Farming Is Dangerous</h4>
+<p>熊是游戏中最危险的小怪之一。它们的抓取攻击可以秒杀中等血量build。farm时始终保持在马上。</p>
+</div>
+<div class="gotcha-box">
+<h4>🛒 Gotcha 6: Limited Merchant Stock</h4>
+<p>某些商人出售Arteria Leaf，但库存有限。不要指望商人来满足你的全部需求——学会采集路线是必须的。</p>
+</div>
+</section>
+<section class="section" id="benefits">
+<h2><span>🎁</span> 额外收益 — What Else You Get Farming These Materials</h2>
+<p>farm崇高肉身的材料时，你会在路线上发现大量其他有价值的资源。以下是各farm路线的额外收益。</p>
+<h3>在Altus Plateau farm Arteria Leaf时的额外收益</h3>
+<ul>
+<li>Altus Bloom：同区域大量刷新，是制作芳香类道具的关键材料</li>
+<li>Smithing Stone [3]和[4]：Altus的矿道有高级锻造石</li>
+<li>黄金种子：区域内的教堂有赐福瓶升级</li>
+<li>地图碎片：不要忘记激活Altus Plateau地图石碑</li>
+<li> Miranda Powder：Miranda花敌人掉落，制作铁壶香药的材料</li>
+</ul>
+<h3>在Limgrave farm Lump of Flesh时的额外收益</h3>
+<ul>
+<li>四趾鸟脚：Limgrave的悬崖海岸线上可以farm鸟脚</li>
+<li>野兽血液：熊有概率掉落，用于制作出血相关道具</li>
+<li>筋骨：大型动物掉落，制作箭矢的材料</li>
+<li>Smoldering Butterfly：森林区域大量刷新</li>
+</ul>
+<h3>在Siofra River获取配方时的额外收益</h3>
+<ul>
+<li>灵马哨笛升级材料：区域内有有价值的道具</li>
+<li>祖灵之民的骨灰：强力的召唤骨灰</li>
+<li>大量的锻造石</li>
+<li>区域Boss：祖灵之王——击败后获得大量卢恩和独特武器</li>
+</ul>
+<h3>长期战略收益</h3>
+<p>掌握崇高肉身的制作不仅让你获得了一个强大的消耗品，还教会了你Altus Plateau的采集路线——这个区域是几乎所有芳香类道具材料的来源地。当你学会在这里高效farm时，你就同时为制作Uplifting Aromatic、Bloodboil Aromatic和Ironjar Aromatic铺平了道路。</p>
+<p>此外，Siofra River的探索经验也同样宝贵。这个美丽的地下区域隐藏着大量的锻造石、灵依采摘工铃珠和独特道具。当你为了Armorer's Cookbook [6]而深入Siofra时，你实际上是在为整个中后期游戏做储备。而且，一旦你掌握了在地下区域导航的技巧，前往Nokstella、Deeproot Depths和Mohgwyn Palace等其他地下区域时就会如鱼得水。</p>
+<div class="cross-links">
+<a class="cross-link" href="uplifting-aromatic.html">→ Next: 振奋香药（Party Bubble Shield)</a>
+<a class="cross-link" href="bloodboil-aromatic.html">狂热香药（+30% Attack)</a>
+<a class="cross-link" href="ironjar-aromatic.html">铁壶香药（Super Armor)</a>
+</div>
+</section>
+</main>
+<aside class="sidebar">
+<h3>快速信息</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>效果：</strong> +20% physical damage</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>持续时间：</strong> 60 seconds</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>堆叠：</strong> 99</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>笔记：</strong> Armorer's [6]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>产出:</strong>每次1个</p>
+<div class="quick-nav">
+<h4>跳转到章节</h4>
+<a href="#why">为什么重要</a>
+<a href="#recipe">制作配方</a>
+<a href="#cookbook">笔记位置</a>
+<a href="#materials">材料路线</a>
+<a href="#gotchas">注意事项</a>
+<a href="#benefits">额外收益</a>
+</div>
+<div class="quick-nav">
+<h4>相关物品</h4>
+<a href="gold-pickled-fowl-foot.html">黄金鸡爪</a>
+<a href="bloodboil-aromatic.html">狂热香药</a>
+<a href="ironjar-aromatic.html">铁壶香药</a>
+</div>
+</aside>
+</div>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">◌ RelicTrek</div>
+<p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制征程。</p>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<div class="footer-col-title">RelicTrek</div>
+<a href="../privacy.html">隐私</a>
+<a href="../terms.html">条款</a>
+<a href="../about.html">关于</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 RelicTrek.net</span>
+<span class="footer-sep">◌</span>
+<span>为冒险者精心打造</span>
+</div>
+</footer>
+</body>
+</html>

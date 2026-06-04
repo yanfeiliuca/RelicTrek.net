@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>碎岩巨剑 制作攻略 — 塞尔达传说：王国之泪 | 制作Hunt</title>
+<meta name="description" content="完整攻略 制作 the 碎岩巨剑 in 塞尔达：王国之泪. Full recipe, material locations, optimal route, and tips to forge 达尔克尔's signature 36-attack crusher.">
+<style>
+:root {
+  --bg: #f0ece4;
+  --card: #fffef8;
+  --ink: #1a1a1a;
+  --muted: #5a5a5a;
+  --rule: #2c3e50;
+  --accent: #2c3e50;
+  --danger: #8b0000;
+  --success: #1b5e20;
+  --nav: #2c3e50;
+  --sidebar: #e8e4dc;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; }
+
+/* Header */
+.site-header { background: var(--nav); color: #fff; padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+.site-header h1 { font-size: 1.25rem; letter-spacing: 0.5px; }
+.header-link { color: #fff; text-decoration: none; font-size: 0.85rem; margin-left: auto; opacity: 0.85; }
+.header-link:hover { opacity: 1; text-decoration: underline; }
+
+/* Scrolling ticker */
+.ticker { background: var(--nav); color: #fff; border-top: 1px solid rgba(255,255,255,0.15); padding: 0.35rem 1rem; font-size: 0.8rem; overflow: hidden; white-space: nowrap; }
+.ticker span { display: inline-block; padding-left: 100%; animation: ticker-scroll 30s linear infinite; }
+@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+/* Layout */
+.page-wrap { display: grid; grid-template-columns: 240px 1fr 220px; min-height: calc(100vh - 110px); }
+
+/* Left sidebar */
+.left-sidebar { background: var(--sidebar); border-right: 1px solid #ccc; padding: 1rem; }
+.left-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+.left-sidebar ul { list-style: none; }
+.left-sidebar li { margin-bottom: 0.15rem; }
+.left-sidebar a { display: block; padding: 0.35rem 0.5rem; font-size: 0.85rem; color: var(--ink); text-decoration: none; border-radius: 4px; }
+.left-sidebar a:hover { background: rgba(0,0,0,0.05); }
+.left-sidebar a.active { background: var(--nav); color: #fff; }
+
+/* Main content */
+main.content-area { padding: 1.5rem 2rem; max-width: 900px; }
+.breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* Item header */
+.item-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--rule); }
+.item-icon-weapon { width: 64px; height: 64px; background: var(--nav); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+.item-header h1 { font-size: 1.6rem; color: var(--rule); }
+.item-header .rarity-badge { display: inline-block; background: var(--rule); color: #fff; padding: 0.15rem 0.6rem; font-size: 0.75rem; border-radius: 3px; margin-left: 0.5rem; vertical-align: middle; }
+.item-meta { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+
+/* Sections */
+.section { margin-bottom: 2rem; padding: 1.25rem; background: var(--card); border: 1px solid #d5d0c8; }
+.section h2 { font-size: 1.15rem; color: var(--rule); margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #d5d0c8; display: flex; align-items: center; gap: 0.5rem; }
+.section h2 .num { background: var(--rule); color: #fff; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.85rem; flex-shrink: 0; }
+.section p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+.section strong { color: var(--rule); }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.9rem; }
+th, td { border: 1px solid #c0b8a8; padding: 0.55rem 0.75rem; text-align: left; }
+th { background: var(--nav); color: #fff; font-weight: 600; }
+tr:nth-child(even) { background: #f5f3ee; }
+
+/* Material item blocks */
+.material-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; background: #f5f3ee; border-left: 4px solid var(--rule); margin-bottom: 0.75rem; }
+.material-item .mat-icon { width: 40px; height: 40px; background: var(--nav); color: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.material-item .mat-info { flex: 1; }
+.material-item .mat-name { font-weight: 600; color: var(--rule); font-size: 0.95rem; }
+.material-item .mat-detail { font-size: 0.85rem; color: var(--muted); }
+
+/* 路线 tree */
+.route-tree { margin: 0.75rem 0; }
+.route-step { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px dashed #c0b8a8; }
+.route-step:last-child { border-bottom: none; }
+.route-step .step-num { background: var(--rule); color: #fff; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.8rem; flex-shrink: 0; }
+.route-step .step-body { flex: 1; font-size: 0.9rem; }
+
+/* Gotcha box */
+.gotcha-box { background: #faf5f0; border: 1px solid #d4a574; border-left: 4px solid #d4a574; padding: 0.75rem 1rem; margin: 0.75rem 0; }
+.gotcha-box .gotcha-title { font-weight: 600; color: #8b4513; margin-bottom: 0.25rem; font-size: 0.9rem; }
+.gotcha-box ul { margin-left: 1.25rem; font-size: 0.88rem; color: var(--muted); }
+.gotcha-box li { margin-bottom: 0.3rem; }
+
+/* Right sidebar */
+.right-sidebar { background: var(--sidebar); border-left: 1px solid #ccc; padding: 1rem; }
+.right-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+.right-sidebar .info-card { background: var(--card); border: 1px solid #ccc; padding: 0.75rem; margin-bottom: 0.75rem; font-size: 0.85rem; }
+.right-sidebar .info-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; }
+.right-sidebar .info-card .value { font-weight: 600; color: var(--rule); }
+
+/* Footer */
+.site-footer { background: var(--nav); color: #fff; padding: 1rem 1.5rem; font-size: 0.8rem; text-align: center; }
+
+/* Responsive */
+@media (max-width: 1024px) { .page-wrap { grid-template-columns: 200px 1fr; } .right-sidebar { display: none; } }
+@media (max-width: 768px) { .page-wrap { grid-template-columns: 1fr; } .left-sidebar { display: none; } }
+
+[data-zh] { position: relative; cursor: help; border-bottom: 1px dotted var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+<h1>🎮 制作Hunt</h1>
+<span style="opacity:0.7; font-size:0.85rem;">塞尔达传说：王国之泪 — Item 制作攻略s</span>
+<a class="header-link" href="../index.html">← All 游戏</a>
+</header>
+
+<!-- Ticker -->
+<div class="ticker">
+<span>🔥 王国之泪 Tip: 碎岩巨剑 one-shots ore deposits with 36 base attack | 去死亡之山记得带耐火石铠 | 5 打火石 drops from every gray ore deposit | 阿沅's 贤者 ability breaks rocks instantly | 💎</span>
+</div>
+
+<!-- Layout -->
+<div class="page-wrap">
+
+<!-- LEFT SIDEBAR -->
+<aside class="left-sidebar">
+<h3>🏹 英杰 武器</h3>
+<ul>
+<li><a href="great-eagle-bow.html">大鹫弓</a></li>
+<li><a class="active" href="boulder-breaker.html">碎岩巨剑</a></li>
+<li><a href="./">七宝匕首</a></li>
+<li><a href="lightscale-trident.html">光鳞之枪</a></li>
+<li><a href="./boulder-breaker.html">破晓者 盾</a></li>
+</ul>
+<h3>⚔️ Best Gear</h3>
+<ul>
+<li><a href="master-sword.html">大师之剑</a></li>
+<li><a href="hylian-shield.html">海利亚盾</a></li>
+<li><a href="fierce-deity-set.html">鬼神套装</a></li>
+<li><a href="barbarian-set.html">蛮族套装</a></li>
+<li><a href="./">Sand Boots</a></li>
+</ul>
+<h3>🔗 快速链接</h3>
+<ul>
+<li><a href="../index.html">首页</a></li>
+<li><a href="https://www.zelda.com/tears-of-the-kingdom/" target="_blank">官方网站</a></li>
+</ul>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="content-area">
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+<a href="../index.html">制作Hunt</a> / <a href="../index.html">塞尔达：王国之泪</a> / 碎岩巨剑
+</div>
+
+<!-- Item Header -->
+<div class="item-header">
+<div class="item-icon-weapon">🔨</div>
+<div>
+<h1>碎岩巨剑 <span class="rarity-badge">稀有</span></h1>
+<div class="item-meta">Item 类型: 武器（双手） | 难度: ★★★★☆ 中期 | 36 基础攻击力</div>
+</div>
+</div>
+
+<!-- MODULE 1: 为什么这件物品重要 -->
+<div class="section">
+<h2><span class="num">1</span> 为什么这件物品重要</h2>
+<p data-zh="为什么这把武器值得你去获取">The 碎岩巨剑 is the undisputed king of raw two-handed power in <em>塞尔达传说：王国之泪</em>. With a staggering <strong>36 base attack</strong>, it outclasses every other 英杰 weapon in terms of sheer damage per swing. This isn't just a big hammer — it's 达尔克尔's signature weapon, a hulking slab of Goron-forged metal designed to shatter anything and everything that stands in your path. If the 大鹫弓 is the ultimate ranged weapon, the 碎岩巨剑 is its melee counterpart, delivering devastating blows that turn 莱尼尔s, 瘴气 Spawn, and dungeon bosses into paste.</p>
+
+<p data-zh="矿石一击粉碎">What truly sets the 碎岩巨剑 apart from other two-handed weapons is its <strong>unique ability to destroy ore deposits and weak rocks in a single hit</strong>. No other weapon in the game — not even other two-handers of comparable attack power — offers this level of mining efficiency. Normally, cracking open ore deposits takes multiple hits and wears down your weapon's durability. With the 碎岩巨剑, one swing is all it takes. This translates to massive time savings when farming for 钻石s, Rubies, 蓝宝石s, and other gems, especially in the 地底 where ore deposits are plentiful but enemies are relentless. You won't need to carry a separate mining tool anymore — the 碎岩巨剑 is your weapon and your pickaxe rolled into one devastating package.</p>
+
+<p data-zh="耐久度的价值">耐久度 is another major selling point. 双手 weapons typically have lower durability counts due to their high damage output, but the 碎岩巨剑 is engineered to last. At <strong>60 durability points</strong>, it can withstand prolonged combat encounters and extensive mining sessions before needing a reforge. When you factor in the 余料建造 system — attaching a high-damage material like a 白银莱尼尔 Hoof (+55 attack) or a Mighty 烟雾蘑菇 — the 碎岩巨剑's effective damage climbs into the triple digits. A fused 碎岩巨剑 with endgame materials can reach 90+ attack per swing, making it one of the highest DPS weapons in the entire game.</p>
+
+<p data-zh="与其他的双手武器对比">Let's compare the 碎岩巨剑 to other heavy hitters. The <strong>Royal Claymore</strong> (base 36 attack) matches the 碎岩巨剑's damage but lacks the ore-breaking passive ability. The <strong>Mighty 莱尼尔 Crusher</strong> can technically reach higher attack numbers with 余料建造, but 莱尼尔 weapons are notoriously fragile and difficult to farm consistently. The <strong>鬼神大剑</strong> is faster but requires a full armor set bonus to truly shine. None of these alternatives offer the 碎岩巨剑's perfect storm of high base damage, durability, mining utility, and the ability to be reforged infinitely. Once you've experienced the convenience of one-shotting every ore deposit you see while wielding a weapon that also obliterates 白银莱尼尔s, going back to anything else feels like a downgrade.</p>
+
+<p data-zh="中期的核心武器">From a progression standpoint, the 碎岩巨剑 arrives at the perfect time. By the time you've completed the 阿沅 questline and reached 鼓隆城, you're firmly in the mid-game and facing tougher enemies that require more powerful gear. The 碎岩巨剑 represents a significant power spike that carries you comfortably into the late game. It's the kind of weapon that becomes a permanent fixture in your inventory — a reliable, reforgeable powerhouse that you can always count on when the situation demands overwhelming force. Whether you're clearing 瘴气-infested chasms in the 地底, farming 岩石巨人es for gems, or simply enjoying the cathartic satisfaction of pancaking 波克布林s into the dirt, the 碎岩巨剑 delivers every single time.</p>
+</div>
+
+<!-- MODULE 2: 余料建造 / 制作 配方 -->
+<div class="section">
+<h2><span class="num">2</span> 余料建造 / 制作 配方</h2>
+<p data-zh="制作配方">Take the following materials to the <strong>鼓隆铁匠</strong> in 鼓隆城, located in the main forge area near the center of the settlement. The smith will craft the 碎岩巨剑 for you once you've completed the prerequisite quest — see the 注意事项 section for details.</p>
+
+<table>
+<tr><th>Material</th><th>Qty</th><th>Source</th></tr>
+<tr><td>🔨 碎岩剑</td><td>1</td><td>鼓隆城 area, Black 莫力布林 near Death Mountain</td></tr>
+<tr><td>💎 钻石</td><td>1</td><td>稀有 ore deposits, 稀有岩石巨人, Yiga Clan</td></tr>
+<tr><td>⚪ 打火石</td><td>5</td><td>Common drop from all ore deposits (gray rocks)</td></tr>
+</table>
+
+<p data-zh="制作地点">The 鼓隆铁匠 operates the main forge in 鼓隆城, marked by a prominent anvil and roaring furnace. You'll find him working the forge in the lower-central area of the city, identifiable by his distinctive Goron proportions and soot-stained apron. After completing the 阿沅 of 鼓隆城 questline and resolving the 巨砾哥马 crisis at the Fire Temple, the smith becomes available for 制作 and repairs. Simply approach with the materials in your inventory and select the 制作 option from the dialogue menu.</p>
+
+<p><strong>Total material cost per craft:</strong> 1 碎岩剑 + 1 钻石 + 5 打火石. The 碎岩剑 and 钻石 are the main hurdles here — 打火石 is so common that you'll likely have 50+ pieces by the time you reach 鼓隆城. The 钻石 remains the primary bottleneck (as it does for all 英杰 weapons), but the 碎岩巨剑's recipe is otherwise straightforward and cost-effective for the power it delivers.</p>
+
+<p>Like all 英杰 weapons, the 碎岩巨剑 can be reforged indefinitely as long as you have the materials. When your current one breaks, simply return to the 鼓隆铁匠 with another set of ingredients to forge a replacement. This infinite reforgeability makes the initial investment of time and effort to unlock the recipe pay dividends throughout your entire playthrough.</p>
+</div>
+
+<!-- MODULE 3: 材料与位置 -->
+<div class="section">
+<h2><span class="num">3</span> 材料与位置</h2>
+
+<div class="material-item">
+<div class="mat-icon">🔨</div>
+<div class="mat-info">
+<div class="mat-name">碎岩剑 &times; 1</div>
+<div class="mat-detail">
+<strong>Where to find:</strong> The 碎岩剑 is a two-handed weapon commonly found in the 鼓隆城 area and surrounding 奥尔汀 region. Your best bet is to check the weapon racks inside <strong>鼓隆城</strong> itself — particularly near the armor shop and the training area. If those have already been looted, head to the roads around <strong>Death Mountain</strong> and <strong>奥尔汀 Canyon</strong> where <strong>Black 莫力布林</strong> and higher-tier 波克布林s frequently wield this weapon. The 莫力布林 camp near <strong>奥尔汀 Great Skeleton</strong> (coordinates approximately <strong>1400, 3300, 0180</strong>) and the camps along the <strong>Death Mountain Trail</strong> are reliable farming spots. The 碎岩剑 also has a chance to spawn in treasure chests within 奥尔汀-region caves and in some Abandoned Mine sites in the 地底 near Death Mountain.
+<br><strong>Drop rate:</strong> ~60% from Black 莫力布林 in 奥尔汀 region. Guaranteed from specific 鼓隆城 weapon racks (respawns after 血月).
+<br><strong>Tip:</strong> If you're already in 鼓隆城 and the racks are empty, the quickest respawn farm is the Black 莫力布林 camp south of the city along the main road. Fast-travel to a nearby shrine, clear the camp, and repeat as needed.
+</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">💎</div>
+<div class="mat-info">
+<div class="mat-name">钻石 &times; 1</div>
+<div class="mat-detail">
+<strong>Where to find:</strong> 钻石s are the rarest gem in 海拉鲁 and the universal bottleneck for all 英杰 weapon recipes. Here are the most reliable acquisition methods: (1) <strong>稀有岩石巨人</strong> — the golden-glowing Talus variants are a guaranteed 钻石 drop. Near 鼓隆城, check the <strong>稀有岩石巨人 at Lake Ferona</strong> (coordinates approximately <strong>2650, 1200, 0150</strong>) and another near <strong>Glaive Pass</strong> in the western 奥尔汀 region. These respawn after each 血月. (2) <strong>地底 rare ore deposits</strong> — explore the Abandoned Mines beneath Death Mountain. The ore deposits here have a noticeably higher gem drop rate, and golden-shining deposits occasionally yield 钻石s. (3) <strong>Yiga Clan encounters</strong> — Yiga Blademasters have an approximately 8% 钻石 drop rate. Ambush squads appear randomly across 海拉鲁, especially after you've progressed the main story. (4) <strong>Gemstone merchant</strong> — <strong>Ramella</strong> in 鼓隆城 will sell you 钻石s for roughly 1,000 rupees each, making this the most reliable but expensive option. (5) <strong>Ore deposit farming</strong> — with a ~5% drop rate from rare (golden-shining) ore deposits, smash every golden deposit you see while exploring caves and the 地底. Equip the Sensor+ to track 钻石s passively.
+<br><strong>Drop rate:</strong> 100% from 稀有岩石巨人, ~5% from rare ore deposits, ~8% from Yiga Blademasters.
+<br><strong>Tip:</strong> Before making the trip to 鼓隆城 specifically for the 碎岩巨剑, check your inventory — you may already have a 钻石 from earlier exploration. Many players pick one up without realizing it.
+</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">⚪</div>
+<div class="mat-info">
+<div class="mat-name">打火石 &times; 5</div>
+<div class="mat-detail">
+<strong>Where to find:</strong> 打火石 is one of the most abundant materials in the game and you'll almost certainly have more than enough by the time you reach 鼓隆城. It drops from <strong>every gray ore deposit</strong> (the non-glowing, common rock formations) with near-certainty. Each deposit yields 1–2 打火石. The Death Mountain region is absolutely packed with ore deposits — literally every cave, cliff face, and mining tunnel has dozens of them. Use any blunt weapon (hammers, two-handed weapons, or rocks fused to sticks) to break deposits efficiently. If for some reason you're short on 打火石, the <strong>Abandoned Mines in the 地底</strong> beneath Death Mountain are an inexhaustible source — you'll collect 30+ 打火石 in a single sweep of any reasonably-sized mine. 打火石 also drops from some Stone Pebblits and can be purchased cheaply from general stores across 海拉鲁.
+<br><strong>Drop rate:</strong> ~95% from gray ore deposits (1–2 per deposit). Effectively guaranteed from Death Mountain mining tunnels.
+<br><strong>Tip:</strong> 打火石 stacks to 999 and is used in starting fires (drop + hit with metal weapon), so having a large stockpile is useful beyond just this recipe. Don't hesitate to farm extra while you're in the mines.
+</div>
+</div>
+</div>
+</div>
+
+<!-- MODULE 4: 最优路线 -->
+<div class="section">
+<h2><span class="num">4</span> 最优路线</h2>
+<p data-zh="最优路线">This route starts from <strong>监视堡垒</strong> in central 海拉鲁 and heads northeast into the 奥尔汀 region. Total estimated time: <strong>30–50 minutes</strong> depending on combat and exploration choices. <strong>Fire/heat protection is absolutely required</strong> — read the 注意事项 before attempting this journey.</p>
+
+<div class="route-tree">
+<div class="route-step">
+<div class="step-num">1</div>
+<div class="step-body">
+<strong>Start at 监视堡垒 — head northeast toward 奥尔汀 Canyon</strong> — Your destination is the <strong>奥尔汀 Canyon 鸟望台</strong> (coordinates approximately <strong>1630, 1180, 0230</strong>), which provides an excellent launch point into the Death Mountain region. If this tower isn't unlocked yet, travel northeast on foot or by horse along the main road. The path takes you through <strong>海拉鲁平原</strong>, past <strong>卡卡利科村</strong> (worth a stop for the armor shop and quest hub), and into the increasingly volcanic 奥尔汀 Canyon.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">2</div>
+<div class="step-body">
+<strong>Unlock 奥尔汀 Canyon 鸟望台</strong> — Activate the tower if you haven't already. The launch reveals the full Death Mountain landscape — look for the massive smoking volcano to the northeast and the network of rails, mine cart tracks, and rope bridges that crisscross the terrain. From the sky, <strong>鼓隆城</strong> is visible as a cluster of stone buildings built into the mountainside, with plumes of smoke rising from its forges.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">3</div>
+<div class="step-body">
+<strong>Follow the main road through 奥尔汀 Canyon toward 鼓隆城</strong> — The road is clearly marked and relatively safe at lower elevations. You'll pass <strong>Foothill Stable</strong> — stop here to rest, cook 防火 药剂 if needed, and stock up on supplies. The stable also has a cooking pot and a bed for resting. From here, the road begins ascending noticeably, and the temperature rises dramatically. Make sure your Flamebreaker armor is equipped or your 防火 Elixir is active.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">4</div>
+<div class="step-body">
+<strong>Navigate the Death Mountain Trail — watch for broken rails</strong> — The traditional rail cart system that once made this route easy is now in disrepair due to the Upheaval. You'll need to use <strong>究极手</strong> to repair broken rail sections, attach fans to mine carts for propulsion, or simply climb and glide your way up the mountain. The path has multiple segments: first the lower switchbacks (enemy camps with Fire-Breath 蜥蜴战士), then the mid-elevation lava fields (watch for  likess and lava geysers), and finally the upper approach to 鼓隆城.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">5</div>
+<div class="step-body">
+<strong>Cross the final rope bridges into 鼓隆城</strong> — The city entrance is at approximately <strong>1650, 2440, 0380</strong>. You'll know you're close when you see the massive stone archway and the distinctive orange glow of Goron forges. The final approach involves crossing a series of rope bridges suspended over lava pools — use your paraglider to shortcut if you have the stamina, or carefully cross on foot, watching for broken planks.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">6</div>
+<div class="step-body">
+<strong>Reach 鼓隆城 — purchase Flamebreaker armor if needed</strong> — Once inside 鼓隆城, your first stop should be the <strong>armor shop</strong> if you don't already have the Flamebreaker set. The shop sells individual pieces (600 rupees each) or the full set. Even one piece of Flamebreaker armor completely negates the extreme heat damage on Death Mountain, making this a worthwhile investment. The shop is clearly marked on your map.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">7</div>
+<div class="step-body">
+<strong>收集 the 碎岩剑</strong> — Locate the weapon racks in 鼓隆城 — one is near the armor shop and another is in the training area by the city entrance. If both have already been looted (or if you're unlucky), fast-travel to a nearby shrine and farm the Black 莫力布林 camps along the Death Mountain Trail. The 碎岩剑 has decent durability but treat it carefully — don't use it in combat before 制作 your 碎岩巨剑.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">8</div>
+<div class="step-body">
+<strong>Gather 5 打火石</strong> — This should take approximately 60 seconds. Exit 鼓隆城 and smash any 3–5 gray ore deposits along the cliff faces. Death Mountain ore deposits are incredibly dense — you literally cannot walk 20 steps without passing one. If you want to be thorough, descend into any nearby cave or 地底 entrance for an overabundance of ore deposits.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">9</div>
+<div class="step-body">
+<strong>Obtain 1 钻石</strong> — If you don't already have a 钻石, your best bet near 鼓隆城 is to hunt the <strong>稀有岩石巨人 at Lake Ferona</strong>. Fast-travel to the nearest shrine, equip a strong two-handed weapon fused with a Boulder or Rock for blunt damage, and attack the Talus's ore deposit weak point. Alternatively, explore the 地底 beneath Death Mountain — the Abandoned Mines have golden ore deposits that occasionally yield 钻石s. As a last resort, purchase one from <strong>Ramella</strong> in 鼓隆城 for ~1,000 rupees.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">10</div>
+<div class="step-body">
+<strong>Visit the 鼓隆铁匠 and forge the 碎岩巨剑</strong> — With 碎岩剑, 钻石, and 5 打火石 in your inventory, locate the smith at the central forge. The anvil icon appears on your map after completing the 阿沅 questline. Initiate the 制作 dialogue and select the 碎岩巨剑 option. The smith will hammer away at the forge, and moments later you'll hold 达尔克尔's legendary weapon in your hands.
+</div>
+</div>
+<div class="route-step">
+<div class="step-num">11</div>
+<div class="step-body">
+<strong>Test it on the nearest ore deposit!</strong> — Walk out of 鼓隆城, find the closest gray ore deposit, and swing. Watch in satisfaction as it shatters in a single hit, showering you with gems and 打火石. Then find the nearest powerful enemy and experience what 36 base damage (plus your 余料建造 material) feels like. Welcome to the heavy-hitting league.
+</div>
+</div>
+</div>
+</div>
+
+<!-- MODULE 5: 注意事项 -->
+<div class="section">
+<h2><span class="num">5</span> 注意事项</h2>
+<p data-zh="注意事项与常见陷阱">The journey to forge the 碎岩巨剑 is one of the most treacherous in the game. Death Mountain doesn't forgive unprepared adventurers. Here's every trap, pitfall, and gotcha you need to know about:</p>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🔥 EXTREME HEAT — 耐火石铠 Is Essentially 需要</div>
+<ul>
+<li>The heat on Death Mountain inflicts continuous, rapid damage that will kill an unprepared player in seconds. This isn't the mild warmth of lower 奥尔汀 — this is <strong>extreme heat</strong> that ignores regular heat-resistant food.</li>
+<li>The <strong>Flamebreaker armor set</strong> (sold in 鼓隆城) provides complete immunity to extreme heat when wearing at least one piece. Two pieces provide additional defense bonuses. Each piece costs 600 rupees.</li>
+<li>If you can't afford Flamebreaker armor, craft <strong>防火 药剂</strong> using 防火 Lizards or Smotherwing Butterflies. You'll need multiple elixirs for the full trip — one lasts about 6 minutes and 30 seconds.</li>
+<li>Equipping a <strong> 蓝宝石-fused weapon</strong> or wearing the 蓝宝石 circlet provides heat resistance but <strong>NOT</strong> fireproofing. Do not confuse heat resistance with fire immunity — they are different mechanics, and fireproofing is what you need on Death Mountain.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🛤️ Broken Rail Sections — Bring 左纳乌 Devices</div>
+<ul>
+<li>The mine cart rail system that leads up Death Mountain is severely damaged in 王国之泪. Multiple sections have gaps, broken supports, or missing carts entirely.</li>
+<li>Bring <strong>Fan 左纳乌 Devices</strong> and <strong>Cart 左纳乌 Devices</strong> in your inventory. You'll need to 究极手assemble working carts on broken sections, attach Fans for propulsion, and sometimes build bridges using available materials.</li>
+<li>Alternatively, skip the rails entirely and use a combination of climbing, 通天术, and 力巴尔's Gale (if unlocked) to scale the mountain manually. This is often faster and less frustrating than wrestling with the rail system.</li>
+<li>Save your game before attempting difficult cart segments — falling into lava means instant death and a long walk back.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🦎 Fire Like-Lizards and Flamepees Are Deadly</div>
+<ul>
+<li>Death Mountain is home to some of the most dangerous enemy variants in the game. <strong>Fire Like-Likes</strong> blend into the lava and rocky terrain, ambushing players who get too close. They deal massive fire damage and have high health pools.</li>
+<li><strong>Flamepees</strong> (fire-based 八爪怪s) launch explosive fireballs with homing capabilities. Their projectiles can knock you off cliffs or into lava.</li>
+<li><strong>Fire-Breath 蜥蜴战士</strong> patrol the trails in groups and can overwhelm you with coordinated fire attacks. Ice-element weapons and arrows are highly effective against them — bring a supply of 冰冷果 or White 丘丘 Jelly.</li>
+<li>Always have a backup plan for falling into lava —米法's Grace can save you once, but don't rely on it.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🔨 The 碎岩剑 Can Be Hard to Find</div>
+<ul>
+<li>Unlike the 飞燕弓 which has a guaranteed spawn in 利特村, the 碎岩剑's guaranteed spawns are less reliable and may already be looted.</li>
+<li>If the 鼓隆城 racks are empty, your best farming method is Black 莫力布林 along the Death Mountain Trail. These are tough enemies — don't underestimate them. Bring strong weapons and healing items.</li>
+<li>The 碎岩剑 has 30 durability, which is low for a two-handed weapon. Store it safely and don't use it for combat or mining before 制作 the 碎岩巨剑.</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">🗿 阿沅 Quest Line Must Be Completed First</div>
+<ul>
+<li>The 鼓隆铁匠 <strong>will NOT craft the 碎岩巨剑</strong> until you've completed the <strong>阿沅 of 鼓隆城</strong> main quest and defeated <strong>巨砾哥马</strong> at the Fire Temple.</li>
+<li>This questline involves investigating the Goron mining operations, dealing with the marbled rock plague affecting the Gorons, and ultimately ascending Death Mountain to enter the Fire Temple.</li>
+<li>The Fire Temple dungeon is a multi-floor vertical climb with rail cart puzzles and a challenging boss fight at the top. Come prepared with healing items, strong weapons, and plenty of 左纳乌 charges for your devices.</li>
+<li>Completing this quest also unlocks <strong>阿沅 as a 贤者 companion</strong>, which is an excellent bonus (see Free 收益 below).</li>
+</ul>
+</div>
+
+<div class="gotcha-box">
+<div class="gotcha-title">💎 钻石 Shortage — Plan Ahead</div>
+<ul>
+<li>The 钻石 requirement is the biggest bottleneck for this recipe. With only a ~5% drop rate from rare ore deposits, you could spend an hour farming without success if RNG isn't on your side.</li>
+<li>Always prioritize hunting <strong>稀有岩石巨人</strong> over smashing random deposits. The 稀有岩石巨人 at Lake Ferona (near 鼓隆城) respawns every 血月 and is a guaranteed 钻石 source.</li>
+<li>If you have Sensor+, set it to track "钻石" before exploring the 地底. This will ping whenever you're near a 钻石-containing deposit, saving enormous amounts of time.</li>
+<li>Consider purchasing 钻石s from Ramella as a last resort — 1,000 rupees is expensive but guarantees the material when you need it most.</li>
+</ul>
+</div>
+</div>
+
+<!-- MODULE 6: Free 收益 -->
+<div class="section">
+<h2><span class="num">6</span> Free 收益 Along the 路线</h2>
+<p data-zh="沿途的额外收获">The trek to 鼓隆城 and Death Mountain is one of the most resource-rich expeditions in the game. Beyond the 碎岩巨剑 itself, you'll walk away with an enormous haul of valuable items, unlocks, and permanent upgrades. Here's the full breakdown:</p>
+
+<div class="material-item">
+<div class="mat-icon">🛒</div>
+<div class="mat-info">
+<div class="mat-name">鼓隆城 Shops — 耐火石铠 + Gem Dealer</div>
+<div class="mat-detail">鼓隆城 features one of the most important armor shops in the game, selling the <strong>Flamebreaker armor set</strong>. This set is not only essential for Death Mountain exploration but also invaluable for 奥尔汀 地底, certain shrine challenges, and any situation involving fire hazards. Additionally, <strong>Ramella</strong> the gemstone merchant operates here, offering a reliable (if expensive) source of 钻石s, Rubies, and 蓝宝石s. She'll also buy your gems at premium prices if you sell in bulk, making 鼓隆城 a key economic hub for your playthrough.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🕳️</div>
+<div class="mat-info">
+<div class="mat-name">Death Mountain 地底 Entrance</div>
+<div class="mat-detail">The 地底 entrance beneath Death Mountain is one of the most rewarding exploration zones in the game. This area is packed with <strong>Abandoned Mines</strong> containing massive quantities of ore deposits, 左纳乌 charge dispensers, and 魄 for trading with Bargainer Statues. The 地底 under 奥尔汀 also contain unique enemies, rare materials, and the <strong>破魔之根 network</strong> that, once activated, reveals the entire underground region. Having the 碎岩巨剑 makes mining in the 地底 significantly faster and more efficient.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">💎</div>
+<div class="mat-info">
+<div class="mat-name">稀有 Ore 收集ion — 蓝宝石s, Rubies, 钻石s</div>
+<div class="mat-detail">The Death Mountain region is a gem hunter's paradise. Every cave, cliff face, and Abandoned Mine is studded with ore deposits that drop <strong>蓝宝石s</strong>, <strong>Rubies</strong>, <strong>黄玉</strong>, <strong>琥珀</strong>, <strong>蛋白石</strong>, and occasionally <strong>钻石s</strong>. 蓝宝石s are particularly abundant here and are essential for armor upgrades (especially the 卓拉铠甲套装 and the 勇者皮衣). Rubies are used in fire-element cooking and weapon fusing. By the time you've completed the route to 鼓隆城 and back, expect to have collected 10+ gems worth several thousand rupees.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">🦍</div>
+<div class="mat-info">
+<div class="mat-name">阿沅 — 贤者 of Fire Companion</div>
+<div class="mat-detail">Completing the 鼓隆城 questline unlocks <strong>阿沅</strong> as a permanent 贤者 companion. 阿沅's ability allows you to summon him as a rolling boulder that smashes through rocks, enemies, and obstacles with tremendous force. This ability is incredibly versatile — use it to break through cracked walls (saving bomb flowers), charge into enemies for heavy damage, clear paths through rubble, and even launch yourself into the air when used at the right angle. 阿沅 also fights alongside you in combat, providing melee support and drawing enemy aggro. His 贤者 stone is one of the most useful in the entire game.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">⛏️</div>
+<div class="mat-info">
+<div class="mat-name">Abundant Mining Sites with Massive Ore Deposits</div>
+<div class="mat-detail">奥尔汀 Canyon and Death Mountain are covered in mining tunnels, caves, and cliff-side deposit clusters. Notable locations include the <strong>Goronbi River cave system</strong>, the <strong>Death Mountain Summit mines</strong>, and numerous smaller caves along the main trail. These sites contain <strong>dozens</strong of ore deposits each, yielding hundreds of 打火石, numerous gems, and occasionally 左纳乌 devices. With your new 碎岩巨剑, you can clear these mines in record time, turning a single expedition into a massive resource haul. Many of these caves also contain hidden 克洛格 seeds and treasure chests.</div>
+</div>
+</div>
+
+<div class="material-item">
+<div class="mat-icon">⛩️</div>
+<div class="mat-info">
+<div class="mat-name">奥尔汀 区域 神庙s + 卡卡利科村</div>
+<div class="mat-detail">The route to 鼓隆城 passes near or through multiple shrines: <strong>Isisim 神庙</strong> (near the 奥尔汀 Canyon Tower), <strong>Sibajitak 神庙</strong>, <strong>Shae Mo'sah 神庙</strong>, and several others within Death Mountain itself. Each shrine grants a <strong>Light of Blessing</strong> for heart/stamina upgrades and serves as a permanent fast-travel point. Additionally, the route takes you past <strong>卡卡利科村</strong>, one of the game's major quest hubs, home to the <strong>大妖精之泉</strong> (armor upgrades), multiple side quests, and unique shops. Stop here on your way to or from 鼓隆城 — it's well worth the detour.</div>
+</div>
+</div>
+</div>
+
+<!-- 推荐下一步 -->
+<div class="section">
+<h2>🔗 推荐下一步 Guide</h2>
+<p>With the 碎岩巨剑 in hand, you've got the ultimate melee weapon for crushing enemies and mining ore. Now it's time to complete your 英杰 weapon collection with the ultimate ranged option. Check out our <a href="great-eagle-bow.html"><strong>大鹫弓 Guide</strong></a> to learn how to craft 力巴尔's signature triple-shot bow in 利特村. Wielding both the 碎岩巨剑 for close-range devastation and the 大鹫弓 for ranged supremacy gives you the perfect one-two punch for any encounter in 海拉鲁.</p>
+</div>
+
+</main>
+
+<!-- RIGHT SIDEBAR -->
+<aside class="right-sidebar">
+<h3>📊 物品数据</h3>
+<div class="info-card">
+<div class="label">Base Damage</div>
+<div class="value">36 (highest 英杰 weapon)</div>
+</div>
+<div class="info-card">
+<div class="label">武器 类型</div>
+<div class="value">双手 (英杰)</div>
+</div>
+<div class="info-card">
+<div class="label">耐久度</div>
+<div class="value">60 swings (high)</div>
+</div>
+<div class="info-card">
+<div class="label">Special Effect</div>
+<div class="value">Ore deposits break in 1 hit</div>
+</div>
+<div class="info-card">
+<div class="label">可重新锻造</div>
+<div class="value">Yes — same materials</div>
+</div>
+
+<h3>⏱️ Time Estimate</h3>
+<div class="info-card">
+<div class="label">Speedrun (materials ready)</div>
+<div class="value">5 minutes (craft only)</div>
+</div>
+<div class="info-card">
+<div class="label">Full route from Lookout</div>
+<div class="value">30–50 minutes</div>
+</div>
+<div class="info-card">
+<div class="label">With 钻石 farming</div>
+<div class="value">50–100 minutes</div>
+</div>
+
+<h3>🗺️ Key Coordinates</h3>
+<div class="info-card">
+<div class="label">鼓隆城</div>
+<div class="value">1650, 2440, 0380</div>
+</div>
+<div class="info-card">
+<div class="label">奥尔汀 Canyon Tower</div>
+<div class="value">1630, 1180, 0230</div>
+</div>
+<div class="info-card">
+<div class="label">Lake Ferona (稀有 Talus)</div>
+<div class="value">2650, 1200, 0150</div>
+</div>
+<div class="info-card">
+<div class="label">奥尔汀 Great Skeleton</div>
+<div class="value">1400, 3300, 0180</div>
+</div>
+
+<h3>⚠️ 前置条件</h3>
+<div class="info-card">
+<div class="label">需要 Quest</div>
+<div class="value">Fire Temple + 阿沅 quest</div>
+</div>
+<div class="info-card">
+<div class="label">需要 Gear</div>
+<div class="value">耐火石铠（至少1件）</div>
+</div>
+</aside>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">&#9676; RelicTrek</div>
+      <p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制旅程。</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">RelicTrek</div>
+        <a href="../privacy.html">隐私</a>
+        <a href="../terms.html">条款</a>
+        <a href="../about.html">关于</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 RelicTrek.net</span>
+    <span class="footer-sep">&#9676;</span>
+    <span>制作ed for adventurers</span>
+  </div>
+</footer>
+
+</body>
+</html>

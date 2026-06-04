@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鬼神套装 — 塞尔达：王国之泪 CraftHunt Guide</title>
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f0;
+    color: #333;
+    line-height: 1.6;
+  }
+  a { color: #2c7a3e; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Navigation ── */
+  .main-nav {
+    background: #1a1a1a;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .main-nav .logo { font-weight: bold; font-size: 1.2rem; color: #4CAF50; }
+  .main-nav a { color: #ccc; font-size: 0.9rem; }
+  .main-nav a:hover { color: #fff; }
+
+  /* ── News Ticker ── */
+  .news-ticker {
+    background: #e8e8e0;
+    padding: 0.4rem 2rem;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #d0d0c8;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  /* ── Layout ── */
+  .page-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ── Left Sidebar ── */
+  .sidebar-left {
+    width: 260px;
+    background: #fff;
+    border-right: 1px solid #d0d0c8;
+    padding: 1.5rem 1rem;
+    position: sticky;
+    top: 48px;
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+  .sidebar-left h3 { font-size: 0.85rem; color: #888; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+  .sidebar-left ul { list-style: none; }
+  .sidebar-left li { margin-bottom: 0.4rem; }
+  .sidebar-left a {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    color: #555;
+  }
+  .sidebar-left a:hover, .sidebar-left a.active { background: #f0f0e8; color: #2c7a3e; text-decoration: none; }
+
+  /* ── Content ── */
+  .content-area {
+    flex: 1;
+    padding: 2rem;
+    min-width: 0;
+  }
+
+  /* ── Breadcrumb ── */
+  .breadcrumb { font-size: 0.8rem; color: #888; margin-bottom: 1rem; }
+  .breadcrumb a { color: #666; }
+
+  /* ── Item Header ── */
+  .item-header {
+    background: #fff;
+    border: 1px solid #d0d0c8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .item-icon-legendary {
+    width: 80px; height: 80px;
+    background: #4a148c;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+  .item-meta { flex: 1; }
+  .item-meta h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  .item-meta .tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .tag-rarity-legendary { background: #4a148c; color: #fff; }
+  .tag-type { background: #e8e8e0; color: #555; }
+  .tag-difficulty { background: #b71c1c; color: #fff; }
+  .item-meta .desc { color: #666; font-size: 0.95rem; }
+
+  /* ── Sections ── */
+  .section {
+    background: #fff;
+    border: 1px solid #d0d0c8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #4CAF50;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: #2c7a3e; }
+  .section p { margin-bottom: 0.75rem; }
+
+  /* ── Tables ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid #e0e0d8; }
+  th { background: #f5f5f0; font-weight: 600; }
+  tr:hover { background: #fafaf5; }
+
+  /* ── Material 物品 ── */
+  .material-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #fafaf5;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid #4CAF50;
+  }
+  .material-item .mat-icon {
+    width: 48px; height: 48px;
+    background: #e8e8e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .material-item .mat-info { flex: 1; }
+  .material-item .mat-info strong { display: block; margin-bottom: 0.25rem; }
+  .material-item .mat-info span { font-size: 0.85rem; color: #888; }
+
+  /* ── Gotcha Box ── */
+  .gotcha-box {
+    background: #fff8e1;
+    border-left: 4px solid #ff8f00;
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+  }
+  .gotcha-box strong { color: #e65100; }
+
+  /* ── 路线 Tree ── */
+  .route-tree {
+    background: #f5f5f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+  }
+  .route-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0d8;
+  }
+  .route-step:last-child { border-bottom: none; }
+  .route-num {
+    width: 32px; height: 32px;
+    background: #4CAF50;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .route-info { flex: 1; }
+  .route-info strong { display: block; margin-bottom: 0.2rem; }
+  .route-info span { font-size: 0.85rem; color: #888; }
+
+  /* ── Right Sidebar ── */
+  .sidebar-right {
+    width: 220px;
+    padding: 1.5rem 1rem;
+  }
+  .sidebar-right .panel {
+    background: #fff;
+    border: 1px solid #d0d0c8;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-right .panel h4 { font-size: 0.85rem; margin-bottom: 0.5rem; color: #888; text-transform: uppercase; }
+  .sidebar-right .panel a { display: block; font-size: 0.88rem; padding: 0.3rem 0; }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-top: 1px solid #d0d0c8;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    background: #fff;
+  }
+
+  /* ── Utility ── */
+  .inline-icon { display: inline-block; width: 20px; height: 20px; background: #e8e8e0; border-radius: 4px; text-align: center; line-height: 20px; font-size: 0.75rem; vertical-align: middle; }
+  code { background: #f0f0e8; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85rem; }
+  .highlight { background: #e8f5e9; padding: 0.8rem 1rem; border-radius: 6px; margin: 0.75rem 0; border-left: 4px solid #4CAF50; }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="main-nav">
+  <div class="logo">🛠️ CraftHunt</div>
+  <a href="../index.html">首页</a>
+  <a href="../">游戏</a>
+  <a href="./">塞尔达：王国之泪</a>
+      <a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man's 天空</a>
+      <a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+    </div>
+      <a href="../minecraft/">Minecraft</a>
+  <a href="../about.html">关于</a>
+</nav>
+
+<!-- News Ticker -->
+<div class="news-ticker">
+  📰 新攻略： 鬼神套装 — the ultimate 攻击力提升 build from 梅祖拉的假面 is hiding in four secret caves across 海拉鲁. Updated for 王国之泪 v1.2.1.
+</div>
+
+<!-- Page Container -->
+<div class="page-container">
+
+  <!-- Left Sidebar -->
+  <aside class="sidebar-left">
+    <h3>塞尔达：王国之泪 物品</h3>
+    <ul>
+      <li><a href="./master-sword.html">大师之剑</a></li>
+      <li><a href="./hylian-shield.html">海利亚盾</a></li>
+      <li><a href="./">Hero of Time Set</a></li>
+      <li><a href="./">Royal Guard Set</a></li>
+      <li><a href="./">采矿套装</a></li>
+      <li><a href="./">潜行服 Set</a></li>
+      <li><a href="./barbarian-set.html">蛮族套装</a></li>
+      <li><a href="./">英杰's Tunic</a></li>
+      <li><a href="./">左纳乌能源 防具 Set</a></li>
+      <li><a href="./fierce-deity-set.html" class="active">鬼神套装</a></li>
+    </ul>
+
+    <h3 style="margin-top: 1.5rem;">快速链接</h3>
+    <ul>
+      <li><a href="https://www.zeldadungeon.net/tears-of-the-kingdom/">塞尔达 Dungeon</a></li>
+      <li><a href="https://mapgenie.io/zelda-tears-of-the-kingdom">互动地图</a></li>
+      <li><a href="https://www.ign.com/wikis/the-legend-of-zelda-tears-of-the-kingdom/">IGN百科</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content-area">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="../">首页</a> / <a href="../">游戏</a> / <a href="./">塞尔达：王国之泪</a> / 鬼神套装
+    </div>
+
+    <!-- Item Header -->
+    <div class="item-header">
+      <div class="item-icon-legendary">😈</div>
+      <div class="item-meta">
+        <h1>鬼神套装</h1>
+        <span class="tag tag-rarity-legendary">传说</span>
+        <span class="tag tag-type">防具 (3 Pieces)</span>
+        <span class="tag tag-difficulty">★★★★★ 后期</span>
+        <p class="desc" data-zh="梅祖拉的假面联动防具，三件套叠满攻击力加成，游戏最强战斗build">梅祖拉的假面 crossover armor. 攻击力提升 ×3 for the strongest combat build in the game. Requires completing a 4-part hidden quest chain across multiple regions.</p>
+      </div>
+    </div>
+
+    <!-- Section 1: 为什么这件物品重要 -->
+    <section class="section" id="overview">
+      <h2><span>1</span> 为什么这件物品重要</h2>
+
+      <p>The <strong>鬼神套装</strong> is the single most powerful offensive armor set in <em>塞尔达传说：王国之泪</em>. Consisting of three pieces — the <strong>鬼神帽子</strong>, <strong>鬼神服</strong>, and <strong>鬼神靴</strong> — each piece grants the <strong>攻击力提升</strong> set bonus, stacking cumulatively when multiple pieces are worn together.</p>
+
+      <div class="highlight">
+        <strong>攻击力提升 ×3 = Highest raw damage output in the game.</strong> When fully upgraded to ★4 at a 大妖精之泉, the 鬼神套装 outperforms every other armor set for raw combat effectiveness. Combine it with a high-damage weapon (like the 鬼神大剑 or the 大师之剑) and Mighty Simmered Fruit for a temporary 攻击力提升 buff, and you can reach damage numbers that trivially one-shot Silver 波克布林s and melt Golden 莱尼尔s in seconds.
+      </div>
+
+      <p>Beyond raw stats, this set is a beloved <strong>梅祖拉的假面 crossover</strong> — one of the darkest and most iconic entries in the 塞尔达 franchise. The armor's design, with its deep blue body and menacing white mask, is instantly recognizable to any long-time series fan. Wearing it isn't just about optimization; it's about paying homage to one of 林克's most powerful and mysterious forms across the entire franchise.</p>
+
+      <p>Here's the catch: <strong>this set is completely hidden</strong>. There is no quest marker, no NPC points you to it directly, and the game gives absolutely no indication that it even exists until you stumble across the first clue. The acquisition method involves <strong>米斯科's Treasure: The Fierce Deity</strong>, a four-part treasure hunt that sends you to four separate caves scattered across 海拉鲁 — each containing a clue that leads to the next.</p>
+
+      <p>For min-maxers, completionists, and 梅祖拉的假面 fans alike, the 鬼神套装 is non-negotiable. The quest chain is long and requires preparation, but the payoff is unmatched. If you have any intention of facing the game's hardest encounters — 地底 Chasms, the Final Trial in the Coliseum, or the 魔王 himself — this set should be at the top of your priority list.</p>
+
+      <h3>Set Bonus Breakdown</h3>
+      <table>
+        <tr><th>Pieces Worn</th><th>Bonus</th><th>Upgrade Cost (Total)</th></tr>
+        <tr><td>1 piece</td><td>攻击力提升 (×1)</td><td>—</td></tr>
+        <tr><td>2 pieces</td><td>攻击力提升 (×2)</td><td>—</td></tr>
+        <tr><td>3 pieces</td><td>攻击力提升 (×3) + 套装奖励： 蓄力攻击精力持久</td><td>—</td></tr>
+        <tr><td>3 pieces (★4 upgraded)</td><td>攻击力提升 ×3 + 28 defense per piece = 84 total DEF</td><td>9 × 3 = 27 total (see upgrade table below)</td></tr>
+      </table>
+
+      <p>At ★4, each piece provides <strong>28 defense</strong>, totaling <strong>84 defense</strong> for the full set — competitive with most upgraded endgame armor while maintaining the highest offensive bonuses in the game. This is the armor set worn by speedrunners and challenge runners for a reason.</p>
+    </section>
+
+    <!-- Section 2: 余料建造 / 制作 配方 -->
+    <section class="section" id="recipe">
+      <h2><span>2</span> Acquisition: 米斯科's Treasure — The Fierce Deity</h2>
+
+      <p>Unlike most items in 王国之泪, the 鬼神套装 <strong>cannot be crafted at a workbench</strong>. Instead, you must complete a hidden four-part treasure hunt chain called <strong>"米斯科's Treasure: The Fierce Deity."</strong> This quest is initiated by finding a series of letters left by <strong>米斯科</strong>, the legendary bandit from Breath of the Wild who has returned with even more hidden treasures in 王国之泪.</p>
+
+      <p>The chain works as follows: you find 米斯科's first letter, which contains a cryptic clue pointing to a cave. Inside that cave, you find one piece of the 鬼神套装 AND another letter with a clue to the next location. Rinse and repeat four times to collect all three armor pieces plus the bonus <strong>鬼神大剑</strong>.</p>
+
+      <h3>The Four Treasure Locations</h3>
+      <table>
+        <tr><th>步骤</th><th>Location</th><th>Reward</th><th>Clue Origin</th></tr>
+        <tr>
+          <td><strong>1</strong></td>
+          <td>塞法拉湖洞窟 <code>(2581, 1303, 0134)</code></td>
+          <td>鬼神帽子 + Letter #2</td>
+          <td>高原驿站 Well (米斯科's first letter)</td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td>阿卡莱 Foothills Cave <code>(3320, 1315, 0206)</code></td>
+          <td>鬼神服 + Letter #3</td>
+          <td>Letter found in 塞法拉湖洞窟</td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td>达利特森林洞窟 <code>(-0912, -0135, 0036)</code></td>
+          <td>鬼神靴 + Letter #4</td>
+          <td>Letter found in 阿卡莱 Foothills Cave</td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td>暴风谷 <code>(2340, 2560, 0150)</code></td>
+          <td>鬼神大剑 (38 ATK)</td>
+          <td>Letter found in 达利特森林洞窟</td>
+        </tr>
+      </table>
+
+      <h3>Upgrade 材料 (★1 to ★4 per piece)</h3>
+      <p>Once acquired, upgrade the set at any <strong>大妖精之泉</strong>. Each piece requires the same materials:</p>
+      <table>
+        <tr><th>Level</th><th>材料 Needed</th><th>Total per Piece</th></tr>
+        <tr><td>★0 → ★1</td><td>西诺克斯 Tooth ×1, 西诺克斯 Guts ×1, 卢比 ×10</td><td>1 of each</td></tr>
+        <tr><td>★1 → ★2</td><td>Blue 西诺克斯 Tooth ×2, 西诺克斯 Guts ×2, 卢比 ×50</td><td>3 total</td></tr>
+        <tr><td>★2 → ★3</td><td>Black 西诺克斯 Tooth ×3, 西诺克斯 Guts ×3, 卢比 ×200</td><td>6 total</td></tr>
+        <tr><td>★3 → ★4</td><td>骷髅西诺克斯 Tooth ×4, 西诺克斯 Guts ×4, 卢比 ×500</td><td>10 total</td></tr>
+      </table>
+
+      <div class="gotcha-box">
+        <strong>⚠ 西诺克斯 Farming 需要:</strong> To fully upgrade all three pieces to ★4, you will need a total of <strong>30 西诺克斯 Guts</strong>, <strong>3 西诺克斯 Teeth</strong>, <strong>6 Blue 西诺克斯 Teeth</strong>, <strong>9 Black 西诺克斯 Teeth</strong>, and <strong>12 骷髅西诺克斯 Teeth</strong>. This is a significant farming commitment — plan multiple 西诺克斯 hunts across 海拉鲁. The best farming route is circling the fields around 海拉鲁城堡 and the 拉聂尔 Wetlands at night for 骷髅西诺克斯 spawns, plus checking known 西诺克斯 locations in 阿卡莱 and 海布拉 during daytime.
+      </div>
+    </section>
+
+    <!-- Section 3: 材料与位置 -->
+    <section class="section" id="materials">
+      <h2><span>3</span> 材料与位置 — The Full Quest Chain</h2>
+
+      <p>Each step of the Fierce Deity quest chain has a specific starting point, a cave to explore, a puzzle to solve, and a reward at the end. Below is the complete breakdown of every step with exact landmarks, coordinates, and what to expect.</p>
+
+      <h3>📍 步骤 1: 高原驿站 Well — Finding the First Clue</h3>
+      <div class="material-item">
+        <div class="mat-icon">📜</div>
+        <div class="mat-info">
+          <strong>米斯科's First Letter — "The Fierce Deity"</strong>
+          <span>坐标： <code>-1432, -1258, 0032</code> | 位置： Inside 高原驿站 Well</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">The 高原驿站 is directly southwest of 海拉鲁平原, northwest of the 初始台地. Enter the well behind the stable (use 通天术 or climb down). At the bottom, you'll find a small camp with 米斯科's letter sitting on a wooden crate. Read it to begin the quest chain. The letter references a "lake where flames watch over" — this points to <strong>Cephla Lake</strong> in 奥尔汀, where four torch-lit stone pillars surround the water.</p>
+        </div>
+      </div>
+
+      <h3>📍 步骤 2: 塞法拉湖洞窟 — The 鬼神帽子</h3>
+      <div class="material-item">
+        <div class="mat-icon">😈</div>
+        <div class="mat-info">
+          <strong>塞法拉湖洞窟</strong>
+          <span>坐标： <code>2581, 1303, 0134</code> | 区域: 奥尔汀, northeast of Foothill Stable</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">Cephla Lake sits in the 奥尔汀 Canyon region, easily reached by gliding northeast from Foothill Stable or using the Cephla Lake 鸟望台. The cave entrance is on the south side of the lake, partially hidden behind some bombable rocks. Inside, you'll find a torch-lighting puzzle: light all the torches in the central chamber using 火焰果, Fire Arrows, or a Torch. Once all torches are lit, a stone gate opens revealing a chest containing the <strong>鬼神帽子</strong> and 米斯科's second letter. The letter references "a hill in 阿卡莱 where the ancient machines once walked" — pointing to the 阿卡莱 Foothills near the 阿卡莱 Ancient Tech Lab.</p>
+        </div>
+      </div>
+
+      <h3>📍 步骤 3: 阿卡莱 Foothills Cave — The 鬼神服</h3>
+      <div class="material-item">
+        <div class="mat-icon">🛡️</div>
+        <div class="mat-info">
+          <strong>阿卡莱 Foothills Cave</strong>
+          <span>坐标： <code>3320, 1315, 0206</code> | 区域: 阿卡莱, west of 阿卡莱 Ancient Tech Lab</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">The 阿卡莱 Foothills are the rolling hills west of the 阿卡莱 Ancient Tech Lab and south of 一始村. The cave entrance is tucked into a cliff face — look for the telltale dark opening with some glowing mushrooms. This cave has a <strong>boulder-pushing puzzle</strong>: use 究极手 to move large rocks into designated slots to unlock the treasure room. <strong>Warning:</strong> This area is Guardian territory. Decayed Guardians patrol the foothills above the cave, and while they can't move, their laser beams still hurt. Approach from the south or use the cliffside for cover. The chest contains the <strong>鬼神服</strong> and 米斯科's third letter, which hints at "a forest of Dalite trees where the heroes rest" — pointing to Dalite Forest southwest of 监视堡垒.</p>
+        </div>
+      </div>
+
+      <h3>📍 步骤 4: 达利特森林洞窟 — The 鬼神靴</h3>
+      <div class="material-item">
+        <div class="mat-icon">👢</div>
+        <div class="mat-info">
+          <strong>达利特森林洞窟</strong>
+          <span>坐标： <code>-0912, -0135, 0036</code> | 区域: 中央海拉鲁, southwest of 监视堡垒</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">Dalite Forest is a small woodland area southwest of 监视堡垒, just past the Manhala Bridge. The cave entrance is under a large overhang on the eastern edge of the forest. This cave requires a <strong>stamina climb</strong> — bring stamina-recovery food or have at least two full wheels of stamina. Inside, navigate the vertical chamber by climbing the walls and using platforms. At the top, a chest contains the <strong>鬼神靴</strong> and 米斯科's fourth and final letter. This letter speaks of "a gulch where tempests rage and the mighty fall" — pointing to <strong>暴风谷</strong> in the northern 奥尔汀 Mountains.</p>
+        </div>
+      </div>
+
+      <h3>📍 步骤 5: 暴风谷 — The 鬼神大剑</h3>
+      <div class="material-item">
+        <div class="mat-icon">⚔️</div>
+        <div class="mat-info">
+          <strong>暴风谷</strong>
+          <span>坐标： <code>2340, 2560, 0150</code> | 区域: 奥尔汀 Mountains, far northeast of 鼓隆城</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">暴风谷 is a dangerous canyon in the far northern 奥尔汀 Mountains. The area is populated by <strong>strong enemy camps</strong> including Black 波克布林s and a potential 莱尼尔 spawn nearby. The treasure is in a small cave at the back of the gulch — fight or sneak past the enemies, enter the cave, and open the final chest to receive the <strong>鬼神大剑</strong>. This weapon has <strong>38 base attack</strong>, decent durability, and the same aesthetic as the armor set. While not the highest-attack weapon in the game, it matches the set visually and is a solid mid-to-late-game blade.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 最优路线 -->
+    <section class="section" id="route">
+      <h2><span>4</span> 最优路线 — Complete Walkthrough</h2>
+
+      <p>Below is the most time-efficient route to complete the entire Fierce Deity quest chain, starting from <strong>监视堡垒</strong> as your base of operations. Total estimated time: <strong>2.5 to 4 hours</strong> depending on your fast-travel unlocks and whether you fight or avoid enemies.</p>
+
+      <div class="route-tree">
+        <div class="route-step">
+          <div class="route-num">1</div>
+          <div class="route-info">
+            <strong>Start: 高原驿站 Well</strong>
+            <span>Fast-travel to Jiosin 神庙 (southeast of 海拉鲁平原) or Tsutsu-um 神庙 (near the stable). The 高原驿站 is at <code>-1432, -1280</code>. Walk behind the stable to the well, drop down, and read 米斯科's letter. Set a map pin on Cephla Lake (northeast 奥尔汀).</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">2</div>
+          <div class="route-info">
+            <strong>塞法拉湖洞窟 → 鬼神帽子</strong>
+            <span>Fast-travel to Cephla Lake 鸟望台 or Jiotakyam 破魔之根. The cave entrance is on the south shore at <code>2581, 1303</code>. Solve the torch puzzle (use 4 火焰果 arrows to light all braziers quickly). Claim the Mask + Letter #2. Pin 阿卡莱 Foothills on your map.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">3</div>
+          <div class="route-info">
+            <strong>阿卡莱 Foothills Cave → 鬼神服</strong>
+            <span>Fast-travel to Jochi-ihiga 神庙 (一始村 area) Narusu 破魔之根 if you've unlocked the 地底 path. 地面 approach: glide from Ulri Mountain 鸟望台 southward. Cave entrance at <code>3320, 1315</code>. Solve the boulder puzzle with 究极手. <strong>Bring a strong weapon</strong> — 瘴气-infected enemies may spawn inside. Claim 防具 + Letter #3.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">4</div>
+          <div class="route-info">
+            <strong>达利特森林洞窟 → 鬼神靴</strong>
+            <span>Return to 中央海拉鲁 — fast-travel to Kyononis 神庙 (监视堡垒) and glide southwest. Cave at <code>-0912, -0135</code>. This is the climbing section — eat Enduring food or have 2+ stamina wheels. Claim Boots + Letter #4.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">5</div>
+          <div class="route-info">
+            <strong>暴风谷 → 鬼神大剑</strong>
+            <span>Final leg: fast-travel to Sibajitak 神庙 (奥尔汀 Canyon) or the nearest 地底 破魔之根. Head far northeast into the 奥尔汀 Mountains. Approach 暴风谷 from the south using high ground. The cave is at the back of the gulch. Clear the enemy camp or sneak in at night. Claim the 鬼神大剑. Quest chain complete.</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Fast-Travel Preparation Checklist</h3>
+      <p>Before starting this quest chain, unlock these fast-travel points to save significant time:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>Cephla Lake 鸟望台</strong> — essential for 步骤 2</li>
+        <li><strong>Ulri Mountain 鸟望台</strong> — best entry point for 阿卡莱 (步骤 3)</li>
+        <li><strong>监视堡垒 鸟望台 / Kyononis 神庙</strong> — your home base</li>
+        <li><strong>奥尔汀 Canyon 鸟望台</strong> — use for 暴风谷 approach (步骤 5)</li>
+        <li><strong>Nearby shrines</strong> — unlock any shrines you pass during the route for return trips</li>
+      </ul>
+
+      <p><strong>Recommended loadout:</strong> Bring at least 20 火焰果 for the Cephla Lake torch puzzle, 10 光亮花的种子s for cave visibility, 3 Enduring meals for the Dalite Forest climb, and your best combat gear for 阿卡莱 and 暴风谷. A Rocket 盾 or hoverbike made with 左纳乌 devices will dramatically speed up overland travel between caves.</p>
+    </section>
+
+    <!-- Section 5: 注意事项 -->
+    <section class="section" id="gotcha">
+      <h2><span>5</span> 注意事项 — What Can Go Wrong</h2>
+
+      <p>The Fierce Deity quest chain is notorious for frustrating players who aren't prepared. Here are every major pitfall and how to avoid them.</p>
+
+      <div class="gotcha-box">
+        <strong>🔴 The Quest Is Completely Hidden</strong><br>
+        Unlike virtually every other side quest in 王国之泪, "米斯科's Treasure: The Fierce Deity" does <strong>NOT</strong> appear in your Adventure Log until you read the first letter in 高原驿站 Well. There is no quest giver NPC, no map marker, and no hint from 普尔亚平板 or any character. You must physically go to the well and find the letter yourself. Many players complete the entire main story without ever knowing this set exists. This is by design — 米斯科's treasures are meant to be secrets.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 阿卡莱 Has Guardians — Decayed But Deadly</strong><br>
+        The 阿卡莱 Foothills area surrounding the cave entrance still contains <strong>Decayed Guardians</strong>. These stationary turrets will lock onto you with a laser if you enter their line of sight, dealing massive damage. They can and will one-shot you if you're under 8 hearts. Approach the cave from the cliffside to the west, using the rock formations as cover. Alternatively, glide down from Ulri Mountain 鸟望台 — you'll land north of the Guardian patrol radius and can walk to the cave safely.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 达利特森林洞窟 Requires 精力</strong><br>
+        Many players get stuck at the 达利特森林洞窟 because the treasure chest is at the top of a tall vertical shaft that requires significant climbing. If you only have one stamina wheel, you will <strong>not</strong> make it to the top without stamina recovery food. 制作 <strong>Enduring Fried Wild Greens</strong> (毅力蘑菇 + 海拉鲁 Herb) or any meal with an 毅力胡萝卜 for extra stamina wheels. Alternatively, if you have the 攀登鞋 set or the Climbing Buff from certain meals, the climb becomes manageable even with low base stamina.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 暴风谷 Has Strong Enemies</strong><br>
+        The final step at 暴风谷 is not a peaceful treasure pickup. The gulch contains a <strong>full enemy camp</strong> with Black 波克布林s, 莫力布林, and potentially a 莱尼尔 in the surrounding area. If you're under-leveled (fewer than 10 hearts, weapons under 30 ATK), you will struggle here. Two strategies: (1) come fully prepared with your best weapons and Mighty meals, or (2) sneak in at <strong>night</strong> when most enemies sleep, using the 潜行服 or Sneaky meals to reach the cave undetected. The chest itself is just inside the cave past the camp, so you don't need to clear every enemy.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 You Need the Full Set Before It Shines</strong><br>
+        A single piece of Fierce Deity armor gives only a modest 攻击力提升 boost. The set truly comes online with all three pieces equipped simultaneously, unlocking the full ×3 attack multiplier and the 蓄力攻击精力持久 set bonus. Don't judge the set by its first piece alone — commit to completing the entire chain before evaluating its power.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 西诺克斯 Parts Are Hard to Farm in Bulk</strong><br>
+        The upgrade materials for this set are some of the most demanding in the game. 西诺克斯 Guts have a low drop rate (roughly 40% from regular 西诺克斯, higher from Blue/Black variants), and you need 30 total for all three pieces to ★4. 骷髅西诺克斯 only spawn at night, making their teeth particularly time-gated. Plan dedicated farming runs — mark every 西诺克斯 location on your map and do circuit runs, sleeping at inns to advance time between hunts.
+      </div>
+    </section>
+
+    <!-- Section 6: Free 收益 -->
+    <section class="section" id="benefits">
+      <h2><span>6</span> 额外收益 — 沿途还能获得什么</h2>
+
+      <p>The Fierce Deity quest chain doesn't just give you the best attack armor in the game — it takes you across four diverse regions of 海拉鲁, each packed with additional loot, discoveries, and unlocks. Here's everything you should grab while following this route.</p>
+
+      <h3>Cave Treasures Beyond the 鬼神套装</h3>
+      <p>Each of the four caves in this quest chain contains <strong>multiple treasure chests</strong> in addition to the Fierce Deity pieces:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>塞法拉湖洞窟:</strong> 炸弹花s, 光亮花的种子s, and a chest with a 红宝石 — worth 110 rupees or useful for fire-based weapon 余料建造s</li>
+        <li><strong>阿卡莱 Foothills Cave:</strong> A 士兵之剑 (余料建造-ready), 琥珀 deposits, and a chest with 黄玉 (worth 180 rupees)</li>
+        <li><strong>达利特森林洞窟:</strong> Crates with arrows, a bundle of 10 Fire Arrows in a side chest, and several ore deposits with 打火石</li>
+        <li><strong>暴风谷:</strong> Enemy camp chests containing Mighty Bananas, a 蓝宝石 (260 rupees), and various cooking ingredients</li>
+      </ul>
+
+      <h3>Bubbul Gem &amp; 光亮花的种子 收集ion</h3>
+      <p>Each cave has a <strong>Bubbulfrog</strong> — the glowing creatures that drop <strong>Bubbul Gems</strong> when defeated. These gems are traded to 科尔汀 for the 波克布林 Mask, 莫力布林 Mask, and eventually Mystic 防具 set. Killing all four Bubbulfrogs during this quest gives you 4 Bubbul Gems right off the bat. Additionally, each cave contains 5–15 光亮花的种子s, which are invaluable for 地底 exploration. Stock up — you'll need them later.</p>
+
+      <h3>Stable Fast-Travel Unlocks</h3>
+      <p>Passing through the regions on this route naturally takes you near multiple stables. Make sure to register and activate the following:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>高原驿站</strong> — right at the quest start, essential for 中央海拉鲁 travel</li>
+        <li><strong>Foothill Stable</strong> — near Cephla Lake, key entry point for 奥尔汀</li>
+        <li><strong>South 阿卡莱 Stable</strong> — southeast of the 阿卡莱 Foothills Cave</li>
+        <li><strong>一始村</strong> — if you haven't visited, the nearby shrine is a must-have fast-travel point</li>
+      </ul>
+
+      <h3>地底 破魔之根 Discoveries</h3>
+      <p>Two of the cave locations (Cephla Lake and 阿卡莱 Foothills) have corresponding <strong>破魔之根s</strong> directly below them in the 地底. If you've already unlocked the 地底, dropping down from these caves reveals new areas and activates the 破魔之根s, permanently illuminating large sections of the underground map:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>Jiotakyam 破魔之根</strong> — beneath 塞法拉湖洞窟 at 地底 coordinates</li>
+        <li><strong>Narusu 破魔之根</strong> — beneath 阿卡莱 Foothills Cave</li>
+      </ul>
+
+      <h3>The 鬼神大剑 — Bonus 武器</h3>
+      <div class="highlight">
+        <strong>38 基础攻击力, bonus weapon from the final step.</strong> The 鬼神大剑 is not technically part of the armor set, but it completes the aesthetic and is a solid weapon for mid-to-late game. It can be re-obtained by re-visiting the 暴风谷 cave after a 血月 if you need a replacement. While not as strong as a Savage 莱尼尔 Crusher or the 光鳞之枪, the 38 ATK puts it comfortably above most standard weapons and makes it excellent for 余料建造 experiments since it respawns.
+      </div>
+
+      <h3>Map Exploration Rewards</h3>
+      <p>Simply traveling to all four locations will significantly fill out your map in four different regions: <strong>奥尔汀 Canyon, 阿卡莱, 中央海拉鲁,</strong> and <strong>奥尔汀 Mountains.</strong> You'll likely discover 5–10 new 克洛格的果实s just by passing through, plus multiple new shrine locations to pin for later. The 阿卡莱 region in particular is under-explored by most players until late game, so this quest is an excellent excuse to fill in that northeast corner of your map.</p>
+
+      <h3>米斯科's Other Treasures</h3>
+      <p>While at the 高原驿站 Well, take note: 米斯科 has <strong>multiple treasure series</strong> hidden across 海拉鲁, each with its own letter chain. The well also contains references to 米斯科's Treasure: Twilight (for the Twilight Hero set) and 米斯科's Treasure: Heroines (for the 格鲁德 Vai set). If you're a completionist, use this opportunity to start those chains as well — the clues are all in the same well.</p>
+    </section>
+
+    <!-- 推荐下一步 -->
+    <section class="section" id="recommended">
+      <h2>推荐下一步</h2>
+      <p>Now that you've got the strongest attack armor in the game, you'll need the weapons to match it. Head to our <a href="./barbarian-set.html"><strong>蛮族套装 Guide</strong></a> — another 攻击力提升 armor set found in the three massive Labyrinths of 海拉鲁. While the 鬼神套装 is superior for raw attack, the 蛮族套装 offers a higher defense ceiling and a different aesthetic, and collecting both gives you options for different builds. Alternatively, check out our <a href="./master-sword.html">大师之剑 Guide</a> to pair your new armor with the Sword that Seals the Darkness for the most iconic loadout in the game.</p>
+    </section>
+
+  </main>
+
+  <!-- Right Sidebar -->
+  <aside class="sidebar-right">
+    <div class="panel">
+      <h4>物品数据</h4>
+      <p style="font-size:0.88rem;"><strong>套装奖励：</strong> 攻击力提升 ×3</p>
+      <p style="font-size:0.88rem;"><strong>最大防御力 (★4):</strong> 84</p>
+      <p style="font-size:0.88rem;"><strong>件数：</strong> 3</p>
+      <p style="font-size:0.88rem;"><strong>Quest 步骤s:</strong> 4</p>
+    </div>
+    <div class="panel">
+      <h4>快速数据</h4>
+      <p style="font-size:0.88rem;"><strong>Bonus 武器:</strong> 鬼神大剑 (38 ATK)</p>
+      <p style="font-size:0.88rem;"><strong>升级成本：</strong> 30 西诺克斯 Guts (total)</p>
+      <p style="font-size:0.88rem;"><strong>预估时间：</strong> 2.5–4 hours</p>
+    </div>
+    <div class="panel">
+      <h4>相关攻略</h4>
+      <a href="./barbarian-set.html">蛮族套装</a>
+      <a href="./master-sword.html">大师之剑</a>
+      <a href="./">Hero of Time Set</a>
+    </div>
+    <div class="panel">
+      <h4>外部资源</h4>
+      <a href="https://mapgenie.io/zelda-tears-of-the-kingdom">互动地图</a>
+      <a href="https://www.zeldadungeon.net">塞尔达 Dungeon</a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">&#9676; RelicTrek</div>
+      <p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制旅程。</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">RelicTrek</div>
+        <a href="../privacy.html">隐私</a>
+        <a href="../terms.html">条款</a>
+        <a href="../about.html">关于</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 RelicTrek.net</span>
+    <span class="footer-sep">&#9676;</span>
+    <span>制作ed for adventurers</span>
+  </div>
+</footer>
+
+</body>
+</html>

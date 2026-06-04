@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>振奋香药 — 艾尔登法环制作攻略 | RelicTrek</title>
+<meta content="艾尔登法环振奋香药完整制作攻略。气泡护盾为全队抵消一次攻击。调香师笔记[2]，位于盖利德废弃洞窟。联机必备。" name="description"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#ff4d4d;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">首页</a>
+<a href="./">攻略</a>
+<a class="active" href="./">制作</a>
+<a href="./">地图</a>
+<a href="./">工具</a>
+</div>
+<div class="lang-switch">
+<button data-lang="en" onclick="window.location.href='../uplifting-aromatic.html'">EN</button>
+<button class="active" data-lang="zh">中文</button>
+</div>
+</div>
+</nav>
+<div class="ticker-bar">
+<div class="ticker-inner">
+🛡️ <strong>振奋香药</strong> — Bubble negates one hit for party | Perfumer's Cookbook [2] from Abandoned Cave, Caelid | Altus Bloom + Budding Cave Moss + Silver Tear Husk | <a href="bloodboil-aromatic.html">Next: Bloodboil Aromatic →</a>
+</div>
+</div>
+<div class="container">
+<aside class="sidebar">
+<h3>游戏选择</h3>
+<a href="../terraria/zh/">泰拉瑞亚</a>
+<a href="../subnautica2/zh/">深海迷航2</a>
+<a href="../monster-hunter-wilds/zh/">怪物猎人荒野</a>
+<a href="../zelda-totk/zh/">塞尔达：王国之泪</a>
+<a href="../minecraft/zh/">我的世界</a>
+<a href="../no-mans-sky/zh/">无人深空</a>
+<a href="../baldurs-gate-3/zh/">博德之门3</a>
+<a href="../valheim/zh/">英灵神殿</a>
+<a href="../path-of-exile-2/zh/">流放之路2</a>
+<a href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<a class="active" href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<div class="quick-nav">
+<h4>艾尔登法环物品</h4>
+<a href="gold-pickled-fowl-foot.html">黄金鸡爪</a>
+<a href="exalted-flesh.html">勇猛肉块</a>
+<a class="active" href="uplifting-aromatic.html">振奋香药</a>
+<a href="bloodboil-aromatic.html">狂热香药</a>
+<a href="ironjar-aromatic.html">铁壶香药</a>
+<a href="preserving-boluses.html">腐败苔药</a>
+<a href="drawstring-blood-grease.html">缚血油脂</a>
+<a href="spark-aromatic.html">火花香药</a>
+<a href="warming-stone.html">暖石</a>
+<a href="bewitching-branch.html">魅惑树枝</a>
+</div>
+</aside>
+<main class="main-content">
+<div class="item-header">
+<div class="item-icon-legendary">🛡️</div>
+<div class="item-title">
+<h1>振奋香</h1>
+<div class="item-subtitle">生成一个可以完全抵挡一次攻击的泡泡护盾，覆盖全队——联机必备</div>
+<div class="item-meta">
+<span class="difficulty">★★★★★ Very Hard</span>
+<span>Type: Aromatic (Party Buff)</span>
+<span>Stack: 10</span>
+</div>
+</div>
+</div>
+<section class="section" id="why">
+<h2><span>🛡️</span> Why Uplifting Aromatic Matters</h2>
+<p>振奋香是艾尔登法环中最强大的团队支援消耗品，没有之一。当你使用它时，一个金色的泡泡护盾会包裹你和所有附近的队友（包括召唤的骨灰和灵体），这个泡泡可以完全抵挡下一次受到的任何攻击——无论伤害多高。</p>
+<p>在联机合作模式下，振奋香的价值被放大到极致。一个协调良好的四人团队每人携带10个振奋香，理论上可以互相抵消40次致命攻击。这在高周目（NG+及以上）的Boss战中尤为重要，因为敌人的伤害在后续周目中呈指数级增长。</p>
+<h3>最佳使用场景</h3>
+<ul>
+<li>Boss战开场：所有队友进入Boss房间后使用，确保全队有一层保险</li>
+<li>高伤害招式预警前：当Boss开始蓄力大招时立即补一个</li>
+<li>入侵PvP：被入侵时使用，可以抵挡背刺或处决</li>
+<li>危险平台跳跃：在需要跳跃的悬崖边缘使用，防止跌落秒杀</li>
+<li>护送任务：保护NPC不被一击秒杀</li>
+</ul>
+<h3>为什么难度是五星</h3>
+<p>振奋香的难度评级是五星，原因有三：第一，制作笔记位于Caelid的Abandoned Cave——一个充满猩红腐败的极其危险的地下洞窟；第二，Budding Cave Moss只在特定的洞穴中刷新，采集路线复杂；第三，Silver Tear Husk需要从特定的史莱姆敌人身上farm，掉率不稳定。</p>
+<div class="cross-links">
+<a class="cross-link" href="exalted-flesh.html">← 勇猛肉块（+20% Physical Damage)</a>
+<a class="cross-link" href="ironjar-aromatic.html">铁壶香药（Super Armor)</a>
+</div>
+</section>
+<section class="section" id="recipe">
+<h2><span>🧪</span> 制作配方</h2>
+<p>振奋香的配方需要三种材料，每种都有独特的获取挑战。每次制作产出1个振奋香，这意味着每次使用都是实质性的材料投入。</p>
+<table class="recipe-table">
+<thead>
+<tr><th>材料</th><th>数量</th><th>稀有度</th><th>可采集</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🌸 <strong>Altus Bloom</strong></td>
+<td>1x</td>
+<td>中等（特定区域）</td>
+<td>✅ Yes — Altus Plateau flower nodes</td>
+</tr>
+<tr>
+<td>🌿 <strong>Budding Cave Moss</strong></td>
+<td>1x</td>
+<td>稀有（洞穴限定）</td>
+<td>✅ Yes — Specific cave biomes</td>
+</tr>
+<tr>
+<td>🥈 <strong>Silver Tear Husk</strong></td>
+<td>1x</td>
+<td>中等（敌人掉落）</td>
+<td>✅ Yes — Silver Tear slimes</td>
+</tr>
+</tbody>
+</table>
+<h3>制作产出</h3>
+<p>每次制作产出1个振奋香。由于堆叠上限只有10个，建议不要一次制作太多——保持库存5-10个即可，用完再补充。</p>
+<div class="gotcha-box">
+<h4>⚠️ 配方关键说明</h4>
+<ul>
+<li>堆叠上限只有10个——不要过度制作</li>
+<li>泡泡护盾不叠加——重复使用者只会刷新已有的泡泡</li>
+<li>效果范围约10米——确保队友在范围内</li>
+<li>可以被任何伤害触发——包括环境伤害如毒沼和坠落</li>
+<li>联机时所有队友都能看到泡泡视觉特效</li>
+</ul>
+</div>
+</section>
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Perfumer's Cookbook [2]</h2>
+<p>要制作振奋香，你需要调香师的制作笔记[2]。这本笔记位于Caelid的Abandoned Cave——一个以猩红腐败和隐藏墙壁闻名的危险地下洞窟。</p>
+<div class="cookbook-box">
+<h4>📖 Perfumer's Cookbook [2]</h4>
+<p><strong>Location:</strong> Abandoned Cave, central Caelid</p>
+<p><strong>Coordinates:</strong> Southeastern edge of the Swamp of Aeonia, hidden behind a cliff face</p>
+<p><strong>Recipe Unlocked:</strong>振奋香药</p>
+<p><strong>Also Unlocks:</strong> 铁壶香药（see <a href="ironjar-aromatic.html">Ironjar Aromatic guide</a>)</p>
+</div>
+<h3>如何找到Abandoned Cave</h3>
+<p>Abandoned Cave的入口被完美地隐藏在Caelid猩红沼泽东南边缘的悬崖壁上。没有地图标记，没有NPC指引——你需要知道确切的寻找位置。</p>
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Start from the <strong>Smoldering Wall</strong> Site of Grace in central Caelid (the same area where you get Missionary's Cookbook [2]).</p>
+<p><span class="step">Step 2:</span> Head south into the <strong>Swamp of Aeonia</strong> — the massive red lake of Scarlet Rot.</p>
+<p><span class="step">Step 3:</span> Ride Torrent southeast across the swamp, hugging the southern cliff wall. The rot will damage you — bring <strong>腐败苔药</strong> or the <strong>Flame, Cleanse Me</strong> incantation.</p>
+<p><span class="step">Step 4:</span> Look for a break in the cliff wall with a small overhang. The entrance appears as a dark patch in the rock — it is extremely easy to miss.</p>
+<p><span class="step">Step 5:</span> Dismount and walk into the dark crevice. You will find the dungeon entrance lift inside.</p>
+<p><span class="step">Step 6:</span> Take the lift down and rest at the Abandoned Cave Site of Grace.</p>
+</div>
+<h3>Abandoned Cave内部攻略</h3>
+<p>Abandoned Cave虽然不算一个大型地下城，但它的猩红腐败机制让它极其危险。以下是完整攻略。</p>
+<div class="route-tree">
+<p><span class="step">Step 1:</span> From the grace, proceed through the narrow tunnel. You will encounter <strong>Servants of Rot</strong> — humanoid enemies that inflict Scarlet Rot with their attacks. Kill them from range if possible.</p>
+<p><span class="step">Step 2:</span> The main chamber has a <strong>floor covered in Scarlet Rot</strong>. Standing in it builds rot rapidly. Use Preserving Boluses, equip the <strong>Immunizing Horn Charm</strong> talisman, or cast Flame, Cleanse Me to manage buildup.</p>
+<p><span class="step">Step 3:</span> Cross the rot pool quickly — hug the right wall where the rot is shallowest. There are raised platforms you can stand on to let the rot bar drain.</p>
+<p><span class="step">Step 4:</span> Look for <strong>illusions and hidden passages</strong>. The cave has breakable walls and hidden alcoves. The Cookbook is in a side chamber accessed through a hidden path — hit suspicious walls with your weapon.</p>
+<p><span class="step">Step 5:</span> The Cookbook is a <strong>glowing white item pickup</strong> on a corpse in a small alcove. Grab it and retreat — there is a boss door deeper in, but you do not need to fight it for the Cookbook.</p>
+</div>
+<h3>进入Abandoned Cave的准备工作</h3>
+<ul>
+<li>至少携带3-5个 preserving boluses 用于清除猩红腐败</li>
+<li>装备免疫护符（Immunizing Horn Charm）减少异常状态积累</li>
+<li>学会'火焰啊，净化我'祷告是最理想的准备</li>
+<li>穿着轻甲可以提高在毒沼中的移动速度</li>
+<li>召唤灵体可以帮你分散敌人注意力</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="bloodboil-aromatic.html">Next: Perfumer's Cookbook [1] (Bloodboil)</a>
+<a class="cross-link" href="ironjar-aromatic.html">铁壶香药（Same Cookbook [2])</a>
+</div>
+</section>
+<section class="section" id="materials">
+<h2><span>🌿</span> 材料与采集地点</h2>
+<p>振奋香的三种材料各有其独特的获取挑战。Altus Bloom在高原上相对容易找到，Budding Cave Moss需要深入特定洞穴，而Silver Tear Husk的farm效率取决于你的发现力数值。</p>
+<h3>🌸 Material 1: Altus Bloom</h3>
+<div class="material-item">
+<div class="material-icon">🌸</div>
+<div class="material-info">
+<h4>Altus Bloom <span style="color:#e6a817">★ Zone-Specific Target Farm</span></h4>
+<p>Altus Bloom是一种生长在Altus Plateau的黄色花朵。它是所有芳香类道具的基础材料，在高原上大量分布。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Altus Highway Junction — Densest Field</strong></p>
+<p>从Altus Highway Junction赐福点出发，向各个方向探索道路两侧。这里通常有8-12朵Altus Bloom，是整个高原最密集的采集点。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Road of Iniquity Side Path — Hidden Clusters</strong></p>
+<p>从Road of Iniquity赐福点出发，向东北方向的侧路探索。这里人迹罕至但花朵密度很高。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Lux Ruins — Garden Beds</strong></p>
+<p>Lux Ruins周围的花园区域有3-5朵Altus Bloom，可以与其他材料的farm路线结合。</p>
+</div>
+<h3>🌿 Material 2: Budding Cave Moss</h3>
+<div class="material-item">
+<div class="material-icon">🌿</div>
+<div class="material-info">
+<h4>Budding Cave Moss <span style="color:#ff4d4d">★★ Rare — Cave Biome Only</span></h4>
+<p>Budding Cave Moss是所有振奋香材料中最难大量获取的。它只生长在特定洞穴的潮湿岩壁上，外观是发出微弱绿光的苔藓簇。采集后不会立刻刷新，需要赐福休息重置。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Tombsward Cave — Weeping Peninsula</strong></p>
+<p>Tombsward Cave是farm Budding Cave Moss的最佳地点。从入口开始沿着主通道前进，岩壁上会刷新3-4簇苔藓。这个洞穴难度较低，适合反复farm。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Coastal Cave — Limgrave</strong></p>
+<p>海岸洞窟的入口通道两侧岩壁上有2-3簇Budding Cave Moss。由于入口赐福点很近，farm效率不错。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Groveside Cave — Limgrave</strong></p>
+<p>Groveside Cave洞窟内部有2簇Budding Cave Moss。这是一个非常早期就能到达的洞穴。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🏅 #4: Lakeside Crystal Cave — Liurnia</strong></p>
+<p>Liurnia的Lakeside Crystal Cave有3-4簇Budding Cave Moss，但洞穴较长且敌人较多。</p>
+</div>
+<h4>Budding Cave Moss 采集技巧</h4>
+<ul>
+<li>苔藓在岩壁上呈微弱的绿色发光——使用火把可以更清楚地看到</li>
+<li>每次赐福休息后刷新——可以在同一个洞穴内无限重复</li>
+<li>不要跑太快——苔藓很容易错过，慢慢探索岩壁</li>
+<li>多个洞穴轮换farm可以避免无聊，同时获取不同洞穴的其他材料</li>
+</ul>
+<h3>🥈 Material 3: Silver Tear Husk</h3>
+<div class="material-item">
+<div class="material-icon">🥈</div>
+<div class="material-info">
+<h4>Silver Tear Husk <span style="color:#e6a817">★ Enemy Drop Farm</span></h4>
+<p>Silver Tear Husk由Silver Tear史莱姆敌人掉落——这些银色的变形生物可以在多个地下区域找到。掉率中等（约30-50%），但敌人数量很多。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Nokron, Eternal City — Highest Density</strong></p>
+<p>永恒之城Nokron是farm Silver Tear Husk的最佳地点。整个城市充满了Silver Tear敌人，而且还有很多发光的白色Silver Tear尸体可以直接拾取。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Siofra River — Early-Game Alternative</strong></p>
+<p>Siofra River的上层区域有少量Silver Tear敌人，适合还没有解锁Nokron的玩家。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Deeproot Depths — Late-Game Backup</strong></p>
+<p>Deeproot Depths深层区域有Silver Tear分布，但距离赐福点较远，效率不如Nokron。</p>
+</div>
+<div class="cross-links">
+<a class="cross-link" href="ironjar-aromatic.html">铁壶香药（Altus Bloom + Living Jar Shard)</a>
+<a class="cross-link" href="bloodboil-aromatic.html">狂热香药（Altus Bloom + Bloodrose)</a>
+</div>
+</section>
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> 注意事项 — What Can Go Wrong</h2>
+<p>振奋香虽然极其强大，但有几个关键陷阱需要注意。忽视这些问题可能导致浪费珍贵的材料。</p>
+<div class="gotcha-box">
+<h4>🦶 Gotcha 1: Bubble Triggers on Any Damage</h4>
+<p>泡泡护盾会在受到任何伤害时破裂——包括毒沼的1点伤害、坠落的擦伤、甚至是环境中的火星。在毒沼或火海中使用时，泡泡可能在几秒钟内就被浪费掉。</p>
+</div>
+<div class="gotcha-box">
+<h4>🏃 Gotcha 2: Range Is Limited</h4>
+<p>泡泡的范围只有约10米。如果你的队友分散站位（如远程法师在远处），他们可能不会被泡泡覆盖。使用时确保所有人都在范围内。</p>
+</div>
+<div class="gotcha-box">
+<h4>💀 Gotcha 3: Abandoned Cave Is Brutal</h4>
+<p>Abandoned Cave的猩红腐败机制可以在几秒钟内杀死未准备的玩家。进入前务必携带足够的Preserving Boluses或学会净化祷告。</p>
+</div>
+<div class="gotcha-box">
+<h4>🌿 Gotcha 4: Budding Cave Moss Is the Real Bottleneck</h4>
+<p>虽然Altus Bloom和Silver Tear Husk相对容易farm，但Budding Cave Moss的洞穴限定刷新机制让它成为真正的瓶颈。始终优先farm苔藓。</p>
+</div>
+<div class="gotcha-box">
+<h4>🧱 Gotcha 5: Hidden Walls in Abandoned Cave</h4>
+<p>制作笔记藏在Abandoned Cave的隐藏墙壁后面。如果你只是沿着主路走，会直接错过。记得击打所有可疑的岩壁。</p>
+</div>
+<div class="gotcha-box">
+<h4>⚔️ Gotcha 6: Cave Boss Is Optional but Tough</h4>
+<p>Abandoned Cave的Boss是一对Cleanrot Knights——非常强力的敌人。好消息是你不需要击败他们来获取制作笔记。拿到笔记就可以离开。</p>
+</div>
+</section>
+<section class="section" id="benefits">
+<h2><span>🎁</span> 额外收益 — What Else You Get Farming These Materials</h2>
+<p>farm振奋香的材料会带你穿越艾尔登法环最美丽和最危险的区域。以下是各farm路线的额外收益。</p>
+<h3>在Altus Plateau farm Altus Bloom时的额外收益</h3>
+<ul>
+<li>Arteria Leaf：同区域farm Exalted Flesh的材料</li>
+<li> Miranda Powder：Miranda花敌人掉落，制作铁壶香药的材料</li>
+<li>黄金种子和圣杯瓶露滴：区域内的教堂</li>
+<li>锻造石[3]和[4]：矿道中的高级锻造石</li>
+<li>火山官邸的邀请函：NPC任务触发</li>
+</ul>
+<h3>在洞穴farm Budding Cave Moss时的额外收益</h3>
+<ul>
+<li>洞穴苔藓：普通洞穴苔藓，用于多种制作配方</li>
+<li>锻造石：所有洞穴都有矿脉</li>
+<li>卢恩：洞穴敌人提供不错的卢恩收入</li>
+<li>独特道具：每个洞穴都有独特的战利品</li>
+</ul>
+<h3>在Nokron farm Silver Tear Husk时的额外收益</h3>
+<ul>
+<li>灵依采摘工的铃珠：升级骨灰的材料</li>
+<li>大量卢恩：永恒之城的敌人提供丰厚的卢恩</li>
+<li> Mimic Tear Ashes：最强召唤骨灰之一</li>
+<li>黑夜彗星等强力魔法和战灰</li>
+</ul>
+<h3>长期战略收益</h3>
+<p>学会制作振奋香意味着你已经征服了Caelid最危险的洞窟之一，掌握了Altus Plateau的采集路线，并深入了永恒之城Nokron。这些知识和经验是你在艾尔登法环中成长的证明。更重要的是，一旦你掌握了Uplifting Aromatic的制作，你就同时为制作Ironjar Aromatic打开了大门——因为两者共用同一本Perfumer's Cookbook [2]。</p>
+<div class="cross-links">
+<a class="cross-link" href="bloodboil-aromatic.html">→ Next: 狂热香药（+30% Attack, -25% Defense)</a>
+<a class="cross-link" href="ironjar-aromatic.html">铁壶香药（Metal Body Super Armor)</a>
+<a class="cross-link" href="gold-pickled-fowl-foot.html">黄金鸡爪（+30% Runes)</a>
+</div>
+</section>
+</main>
+<aside class="sidebar">
+<h3>快速信息</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>效果：</strong> Bubble negates 1 hit</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>持续时间：</strong> Until triggered</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>堆叠：</strong> 10</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>笔记：</strong> Perfumer's [2]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>产出:</strong>每次1个</p>
+<div class="quick-nav">
+<h4>跳转到章节</h4>
+<a href="#why">为什么重要</a>
+<a href="#recipe">制作配方</a>
+<a href="#cookbook">笔记位置</a>
+<a href="#materials">材料路线</a>
+<a href="#gotchas">注意事项</a>
+<a href="#benefits">额外收益</a>
+</div>
+<div class="quick-nav">
+<h4>相关物品</h4>
+<a href="ironjar-aromatic.html">铁壶香药</a>
+<a href="bloodboil-aromatic.html">狂热香药</a>
+<a href="gold-pickled-fowl-foot.html">黄金鸡爪</a>
+</div>
+</aside>
+</div>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">◌ RelicTrek</div>
+<p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制征程。</p>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<div class="footer-col-title">RelicTrek</div>
+<a href="../privacy.html">隐私</a>
+<a href="../terms.html">条款</a>
+<a href="../about.html">关于</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 RelicTrek.net</span>
+<span class="footer-sep">◌</span>
+<span>为冒险者精心打造</span>
+</div>
+</footer>
+</body>
+</html>

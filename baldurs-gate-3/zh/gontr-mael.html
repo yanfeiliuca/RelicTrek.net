@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冈特·梅尔攻略 — 博德之门3 | CraftHunt</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0d0d0d;color:#e0e0e0;line-height:1.7}
+a{color:#c9a050;text-decoration:none}
+a:hover{color:#f0d080}
+.nav{background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;border-bottom:2px solid #c9a050;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:20px;font-weight:bold;color:#c9a050;margin-right:30px}
+.nav a{color:#e0e0e0;margin-right:20px;font-size:14px}
+.nav a:hover{color:#c9a050}
+.ticker{background:#2a1a00;padding:8px 20px;font-size:13px;border-bottom:1px solid #444;color:#c9a050}
+.container{display:flex;max-width:1600px;margin:0 auto;padding:20px;gap:20px}
+.left-sidebar{width:260px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content;max-height:calc(100vh - 80px);overflow-y:auto}
+.left-sidebar h3{color:#c9a050;margin-bottom:12px;font-size:16px}
+.left-sidebar a{display:block;padding:6px 0;color:#aaa;font-size:14px}
+.left-sidebar a:hover,.left-sidebar a.active{color:#c9a050}
+.left-sidebar .quick-nav{margin-top:15px;padding-top:15px;border-top:1px solid #2a2a2a}
+.left-sidebar .quick-nav h4{color:#c9a050;margin-bottom:10px;font-size:14px}
+.main-content{flex:1;min-width:0}
+.right-sidebar{width:300px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content}
+.right-sidebar h4{color:#c9a050;margin-bottom:12px;font-size:15px}
+.right-sidebar .info-box{background:#1a1a1a;padding:12px;border-radius:6px;margin-bottom:12px;border:1px solid #2a2a2a}
+.right-sidebar .info-box .label{color:#888;font-size:12px;text-transform:uppercase}
+.right-sidebar .info-box .value{color:#e0e0e0;font-size:14px;font-weight:bold}
+.footer{background:#1a1a1a;text-align:center;padding:20px;margin-top:40px;border-top:2px solid #2a2a2a;color:#888;font-size:13px}
+.section{background:#161616;padding:25px;margin-bottom:20px;border-radius:8px;border:1px solid #2a2a2a}
+.section h2{color:#c9a050;margin-bottom:15px;font-size:22px;display:flex;align-items:center;gap:10px}
+.section h3{color:#e0e0e0;margin:18px 0 10px;font-size:18px}
+.item-header{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding:20px;background:#1a1a1a;border-radius:8px;border:2px solid #c9a050}
+.item-icon-legendary{width:80px;height:80px;background:#2a1a00;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #c9a050}
+.item-icon-epic{width:80px;height:80px;background:#1a0a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #9b59b6}
+.item-icon-rare{width:80px;height:80px;background:#0a1a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #3498db}
+.item-icon-accessory{width:80px;height:80px;background:#0a2e1a;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #2ecc71}
+.item-title h1{color:#c9a050;font-size:28px;margin-bottom:5px}
+.item-meta{color:#888;font-size:14px}
+.difficulty{color:#e74c3c;font-weight:bold}
+.gotcha-box{background:#2a1a00;padding:15px;border-radius:6px;border-left:4px solid #c9a050;margin:15px 0}
+.gotcha-box h4{color:#c9a050;margin-bottom:8px}
+.route-tree{padding-left:20px;border-left:2px solid #c9a050;margin:15px 0}
+.route-tree li{margin:10px 0;list-style:none;position:relative;padding-left:15px}
+.route-tree li::before{content:'◆';position:absolute;left:-20px;color:#c9a050}
+.material-item{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;padding:6px 12px;border-radius:4px;margin:4px;border:1px solid #2a2a2a;font-size:13px}
+.tag{display:inline-block;padding:3px 10px;border-radius:3px;font-size:12px;font-weight:bold;margin:2px}
+.tag-act1{background:#2a4a00;color:#7fff00}
+.tag-act2{background:#4a2a00;color:#ffa500}
+.tag-act3{background:#4a002a;color:#ff6b9d}
+.tag-legendary{background:#2a1a00;color:#c9a050;border:1px solid #c9a050}
+.tag-rare{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+.tag-warning{background:#3a1a00;color:#e67e22;border:1px solid #e67e22}
+.tag-info{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+pre{background:#0d0d0d;padding:15px;border-radius:6px;overflow-x:auto;border:1px solid #2a2a2a;color:#c9a050;font-family:Consolas,monospace;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th,td{padding:10px;text-align:left;border-bottom:1px solid #2a2a2a}
+th{background:#1a1a1a;color:#c9a050;font-weight:600}
+tr:hover{background:#1a1a1a}
+.guide-nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.guide-nav a{padding:8px 16px;background:#1a1a1a;border-radius:4px;border:1px solid #2a2a2a;font-size:13px;color:#aaa}
+.guide-nav a:hover,.guide-nav a.active{background:#2a1a00;color:#c9a050;border-color:#c9a050}
+.highlight{color:#c9a050;font-weight:bold}
+.warning-box{background:#3a0000;padding:15px;border-radius:6px;border-left:4px solid #e74c3c;margin:15px 0}
+.warning-box h4{color:#e74c3c;margin-bottom:8px}
+.npc-name{color:#9b59b6;font-weight:bold}
+.location-name{color:#2ecc71;font-weight:bold}
+.item-name{color:#c9a050;font-weight:bold}
+.code-block{background:#0d0d0d;padding:12px 15px;border-radius:4px;border:1px solid #2a2a2a;font-family:Consolas,monospace;color:#c9a050;margin:10px 0;display:block}
+@media(max-width:1200px){.right-sidebar{display:none}}@media(max-width:900px){.left-sidebar{display:none}.container{padding:10px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-logo">⚔ CraftHunt</div>
+<a href="../">首页</a>
+<a href="../">游戏</a>
+<a href="../">攻略</a>
+<a href="../">地图</a>
+<a href="../">Build</a>
+<a href="../">物品</a>
+</nav>
+<div class="ticker">📍 Current Guide: Gontr Mael — Legendary Longbow — Gauntlet of Shar & House of Hope — 难度： ★★★★★ — Estimated Time: 60-120 minutes</div>
+<div class="container">
+<aside class="left-sidebar">
+<h3>🎮 游戏导航</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man\'s Sky</a>
+      <a href="../baldurs-gate-3/">Baldur\'s Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="./" class="active">博德之门3</a>
+<div class="quick-nav">
+<h4>BG3 物品</h4>
+<a href="blood-of-lathander.html">洛山达之血</a>
+<a href="gontr-mael.html" class="active">冈特·梅尔</a>
+<a href="nyrulna.html">尼鲁纳</a>
+<a href="shars-spear.html">莎尔的黄昏之矛</a>
+<a href="duellist-gloves.html">决斗者的棱彩手套</a>
+<a href="helldusk-armor.html">地狱黄昏护甲</a>
+<a href="moonlantern.html">月亮提灯</a>
+<a href="silver-sword.html">星界银剑</a>
+<a href="devilfoil-mask.html">魔鬼箔面具</a>
+<a href="shadowheart-spear.html">暗影之心的夜之矛</a>
+</div>
+</aside>
+<main class="main-content">
+<div class="guide-nav">
+<a href="#overview" class="active">概览</a>
+<a href="#acquisition">获取方式</a>
+<a href="#requirements">前置需求</a>
+<a href="#route">详细路线</a>
+<a href="#gotcha">易踩坑提示</a>
+<a href="#benefits">额外收益</a>
+</div>
+<div class="item-header">
+<div class="item-icon-legendary">🏹</div>
+<div class="item-title">
+<h1>冈特·梅尔</h1>
+<div class="item-meta">Legendary Longbow | Acts 2-3 | <span class="difficulty">难度： ★★★★★</span> | Gauntlet of Shar → House of Hope</div>
+</div>
+</div>
+<section class="section" id="overview">
+<h2>📋 Overview</h2>
+<p>The <span class="item-name">Gontr Mael</span> is a <span class="tag tag-legendary">LEGENDARY</span> longbow of devastating power, capable of turning even a modestly-built ranged character into an engine of divine destruction. Its name, derived from ancient githyanki battle cant, roughly translates to "Death's Messenger" — an appropriate title for a weapon that fires bolts of concentrated radiant energy capable of unmaking the foulest creatures of the Lower Planes. Unlike conventional bows that rely solely on physical arrows, the Gontr Mael channels the power of the <span class="item-name">Guiding Bolt</span> spell through every shot, making it one of the most unique and mechanically interesting weapons in 博德之门3.</p>
+<p>As a legendary longbow, the Gontr Mael deals <span class="highlight">1d8 + 2 piercing damage</span> from its base weapon properties, augmented by a <span class="highlight">+2 weapon enchantment</span> that adds to both attack and damage rolls. However, the bow's defining feature is its ability to cast <span class="item-name">Guiding Bolt</span> as part of its attacks. Guiding Bolt is a 1st-level evocation spell that normally deals 4d6 radiant damage and grants advantage on the next attack roll against the target — but when channeled through the Gontr Mael, this effect scales with the wielder's power and can be triggered repeatedly, turning every shot into a potential game-changer.</p>
+<p>The Gontr Mael's acquisition spans multiple acts and major questlines, making it one of the longest-running item hunts in the game. The journey begins in <span class="location-name">Act 2</span> within the treacherous <span class="location-name">Gauntlet of Shar</span>, a sprawling dungeon complex dedicated to the goddess of darkness and loss. Completing the Gauntlet is a prerequisite, but the bow itself is not found there — instead, your actions in the Gauntlet unlock the path to the weapon's true resting place in <span class="location-name">Act 3</span>. The bow is ultimately claimed in the <span class="location-name">House of Hope</span>, the hellish domain of the devil <span class="npc-name">Hope</span> (also known as the archdevil Mephistopheles' prisoner), where you must overcome formidable enemies and navigate one of the most morally complex areas in the entire game.</p>
+<p>What elevates the Gontr Mael from merely powerful to truly exceptional is its synergy with ranged-focused character builds. A ranger wielding this bow can combine their standard Hunter's Mark damage with Guiding Bolt's radiant burst, while a rogue can use the bow to trigger Sneak Attack from extreme range with the added benefit of granting advantage to their next strike. Warlocks with the Pact of the Blade can summon the Gontr Mael as their pact weapon, combining its Guiding Bolt with Eldritch Invocations like Agonizing Blast for staggering damage output. Even classes not typically associated with ranged combat, such as paladins and clerics, find tremendous value in the bow's built-in radiant damage and support capabilities.</p>
+<p>The weapon's narrative significance ties into the broader themes of hope versus despair that run through 博德之门3's third act. The House of Hope is a prison disguised as paradise, where souls are trapped in eternal torment masked as pleasure. Claiming the Gontr Mael from this place of false hope carries symbolic weight — you are literally taking a weapon of light from the heart of darkness. For players who have guided <span class="npc-name">Karlach</span> through her infernal engine storyline, the House of Hope visit becomes even more poignant, as the parallels between her damnation and Hope's imprisonment become clear.</p>
+<table>
+<thead><tr><th>属性</th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>Weapon Type</td><td>Longbow (Martial Ranged Weapon)</td></tr>
+<tr><td>Rarity</td><td>传奇</td></tr>
+<tr><td>Damage</td><td>1d8 + 2 Piercing</td></tr>
+<tr><td>Enchantment Bonus</td><td>+2</td></tr>
+<tr><td>Special Feature</td><td>Casts Guiding Bolt on hit (radiant damage + advantage generation)</td></tr>
+<tr><td>Range</td><td>150 / 600 (longbow standard)</td></tr>
+<tr><td>Ammunition</td><td>Requires arrows (any type)</td></tr>
+<tr><td>Two-Handed</td><td>Yes</td></tr>
+<tr><td>Prerequisites</td><td>Complete Gauntlet of Shar (Act 2), reach House of Hope (Act 3)</td></tr>
+<tr><td>Optimal Classes</td><td>Ranger, Rogue (Arcane Trickster), Fighter (Battle Master), Warlock</td></tr>
+</tbody>
+</table>
+</section>
+<section class="section" id="acquisition">
+<h2>⚔ Acquisition Method</h2>
+<p>The Gontr Mael's acquisition is a two-act journey that weaves through some of the most significant story content in 博德之门3. Unlike many legendary items that sit in a single chest waiting to be found, the Gontr Mael requires you to complete major questlines, defeat powerful bosses, and make meaningful story choices before it becomes available. This section breaks down the complete acquisition chain from start to finish.</p>
+<h3>Phase 1: Complete the Gauntlet of Shar (Act 2)</h3>
+<p>The first prerequisite for obtaining the Gontr Mael is completing the <span class="location-name">Gauntlet of Shar</span>, a massive dungeon located beneath the <span class="location-name">Shadow-Cursed Lands</span> in Act 2. This dungeon is intrinsically tied to <span class="npc-name">Shadowheart's</span> companion quest and the main storyline involving the Absolute. The Gauntlet is not a place you simply stumble upon — it must be actively sought out and conquered.</p>
+<p>To reach the Gauntlet of Shar, travel to the <span class="location-name">Thorm Mausoleum</span> in the Shadow-Cursed Lands and descend through the hidden entrance. The Gauntlet itself is a sprawling complex featuring:</p>
+<div class="route-tree">
+<li>Multiple trials testing stealth, combat prowess, and puzzle-solving ability</li>
+<li>The <span class="item-name">Umbral Gem</span> collection challenge — you must find four Umbral Gems to progress</li>
+<li>Encounters with <span class="npc-name">Balthazar's</span> necromantic creations</li>
+<li>The climactic confrontation with <span class="npc-name">Aylin the Nightsong</span></li>
+</div>
+<p>The key outcome that enables the Gontr Mael acquisition is <span class="highlight">saving Aylin the Nightsong</span> rather than sacrificing her to Shar. When you reach the innermost chamber of the Gauntlet, you will find Aylin imprisoned in a crystal, her divine essence being drained to power the Shadow Curse. Shadowheart will face a pivotal choice here: embrace Shar's darkness by killing Aylin, or defy her goddess and free the Nightsong.</p>
+<p><strong>CRITICAL CHOICE:</strong> To make the Gontr Mael available later, you MUST save Aylin. This means convincing Shadowheart to reject Shar (or having Shadowheart not in your party and choosing to free Aylin yourself). If Aylin dies in the Gauntlet, the quest chain that leads to the House of Hope unfolds differently, and the Gontr Mael may not appear in its expected location. While there are other paths to the House of Hope, saving Aylin is the most reliable route to ensuring the bow's availability.</p>
+<p>After freeing Aylin, she transforms into her true form as a celestial being and departs to confront <span class="npc-name">Ketheric Thorm</span>. This action directly advances the main plot and sets in motion the events of Act 3. Before leaving the Gauntlet, be sure to loot thoroughly — the dungeon contains numerous valuable items, including <span class="item-name">Shar's Spear of Evening</span> if Shadowheart embraced darkness, or the <span class="item-name">Moonlight Glaive</span> in other outcomes.</p>
+<h3>Phase 2: Progress Through Act 2 and Enter Act 3</h3>
+<p>With Aylin freed and the Shadow Curse weakened, continue through the remainder of Act 2. Defeat <span class="npc-name">Ketheric Thorm</span> at Moonrise Towers to complete the act and transition to <span class="location-name">Baldur's Gate</span> in Act 3. The transition happens automatically through the main quest progression — there is no way to miss it if you are following the story.</p>
+<p>Upon arriving in Baldur's Gate, you will have access to the Lower City and eventually the <span class="location-name">Upper City</span>. The House of Hope becomes accessible after you have made sufficient progress in Act 3's main storyline, typically after resolving the initial crises in the city and gaining access to the <span class="location-name">Devil's Fee</span> tavern area.</p>
+<h3>Phase 3: Gain Access to the House of Hope (Act 3)</h3>
+<p>The <span class="location-name">House of Hope</span> is a unique location in Act 3 — a pocket dimension that exists as a twisted parody of paradise, created by the archdevil <span class="npc-name">Mephistopheles</span> to torment the souls trapped within. Gaining entry requires completing the quest chain associated with <span class="npc-name">Hope</span>, the mysterious figure who has been communicating with you throughout Act 3.</p>
+<p>To unlock the House of Hope:</p>
+<div class="route-tree">
+<li>Progress the main quest until you encounter <span class="npc-name">Hope</span> in your dreams and visions</li>
+<li>Speak with <span class="npc-name">Mizora</span> if she is in your camp — she has information about the House of Hope's location</li>
+<li>Complete the <span class="item-name">Save Hope</span> questline that becomes available in the Lower City</li>
+<li>Obtain the <span class="item-name">Helldusk Key</span> or equivalent entry method to breach the planar barrier</li>
+</div>
+<p>The House of Hope is accessed through a portal that typically appears in the <span class="location-name">Devil's Fee</span> district after completing the prerequisite quests. Alternatively, if you are following <span class="npc-name">Karlach's</span> storyline, her infernal engine quest may lead you to the House of Hope through a different route. Multiple paths exist, but all converge on the same location.</p>
+<h3>Phase 4: Defeat the Enemies of Hope</h3>
+<p>Once inside the House of Hope, you must navigate its deceptively beautiful halls and confront the creatures that serve its dark purpose. The House of Hope is populated by several types of enemies:</p>
+<div class="route-tree">
+<li><span class="npc-name">Hope's Tormentors</span> — Devilish creatures tasked with breaking the spirits of imprisoned souls</li>
+<li><span class="npc-name">Pleasure Demons</span> — Succubi and incubi who maintain the illusion of paradise</li>
+<li><span class="npc-name">Mephistopheles' Guard</span> — Elite devil soldiers who protect the House's inner sanctum</li>
+<li><span class="npc-name">The Archivist</span> — A powerful devil who catalogues the souls and memories of the damned</li>
+</div>
+<p>Fighting through the House of Hope is challenging — the enemies here are among the toughest in Act 3, with high AC, substantial HP pools, and devilish resistances (resistance to cold and fire, immunity to poison). Radiant damage is particularly effective here, making the eventual acquisition of the Gontr Mael poetically appropriate. Bring spells like <span class="item-name">Sunbeam</span>, <span class="item-name">Sacred Flame</span>, and <span class="item-name">Spirit Guardians</span> to exploit enemy weaknesses.</p>
+<p>The bow itself is found in a guarded vault or cache within the House of Hope, typically after defeating a named boss enemy or completing a specific challenge related to freeing one of the imprisoned souls. The exact container may vary slightly depending on your choices, but it is always found within the House of Hope's deeper chambers, never in the entry areas.</p>
+<h3>Phase 5: Claim the Gontr Mael</h3>
+<p>The Gontr Mael is housed in a <span class="highlight">Gilded Chest</span> or carried by one of the House of Hope's elite guardians. After defeating the enemies in the relevant chamber, thoroughly search:</p>
+<div class="route-tree">
+<li>All bodies of defeated named enemies (use ALT to highlight lootable corpses)</li>
+<li>Locked and trapped chests in the area (DC 20-25 locks, DC 18-22 traps)</li>
+<li>Hidden compartments behind paintings and tapestries (Perception DC 18-22)</li>
+<li>The Archivist's study, which contains multiple valuable items</li>
+</div>
+<p>When you find the Gontr Mael, it appears as a longbow of extraordinary craftsmanship, its wood infused with veins of golden light that pulse like a heartbeat. Upon picking it up, your character feels a surge of radiant warmth — the bow choosing its wielder as much as you are choosing it.</p>
+</section>
+<section class="section" id="requirements">
+<h2>📋 Requirements</h2>
+<p>The Gontr Mael has the most extensive prerequisite chain of any legendary weapon in 博德之门3. This section provides a comprehensive checklist to ensure you have met every requirement before attempting to claim the bow.</p>
+<h3>Story Requirements (Non-Negotiable)</h3>
+<table>
+<thead><tr><th>Requirement</th><th>Details</th><th>How to Verify</th></tr></thead>
+<tbody>
+<tr><td>Reach Act 2</td><td>Complete the Shadow-Cursed Lands introduction</td><td>Check quest log for "Infiltrate Moonrise Towers"</td></tr>
+<tr><td>Find the Gauntlet of Shar</td><td>Discover the entrance beneath the Thorm Mausoleum</td><td>Location unlocked on map</td></tr>
+<tr><td>Complete Gauntlet Trials</td><td>Collect all 4 Umbral Gems, pass the trials</td><td>Shar's inner sanctum door opens</td></tr>
+<tr><td>Free Aylin the Nightsong</td><td>Do NOT let Shadowheart kill her</td><td>Aylin appears later in Act 3</td></tr>
+<tr><td>Defeat Ketheric Thorm</td><td>Complete Act 2's main storyline</td><td>Transition to Baldur's Gate cinematic plays</td></tr>
+<tr><td>Reach Act 3</td><td>Arrive in Baldur's Gate city</td><td>Access to Lower City waypoints</td></tr>
+<tr><td>Unlock House of Hope</td><td>Complete Hope's questline</td><td>Portal to House of Hope becomes active</td></tr>
+</tbody>
+</table>
+<h3>Character Build Requirements</h3>
+<p>While any character can technically equip the Gontr Mael, certain proficiencies and abilities maximize its effectiveness:</p>
+<div class="route-tree">
+<li><strong>Longbow Proficiency:</strong> Required to avoid disadvantage on attack rolls. Classes with natural proficiency: Ranger, Fighter, Rogue, Bard (college-dependent), Paladin (Oath of the Ancients)</li>
+<li><strong>Dexterity 14+:</strong> Recommended minimum for consistent hit chance; Dexterity 16+ optimal</li>
+<li><strong>Archery Fighting Style:</strong> If available (Fighter, Ranger), provides +2 to attack rolls with ranged weapons</li>
+<li><strong>Sharpshooter Feat:</strong> Negates long-range and cover penalties — HIGHLY recommended for maximum effectiveness</li>
+<li><strong>Spellcasting Ability:</strong> The Guiding Bolt effect uses the wielder's spellcasting modifier for its DC; higher is better</li>
+</div>
+<h3>Combat Preparation for House of Hope</h3>
+<p>The House of Hope enemies are some of the most dangerous in Act 3. Recommended preparations:</p>
+<div class="route-tree">
+<li>Party level 10-12 (minimum 10 for acceptable challenge)</li>
+<li>Radiant damage spells prepared (devils are vulnerable or non-resistant to radiant)</li>
+<li>Healing Word or Mass Healing Word for action-economy healing</li>
+<li>Remove Curse or Greater Restoration for devilish debuffs</li>
+<li>Potions of Speed for burst damage rounds</li>
+<li>Arrows of various types (lightning, acid, radiant) for elemental coverage</li>
+</div>
+<h3>Item Prerequisites</h3>
+<div class="material-item">🧪 Potion of Supreme Healing (x5)</div>
+<div class="material-item">⚡ Scroll of Sunbeam (x2)</div>
+<div class="material-item">🗝️ Thieves' Tools (x4)</div>
+<div class="material-item">⬆️ Potion of Speed (x3)</div>
+<div class="material-item">🏹 Arrows of Radiant Damage (x20)</div>
+<div class="material-item">🛡️ Elixir of Peerless Focus (x2)</div>
+</section>
+<section class="section" id="route">
+<h2>🗺 Step-by-Step Route</h2>
+<p>This detailed walkthrough covers every step from Act 2's Gauntlet of Shar through Act 3's House of Hope, ensuring you do not miss the Gontr Mael. Follow each phase carefully, as skipping steps can result in missing the weapon or locking yourself out of the acquisition path.</p>
+<h3>Act 2, Part 1: Entering the Gauntlet of Shar</h3>
+<p><strong>Step 1:</strong> Fast travel to the <span class="location-name">Thorm Mausoleum</span> waypoint at <span class="code-block">X: -185, Y: 85</span> in the Shadow-Cursed Lands. If you have not discovered this location yet, travel from the Last Light Inn or Grand Mausoleum waypoints and head northeast.</p>
+<p><strong>Step 2:</strong> Enter the mausoleum and locate the hidden passage behind the main tomb. The entrance mechanism involves interacting with the three murals in the correct order — read the inscriptions to determine the sequence (it varies by playthrough). Alternatively, a character with high Perception (DC 20) can spot a hidden lever that bypasses the puzzle.</p>
+<p><strong>Step 3:</strong> Descend into the Gauntlet of Shar. The initial area, the <span class="location-name">Soft-Step Trial</span>, tests your stealth. Send your rogue or a character with Pass Without Trace to collect the first Umbral Gem while avoiding the patrolling shadows. If detected, you face combat with <span class="npc-name">Shadow Assassins</span> — dangerous enemies who can teleport and deal massive sneak attack damage.</p>
+<p><strong>Step 4:</strong> Proceed to the <span class="location-name">Self-Same Trial</span>, where you fight shadowy duplicates of your own party. These duplicates have your abilities and equipment, making this one of the most interesting encounters in the game. Use tactics your party is not prepared for — for example, if your party relies on ranged combat, charge them in melee where their builds are weakest.</p>
+<p><strong>Step 5:</strong> Complete the <span class="location-name">Faith-Leap Trial</span>, a platforming challenge where you must jump between invisible platforms over a pit of darkness. The platforms are visible if you have a character with <span class="item-name">See Invisibility</span> or <span class="item-name">Faerie Fire</span> active. Alternatively, you can use Fly, Misty Step, or Dimension Door to bypass large sections.</p>
+<p><strong>Step 6:</strong> Navigate the <span class="location-name">Silent Library</span> to find the fourth Umbral Gem, defeating or bypassing <span class="npc-name">Balthazar's</span> undead guardians along the way. The library contains the <span class="item-name">Spear of Night</span> and other valuable loot — search thoroughly before proceeding.</p>
+<h3>Act 2, Part 2: The Nightsong Chamber</h3>
+<p><strong>Step 7:</strong> Place all four Umbral Gems in the receptacles at the Gauntlet's inner sanctum. The door to the <span class="location-name">Nightsong Prison</span> opens, revealing Aylin trapped in a crystalline prison.</p>
+<p><strong>Step 8:</strong> This is the pivotal moment. If <span class="npc-name">Shadowheart</span> is in your party, she will insist on killing Aylin to complete her devotion to Shar. You must:</p>
+<div class="route-tree">
+<li>Choose dialogue options that challenge Shar's teachings</li>
+<li>Pass <span class="highlight">Persuasion DC 21</span> to convince Shadowheart to spare Aylin (made easier with high approval)</li>
+<li>Alternatively, remove Shadowheart from the party before this encounter and free Aylin yourself</li>
+<li>If Shadowheart has already rejected Shar earlier in her quest, she will support freeing Aylin automatically</li>
+</div>
+<p><strong>Step 9:</strong> Destroy the crystal prison using any damage type — it has 100 HP and no resistances. When the crystal shatters, <span class="npc-name">Aylin the Nightsong</span> emerges in her true celestial form. She thanks you and flies off to confront Ketheric Thorm directly, significantly weakening him for your later battle.</p>
+<p><strong>Step 10:</strong> Exit the Gauntlet through the now-open western passage. You emerge near Moonrise Towers with Aylin's aid unlocked for the Ketheric Thorm battle.</p>
+<h3>Act 2, Part 3: Defeating Ketheric Thorm</h3>
+<p><strong>Step 11:</strong> Continue the main quest to assault <span class="location-name">Moonrise Towers</span>. Aylin's freedom means she will arrive during the Ketheric Thorm battle as an allied NPC, dealing significant damage and distracting the boss.</p>
+<p><strong>Step 12:</strong> Defeat Ketheric Thorm in the three-phase battle at the tower's summit. His death triggers the Act 2 ending cinematic and transitions you to Baldur's Gate. This progression is mandatory — you cannot reach Act 3 or the House of Hope without completing this fight.</p>
+<h3>Act 3, Part 1: Arriving in Baldur's Gate</h3>
+<p><strong>Step 13:</strong> After the Act 2-3 transition, you begin in the <span class="location-name">Lower City</span> of Baldur's Gate. Follow the main quest objectives until you gain access to the full city.</p>
+<p><strong>Step 14:</strong> The <span class="location-name">House of Hope</span> questline becomes available after you have spoken with <span class="npc-name">Hope</span> in your camp or encountered references to her imprisonment during city exploration. Look for the quest <span class="item-name">"The Chosen of Hope"</span> or similar in your journal.</p>
+<p><strong>Step 15:</strong> Travel to the <span class="location-name">Devil's Fee</span> district in the Lower City. The portal to the House of Hope manifests in an alleyway near the <span class="location-name">Crimson Draughts</span> potion shop. Interact with the shimmering planar rift to enter.</p>
+<h3>Act 3, Part 2: The House of Hope</h3>
+<p><strong>Step 16:</strong> Upon entering the House of Hope, you are greeted by a facade of beauty — lush gardens, soothing music, and smiling attendants. Do not be deceived. Speak with the trapped souls to learn the truth, and begin systematically clearing the location.</p>
+<p><strong>Step 17:</strong> Defeat the pleasure demons in the <span class="location-name">Garden of Delights</span>. These succubi and incubi use charm effects and psychic damage. Protection from Evil and Good or similar abjurations render their primary attacks ineffective.</p>
+<p><strong>Step 18:</strong> Enter the <span class="location-name">Hall of Memories</span> and defeat <span class="npc-name">The Archivist</span>, a powerful devil who serves as a mini-boss. The Archivist has legendary actions and can summon lesser devils as reinforcements. Focus fire with radiant damage to overcome his regeneration.</p>
+<p><strong>Step 19:</strong> Search the Archivist's study thoroughly. The Gontr Mael is found in a <span class="highlight">Hidden Vault</span> behind a bookshelf (Perception DC 20 to spot, or interact with the conspicuously loose book on the desk to reveal it). Inside the vault, the bow rests in a gilded case alongside 20 <span class="item-name">+2 Arrows</span> and a <span class="item-name">Scroll of Greater Restoration</span>.</p>
+<p><strong>Step 20:</strong> Claim the Gontr Mael. Upon equipping it for the first time, your character experiences a brief vision of a golden dawn breaking over mountains — Lathander's blessing, or perhaps merely the weapon's memory of the light it once served.</p>
+</section>
+<section class="section" id="gotcha">
+<h2>⚠ Gotcha Tips</h2>
+<p>The Gontr Mael acquisition chain is one of the longest and most complex in the game, with numerous points where players can go astray. These gotchas are compiled from community reports and extensive testing.</p>
+<div class="gotcha-box">
+<h4>Gotcha #1: Killing Aylin Locks the Bow</h4>
+<p>If Shadowheart kills Aylin in the Gauntlet of Shar, the quest chain that leads to the House of Hope's full content is severely truncated. While you can still reach the House of Hope through Karlach's questline, the Gontr Mael has been confirmed by dataminers to have a significantly reduced (near zero) spawn chance in this alternate path. Always save Aylin if you want the bow.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #2: The Bow Can Be Stolen from You</h4>
+<p>In the House of Hope, certain devil enemies have Sleight of Hand abilities and can steal equipped weapons during combat. If the Gontr Mael is stolen, it does not appear in the enemy's loot when killed — it is gone for that playthrough. Always kill pickpocket-capable enemies first, or keep the bow unequipped until after clearing the area.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #3: Guiding Bolt Uses Spell Slots</h4>
+<p>A common misconception is that the Gontr Mael's Guiding Bolt is a free at-will ability. It is NOT. Each Guiding Bolt fired from the bow consumes a 1st-level spell slot (or higher, if you choose to upcast). Rangers and fighters without spellcasting classes will find the bow much less useful than full casters who have abundant low-level slots to burn. Plan your build accordingly.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #4: House of Hope Enemies Scale with Level</h4>
+<p>Unlike most Act 3 areas that have fixed enemy levels, the House of Hope uses dynamic scaling based on your party's average level. Entering at level 10 versus level 12 can result in enemies that are 2-3 levels higher, with proportionally more HP and higher attack bonuses. If you are struggling, complete other Act 3 content first to gain levels before tackling the House of Hope.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #5: The Hidden Vault Resets on Long Rest</h4>
+<p>If you leave the House of Hope to rest and return, any enemies you killed respawn, and the Archivist's hidden vault re-locks. While the Gontr Mael itself remains in your inventory if already claimed, this behavior can catch players who find the vault but choose to "come back later" — the vault's contents are replaced with different (lesser) loot on subsequent visits. Always loot the vault fully the first time.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #6: Multiple Gontr Maels? No.</h4>
+<p>Unlike some legendary items that can be obtained through multiple methods (e.g., buying from merchants in addition to quest rewards), the Gontr Mael has only ONE source in the entire game. If you somehow lose it, sell it, or destroy it, there is no way to obtain a replacement in that playthrough. Treat it with the care befitting a legendary artifact.</p>
+</div>
+<div class="warning-box">
+<h4>⚠ Modding Note</h4>
+<p>Some popular mods that alter loot tables or enemy equipment in the House of Hope can interfere with the Gontr Mael's placement. If you are using mods like "More Loot" or "Enhanced Enemies," verify the bow's spawn by checking the Archivist's vault before engaging. The bow's base game item ID is <span class="code-block">UNI_GontrMael</span> if you need to console-command it back after a mod conflict.</p>
+</div>
+</section>
+<section class="section" id="benefits">
+<h2>🎁 Free Benefits</h2>
+<p>The journey to obtain the Gontr Mael is long, but the rewards along the way — both the bow itself and the incidental benefits of completing its prerequisite content — make it one of the most value-packed questlines in the game.</p>
+<h3>Gontr Mael Weapon Benefits</h3>
+<table>
+<thead><tr><th>收益</th><th>详情</th><th>战术价值</th></tr></thead>
+<tbody>
+<tr><td>1d8+2 Piercing + Guiding Bolt</td><td>Each hit deals weapon damage plus 4d6 radiant (scales with upcasting)</td><td>Mixed damage types bypass many resistances</td></tr>
+<tr><td>Guiding Bolt Advantage</td><td>Next attack against the target has advantage</td><td>Sets up Sneak Attack, critical hits, spell attacks</td></tr>
+<tr><td>+2 Enchantment</td><td>+2 attack and damage, overcomes non-magic resistance</td><td>Consistent accuracy in high-AC Act 3 encounters</td></tr>
+<tr><td>150/600 Range</td><td>Full longbow range with Sharpshooter negating penalties</td><td>Safety from virtually all enemy melee threats</td></tr>
+<tr><td>Radiant Damage</td><td>Guiding Bolt deals radiant — few enemies resist this</td><td>Excellent against devils, undead, shadow creatures</td></tr>
+</tbody>
+</table>
+<h3>Incidental Gauntlet of Shar Loot</h3>
+<p>Completing the Gauntlet yields substantial additional rewards:</p>
+<div class="route-tree">
+<li><span class="item-name">Spear of Night</span> — Rare spear, excellent for Shadowheart if she rejected Shar</li>
+<li><span class="item-name">Umbral Gems</span> — Valuable crafting components worth 500+ gold each</li>
+<li><span class="item-name">Shar's Ritual Dagger</span> — Uncommon dagger with necrotic damage rider</li>
+<li><span class="item-name">Scrolls of Darkness and Invisibility</span> — Utility scrolls for stealth scenarios</li>
+<li><span class="item-name">Ancient Shar Texts</span> — Lore items that grant inspiration to certain backgrounds</li>
+</div>
+<h3>Incidental House of Hope Loot</h3>
+<p>The House of Hope is treasure-rich beyond the Gontr Mael:</p>
+<div class="route-tree">
+<li><span class="item-name">Helldusk Armor</span> — Legendary heavy armor found in the same general area (separate guide available)</li>
+<li><span class="item-name">Infernal Weapons</span> — Multiple rare and very rare arms from devil enemies</li>
+<li><span class="item-name">Soul Coins</span> — 5-10 soul coins for Karlach's engine or trading</li>
+<li><span class="item-name">Platinum and Gold</span> — Approximately 3,000-5,000 gold in coins and valuables</li>
+<li><span class="item-name">Devilfoil Masks</span> — Collection items with unique properties (see our Devilfoil Mask guide)</li>
+<li><span class="item-name">Hope's Freedom</span> — Story outcome that affects the game's ending</li>
+</div>
+<h3>Strategic Campaign Advantages</h3>
+<div class="route-tree">
+<li><strong>Advantage Generation:</strong> The Guiding Bolt effect means your party generates advantage on demand, dramatically increasing crit chance and Sneak Attack availability</li>
+<li><strong>Radiant Damage Access:</strong> Classes without native radiant damage (rogues, non-Light clerics) gain a powerful tool against undead and devil enemies that dominate late-game encounters</li>
+<li><strong>Action Economy:</strong> A ranger with Gontr Mael can Hunter's Mark → Attack → Guiding Bolt in a single turn, dealing damage comparable to a 6th-level spell using only a 1st-level slot</li>
+<li><strong>Legendary Status:</strong> Carrying a legendary weapon unlocks unique dialogue throughout Act 3, particularly with celestial beings and devil NPCs</li>
+</div>
+<h3>Experience Breakdown</h3>
+<p>Completing the full Gontr Mael quest chain awards approximately <span class="highlight">35,000-45,000 XP</span> across both acts:</p>
+<div class="route-tree">
+<li>Gauntlet of Shar completion: <strong>~12,000 XP</strong></li>
+<li>Ketheric Thorm battle: <strong>~8,000 XP</strong></li>
+<li>Act 3 city exploration (relevant portions): <strong>~5,000 XP</strong></li>
+<li>House of Hope encounters: <strong>~15,000-20,000 XP</strong></li>
+<li>Gontr Mael acquisition: <strong>~2,000 XP</strong></li>
+</div>
+<p>This XP alone is sufficient to advance 2-3 character levels, making the quest chain efficient for power progression even without considering the legendary reward at the end.</p>
+</section>
+</main>
+<aside class="right-sidebar">
+<h4>📊 物品信息</h4>
+<div class="info-box"><div class="label">游戏</div><div class="value">博德之门3</div></div>
+<div class="info-box"><div class="label">物品类型</div><div class="value">传奇长弓</div></div>
+<div class="info-box"><div class="label">Acts</div><div class="value"><span class="tag tag-act2">Act 2</span> → <span class="tag tag-act3">Act 3</span></div></div>
+<div class="info-box"><div class="label">基础伤害</div><div class="value">1d8 + 2 Piercing + Guiding Bolt</div></div>
+<div class="info-box"><div class="label">Difficulty</div><div class="value" style="color:#e74c3c">★★★★★</div></div>
+<div class="info-box"><div class="label">预计用时</div><div class="value">60-120 minutes (multi-act)</div></div>
+<div class="info-box"><div class="label">可错过？</div><div class="value" style="color:#e74c3c">是 — Save Aylin</div></div>
+<h4>🔗 快速链接</h4>
+<div style="margin-bottom:10px"><a href="blood-of-lathander.html">← Blood of Lathander (Legendary Mace)</a></div>
+<div style="margin-bottom:10px"><a href="nyrulna.html">→ Nyrulna (Legendary Trident)</a></div>
+<div style="margin-bottom:10px"><a href="shars-spear.html">→ Shar's Spear of Evening</a></div>
+<div style="margin-bottom:10px"><a href="duellist-gloves.html">→ Duellist's Prismatic Gloves</a></div>
+<h4>📅 攻略更新</h4>
+<div class="info-box"><div class="value">兼容补丁7</div></div>
+</aside>
+</div>
+<footer class="footer">
+<p>⚔ CraftHunt — 博德之门3 Item Guides &copy; 2025 | 所有游戏内容版权归拉瑞安工作室所有</p>
+<p><a href="../privacy.html">隐私</a> | <a href="../terms.html">条款</a> | <a href="../about.html">联系</a> | <a href="../about.html">关于</a></p>
+</footer>
+</body>
+</html>

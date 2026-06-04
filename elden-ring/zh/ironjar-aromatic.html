@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>铁壶香药 — 艾尔登法环制作攻略 | RelicTrek</title>
+<meta content="艾尔登法环铁壶香药完整制作攻略。将身体金属化——超级护甲和减伤。调香师笔记[2]。防御型增益。" name="description"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e67e22;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">首页</a>
+<a href="./">攻略</a>
+<a class="active" href="./">制作</a>
+<a href="./">地图</a>
+<a href="./">工具</a>
+</div>
+<div class="lang-switch">
+<button data-lang="en" onclick="window.location.href='../ironjar-aromatic.html'">EN</button>
+<button class="active" data-lang="zh">中文</button>
+</div>
+</div>
+</nav>
+<div class="ticker-bar">
+<div class="ticker-inner">
+🤖 <strong>铁壶香药</strong> — Metal body super armor, reduced damage | Perfumer's Cookbook [2] from Abandoned Cave, Caelid | Altus Bloom + Living Jar Shard + Miranda Powder | <a href="gold-pickled-fowl-foot.html">Back to Gold-Pickled Fowl Foot →</a>
+</div>
+</div>
+<div class="container">
+<aside class="sidebar">
+<h3>游戏选择</h3>
+<a href="../terraria/zh/">泰拉瑞亚</a>
+<a href="../subnautica2/zh/">深海迷航2</a>
+<a href="../monster-hunter-wilds/zh/">怪物猎人荒野</a>
+<a href="../zelda-totk/zh/">塞尔达：王国之泪</a>
+<a href="../minecraft/zh/">我的世界</a>
+<a href="../no-mans-sky/zh/">无人深空</a>
+<a href="../baldurs-gate-3/zh/">博德之门3</a>
+<a href="../valheim/zh/">英灵神殿</a>
+<a href="../path-of-exile-2/zh/">流放之路2</a>
+<a href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<a class="active" href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<div class="quick-nav">
+<h4>艾尔登法环物品</h4>
+<a href="gold-pickled-fowl-foot.html">黄金鸡爪</a>
+<a href="exalted-flesh.html">勇猛肉块</a>
+<a href="uplifting-aromatic.html">振奋香药</a>
+<a href="bloodboil-aromatic.html">狂热香药</a>
+<a class="active" href="ironjar-aromatic.html">铁壶香药</a>
+<a href="preserving-boluses.html">腐败苔药</a>
+<a href="drawstring-blood-grease.html">缚血油脂</a>
+<a href="spark-aromatic.html">火花香药</a>
+<a href="warming-stone.html">暖石</a>
+<a href="bewitching-branch.html">魅惑树枝</a>
+</div>
+</aside>
+<main class="main-content">
+<div class="item-header">
+<div class="item-icon-accessory">🤖</div>
+<div class="item-title">
+<h1>铁壶香</h1>
+<div class="item-subtitle">将身体变为金属——获得超级护甲和减伤效果</div>
+<div class="item-meta">
+<span class="difficulty">★★★★☆ Hard</span>
+<span>Type: Aromatic (Self Buff)</span>
+<span>Stack: 10</span>
+</div>
+</div>
+</div>
+<section class="section" id="why">
+<h2><span>🤖</span> Why Ironjar Aromatic Matters</h2>
+<p>铁壶香是艾尔登法环中最独特的防御性消耗品之一。使用后，你的身体会变成闪耀的金属，获得极高的韧性（几乎不可能被打断动作）和显著的物理减伤效果。这个效果让你能够在敌人的攻击中从容地挥出重击，而不是被迫翻滚躲避。</p>
+<p>铁壶香的核心价值在于'超级护甲'（Hyper Armor）——这个机制让你在进行攻击动作时不会被敌人的攻击打断。对于使用超大型武器（如巨剑、大锤、大斧）的玩家来说，这意味着你可以在Boss挥出一击的同时砍出你的满蓄力重击，两者同时命中但你不会被中断。这种以伤换伤的打法在很多情况下比不断翻滚更加有效。</p>
+<h3>最佳使用场景</h3>
+<ul>
+<li>巨武器build：使用大锤/巨剑/大斧时，确保你的重击不会被Boss的小招式打断</li>
+<li>高韧性Boss战：对抗攻击频率高但单次伤害低的敌人（如Godskin Apostle）</li>
+<li>配合沸血香：先使用铁壶香获得减伤和韧性，再使用沸血香获得攻击力——成为无敌的重甲战士</li>
+<li>被包围时：被大量小怪包围时使用，让你从容突围</li>
+<li>PvP入侵：对手依赖快速武器和连击时，铁壶香可以让他们无从下手</li>
+</ul>
+<h3>铁壶香 vs 其他防御手段</h3>
+<ul>
+<li> vs 振奋香：振奋香抵挡一次攻击；铁壶香在持续时间内提供持续的减伤和韧性。两者互补而非竞争</li>
+<li> vs 铁身躯（法术）：铁身躯祷告提供类似效果但需要18信仰投资；铁壶香不需要任何属性要求</li>
+<li> vs 高韧性装备：即使穿着最重的护甲，你的攻击仍然会被大型敌人的重击打断。铁壶香的超级护甲确保你不会被任何攻击打断</li>
+<li> vs 维克的龙雷：维克的龙雷给+15%全伤害和增加韧性但持续时间很短；铁壶香专注防御，持续时间更长</li>
+</ul>
+<h3>FOMO因素</h3>
+<p>如果你在整个游戏过程中都不知道铁壶香的存在，你可能错过了体验艾尔登法环中最独特的战斗方式之一。以伤换伤、超级护甲、金属变身——这些概念重新定义了这款游戏的战斗可能性。尤其是那些认为'翻滚是唯一答案'的玩家，铁壶香会打开一扇全新的大门，让你发现原来站着对砍也可以是一种高效的战术。</p>
+<div class="cross-links">
+<a class="cross-link" href="bloodboil-aromatic.html">← 狂热香药（+30% Attack, -25% Def)</a>
+<a class="cross-link" href="uplifting-aromatic.html">振奋香药（Same Cookbook [2])</a>
+</div>
+</section>
+<section class="section" id="recipe">
+<h2><span>🧪</span> 制作配方</h2>
+<p>铁壶香的配方需要三种材料。Altus Bloom来自高原采集，Living Jar Shard需要击杀特定的壶类敌人，而Miranda Powder来自花朵敌人。</p>
+<table class="recipe-table">
+<thead>
+<tr><th>材料</th><th>数量</th><th>稀有度</th><th>可采集</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🌸 <strong>Altus Bloom</strong></td>
+<td>1x</td>
+<td>中等（特定区域）</td>
+<td>✅ Yes — Altus Plateau flower nodes</td>
+</tr>
+<tr>
+<td>🏺 <strong>Living Jar Shard</strong></td>
+<td>1x</td>
+<td>中等（敌人掉落）</td>
+<td>✅ Yes — Living Jar enemies</td>
+</tr>
+<tr>
+<td>🌺 <strong>Miranda Powder</strong></td>
+<td>1x</td>
+<td>中等（敌人掉落）</td>
+<td>✅ Yes — Miranda flower enemies</td>
+</tr>
+</tbody>
+</table>
+<h3>制作产出</h3>
+<p>每次制作产出1个铁壶香。堆叠上限为10个。由于材料涉及击杀特定敌人，建议批量farm材料后一次性制作。</p>
+<div class="gotcha-box">
+<h4>⚠️ 配方关键说明</h4>
+<ul>
+<li>变身为金属效果持续约40秒</li>
+<li>获得极高的韧性——几乎不可能被打断攻击动作</li>
+<li>物理减伤提升显著——但元素减伤（火、雷、圣）不受影响或略有降低</li>
+<li>移动速度降低——金属身体更重，跑动和翻滚速度变慢</li>
+<li>可以与沸血香同时使用——抵消沸血香的防御惩罚</li>
+</ul>
+</div>
+</section>
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Perfumer's Cookbook [2]</h2>
+<p>铁壶香与振奋香共用同一本制作笔记——调香师的制作笔记[2]。这意味着如果你已经为了Uplifting Aromatic去了Abandoned Cave，你就已经解锁了铁壶香的配方。</p>
+<div class="cookbook-box">
+<h4>📖 Perfumer's Cookbook [2]</h4>
+<p><strong>Location:</strong> Abandoned Cave, central Caelid</p>
+<p><strong>Coordinates:</strong> Southeastern edge of the Swamp of Aeonia, behind a hidden cliff entrance</p>
+<p><strong>Recipes Unlocked:</strong> 振奋香药 + Ironjar Aromatic</p>
+<p><strong>Dungeon Hazards:</strong> Scarlet Rot pools, hidden walls, Cleanrot Knight duo boss</p>
+</div>
+<h3>如何获取（复习）</h3>
+<p>如果你还没有获取这本笔记，请参考Uplifting Aromatic指南中的详细攻略。以下是简要版本：</p>
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Reach Caelid and locate the <strong>Swamp of Aeonia</strong>.</p>
+<p><span class="step">Step 2:</span> Find the hidden cave entrance on the <strong>southeastern cliff edge</strong> of the swamp.</p>
+<p><span class="step">Step 3:</span> Navigate the Scarlet Rot pools using <strong>腐败苔药</strong> or <strong>Flame, Cleanse Me</strong>.</p>
+<p><span class="step">Step 4:</span> Look for <strong>hidden walls</strong> — the Cookbook is in a side chamber behind one.</p>
+<p><span class="step">Step 5:</span> Grab the glowing white item pickup and retreat. No boss kill required.</p>
+</div>
+<h3>准备工作清单</h3>
+<ul>
+<li>Preserving Boluses x5：清除猩红腐败积累</li>
+<li>火焰啊净化我（Flame, Cleanse Me）：12信仰要求的无限清毒祷告</li>
+<li>免疫护符（Immunizing Horn Charm）：提升免疫力</li>
+<li>远程武器：从安全距离击杀毒花</li>
+<li>火把：照亮隐藏墙壁和暗处</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="uplifting-aromatic.html">振奋香药（Same Cookbook [2])</a>
+<a class="cross-link" href="bloodboil-aromatic.html">狂热香药（Glass Cannon Pairing)</a>
+</div>
+</section>
+<section class="section" id="materials">
+<h2><span>🌿</span> 材料与采集地点</h2>
+<p>铁壶香的三种材料覆盖了采集和击杀两种获取方式。Altus Bloom是区域采集，Living Jar Shard和Miranda Powder都是敌人掉落。</p>
+<h3>🌸 Material 1: Altus Bloom</h3>
+<div class="material-item">
+<div class="material-icon">🌸</div>
+<div class="material-info">
+<h4>Altus Bloom <span style="color:#e6a817">★ Zone-Specific Target Farm</span></h4>
+<p>Altus Bloom是所有芳香类道具的基础材料。在Altus Plateau的高原上大量分布，farm方法与其他芳香类道具完全相同。</p>
+</div>
+</div>
+<h4>Altus Bloom 快速Farm路线</h4>
+<div class="material-farm-route">
+<p><strong>Altus Highway Junction Loop</strong></p>
+<p>从Altus Highway Junction赐福点出发，骑马向各个方向探索公路两侧。每次循环可以采集8-12朵Altus Bloom。休息赐福，重复。每次循环约3-5分钟。</p>
+</div>
+<h3>🏺 Material 2: Living Jar Shard</h3>
+<div class="material-item">
+<div class="material-icon">🏺</div>
+<div class="material-info">
+<h4>Living Jar Shard <span style="color:#e6a817">★ Enemy Drop Farm</span></h4>
+<p>Living Jar Shard由Living Jar敌人掉落——这些看似无害的陶罐实际上是有生命的敌人。它们会在你靠近时活化并攻击，击败后有一定概率掉落碎片。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Jarburg — The Jar Village</strong></p>
+<p>Jarburg是位于Liurnia东海岸的一个隐藏村庄，里面全是友好的Living Jar NPC和敌对的jar。这是farm Living Jar Shard的最佳地点——敌人密集、刷新快、难度低。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Academy Gate Town — Liurnia</strong></p>
+<p>Academy Gate Town的废墟中有几个Living Jar分布。不如Jarburg密集，但如果你已经在Liurnia做其他任务可以顺便击杀。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Leyndell, Royal Capital — Capital Jars</strong></p>
+<p>Leyndell的某些区域有Living Jar分布，但它们通常与其他强力敌人一起出现，farm效率较低。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🏅 #4: Caelid Jar — Hidden Location</strong></p>
+<p>Caelid有一个隐藏的Living Jar区域，里面有大量jar敌人。位置较偏但产量很高。</p>
+</div>
+<h4>Living Jar Shard Farm 技巧</h4>
+<ul>
+<li>大型Living Jar掉率更高——优先击杀大号的</li>
+<li>Jarburg的jar不会主动攻击——你可以逐个引出来击杀</li>
+<li>提升发现力可以增加掉率——装备Silver Scarab护符</li>
+<li>大型jar有高韧性——使用削刃高的武器或战技</li>
+</ul>
+<h3>🌺 Material 3: Miranda Powder</h3>
+<div class="material-item">
+<div class="material-icon">🌺</div>
+<div class="material-info">
+<h4>Miranda Powder <span style="color:#e6a817">★ Enemy Drop Farm</span></h4>
+<p>Miranda Powder由Miranda花敌人掉落——这些是有毒的巨大花朵，会释放毒雾和有毒投射物。它们分布在多个区域，但Altus Plateau的密度最高。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Altus Plateau — Flower Fields</strong></p>
+<p>Altus Plateau的各个区域有大量Miranda花分布，尤其是在道路两侧和废墟周围。这是最高效的farm地点，因为你同时可以采集Altus Bloom。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Tombsward Ruins — Weeping Peninsula</strong></p>
+<p>Tombsward Ruins周围有几朵Miranda花。适合早期游戏farm，但密度不如Altus。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Caelid Swamp — Rot Flowers</strong></p>
+<p>Caelid的猩红沼泽中有特殊的猩红腐败Miranda花，也会掉落Miranda Powder。但这里的敌人更危险。</p>
+</div>
+<h4>Miranda Powder Farm 技巧</h4>
+<ul>
+<li>Miranda花对火属性攻击极其脆弱——一个火焰壶或火法术可以秒杀</li>
+<li>保持距离——它们的毒雾范围很大</li>
+<li>装备免疫护符减少中毒积累</li>
+<li>在Altus Plateau farm时一举三得：Altus Bloom + Miranda Powder + 锻造石</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="uplifting-aromatic.html">振奋香药（Altus Bloom Routes)</a>
+<a class="cross-link" href="exalted-flesh.html">勇猛肉块（Altus Plateau Farming)</a>
+</div>
+</section>
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> 注意事项 — What Can Go Wrong</h2>
+<p>铁壶香虽然强大，但有几个关键的限制和陷阱需要注意。忽视这些问题可能导致悲剧性的结果。</p>
+<div class="gotcha-box">
+<h4>🐢 Gotcha 1: You Move SLOW</h4>
+<p>金属身体严重降低你的移动速度——你的跑动速度类似于穿着超重装备的状态。翻滚距离也大幅缩短。在需要快速移动的Boss战中（如Malenia），这几乎是致命的。</p>
+</div>
+<div class="gotcha-box">
+<h4>⚡ Gotcha 2: Elemental Damage Still Hurts</h4>
+<p>铁壶香主要提升物理减伤，但对元素伤害（火、雷、圣、魔）的减伤效果提升有限甚至略有降低。面对属性攻击为主的Boss时（如Elden Beast的圣属性攻击），铁壶香的效果大打折扣。</p>
+</div>
+<div class="gotcha-box">
+<h4>💀 Gotcha 3: Not All Attacks Can Be Traded</h4>
+<p>虽然铁壶香提供超级护甲，但某些Boss的抓取攻击和处决攻击仍然可以打断你。不要误以为变成金属后就真的无敌了。</p>
+</div>
+<div class="gotcha-box">
+<h4>🏺 Gotcha 4: Living Jar Drops Are RNG</h4>
+<p>Living Jar Shard的掉率不是100%。有时候你需要击杀10个jar才能获得3-4个碎片。准备好投入时间，或者提升发现力来加快farm速度。</p>
+</div>
+<div class="gotcha-box">
+<h4>🌺 Gotcha 5: Miranda Flowers Are Poisonous</h4>
+<p>farm Miranda Powder时，Miranda花释放的毒雾会在短时间内让你中毒。始终携带解毒道具或装备免疫护符。</p>
+</div>
+<div class="gotcha-box">
+<h4>⏱️ Gotcha 6: 40-Second Window</h4>
+<p>40秒的持续时间意味着你需要在进入战斗前精确计时。提前使用会导致buff在进入Boss雾门后过期；太晚使用则会浪费宝贵的输出时间。</p>
+</div>
+</section>
+<section class="section" id="benefits">
+<h2><span>🎁</span> 额外收益 — What Else You Get Farming These Materials</h2>
+<p>farm铁壶香的材料时，你会在游戏中最美丽的区域之一进行探索。以下是各farm路线的额外收益。</p>
+<h3>在Altus Plateau farm时的额外收益</h3>
+<ul>
+<li>Arteria Leaf：同区域获取Exalted Flesh的材料</li>
+<li>Bloodrose：在高原边缘有少量分布</li>
+<li>Budding Cave Moss：如果顺便探索洞穴</li>
+<li>黄金种子和圣杯瓶露滴：区域内的教堂</li>
+<li>锻造石[3]和[4]：矿道中的高级锻造石</li>
+<li>地图碎片：激活Altus Plateau地图石碑</li>
+</ul>
+<h3>在Jarburg farm Living Jar Shard时的额外收益</h3>
+<ul>
+<li>Jar-Bairn NPC任务线：Jarburg有一个重要的NPC，完成后获得独特奖励</li>
+<li>大量锻造石：村庄废墟中有矿脉</li>
+<li>稀有材料：Potential Hero's Rune drops from great jars</li>
+<li>Liurnia东海岸地图探索：Jarburg位置本身就在一个隐藏区域</li>
+</ul>
+<h3>长期战略收益</h3>
+<p>掌握铁壶香的制作意味着你已经全面了解了Altus Plateau的资源分布、征服了Caelid的Abandoned Cave、并探索了Liurnia的隐藏角落Jarburg。这些经验和知识是你在艾尔登法环中最宝贵的资产。而且，铁壶香的独特机制——将防御转化为进攻资本——会改变你对整个游戏战斗系统的理解。当你学会何时站着对砍、何时翻滚躲避，你就真正掌握了艾尔登法环的精髓。</p>
+<p>铁壶香与沸血香的组合是游戏中最强大的buff叠加之一——金属超级护甲+30%攻击力，让你成为一个移动的要塞。这套组合在Boss Rush、入侵PvP和高周目挑战中都有无与伦比的表现。学会制作这两种香药，你就掌握了艾尔登法环的终极力量。</p>
+<div class="cross-links">
+<a class="cross-link" href="gold-pickled-fowl-foot.html">← 黄金鸡爪（+30% Runes)</a>
+<a class="cross-link" href="exalted-flesh.html">勇猛肉块（+20% Physical Damage)</a>
+<a class="cross-link" href="bloodboil-aromatic.html">狂热香药（Perfect Combo Pair)</a>
+</div>
+</section>
+</main>
+<aside class="sidebar">
+<h3>快速信息</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>效果：</strong> Metal body, super armor, +physical negation</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>持续时间：</strong> ~40 seconds</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>堆叠：</strong> 10</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>笔记：</strong> Perfumer's [2]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>产出:</strong>每次1个</p>
+<div class="quick-nav">
+<h4>跳转到章节</h4>
+<a href="#why">为什么重要</a>
+<a href="#recipe">制作配方</a>
+<a href="#cookbook">笔记位置</a>
+<a href="#materials">材料路线</a>
+<a href="#gotchas">注意事项</a>
+<a href="#benefits">额外收益</a>
+</div>
+<div class="quick-nav">
+<h4>相关物品</h4>
+<a href="bloodboil-aromatic.html">狂热香药</a>
+<a href="uplifting-aromatic.html">振奋香药</a>
+<a href="exalted-flesh.html">勇猛肉块</a>
+</div>
+</aside>
+</div>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">◌ RelicTrek</div>
+<p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制征程。</p>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<div class="footer-col-title">RelicTrek</div>
+<a href="../privacy.html">隐私</a>
+<a href="../terms.html">条款</a>
+<a href="../about.html">关于</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 RelicTrek.net</span>
+<span class="footer-sep">◌</span>
+<span>为冒险者精心打造</span>
+</div>
+</footer>
+</body>
+</html>

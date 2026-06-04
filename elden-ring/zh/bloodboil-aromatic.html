@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>狂热香药 — 艾尔登法环制作攻略 | RelicTrek</title>
+<meta content="艾尔登法环狂热香药完整制作攻略。+30%攻击力、-25%防御力的玻璃大炮增益。调香师笔记[1]，位于王城罗德尔东城墙。" name="description"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e67e22;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">首页</a>
+<a href="./">攻略</a>
+<a class="active" href="./">制作</a>
+<a href="./">地图</a>
+<a href="./">工具</a>
+</div>
+<div class="lang-switch">
+<button data-lang="en" onclick="window.location.href='../bloodboil-aromatic.html'">EN</button>
+<button class="active" data-lang="zh">中文</button>
+</div>
+</div>
+</nav>
+<div class="ticker-bar">
+<div class="ticker-inner">
+🩸 <strong>狂热香药</strong> — +30% attack, -25% defense | Perfumer's Cookbook [1] from East Capital Rampart, Leyndell | Bloodrose + Altus Bloom | <a href="ironjar-aromatic.html">Next: Ironjar Aromatic →</a>
+</div>
+</div>
+<div class="container">
+<aside class="sidebar">
+<h3>游戏选择</h3>
+<a href="../terraria/zh/">泰拉瑞亚</a>
+<a href="../subnautica2/zh/">深海迷航2</a>
+<a href="../monster-hunter-wilds/zh/">怪物猎人荒野</a>
+<a href="../zelda-totk/zh/">塞尔达：王国之泪</a>
+<a href="../minecraft/zh/">我的世界</a>
+<a href="../no-mans-sky/zh/">无人深空</a>
+<a href="../baldurs-gate-3/zh/">博德之门3</a>
+<a href="../valheim/zh/">英灵神殿</a>
+<a href="../path-of-exile-2/zh/">流放之路2</a>
+<a href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<a class="active" href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<div class="quick-nav">
+<h4>艾尔登法环物品</h4>
+<a href="gold-pickled-fowl-foot.html">黄金鸡爪</a>
+<a href="exalted-flesh.html">勇猛肉块</a>
+<a href="uplifting-aromatic.html">振奋香药</a>
+<a class="active" href="bloodboil-aromatic.html">狂热香药</a>
+<a href="ironjar-aromatic.html">铁壶香药</a>
+<a href="preserving-boluses.html">腐败苔药</a>
+<a href="drawstring-blood-grease.html">缚血油脂</a>
+<a href="spark-aromatic.html">火花香药</a>
+<a href="warming-stone.html">暖石</a>
+<a href="bewitching-branch.html">魅惑树枝</a>
+</div>
+</aside>
+<main class="main-content">
+<div class="item-header">
+<div class="item-icon-weapon">🩸</div>
+<div class="item-title">
+<h1>沸血香</h1>
+<div class="item-subtitle">攻击力+30%，防御力-25%——玻璃大炮的终极选择</div>
+<div class="item-meta">
+<span class="difficulty">★★★★☆ Hard</span>
+<span>Type: Aromatic (Self Buff)</span>
+<span>Stack: 10</span>
+</div>
+</div>
+</div>
+<section class="section" id="why">
+<h2><span>🩸</span> Why Bloodboil Aromatic Matters</h2>
+<p>沸血香是艾尔登法环中最激进的风险/回报消耗品。它将你的攻击力提升整整30%，但同时降低25%的防御力。这不是给胆小者用的道具——它是为那些相信自己能先杀死敌人的玩家准备的。</p>
+<p>在速杀（speedrun）和高伤害build中，沸血香是不可或缺的道具。30%的攻击力提升是游戏中最高的通用攻击增益之一，可以与武器附魔、护符和其他消耗品叠加，创造出毁天灭地的爆发伤害。对于熟练玩家来说，降低防御力的负面效果几乎无关紧要——因为他们根本不会被打中。</p>
+<h3>最佳使用场景</h3>
+<ul>
+<li>速杀Boss：当你已经熟悉Boss的招式模式，想要尽快结束战斗时使用</li>
+<li>入侵PvP：高风险高回报的入侵道具——一击可以秒杀低血量build</li>
+<li>Boss Rush挑战：尝试无伤/速杀Boss时的必备道具</li>
+<li>配合铁壶香药：先使用铁壶香药获得超级护甲，再使用沸血香获得攻击力，成为无敌的重装战士</li>
+</ul>
+<h3>对比其他攻击增益</h3>
+<ul>
+<li> vs 军队呐喊：军队呐喊给+20%全伤害但需要装备指挥官旗帜；沸血香给+30%攻击力</li>
+<li> vs 切腹：切腹给出血build专用+30%攻击力+出血加成，但消耗HP；沸血香不限武器类型</li>
+<li> vs  exalted flesh：Exalted Flesh只提升物理伤害+20%；沸血香提升所有攻击+30%</li>
+<li> vs  flame grant me strength：祷告给+20%火/物理伤害持续30秒；沸血香不需要信仰投资</li>
+</ul>
+<h3>Buff叠加策略</h3>
+<p>沸血香的真正威力在于与其他增益效果的叠加。一个完整的伤害叠加序列可能是：首先装备Lord of Blood's Exultation护符（出血时+20%攻击力），然后使用Bloodboil Aromatic（+30%攻击力），接着给武器附上武器附魔（如Bloodflame Blade），最后吃一块Exalted Flesh（+20%物理伤害）。在正确的build中，这种叠加可以让你的单次攻击伤害变成基础值的3-4倍。</p>
+<h3>FOMO因素——为什么你不应该错过</h3>
+<p>沸血香的难度评级为四星不是因为它的使用难度，而是因为获取它需要推进到游戏后期。如果你在整个一周目都不知道这个道具的存在，你可能错过了用几刀就解决某些Boss的机会。想象一下，那个让你卡了三个小时的Boss，可能只需要一个沸血香+铁壶香药的组合就能在60秒内解决。</p>
+<div class="cross-links">
+<a class="cross-link" href="uplifting-aromatic.html">← 振奋香药（Party Bubble Shield)</a>
+<a class="cross-link" href="ironjar-aromatic.html">铁壶香药（Super Armor Counterpart)</a>
+</div>
+</section>
+<section class="section" id="recipe">
+<h2><span>🧪</span> 制作配方</h2>
+<p>沸血香的配方只需要两种材料，是所有芳香类道具中最简单的之一。但简单不代表容易——Bloodrose的获取有其特定的挑战。</p>
+<table class="recipe-table">
+<thead>
+<tr><th>材料</th><th>数量</th><th>稀有度</th><th>可采集</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🩸 <strong>Bloodrose</strong></td>
+<td>1x</td>
+<td>稀有（特定区域）</td>
+<td>✅ Yes — Mohgwyn Palace / bleed zones</td>
+</tr>
+<tr>
+<td>🌸 <strong>Altus Bloom</strong></td>
+<td>1x</td>
+<td>中等（特定区域）</td>
+<td>✅ Yes — Altus Plateau flower nodes</td>
+</tr>
+</tbody>
+</table>
+<h3>制作产出</h3>
+<p>每次制作产出1个沸血香。由于堆叠上限为10个，建议保持库存5-10个用于关键战斗。</p>
+<div class="gotcha-box">
+<h4>⚠️ 配方关键说明</h4>
+<ul>
+<li>+30%攻击力适用于所有攻击类型——物理、魔法、火焰、雷电、神圣</li>
+<li>-25%防御力适用于所有防御类型——受到的所有伤害增加25%</li>
+<li>持续时间约40秒——比Exalted Flesh短但比Flame Grant Me Strength长</li>
+<li>可以与铁壶香药同时使用——用铁壶抵消防御惩罚</li>
+<li>效果不叠加——重复使用者只会重置计时器</li>
+</ul>
+</div>
+</section>
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Perfumer's Cookbook [1]</h2>
+<p>要制作沸血香，你需要调香师的制作笔记[1]。这本笔记位于Leyndell, Royal Capital的East Capital Rampart区域——游戏后期才能到达的地方。</p>
+<div class="cookbook-box">
+<h4>📖 Perfumer's Cookbook [1]</h4>
+<p><strong>Location:</strong> East Capital Rampart, Leyndell, Royal Capital</p>
+<p><strong>Coordinates:</strong> On a corpse along the eastern rampart walkway, near the Perfumer enemies</p>
+<p><strong>Recipe Unlocked:</strong>狂热香药</p>
+<p><strong>Also Unlocks:</strong> Various blood-themed aromatic recipes</p>
+</div>
+<h3>如何到达East Capital Rampart</h3>
+<p>East Capital Rampart是Leyndell王城城墙的东侧部分。要到达这里，你需要先进入Leyndell——这本身就是游戏的一个主要里程碑。王城的大门会在你击败至少两个半神Shardbearer后打开，标志着你的冒险进入了全新的阶段。</p>
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Defeat at least <strong>two Shardbearer Demigods</strong> (Godrick, Rennala, Radahn, Rykard, or Malenia) to gain access to Leyndell.</p>
+<p><span class="step">Step 2:</span> Travel to the <strong>Capital Rampart</strong> Site of Grace — the main entrance to Leyndell from the Altus Plateau side.</p>
+<p><span class="step">Step 3:</span> Progress through the capital's outer wall. You will encounter <strong>Perfumer enemies</strong> — humanoid alchemists who throw various aromatic projectiles.</p>
+<p><span class="step">Step 4:</span> Follow the eastern rampart walkway. The Cookbook is a <strong>glowing white item on a corpse</strong> near where the Perfumers patrol.</p>
+<p><span class="step">Step 5:</span> The corpse is on a raised platform section — look for it near the edge of the walkway where you can see the capital below.</p>
+</div>
+<h3>Leyndell的危险</h3>
+<ul>
+<li>调香师敌人：投掷各种香药瓶——火焰、睡眠、毒——保持距离</li>
+<li>骑士类敌人：持长矛和盾牌的Leyndell骑士，非常危险</li>
+<li>活壶碎片：区域内的Living Jar敌人会爆炸，造成范围伤害</li>
+<li>不需要击败任何Boss：制作笔记在开放区域，可以直接拾取</li>
+<li>赐福点距离较远：East Capital Rampart的赐福点需要从Capital Rampart步行一段距离才能到达</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="ironjar-aromatic.html">Next: 铁壶香药（Same Perfumer Series)</a>
+<a class="cross-link" href="uplifting-aromatic.html">振奋香药（Perfumer's Cookbook [2])</a>
+</div>
+</section>
+<section class="section" id="materials">
+<h2><span>🌿</span> 材料与采集地点</h2>
+<p>沸血香的两种材料代表了两种不同的farm挑战。Altus Bloom在高原上相对容易获取，但Bloodrose需要前往游戏中最危险的区域之一。</p>
+<h3>🩸 Material 1: Bloodrose</h3>
+<div class="material-item">
+<div class="material-icon">🩸</div>
+<div class="material-info">
+<h4>Bloodrose <span style="color:#ff4d4d">★★ Rare — Bleed Zone Exclusive</span></h4>
+<p>Bloodrose是一种只在出血主题区域生长的深红色花朵。它的主要产地是Mohgwyn Palace——游戏中最顶级的刷卢恩地点，也是最高等级区域之一。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Mohgwyn Palace — Bloodrose Paradise</strong></p>
+<p>Mohgwyn Palace是farm Bloodrose的绝对最佳地点。从Palace Approach Ledge-Road赐福点出发，周围的血沼中生长着大量Bloodrose——通常一次可以采集8-15朵。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Church of Repose — Mountaintops</strong></p>
+<p>Giant-Conquering Hero's Grave附近和Church of Repose周围有3-5朵Bloodrose刷新。这是到达Mohgwyn Palace之前的替代选择。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Consecrated Snowfield — Late-Game Source</strong></p>
+<p>Consecrated Snowfield的某些区域有少量Bloodrose分布，但密度不高且敌人强大。</p>
+</div>
+<h4>Bloodrose Farm 技巧</h4>
+<ul>
+<li>Mohgwyn Palace的Bloodrose在赐福休息后刷新——可以无限farm</li>
+<li>注意血沼会累积出血状态——装备提升免疫力的护符</li>
+<li>在farm Bloodrose的同时刷卢恩——一举两得</li>
+<li>使用远程攻击消灭Albinaurics后再安心采集</li>
+<li>每次循环通常可以采集8-15朵Bloodrose，足够制作一周的使用量</li>
+<li>如果你还没有解锁Mohgwyn Palace，完成White Mask Varré的入侵任务线是最直接的解锁方式</li>
+</ul>
+<h4>如何到达Mohgwyn Palace</h4>
+<p>Mohgwyn Palace是位于地下区域的隐藏地图，有两个主要入口。最常用的方法是通过White Mask Varré的任务线：在Rose Church完成三次入侵后，他会给你Pureblood Knight's Medal，使用后即可传送到Mohgwyn Palace。另一种方法是通过Consecrated Snowfield西部的传送门。</p>
+<h3>🌸 Material 2: Altus Bloom</h3>
+<div class="material-item">
+<div class="material-icon">🌸</div>
+<div class="material-info">
+<h4>Altus Bloom <span style="color:#e6a817">★ Zone-Specific Target Farm</span></h4>
+<p>Altus Bloom的获取方法已经在Uplifting Aromatic和Ironjar Aromatic的指南中详细说明。简而言之：去Altus Plateau，骑马采集黄色花朵。</p>
+</div>
+</div>
+<h4>Altus Bloom 快速提示</h4>
+<ul>
+<li>Altus Highway Junction赐福点附近最密集</li>
+<li>每次赐福休息后刷新</li>
+<li>farm Altus Bloom时顺便采集Arteria Leaf和Miranda Powder</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="gold-pickled-fowl-foot.html">黄金鸡爪（+30% Runes at Mohgwyn)</a>
+<a class="cross-link" href="ironjar-aromatic.html">铁壶香药（Altus Bloom Routes)</a>
+</div>
+</section>
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> 注意事项 — What Can Go Wrong</h2>
+<p>沸血香的高风险特性意味着使用它时的失误可能代价极其高昂。以下是完整的问题清单。</p>
+<div class="gotcha-box">
+<h4>💀 Gotcha 1: The Defense Penalty Hurts… A Lot</h4>
+<p>-25%防御力不是开玩笑的。在一个你原本会被一击秒杀的Boss战中，这个惩罚意味着你连擦伤都承受不起。确保你对自己的闪避能力有信心再使用。</p>
+</div>
+<div class="gotcha-box">
+<h4>🩸 Gotcha 2: Mohgwyn Palace Is Late-Game</h4>
+<p>最佳的Bloodrose farm地点Mohgwyn Palace需要完成Varre的入侵任务或使用传送门才能到达。如果你还在中期游戏，考虑使用Mountaintops的替代采集点。</p>
+</div>
+<div class="gotcha-box">
+<h4>⏱️ Gotcha 3: 40 Seconds Goes Fast in a Boss Fight</h4>
+<p>40秒的持续时间对于大部分Boss战来说足够覆盖关键阶段，但对于多阶段Boss（如拉达冈/艾尔登之兽），你可能需要在第二阶段重新补充buff。</p>
+</div>
+<div class="gotcha-box">
+<h4>🤝 Gotcha 4: Only Affects the User</h4>
+<p>与振奋香不同，沸血香只影响使用者本人。在联机模式下，你的队友不会获得攻击力提升或防御力惩罚。</p>
+</div>
+<div class="gotcha-box">
+<h4>🔥 Gotcha 5: Stacks with Everything (Including Bad Decisions)</h4>
+<p>沸血香的攻击力提升可以与几乎所有其他增益叠加——包括Ritual Pot Talisman、Exalted Flesh、武器附魔等。这意味着你可以创造出极高的伤害输出，但也意味着如果你同时使用了降低防御力的其他道具，你可能会变得极其脆弱。</p>
+</div>
+<div class="gotcha-box">
+<h4>🏰 Gotcha 6: Leyndell Access Is Gated</h4>
+<p>制作笔记位于Leyndell王城内，这意味着你需要击败至少两个半神才能获取。对于想要尽早获得这个配方的玩家来说，这是不可能的——先把主线推进到王城吧。</p>
+</div>
+</section>
+<section class="section" id="benefits">
+<h2><span>🎁</span> 额外收益 — What Else You Get Farming These Materials</h2>
+<p>farm沸血香的材料会带你穿越游戏中最具标志性的区域。以下是额外收益。</p>
+<h3>在Mohgwyn Palace farm Bloodrose时的额外收益</h3>
+<ul>
+<li>巨额卢恩：Mohgwyn Palace是游戏最佳刷卢恩地点</li>
+<li>Albinauric掉落物：血王区域的Albinaurics掉落有用的制作材料</li>
+<li>血王骑士的装备：击败血王骑士可以获得独特的装备套装</li>
+<li>通往Mohg, Lord of Blood的道路：顺便挑战游戏最酷的Boss之一</li>
+</ul>
+<h3>在Altus Plateau farm Altus Bloom时的额外收益</h3>
+<ul>
+<li>Arteria Leaf：同区域获取Exalted Flesh的材料</li>
+<li>Miranda Powder：Ironjar Aromatic的材料</li>
+<li>大量的锻造石用于武器升级</li>
+<li>火山官邸任务线触发</li>
+</ul>
+<h3>长期战略收益</h3>
+<p>掌握沸血香的制作意味着你已经征服了Leyndell王城并深入了Mohgwyn Palace——这是艾尔登法环中两个最具标志性的后期区域。这种经历本身就是一种成长。而且，一旦你学会了在Mohgwyn Palace高效farm，你就解锁了游戏中最强大的刷卢恩路线和最稀有的制作材料来源。你的角色不仅仅是变强了——作为玩家的你也变得更熟练了。</p>
+<p>更深层的意义在于，沸血香教会了你艾尔登法环的核心设计理念之一：风险与回报的平衡。在这个游戏中，最强大的增益往往伴随着最严峻的代价。学会管理这种风险——知道何时该赌博、何时该保守——是区分新手和大师的关键。当你能自信地使用沸血香并在刀尖上跳舞时，你就已经掌握了这款游戏的灵魂。</p>
+<div class="cross-links">
+<a class="cross-link" href="ironjar-aromatic.html">→ Next: 铁壶香药（Metal Body Super Armor)</a>
+<a class="cross-link" href="uplifting-aromatic.html">振奋香药（Party Bubble Shield)</a>
+<a class="cross-link" href="gold-pickled-fowl-foot.html">黄金鸡爪（+30% Runes)</a>
+</div>
+</section>
+</main>
+<aside class="sidebar">
+<h3>快速信息</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>效果：</strong> +30% attack, -25% defense</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>持续时间：</strong> ~40 seconds</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>堆叠：</strong> 10</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>笔记：</strong> Perfumer's [1]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>产出:</strong>每次1个</p>
+<div class="quick-nav">
+<h4>跳转到章节</h4>
+<a href="#why">为什么重要</a>
+<a href="#recipe">制作配方</a>
+<a href="#cookbook">笔记位置</a>
+<a href="#materials">材料路线</a>
+<a href="#gotchas">注意事项</a>
+<a href="#benefits">额外收益</a>
+</div>
+<div class="quick-nav">
+<h4>相关物品</h4>
+<a href="ironjar-aromatic.html">铁壶香药</a>
+<a href="exalted-flesh.html">勇猛肉块</a>
+<a href="uplifting-aromatic.html">振奋香药</a>
+</div>
+</aside>
+</div>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">◌ RelicTrek</div>
+<p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制征程。</p>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<div class="footer-col-title">RelicTrek</div>
+<a href="../privacy.html">隐私</a>
+<a href="../terms.html">条款</a>
+<a href="../about.html">关于</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 RelicTrek.net</span>
+<span class="footer-sep">◌</span>
+<span>为冒险者精心打造</span>
+</div>
+</footer>
+</body>
+</html>

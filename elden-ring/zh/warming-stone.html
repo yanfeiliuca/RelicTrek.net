@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>暖石 — 艾尔登法环制作攻略 | RelicTrek</title>
+<meta content="艾尔登法环暖石完整制作攻略。持续恢复血量的治疗区域。圣堂石+黄金落叶花。流浪战士笔记[22]。巨人山顶必备。" name="description"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-tool{font-size:48px;line-height:1}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e67e22;font-weight:600}
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+.highlight{color:#c9a84c;font-weight:600}
+.note{color:#8a9bb0;font-size:13px;font-style:italic}
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">首页</a>
+<a href="./">攻略</a>
+<a class="active" href="./">制作</a>
+<a href="./">地图</a>
+<a href="./">工具</a>
+</div>
+<div class="lang-switch">
+<button data-lang="en" onclick="window.location.href='../warming-stone.html'">EN</button>
+<button class="active" data-lang="zh">中文</button>
+</div>
+</div>
+</nav>
+<div class="ticker-bar">
+<div class="ticker-inner">
+🔥 <strong>暖石</strong> — Healing zone restores HP over time | Nomadic Warrior's Cookbook [22] | Sanctuary Stone + Erdleaf Flower | <a href="bewitching-branch.html">Next: Bewitching Branch →</a>
+</div>
+</div>
+<div class="container">
+<aside class="sidebar">
+<h3>游戏选择</h3>
+<a href="../terraria/zh/">泰拉瑞亚</a>
+<a href="../subnautica2/zh/">深海迷航2</a>
+<a href="../monster-hunter-wilds/zh/">怪物猎人荒野</a>
+<a href="../zelda-totk/zh/">塞尔达：王国之泪</a>
+<a href="../minecraft/zh/">我的世界</a>
+<a href="../no-mans-sky/zh/">无人深空</a>
+<a href="../baldurs-gate-3/zh/">博德之门3</a>
+<a href="../valheim/zh/">英灵神殿</a>
+<a href="../path-of-exile-2/zh/">流放之路2</a>
+<a href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<a class="active" href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<div class="quick-nav">
+<h4>艾尔登法环物品</h4>
+<a href="gold-pickled-fowl-foot.html">黄金鸡爪</a>
+<a href="exalted-flesh.html">勇猛肉块</a>
+<a href="uplifting-aromatic.html">振奋香药</a>
+<a href="bloodboil-aromatic.html">狂热香药</a>
+<a href="ironjar-aromatic.html">铁壶香药</a>
+<a href="preserving-boluses.html">腐败苔药</a>
+<a href="drawstring-blood-grease.html">缚血油脂</a>
+<a href="spark-aromatic.html">火花香药</a>
+<a class="active" href="warming-stone.html" style="color: var(--accent); font-weight: 600;">暖石</a>
+<a href="bewitching-branch.html">魅惑树枝</a>
+</div>
+</aside>
+<main class="main-content">
+<div class="item-header">
+<div class="item-icon-accessory">🔥</div>
+<div class="item-title">
+<h1>温暖石</h1>
+<div class="item-subtitle">持续治疗区域——巨人山顶的 survival 神器，放置后恢复范围内所有友方的HP</div>
+<div class="item-meta">
+<span class="difficulty">★★★☆☆ Medium</span>
+<span>Type: Tool (Healing)</span>
+<span>Stack: 10</span>
+</div>
+</div>
+</div>
+<section class="section" id="why">
+<h2><span>🔥</span> Why Warming Stone Matters</h2>
+<p>巨人山顶（Mountaintops of the Giants）是艾尔登法环中最恶劣的环境之一。极寒的风暴会持续削减你的生命值，而且区域内的敌人都极为强大。在这样的环境中，能够持续恢复HP的手段变得无比珍贵——而Warming Stone就是这样一个道具。它在放置后创造一个小型的持续治疗区域，站在范围内的所有友方单位都会缓慢恢复生命值。</p>
+<p>Warming Stone的价值远不止于巨人山顶。在任何长时间的战斗中——特别是Boss战和入侵防御战——能够在战场上创造一个安全的治疗区域，意味着你可以在不消耗 flask 的情况下恢复生命值。这对于 flask 紧张的持久战来说意义重大。</p>
+<h3>最佳使用场景</h3>
+<ul>
+<li>巨人山顶探索：在暴风雪中创造安全区域，抵消环境伤害</li>
+<li>Boss战中的持续恢复：在Boss房角落放置，在Boss攻击间隙跑回恢复</li>
+<li>入侵防御战：在防守位置放置，让防守方获得持续恢复优势</li>
+<li>联机合作中的团队支援：为所有队友提供持续恢复，相当于一个移动治疗站</li>
+<li>探索高难度区域时的安全保障：在清理一个区域后放置恢复，节省 flask</li>
+</ul>
+<h3>与其他治疗手段的对比</h3>
+<ul>
+<li> vs 红瓶（Flask of Crimson Tears）： flask 是有限的，而Warming Stone可以制作无限量（只要材料足够）</li>
+<li> vs 温热石（Warming Stone vs Heal spells）：治疗祷告需要信仰投资和FP；Warming Stone不需要任何属性</li>
+<li> vs 肉干（Cured Meat）：肉干提升生命恢复速度但依赖已有恢复机制；Warming Stone直接提供恢复</li>
+<li> vs 坐赐福恢复：战斗中无法坐赐福；Warming Stone可以在战斗中放置和使用</li>
+</ul>
+<h3>团队支援的终极价值</h3>
+<p>在四人合作模式中，一个Warming Stone的治疗区域可以同时恢复所有玩家的HP。这意味着一个人放置石头，四个人受益。相比每个人都喝 flask，这种效率提升是巨大的。如果你是一个支援型玩家，携带10个Warming Stone进入合作Boss战，相当于为团队提供了数百点额外的HP恢复——这可能就是一个团队能否击败Boss的关键因素。</p>
+<h3>FOMO因素——为什么你不应该错过</h3>
+<p>Nomadic Warrior's Cookbook [22]位于巨人山顶——游戏后期区域。很多玩家到达这里时已经用光了所有 flask 升级材料，正为恶劣环境和高难度敌人而苦恼。如果你不知道Warming Stone的存在，你会错过这个能够让你的山顶探索体验从'痛苦求生'变为'从容应对'的关键道具。而且，一旦你学会制作Warming Stone，你的整个游戏方式都会改变——你不再害怕持久战，因为你知道你可以在任何时候创造一个安全的治疗区域。</p>
+<div class="cross-links">
+<a class="cross-link" href="spark-aromatic.html">← 火花香药</a>
+<a class="cross-link" href="bewitching-branch.html">Bewitching Branch →</a>
+</div>
+</section>
+<section class="section" id="recipe">
+<h2><span>🧪</span> 制作配方</h2>
+<p>Warming Stone的配方只需要两种材料——一个来自巨人山顶的稀有矿石和一个在整个交界地都很常见的花朵。这是后期游戏中最值得掌握的配方之一。</p>
+<table class="recipe-table">
+<thead>
+<tr><th>材料</th><th>数量</th><th>稀有度</th><th>可采集</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🪨 <strong>Sanctuary Stone</strong></td>
+<td>1x</td>
+<td>稀有（巨人山顶）</td>
+<td>✅ Yes — Mountaintops ore nodes</td>
+</tr>
+<tr>
+<td>🌼 <strong>Erdleaf Flower</strong></td>
+<td>1x</td>
+<td>低（全交界地）</td>
+<td>✅ Yes — Everywhere</td>
+</tr>
+</tbody>
+</table>
+<h3>制作产出</h3>
+<p>每次制作产出1个Warming Stone。堆叠上限为10个。建议保持满库存10个用于探索和治疗支援。</p>
+<div class="gotcha-box">
+<h4>⚠️ 配方关键说明</h4>
+<ul>
+<li>范围效果：以放置点为中心的中等范围治疗区域——覆盖约3个身位的半径</li>
+<li>持续时间：治疗区域持续约45秒——足够覆盖一个Boss阶段</li>
+<li>恢复速度：每秒恢复约10-15 HP——不是很快但稳定可靠</li>
+<li>影响所有友方：包括玩家、召唤的Spirit Ashes和NPC</li>
+<li>放置后有短暂延迟：石头放置后约1秒开始生效</li>
+<li>可以被破坏：敌人可以摧毁Warming Stone——放置在安全位置</li>
+</ul>
+</div>
+</section>
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Nomadic Warrior's Cookbook [22]</h2>
+<p>要解锁Warming Stone的配方，你需要流浪战士的制作笔记[22]。这本笔记位于巨人山顶（Mountaintops of the Giants）——游戏的后期区域。</p>
+<div class="cookbook-box">
+<h4>📖 Nomadic Warrior's Cookbook [22]</h4>
+<p><strong>Location:</strong> Mountaintops of the Giants</p>
+<p><strong>Coordinates:</strong> On a corpse near the Fire Giant's arena approach, close to the Forge of the Giants grace area</p>
+<p><strong>Recipe Unlocked:</strong>暖石</p>
+<p><strong>Also Unlocks:</strong> Additional stone-based utility recipes</p>
+</div>
+<h3>如何到达Cookbook位置</h3>
+<p>巨人山顶是游戏后期才能到达的区域。你需要通过Grand Lift of Rold（使用Rold Medallion）从Capital Outskirts上升，或者通过其他后期路径进入。</p>
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Progress through <strong>Leyndell, Royal Capital</strong> to obtain the <strong>Rold Medallion</strong>.</p>
+<p><span class="step">Step 2:</span> Travel to the <strong>Grand Lift of Rold</strong> at the eastern edge of the capital outskirts.</p>
+<p><span class="step">Step 3:</span> Use the Rold Medallion at the lift to ascend to the <strong>Mountaintops of the Giants</strong>.</p>
+<p><span class="step">Step 4:</span> Navigate through the snowy wastes toward the <strong>Forge of the Giants</strong> area.</p>
+<p><span class="step">Step 5:</span> The Cookbook is on a <strong>corpse near the approach to Fire Giant's arena</strong> — a glowing white item on the ground near the giant forge structures.</p>
+</div>
+<h3>巨人山顶的危险</h3>
+<ul>
+<li>极寒风暴：会持续削减HP的环境效果——Warming Stone正是为此而生</li>
+<li>火焰巨人（Fire Giant）：区域Boss，极其强大</li>
+<li>Troll和巨型敌人：山顶区域有大量巨型敌人，伤害极高</li>
+<li>死亡鸟（Death Rite Bird）：夜间出现的恐怖Boss级敌人</li>
+<li>难度评级高：这是游戏中最难的区域之一——做好准备再来</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="spark-aromatic.html">← 火花香药</a>
+<a class="cross-link" href="bewitching-branch.html">Bewitching Branch →</a>
+</div>
+</section>
+<section class="section" id="materials">
+<h2><span>🌿</span> 材料与采集地点</h2>
+<p>Warming Stone的两种材料代表了极端的稀有度差异：Sanctuary Stone是巨人山顶的稀有矿石，而Erdleaf Flower是整个交界地最常见花朵之一。这种差异意味着你的farm时间几乎完全取决于Sanctuary Stone的获取速度。</p>
+<h3>🪨 Material 1: Sanctuary Stone</h3>
+<div class="material-item">
+<div class="material-icon">🪨</div>
+<div class="material-info">
+<h4>Sanctuary Stone <span style="color:#ff4d4d">★★★ Rare — Mountaintops Exclusive</span></h4>
+<p>Sanctuary Stone是一种只在巨人山顶区域产出的淡蓝色矿石。它的外观像一块发光的冰晶，在雪地中不太好辨认——需要仔细寻找。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Mountaintops of the Giants — Snowfield Ore Nodes</strong></p>
+<p>巨人山顶的雪原上散布着矿石采集点，其中约三分之一会产出Sanctuary Stone（其余产出锻造石）。从Giants' Gravepost赐福点出发，骑马在雪原上巡回采集矿石点，每次循环可以获得2-4个Sanctuary Stone。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Forge of the Giants — Surrounding Area</strong></p>
+<p>Forge of the Giants区域周围的矿石点也有Sanctuary Stone产出。这里的敌人更强但矿石点更密集。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Guardians' Garrison — Interior</strong></p>
+<p>Guardians' Garrison要塞内部有几个Sanctuary Stone刷新点，但需要清怪才能安全采集。</p>
+</div>
+<h4>Sanctuary Stone Farm技巧</h4>
+<ul>
+<li>矿石点在赐福休息后刷新——可以无限farm</li>
+<li>Sanctuary Stone也用于其他后期配方——不会浪费</li>
+<li>在farm矿石时顺便刷卢恩——山顶的敌人给很多卢恩</li>
+<li>矿石点可能产出锻造石而非Sanctuary Stone——保持耐心</li>
+<li>Sanctuary Stone不能从商人购买——必须farm</li>
+</ul>
+<h3>🌼 Material 2: Erdleaf Flower</h3>
+<div class="material-item">
+<div class="material-icon">🌼</div>
+<div class="material-info">
+<h4>Erdleaf Flower <span style="color:#4caf50">★ Common — Worldwide</span></h4>
+<p>Erdleaf Flower是艾尔登法环中最常见的花朵之一——金色的花瓣在整个交界地的每一个角落都能找到。你可能已经有数百个在背包里了。</p>
+</div>
+</div>
+<h4>Erdleaf Flower获取提示</h4>
+<ul>
+<li>几乎不需要专门farm——正常探索就能收集大量</li>
+<li>也是Furlcalling Finger Remedy的制作材料——多人游戏必备</li>
+<li>Limgrave的初始区域就有大量分布——新角色也能轻松获取</li>
+<li>如果确实需要farm，任何有草地的区域都有</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="bewitching-branch.html">Bewitching Branch →</a>
+<a class="cross-link" href="spark-aromatic.html">← 火花香药</a>
+</div>
+</section>
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> 注意事项 — What Can Go Wrong</h2>
+<p>Warming Stone虽然看似简单，但在实际使用中有几个重要的陷阱需要注意。以下是完整的问题清单。</p>
+<div class="gotcha-box">
+<h4>🪨 Gotcha 1: Sanctuary Stone Is Late-Game Only</h4>
+<p>Sanctuary Stone只在巨人山顶产出——这意味着在到达这个后期区域之前，你无法制作Warming Stone。不要指望在早期或中期游戏使用这个道具。不过好消息是，早期游戏的环境伤害没有那么严重，你也不太需要它。</p>
+</div>
+<div class="gotcha-box">
+<h4>💨 Gotcha 2: The Stone Can Be Destroyed</h4>
+<p>Warming Stone放置后是一个实体物体——敌人可以攻击并摧毁它。这意味着你不能把它放在战斗的正中央。最佳策略是在Boss房的角落或战场边缘放置，确保你在跑回恢复时不会被追击的敌人踩碎石头。</p>
+</div>
+<div class="gotcha-box">
+<h4>⏱️ Gotcha 3: The Healing Is Slow</h4>
+<p>Warming Stone的恢复速度是每秒10-15HP——在40血（1500HP）的情况下，这意味着需要100秒以上才能从空血恢复到满血。这不是急救工具，而是持久战中的 sustain 工具。不要指望在濒死时放一个石头就能救你——它的价值在于减少 flask 消耗，而非替代 flask。</p>
+</div>
+<div class="gotcha-box">
+<h4>🏔️ Gotcha 4: Mountaintops Enemies Are Brutal</h4>
+<p>farm Sanctuary Stone意味着你需要在巨人山顶的开放世界中巡回采集。这个区域的敌人——包括Troll、巨型狼和火焰主题敌人——都极为强大。建议在farm时骑马快速移动，避免不必要的战斗。</p>
+</div>
+<div class="gotcha-box">
+<h4>📍 Gotcha 5: Placement Matters Immensely</h4>
+<p>Warming Stone的放置位置决定了它的价值。放在Boss的攻击范围内=被摧毁。放在离你太远的地方=来不及跑回去恢复。放在地形起伏处=可能无法触发恢复效果。理想的位置是：一个你可以快速到达、敌人不太可能追入的角落或凹陷处。</p>
+</div>
+<div class="gotcha-box">
+<h4>📖 Gotcha 6: Cookbook [22] Is Near the Fire Giant</h4>
+<p>流浪战士的制作笔记[22]位于Fire Giant竞技场附近——这意味着你需要推进到巨人山顶的核心区域才能获取它。对于想要尽早获得配方的玩家，这是不可能的——先推进主线吧。</p>
+</div>
+</section>
+<section class="section" id="benefits">
+<h2><span>🎁</span> 额外收益 — What Else You Get Farming These Materials</h2>
+<p>farm Warming Stone的材料本身就是一次深入巨人山顶的探险。以下是额外收益。</p>
+<h3>在巨人山顶Farm的额外收益</h3>
+<ul>
+<li>锻造石[5]和[6]：山顶区域有大量中高级锻造石</li>
+<li>Somber锻造石：用于升级特殊武器</li>
+<li>大量的卢恩：山顶的敌人给很多卢恩</li>
+<li>火焰巨人的记忆：击败Boss后获得强力Boss武器/法术</li>
+<li>通往Crumbling Farum Azula的路径：击败Fire Giant后开启新区域</li>
+<li>独特的山顶装备：多个独特的武器和护甲可以获取</li>
+</ul>
+<h3>在巨人山顶Farm的额外收益（续）</h3>
+<ul>
+<li>Zamor套装：独特的轻甲套装，外观炫酷</li>
+<li>Borealis the Freezing Fog：野外Boss战，奖励龙之心脏</li>
+<li>多种守护者武器：山顶的敌人掉落独特的武器</li>
+<li>通往隐藏区域的路径：山顶有多条通往秘密区域的路径</li>
+<li>Bell Bearing：山顶的Boss会掉落重要的铃珠</li>
+</ul>
+<h3>长期战略收益</h3>
+<p>掌握Warming Stone的制作意味着你已经征服了艾尔登法环中最具挑战性的区域之一——巨人山顶。这个区域不仅环境恶劣，敌人强大，而且还是通往游戏终局内容的关键路径。能够在这里自如地farm材料，本身就证明了你的实力。</p>
+<p>更重要的是，Warming Stone改变了你对持久战的看法。在拥有这个道具之前，长时间的战斗让你焦虑——你担心 flask 会用完。在学会制作Warming Stone之后，你获得了 confidence：即使 flask 见底，你还有后备的治疗手段。这种心理转变让你在面对高难度内容时更加从容，而这种从容往往是胜利的关键。</p>
+<h3>Warming Stone的战术进阶用法</h3>
+<p>除了基础的治疗功能，Warming Stone在高级战术中有更多用法。例如，在Boss战中，你可以故意将石头放在Boss的远侧，吸引Boss移动到那个位置，然后利用这段时间攻击Boss的另一侧。这种'治疗诱饵'战术在对抗移动较慢的Boss时特别有效。另外，在合作模式中，与队友协调放置多个Warming Stone可以创建一个'治疗走廊'，让你们在长线作战中始终保持高血量状态。</p>
+<h3>Sanctuary Stone的 lore 背景</h3>
+<p>Sanctuary Stone不仅是一个实用的制作材料，它还承载着艾尔登法环的 lore 深度。这种在巨人山顶的极端寒冷环境中形成的矿石，据说是由远古巨人的神圣力量结晶而成。它的温暖特性——能够制作出持续散发治疗能量的Warming Stone——可能正是巨人族远古力量的残留。在游戏的世界观中，Fire Giant是最后的巨人，而Sanctuary Stone则可能是他族人曾经存在的物证。当你采集这些石头并制作Warming Stone时，你实际上是在利用一个已逝文明的遗产来治愈自己——这是一个美丽而略带忧伤的概念。</p>
+<h3>Mountaintops的环境叙事</h3>
+<p>巨人山顶是艾尔登法环中环境叙事最出色的区域之一。当你在这里farm Sanctuary Stone时，你会注意到到处都是巨大的骨骼、残破的建筑和被冰雪覆盖的战场遗迹。这些元素共同讲述了一个关于巨人族兴衰的史诗故事。Fire Giant守着Erdtree的火焰，而他的族人早已消逝。Warming Stone的制作配方藏在这个区域，某种程度上是对这个已逝文明的一种致敬——用他们留下的矿石来制作温暖与治疗，这是对巨人族遗产最恰当的纪念方式。</p>
+<h3>Erdleaf Flower的获取策略</h3>
+<p>虽然Erdleaf Flower是整个交界地最常见的花朵之一，但当你需要大量制作Warming Stone时，有策略地采集仍然是明智的。推荐的路线是从Limgrave的The First Step赐福点开始，骑马沿着通往Church of Elleh的道路采集，然后向北穿过树林，最后向东沿着河流采集。这条路线每次循环可以获得15-20朵Erdleaf Flower，而且沿途几乎没有危险。</p>
+<div class="cross-links">
+<a class="cross-link" href="bewitching-branch.html">→ Next: Bewitching Branch</a>
+<a class="cross-link" href="spark-aromatic.html">← 火花香药</a>
+<a class="cross-link" href="preserving-boluses.html">← 腐败苔药</a>
+</div>
+</section>
+</main>
+<aside class="sidebar">
+<h3>快速信息</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>效果：</strong> AoE healing zone ~10-15 HP/s</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>持续时间：</strong> ~45 seconds</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>堆叠：</strong> 10</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>笔记：</strong> Nomadic [22]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>产出:</strong>每次1个</p>
+<div class="quick-nav">
+<h4>跳转到章节</h4>
+<a href="#why">为什么重要</a>
+<a href="#recipe">制作配方</a>
+<a href="#cookbook">笔记位置</a>
+<a href="#materials">材料路线</a>
+<a href="#gotchas">注意事项</a>
+<a href="#benefits">额外收益</a>
+</div>
+<div class="quick-nav">
+<h4>相关物品</h4>
+<a href="bewitching-branch.html">魅惑树枝</a>
+<a href="preserving-boluses.html">腐败苔药</a>
+<a href="uplifting-aromatic.html">振奋香药</a>
+</div>
+</aside>
+</div>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">◌ RelicTrek</div>
+<p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制征程。</p>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<div class="footer-col-title">RelicTrek</div>
+<a href="../privacy.html">隐私</a>
+<a href="../terms.html">条款</a>
+<a href="../about.html">关于</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 RelicTrek.net</span>
+<span class="footer-sep">◌</span>
+<span>为冒险者精心打造</span>
+</div>
+</footer>
+</body>
+</html>

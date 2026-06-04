@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>黄金鸡爪 — 艾尔登法环制作攻略 | RelicTrek</title>
+<meta content="艾尔登法环黄金鸡爪完整制作攻略。+30%卢恩获取持续3分钟。传教士笔记[2]，四趾鸟爪、罗亚果实和金色萤火虫的采集路线。" name="description"/>
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0a0e1a;color:#d4d0c8;line-height:1.7;font-size:15px}
+a{color:#7eb8da;text-decoration:none}a:hover{color:#a8d4f2}
+
+/* ===== LAYOUT ===== */
+.container{display:flex;max-width:1400px;margin:0 auto;padding:20px;gap:20px}
+.main-content{flex:1;min-width:0}
+.sidebar{width:260px;flex-shrink:0;background:#111627;padding:18px;border-radius:6px;border:1px solid #1a2040;position:sticky;top:20px;height:fit-content;max-height:calc(100vh - 40px);overflow-y:auto}
+.sidebar h3{color:#7eb8da;font-size:16px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a2040}
+.sidebar a{display:block;padding:5px 10px;margin:2px 0;border-radius:4px;color:#9db0c0;font-size:13px}
+.sidebar a:hover{background:#1a2040;color:#a8d4f2}
+.sidebar a.active{background:#1a2040;color:#7eb8da;font-weight:600}
+.sidebar .quick-nav{margin-top:16px;padding-top:12px;border-top:1px solid #1a2040}
+.sidebar .quick-nav h4{color:#c9a84c;font-size:13px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.sidebar .quick-nav a{font-size:12px;padding:4px 8px}
+
+/* ===== NAV ===== */
+.top-nav{background:#0d1225;border-bottom:1px solid #1a2040;padding:0 20px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.nav-logo{font-size:18px;font-weight:700;color:#c9a84c;letter-spacing:1px;padding:12px 0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{padding:12px 14px;color:#9db0c0;font-size:13px;font-weight:500;border-bottom:2px solid transparent}
+.nav-links a:hover{color:#a8d4f2;background:#111627}
+.nav-links a.active{color:#7eb8da;border-bottom-color:#7eb8da}
+
+/* ===== TICKER ===== */
+.ticker-bar{background:#111627;border-bottom:1px solid #1a2040;padding:8px 20px;font-size:13px;color:#8a9bb0;overflow:hidden;white-space:nowrap}
+.ticker-inner{max-width:1400px;margin:0 auto}
+
+/* ===== SECTIONS ===== */
+.section{background:#111627;border:1px solid #1a2040;border-radius:6px;padding:28px;margin-bottom:20px}
+.section h2{color:#c9a84c;font-size:20px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #1a2040;display:flex;align-items:center;gap:10px}
+.section h3{color:#7eb8da;font-size:17px;margin:20px 0 10px}
+.section p{margin-bottom:12px}
+.section ul{margin:10px 0 10px 22px}
+.section li{margin-bottom:6px}
+
+/* ===== ITEM HEADER ===== */
+.item-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:20px;background:#0d1225;border-radius:6px;border:1px solid #1a2040}
+.item-icon-tech{font-size:48px;line-height:1}
+.item-icon-accessory{font-size:48px;line-height:1}
+.item-icon-legendary{font-size:48px;line-height:1}
+.item-icon-weapon{font-size:48px;line-height:1}
+.item-title h1{color:#c9a84c;font-size:26px;margin-bottom:4px}
+.item-subtitle{color:#8a9bb0;font-size:14px}
+.item-meta{display:flex;gap:16px;margin-top:8px;font-size:13px;color:#9db0c0}
+.difficulty{color:#e6a817;font-weight:600}
+
+/* ===== TABLES ===== */
+.recipe-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.recipe-table th{background:#0d1225;color:#7eb8da;padding:10px 12px;text-align:left;border-bottom:2px solid #1a2040}
+.recipe-table td{padding:10px 12px;border-bottom:1px solid #1a2040}
+.recipe-table tr:hover{background:#0d1225}
+
+/* ===== MATERIAL ITEM ===== */
+.material-item{display:flex;align-items:flex-start;gap:14px;padding:14px;background:#0d1225;border-radius:6px;margin:10px 0;border:1px solid #1a2040}
+.material-icon{font-size:28px;line-height:1;flex-shrink:0}
+.material-info h4{color:#d4d0c8;font-size:15px;margin-bottom:4px}
+.material-info p{font-size:13px;color:#9db0c0;margin:0}
+.material-farm-route{margin-top:8px;padding:10px 14px;background:#111627;border-radius:4px;border-left:3px solid #c9a84c}
+.material-farm-route p{font-size:13px;margin:0}
+.material-farm-route strong{color:#c9a84c}
+
+/* ===== GOTCHA BOX ===== */
+.gotcha-box{background:#1a1520;border:1px solid #3a2040;border-radius:6px;padding:16px;margin:12px 0}
+.gotcha-box h4{color:#d080a0;font-size:15px;margin-bottom:8px}
+.gotcha-box p,.gotcha-box ul{font-size:13px;color:#b8a8b0}
+.gotcha-box li{margin-bottom:6px}
+
+/* ===== ROUTE TREE ===== */
+.route-tree{margin:12px 0;padding:12px 16px;background:#0d1225;border-radius:6px;border-left:3px solid #7eb8da}
+.route-tree p{margin:6px 0;font-size:14px}
+.route-tree .step{color:#7eb8da;font-weight:600}
+
+/* ===== COOKBOOK BOX ===== */
+.cookbook-box{background:#0d1225;border:1px solid #2a3048;border-radius:6px;padding:16px;margin:12px 0}
+.cookbook-box h4{color:#7eb8da;font-size:15px;margin-bottom:6px}
+.cookbook-box p{font-size:13px;color:#9db0c0;margin:4px 0}
+
+/* ===== CROSS-LINKS ===== */
+.cross-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cross-link{padding:8px 14px;background:#0d1225;border:1px solid #1a2040;border-radius:4px;font-size:13px;color:#9db0c0}
+.cross-link:hover{background:#1a2040;color:#a8d4f2}
+
+/* ===== FOOTER ===== */
+.site-footer{background:#0d1225;border-top:1px solid #1a2040;padding:24px 20px;margin-top:20px;text-align:center;color:#6a7a90;font-size:13px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px){.sidebar{display:none}.container{padding:10px}}
+@media(max-width:700px){.item-header{flex-direction:column;text-align:center}.nav-links{display:none}}
+.highlight{color:#c9a84c;font-weight:600}.note{color:#8a9bb0;font-size:13px;font-style:italic}
+</style>
+</head>
+<body>
+<!-- ===== TOP NAV ===== -->
+<nav class="top-nav">
+<div class="nav-inner">
+<div class="nav-logo">RELICTREK</div>
+<div class="nav-links">
+<a href="../index.html">首页</a>
+<a href="./">攻略</a>
+<a class="active" href="./">制作</a>
+<a href="./">地图</a>
+<a href="./">工具</a>
+</div>
+<div class="lang-switch">
+<button data-lang="en" onclick="window.location.href='../gold-pickled-fowl-foot.html'">EN</button>
+<button class="active" data-lang="zh">中文</button>
+</div>
+</div>
+</nav>
+<!-- ===== TICKER ===== -->
+<div class="ticker-bar">
+<div class="ticker-inner">
+🐔 <strong>黄金鸡爪</strong> — +30% rune gain持续3分钟 | Missionary's Cookbook [2] | Farm Four-Toed Fowl Foot near Stormhill | <a href="exalted-flesh.html">Next: Exalted Flesh →</a>
+</div>
+</div>
+<!-- ===== MAIN CONTAINER ===== -->
+<div class="container">
+<!-- ===== LEFT SIDEBAR ===== -->
+<aside class="sidebar">
+<h3>游戏选择</h3>
+<a href="../terraria/zh/">泰拉瑞亚</a>
+<a href="../subnautica2/zh/">深海迷航2</a>
+<a href="../monster-hunter-wilds/zh/">怪物猎人荒野</a>
+<a href="../zelda-totk/zh/">塞尔达：王国之泪</a>
+<a href="../minecraft/zh/">我的世界</a>
+<a href="../no-mans-sky/zh/">无人深空</a>
+<a href="../baldurs-gate-3/zh/">博德之门3</a>
+<a href="../valheim/zh/">英灵神殿</a>
+<a href="../path-of-exile-2/zh/">流放之路2</a>
+<a href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<a class="active" href="./">艾尔登法环</a>
+<a href="../stardew-valley/zh/">星露谷物语</a>
+<a href="../hades-2/zh/">哈迪斯2</a>
+<a href="../satisfactory/zh/">幸福工厂</a>
+<div class="quick-nav">
+<h4>艾尔登法环物品</h4>
+<a class="active" href="gold-pickled-fowl-foot.html">黄金鸡爪</a>
+<a href="exalted-flesh.html">勇猛肉块</a>
+<a href="uplifting-aromatic.html">振奋香药</a>
+<a href="bloodboil-aromatic.html">狂热香药</a>
+<a href="ironjar-aromatic.html">铁壶香药</a>
+<a href="preserving-boluses.html">腐败苔药</a>
+<a href="drawstring-blood-grease.html">缚血油脂</a>
+<a href="spark-aromatic.html">火花香药</a>
+<a href="warming-stone.html">暖石</a>
+<a href="bewitching-branch.html">魅惑树枝</a>
+</div>
+</aside>
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main-content">
+<!-- ===== ITEM HEADER ===== -->
+<div class="item-header">
+<div class="item-icon-tech">🐔</div>
+<div class="item-title">
+<h1>镀金四趾鸟爪</h1>
+<div class="item-subtitle">提升30%卢恩获取，持续3分钟</div>
+<div class="item-meta">
+<span class="difficulty">★★☆☆☆ Easy</span>
+<span>Type: Consumable Buff</span>
+<span>Stack: 99</span>
+</div>
+</div>
+</div>
+<!-- ===== SECTION 1: WHY THIS ITEM MATTERS ===== -->
+<section class="section" id="why">
+<h2><span>🐔</span> Why Gold-Pickled Fowl Foot Matters</h2>
+<p>镀金四趾鸟爪是艾尔登法环中最具成本效益的消耗品之一。它提供+30%的卢恩获取加成，持续整整3分钟，是刷级、刷钱和Boss战前的必备道具。</p>
+<p>与其他消耗品不同，镀金四趾鸟爪的效果可以与金色粪金龟护符叠加，达到总计+50%的卢恩获取加成。这种叠加效果使其成为所有刷卢恩路线的核心组件。</p>
+<h3>何时使用</h3>
+<ul>
+<li>Boss战前：在进入雾门前使用，确保击杀Boss获得+30%额外卢恩</li>
+<li>刷卢恩路线：在Mohgwyn Palace、Caelid的Fort Faroth等高效刷怪点开始 farming 前使用</li>
+<li>探索高密度区域：在进入Stormveil Castle、Leyndell等大区域前使用</li>
+<li>联机合作：作为金符被召唤时，击杀Boss的卢恩也会享受加成</li>
+</ul>
+<h3>错过恐惧（FOMO）</h3>
+<p>早期游戏中，每一点卢恩都极其珍贵。如果你在不知道这个道具的情况下游玩了20个小时，你可能已经损失了数以万计的卢恩——足够让你多升5-10级。这就是镀金四趾鸟爪的恐怖之处：它的价值是隐性的，直到你意识到损失有多大。</p>
+<div class="cross-links">
+<a class="cross-link" href="exalted-flesh.html">→ Next: 勇猛肉块（+20% Physical Damage)</a>
+<a class="cross-link" href="uplifting-aromatic.html">振奋香药（Party Bubble Shield)</a>
+</div>
+</section>
+<!-- ===== SECTION 2: CRAFTING RECIPE ===== -->
+<section class="section" id="recipe">
+<h2><span>🧪</span> 制作配方</h2>
+<p>镀金四趾鸟爪的配方需要三种材料，其中四趾鸟脚是唯一需要专门 farm 的稀有材料，另外两种都是常见采集物。</p>
+<table class="recipe-table">
+<thead>
+<tr><th>材料</th><th>数量</th><th>稀有度</th><th>可采集</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>🐔 <strong>Four-Toed Fowl Foot</strong></td>
+<td>1x</td>
+<td>中等（需要专门farm）</td>
+<td>✅ Yes — Kill guillemots / hawks</td>
+</tr>
+<tr>
+<td>🍎 <strong>Rowa Fruit</strong></td>
+<td>1x</td>
+<td>极常见</td>
+<td>✅ Yes — Bushes everywhere</td>
+</tr>
+<tr>
+<td>✨ <strong>Gold Firefly</strong></td>
+<td>1x</td>
+<td>常见</td>
+<td>✅ Yes — Near water at night</td>
+</tr>
+</tbody>
+</table>
+<h3>制作产出</h3>
+<p>每次制作产出3个镀金四趾鸟爪。这意味着一组材料（1个鸟脚+1个罗亚果实+1个金色萤火虫）可以换取9分钟的+30%卢恩获取时间。</p>
+<div class="gotcha-box">
+<h4>⚠️ 配方关键说明</h4>
+<ul>
+<li>每次制作固定产出3个，无法通过任何方式增加</li>
+<li>效果不叠加——同时吃两个不会变成+60%，只会重置计时器</li>
+<li>可以与金色粪金龟护符叠加（总+56%卢恩获取）</li>
+<li>死亡后效果消失——如果准备挑战Boss，要在进雾门后使用</li>
+</ul>
+</div>
+</section>
+<!-- ===== SECTION 3: REQUIRED COOKBOOK ===== -->
+<section class="section" id="cookbook">
+<h2><span>📖</span> Required Cookbook: Missionary's Cookbook [2]</h2>
+<p>要制作镀金四趾鸟爪，你需要传教士的制作笔记[2]。这是一本可以在游戏早期获取的关键配方书。</p>
+<div class="cookbook-box">
+<h4>📖 Missionary's Cookbook [2]</h4>
+<p><strong>Location:</strong> Smoldering Church, northeastern Caelid</p>
+<p><strong>Coordinates:</strong> Just east of the Rotview Balcony Site of Grace</p>
+<p><strong>Recipe Unlocked:</strong>黄金鸡爪</p>
+<p><strong>Also Unlocks:</strong> Holy Water Pot (if not already known)</p>
+</div>
+<h3>获取路线：Smoldering Church</h3>
+<div class="route-tree">
+<p><span class="step">Step 1:</span> Start from the <strong>Third Church of Marika</strong> in East Limgrave (has a Sacred Tear and a Flask of Wondrous Physick flask)</p>
+<p><span class="step">Step 2:</span> Head east along the main road toward the border with Caelid. You will pass the <strong>Fort Haight West</strong> Site of Grace.</p>
+<p><span class="step">Step 3:</span> Cross the narrow land bridge into Caelid — the environment will abruptly shift to red, rotted terrain.</p>
+<p><span class="step">step 4:</span> Follow the road southeast. The <strong>Smoldering Church</strong> is a ruined structure clearly visible on your left, roughly 200 meters past the border.</p>
+<p><span class="step">Step 5:</span> Inside the church, the Cookbook is a glowing white item pickup on the ground near the altar. Grab it and rest at the nearby <strong>Rotview Balcony</strong> grace if needed.</p>
+</div>
+<h3>警告与提示</h3>
+<ul>
+<li>Caelid是一个高等级的危险区域。如果你是一级角色，建议骑马冲过去，不要停下来战斗</li>
+<li>Smoldering Church偶尔会刷新一个NPC入侵者——兽爪马格纳斯</li>
+<li>不需要击败任何Boss来获取这本笔记——它是开放式的世界拾取</li>
+<li>这是传教士系列笔记的第2本——第1本从NPC Kale处购买</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="exalted-flesh.html">Next: Armorer's Cookbook [6] (Exalted Flesh)</a>
+<a class="cross-link" href="uplifting-aromatic.html">Perfumer's Cookbook [2] (Uplifting Aromatic)</a>
+</div>
+</section>
+<!-- ===== SECTION 4: MATERIALS & FARM LOCATIONS ===== -->
+<section class="section" id="materials">
+<h2><span>🌿</span> 材料与采集地点</h2>
+<p>三种材料的获取难度差异很大。罗亚果实和金色萤火虫在特定区域遍地都是，而四趾鸟脚需要击杀特定的鸟类敌人获取。</p>
+<h3>🐔 Material 1: Four-Toed Fowl Foot</h3>
+<div class="material-item">
+<div class="material-icon">🐔</div>
+<div class="material-info">
+<h4>Four-Toed Fowl Foot <span style="color:#e6a817">★ Target Farm Required</span></h4>
+<p>四趾鸟脚是制作镀金四趾鸟爪的瓶颈材料。它由特定的海鸟敌人掉落——灰白色的海鸥类生物，主要栖息在Limgrave的悬崖边缘和海岸线上。</p>
+</div>
+</div>
+<h4>最佳Farm地点</h4>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Stormhill Cliffside — THE Best Spot</strong></p>
+<p>从Stormhill Cliffside赐福点出发，向南走向悬崖边缘。这里每次刷新3-4只海鸟，击杀后使用赐福重置，可以稳定farm。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Church of Dragon Communion — Beach Birds</strong></p>
+<p>龙飨教堂下方的海滩上有2-3只海鸟，不过需要从悬崖跳下去或绕路，效率略低。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Coastal Cave — Entrance Perch</strong></p>
+<p>海岸洞窟入口附近有1-2只海鸟，虽然数量少但距离赐福点很近。</p>
+</div>
+<h4>提升掉率的技巧</h4>
+<ul>
+<li>装备银色粪金龟护符（Silver Scarab）提升发现力</li>
+<li>消耗银色腌鸡脚（Silver-Pickled Fowl Foot）进一步增加发现力</li>
+<li>提高Arcane属性——每点Arcane增加发现力</li>
+<li>使用范围武器如法术或弓箭快速击杀鸟群</li>
+</ul>
+<h3>🍎 Material 2: Rowa Fruit</h3>
+<div class="material-item">
+<div class="material-icon">🍎</div>
+<div class="material-info">
+<h4>Rowa Fruit <span style="color:#4caf50">★ Extremely Common</span></h4>
+<p>罗亚果实是艾尔登法环中最常见的制作材料之一。它从遍布整个Limgrave和Liurnia的矮小灌木丛中采集获得。</p>
+</div>
+</div>
+<div class="material-farm-route">
+<p><strong>哪里都有——不需要专门farm</strong></p>
+<p>罗亚果实在以下区域遍地都是：</p>
+<p>• <strong>Limgrave:</strong> Every roadside, field, and hillside — the red berry bushes are impossible to miss.</p>
+<p>• <strong>Liurnia of the Lakes:</strong> Dense clusters along the lake shoreline and forest edges.</p>
+<p>• <strong>Altus Plateau:</strong> Scattered across golden grasslands, though less dense than Limgrave.</p>
+<p>• <strong>Weeping Peninsula:</strong> Common along roads and near abandoned villages.</p>
+</div>
+<p>如果你需要快速大量获取，从Gatefront Ruins赐福点出发，沿着主路向东南方向骑行到Third Church of Marika，沿途可以采集20-30个罗亚果实。</p>
+<h3>✨ Material 3: Gold Firefly</h3>
+<div class="material-item">
+<div class="material-icon">✨</div>
+<div class="material-info">
+<h4>Gold Firefly <span style="color:#4caf50">★ Common (Night Only)</span></h4>
+<p>金色萤火虫只在夜晚出现在水体附近——河流、湖泊、池塘、海岸线。它们发出明显的金色光芒，很容易发现。</p>
+</div>
+</div>
+<div class="material-farm-route">
+<p><strong>🥇 #1: Agheel Lake — Best Bulk Farm</strong></p>
+<p>在Agheel湖的东南岸（靠近Gatefront Ruins），夜晚会刷新4-6只金色萤火虫。沿着湖岸骑马跑一圈即可快速采集。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥈 #2: Southern Limgrave Coast — Scenic Route</strong></p>
+<p>从海岸洞窟到龙飨教堂之间的海滩上，夜晚有3-4只金色萤火虫刷新。</p>
+</div>
+<div class="material-farm-route">
+<p><strong>🥉 #3: Liurnia Lake Shore — Mid-Game Backup</strong></p>
+<p>Liurnia湖区周围的水岸边有大量金色萤火虫刷新，尤其适合已经在湖区的玩家。</p>
+</div>
+<h4>金色萤火虫采集提示</h4>
+<ul>
+<li>金色萤火虫只在夜晚（19:00-05:00游戏时间）刷新，白天不会出现</li>
+<li>可以骑马采集——不需要下马</li>
+<li>多个商人出售金色萤火虫，如果懒得采集可以直接购买</li>
+</ul>
+<div class="cross-links">
+<a class="cross-link" href="bloodboil-aromatic.html">狂热香药（Altus Bloom 材料路线)</a>
+<a class="cross-link" href="ironjar-aromatic.html">铁壶香药（Living Jar Shard Locations)</a>
+</div>
+</section>
+<!-- ===== SECTION 5: GOTCHA TIPS ===== -->
+<section class="section" id="gotchas">
+<h2><span>⚠️</span> 注意事项 — What Can Go Wrong</h2>
+<p>镀金四趾鸟爪看似简单，但有几个隐藏的陷阱可能让你的farm效率大打折扣。以下是所有需要注意的问题。</p>
+<div class="gotcha-box">
+<h4>🐦 Gotcha 1: Birds Fly Away</h4>
+<p>海鸟敌人极其敏感——你靠近到约15米时它们就会起飞飞走，而且飞走后可能会完全消失而不是落在附近。解决方法是：始终使用远程攻击先手击杀。</p>
+</div>
+<div class="gotcha-box">
+<h4>⏱️ Gotcha 2: Timer Management</h4>
+<p>3分钟听起来很长，但如果你在使用后花1分钟骑马跑到farm点，实际上只有2分钟的加成时间。始终确保在到达farm区域或进入Boss雾门后再使用。</p>
+</div>
+<div class="gotcha-box">
+<h4>💀 Gotcha 3: Death Wipes the Buff</h4>
+<p>镀金四趾鸟爪的效果在死亡时完全消失——不会保留，不会暂停。如果你正在farm且意外死亡，那3个道具就浪费了。</p>
+</div>
+<div class="gotcha-box">
+<h4>🛒 Gotcha 4: Merchant Stock Is Limited</h4>
+<p>部分旅行商人出售镀金四趾鸟爪，但库存有限（通常3-5个）且不会刷新。不要依赖购买——学会自己制作才是长久之计。</p>
+</div>
+<div class="gotcha-box">
+<h4>🎭 Gotcha 5: Does Not Stack with Itself</h4>
+<p>同时吃两个镀金四趾鸟爪不会给你+60%卢恩获取。第二个只会重置3分钟的计时器。不要浪费！</p>
+</div>
+<div class="gotcha-box">
+<h4>🌙 Gotcha 6: Gold Fireflies Are Time-Gated</h4>
+<p>如果你在白天去湖边找金色萤火虫而找不到，不是因为运气差——它们根本不会在白天刷新。记得在赐福点选择'消磨时间到夜晚'。</p>
+</div>
+<h3>常见问题FAQ</h3>
+<ul>
+<li>Q: 镀金四趾鸟爪对Boss击杀卢恩有效吗？A: 有效，包括联机模式下作为金符被召唤时的Boss击杀卢恩</li>
+<li>Q: 可以在联机模式下使用吗？A: 可以，所有玩家都能看到buff图标</li>
+<li>Q: 效果在传送后保留吗？A: 保留——传送到任何地方都不会移除效果</li>
+</ul>
+</section>
+<!-- ===== SECTION 6: FREE BENEFITS ===== -->
+<section class="section" id="benefits">
+<h2><span>🎁</span> 额外收益 — What Else You Get Farming These Materials</h2>
+<p>farm制作镀金四趾鸟爪的材料时，你会顺路获得大量其他有价值的资源。以下是在各farm路线上能采集到的额外收益。</p>
+<h3>在Stormhill Cliffside farm鸟脚时的额外收益</h3>
+<ul>
+<li>Smithing Stone [1]和[2]：沿途的矿道中有大量锻造石</li>
+<li>金色种子：Third Church of Marika nearby有一个</li>
+<li>圣杯瓶露滴：Third Church of Marika有一个</li>
+<li>-warhawk 的羽毛：可用于制作箭矢</li>
+</ul>
+<h3>在Agheel Lake采集金色萤火虫时的额外收益</h3>
+<ul>
+<li>螃蟹肉：湖岸有大量陆生螃蟹，掉落蟹肉（Exalted Flesh的材料！）</li>
+<li>银色萤火虫：夜晚同时刷新银色萤火虫，可制作银色腌鸡脚</li>
+<li>罗亚果实：湖边灌木丛大量刷新</li>
+<li>洞穴苔藓：湖边洞穴入口附近可采集</li>
+</ul>
+<h3>前往Smoldering Church获取配方时的额外收益</h3>
+<ul>
+<li>Caelid地图碎片：沿路可激活Caelid地图石碑</li>
+<li>Rotview Balcony赐福点：教堂旁边的赐福</li>
+<li>消耗品商人：附近有一个流浪商人出售有用道具</li>
+<li>圣杯瓶露滴：小教堂可能刷新</li>
+</ul>
+<h3>长期战略收益</h3>
+<p>学会高效制作镀金四趾鸟爪后，你在未来每次开荒新角色时都能受益。这个技能不会过时——从一周目到八周目，+30%卢恩获取永远是宝贵的。</p>
+<div class="cross-links">
+<a class="cross-link" href="exalted-flesh.html">→ Next Guide: 勇猛肉块（+20% Physical Damage)</a>
+<a class="cross-link" href="uplifting-aromatic.html">振奋香药（Co-op Bubble Shield)</a>
+<a class="cross-link" href="bloodboil-aromatic.html">狂热香药（Glass Cannon Buff)</a>
+</div>
+</section>
+</main>
+<!-- ===== RIGHT SIDEBAR ===== -->
+<aside class="sidebar">
+<h3>快速信息</h3>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>效果：</strong> +30% rune gain</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>持续时间：</strong> 180 seconds</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>堆叠：</strong> 99</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>笔记：</strong> Missionary's [2]</p>
+<p style="font-size:13px;color:#9db0c0;margin-bottom:12px"><strong>产出:</strong> 3 per craft</p>
+<div class="quick-nav">
+<h4>跳转到章节</h4>
+<a href="#why">为什么重要</a>
+<a href="#recipe">制作配方</a>
+<a href="#cookbook">笔记位置</a>
+<a href="#materials">材料路线</a>
+<a href="#gotchas">注意事项</a>
+<a href="#benefits">额外收益</a>
+</div>
+<div class="quick-nav">
+<h4>相关物品</h4>
+<a href="exalted-flesh.html">勇猛肉块</a>
+<a href="gold-pickled-fowl-foot.html">Silver-Pickled Fowl Foot</a>
+<a href="uplifting-aromatic.html">振奋香药</a>
+</div>
+</aside>
+</div>
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="footer-logo">◌ RelicTrek</div>
+<p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制征程。</p>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<div class="footer-col-title">RelicTrek</div>
+<a href="../privacy.html">隐私</a>
+<a href="../terms.html">条款</a>
+<a href="../about.html">关于</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 RelicTrek.net</span>
+<span class="footer-sep">◌</span>
+<span>为冒险者精心打造</span>
+</div>
+</footer>
+</body>
+</html>

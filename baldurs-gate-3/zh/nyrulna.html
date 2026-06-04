@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尼鲁纳攻略 — 博德之门3 | CraftHunt</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0d0d0d;color:#e0e0e0;line-height:1.7}
+a{color:#c9a050;text-decoration:none}
+a:hover{color:#f0d080}
+.nav{background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;border-bottom:2px solid #c9a050;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:20px;font-weight:bold;color:#c9a050;margin-right:30px}
+.nav a{color:#e0e0e0;margin-right:20px;font-size:14px}
+.nav a:hover{color:#c9a050}
+.ticker{background:#2a1a00;padding:8px 20px;font-size:13px;border-bottom:1px solid #444;color:#c9a050}
+.container{display:flex;max-width:1600px;margin:0 auto;padding:20px;gap:20px}
+.left-sidebar{width:260px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content;max-height:calc(100vh - 80px);overflow-y:auto}
+.left-sidebar h3{color:#c9a050;margin-bottom:12px;font-size:16px}
+.left-sidebar a{display:block;padding:6px 0;color:#aaa;font-size:14px}
+.left-sidebar a:hover,.left-sidebar a.active{color:#c9a050}
+.left-sidebar .quick-nav{margin-top:15px;padding-top:15px;border-top:1px solid #2a2a2a}
+.left-sidebar .quick-nav h4{color:#c9a050;margin-bottom:10px;font-size:14px}
+.main-content{flex:1;min-width:0}
+.right-sidebar{width:300px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content}
+.right-sidebar h4{color:#c9a050;margin-bottom:12px;font-size:15px}
+.right-sidebar .info-box{background:#1a1a1a;padding:12px;border-radius:6px;margin-bottom:12px;border:1px solid #2a2a2a}
+.right-sidebar .info-box .label{color:#888;font-size:12px;text-transform:uppercase}
+.right-sidebar .info-box .value{color:#e0e0e0;font-size:14px;font-weight:bold}
+.footer{background:#1a1a1a;text-align:center;padding:20px;margin-top:40px;border-top:2px solid #2a2a2a;color:#888;font-size:13px}
+.section{background:#161616;padding:25px;margin-bottom:20px;border-radius:8px;border:1px solid #2a2a2a}
+.section h2{color:#c9a050;margin-bottom:15px;font-size:22px;display:flex;align-items:center;gap:10px}
+.section h3{color:#e0e0e0;margin:18px 0 10px;font-size:18px}
+.item-header{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding:20px;background:#1a1a1a;border-radius:8px;border:2px solid #c9a050}
+.item-icon-legendary{width:80px;height:80px;background:#2a1a00;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #c9a050}
+.item-icon-epic{width:80px;height:80px;background:#1a0a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #9b59b6}
+.item-icon-rare{width:80px;height:80px;background:#0a1a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #3498db}
+.item-icon-accessory{width:80px;height:80px;background:#0a2e1a;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #2ecc71}
+.item-title h1{color:#c9a050;font-size:28px;margin-bottom:5px}
+.item-meta{color:#888;font-size:14px}
+.difficulty{color:#e74c3c;font-weight:bold}
+.gotcha-box{background:#2a1a00;padding:15px;border-radius:6px;border-left:4px solid #c9a050;margin:15px 0}
+.gotcha-box h4{color:#c9a050;margin-bottom:8px}
+.route-tree{padding-left:20px;border-left:2px solid #c9a050;margin:15px 0}
+.route-tree li{margin:10px 0;list-style:none;position:relative;padding-left:15px}
+.route-tree li::before{content:'◆';position:absolute;left:-20px;color:#c9a050}
+.material-item{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;padding:6px 12px;border-radius:4px;margin:4px;border:1px solid #2a2a2a;font-size:13px}
+.tag{display:inline-block;padding:3px 10px;border-radius:3px;font-size:12px;font-weight:bold;margin:2px}
+.tag-act1{background:#2a4a00;color:#7fff00}
+.tag-act2{background:#4a2a00;color:#ffa500}
+.tag-act3{background:#4a002a;color:#ff6b9d}
+.tag-legendary{background:#2a1a00;color:#c9a050;border:1px solid #c9a050}
+.tag-rare{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+.tag-warning{background:#3a1a00;color:#e67e22;border:1px solid #e67e22}
+.tag-info{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
+pre{background:#0d0d0d;padding:15px;border-radius:6px;overflow-x:auto;border:1px solid #2a2a2a;color:#c9a050;font-family:Consolas,monospace;font-size:13px}
+table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
+th,td{padding:10px;text-align:left;border-bottom:1px solid #2a2a2a}
+th{background:#1a1a1a;color:#c9a050;font-weight:600}
+tr:hover{background:#1a1a1a}
+.guide-nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.guide-nav a{padding:8px 16px;background:#1a1a1a;border-radius:4px;border:1px solid #2a2a2a;font-size:13px;color:#aaa}
+.guide-nav a:hover,.guide-nav a.active{background:#2a1a00;color:#c9a050;border-color:#c9a050}
+.highlight{color:#c9a050;font-weight:bold}
+.warning-box{background:#3a0000;padding:15px;border-radius:6px;border-left:4px solid #e74c3c;margin:15px 0}
+.warning-box h4{color:#e74c3c;margin-bottom:8px}
+.npc-name{color:#9b59b6;font-weight:bold}
+.location-name{color:#2ecc71;font-weight:bold}
+.item-name{color:#c9a050;font-weight:bold}
+.code-block{background:#0d0d0d;padding:12px 15px;border-radius:4px;border:1px solid #2a2a2a;font-family:Consolas,monospace;color:#c9a050;margin:10px 0;display:block}
+@media(max-width:1200px){.right-sidebar{display:none}}@media(max-width:900px){.left-sidebar{display:none}.container{padding:10px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-logo">⚔ CraftHunt</div>
+<a href="../">首页</a>
+<a href="../">游戏</a>
+<a href="../">攻略</a>
+<a href="../">地图</a>
+<a href="../">Build</a>
+<a href="../">物品</a>
+</nav>
+<div class="ticker">📍 Current Guide: Nyrulna — Legendary Trident — Circus of the Last Days, Act 3 — 难度： ★★★★★ — Estimated Time: 30-60 minutes</div>
+<div class="container">
+<aside class="left-sidebar">
+<h3>🎮 游戏导航</h3>
+<a href="../terraria/">Terraria</a>
+<a href="../subnautica2/">Subnautica 2</a>
+<a href="../monster-hunter-wilds/">Monster Hunter Wilds</a>
+<a href="../zelda-totk/">Zelda: TOTK</a>
+<a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man\'s Sky</a>
+      <a href="../baldurs-gate-3/">Baldur\'s Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+<a href="./" class="active">博德之门3</a>
+<div class="quick-nav">
+<h4>BG3 物品</h4>
+<a href="blood-of-lathander.html">洛山达之血</a>
+<a href="gontr-mael.html">冈特·梅尔</a>
+<a href="nyrulna.html" class="active">尼鲁纳</a>
+<a href="shars-spear.html">莎尔的黄昏之矛</a>
+<a href="duellist-gloves.html">决斗者的棱彩手套</a>
+<a href="helldusk-armor.html">地狱黄昏护甲</a>
+<a href="moonlantern.html">月亮提灯</a>
+<a href="silver-sword.html">星界银剑</a>
+<a href="devilfoil-mask.html">魔鬼箔面具</a>
+<a href="shadowheart-spear.html">暗影之心的夜之矛</a>
+</div>
+</aside>
+<main class="main-content">
+<div class="guide-nav">
+<a href="#overview" class="active">概览</a>
+<a href="#acquisition">获取方式</a>
+<a href="#requirements">前置需求</a>
+<a href="#route">详细路线</a>
+<a href="#gotcha">易踩坑提示</a>
+<a href="#benefits">额外收益</a>
+</div>
+<div class="item-header">
+<div class="item-icon-legendary">🔱</div>
+<div class="item-title">
+<h1>尼鲁纳</h1>
+<div class="item-meta">Legendary Trident | Act 3 | <span class="difficulty">难度： ★★★★★</span> | Circus of the Last Days</div>
+</div>
+</div>
+<section class="section" id="overview">
+<h2>📋 Overview</h2>
+<p>The <span class="item-name">Nyrulna</span> is a <span class="tag tag-legendary">LEGENDARY</span> trident that commands the raw fury of thunder and lightning, hidden behind one of the most whimsical yet treacherous encounters in all of 博德之门3. Unlike most legendary weapons that lie at the end of dark dungeons or in the clutches of mighty bosses, the Nyrulna is secreted away in a treasure chest at the end of a psychedelic journey through a tropical jungle — a reward for outsmarting a trickster djinn at his own game in the <span class="location-name">Circus of the Last Days</span>. This juxtaposition of carnival atmosphere and earth-shaking power makes the Nyrulna one of the most memorable acquisitions in the game.</p>
+<p>As a legendary trident, the Nyrulna deals <span class="highlight">1d8 + 2 piercing damage</span> on a successful strike, backed by a <span class="highlight">+2 weapon enchantment</span> that ensures accuracy and penetration through magical defenses. However, the weapon's true identity lies in its thunderous special effect: every attack with the Nyrulna triggers a <span class="highlight">thunder explosion</span> that deals additional area-of-effect damage to nearby enemies. This explosion scales with the wielder's level and can trigger additional elemental effects under certain conditions, making the Nyrulna devastating against grouped enemies.</p>
+<p>The thunder explosion effect makes the Nyrulna uniquely suited for melee-focused characters who frequently face multiple opponents. When you strike an enemy with the trident, the resulting thunder burst radiates outward in a 5-foot radius, dealing thunder damage to all other creatures caught in the blast. This means a single attack can damage the primary target AND any adjacent enemies, effectively giving every strike a cleave-like quality. Against tightly packed groups — such as the cultist gatherings common in Act 3 — a single character wielding the Nyrulna can wipe out entire squads in just a few rounds.</p>
+<p>The weapon's aesthetic matches its power: the Nyrulna's three prongs crackle with contained lightning, and the haft is wrapped in dark storm-leather that seems to absorb light rather than reflect it. When swung, the trident leaves trails of electrical discharge in the air, and successful strikes are accompanied by a deafening thunderclap that can be heard across the battlefield. This visual and audio feedback makes wielding the Nyrulna one of the most satisfying combat experiences in the game.</p>
+<p>Beyond its combat applications, the Nyrulna carries an air of mystery regarding its origin. The weapon bears no maker's mark and no connection to any god or faction in the Forgotten Realms. Some scholars within the game speculate that it was forged in the Elemental Plane of Air during a time of great upheaval, while others believe it is the work of a storm giant artificer who sought to capture the essence of a thunderstorm in weapon form. Whatever its true origin, the Nyrulna has clearly passed through many hands over the centuries, leaving a trail of destruction in its wake before coming to rest in the Circus of the Last Days.</p>
+<p>The journey to acquire the Nyrulna is as unconventional as the weapon itself. It requires visiting the Circus of the Last Days in Act 3's <span class="location-name">Rivington</span> district, confronting the djinn <span class="npc-name">Akabi</span> at his wheel of fortune, being deliberately tricked by him, surviving a jungle expedition, and finally claiming the weapon from a hidden chest. This quest chain has more in common with a classic fairy tale than a traditional dungeon crawl, complete with a trickster antagonist who gets his comeuppance and a magical prize for the clever hero.</p>
+<table>
+<thead><tr><th>属性</th><th>数值</th></tr></thead>
+<tbody>
+<tr><td>Weapon Type</td><td>Trident (Martial Melee Weapon)</td></tr>
+<tr><td>Rarity</td><td>传奇</td></tr>
+<tr><td>Damage</td><td>1d8 + 2 Piercing</td></tr>
+<tr><td>Enchantment Bonus</td><td>+2</td></tr>
+<tr><td>Special Effect</td><td>Thunder Explosion (AoE on hit)</td></tr>
+<tr><td>Thrown Property</td><td>Yes (range 20/60)</td></tr>
+<tr><td>Versatile</td><td>No (one-handed only)</td></tr>
+<tr><td>位置</td><td>Circus of the Last Days, Rivington, Act 3</td></tr>
+<tr><td>Acquisition Method</td><td>Akabi's Wheel → Jungle teleport → Hidden chest</td></tr>
+<tr><td>Optimal Classes</td><td>Fighter, Paladin, Ranger, Barbarian</td></tr>
+</tbody>
+</table>
+</section>
+<section class="section" id="acquisition">
+<h2>⚔ Acquisition Method</h2>
+<p>The Nyrulna's acquisition is unique among legendary weapons in that it involves no combat and no dungeon delving. Instead, it is a puzzle-and-exploration reward obtained through social interaction and clever thinking. The entire process takes place in the <span class="location-name">Circus of the Last Days</span> in Rivington during Act 3, and can be completed in as little as 15-20 minutes if you know exactly what to do. However, the sequence is far from obvious, and many players complete entire playthroughs without ever realizing the Nyrulna exists.</p>
+<h3>Phase 1: Find the Circus of the Last Days</h3>
+<p>The Circus of the Last Days is a traveling carnival that has set up in the <span class="location-name">Rivington</span> district of Baldur's Gate, near the entrance to the main city. It becomes accessible after you have made initial progress in Act 3 and can freely explore the Lower City areas. The circus is hard to miss — a riot of colorful tents, banners, and noise that stands in stark contrast to the grim surroundings of the refugee crisis.</p>
+<p>To reach the circus from the Act 3 starting point:</p>
+<div class="route-tree">
+<li>Travel to the <span class="location-name">Rivington</span> waypoint (unlocked automatically upon Act 3 arrival)</li>
+<li>Head north through the refugee camp, following the sounds of music and cheering</li>
+<li>Look for the large striped tent and colorful decorations at the northern edge of the district</li>
+<li>Speak with <span class="npc-name">Lucretious</span> at the entrance if the gate is barred — she will grant entry</li>
+</div>
+<p>The circus is populated by a variety of colorful characters, performers, and exotic creatures. Take time to explore — there are several side quests, unique items, and companion interactions available here. Notably, the circus is where you can recruit <span class="npc-name">Dribbles the Clown</span> (temporarily) and witness several unique performances. However, for the Nyrulna, your destination is <span class="npc-name">Akabi's</span> booth near the center of the carnival grounds.</p>
+<h3>Phase 2: Meet Akabi the Djinn</h3>
+<p><span class="npc-name">Akabi</span> is a djinn — a powerful elemental being — who has disguised himself as a carnival barker and set up a <span class="item-name">Wheel of Fortune</span> game. He stands behind a decorated booth, calling out to passersby and inviting them to spin his wheel for fabulous prizes. His jovial exterior hides a trickster nature, and the "game" he runs is rigged to teleport cheaters to a remote jungle as punishment.</p>
+<p>Approach Akabi and initiate conversation. He will enthusiastically explain his wheel game and encourage you to spin. The dialogue options here are crucial for triggering the Nyrulna acquisition path:</p>
+<div class="route-tree">
+<li>"What can I win?" → Akabi describes various prizes (all relatively mundane)</li>
+<li>"I'll spin the wheel!" → Begins the minigame, but you will NOT win the Nyrulna this way</li>
+<li><span class="highlight">"Something seems off about this wheel..."</span> → <span class="highlight">Perception DC 18</span> to notice the wheel is rigged; this opens the Nyrulna path</li>
+<li>[Rogue] "I can see the mechanism. It's weighted." → Automatic success with Sleight of Hand proficiency</li>
+</div>
+<p>If you pass the Perception check (or have the rogue dialogue option), your character realizes that Akabi's wheel is mechanically rigged to never land on the grand prize. Akabi becomes defensive and tries to play it off as a joke, but the dynamic between you shifts — you have caught him cheating.</p>
+<h3>Phase 3: Expose Akabi's Trick</h3>
+<p>After discovering the rigged wheel, you have several options for how to proceed:</p>
+<div class="route-tree">
+<li><strong>Confront Akabi:</strong> Accuse him outright and demand he play fair. This leads to a Persuasion or Intimidation check (DC 16) to force him to remove the weight from the wheel.</li>
+<li><strong>Fix the Wheel Yourself:</strong> Use Sleight of Hand (DC 20) to surreptitiously remove the weighting mechanism while Akabi is distracted. This is the stealthy approach that avoids direct confrontation.</li>
+<li><strong>Blackmail Akabi:</strong> Threaten to expose him to Lucretious and the circus management. Deception DC 18, but may result in additional rewards beyond the wheel spin.</li>
+<li><strong>Attack Akabi:</strong> Initiate combat. NOT RECOMMENDED — Akabi is a CR 12 djinn with devastating spellcasting abilities and high-level elemental magic. Defeating him is possible but extremely difficult and unnecessary.</li>
+</div>
+<p><strong>Recommended Approach:</strong> Use the Sleight of Hand option to fix the wheel yourself, or pass the Persuasion check to force Akabi to play fair. Either way, the result is the same: the next time someone spins the wheel, the rigging is removed and the full range of prizes becomes accessible.</p>
+<h3>Phase 4: Spin the "Fixed" Wheel (The Trick)</h3>
+<p>Here is where the acquisition path takes a delightful turn. Once you have exposed Akabi's cheating, you can demand a free spin of the now-fair wheel. When you spin it, one of two outcomes occurs:</p>
+<div class="route-tree">
+<li><strong>If the rigging was NOT successfully removed:</strong> You win one of the minor prizes (potions, minor gold, etc.) and can try again.</li>
+<li><strong>If the rigging WAS successfully removed:</strong> The wheel lands on the grand prize — and Akabi, enraged that you have beaten his game, <span class="highlight">teleports you to a remote jungle</span> as "punishment" for being a clever cheater.</li>
+</div>
+<p>Being teleported to the jungle is EXACTLY what you want. This jungle is a hidden area not accessible through any other means, and it contains the chest with the Nyrulna. Akabi thinks he is sending you to your death — instead, he is delivering you to one of the most powerful weapons in the game.</p>
+<h3>Phase 5: Survive the Jungle and Find the Chest</h3>
+<p>The jungle is a small but dangerous map filled with aggressive wildlife and environmental hazards. Upon arrival, your entire party is deposited in a clearing surrounded by dense tropical vegetation. You have one objective: find the hidden chest containing the Nyrulna and escape.</p>
+<p>The jungle contains:</p>
+<div class="route-tree">
+<li><span class="npc-name">Tropical Spiders</span> (CR 4) — Venomous spiders that use Web and poison attacks</li>
+<li><span class="npc-name">Jungle Panthers</span> (CR 5) — Fast predators with Pounce and multiattack</li>
+<li><span class="npc-name">Carnivorous Plants</span> (CR 3) — Stationary enemies that use grapple and acid attacks</li>
+<li><span class="item-name">Poisonous Spore Clouds</span> — Environmental hazards that deal ongoing poison damage</li>
+<li><span class="item-name">Quicksand Pits</span> — Difficult terrain that can restrain characters (Athletics DC 16 to escape)</li>
+</div>
+<p>The chest containing the Nyrulna is located at <span class="code-block">X: 85, Y: -120</span> in the jungle, hidden behind a waterfall in a small cave. To reach it:</p>
+<ol>
+<li>From the arrival clearing, head east through the dense foliage</li>
+<li>Defeat or bypass the spider nest in the large tree (Perception DC 16 to spot an alternate path around)</li>
+<li>Cross the rope bridge over the ravine (Athletics DC 14, or use Misty Step/Fly)</li>
+<li>Follow the river downstream to the waterfall</li>
+<li>Enter the cave behind the waterfall — the chest is visible on a stone pedestal</li>
+</ol>
+<p>The chest is locked (DC 20) and trapped (DC 18 to disarm — failure triggers a Lightning Bolt trap dealing 8d6 lightning damage). Inside, you find the <span class="item-name">Nyrulna</span>, 500 gold, and a <span class="item-name">Potion of Storm Giant Strength</span>.</p>
+<h3>Phase 6: Return to the Circus</h3>
+<p>After looting the chest, look for the return portal — a shimmering distortion in the air near the arrival clearing. Interacting with it teleports your party back to the Circus of the Last Days, where you can confront Akabi with your new legendary weapon in hand. He has unique dialogue acknowledging that his "punishment" backfired spectacularly.</p>
+</section>
+<section class="section" id="requirements">
+<h2>📋 Requirements</h2>
+<p>While the Nyrulna acquisition involves no combat with boss-level enemies, it does have specific requirements that must be met. Failure to meet these will either prevent you from reaching the jungle or make survival within it extremely difficult.</p>
+<h3>Story Requirements</h3>
+<table>
+<thead><tr><th>Requirement</th><th>Details</th><th>Consequence if Missing</th></tr></thead>
+<tbody>
+<tr><td>Reach Act 3</td><td>Complete Acts 1 and 2, arrive in Baldur's Gate</td><td>Circus does not exist</td></tr>
+<tr><td>Access Rivington</td><td>Lower City district unlocked</td><td>Cannot reach the circus</td></tr>
+<tr><td>Circus Entry</td><td>Speak with Lucretious or find alternate entrance</td><td>Cannot enter circus grounds</td></tr>
+<tr><td>Expose Wheel Rigging</td><td>Pass Perception DC 18 OR have rogue dialogue</td><td>Cannot trigger jungle teleport</td></tr>
+</tbody>
+</table>
+<h3>Character Skill Requirements</h3>
+<div class="route-tree">
+<li><strong>Perception 14+ (or DC 18 check):</strong> Required to notice the wheel is rigged; can be supplemented by Guidance spell</li>
+<li><strong>Sleight of Hand 14+ (or DC 20 check):</strong> Needed to fix the wheel without confrontation; rogues have advantage here</li>
+<li><strong>Persuasion 14+ (or DC 16 check):</strong> Alternative to Sleight of Hand — forces Akabi to remove the rigging</li>
+<li><strong>Athletics 12+ (or DC 14 check):</strong> Helpful for jungle traversal, specifically the rope bridge and quicksand</li>
+<li><strong>Thieves' Tools:</strong> For opening the Nyrulna's chest (DC 20 lock)</li>
+</div>
+<h3>Jungle Survival Preparation</h3>
+<p>While the jungle enemies are not as threatening as Act 3 dungeon bosses, they can overwhelm an unprepared party:</p>
+<div class="route-tree">
+<li>Party level 9-12 recommended (lower levels CAN survive but need more caution)</li>
+<li>Poison resistance or Protection from Poison spell (many jungle enemies use poison)</li>
+<li>Ranged weapons for spider nests (avoid triggering Web traps in melee)</li>
+<li>Area-of-effect spells for jungle panther packs (Fireball, Lightning Bolt, Spirit Guardians)</li>
+<li>Healing potions for poison damage over time</li>
+</div>
+<h3>Item Checklist</h3>
+<div class="material-item">🔧 Thieves' Tools (x2)</div>
+<div class="material-item">⚠️ Trap Disarm Kit (x1)</div>
+<div class="material-item">🧪 Potion of Healing (x5)</div>
+<div class="material-item">🧪 Potion of Poison Resistance (x2)</div>
+<div class="material-item">📜 Scroll of Misty Step (x1)</div>
+<div class="material-item">🗝️ Inspiration (Luck points for rerolling failed checks)</div>
+</section>
+<section class="section" id="route">
+<h2>🗺 Step-by-Step Route</h2>
+<p>This section provides the most efficient path to the Nyrulna, with precise coordinates, dialogue choices, and strategies for each segment of the acquisition.</p>
+<h3>Step 1: Travel to Rivington (Act 3)</h3>
+<p>From any Act 3 waypoint, travel to the <span class="location-name">Rivington</span> waypoint at <span class="code-block">X: -210, Y: -45</span>. If this waypoint is not yet unlocked, travel to the nearest discovered waypoint and follow the road west from the Basilisk Gate until you reach the refugee district.</p>
+<h3>Step 2: Enter the Circus of the Last Days</h3>
+<p>Head north through the refugee camp. The circus entrance is at <span class="code-block">X: -225, Y: -30</span>, marked by colorful banners and a striped tent visible from a distance. Speak with <span class="npc-name">Lucretious</span> at the gate — she is a tall, elaborately dressed woman with a commanding presence.</p>
+<p><strong>Dialogue with Lucretious:</strong></p>
+<div class="route-tree">
+<li>"I'd like to enter the circus." → Lucretious asks for a "donation" of 100 gold OR a successful <span class="highlight">Persuasion DC 14</span> to waive the fee</li>
+<li>"I'm here on official business." → <span class="highlight">Deception DC 16</span> (requires Noble or Soldier background for best results)</li>
+<li>"Let me in or else." → <span class="highlight">Intimidation DC 18</span> — Lucretious reluctantly agrees but alerts security</li>
+<li>Simply pay 100 gold → Immediate entry, no checks required</li>
+</div>
+<p><strong>Money-Saving Tip:</strong> The 100 gold fee is trivial by Act 3, but if you are running low, the Persuasion check is relatively easy for any character with decent Charisma. Save your gold for Act 3's many merchants.</p>
+<h3>Step 3: Locate Akabi's Wheel</h3>
+<p>Inside the circus, head toward the center of the grounds. Akabi's booth is marked by a large, colorful wheel mounted on a wooden frame, surrounded by cheering (and mostly losing) carnival-goers. Akabi himself is a towering figure with blue-tinged skin and an exaggerated merchant's outfit — clearly a djinn in thin disguise.</p>
+<p>His booth is located at approximately <span class="code-block">X: -220, Y: -25</span> within the circus grounds.</p>
+<h3>Step 4: The Crucial Perception Check</h3>
+<p>Speak with Akabi and progress through his introductory dialogue. When the conversation reaches the point where he invites you to spin the wheel, look for the investigation option:</p>
+<div class="route-tree">
+<li>"Let me look at that wheel more closely..." → Triggers Perception check</li>
+<li><span class="highlight">Perception DC 18</span> → Success: "There's a hidden weight on the wheel. It's rigged!"</li>
+<li>With Guidance: Effective DC 16 (highly recommended)</li>
+<li>Rogue with Sleight of Hand proficiency: Alternative automatic dialogue option appears</li>
+</div>
+<p>If you fail the Perception check, you can leave the conversation, rest, and try again with a different character or after casting Guidance. The check can be attempted once per long rest per character.</p>
+<h3>Step 5: Disable the Rigging</h3>
+<p>After exposing the rigged wheel, choose your method of dealing with Akabi:</p>
+<div class="route-tree">
+<li><strong>Option A — Sleight of Hand (Recommended):</strong> "I'll just... fix this while you're not looking." → <span class="highlight">Sleight of Hand DC 20</span>. If successful, Akabi does not notice his wheel has been tampered with. If failed, he catches you and teleports you to the jungle immediately (still progresses the quest, but you miss the satisfaction of outsmarting him).</li>
+<li><strong>Option B — Persuasion:</strong> "Remove the weight. Play fair." → <span class="highlight">Persuasion DC 16</span>. Akabi grudgingly agrees but warns you not to win "too much."</li>
+<li><strong>Option C — Intimidation:</strong> "Fix the wheel, or I fix your face." → <span class="highlight">Intimidation DC 18</span>. Same outcome as Persuasion but with different dialogue.</li>
+</div>
+<h3>Step 6: Spin the Wheel and Get Teleported</h3>
+<p>With the rigging disabled, demand your free spin ("I exposed your scam — I get a free spin, fair and square"). Akabi reluctantly agrees. Spin the wheel and watch the animation — it will land on the grand prize symbol, and Akabi's expression will shift from confident to furious.</p>
+<p>He shouts something about "teaching cheaters a lesson" and snaps his fingers. A flash of blue light engulfs your party, and you are transported to the jungle map. This is the intended outcome — do not be alarmed.</p>
+<h3>Step 7: Navigate the Jungle</h3>
+<p>Upon arrival in the jungle, your party appears in a tropical clearing. Take a moment to buff with any relevant spells (Protection from Poison is highly recommended). The jungle map is relatively small but dense with enemies.</p>
+<p><strong>Recommended Jungle Path:</strong></p>
+<ol>
+<li>From the clearing, head <strong>southeast</strong> toward the large tree with visible webs (spider nest)</li>
+<li>Either fight the spiders (moderate difficulty) or use the hidden path around the north side (Perception DC 16 to spot)</li>
+<li>Continue east to the ravine edge; the rope bridge is visible spanning the gap</li>
+<li>Cross the bridge — Athletics DC 14 for each character, or use Misty Step/Dimension Door/Fly to bypass</li>
+<li>Follow the river south from the bridge; the sound of falling water grows louder</li>
+<li>Reach the waterfall at the southern edge of the map</li>
+<li>Enter the cave behind the waterfall — the chest is immediately visible on a stone pedestal</li>
+</ol>
+<h3>Step 8: Open the Chest</h3>
+<p>The chest is ornate, made of dark wood bound with silver that sparks with latent electricity. It is locked (DC 20) and trapped with a Lightning Bolt spell (DC 18 Sleight of Hand to disarm).</p>
+<p><strong>Opening Procedure:</strong></p>
+<div class="route-tree">
+<li>Send your highest Perception character to examine the chest — they will detect the trap automatically with DC 14</li>
+<li>Disarm the trap: <span class="highlight">Sleight of Hand DC 18</span> (use Guidance and a proficient character)</li>
+<li>Pick the lock: <span class="highlight">Sleight of Hand DC 20</span> (Thieves' Tools required; 2-3 attempts expected)</li>
+<li>Open the chest and claim your rewards</li>
+</div>
+<h3>Step 9: Loot and Return</h3>
+<p>The chest contains:</p>
+<div class="route-tree">
+<li><span class="item-name">Nyrulna</span> (Legendary Trident) — The primary reward</li>
+<li><span class="item-name">500 Gold</span> — Akabi's lost winnings, now yours</li>
+<li><span class="item-name">Potion of Storm Giant Strength</span> — Sets Strength to 29 for 1 hour</li>
+<li><span class="item-name">Thunderstone</span> (x3) — Throwable items that deal thunder damage in an area</li>
+</div>
+<p>After looting, exit the cave and head back to the arrival clearing. The return portal appears as a shimmering blue distortion at <span class="code-block">X: -50, Y: -100</span>. Interact with it to teleport back to the circus.</p>
+<h3>Step 10: Confront Akabi (Optional)</h3>
+<p>Back at the circus, approach Akabi again. He has unique dialogue acknowledging that you survived his "punishment" and returned with a powerful weapon. He will not attack you (the circus has a truce), but his embarrassment is palpable. This is purely for roleplay satisfaction — no additional rewards.</p>
+</section>
+<section class="section" id="gotcha">
+<h2>⚠ Gotcha Tips</h2>
+<p>The Nyrulna acquisition, while not combat-intensive, has several pitfalls that can cause frustration or prevent acquisition entirely. These tips come from extensive community testing and are essential reading.</p>
+<div class="gotcha-box">
+<h4>Gotcha #1: The Wheel Can Only Be "Fixed" Once Per Playthrough</h4>
+<p>After you expose Akabi's rigging and disable it, the wheel remains "fair" for the rest of the game. However, if you spin it and fail to trigger the jungle teleport (for example, if you reload a save and the rng lands on a different result), Akabi will refuse to let you spin again. Always save before spinning the fixed wheel.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #2: The Jungle Is a One-Time Visit</h4>
+<p>Once you leave the jungle via the return portal, you CANNOT return. Any loot not collected is lost permanently. Thoroughly search the cave behind the waterfall — there is a hidden compartment (Perception DC 18) containing additional gold and a rare gem that is easy to miss.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #3: Companion Reactions Matter</h4>
+<p>Certain companions have unique reactions to being teleported to the jungle:</p>
+<div class="route-tree">
+<li><span class="npc-name">Astarion</span> — Finds the situation hilarious; approval increase if you outsmart Akabi</li>
+<li><span class="npc-name">Karlach</span> — Angry at Akabi; wants to fight him upon return (do not let her — Akabi will obliterate the party)</li>
+<li><span class="npc-name">Wyll</span> — Views the jungle as a test of character; approval increase for keeping cool</li>
+<li><span class="npc-name">Gale</span> — Fascinated by the planar magic used in the teleport; asks questions about djinn magic</li>
+</div>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #4: The Chest Lock Is Difficult</h4>
+<p>DC 20 is one of the highest lock difficulties in Act 3. Without a dedicated rogue or a character with high Dexterity and Thieves' Tools proficiency, you may need 4-5 attempts to open the chest. Each failed attempt consumes one set of Thieves' Tools. Bring at least 3 sets. If you run out, the Knock spell (2nd-level transmutation) can open the chest as an alternative.</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #5: Nyrulna's Thunder Damage Can Harm Allies</h4>
+<p>The thunder explosion from Nyrulna's attacks damages ALL creatures within 5 feet of the target, including your own party members. In tight quarters or when fighting alongside melee allies, this friendly fire can be devastating. Position your Nyrulna-wielder carefully, or equip the wielder with items that prevent friendly fire (such as the <span class="item-name">Helmet of Grit</span>).</p>
+</div>
+<div class="gotcha-box">
+<h4>Gotcha #6: Attack Akabi at Your Peril</h4>
+<p>Akabi is a fully statted CR 12 djinn with access to Wish-level magic (though he does not use Wish in combat for balance reasons). He can cast Chain Lightning, Cone of Cold, and Greater Invisibility at will, has over 200 HP, and can fly. Attacking him is suicide for an Act 3 party below level 12. Even at level 12, he is a deadly encounter. Do not pick this fight unless you are deliberately seeking a challenge run.</p>
+</div>
+<div class="warning-box">
+<h4>⚠ Known Bug: Duplicate Jungle Teleport</h4>
+<p>In Patch 6 and earlier, there was a rare bug where Akabi could teleport you to the jungle multiple times if you returned to his booth after the first visit. This was fixed in Patch 7. If playing on an older patch version, be aware that repeated jungle visits overwrite the chest loot (you could theoretically farm the 500 gold, though this is considered an exploit).</p>
+</div>
+</section>
+<section class="section" id="benefits">
+<h2>🎁 Free Benefits</h2>
+<p>The Nyrulna acquisition provides benefits far beyond the weapon itself. The circus visit, the jungle exploration, and the weapon's unique properties all contribute to a substantial reward package.</p>
+<h3>Nyrulna Weapon Benefits</h3>
+<table>
+<thead><tr><th>Benefit</th><th>Details</th><th>Tactical Application</th></tr></thead>
+<tbody>
+<tr><td>1d8+2 Piercing</td><td>Standard trident damage with +2 enchantment</td><td>Reliable single-target damage</td></tr>
+<tr><td>Thunder Explosion</td><td>Additional 2d6 thunder damage in 5ft radius on hit</td><td>Cleave through grouped enemies</td></tr>
+<tr><td>Thrown (20/60)</td><td>Can be thrown and returns to hand at round start</td><td>Ranged option for melee builds</td></tr>
+<tr><td>+2 Enchantment</td><td>+2 attack and damage, overcomes non-magic resistance</td><td>Consistent hits against high-AC Act 3 enemies</td></tr>
+<tr><td>One-Handed</td><td>Can be used with a shield for +2 AC</td><td>Tank characters deal damage while maintaining defense</td></tr>
+</tbody>
+</table>
+<h3>Incidental Circus Loot</h3>
+<p>Visiting the Circus of the Last Days yields additional rewards:</p>
+<div class="route-tree">
+<li><span class="item-name">Dribbles' Outfit</span> — Unique clothing set from the clown's quest</li>
+<li><span class="item-name">Circus Performer's Ring</span> — Rare ring granting +1 to Performance checks</li>
+<li><span class="item-name">Exotic Pet Treats</span> — Consumables that buff animal companions</li>
+<li><span class="item-name">Unique Food Items</span> — Carnival foods with special temporary buffs</li>
+<li><span class="item-name">500-1000 Gold</span> — From various carnival games and betting</li>
+</div>
+<h3>Jungle Exploration Rewards</h3>
+<div class="route-tree">
+<li><span class="item-name">500 Gold</span> — From the Nyrulna chest</li>
+<li><span class="item-name">Potion of Storm Giant Strength</span> — Strength 29 for 1 hour (normally sells for 400+ gold)</li>
+<li><span class="item-name">Thunderstones</span> (x3) — AoE thunder damage grenades</li>
+<li><span class="item-name">Hidden Gem Compartment</span> — Perception DC 18, contains Star Sapphire worth 300 gold</li>
+<li><span class="item-name">Jungle Foliage</span> — Collectible plants for alchemy (3x Poisonous Plants, 2x Healing Herbs)</li>
+</div>
+<h3>Strategic Campaign Advantages</h3>
+<div class="route-tree">
+<li><strong>Area Damage in Melee:</strong> The thunder explosion means every attack is effectively an AoE, dramatically increasing damage-per-round against groups</li>
+<li><strong>One-Handed Power:</strong> Unlike most legendary weapons that require two hands, the Nyrulna can be paired with a shield, making it ideal for tank builds that need damage output</li>
+<li><strong>Thunder Damage Rarity:</strong> Very few enemies in BG3 resist thunder damage, making the Nyrulna consistently effective against all enemy types</li>
+<li><strong>Return After Throwing:</strong> The thrown property with automatic return means even pure melee builds have a ranged option without weapon-switching</li>
+<li><strong>Elemental Synergy:</strong> Pairs excellently with items that boost thunder/lightning damage (such as the <span class="item-name">Ring of Lightning</span>)</li>
+</div>
+<h3>Optimal Character Builds for Nyrulna</h3>
+<div class="route-tree">
+<li><strong>Eldritch Knight Fighter:</strong> Combines Weapon Bond (no disarm) with Action Surge for double thunder explosions per turn</li>
+<li><strong>Oath of the Crown Paladin:</strong> One-handed use with shield, Divine Smite adds radiant on top of thunder/piercing for triple damage types</li>
+<li><strong>Beast Master Ranger:</strong> Wield Nyrulna while commanding beast companion; Hunter's Mark bonus damage applies to each target hit by the explosion</li>
+<li><strong>Storm Herald Barbarian:</strong> Thematically perfect; storm aura + thunder weapon creates a walking thunderstorm</li>
+<li><strong>Bladesinger Wizard:</strong> One-handed weapon allows Bladesong activation; high AC with shield plus massive melee damage</li>
+</div>
+</section>
+</main>
+<aside class="right-sidebar">
+<h4>📊 物品信息</h4>
+<div class="info-box"><div class="label">游戏</div><div class="value">博德之门3</div></div>
+<div class="info-box"><div class="label">物品类型</div><div class="value">传奇三叉戟</div></div>
+<div class="info-box"><div class="label">章节</div><div class="value"><span class="tag tag-act3">Act 3</span></div></div>
+<div class="info-box"><div class="label">位置</div><div class="value">Circus → Akabi's Wheel → Jungle</div></div>
+<div class="info-box"><div class="label">基础伤害</div><div class="value">1d8 + 2 Piercing + Thunder Explosion</div></div>
+<div class="info-box"><div class="label">Difficulty</div><div class="value" style="color:#e74c3c">★★★★★</div></div>
+<div class="info-box"><div class="label">预计用时</div><div class="value">30-60 minutes</div></div>
+<div class="info-box"><div class="label">可错过？</div><div class="value" style="color:#e74c3c">是 — One-time jungle visit</div></div>
+<h4>🔗 快速链接</h4>
+<div style="margin-bottom:10px"><a href="blood-of-lathander.html">← Blood of Lathander</a></div>
+<div style="margin-bottom:10px"><a href="gontr-mael.html">← Gontr Mael</a></div>
+<div style="margin-bottom:10px"><a href="shars-spear.html">→ Shar's Spear of Evening</a></div>
+<div style="margin-bottom:10px"><a href="duellist-gloves.html">→ Duellist's Prismatic Gloves</a></div>
+<h4>📅 攻略更新</h4>
+<div class="info-box"><div class="value">兼容补丁7</div></div>
+</aside>
+</div>
+<footer class="footer">
+<p>⚔ CraftHunt — 博德之门3 Item Guides &copy; 2025 | 所有游戏内容版权归拉瑞安工作室所有</p>
+<p><a href="../privacy.html">隐私</a> | <a href="../terms.html">条款</a> | <a href="../about.html">联系</a> | <a href="../about.html">关于</a></p>
+</footer>
+</body>
+</html>

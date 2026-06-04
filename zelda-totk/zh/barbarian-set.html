@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蛮族套装 — 塞尔达：王国之泪 CraftHunt Guide</title>
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f0;
+    color: #333;
+    line-height: 1.6;
+  }
+  a { color: #2c7a3e; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Navigation ── */
+  .main-nav {
+    background: #1a1a1a;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .main-nav .logo { font-weight: bold; font-size: 1.2rem; color: #4CAF50; }
+  .main-nav a { color: #ccc; font-size: 0.9rem; }
+  .main-nav a:hover { color: #fff; }
+
+  /* ── News Ticker ── */
+  .news-ticker {
+    background: #e8e8e0;
+    padding: 0.4rem 2rem;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #d0d0c8;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  /* ── Layout ── */
+  .page-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ── Left Sidebar ── */
+  .sidebar-left {
+    width: 260px;
+    background: #fff;
+    border-right: 1px solid #d0d0c8;
+    padding: 1.5rem 1rem;
+    position: sticky;
+    top: 48px;
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+  }
+  .sidebar-left h3 { font-size: 0.85rem; color: #888; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+  .sidebar-left ul { list-style: none; }
+  .sidebar-left li { margin-bottom: 0.4rem; }
+  .sidebar-left a {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    color: #555;
+  }
+  .sidebar-left a:hover, .sidebar-left a.active { background: #f0f0e8; color: #2c7a3e; text-decoration: none; }
+
+  /* ── Content ── */
+  .content-area {
+    flex: 1;
+    padding: 2rem;
+    min-width: 0;
+  }
+
+  /* ── Breadcrumb ── */
+  .breadcrumb { font-size: 0.8rem; color: #888; margin-bottom: 1rem; }
+  .breadcrumb a { color: #666; }
+
+  /* ── Item Header ── */
+  .item-header {
+    background: #fff;
+    border: 1px solid #d0d0c8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .item-icon-legendary {
+    width: 80px; height: 80px;
+    background: #4a148c;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+  .item-meta { flex: 1; }
+  .item-meta h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  .item-meta .tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .tag-rarity-legendary { background: #4a148c; color: #fff; }
+  .tag-type { background: #e8e8e0; color: #555; }
+  .tag-difficulty { background: #e65100; color: #fff; }
+  .item-meta .desc { color: #666; font-size: 0.95rem; }
+
+  /* ── Sections ── */
+  .section {
+    background: #fff;
+    border: 1px solid #d0d0c8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #4CAF50;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: #2c7a3e; }
+  .section p { margin-bottom: 0.75rem; }
+
+  /* ── Tables ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+  th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid #e0e0d8; }
+  th { background: #f5f5f0; font-weight: 600; }
+  tr:hover { background: #fafaf5; }
+
+  /* ── Material 物品 ── */
+  .material-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #fafaf5;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid #4CAF50;
+  }
+  .material-item .mat-icon {
+    width: 48px; height: 48px;
+    background: #e8e8e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .material-item .mat-info { flex: 1; }
+  .material-item .mat-info strong { display: block; margin-bottom: 0.25rem; }
+  .material-item .mat-info span { font-size: 0.85rem; color: #888; }
+
+  /* ── Gotcha Box ── */
+  .gotcha-box {
+    background: #fff8e1;
+    border-left: 4px solid #ff8f00;
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1rem 0;
+  }
+  .gotcha-box strong { color: #e65100; }
+
+  /* ── 路线 Tree ── */
+  .route-tree {
+    background: #f5f5f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+  }
+  .route-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0d8;
+  }
+  .route-step:last-child { border-bottom: none; }
+  .route-num {
+    width: 32px; height: 32px;
+    background: #4CAF50;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .route-info { flex: 1; }
+  .route-info strong { display: block; margin-bottom: 0.2rem; }
+  .route-info span { font-size: 0.85rem; color: #888; }
+
+  /* ── Right Sidebar ── */
+  .sidebar-right {
+    width: 220px;
+    padding: 1.5rem 1rem;
+  }
+  .sidebar-right .panel {
+    background: #fff;
+    border: 1px solid #d0d0c8;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .sidebar-right .panel h4 { font-size: 0.85rem; margin-bottom: 0.5rem; color: #888; text-transform: uppercase; }
+  .sidebar-right .panel a { display: block; font-size: 0.88rem; padding: 0.3rem 0; }
+
+  /* ── Footer ── */
+  .site-footer {
+    border-top: 1px solid #d0d0c8;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    background: #fff;
+  }
+
+  /* ── Utility ── */
+  .inline-icon { display: inline-block; width: 20px; height: 20px; background: #e8e8e0; border-radius: 4px; text-align: center; line-height: 20px; font-size: 0.75rem; vertical-align: middle; }
+  code { background: #f0f0e8; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85rem; }
+  .highlight { background: #e8f5e9; padding: 0.8rem 1rem; border-radius: 6px; margin: 0.75rem 0; border-left: 4px solid #4CAF50; }
+  .warning-box { background: #ffebee; border-left: 4px solid #c62828; padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin: 1rem 0; }
+  .warning-box strong { color: #c62828; }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="main-nav">
+  <div class="logo">🛠️ CraftHunt</div>
+  <a href="../index.html">首页</a>
+  <a href="../">游戏</a>
+  <a href="./">塞尔达：王国之泪</a>
+      <a href="../minecraft/">Minecraft</a>
+      <a href="../no-mans-sky/">No Man's 天空</a>
+      <a href="../baldurs-gate-3/">Baldur's Gate 3</a>
+      <a href="../valheim/">Valheim</a>
+      <a href="../path-of-exile-2/">Path of Exile 2</a>
+      <a href="../elden-ring/">Elden Ring</a>
+      <a href="../stardew-valley/">Stardew Valley</a>
+      <a href="../hades-2/">Hades 2</a>
+      <a href="../satisfactory/">Satisfactory</a>
+      <a href="../minecraft/">Minecraft</a>
+  <a href="../about.html">关于</a>
+</nav>
+
+<!-- News Ticker -->
+<div class="news-ticker">
+  📰 新攻略： 蛮族套装 — conquer three massive Labyrinths in 海布拉, 格鲁德, and 阿卡莱 for the iconic 攻击力提升 armor. Updated for 王国之泪 v1.2.1.
+</div>
+
+<!-- Page Container -->
+<div class="page-container">
+
+  <!-- Left Sidebar -->
+  <aside class="sidebar-left">
+    <h3>塞尔达：王国之泪 物品</h3>
+    <ul>
+      <li><a href="./master-sword.html">大师之剑</a></li>
+      <li><a href="./hylian-shield.html">海利亚盾</a></li>
+      <li><a href="./">Hero of Time Set</a></li>
+      <li><a href="./">Royal Guard Set</a></li>
+      <li><a href="./">采矿套装</a></li>
+      <li><a href="./">潜行服 Set</a></li>
+      <li><a href="./barbarian-set.html" class="active">蛮族套装</a></li>
+      <li><a href="./">英杰's Tunic</a></li>
+      <li><a href="./">左纳乌能源 防具 Set</a></li>
+      <li><a href="./fierce-deity-set.html">鬼神套装</a></li>
+    </ul>
+
+    <h3 style="margin-top: 1.5rem;">快速链接</h3>
+    <ul>
+      <li><a href="https://www.zeldadungeon.net/tears-of-the-kingdom/">塞尔达 Dungeon</a></li>
+      <li><a href="https://mapgenie.io/zelda-tears-of-the-kingdom">互动地图</a></li>
+      <li><a href="https://www.ign.com/wikis/the-legend-of-zelda-tears-of-the-kingdom/">IGN百科</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content-area">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="../">首页</a> / <a href="../">游戏</a> / <a href="./">塞尔达：王国之泪</a> / 蛮族套装
+    </div>
+
+    <!-- Item Header -->
+    <div class="item-header">
+      <div class="item-icon-legendary">💪</div>
+      <div class="item-meta">
+        <h1>蛮族套装</h1>
+        <span class="tag tag-rarity-legendary">传说</span>
+        <span class="tag tag-type">防具 (3 Pieces)</span>
+        <span class="tag tag-difficulty">★★★★☆ 中后期</span>
+        <p class="desc" data-zh="每件攻击提升，三件迷宫获取">攻击力提升 for each piece. Found in three massive Labyrinths scattered across 海拉鲁 — each a maze with an underground puzzle section.</p>
+      </div>
+    </div>
+
+    <!-- Section 1: 为什么这件物品重要 -->
+    <section class="section" id="overview">
+      <h2><span>1</span> 为什么这件物品重要</h2>
+
+      <p>The <strong>蛮族套装</strong> is one of the most iconic and sought-after armor sets in <em>塞尔达传说：王国之泪</em>. Comprising three pieces — the <strong>蛮族头盔</strong>, <strong>蛮族服</strong>, and <strong>蛮族短裤</strong> — each piece grants the <strong>攻击力提升</strong> bonus, stacking with every additional piece equipped. With all three pieces worn and fully upgraded, the 蛮族套装 provides a devastating offensive boost that rivals even the legendary 鬼神套装.</p>
+
+      <div class="highlight">
+        <strong>攻击力提升 ×3 = One of the highest damage outputs in the game.</strong> The 蛮族套装 is the go-to choice for players who want raw combat power without the elaborate hidden quest chain required for the 鬼神套装. While the 鬼神套装 ultimately edges ahead in pure attack potential when fully upgraded, the 蛮族套装 is obtainable earlier, requires less cryptic puzzle-solving, and offers higher base defense values. For many players, this is the practical choice for an endgame offensive build.
+      </div>
+
+      <p>Each piece of the 蛮族套装 is found at the heart of one of 海拉鲁's three massive <strong>洛美城堡遗迹</strong> — enormous stone mazes that have appeared in the series since Breath of the Wild. These Labyrinths are not merely cosmetic; each one is a genuine navigational challenge with high walls, dead ends, enemies, and treasure chests scattered throughout. Completing all three Labyrinths is a rite of passage for any serious 王国之泪 player.</p>
+
+      <p>But the challenge doesn't end at the surface. In 王国之泪, every Labyrinth has been expanded with a <strong>地底 section</strong> — an underground extension accessible only after solving the surface maze. Dropping into the dark, 瘴气-filled underbelly of each Labyrinth adds a second layer of puzzle-solving and combat to the acquisition process, making this one of the most substantial armor quests in the game.</p>
+
+      <p>The 蛮族套装 is particularly valuable for:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>Combat-focused builds</strong> — pairing with Mighty meals and high-attack weapons for maximum DPS</li>
+        <li><strong>莱尼尔 hunting</strong> — the sustained damage output makes Golden 莱尼尔s far more manageable</li>
+        <li><strong>地底 exploration</strong> — offensive power helps you clear 瘴气-infected enemy camps efficiently</li>
+        <li><strong>Boss rush challenges</strong> — the Coliseum and DLC combat trials become significantly easier</li>
+        <li><strong>Speedrunning and challenge runs</strong> — many routing strategies incorporate this set for its reliable power</li>
+      </ul>
+
+      <h3>Set Bonus Breakdown</h3>
+      <table>
+        <tr><th>Pieces Worn</th><th>Bonus</th><th>Notes</th></tr>
+        <tr><td>1 piece</td><td>攻击力提升 (×1)</td><td>+20% attack damage</td></tr>
+        <tr><td>2 pieces</td><td>攻击力提升 (×2)</td><td>+30% attack damage</td></tr>
+        <tr><td>3 pieces</td><td>攻击力提升 (×3) + 套装奖励： 蓄力攻击精力持久</td><td>+50% attack damage, reduced stamina drain on charged attacks</td></tr>
+        <tr><td>3 pieces (★4 upgraded)</td><td>攻击力提升 ×3 + 20 DEF per piece = 60 total DEF</td><td>Maximum upgrade tier at 大妖精之泉s</td></tr>
+      </table>
+
+      <p>The 蓄力攻击精力持久 set bonus is especially powerful for two-handed weapon users — Great Swords, Claymores, and Savage 莱尼尔 Crushers consume less stamina per spin attack, allowing you to sustain your highest-damage moves for longer. This synergizes perfectly with the raw attack boost, making the 蛮族套装 the optimal choice for heavy weapon builds.</p>
+    </section>
+
+    <!-- Section 2: 余料建造 / 制作 配方 -->
+    <section class="section" id="recipe">
+      <h2><span>2</span> Acquisition: The Three 洛美城堡遗迹</h2>
+
+      <p>The 蛮族套装 <strong>cannot be crafted</strong>. Instead, each piece is found inside a treasure chest located at the end of one of 海拉鲁's three 洛美城堡遗迹. Each Labyrinth requires you to:</p>
+      <ol style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li>Navigate the <strong>surface maze</strong> and reach the central shrine structure</li>
+        <li>Interact with the terminal to open the way to the <strong>地底 section</strong></li>
+        <li>Drop into the 地底 and navigate the <strong>underground maze</strong></li>
+        <li>Reach the final terminal to unlock the treasure chest containing the armor piece</li>
+      </ol>
+
+      <h3>The Three Labyrinths &amp; Their Rewards</h3>
+      <table>
+        <tr><th>Labyrinth</th><th>Location</th><th>Coordinates</th><th>Reward</th><th>Environmental Hazard</th></tr>
+        <tr>
+          <td><strong>南洛美城堡遗迹</strong></td>
+          <td>North of 格鲁德 Desert, northeast of 格鲁德 Canyon</td>
+          <td><code>-1795, -3310, 0320</code></td>
+          <td>蛮族头盔</td>
+          <td>Extreme heat (day) / cold (night)</td>
+        </tr>
+        <tr>
+          <td><strong>北洛美城堡遗迹</strong></td>
+          <td>Northeast of 海布拉, in the 塔邦挞 Tundra</td>
+          <td><code>-0825, 3530, 0235</code></td>
+          <td>蛮族服</td>
+          <td>Severe cold (Level 2 Cold 需要)</td>
+        </tr>
+        <tr>
+          <td><strong>洛美岛</strong></td>
+          <td>Northeast 阿卡莱, an island off the coast</td>
+          <td><code>4655, 3700, 0130</code></td>
+          <td>蛮族短裤</td>
+          <td>None, but requires crossing water</td>
+        </tr>
+      </table>
+
+      <h3>Upgrade 材料 (★1 to ★4 per piece)</h3>
+      <p>Once acquired, upgrade each piece at any <strong>大妖精之泉</strong>. Each piece follows the same material progression:</p>
+      <table>
+        <tr><th>Level</th><th>材料 Needed</th><th>Cumulative Total per Piece</th></tr>
+        <tr><td>★0 → ★1</td><td>大剑草 ×3, 夜光石 ×3, 卢比 ×10</td><td>3 each</td></tr>
+        <tr><td>★1 → ★2</td><td>大剑草 ×5, 夜光石 ×5, 卢比 ×50</td><td>8 each</td></tr>
+        <tr><td>★2 → ★3</td><td>大剑独角仙 ×5, 夜光石 ×10, 卢比 ×200</td><td>8 大剑草, 18 夜光石, 5 大剑独角仙</td></tr>
+        <tr><td>★3 → ★4</td><td>大剑独角仙 ×10, 夜光石 ×20, 卢比 ×500</td><td>8 大剑草, 38 夜光石, 15 大剑独角仙</td></tr>
+      </table>
+
+      <div class="gotcha-box">
+        <strong>⚠ 夜光石 Farming:</strong> 夜光石s are the bottleneck material for upgrading the 蛮族套装. Each piece needs 38 stones for ★4, meaning <strong>114 夜光石s total</strong> for the full set. The best farming spots are the ore deposits around <strong>Lake Floria</strong> (费罗尼 region), the cliffs near <strong>卓拉领地</strong>, and the various caves in the <strong>East 哈特尔</strong> region. Bring a strong hammer-type weapon (like a 碎岩巨剑) for efficient mining. 夜光石s glow blue in dark caves, making them easy to spot.
+      </div>
+
+      <h3>The 地底 Terminal Puzzle</h3>
+      <p>In each Labyrinth, the terminal you activate on the surface opens a chute leading to the 地底. Once underground, you must navigate a <strong>second, smaller maze</strong> made of 左纳乌-era architecture and dark 瘴气 pools. At the end of each 地底 section is another terminal. Activating this terminal spawns the treasure chest containing your Barbarian armor piece and a <strong>Narus 破魔之根</strong> that illuminates the surrounding 地底 area.</p>
+    </section>
+
+    <!-- Section 3: 材料与位置 -->
+    <section class="section" id="materials">
+      <h2><span>3</span> 材料与位置 — Labyrinth by Labyrinth</h2>
+
+      <p>Each of the three 洛美城堡遗迹 presents a unique challenge, environment, and route. Below is the complete breakdown for each Labyrinth including the surface approach, the maze solution strategy, the 地底 drop, and what to expect inside.</p>
+
+      <h3>🗺️ Labyrinth 1: 南洛美城堡遗迹 — 蛮族头盔</h3>
+      <div class="material-item">
+        <div class="mat-icon">💪</div>
+        <div class="mat-info">
+          <strong>蛮族头盔</strong>
+          <span>坐标： <code>-1795, -3310, 0320</code> | 区域: 格鲁德 Highlands</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">The 南洛美城堡遗迹 sits on a plateau north of the 格鲁德 Desert and northeast of the 格鲁德 Canyon 鸟望台. It's the most accessible of the three Labyrinths and the recommended starting point. The 格鲁德 region presents a unique environmental challenge: <strong>extreme heat during the day and extreme cold at night</strong>. You need either the 热沙护额 (heat resistance) for daytime approaches or the 羽饰防寒服 / Warm Doublet for nighttime entry. Alternatively, cook 耐热防护 and 防寒防护 meals and time your approach carefully.</p>
+        </div>
+      </div>
+
+      <p><strong>地面 Maze Strategy:</strong> The South Lomei surface maze is the simplest of the three, but still easy to get lost in. The most efficient method is to <strong>climb to the top of the walls using 通天术</strong> — the Labyrinth walls are thick enough that you can 通天术 through them at junction points. From the entrance, move left (counter-clockwise) along the outer wall, using 通天术 to hop between corridors. Alternatively, if you have sufficient stamina, climb directly over the walls and glide to the central shrine structure. While wall-climbing skips the intended puzzle, it saves significant time and avoids enemy encounters.</p>
+
+      <p>Once you reach the central structure, interact with the <strong>左纳乌 terminal</strong> to open the chute to the 地底. A cutscene will show the floor opening nearby.</p>
+
+      <p><strong>地底 Section:</strong> Drop into the chute (equip the 滑翔套装 or use your paraglider to control descent). The 地底 section is dark — deploy <strong>光亮花的种子s</strong> or equip the 采矿面罩 for visibility. The underground maze is smaller than the surface but filled with <strong>瘴气 pools</strong> that drain your max hearts on contact. Navigate carefully, using 通天术 to bypass some barriers. The terminal at the end unlocks the chest containing the <strong>蛮族头盔</strong>.</p>
+
+      <h3>🗺️ Labyrinth 2: 北洛美城堡遗迹 — 蛮族服</h3>
+      <div class="material-item">
+        <div class="mat-icon">🛡️</div>
+        <div class="mat-info">
+          <strong>蛮族服</strong>
+          <span>坐标： <code>-0825, 3530, 0235</code> | 区域: 海布拉 / 塔邦挞 Tundra</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">The 北洛美城堡遗迹 is located in the far northeast of the 海布拉 region, in the frozen 塔邦挞 Tundra. This is the most environmentally punishing of the three Labyrinths — the area requires <strong>Level 2 防寒防护</strong> to survive. The 羽饰套装 (upgraded to ★2+) or a combination of Level 1 防寒防护 armor plus a Spicy meal is mandatory. Without cold protection, 林克 takes rapid damage and the screen frosts over, making navigation nearly impossible.</p>
+        </div>
+      </div>
+
+      <p><strong>Getting There:</strong> Fast-travel to <strong>利特村</strong> or the <strong>塔邦挞 鸟望台</strong>. From 利特村, glide north and slightly east, using the updrafts around the mountains to gain height. The Labyrinth is visible from a great distance — it's an enormous dark stone structure on a flat snowy plain. The nearest shrine is <strong>Gatakis 神庙</strong> near 利特村; if you haven't unlocked it, the Labyrinth is still reachable by gliding from high ground.</p>
+
+      <p><strong>地面 Maze Strategy:</strong> The North Lomei surface maze is more complex than the South Lomei version, with narrower corridors and more dead ends. The 通天术-cheese method still works but requires more stamina due to the thicker walls in some sections. If navigating properly, follow the <strong>right-hand rule</strong> — keep your right hand on the wall and follow it; this guarantees you'll eventually reach the center (though it may not be the shortest path). Enemies here include <strong>Ice 蝙蝠</strong> and <strong>Frost Pebblits</strong>; equip fire weapons or 火焰果 arrows to deal with them efficiently.</p>
+
+      <p>At the center, activate the terminal to open the 地底 chute.</p>
+
+      <p><strong>地底 Section:</strong> The North Lomei 地底 section is the most treacherous of the three. The underground area has extensive <strong>瘴气 coverage</strong> and is patrolled by <strong>瘴气-infected monsters</strong> — typically Black 波克布林s and a 莫力布林. Equip 瘴气-resistant meals or the <strong>Dark Tunic</strong> (from the 地底 bargainer statues) to mitigate the heart-drain. Bring plenty of 向阳草 for recovery. The terminal at the end unlocks the <strong>蛮族服</strong> chest.</p>
+
+      <h3>🗺️ Labyrinth 3: 洛美岛 — 蛮族短裤</h3>
+      <div class="material-item">
+        <div class="mat-icon">👢</div>
+        <div class="mat-info">
+          <strong>蛮族短裤</strong>
+          <span>坐标： <code>4655, 3700, 0130</code> | 区域: 阿卡莱, northeast coast</span>
+          <p style="margin-top:0.3rem; font-size:0.9rem;">洛美岛 is an enormous stone maze located on an island off the northeast coast of 阿卡莱, directly north of the 阿卡莱 Ancient Tech Lab. Unlike the other two Labyrinths, this one has no extreme temperature hazard. However, reaching the island requires crossing a significant body of water, which presents its own challenge depending on your available tools.</p>
+        </div>
+      </div>
+
+      <p><strong>Getting There:</strong> Fast-travel to <strong>Ulri Mountain 鸟望台</strong> (northeast 阿卡莱) and glide east toward the coast. From the cliffs, you can see 洛美岛 in the distance across the water. You have several crossing options:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>Build a hovercraft</strong> using 左纳乌 Fans and a Steering Stick — the most reliable method</li>
+        <li><strong>Use a pre-built raft</strong> near the shoreline and attach a 克洛格 Leaf or portable fan</li>
+        <li><strong>Swim with the 卓拉铠甲</strong> — if you have it, the swim speed boost makes the crossing manageable</li>
+        <li><strong>Glide from the 天空 Islands</strong> — if you've unlocked nearby sky platforms, you may be able to glide directly to the island</li>
+        <li><strong>Use the Travel Medallion</strong> — if you've placed it on the island during a previous visit</li>
+      </ul>
+
+      <p><strong>地面 Maze Strategy:</strong> The 洛美岛 surface maze is the largest and most complex of the three. The corridors are wide but the layout is deceptive, with multiple loops and false paths. The right-hand rule works here but takes significantly longer than at North Lomei. The most efficient approach is a hybrid: 通天术 through the walls at strategic points while using the map to orient yourself toward the central structure.</p>
+
+      <p>Enemies on the island include <strong>Electric 丘丘s</strong>, <strong>蝙蝠</strong>, and occasionally a <strong>魔法师</strong> patrolling the central area. The 魔法师 can be particularly dangerous if you're focused on navigation — deal with it first using an arrow to the head before attempting the maze.</p>
+
+      <p>Activate the central terminal to open the 地底 chute.</p>
+
+      <p><strong>地底 Section:</strong> The Lomei Island 地底 section is unique because the drop takes you into a partially flooded underground area. Equip the <strong>卓拉铠甲</strong> or have stamina recovery food ready for swimming sections. The maze down here is more vertical than the others, requiring you to climb and swim between platforms. The terminal at the end unlocks the <strong>蛮族短裤</strong> chest and a 破魔之根.</p>
+    </section>
+
+    <!-- Section 4: 最优路线 -->
+    <section class="section" id="route">
+      <h2><span>4</span> 最优路线 — Recommended Completion Order</h2>
+
+      <p>The three Labyrinths can be tackled in any order, but the following sequence minimizes travel time, accounts for difficulty scaling, and ensures you have the right equipment for each challenge. Total estimated time: <strong>3 to 5 hours</strong> depending on fast-travel unlocks and whether you clear or skip enemies.</p>
+
+      <div class="route-tree">
+        <div class="route-step">
+          <div class="route-num">1</div>
+          <div class="route-info">
+            <strong>Preparation: Gather Cold &amp; 耐热防护 Gear</strong>
+            <span>Before starting, ensure you have: 羽饰套装 OR 暖暖草果 meals (x10) for 海布拉; 热沙护额 OR 耐热防护 meals (x10) for 格鲁德; 30+ 光亮花的种子s for 地底; 5 Enduring meals for stamina sections. Optional but recommended: 采矿面罩 for 地底 visibility, 攀登鞋 for wall shortcuts.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">2</div>
+          <div class="route-info">
+            <strong>南洛美城堡遗迹 → 蛮族头盔</strong>
+            <span>Fast-travel to <strong>格鲁德 Canyon 鸟望台</strong>. Glide northeast toward the Labyrinth visible on the plateau. Time your approach for early morning or late evening to avoid the worst heat. Use 通天术 to climb walls and reach the central terminal. Drop into the 地底, navigate the 瘴气, claim the Helm. This is the easiest of the three — a good warmup.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">3</div>
+          <div class="route-info">
+            <strong>北洛美城堡遗迹 → 蛮族服</strong>
+            <span>Fast-travel to <strong>利特村</strong> (or the nearest shrine). Equip full 羽饰套装 + cold-resistant meal. Glide north-northeast across the tundra. The Labyrinth is visible from a great distance — a massive dark rectangle on the white snow. This is the hardest surface maze; use 通天术 liberally to skip sections. The 地底 section has heavy 瘴气 — deploy 光亮花的种子s frequently and watch your step. Claim the 防具.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">4</div>
+          <div class="route-info">
+            <strong>洛美岛 → 蛮族短裤</strong>
+            <span>Fast-travel to <strong>Ulri Mountain 鸟望台</strong> in northeast 阿卡莱. Glide east to the coast, then build a 左纳乌 hovercraft or swim with 卓拉铠甲 to cross to the island. The surface maze is the largest of the three — take your time and use the right-hand rule if you get lost. The 地底 section has swimming sections — pace your stamina. Claim the Greaves. Full set complete.</span>
+          </div>
+        </div>
+        <div class="route-step">
+          <div class="route-num">5</div>
+          <div class="route-info">
+            <strong>Upgrade at 大妖精之泉</strong>
+            <span>With all three pieces collected, fast-travel to your nearest 大妖精之泉 (there are four total, located near Kakariko, 塔邦挞, 格鲁德, and 阿卡莱). Begin the upgrade process. Prioritize getting all pieces to ★2 first for a solid defense boost, then work toward ★4 as you collect 夜光石s and 大剑独角仙s.</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Recommended Fast-Travel Unlock Priority</h3>
+      <p>To execute this route efficiently, unlock the following fast-travel points before starting:</p>
+      <table>
+        <tr><th>Priority</th><th>Fast-Travel Point</th><th>How to Unlock</th></tr>
+        <tr><td>Essential</td><td>格鲁德 Canyon 鸟望台</td><td>Activate the tower (unlocks during main quest progression)</td></tr>
+        <tr><td>Essential</td><td>利特村 / nearby shrine</td><td>Complete the Wind Temple questline or find a nearby shrine</td></tr>
+        <tr><td>Essential</td><td>Ulri Mountain 鸟望台</td><td>Activate the tower in northeast 阿卡莱</td></tr>
+        <tr><td>Recommended</td><td>格鲁德 Highlands shrine (any)</td><td>Discover while exploring the region</td></tr>
+        <tr><td>Recommended</td><td>海布拉 shrines (near North Lomei)</td><td>Discover for quick return trips</td></tr>
+        <tr><td>Optional</td><td>Travel Medallion on Lomei Island</td><td>Place your Travel Medallion for instant island access</td></tr>
+      </table>
+
+      <h3>Loadout Checklist</h3>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>防具:</strong> 羽饰套装 (★2+) + Desert Voe pieces (or meals to compensate)</li>
+        <li><strong>武器:</strong> One-handed sword + shield for combat, hammer-type weapon for ore deposits</li>
+        <li><strong>弓s &amp; Arrows:</strong> 30+ arrows, including Fire Arrows (海布拉), Ice Arrows (格鲁德), and Bomb Arrows (general)</li>
+        <li><strong>余料建造 材料:</strong> 10+ 光亮花的种子s, 10+ 烟雾蘑菇s for stealth in 地底</li>
+        <li><strong>Meals:</strong> 5 Spicy meals (海布拉), 5 Chilly meals (格鲁德 daytime), 5 Enduring meals, 5 瘴气-healing meals with 向阳草</li>
+        <li><strong>左纳乌 Devices:</strong> Fans, Steering Stick, and batteries for hovercraft construction</li>
+      </ul>
+    </section>
+
+    <!-- Section 5: 注意事项 -->
+    <section class="section" id="gotcha">
+      <h2><span>5</span> 注意事项 — What Can Go Wrong</h2>
+
+      <p>The 蛮族服 quest is straightforward compared to the Fierce Deity hunt, but each Labyrinth has its own set of pitfalls that can waste hours or get you killed. Here's every major gotcha and how to avoid it.</p>
+
+      <div class="gotcha-box">
+        <strong>🔴 通天术 Works — But Not Everywhere</strong><br>
+        The classic strategy for Labyrinth navigation is using <strong>通天术</strong> to clip through the walls and bypass the maze entirely. This works well in the 南洛美城堡遗迹 and moderately well in the North Lomei version. However, the walls in the <strong>洛美岛</strong> are significantly thicker in many sections, and 通天术 will fail to find a valid exit point. Don't rely exclusively on 通天术 for the Island — be prepared to actually navigate the maze if needed. Bring stamina-recovery food in case you need to climb over sections instead.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 The 地底 Are Pitch Black</strong><br>
+        Every Labyrinth's 地底 section is in a completely unlit area of the underground. Without <strong>光亮花的种子s</strong>, <strong>采矿套装</strong>, or <strong>glowing weapon 余料建造s</strong>, you will be navigating blind. The 瘴气 pools make this even more dangerous since you can't see them until you're standing in one. Minimum recommendation: 20 光亮花的种子s and the 采矿面罩 (purchased from a 地底 bargainer statue for 100 魄). The <strong>采矿套装</strong> provides a permanent glow effect that makes 地底 exploration infinitely more manageable.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 瘴气 = Permanent Max Heart Drain (Until Cured)</strong><br>
+        步骤ping in 瘴气 in the 地底 sections temporarily <strong>reduces your maximum hearts</strong>. These broken hearts cannot be recovered with standard food — you must either return to the surface, stand in a light pool, or eat food made with <strong>向阳草</strong> to restore them. Always carry 5–10 向阳草 meals when entering any 地底 section. A single misstep into a large 瘴气 pool can drain 5+ hearts instantly, leaving you vulnerable to the enemies that patrol these areas.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 North Lomei Requires Level 2 防寒防护</strong><br>
+        The 塔邦挞 Tundra surrounding the 北洛美城堡遗迹 is one of the coldest areas in the game. <strong>Level 1 防寒防护 is NOT sufficient</strong> — you will still take damage over time. You need either: (a) the full 羽饰套装 upgraded to at least ★2, (b) the 羽饰套装 + a Spicy meal providing Level 2, or (c) two pieces of cold-resistant armor plus an active cold-resistance buff. Underestimating the cold is the #1 reason players abandon the North Lomei run and have to return later.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 South Lomei's Temperature Swings</strong><br>
+        The 格鲁德 Highlands plateau where South Lomei sits experiences <strong>extreme temperature swings</strong> between day and night. Daytime requires heat resistance (Level 2 recommended); nighttime requires cold resistance. If you're doing the surface maze and 地底 back-to-back, you may experience both extremes in a single visit. Bring both types of resistance meals, or plan your arrival for early morning / late afternoon when temperatures are moderate.
+      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 Enemies Respawn on 血月</strong><br>
+        The 地底 sections of each Labyrinth contain enemy camps that <strong>respawn every 血月</strong>. If you're returning to a Labyrinth to retrieve a missed treasure chest or to farm additional materials, be prepared to re-clear the enemies. The good news is that 血月 respawns also reset the treasure chests in some side rooms, giving you another chance at loot.</n      </div>
+
+      <div class="gotcha-box">
+        <strong>🔴 Don't Forget the Side Chests</strong><br>
+        Each Labyrinth surface maze contains <strong>3–5 hidden treasure chests</strong> with valuable loot — typically high-level weapons, rupees, rare materials, and sometimes even Star Fragments or 大左纳乌能源s. These chests are easy to miss when focused on reaching the center. After claiming your Barbarian piece, do a second sweep of the Labyrinth or use an online interactive map to locate any chests you bypassed. The 南洛美城堡遗迹 in particular has a chest with a <strong>骑士之剑</strong> that's excellent for early-game 余料建造 experiments.
+      </div>
+    </section>
+
+    <!-- Section 6: Free 收益 -->
+    <section class="section" id="benefits">
+      <h2><span>6</span> 额外收益 — 沿途还能获得什么</h2>
+
+      <p>Clearing all three 洛美城堡遗迹 is one of the most rewarding activities in 王国之泪 beyond the 蛮族服 itself. The journey takes you across three distinct regions of 海拉鲁, each packed with additional treasures, unlocks, and permanent upgrades.</p>
+
+      <h3>地底 破魔之根s — Permanent Map Illumination</h3>
+      <p>Each Labyrinth's 地底 section contains a <strong>破魔之根</strong> at the end terminal. Activating these 破魔之根s permanently illuminates a massive radius on your 地底 map, revealing terrain, enemy camps, and resource deposits. The three 破魔之根s from the Labyrinths are:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>Sinonoyk 破魔之根</strong> — beneath 南洛美城堡遗迹, illuminates southern 格鲁德 地底</li>
+        <li><strong>Kawakarut 破魔之根</strong> — beneath 北洛美城堡遗迹, illuminates northern 海布拉 地底</li>
+        <li><strong>Nupisoyuat 破魔之根</strong> — beneath 洛美岛, illuminates northeastern 阿卡莱 地底</li>
+      </ul>
+      <p>These 破魔之根s are among the most valuable in the 地底 due to their remote locations. Unlocking them opens up vast new areas for exploration, 左纳乌能源 mining, and boss hunting.</p>
+
+      <h3>Labyrinth Treasure Chests — 武器, 卢比, and 稀有 材料</h3>
+      <p>Each surface Labyrinth contains multiple side chests in addition to the main Barbarian armor chest:</p>
+      <table>
+        <tr><th>Labyrinth</th><th>Side Chest Loot</th><th>Notable Finds</th></tr>
+        <tr>
+          <td>South Lomei</td>
+          <td>4 chests</td>
+          <td>骑士之剑, 50 卢比, 琥珀 ×3, 大左纳乌能源</td>
+        </tr>
+        <tr>
+          <td>North Lomei</td>
+          <td>5 chests</td>
+          <td>Royal Broadblade, 蓝宝石, 100 卢比, Star Fragment, 大左纳乌能源</td>
+        </tr>
+        <tr>
+          <td>洛美岛</td>
+          <td>6 chests</td>
+          <td>钻石, 黄玉 ×2, 150 卢比, 骑士双手剑, Ancient Blade, 大左纳乌能源 ×2</td>
+        </tr>
+      </table>
+
+      <h3>地底 Completion Rewards</h3>
+      <p>At the end of each Labyrinth's 地底 section, activating the terminal spawns not only the Barbarian armor chest but also a <strong>贤者's Will</strong> — a rare item used to upgrade your 贤者 companions' abilities. Each Labyrinth gives one 贤者's Will, meaning the full run nets you <strong>3 贤者's Wills total</strong>. These are extremely valuable since 贤者's Wills are otherwise only found at remote sky island locations or rare 地底 chests.</p>
+
+      <p>Additionally, each 地底 terminal room contains a chest with a <strong>大左纳乌能源</strong> (worth 50 Energy Well refills) and several standard 左纳乌能源s scattered around the area. If you're running low on 左纳乌 device battery, these Labyrinth runs are an excellent resupply opportunity.</p>
+
+      <h3>Map Exploration &amp; 克洛格的果实s</h3>
+      <p>Simply traveling to and from the three Labyrinths will reveal large portions of your surface map in three under-explored regions:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>格鲁德 Highlands:</strong> 3–5 克洛格的果实s from rock puzzles and ring challenges around South Lomei</li>
+        <li><strong>塔邦挞 Tundra:</strong> 2–4 克洛格的果实s, plus potentially a Frost 古栗欧克 spawn to the north of North Lomei</li>
+        <li><strong>阿卡莱 Coast:</strong> 3–5 克洛格的果实s from the crossing route and island exploration</li>
+      </ul>
+      <p>You'll also likely discover 5–10 new shrine locations to activate for future fast-travel points.</p>
+
+      <h3>Unique Enemy Encounters</h3>
+      <p>The regions around the Labyrinths host unique enemy encounters that are worth seeking out:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li><strong>North of North Lomei:</strong> A <strong>Frost 古栗欧克</strong> spawns on a frozen lake — one of the most challenging overworld bosses in the game. Defeating it drops 古栗欧克 parts for powerful elixirs and 余料建造s.</li>
+        <li><strong>South Lomei surrounds:</strong> <strong>Golden 蜥蜴战士</strong> and <strong>莫尔德拉吉克</strong> spawn in the 格鲁德 Desert below the plateau — excellent for late-game material farming.</li>
+        <li><strong>Lomei Island waters:</strong> <strong>Stalkoblins</strong> patrol the shores at night, and the deep water around the island sometimes has <strong>防具ed Porgy</strong> schools for high-level cooking.</li>
+      </ul>
+
+      <h3>The Bargainer Statue Connection</h3>
+      <p>Each Labyrinth 地底 section places you near a <strong>Bargainer Statue</strong> — the creepy hooded figures that trade 魄 for rare items. If you've been collecting 魄 during your 地底 exploration, these statues sell the <strong>采矿套装</strong>, <strong>Dark Tunic</strong>, <strong>Mystic Set</strong>, and various other exclusive items. The statue near Lomei Island is particularly useful since it's one of the few in the far northeast 地底.</p>
+
+      <h3>Permanent Fast-Travel Network Expansion</h3>
+      <p>Beyond the 破魔之根s, completing the Labyrinths encourages you to unlock shrines and 鸟望台s in three regions you might otherwise neglect. By the end of this quest, your fast-travel network will cover:</p>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem;">
+        <li>The entire <strong>格鲁德 Highlands</strong> via the 鸟望台 + surrounding shrines</li>
+        <li>The entire <strong>海布拉/塔邦挞</strong> region via 利特村 + North Lomei area shrines</li>
+        <li>The entire <strong>northeast 阿卡莱</strong> region via Ulri Mountain Tower + Lomei Island</li>
+      </ul>
+      <p>This dramatically improves your ability to traverse 海拉鲁 for future quests, farming runs, and exploration.</p>
+    </section>
+
+    <!-- 推荐下一步 -->
+    <section class="section" id="recommended">
+      <h2>推荐下一步</h2>
+      <p>With the 蛮族套装 complete, you're now equipped with one of the strongest offensive armor sets in the game. The natural next step is to acquire the <strong>even more powerful 鬼神套装</strong> — check out our <a href="./fierce-deity-set.html"><strong>鬼神套装 Guide</strong></a> for the ultimate 攻击力提升 build. The 鬼神套装 requires completing a hidden 4-part treasure hunt across 海拉鲁, but the payoff is the highest raw damage output in the game. Alternatively, if you want to round out your armor collection, our <a href="./">潜行服 Set Guide</a> will help you build the perfect sneaking loadout for assassination-style combat and wildlife hunting.</p>
+    </section>
+
+  </main>
+
+  <!-- Right Sidebar -->
+  <aside class="sidebar-right">
+    <div class="panel">
+      <h4>物品数据</h4>
+      <p style="font-size:0.88rem;"><strong>套装奖励：</strong> 攻击力提升 ×3</p>
+      <p style="font-size:0.88rem;"><strong>最大防御力 (★4):</strong> 60</p>
+      <p style="font-size:0.88rem;"><strong>件数：</strong> 3</p>
+      <p style="font-size:0.88rem;"><strong>Labyrinths:</strong> 3</p>
+    </div>
+    <div class="panel">
+      <h4>快速数据</h4>
+      <p style="font-size:0.88rem;"><strong>套装奖励：</strong> 蓄力攻击精力持久</p>
+      <p style="font-size:0.88rem;"><strong>升级成本：</strong> 114 夜光石s (total)</p>
+      <p style="font-size:0.88rem;"><strong>预估时间：</strong> 3–5 hours</p>
+    </div>
+    <div class="panel">
+      <h4>相关攻略</h4>
+      <a href="./fierce-deity-set.html">鬼神套装</a>
+      <a href="./master-sword.html">大师之剑</a>
+      <a href="./">潜行服 Set</a>
+    </div>
+    <div class="panel">
+      <h4>外部资源</h4>
+      <a href="https://mapgenie.io/zelda-tears-of-the-kingdom">互动地图</a>
+      <a href="https://www.zeldadungeon.net">塞尔达 Dungeon</a>
+    </div>
+  </aside>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">&#9676; RelicTrek</div>
+      <p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制旅程。</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">RelicTrek</div>
+        <a href="../privacy.html">隐私</a>
+        <a href="../terms.html">条款</a>
+        <a href="../about.html">关于</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 RelicTrek.net</span>
+    <span class="footer-sep">&#9676;</span>
+    <span>制作ed for adventurers</span>
+  </div>
+</footer>
+
+</body>
+</html>
