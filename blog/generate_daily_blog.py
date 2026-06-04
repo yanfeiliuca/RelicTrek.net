@@ -281,6 +281,23 @@ def select_random_item(db):
 
 # ─── Blog Content Generation ───────────────────────────────────────
 
+def extract_preview_from_html(html_content, max_chars=220):
+    """Extract first two meaningful paragraphs from blog HTML for preview"""
+    import re
+    body_match = re.search(r'<div class="blog-body">(.*?)</div>', html_content, re.DOTALL)
+    if not body_match:
+        return ""
+    body = body_match.group(1)
+    paragraphs = re.findall(r'<p>(.*?)</p>', body, re.DOTALL)
+    clean_texts = []
+    for p in paragraphs[:2]:
+        clean = re.sub(r'<[^>]+>', '', p)
+        clean = ' '.join(clean.split())
+        if clean and len(clean) > 20:
+            clean_texts.append(clean)
+    result = ' '.join(clean_texts)
+    return result[:max_chars] + '...' if len(result) > max_chars else result
+
 def generate_blog_content(item):
     """Generate blog content for the selected item"""
     
@@ -547,6 +564,14 @@ def main():
         f.write(zh_html)
     print(f"✅ Chinese blog: blog/zh/{date_str}.html")
     
+    # Extract previews from generated HTML
+    en_preview = extract_preview_from_html(en_html)
+    zh_preview = extract_preview_from_html(zh_html)
+    
+    if "previews" not in db:
+        db["previews"] = {}
+    db["previews"][date_str] = {"en": en_preview, "zh": zh_preview}
+    
     # Update database
     db["posts"].append({
         "date": today_str,
@@ -572,6 +597,7 @@ def update_blog_index(date_str, item, db):
     
     # Get recent posts for index
     recent_posts = db["posts"][-10:][::-1]  # Last 10, newest first
+    previews = db.get("previews", {})
     
     # English index
     en_index = BLOG_DIR / "index.html"
@@ -579,13 +605,14 @@ def update_blog_index(date_str, item, db):
         with open(en_index, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Add blog post link
+        # Add blog post links with preview
         post_links = ""
         for post in recent_posts:
             post_date = post["date"]
             display_date = datetime.strptime(post_date, "%Y-%m-%d").strftime("%B %d, %Y")
             post_title = f"{post['item_name']} in {post['game']}"
-            post_links += f'      <li class="blog-list-item"><a href="{post_date}.html">{post_title}</a><div class="date">{display_date}</div></li>\n'
+            preview = previews.get(post_date, {}).get("en", "")
+            post_links += f'      <li class="blog-list-item"><a href="{post_date}.html">{post_title}</a><div class="preview">{preview}</div><div class="date">{display_date}</div></li>\n'
         
         # Replace or add blog list
         if '<ul class="blog-list">' in content:
@@ -610,7 +637,8 @@ def update_blog_index(date_str, item, db):
             post_date = post["date"]
             display_date = datetime.strptime(post_date, "%Y-%m-%d").strftime("%Y年%m月%d日")
             post_title = f"{post['game']} {post['item_zh_name']}"
-            post_links += f'      <li class="blog-list-item"><a href="{post_date}.html">{post_title}</a><div class="date">{display_date}</div></li>\n'
+            preview = previews.get(post_date, {}).get("zh", "")
+            post_links += f'      <li class="blog-list-item"><a href="{post_date}.html">{post_title}</a><div class="preview">{preview}</div><div class="date">{display_date}</div></li>\n'
         
         if '<ul class="blog-list">' in content:
             content = re.sub(

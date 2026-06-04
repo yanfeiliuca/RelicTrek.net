@@ -4,312 +4,69 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z2SC4S5VZ9');
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','G-Z2SC4S5VZ9');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>鬼神套装 — 塞尔达：王国之泪 CraftHunt Guide</title>
+<link rel="stylesheet" href="../../css/style.css">
 <style>
-  /* ── Reset & Base ── */
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f5f0;
-    color: #333;
-    line-height: 1.6;
-  }
-  a { color: #2c7a3e; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* ── Navigation ── */
-  .main-nav {
-    background: #1a1a1a;
-    padding: 0.75rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .main-nav .logo { font-weight: bold; font-size: 1.2rem; color: #4CAF50; }
-  .main-nav a { color: #ccc; font-size: 0.9rem; }
-  .main-nav a:hover { color: #fff; }
-
-  /* ── News Ticker ── */
-  .news-ticker {
-    background: #e8e8e0;
-    padding: 0.4rem 2rem;
-    font-size: 0.8rem;
-    border-bottom: 1px solid #d0d0c8;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-  /* ── Layout ── */
-  .page-container {
-    display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  /* ── Left Sidebar ── */
-  .sidebar-left {
-    width: 260px;
-    background: #fff;
-    border-right: 1px solid #d0d0c8;
-    padding: 1.5rem 1rem;
-    position: sticky;
-    top: 48px;
-    height: calc(100vh - 48px);
-    overflow-y: auto;
-  }
-  .sidebar-left h3 { font-size: 0.85rem; color: #888; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
-  .sidebar-left ul { list-style: none; }
-  .sidebar-left li { margin-bottom: 0.4rem; }
-  .sidebar-left a {
-    display: block;
-    padding: 0.4rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.88rem;
-    color: #555;
-  }
-  .sidebar-left a:hover, .sidebar-left a.active { background: #f0f0e8; color: #2c7a3e; text-decoration: none; }
-
-  /* ── Content ── */
-  .content-area {
-    flex: 1;
-    padding: 2rem;
-    min-width: 0;
-  }
-
-  /* ── Breadcrumb ── */
-  .breadcrumb { font-size: 0.8rem; color: #888; margin-bottom: 1rem; }
-  .breadcrumb a { color: #666; }
-
-  /* ── Item Header ── */
-  .item-header {
-    background: #fff;
-    border: 1px solid #d0d0c8;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-  }
-  .item-icon-legendary {
-    width: 80px; height: 80px;
-    background: #4a148c;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    flex-shrink: 0;
-  }
-  .item-meta { flex: 1; }
-  .item-meta h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
-  .item-meta .tag {
-    display: inline-block;
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    margin-right: 0.4rem;
-    margin-bottom: 0.5rem;
-  }
-  .tag-rarity-legendary { background: #4a148c; color: #fff; }
-  .tag-type { background: #e8e8e0; color: #555; }
-  .tag-difficulty { background: #b71c1c; color: #fff; }
-  .item-meta .desc { color: #666; font-size: 0.95rem; }
-
-  /* ── Sections ── */
-  .section {
-    background: #fff;
-    border: 1px solid #d0d0c8;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .section h2 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #4CAF50;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .section h3 { font-size: 1.05rem; margin: 1.25rem 0 0.5rem; color: #2c7a3e; }
-  .section p { margin-bottom: 0.75rem; }
-
-  /* ── Tables ── */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-  }
-  th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid #e0e0d8; }
-  th { background: #f5f5f0; font-weight: 600; }
-  tr:hover { background: #fafaf5; }
-
-  /* ── Material 物品 ── */
-  .material-item {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    background: #fafaf5;
-    border-radius: 6px;
-    margin-bottom: 0.75rem;
-    border-left: 4px solid #4CAF50;
-  }
-  .material-item .mat-icon {
-    width: 48px; height: 48px;
-    background: #e8e8e0;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-  }
-  .material-item .mat-info { flex: 1; }
-  .material-item .mat-info strong { display: block; margin-bottom: 0.25rem; }
-  .material-item .mat-info span { font-size: 0.85rem; color: #888; }
-
-  /* ── Gotcha Box ── */
-  .gotcha-box {
-    background: #fff8e1;
-    border-left: 4px solid #ff8f00;
-    padding: 1rem 1.25rem;
-    border-radius: 0 6px 6px 0;
-    margin: 1rem 0;
-  }
-  .gotcha-box strong { color: #e65100; }
-
-  /* ── 路线 Tree ── */
-  .route-tree {
-    background: #f5f5f0;
-    border-radius: 8px;
-    padding: 1.25rem;
-    margin: 1rem 0;
-  }
-  .route-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid #e0e0d8;
-  }
-  .route-step:last-child { border-bottom: none; }
-  .route-num {
-    width: 32px; height: 32px;
-    background: #4CAF50;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 0.85rem;
-    flex-shrink: 0;
-  }
-  .route-info { flex: 1; }
-  .route-info strong { display: block; margin-bottom: 0.2rem; }
-  .route-info span { font-size: 0.85rem; color: #888; }
-
-  /* ── Right Sidebar ── */
-  .sidebar-right {
-    width: 220px;
-    padding: 1.5rem 1rem;
-  }
-  .sidebar-right .panel {
-    background: #fff;
-    border: 1px solid #d0d0c8;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  .sidebar-right .panel h4 { font-size: 0.85rem; margin-bottom: 0.5rem; color: #888; text-transform: uppercase; }
-  .sidebar-right .panel a { display: block; font-size: 0.88rem; padding: 0.3rem 0; }
-
-  /* ── Footer ── */
-  .site-footer {
-    border-top: 1px solid #d0d0c8;
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #888;
-    background: #fff;
-  }
-
-  /* ── Utility ── */
-  .inline-icon { display: inline-block; width: 20px; height: 20px; background: #e8e8e0; border-radius: 4px; text-align: center; line-height: 20px; font-size: 0.75rem; vertical-align: middle; }
-  code { background: #f0f0e8; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85rem; }
-  .highlight { background: #e8f5e9; padding: 0.8rem 1rem; border-radius: 6px; margin: 0.75rem 0; border-left: 4px solid #4CAF50; }
+.blog-post h1 { font-size: 26px; margin-bottom: 12px; color: var(--accent); }
+.blog-post h2 { font-size: 18px; margin: 24px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.blog-meta { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+.blog-body p { margin-bottom: 14px; line-height: 1.8; color: var(--text-muted); }
+.blog-body ul { margin: 10px 0 10px 20px; }
+.blog-body li { margin-bottom: 6px; line-height: 1.6; color: var(--text-muted); }
 </style>
 </head>
-<body>
+<body class="lang-zh">
 
-<!-- Navigation -->
-<nav class="main-nav">
-  <div class="logo">🛠️ CraftHunt</div>
-  <a href="../index.html">首页</a>
-  <a href="../">游戏</a>
-  <a href="./">塞尔达：王国之泪</a>
-      <a href="../minecraft/">Minecraft</a>
-      <a href="../no-mans-sky/">No Man's 天空</a>
-      <a href="../baldurs-gate-3/">Baldur's Gate 3</a>
-      <a href="../valheim/">Valheim</a>
-      <a href="../path-of-exile-2/">Path of Exile 2</a>
-      <a href="../elden-ring/">Elden Ring</a>
-      <a href="../stardew-valley/">Stardew Valley</a>
-      <a href="../hades-2/">Hades 2</a>
-      <a href="../satisfactory/">Satisfactory</a>
-    </div>
-      <a href="../minecraft/">Minecraft</a>
-  <a href="../about.html">关于</a>
+<nav class="top-nav">
+  <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+  <a href="../../" class="logo">RelicTrek</a>
+  <input type="search" placeholder="搜索物品..." aria-label="Search">
+  <div class="lang-switch">
+    <button data-lang="en" onclick="window.location.href='../zelda-totk/index.html'">EN</button>
+    <button data-lang="zh" class="active" title="中文">中文</button>
+  </div>
+  <div class="nav-links">
+    <a href="../../blog/zh/">博客</a>
+    <a href="../../" class="active">游戏</a>
+    <a href="../../about.html">关于</a>
+  </div>
 </nav>
 
-<!-- News Ticker -->
-<div class="news-ticker">
-  📰 新攻略： 鬼神套装 — the ultimate 攻击力提升 build from 梅祖拉的假面 is hiding in four secret caves across 海拉鲁. Updated for 王国之泪 v1.2.1.
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <span class="ticker-item">
+      <span class="slogan-main-text">What You Don't Know You're Missing</span>
+      <span class="sep">|</span>
+      <span class="slogan-sub-text">The Best Items Hide in Plain Sight</span>
+    </span>
+  </div>
 </div>
 
-<!-- Page Container -->
-<div class="page-container">
-
-  <!-- Left Sidebar -->
-  <aside class="sidebar-left">
-    <h3>塞尔达：王国之泪 物品</h3>
-    <ul>
-      <li><a href="./master-sword.html">大师之剑</a></li>
-      <li><a href="./hylian-shield.html">海利亚盾</a></li>
-      <li><a href="./">Hero of Time Set</a></li>
-      <li><a href="./">Royal Guard Set</a></li>
-      <li><a href="./">采矿套装</a></li>
-      <li><a href="./">潜行服 Set</a></li>
-      <li><a href="./barbarian-set.html">蛮族套装</a></li>
-      <li><a href="./">英杰's Tunic</a></li>
-      <li><a href="./">左纳乌能源 防具 Set</a></li>
-      <li><a href="./fierce-deity-set.html" class="active">鬼神套装</a></li>
-    </ul>
-
-    <h3 style="margin-top: 1.5rem;">快速链接</h3>
-    <ul>
-      <li><a href="https://www.zeldadungeon.net/tears-of-the-kingdom/">塞尔达 Dungeon</a></li>
-      <li><a href="https://mapgenie.io/zelda-tears-of-the-kingdom">互动地图</a></li>
-      <li><a href="https://www.ign.com/wikis/the-legend-of-zelda-tears-of-the-kingdom/">IGN百科</a></li>
-    </ul>
+<div class="main-layout">
+  <aside class="left-sidebar">
+    <h3>游戏</h3>
+      <a href="../../terraria/zh/">泰拉瑞亚</a>
+      <a href="../../subnautica2/zh/">深海迷航2</a>
+      <a href="../../monster-hunter-wilds/zh/">怪物猎人：荒野</a>
+      <a href="./" class="active">塞尔达传说：王国之泪</a>
+      <a href="../../minecraft/zh/">我的世界</a>
+      <a href="../../no-mans-sky/zh/">无人深空</a>
+      <a href="../../baldurs-gate-3/zh/">博德之门3</a>
+      <a href="../../valheim/zh/">英灵神殿</a>
+      <a href="../../path-of-exile-2/zh/">流放之路2</a>
+      <a href="../../elden-ring/zh/">艾尔登法环</a>
+      <a href="../../stardew-valley/zh/">星露谷物语</a>
+      <a href="../../hades-2/zh/">哈迪斯2</a>
+      <a href="../../satisfactory/zh/">幸福工厂</a>
   </aside>
 
-  <!-- Main Content -->
   <main class="content-area">
+
 
     <!-- Breadcrumb -->
     <div class="breadcrumb">
@@ -611,60 +368,36 @@
       <p>Now that you've got the strongest attack armor in the game, you'll need the weapons to match it. Head to our <a href="./barbarian-set.html"><strong>蛮族套装 Guide</strong></a> — another 攻击力提升 armor set found in the three massive Labyrinths of 海拉鲁. While the 鬼神套装 is superior for raw attack, the 蛮族套装 offers a higher defense ceiling and a different aesthetic, and collecting both gives you options for different builds. Alternatively, check out our <a href="./master-sword.html">大师之剑 Guide</a> to pair your new armor with the Sword that Seals the Darkness for the most iconic loadout in the game.</p>
     </section>
 
+  
   </main>
 
-  <!-- Right Sidebar -->
-  <aside class="sidebar-right">
-    <div class="panel">
-      <h4>物品数据</h4>
-      <p style="font-size:0.88rem;"><strong>套装奖励：</strong> 攻击力提升 ×3</p>
-      <p style="font-size:0.88rem;"><strong>最大防御力 (★4):</strong> 84</p>
-      <p style="font-size:0.88rem;"><strong>件数：</strong> 3</p>
-      <p style="font-size:0.88rem;"><strong>Quest 步骤s:</strong> 4</p>
-    </div>
-    <div class="panel">
-      <h4>快速数据</h4>
-      <p style="font-size:0.88rem;"><strong>Bonus 武器:</strong> 鬼神大剑 (38 ATK)</p>
-      <p style="font-size:0.88rem;"><strong>升级成本：</strong> 30 西诺克斯 Guts (total)</p>
-      <p style="font-size:0.88rem;"><strong>预估时间：</strong> 2.5–4 hours</p>
-    </div>
-    <div class="panel">
-      <h4>相关攻略</h4>
-      <a href="./barbarian-set.html">蛮族套装</a>
-      <a href="./master-sword.html">大师之剑</a>
-      <a href="./">Hero of Time Set</a>
-    </div>
-    <div class="panel">
-      <h4>外部资源</h4>
-      <a href="https://mapgenie.io/zelda-tears-of-the-kingdom">互动地图</a>
-      <a href="https://www.zeldadungeon.net">塞尔达 Dungeon</a>
-    </div>
+  <aside class="right-sidebar">
+    <div class="ad-slot">Ad Space</div>
   </aside>
-
 </div>
 
-<!-- Footer -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logo">&#9676; RelicTrek</div>
-      <p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制旅程。</p>
+      <p class="footer-tagline">Every legendary item has a story. We map the journey.</p>
     </div>
     <div class="footer-links">
       <div class="footer-col">
         <div class="footer-col-title">RelicTrek</div>
-        <a href="../privacy.html">隐私</a>
-        <a href="../terms.html">条款</a>
-        <a href="../about.html">关于</a>
+        <a href="../../privacy.html">隐私政策</a>
+        <a href="../../terms.html">使用条款</a>
+        <a href="../../about.html">关于</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2025 RelicTrek.net</span>
     <span class="footer-sep">&#9676;</span>
-    <span>制作ed for adventurers</span>
+    <span>Crafted for adventurers</span>
   </div>
 </footer>
 
+<script src="../../js/main.js"></script>
 </body>
 </html>

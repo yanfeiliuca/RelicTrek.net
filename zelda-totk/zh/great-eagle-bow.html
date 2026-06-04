@@ -4,161 +4,69 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z2SC4S5VZ9');
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','G-Z2SC4S5VZ9');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>大鹫弓 制作攻略 — 塞尔达传说：王国之泪 | 制作Hunt</title>
-<meta name="description" content="完整攻略 制作 the 大鹫弓 in 塞尔达：王国之泪. Full recipe, material locations, optimal route, and tips to forge 力巴尔's signature 3-shot bow.">
+<link rel="stylesheet" href="../../css/style.css">
 <style>
-:root {
-  --bg: #f0ece4;
-  --card: #fffef8;
-  --ink: #1a1a1a;
-  --muted: #5a5a5a;
-  --rule: #2c3e50;
-  --accent: #2c3e50;
-  --danger: #8b0000;
-  --success: #1b5e20;
-  --nav: #2c3e50;
-  --sidebar: #e8e4dc;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; }
-
-/* Header */
-.site-header { background: var(--nav); color: #fff; padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
-.site-header h1 { font-size: 1.25rem; letter-spacing: 0.5px; }
-.header-link { color: #fff; text-decoration: none; font-size: 0.85rem; margin-left: auto; opacity: 0.85; }
-.header-link:hover { opacity: 1; text-decoration: underline; }
-
-/* Scrolling ticker */
-.ticker { background: var(--nav); color: #fff; border-top: 1px solid rgba(255,255,255,0.15); padding: 0.35rem 1rem; font-size: 0.8rem; overflow: hidden; white-space: nowrap; }
-.ticker span { display: inline-block; padding-left: 100%; animation: ticker-scroll 30s linear infinite; }
-@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-
-/* Layout */
-.page-wrap { display: grid; grid-template-columns: 240px 1fr 220px; min-height: calc(100vh - 110px); }
-
-/* Left sidebar */
-.left-sidebar { background: var(--sidebar); border-right: 1px solid #ccc; padding: 1rem; }
-.left-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 0.5px; }
-.left-sidebar ul { list-style: none; }
-.left-sidebar li { margin-bottom: 0.15rem; }
-.left-sidebar a { display: block; padding: 0.35rem 0.5rem; font-size: 0.85rem; color: var(--ink); text-decoration: none; border-radius: 4px; }
-.left-sidebar a:hover { background: rgba(0,0,0,0.05); }
-.left-sidebar a.active { background: var(--nav); color: #fff; }
-
-/* Main content */
-main.content-area { padding: 1.5rem 2rem; max-width: 900px; }
-.breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
-.breadcrumb a { color: var(--accent); text-decoration: none; }
-.breadcrumb a:hover { text-decoration: underline; }
-
-/* Item header */
-.item-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--rule); }
-.item-icon-weapon { width: 64px; height: 64px; background: var(--nav); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
-.item-header h1 { font-size: 1.6rem; color: var(--rule); }
-.item-header .rarity-badge { display: inline-block; background: var(--rule); color: #fff; padding: 0.15rem 0.6rem; font-size: 0.75rem; border-radius: 3px; margin-left: 0.5rem; vertical-align: middle; }
-.item-meta { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
-
-/* Sections */
-.section { margin-bottom: 2rem; padding: 1.25rem; background: var(--card); border: 1px solid #d5d0c8; }
-.section h2 { font-size: 1.15rem; color: var(--rule); margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #d5d0c8; display: flex; align-items: center; gap: 0.5rem; }
-.section h2 .num { background: var(--rule); color: #fff; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.85rem; flex-shrink: 0; }
-.section p { margin-bottom: 0.75rem; font-size: 0.95rem; }
-.section strong { color: var(--rule); }
-
-/* Tables */
-table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.9rem; }
-th, td { border: 1px solid #c0b8a8; padding: 0.55rem 0.75rem; text-align: left; }
-th { background: var(--nav); color: #fff; font-weight: 600; }
-tr:nth-child(even) { background: #f5f3ee; }
-
-/* Material item blocks */
-.material-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem; background: #f5f3ee; border-left: 4px solid var(--rule); margin-bottom: 0.75rem; }
-.material-item .mat-icon { width: 40px; height: 40px; background: var(--nav); color: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
-.material-item .mat-info { flex: 1; }
-.material-item .mat-name { font-weight: 600; color: var(--rule); font-size: 0.95rem; }
-.material-item .mat-detail { font-size: 0.85rem; color: var(--muted); }
-
-/* 路线 tree */
-.route-tree { margin: 0.75rem 0; }
-.route-step { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.65rem 0; border-bottom: 1px dashed #c0b8a8; }
-.route-step:last-child { border-bottom: none; }
-.route-step .step-num { background: var(--rule); color: #fff; min-width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.8rem; flex-shrink: 0; }
-.route-step .step-body { flex: 1; font-size: 0.9rem; }
-
-/* Gotcha box */
-.gotcha-box { background: #faf5f0; border: 1px solid #d4a574; border-left: 4px solid #d4a574; padding: 0.75rem 1rem; margin: 0.75rem 0; }
-.gotcha-box .gotcha-title { font-weight: 600; color: #8b4513; margin-bottom: 0.25rem; font-size: 0.9rem; }
-.gotcha-box ul { margin-left: 1.25rem; font-size: 0.88rem; color: var(--muted); }
-.gotcha-box li { margin-bottom: 0.3rem; }
-
-/* Right sidebar */
-.right-sidebar { background: var(--sidebar); border-left: 1px solid #ccc; padding: 1rem; }
-.right-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 0.5px; }
-.right-sidebar .info-card { background: var(--card); border: 1px solid #ccc; padding: 0.75rem; margin-bottom: 0.75rem; font-size: 0.85rem; }
-.right-sidebar .info-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; }
-.right-sidebar .info-card .value { font-weight: 600; color: var(--rule); }
-
-/* Footer */
-.site-footer { background: var(--nav); color: #fff; padding: 1rem 1.5rem; font-size: 0.8rem; text-align: center; }
-
-/* Responsive */
-@media (max-width: 1024px) { .page-wrap { grid-template-columns: 200px 1fr; } .right-sidebar { display: none; } }
-@media (max-width: 768px) { .page-wrap { grid-template-columns: 1fr; } .left-sidebar { display: none; } }
-
-[data-zh] { position: relative; cursor: help; border-bottom: 1px dotted var(--muted); }
+.blog-post h1 { font-size: 26px; margin-bottom: 12px; color: var(--accent); }
+.blog-post h2 { font-size: 18px; margin: 24px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.blog-meta { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+.blog-body p { margin-bottom: 14px; line-height: 1.8; color: var(--text-muted); }
+.blog-body ul { margin: 10px 0 10px 20px; }
+.blog-body li { margin-bottom: 6px; line-height: 1.6; color: var(--text-muted); }
 </style>
 </head>
-<body>
+<body class="lang-zh">
 
-<!-- Header -->
-<header class="site-header">
-<h1>🎮 制作Hunt</h1>
-<span style="opacity:0.7; font-size:0.85rem;">塞尔达传说：王国之泪 — Item 制作攻略s</span>
-<a class="header-link" href="../index.html">← All 游戏</a>
-</header>
+<nav class="top-nav">
+  <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+  <a href="../../" class="logo">RelicTrek</a>
+  <input type="search" placeholder="搜索物品..." aria-label="Search">
+  <div class="lang-switch">
+    <button data-lang="en" onclick="window.location.href='../zelda-totk/index.html'">EN</button>
+    <button data-lang="zh" class="active" title="中文">中文</button>
+  </div>
+  <div class="nav-links">
+    <a href="../../blog/zh/">博客</a>
+    <a href="../../" class="active">游戏</a>
+    <a href="../../about.html">关于</a>
+  </div>
+</nav>
 
-<!-- Ticker -->
-<div class="ticker">
-<span>🔥 王国之泪 Tip: 余料建造 a 红宝石 to your weapon for cold resistance + fire damage | 大鹫弓 fires 3 arrows for 84 total damage | Bring Snowquill armor to 利特村 | Always mine rare ore deposits in 海布拉 | 💎</span>
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <span class="ticker-item">
+      <span class="slogan-main-text">What You Don't Know You're Missing</span>
+      <span class="sep">|</span>
+      <span class="slogan-sub-text">The Best Items Hide in Plain Sight</span>
+    </span>
+  </div>
 </div>
 
-<!-- Layout -->
-<div class="page-wrap">
+<div class="main-layout">
+  <aside class="left-sidebar">
+    <h3>游戏</h3>
+      <a href="../../terraria/zh/">泰拉瑞亚</a>
+      <a href="../../subnautica2/zh/">深海迷航2</a>
+      <a href="../../monster-hunter-wilds/zh/">怪物猎人：荒野</a>
+      <a href="./" class="active">塞尔达传说：王国之泪</a>
+      <a href="../../minecraft/zh/">我的世界</a>
+      <a href="../../no-mans-sky/zh/">无人深空</a>
+      <a href="../../baldurs-gate-3/zh/">博德之门3</a>
+      <a href="../../valheim/zh/">英灵神殿</a>
+      <a href="../../path-of-exile-2/zh/">流放之路2</a>
+      <a href="../../elden-ring/zh/">艾尔登法环</a>
+      <a href="../../stardew-valley/zh/">星露谷物语</a>
+      <a href="../../hades-2/zh/">哈迪斯2</a>
+      <a href="../../satisfactory/zh/">幸福工厂</a>
+  </aside>
 
-<!-- LEFT SIDEBAR -->
-<aside class="left-sidebar">
-<h3>🏹 英杰 武器</h3>
-<ul>
-<li><a class="active" href="great-eagle-bow.html">大鹫弓</a></li>
-<li><a href="boulder-breaker.html">碎岩巨剑</a></li>
-<li><a href="./">七宝匕首</a></li>
-<li><a href="lightscale-trident.html">光鳞之枪</a></li>
-<li><a href="./boulder-breaker.html">破晓者 盾</a></li>
-</ul>
-<h3>⚔️ 最佳装备</h3>
-<ul>
-<li><a href="master-sword.html">大师之剑</a></li>
-<li><a href="hylian-shield.html">海利亚盾</a></li>
-<li><a href="fierce-deity-set.html">鬼神套装</a></li>
-<li><a href="barbarian-set.html">蛮族套装</a></li>
-<li><a href="./">Sand Boots</a></li>
-</ul>
-<h3>🔗 快速链接</h3>
-<ul>
-<li><a href="../index.html">首页</a></li>
-<li><a href="https://www.zelda.com/tears-of-the-kingdom/" target="_blank">官方网站</a></li>
-</ul>
-</aside>
+  <main class="content-area">
 
-<!-- MAIN CONTENT -->
-<main class="content-area">
 
 <!-- Breadcrumb -->
 <div class="breadcrumb">
@@ -434,95 +342,36 @@ tr:nth-child(even) { background: #f5f3ee; }
 <p>Now that you have the best bow in the game, why not forge the strongest two-handed weapon to pair with it? Head to our <a href="boulder-breaker.html"><strong>碎岩巨剑 Guide</strong></a> to learn how to craft 达尔克尔's signature 36-attack crusher in 鼓隆城. With the 大鹫弓 for ranged dominance and the 碎岩巨剑 for melee destruction, you'll be prepared for anything the 地底 throw at you.</p>
 </div>
 
-</main>
 
-<!-- RIGHT SIDEBAR -->
-<aside class="right-sidebar">
-<h3>📊 物品数据</h3>
-<div class="info-card">
-<div class="label">Base Damage</div>
-<div class="value">28 &times; 3 arrows = 84 total</div>
-</div>
-<div class="info-card">
-<div class="label">武器 类型</div>
-<div class="value">弓 (英杰)</div>
-</div>
-<div class="info-card">
-<div class="label">耐久度</div>
-<div class="value">60 shots (high for multi-shot)</div>
-</div>
-<div class="info-card">
-<div class="label">Special Effect</div>
-<div class="value">三段射击</div>
-</div>
-<div class="info-card">
-<div class="label">可重新锻造</div>
-<div class="value">Yes — same materials</div>
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="ad-slot">Ad Space</div>
+  </aside>
 </div>
 
-<h3>⏱️ Time Estimate</h3>
-<div class="info-card">
-<div class="label">Speedrun (materials ready)</div>
-<div class="value">5 minutes (craft only)</div>
-</div>
-<div class="info-card">
-<div class="label">Full route from Lookout</div>
-<div class="value">25–40 minutes</div>
-</div>
-<div class="info-card">
-<div class="label">With 钻石 farming</div>
-<div class="value">45–90 minutes</div>
-</div>
-
-<h3>🗺️ Key Coordinates</h3>
-<div class="info-card">
-<div class="label">利特村</div>
-<div class="value">-3619, 1813, 0218</div>
-</div>
-<div class="info-card">
-<div class="label">塔邦挞 Great Bridge</div>
-<div class="value">-3600, 0980, 0240</div>
-</div>
-<div class="info-card">
-<div class="label">Lindor's Brow Tower</div>
-<div class="value">-1901, 1243, 0297</div>
-</div>
-
-<h3>⚠️ 前置条件</h3>
-<div class="info-card">
-<div class="label">需要 Quest</div>
-<div class="value">完成风之神殿</div>
-</div>
-<div class="info-card">
-<div class="label">需要 Gear</div>
-<div class="value">防寒 Lv.2</div>
-</div>
-</aside>
-
-</div>
-
-<!-- Footer -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-logo">&#9676; RelicTrek</div>
-      <p class="footer-tagline">每件传奇物品都有一个故事。我们为你绘制旅程。</p>
+      <p class="footer-tagline">Every legendary item has a story. We map the journey.</p>
     </div>
     <div class="footer-links">
       <div class="footer-col">
         <div class="footer-col-title">RelicTrek</div>
-        <a href="../privacy.html">隐私</a>
-        <a href="../terms.html">条款</a>
-        <a href="../about.html">关于</a>
+        <a href="../../privacy.html">隐私政策</a>
+        <a href="../../terms.html">使用条款</a>
+        <a href="../../about.html">关于</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <span>&copy; 2025 RelicTrek.net</span>
     <span class="footer-sep">&#9676;</span>
-    <span>制作ed for adventurers</span>
+    <span>Crafted for adventurers</span>
   </div>
 </footer>
 
+<script src="../../js/main.js"></script>
 </body>
 </html>

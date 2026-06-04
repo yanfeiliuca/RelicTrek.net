@@ -22,13 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
   }
 
-  const savedLang = localStorage.getItem('relictrek-lang') || 'en';
+  // Detect current page language: check body class first, then localStorage
+  const bodyLang = document.body.classList.contains('lang-zh') ? 'zh' :
+                    document.body.classList.contains('lang-en') ? 'en' : null;
+  const savedLang = bodyLang || localStorage.getItem('relictrek-lang') || 'en';
 
   // Apply saved language on load
   applyLanguage(savedLang);
-  document.body.classList.add('lang-' + savedLang);
+  // Only add lang class if body doesn't already have one
+  if (!bodyLang) {
+    document.body.classList.add('lang-' + savedLang);
+  }
 
-  // Set active button
+  // Set active button based on detected language
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     if (btn.dataset.lang === savedLang) btn.classList.add('active');
 

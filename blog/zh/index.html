@@ -22,8 +22,17 @@
 .blog-list-item a:hover { text-decoration: underline; }
 .blog-list-item .date { color: var(--text-muted); font-size: 15px; margin-top: 4px; }
 </style>
+<style>
+.blog-list { list-style: none; margin: 0; padding: 0; }
+.blog-list-item { padding: 18px 0; border-bottom: 1px solid var(--border); }
+.blog-list-item:last-child { border-bottom: none; }
+.blog-list-item a { color: var(--accent); font-size: 17px; font-weight: 700; text-decoration: none; }
+.blog-list-item a:hover { text-decoration: underline; }
+.blog-list-item .preview { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin: 8px 0 4px; }
+.blog-list-item .date { color: var(--text-dim); font-size: 13px; }
+</style>
 </head>
-<body>
+<body class="lang-zh">
 
   <!-- Top Navigation -->
   <nav class="top-nav">
@@ -31,7 +40,7 @@
     <a href="../" class="logo">RelicTrek</a>
     <input type="search" placeholder="搜索物品（如 安赫之盾）..." aria-label="搜索">
     <div class="lang-switch">
-      <button data-lang="en" onclick="window.location.href='../index.html'" title="English">EN</button>
+      <button data-lang="en" onclick="window.location.href='../index.html'">EN</button>
       <button data-lang="zh" class="active" title="中文">中文</button>
     </div>
     <div class="nav-links">
@@ -101,8 +110,8 @@
       <div class="section">
         <h2>最新文章</h2>
         <ul class="blog-list">
-      <li class="blog-list-item"><a href="2026-06-04.html">Satisfactory 熔合线</a><div class="date">2026年06月04日</div></li>
-        </ul>
+      <li class="blog-list-item"><a href="2026-06-04.html">Satisfactory 熔合线</a><div class="preview">熔合线至今仍是幸福工厂中最受追捧的物品之一，而最近几周围绕它的社区热度更是持续升温。从Reddit讨论帖到YouTube攻略视频，玩家们纷纷分享自己的获取经历、捷径技巧和各种让人哭笑不得的翻车故事。 在幸福工厂的世界中，很少有物品能像熔合线一样获得如此高的尊重和渴望。无论你是追求100%成就解锁的 completionist，还是寻求终极配装的核心玩家，这件物品都代表着游戏旅程中的一个重要里程碑。</div><div class="date">2026年06月04日</div></li>
+    </ul>
       </div>
     </main>
 

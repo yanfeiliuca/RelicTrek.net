@@ -4,133 +4,69 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z2SC4S5VZ9');
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','G-Z2SC4S5VZ9');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>夜光套装 - 塞尔达 王国之泪 制作攻略</title>
+<link rel="stylesheet" href="../../css/style.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0f0f0f;color:#e0e0e0;line-height:1.7}
-a{color:#4fc3f7;text-decoration:none}
-a:hover{color:#81d4fa}
-.container{display:flex;min-height:100vh}
-.left-sidebar{width:260px;background:#1a1a1a;border-right:1px solid #333;padding:20px 0;position:fixed;height:100vh;overflow-y:auto}
-.left-sidebar h2{font-size:14px;text-transform:uppercase;color:#888;padding:0 20px;margin-bottom:15px;letter-spacing:1px}
-.left-sidebar ul{list-style:none}
-.left-sidebar li a{display:block;padding:10px 20px;color:#aaa;font-size:14px;border-left:3px solid transparent;transition:all .2s}
-.left-sidebar li a:hover,.left-sidebar li a.active{color:#fff;background:#252525;border-left-color:#4fc3f7}
-.left-sidebar .emoji{margin-right:8px}
-.main-wrapper{flex:1;margin-left:260px;margin-right:300px}
-.top-nav{background:#1a1a1a;border-bottom:1px solid #333;padding:15px 30px;display:flex;align-items:center;gap:25px;position:sticky;top:0;z-index:100}
-.top-nav a{color:#aaa;font-size:14px;padding:5px 0}
-.top-nav a:hover{color:#fff}
-.ticker-bar{background:#1e2a1e;border-bottom:1px solid #2a3a2a;padding:10px 30px;font-size:15px;color:#7cb97c;overflow:hidden;white-space:nowrap}
-.ticker-bar span{margin-right:30px}
-.content-area{padding:35px 40px;max-width:900px}
-.right-sidebar{width:300px;background:#1a1a1a;border-left:1px solid #333;padding:25px;position:fixed;right:0;height:100vh;overflow-y:auto}
-.right-sidebar h3{font-size:14px;text-transform:uppercase;color:#888;margin-bottom:15px;letter-spacing:1px}
-.right-sidebar .stat-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #2a2a2a;font-size:14px}
-.right-sidebar .stat-label{color:#888}
-.right-sidebar .stat-value{color:#ccc}
-.related-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #2a2a2a}
-.related-item .ri-icon{font-size:24px}
-.related-item .ri-name{font-size:14px;color:#ccc}
-.related-item .ri-desc{font-size:14px;color:#666}
-h1{font-size:32px;margin-bottom:10px;color:#fff}
-h2{font-size:22px;margin:30px 0 15px;color:#4fc3f7;border-bottom:1px solid #333;padding-bottom:8px}
-h3{font-size:17px;margin:22px 0 10px;color:#ccc}
-p{margin-bottom:14px;color:#c0c0c0}
-.item-header{display:flex;align-items:center;gap:18px;margin-bottom:25px;padding:20px;background:#1a1a1a;border:1px solid #333;border-radius:6px}
-.item-icon-tech{font-size:48px;background:#1a2a1a;border-radius:8px;padding:10px}
-.item-meta{display:flex;gap:15px;flex-wrap:wrap;margin-top:8px}
-.item-meta span{font-size:15px;padding:4px 12px;background:#252525;border-radius:4px;color:#aaa}
-.item-meta .rare{background:#2a1a2a;color:#d48aff}
-.item-meta .difficulty{background:#1a2a1a;color:#7cb97c}
-.section{margin-bottom:40px}
-.gotcha-box{background:#2a1a1a;border:1px solid #4a2a2a;border-radius:6px;padding:20px;margin:15px 0}
-.gotcha-box h4{color:#e57373;margin-bottom:10px;font-size:15px}
-.gotcha-box ul{list-style:none;padding-left:0}
-.gotcha-box li{padding:8px 0;border-bottom:1px solid #3a2a2a;color:#d0a0a0;font-size:14px}
-.gotcha-box li:last-child{border-bottom:none}
-.route-tree{background:#1a1a2a;border:1px solid #2a2a3a;border-radius:6px;padding:20px;margin:15px 0}
-.route-step{display:flex;align-items:flex-start;gap:15px;padding:15px 0;border-bottom:1px solid #2a2a3a}
-.route-step:last-child{border-bottom:none}
-.step-num{background:#4fc3f7;color:#0f0f0f;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
-.route-step h4{color:#81d4fa;margin-bottom:5px;font-size:15px}
-.route-step p{margin-bottom:4px;font-size:14px}
-.material-item{display:flex;align-items:flex-start;gap:15px;padding:15px;background:#1a1a1a;border:1px solid #333;border-radius:6px;margin:12px 0}
-.mat-icon{font-size:28px;flex-shrink:0}
-.mat-info h4{color:#ccc;margin-bottom:5px}
-.mat-info p{font-size:14px;margin-bottom:4px}
-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
-th{background:#252525;color:#4fc3f7;padding:12px;text-align:left;border-bottom:2px solid #4fc3f7}
-td{padding:12px;border-bottom:1px solid #2a2a2a;color:#c0c0c0}
-tr:hover td{background:#1a1a1a}
-.coord{font-family:'Courier New',monospace;color:#7cb97c;background:#1a2a1a;padding:2px 8px;border-radius:4px;font-size:13px}
-.tag{display:inline-block;padding:3px 10px;background:#252525;border-radius:4px;font-size:14px;color:#aaa;margin-right:6px}
-.footer{text-align:center;padding:40px;color:#555;font-size:15px;border-top:1px solid #222;margin-top:60px}
-.breadcrumb{color:#666;font-size:15px;margin-bottom:20px}
-.breadcrumb a{color:#888}
-.next-page{display:block;margin-top:30px;padding:20px;background:#1a2a1a;border:1px solid #2a3a2a;border-radius:6px;text-align:center;color:#7cb97c;font-weight:600}
-.next-page:hover{background:#1e321e}
-.warning-box{background:#2a1a1a;border:1px solid #4a2a2a;border-radius:6px;padding:15px;margin:15px 0;color:#d0a0a0;font-size:14px}
-.info-box{background:#1a1a2a;border:1px solid #2a2a3a;border-radius:6px;padding:15px;margin:15px 0;color:#a0a0d0;font-size:14px}
-.tip-list{list-style:none;padding-left:0}
-.tip-list li{padding:10px 0;border-bottom:1px solid #2a2a2a;font-size:14px;color:#c0c0c0}
-.tip-list li:last-child{border-bottom:none}
-.pro-tip{background:#1a2a1a;border-left:4px solid #7cb97c;padding:15px;margin:15px 0;border-radius:0 6px 6px 0}
-.pro-tip strong{color:#7cb97c}
+.blog-post h1 { font-size: 26px; margin-bottom: 12px; color: var(--accent); }
+.blog-post h2 { font-size: 18px; margin: 24px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.blog-meta { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+.blog-body p { margin-bottom: 14px; line-height: 1.8; color: var(--text-muted); }
+.blog-body ul { margin: 10px 0 10px 20px; }
+.blog-body li { margin-bottom: 6px; line-height: 1.6; color: var(--text-muted); }
 </style>
 </head>
-<body>
+<body class="lang-zh">
 
-<div class="container">
-
-<!-- LEFT SIDEBAR -->
-<nav class="left-sidebar">
-<h2>塞尔达 王国之泪 物品</h2>
-<ul>
-<li><a href="champions-leathers.html"><span class="emoji">👕</span>勇者皮衣</a></li>
-<li><a href="radiant-set.html" class="active"><span class="emoji">💀</span>夜光套装</a></li>
-<li><a href="#"><span class="emoji">⚡</span>大师之剑</a></li>
-<li><a href="#"><span class="emoji">🛡️</span>海利亚盾</a></li>
-<li><a href="#"><span class="emoji">🌿</span>Hearty Elixir</a></li>
-<li><a href="#"><span class="emoji">🔥</span>耐火石铠</a></li>
-<li><a href="#"><span class="emoji">❄️</span>羽饰套装</a></li>
-<li><a href="#"><span class="emoji">🏹</span>大鹫弓</a></li>
-<li><a href="#"><span class="emoji">💎</span>钻石 Circlet</a></li>
-<li><a href="#"><span class="emoji">🧪</span> 强力药 </a></li>
-</ul>
-</nav>
-
-<!-- MAIN AREA -->
-<div class="main-wrapper">
-
-<!-- TOP NAV -->
 <nav class="top-nav">
-<a href="./">制作ing Hub</a>
-<a href="./">防具</a>
-<a href="./">武器</a>
-<a href="./">药剂</a>
-<a href="./">材料</a>
-<a href="./">地底 Guide</a>
+  <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+  <a href="../../" class="logo">RelicTrek</a>
+  <input type="search" placeholder="搜索物品..." aria-label="Search">
+  <div class="lang-switch">
+    <button data-lang="en" onclick="window.location.href='../zelda-totk/index.html'">EN</button>
+    <button data-lang="zh" class="active" title="中文">中文</button>
+  </div>
+  <div class="nav-links">
+    <a href="../../blog/zh/">博客</a>
+    <a href="../../" class="active">游戏</a>
+    <a href="../../about.html">关于</a>
+  </div>
 </nav>
 
-<!-- TICKER -->
 <div class="ticker-bar">
-<span>👕 勇者皮衣 — boosts 大师之剑 beam</span>
-<span>💀 夜光套装 — 骷髅伪装 + bone attack up</span>
-<span>⚡ 大师之剑 — dragon scale required</span>
-<span>🛡️ 海利亚盾 — highest defense</span>
-<span>🌿 生命药 — 完全恢复 + 额外心心</span>
+  <div class="ticker-track">
+    <span class="ticker-item">
+      <span class="slogan-main-text">What You Don't Know You're Missing</span>
+      <span class="sep">|</span>
+      <span class="slogan-sub-text">The Best Items Hide in Plain Sight</span>
+    </span>
+  </div>
 </div>
 
-<!-- CONTENT -->
-<main class="content-area">
+<div class="main-layout">
+  <aside class="left-sidebar">
+    <h3>游戏</h3>
+      <a href="../../terraria/zh/">泰拉瑞亚</a>
+      <a href="../../subnautica2/zh/">深海迷航2</a>
+      <a href="../../monster-hunter-wilds/zh/">怪物猎人：荒野</a>
+      <a href="./" class="active">塞尔达传说：王国之泪</a>
+      <a href="../../minecraft/zh/">我的世界</a>
+      <a href="../../no-mans-sky/zh/">无人深空</a>
+      <a href="../../baldurs-gate-3/zh/">博德之门3</a>
+      <a href="../../valheim/zh/">英灵神殿</a>
+      <a href="../../path-of-exile-2/zh/">流放之路2</a>
+      <a href="../../elden-ring/zh/">艾尔登法环</a>
+      <a href="../../stardew-valley/zh/">星露谷物语</a>
+      <a href="../../hades-2/zh/">哈迪斯2</a>
+      <a href="../../satisfactory/zh/">幸福工厂</a>
+  </aside>
+
+  <main class="content-area">
+
 
 <div class="breadcrumb">
 <a href="./">制作ing Hub</a> / <a href="./">防具</a> / 夜光套装
@@ -460,96 +396,36 @@ tr:hover td{background:#1a1a1a}
 <a href="champions-leathers.html" class="next-page" data-zh="推荐下一篇">推荐下一步 → 勇者皮衣 — Unique chest armor that enhances the 大师之剑's beam attack. A must-have for any 大师之剑 build.</a>
 </section>
 
-</main>
 
-<div class="footer">
-<p>塞尔达传说：王国之泪 — 制作攻略 Database</p>
-<p>社区编写，服务社区。</p>
-</div>
+  </main>
 
-</div>
-
-<!-- RIGHT SIDEBAR -->
-<aside class="right-sidebar">
-<h3>物品数据</h3>
-<div class="stat-row">
-<span class="stat-label">Pieces</span>
-<span class="stat-value">3 (Mask, Shirt, Tights)</span>
-</div>
-<div class="stat-row">
-<span class="stat-label">防御力 (each)</span>
-<span class="stat-value">3 (9 total)</span>
-</div>
-<div class="stat-row">
-<span class="stat-label">Set Bonus</span>
-<span class="stat-value">Bone 攻击力提升</span>
-</div>
-<div class="stat-row">
-<span class="stat-label">Upgradeable</span>
-<span class="stat-value">No</span>
-</div>
-<div class="stat-row">
-<span class="stat-label">Dyeable</span>
-<span class="stat-value">No</span>
-</div>
-<div class="stat-row">
-<span class="stat-label">Glow Effect</span>
-<span class="stat-value">Yes (permanent)</span>
-</div>
-<div class="stat-row">
-<span class="stat-label">Stal Disguise</span>
-<span class="stat-value">Yes (per piece)</span>
+  <aside class="right-sidebar">
+    <div class="ad-slot">Ad Space</div>
+  </aside>
 </div>
 
-<h3 style="margin-top:30px">费用汇总</h3>
-<div class="stat-row">
-<span class="stat-label">夜光面罩</span>
-<span class="stat-value">150 魄</span>
-</div>
-<div class="stat-row">
-<span class="stat-label">夜光紧身服</span>
-<span class="stat-value">200 魄</span>
-</div>
-<div class="stat-row">
-<span class="stat-label">夜光紧身裤</span>
-<span class="stat-value">150 魄</span>
-</div>
-<div class="stat-row">
-<span class="stat-label">Total</span>
-<span class="stat-value" style="color:#d48aff;font-weight:700">500 魄</span>
-</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">&#9676; RelicTrek</div>
+      <p class="footer-tagline">Every legendary item has a story. We map the journey.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">RelicTrek</div>
+        <a href="../../privacy.html">隐私政策</a>
+        <a href="../../terms.html">使用条款</a>
+        <a href="../../about.html">关于</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 RelicTrek.net</span>
+    <span class="footer-sep">&#9676;</span>
+    <span>Crafted for adventurers</span>
+  </div>
+</footer>
 
-<h3 style="margin-top:30px">相关攻略</h3>
-<div class="related-item">
-<div class="ri-icon">👕</div>
-<div>
-<div class="ri-name"><a href="champions-leathers.html">勇者皮衣</a></div>
-<div class="ri-desc">大师之剑 beam boost</div>
-</div>
-</div>
-<div class="related-item">
-<div class="ri-icon">🕯️</div>
-<div>
-<div class="ri-name"><a href="#">Brightbloom Farming</a></div>
-<div class="ri-desc">地底 lighting essentials</div>
-</div>
-</div>
-<div class="related-item">
-<div class="ri-icon">⚙️</div>
-<div>
-<div class="ri-name"><a href="#">左纳乌能源 &amp; Energy Cell</a></div>
-<div class="ri-desc">Upgrade your 左纳乌 power</div>
-</div>
-</div>
-<div class="related-item">
-<div class="ri-icon">🗼</div>
-<div>
-<div class="ri-name"><a href="#">地底 破魔之根 Map</a></div>
-<div class="ri-desc">All 120+ 破魔之根 locations</div>
-</div>
-</div>
-</aside>
-
-</div>
+<script src="../../js/main.js"></script>
 </body>
 </html>

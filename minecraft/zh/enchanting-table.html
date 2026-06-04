@@ -1,154 +1,72 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z2SC4S5VZ9');
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());gtag('config','G-Z2SC4S5VZ9');
 </script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>附魔台 + 15个书架 —— 我的世界合成攻略 | RelicTrek</title>
-<link href="../../css/style.css" rel="stylesheet"/><style>
-  :root {
-    --bg: #0d0d0d;
-    --surface: #141414;
-    --surface2: #1a1a1a;
-    --border: #2a2a2a;
-    --text: #d4d4d4;
-    --text2: #888;
-    --accent: #c9a96e;
-    --accent2: #8b7355;
-    --link: #7ab8e8;
-    --gotcha: #d46060;
-    --success: #5aaa6e;
-    --nav-bg: #0a0a0a;
-    --ticker-bg: #181818;
-    --sidebar-w: 210px;
-    --rightbar-w: 180px;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; line-height: 1.7; overflow-x: hidden; }
-  a { color: var(--link); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .top-nav { background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 20px; height: 48px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; left: 0; right: 0; z-index: 200; }
-  .nav-brand { font-size: 18px; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
-  .nav-links { display: flex; gap: 20px; list-style: none; }
-  .nav-links a { color: var(--text2); font-size: 15px; }
-  .nav-links a:hover { color: var(--text); }
-  .ticker-bar { background: var(--ticker-bg); border-bottom: 1px solid var(--border); height: 32px; display: flex; align-items: center; overflow: hidden; position: fixed; top: 48px; left: 0; right: 0; z-index: 199; padding: 0 20px; font-size: 14px; color: var(--text2); }
-  .ticker-content { display: flex; gap: 40px; animation: ticker-scroll 40s linear infinite; white-space: nowrap; }
-  @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-  .ticker-item span { color: var(--accent); margin-right: 6px; }
-  .page-layout { display: flex; margin-top: 80px; min-height: calc(100vh - 80px); }
-  .left-sidebar { width: var(--sidebar-w); background: var(--nav-bg); border-right: 1px solid var(--border); padding: 16px 0; position: fixed; top: 80px; bottom: 0; left: 0; overflow-y: auto; z-index: 100; }
-  .sidebar-title { padding: 0 16px 12px; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text2); border-bottom: 1px solid var(--border); }
-  .sidebar-list { list-style: none; padding: 8px 0; }
-  .sidebar-list li a { display: block; padding: 8px 16px; color: var(--text2); font-size: 15px; border-left: 3px solid transparent; }
-  .sidebar-list li a:hover, .sidebar-list li a.active { background: var(--surface); color: var(--text); border-left-color: var(--accent); }
-  .sidebar-list li a .emoji { margin-right: 6px; }
-  .right-sidebar { width: var(--rightbar-w); background: var(--nav-bg); border-left: 1px solid var(--border); padding: 16px; position: fixed; top: 80px; bottom: 0; right: 0; overflow-y: auto; z-index: 100; font-size: 14px; }
-  .right-section { margin-bottom: 24px; }
-  .right-section h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
-  .stat-row { display: flex; justify-content: space-between; margin-bottom: 6px; color: var(--text2); }
-  .stat-value { color: var(--text); font-weight: 600; }
-  .tag { display: inline-block; padding: 2px 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 3px; font-size: 14px; color: var(--text2); margin: 2px; }
-  .content-area { margin-left: var(--sidebar-w); margin-right: var(--rightbar-w); padding: 24px 32px; flex: 1; max-width: 860px; }
-  .breadcrumb { font-size: 14px; color: var(--text2); margin-bottom: 20px; }
-  .breadcrumb a { color: var(--text2); }
-  .breadcrumb a:hover { color: var(--text); }
-  .breadcrumb span { margin: 0 6px; color: var(--border); }
-  .item-header { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: var(--surface); border: 1px solid var(--border); margin-bottom: 24px; }
-  .item-icon-accessory { width: 64px; height: 64px; background: var(--surface2); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
-  .item-meta h1 { font-size: 22px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
-  .item-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
-  .tag-rarity { background: #3a2a1a; color: var(--accent); border: 1px solid var(--accent2); padding: 2px 8px; font-size: 14px; }
-  .tag-type { background: var(--surface2); color: var(--text2); border: 1px solid var(--border); padding: 2px 8px; font-size: 14px; }
-  .tag-diff { background: var(--surface2); color: var(--gotcha); border: 1px solid var(--border); padding: 2px 8px; font-size: 14px; }
-  .item-desc { color: var(--text2); font-size: 15px; line-height: 1.6; }
-  .section { background: var(--surface); border: 1px solid var(--border); margin-bottom: 20px; padding: 24px; }
-  .section h2 { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-  .section h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 20px 0 10px; }
-  .section p { margin-bottom: 12px; color: var(--text); }
-  .recipe-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
-  .recipe-table th { background: var(--surface2); padding: 10px 12px; text-align: left; color: var(--accent); font-weight: 600; border: 1px solid var(--border); }
-  .recipe-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text); }
-  .recipe-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
-  .crafting-ascii { background: var(--surface2); border: 1px solid var(--border); padding: 16px; font-family: 'Courier New', monospace; font-size: 15px; line-height: 1.8; color: var(--text); margin: 16px 0; overflow-x: auto; }
-  .crafting-ascii .grid-label { color: var(--accent); font-weight: bold; }
-  .gotcha-box { background: rgba(212, 96, 96, 0.08); border: 1px solid var(--gotcha); border-left: 4px solid var(--gotcha); padding: 16px; margin: 16px 0; }
-  .gotcha-box strong { color: var(--gotcha); }
-  .gotcha-box ul { margin: 8px 0 0 20px; }
-  .gotcha-box li { margin-bottom: 6px; color: var(--text); }
-  .route-tree { list-style: none; padding: 0; margin: 16px 0; }
-  .route-tree li { padding: 14px 16px 14px 44px; margin-bottom: 8px; background: var(--surface2); border: 1px solid var(--border); border-left: 4px solid var(--accent); position: relative; }
-  .route-tree li::before { content: attr(data-step); position: absolute; left: 0; top: 0; bottom: 0; width: 32px; background: var(--accent); color: #000; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
-  .route-tree .step-title { font-weight: 600; color: var(--accent); margin-bottom: 4px; }
-  .route-tree .step-detail { color: var(--text2); font-size: 15px; }
-  .material-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); margin-bottom: 10px; }
-  .material-icon { width: 40px; height: 40px; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-  .material-info h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-  .material-info p { font-size: 15px; color: var(--text2); margin-bottom: 4px; }
-  .material-meta { font-size: 14px; color: var(--accent); }
-  .benefit-list { list-style: none; padding: 0; margin: 16px 0; }
-  .benefit-list li { padding: 12px 16px; background: rgba(90, 170, 110, 0.06); border: 1px solid var(--success); margin-bottom: 8px; font-size: 15px; color: var(--text); position: relative; padding-left: 36px; }
-  .benefit-list li::before { content: "[+]"; position: absolute; left: 12px; color: var(--success); font-weight: 700; }
-  .footer { text-align: center; padding: 20px; font-size: 14px; color: var(--text2); border-top: 1px solid var(--border); margin-top: 20px; }
-  .next-rec { padding: 16px; background: var(--surface2); border: 1px solid var(--accent); margin-top: 8px; }
-  .next-rec a { color: var(--accent); font-weight: 600; }
-  .highlight { color: var(--accent); font-weight: 600; }
-  code { background: var(--surface2); padding: 2px 6px; font-family: 'Courier New', monospace; font-size: 14px; color: var(--accent); border: 1px solid var(--border); }
+<link rel="stylesheet" href="../../css/style.css">
+<style>
+.blog-post h1 { font-size: 26px; margin-bottom: 12px; color: var(--accent); }
+.blog-post h2 { font-size: 18px; margin: 24px 0 10px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.blog-meta { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+.blog-body p { margin-bottom: 14px; line-height: 1.8; color: var(--text-muted); }
+.blog-body ul { margin: 10px 0 10px 20px; }
+.blog-body li { margin-bottom: 6px; line-height: 1.6; color: var(--text-muted); }
 </style>
 </head>
-<body>
-<!-- Top Navigation -->
+<body class="lang-zh">
+
 <nav class="top-nav">
-<div class="nav-brand"> craft<span style="color:var(--text);">HUNT</span></div><div class="lang-switch"><a href="../enchanting-table.html" title="English">EN</a><button class="active" data-lang="zh" title="Chinese">中文</button></div>
-<ul class="nav-links">
-<li><a href="../index.html">家</a></li>
-<li><a href="./">合成</a></li>
-<li><a href="./">材料</a></li>
-<li><a href="./">路线</a></li>
-<li><a href="../about.html">关于</a></li>
-</ul>
+  <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+  <a href="../../" class="logo">RelicTrek</a>
+  <input type="search" placeholder="搜索物品..." aria-label="Search">
+  <div class="lang-switch">
+    <button data-lang="en" onclick="window.location.href='../minecraft/index.html'">EN</button>
+    <button data-lang="zh" class="active" title="中文">中文</button>
+  </div>
+  <div class="nav-links">
+    <a href="../../blog/zh/">博客</a>
+    <a href="../../" class="active">游戏</a>
+    <a href="../../about.html">关于</a>
+  </div>
 </nav>
-<!-- Ticker -->
+
 <div class="ticker-bar">
-<div class="ticker-content">
-<span class="ticker-item"><span>现在 trending:</span> 时运 III 镐 需求 上 200%</span>
-<span class="ticker-item"><span> tip:</span> 糖 cane grows 1 方块 每一个 16 random ticks</span>
-<span class="ticker-item"><span>Market:</span> 皮革 prices  steady 在 绿宝石 parity</span>
-<span class="ticker-item"><span>News:</span> 经验修补 books 建立 在 要塞 libraries</span>
-<span class="ticker-item"><span>现在 trending:</span> 时运 III 镐 需求 上 200%</span>
-<span class="ticker-item"><span> tip:</span> 糖 cane grows 1 方块 每一个 16 random ticks</span>
-<span class="ticker-item"><span>Market:</span> 皮革 prices  steady 在 绿宝石 parity</span>
-<span class="ticker-item"><span>News:</span> 经验修补 books 建立 在 要塞 libraries</span>
+  <div class="ticker-track">
+    <span class="ticker-item">
+      <span class="slogan-main-text">What You Don't Know You're Missing</span>
+      <span class="sep">|</span>
+      <span class="slogan-sub-text">The Best Items Hide in Plain Sight</span>
+    </span>
+  </div>
 </div>
-</div>
-<!-- Page Layout -->
-<div class="page-layout">
-<!-- Left Sidebar -->
-<aside class="left-sidebar">
-<div class="sidebar-title">我的世界 物品</div>
-<ul class="sidebar-list">
-<li><a href="./"><span class="emoji">⛏️</span> 下界合金 镐</a></li>
-<li><a class="active" href="enchanting-table.html"><span class="emoji">📖</span> 附魔台</a></li>
-<li><a href="./"><span class="emoji">🦋</span> 鞘翅</a></li>
-<li><a href="beacon.html"><span class="emoji">💡</span> 信标</a></li>
-<li><a href="conduit.html"><span class="emoji">🔱</span> 导管</a></li>
-<li><a href="ender-chest.html"><span class="emoji">📦</span> Ender  chest</a></li>
-<li><a href="./"><span class="emoji">⚗️</span> 酿造 站</a></li>
-<li><a href="./"><span class="emoji">🟪</span> 潜影贝 盒子</a></li>
-<li><a href="./"><span class="emoji">🪬</span> Totem 的 Undying</a></li>
-<li><a href="./"><span class="emoji">🛡️</span> 钻石 盔甲</a></li>
-</ul>
-</aside>
-<!-- Main Content -->
-<main class="content-area">
+
+<div class="main-layout">
+  <aside class="left-sidebar">
+    <h3>游戏</h3>
+      <a href="../../terraria/zh/">泰拉瑞亚</a>
+      <a href="../../subnautica2/zh/">深海迷航2</a>
+      <a href="../../monster-hunter-wilds/zh/">怪物猎人：荒野</a>
+      <a href="../../zelda-totk/zh/">塞尔达传说：王国之泪</a>
+      <a href="./" class="active">我的世界</a>
+      <a href="../../no-mans-sky/zh/">无人深空</a>
+      <a href="../../baldurs-gate-3/zh/">博德之门3</a>
+      <a href="../../valheim/zh/">英灵神殿</a>
+      <a href="../../path-of-exile-2/zh/">流放之路2</a>
+      <a href="../../elden-ring/zh/">艾尔登法环</a>
+      <a href="../../stardew-valley/zh/">星露谷物语</a>
+      <a href="../../hades-2/zh/">哈迪斯2</a>
+      <a href="../../satisfactory/zh/">幸福工厂</a>
+  </aside>
+
+  <main class="content-area">
+
 <!-- Breadcrumb -->
 <div class="breadcrumb">
 <a href="../index.html">家</a> <span>/</span> <a href="./">合成</a> <span>/</span> 附魔台 + 书架
@@ -414,48 +332,36 @@
 <div class="footer">
     合成 我的世界 Guides © 2025. 不是 affiliated with Mojang Studios. 我的世界 是 一 trademark 的 Microsoft Corporation.
   </div>
-</main>
-<!-- Right Sidebar -->
-<aside class="right-sidebar">
-<div class="right-section">
-<h4>物品 Stats</h4>
-<div class="stat-row"><span class="stat-label">Rarity</span><span class="stat-value">稀有</span></div>
-<div class="stat-row"><span class="stat-label">类型</span><span class="stat-value">效用 方块</span></div>
-<div class="stat-row"><span class="stat-label">Max Enchant</span><span class="stat-value">等级 30</span></div>
-<div class="stat-row"><span class="stat-label">书架</span><span class="stat-value">15 需要</span></div>
-<div class="stat-row"><span class="stat-label">Renewable</span><span class="stat-value">是的</span></div>
-<div class="stat-row"><span class="stat-label">组</span><span class="stat-value">64</span></div>
+
+  </main>
+
+  <aside class="right-sidebar">
+    <div class="ad-slot">Ad Space</div>
+  </aside>
 </div>
-<div class="right-section">
-<h4>需要 Tools</h4>
-<div class="stat-row"><span class="stat-label">镐</span><span class="stat-value">钻石 (黑曜石)</span></div>
-<div class="stat-row"><span class="stat-label">剑</span><span class="stat-value">任何 (抢夺 III)</span></div>
-<div class="stat-row"><span class="stat-label">锄</span><span class="stat-value">任何 (糖 cane)</span></div>
-<div class="stat-row"><span class="stat-label">小麦</span><span class="stat-value">为 breeding</span></div>
-</div>
-<div class="right-section">
-<h4>顶部 附魔</h4>
-<div class="stat-row"><span class="stat-label">时运 III</span><span class="stat-value">镐</span></div>
-<div class="stat-row"><span class="stat-label">效率 V</span><span class="stat-value">Tools</span></div>
-<div class="stat-row"><span class="stat-label">保护 IV</span><span class="stat-value">盔甲</span></div>
-<div class="stat-row"><span class="stat-label">耐久 III</span><span class="stat-value">所有  gear</span></div>
-<div class="stat-row"><span class="stat-label">经验修补</span><span class="stat-value">Treasure 只有</span></div>
-</div>
-<div class="right-section">
-<h4>Tags</h4>
-<span class="tag">附魔</span>
-<span class="tag">中 游戏</span>
-<span class="tag">永久</span>
-<span class="tag">种植</span>
-<span class="tag">essential</span>
-</div>
-<div class="right-section">
-<h4>版本</h4>
-<div class="stat-row"><span class="stat-label">Java</span><span class="stat-value">所有</span></div>
-<div class="stat-row"><span class="stat-label">Bedrock</span><span class="stat-value">所有</span></div>
-<div class="stat-row"><span class="stat-label">Updated</span><span class="stat-value">1.20</span></div>
-</div>
-</aside>
-</div>
-<script src="../../js/main.js"></script></body>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">&#9676; RelicTrek</div>
+      <p class="footer-tagline">Every legendary item has a story. We map the journey.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">RelicTrek</div>
+        <a href="../../privacy.html">隐私政策</a>
+        <a href="../../terms.html">使用条款</a>
+        <a href="../../about.html">关于</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 RelicTrek.net</span>
+    <span class="footer-sep">&#9676;</span>
+    <span>Crafted for adventurers</span>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
 </html>
