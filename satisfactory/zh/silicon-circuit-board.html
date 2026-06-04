@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<meta name="description" content="Satisfactory硅电路板完整合成攻略。材料、位置、分步配方、避坑指南与最优路线。">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
 <script>
@@ -9,7 +10,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>硅电路板替代配方攻略 — 幸福工厂 | RelicTrek</title>
+<title>幸福工厂硅电路板攻略：替代配方与效率优化 | RelicTrek</title>
 <link rel="stylesheet" href="../../css/style.css">
 <style>
 .blog-post h1 { font-size: 26px; margin-bottom: 12px; color: var(--accent); }
@@ -19,6 +20,136 @@
 .blog-body ul { margin: 10px 0 10px 20px; }
 .blog-body li { margin-bottom: 6px; line-height: 1.6; color: var(--text-muted); }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://relictrek.net/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Satisfactory",
+      "item": "https://relictrek.net/satisfactory/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "硅电路板",
+      "item": "https://relictrek.net/satisfactory/zh/silicon-circuit-board.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "硅电路板替代配方攻略 — 幸福工厂 | RelicTrek",
+  "description": "Complete guide to crafting 硅电路板",
+  "totalTime": "PT4H",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Various materials"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "硅电路板",
+      "text": "硅电路板: (Alternate)\n          组装器\n          8 Copper Sheet/min\n          8 Silica/min\n          4 Circuit Board/min\n          12s\n        \n        \n          Circuit Board (Default)\n          组装器\n          2 Copper Sheet/min\n          4 Plastic/min\n          1 Circuit Board/min\n          8s\n        \n      \n\n      每电路板成本对比\n      \n        \n          指标\n          默认配方\n          硅电路板\n          Impact\n        \n        \n          Copper Sheet per Board\n          2.0\n          2.0\n          &#8212;\n        \n        \n          Plastic per Board\n          4.0\n          0\n          Eliminated\n        \n        \n          Silica per Board\n          0\n          2.0\n          New requirement\n        \n        \n          Production Rate (per Assembler)\n          7.5 /min\n          20 /min\n          +167%\n        \n        \n          Oil Dependency\n          High (needs Plastic)\n          None\n          Decoupled\n        \n      \n\n      Silica Supply Chain\n      &#30789;&#30707;&#30001;&#21407;&#22987;&#30707;&#33521;&#22312;&#26500;&#36896;&#22120;&#20013;&#29983;&#20135;&#12290;&#40664;&#35748;&#30789;&#30707;&#37197;&#26041;&#23558;3&#21407;&#22987;&#30707;&#33521;&#36716;&#25442;&#20026;5&#30789;&#30707;&#65292;&#26080;&#21103;&#20135;&#21697;&#12290;&#21407;&#22987;&#30707;&#33521;&#33410;&#28857;&#20027;&#35201;&#20998;&#24067;&#20110;&#20008;&#28448;&#28448;&#12289;&#32418;&#31481;&#26519;&#21644;&#23721;&#30707;&#28448;&#28448;&#29983;&#24577;&#21306;&#12290;&#19968;&#20010;&#27491;&#24120;&#21407;&#22987;&#30707;&#33521;&#33410;&#28857;&#27599;&#20998;&#38047;&#20135;60&#30719;&#30707;&#65292;&#36716;&#25442;&#20026;100&#30789;&#30707;/&#20998;&#38047;&#8212;&#8212;&#36275;&#22815;&#20379;&#24212;12.5&#20010;&#30789;&#30005;&#36335;&#26495;&#32452;&#35013;&#22120;&#65292;&#29983;&#20135;50&#20010;&#30005;&#36335;&#26495;/&#20998;&#38047;&#12290;\n\n      生产树\n      \n        [DEFAULT CIRCUIT BOARD CHAIN]\n        Crude Oil &#8594; 精炼厂 &#8594; Plastic\n        Plastic + Copper Sheet &#8594; 组装器 &#8594; Circuit Board\n        \n        [SILICON CIRCUIT BOARD &#8212; ALTERNATE]\n        Raw Quartz &#8594; 构造器 &#8594; Silica\n        Silica + Copper Sheet &#8594; 组装器 &#8594; 4x Circuit Board/cycle\n        \n        [SILICA SUPPLY CHAIN]\n        60 Raw Quartz/min &#8594; 构造器 &#8594; 100 Silica/min\n        100 Silica/min &#8594; Supplies ~12.5 Silicon Circuit Board Assemblers\n        100 Silica/min &#8594; Produces ~50 Circuit Boards/min\n      \n\n      Scaling to 100 Circuit Boards Per Minute\n      &#35201;&#29983;&#20135;100&#30789;&#30005;&#36335;&#26495;/&#20998;&#38047;&#65292;&#20320;&#38656;&#35201;25&#20010;&#32452;&#35013;&#22120;&#65288;&#27599;&#20010;100%&#26102;&#38047;&#36895;&#24230;&#20135;&#37327;4&#20010;/&#20998;&#38047;&#65289;&#65292;&#27599;&#20998;&#38047;&#28040;&#32791;200&#38108;&#26495;&#21644;200&#30789;&#30707;&#12290;&#30789;&#30707;&#38656;&#27714;&#38656;&#35201;6.25&#20010;&#26500;&#36896;&#22120;&#22788;&#29702;&#21407;&#22987;&#30707;&#33521;&#65292;&#32422;&#38656;&#35201;3.75&#20010;&#27491;&#24120;&#21407;&#22987;&#30707;&#33521;&#33410;&#28857;&#12290;&#38108;&#26495;&#38656;&#27714;&#38656;&#35201;&#32422;13.3&#20010;&#32452;&#35013;&#22120;&#20174;&#38108;&#38189;&#21046;&#20316;&#38108;&#26495;&#65292;&#32422;&#38656;267&#38108;&#38189;/&#20998;&#38047;&#8212;&#8212;&#22823;&#32422;4.5&#20010;&#27491;&#24120;&#38108;&#33410;&#28857;&#12290;\n    \n\n    \n    \n      3 硬盘获取\n      &#30789;&#30005;&#36335;&#26495;&#26367;&#20195;&#37197;&#26041;&#36890;&#36807;&#22312;MAM&#20013;&#30740;&#31350;&#30828;&#30424;&#33719;&#24471;&#12290;&#30828;&#30424;&#26159;&#22312;&#22320;&#22270;&#19978;&#21508;&#22788;&#22368;&#26426;&#22320;&#28857;&#25214;&#21040;&#30340;&#29289;&#29702;&#29289;&#21697;&#12290;&#27599;&#20010;&#22368;&#26426;&#22320;&#28857;&#21482;&#26377;&#19968;&#20010;&#30828;&#30424;&#65292;&#27599;&#20010;&#30828;&#30424;&#20174;&#38543;&#26426;&#27744;&#20013;&#35299;&#38145;&#19968;&#20010;&#26367;&#20195;&#37197;&#26041;&#12290;&#30789;&#30005;&#36335;&#26495;&#37197;&#26041;&#20986;&#29616;&#22312;T7+&#37197;&#26041;&#27744;&#20013;&#65292;&#21482;&#33021;&#20174;&#21518;&#26399;&#29983;&#24577;&#21306;&#30340;&#22368;&#26426;&#22320;&#28857;&#33719;&#24471;&#12290;\n\n      Crash Sites That Can Yield Silicon Circuit Board\n      &#30789;&#30005;&#36335;&#26495;&#37197;&#26041;&#23646;&#20110;T7+&#26367;&#20195;&#37197;&#26041;&#27744;&#12290;&#24847;&#21619;&#30528;&#20320;&#38656;&#35201;&#21442;&#35265;&#21518;&#26399;&#29983;&#24577;&#21306;&#30340;&#22368;&#26426;&#22320;&#28857;&#12290;&#20197;&#19979;&#20301;&#32622;&#24050;&#30830;&#35748;&#26377;&#21487;&#33021;&#20135;&#20986;&#27492;&#37197;&#26041;&#12290;\n\n      \n        &#128205; Crash Site A — Swamp Northeastern Edge\n        \n          生态区： Swamp (Eastern Dune Forest)\n          坐标： Approx. (800, -1800)\n          距离基地： ~4,500m southeast\n          电力需求： Recommend Xeno-Zapper or better (hostile fauna)\n          进入方式： Build a bridge across the swamp or use Jetpack to hop between islands\n          显著地标： Large hollow tree, bauxite nodes nearby\n          到达难度： Hard — swamp terrain slows movement\n          Recipe pool: Tier 7+ (includes Silicon Circuit Board)\n        \n      \n\n      \n        &#128205; Crash Site B — Abyss Cliffs Overlook\n        \n          生态区： Abyss Cliffs\n          坐标： Approx. (-1000, 2000)\n          距离基地： ~5,500m north\n          电力需求： Recommend Rifle or Rebar Gun\n          进入方式： Build a long ramp up the cliff face or use Hyper Tube elevator\n          显著地标： Overlooks the canyon, quartz and sulfur nodes\n          到达难度： Very Hard — extreme elevation, bring 200+ Concrete\n          Recipe pool: Tier 7+ (includes Silicon Circuit Board)\n        \n      \n\n      \n        &#128205; Crash Site C — Purple Bamboo Forest\n        \n          生态区： Purple Bamboo Forest (Titan Forest)\n          坐标： Approx. (-2500, -500)\n          距离基地： ~5,000m west\n          电力需求： Recommend Rifle + Gas Mask\n          进入方式： Navigate through dense bamboo, build elevated walkways\n          显著地标： Giant purple bamboo stalks, uranium nodes nearby\n          到达难度： Very Hard — hostile creatures + toxic gas\n          Recipe pool: Tier 7-8 (includes Silicon Circuit Board)\n        \n      \n\n      \n        &#128205; Crash Site D — Eastern Beach Highlands\n        \n          生态区： Eastern Beach Highlands\n          坐标： Approx. (3000, -500)\n          距离基地： ~5,500m east\n          电力需求： Recommend firearm (hostile wildlife)\n          进入方式： Follow the eastern coast, climb the highland ridge\n          显著地标： Overlooks the eastern ocean, multiple quartz nodes\n          到达难度： Hard — long journey, bring portable miners\n          Recipe pool: Tier 7+ (includes Silicon Circuit Board)\n        \n      \n\n      配方池信息\n      &#30789;&#30005;&#36335;&#26495;&#37197;&#26041;&#23646;&#20110;T7+&#26367;&#20195;&#37197;&#26041;&#27744;&#12290;&#24403;&#30740;&#31350;&#36825;&#20123;&#29983;&#24577;&#21306;&#30340;&#30828;&#30424;&#26102;&#65292;MAM&#20250;&#38543;&#26426;&#23637;&#31034;&#19977;&#20010;&#37197;&#26041;&#12290;T7+&#37197;&#26041;&#27744;&#21253;&#25324;&#65306;&#30789;&#30005;&#36335;&#26495;&#12289;&#36229;&#32423;&#30005;&#33041;&#65288;&#26367;&#20195;&#65289;&#12289;&#28065;&#36718;&#30005;&#21160;&#26426;&#12289;&#29076;&#34701;&#27169;&#32452;&#26694;&#26550;&#12289;&#25955;&#28909;&#22120;&#12289;&#20919;&#21364;&#31995;&#32479;&#31561;&#12290;&#30001;&#20110;&#27744;&#24456;&#22823;&#19988;&#38543;&#26426;&#65292;&#24378;&#28872;&#24314;&#35758;&#20351;&#29992;&#23384;&#26723;&#21047;&#26032;&#12290;\n\n      \n        &#9888; Recipe Pool Tip\n        T7+&#37197;&#26041;&#27744;&#26159;&#28216;&#25103;&#20013;&#26368;&#22823;&#30340;&#20043;&#19968;&#65292;&#26377;30+&#20010;&#37197;&#26041;&#12290;&#20219;&#24847;&#30828;&#30424;&#30475;&#21040;&#30789;&#30005;&#36335;&#26495;&#30340;&#27084;&#29575;&#32422;1/10&#12290;&#27599;&#27425;&#25554;&#20837;&#30828;&#30424;&#21069;&#20445;&#23384;&#65292;&#27809;&#21047;&#21040;&#23601;&#35835;&#26723;&#12290;&#25110;&#32773;&#65292;&#20808;&#25910;&#38598;5-10&#20010;T7+&#30828;&#30424;&#65292;&#28982;&#21518;&#36830;&#32493;&#30740;&#31350;&#8212;&#8212;&#38543;&#30528;&#27744;&#32553;&#23567;&#65292;&#27084;&#29575;&#20250;&#25552;&#39640;&#12290;\n      \n    \n\n    \n    \n      4 解锁策略\n\n      研究站研究要求\n      &#22312;&#20351;&#29992;&#30789;&#30005;&#36335;&#26495;&#37197;&#26041;&#20043;&#21069;&#65292;&#20320;&#38656;&#35201;&#23436;&#25104;MAM&#20013;&#30340;&#22810;&#20010;&#30740;&#31350;&#38142;&#12290;&#20197;&#19979;&#26159;&#23436;&#25972;&#30340;&#35299;&#38145;&#36335;&#32447;&#65306;\n\n      \n        HUB Tier 0-6: Progress through base tiers\n        &nbsp;&nbsp;&#8595; HUB Tier 7: Unlock Bauxite Refinement + Aluminum Production\n        &nbsp;&nbsp;&nbsp;&nbsp;&#8595; MAM Research: Raw Quartz chain (unlocks Silica)\n        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8595; Build Silica production line (Raw Quartz &#8594; Constructor &#8594; Silica)\n        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8595; Research Hard Drive from Tier 7+ biome in MAM\n        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8595; Insert Hard Drive &#8594; Wait 10 minutes &#8594; Select Silicon Circuit Board from 3 options\n      \n\n      前置条件清单\n      \n        \n          要求\n          如何获得\n          预计时间\n        \n        \n          HUB Tier 7\n          Deliver Phase 3 Space Elevator payload\n          30-50 hours\n        \n        \n          MAM Quartz Research\n          Find Raw Quartz, research in MAM\n          2-4 hours\n        \n        \n          Silica Production\n          Build Constructor on Raw Quartz node\n          1 hour\n        \n        \n          Copper Sheet Production\n          Already established by Tier 7\n          N/A\n        \n        \n          Hard Drive from Tier 7+ Biome\n          Loot from late-game Crash Sites\n          2-4 hours per drive\n        \n      \n\n      阶段要求\n      &#30789;&#30005;&#36335;&#26495;&#38656;&#35201;T7&#26159;&#22240;&#20026;&#23427;&#20381;&#36182;&#20110;&#32452;&#35013;&#22120;&#65288;T2&#65292;&#24050;&#26377;&#65289;&#21644;&#21407;&#22987;&#30707;&#33521;&#29983;&#20135;&#30340;&#30789;&#30707;&#65288;T7 MAM&#30740;&#31350;&#65289;&#12290;&#34429;&#28982;&#24314;&#31569;&#35201;&#27714;&#20302;&#65292;&#20294;&#36164;&#28304;&#38142;&#25165;&#26159;&#38376;&#27099;&#12290;&#21407;&#22987;&#30707;&#33521;&#33410;&#28857;&#21482;&#20998;&#24067;&#22312;&#38656;&#35201;&#37325;&#35201;&#22522;&#30784;&#35774;&#26045;&#25165;&#33021;&#23433;&#20840;&#21040;&#36798;&#30340;&#29983;&#24577;&#21306;&#8212;&#8212;&#38656;&#35201;&#21943;&#27668;&#32972;&#21253;&#12289;&#28779;&#22120;&#65292;&#36824;&#26377;&#26102;&#38656;&#35201;&#38450;&#27602;&#38754;&#20855;&#25110;&#39640;&#26550;&#36890;&#36947;&#12290;\n\n      推荐解锁顺序\n      &#20026;&#20102;&#22312;T7&#21450;&#20043;&#21518;&#33719;&#24471;&#26368;&#22823;&#25928;&#29575;&#65306;\n      \n        硅电路板 — Eliminates Plastic dependency for electronics",
+      "url": "https://relictrek.net/satisfactory/zh/silicon-circuit-board.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Supercomputer (Alternate)",
+      "text": "Supercomputer (Alternate): — Simplifies the most complex component in Tier 7-8",
+      "url": "https://relictrek.net/satisfactory/zh/silicon-circuit-board.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Heat Sink (Alternate)",
+      "text": "Heat Sink (Alternate): — Reduces aluminum demand for cooling components",
+      "url": "https://relictrek.net/satisfactory/zh/silicon-circuit-board.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Pure Caterium Ingot",
+      "text": "Pure Caterium Ingot: — Doubles Caterium efficiency for Quickwire",
+      "url": "https://relictrek.net/satisfactory/zh/silicon-circuit-board.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Fused Wire",
+      "text": "Fused Wire: — Triple Wire + Quickwire from Copper + Caterium",
+      "url": "https://relictrek.net/satisfactory/zh/silicon-circuit-board.html#step-5"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should I watch out for when crafting this item?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Supercomputer (Alternate) — Simplifies the most complex component in Tier 7-8"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "硅电路板替代配方攻略 — 幸福工厂 | RelicTrek",
+  "description": "",
+  "author": {
+    "@type": "Organization",
+    "name": "RelicTrek"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RelicTrek",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://relictrek.net/logo.png"
+    }
+  },
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://relictrek.net/satisfactory/zh/silicon-circuit-board.html"
+  }
+}
+</script>
+<link rel="canonical" href="https://relictrek.net/satisfactory/zh/silicon-circuit-board.html" />
+<link rel="alternate" hreflang="en" href="https://relictrek.net/satisfactory/silicon-circuit-board.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://relictrek.net/satisfactory/zh/silicon-circuit-board.html" />
+<link rel="alternate" hreflang="x-default" href="https://relictrek.net/satisfactory/silicon-circuit-board.html" />
 </head>
 <body class="lang-zh">
 
