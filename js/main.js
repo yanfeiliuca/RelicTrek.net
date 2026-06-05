@@ -1,60 +1,31 @@
 // RelicTrek — Main JavaScript
-// Handles: language switch, ticker, mobile menu, search
+// Handles: language switch (page navigation), ticker, mobile menu, search
 
 document.addEventListener('DOMContentLoaded', function() {
 
   // ============================================
-  // LANGUAGE SWITCHER
+  // LANGUAGE SWITCHER — Page Navigation Mode
   // ============================================
+  // IMPORTANT: RelicTrek uses SEPARATE HTML pages for EN/ZH.
+  // Clicking a language button NAVIGATES to the other language page.
+  // This is NOT a JS text-swap system.
 
-  function applyLanguage(lang) {
-    // Update all elements with data-en / data-zh attributes
-    document.querySelectorAll('[data-en][data-zh]').forEach(el => {
-      el.textContent = el.getAttribute('data-' + lang);
-    });
+  // Set active button based on body class (set server-side in HTML)
+  const isZhPage = document.body.classList.contains('lang-zh');
 
-    // Update placeholders
-    document.querySelectorAll('[data-en-placeholder][data-zh-placeholder]').forEach(el => {
-      el.placeholder = el.getAttribute('data-' + lang + '-placeholder');
-    });
-
-    // Update document lang attribute
-    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-  }
-
-  // Detect current page language: check body class first, then localStorage
-  const bodyLang = document.body.classList.contains('lang-zh') ? 'zh' :
-                    document.body.classList.contains('lang-en') ? 'en' : null;
-  const savedLang = bodyLang || localStorage.getItem('relictrek-lang') || 'en';
-
-  // Apply saved language on load
-  applyLanguage(savedLang);
-  // Only add lang class if body doesn't already have one
-  if (!bodyLang) {
-    document.body.classList.add('lang-' + savedLang);
-  }
-
-  // Set active button based on detected language
   document.querySelectorAll('.lang-switch button').forEach(btn => {
-    if (btn.dataset.lang === savedLang) btn.classList.add('active');
+    const btnLang = btn.dataset.lang;
 
-    btn.addEventListener('click', function() {
-      const lang = this.dataset.lang;
-      const prevLang = document.body.classList.contains('lang-en') ? 'en' : 'zh';
-      if (lang === prevLang) return;
+    // Set active class based on current page language
+    if ((btnLang === 'zh' && isZhPage) || (btnLang === 'en' && !isZhPage)) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
 
-      // Switch
-      document.body.classList.remove('lang-en', 'lang-zh');
-      document.body.classList.add('lang-' + lang);
-      localStorage.setItem('relictrek-lang', lang);
-
-      // Apply translations
-      applyLanguage(lang);
-
-      // Update active button
-      document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-    });
+    // Language buttons use onclick in HTML for navigation.
+    // This JS only handles the visual active state.
+    // NO event listeners added — onclick in HTML handles the actual navigation.
   });
 
   // ============================================
