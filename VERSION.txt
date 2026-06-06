@@ -1,0 +1,24 @@
+RelicTrek Website Version Tracker
+
+v3.8 - 2026-06-06
+- Comprehensive link audit across 294 pages
+- Fixed 243 broken links (sidebar game nav, top nav, hreflang)
+- Fixed 2 HTML lang mismatches (MHW EN pages marked as zh-CN)
+- Added hreflang alternate tags to 17 EN pages
+- Verified: 0 broken links, 147 EN+ZH page pairs fully matched
+- Daily blog auto-generated: 2026-06-06 (Nyrulna from BG3)
+
+v3.7 - 2026-06-05
+- Chinese translation for 20 item pages (BG3 + POE2 + Satisfactory)
+- Complete removal of CraftHunt branding (25 pages)
+- Fixed 130 EN page lang-en markings
+
+v3.5 - 2026-06-04
+- About page navigation and statistics fixes
+- Root zh/ page link path fixes (80 occurrences)
+
+v2.0 - 2026-06-03
+- Relic Ruins golden theme redesign
+- Independent bilingual page architecture (148 EN + 148 ZH)
+
+[Earlier versions tracked in user git history]
