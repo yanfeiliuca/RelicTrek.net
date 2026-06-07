@@ -1,5 +1,12 @@
 RelicTrek Website Version Tracker
 
+v3.9 - 2026-06-06
+- Typography aligned to Wikipedia standard
+- Body: 15px→14px, lh 1.7→1.5, font→sans-serif
+- H1: 32px→1.8em(~25px), H2: 20px→1.5em(~21px), H3: 15px→1.17em(~16px)
+- H4: 15px→1em(14px), card title: 17px→14px, route-tree: 14px→13px/lh2.2→1.5
+- All other font sizes and line-heights normalized to 14px/1.5 baseline
+
 v3.8 - 2026-06-06
 - Comprehensive link audit across 294 pages
 - Fixed 243 broken links (sidebar game nav, top nav, hreflang)
