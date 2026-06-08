@@ -1,5 +1,12 @@
 RelicTrek Website Version Tracker
 
+v4.1 - 2026-06-06
+- CRITICAL: Fixed mobile homepage layout collapse on Android
+- Fixed .left-sidebar: transform→position:fixed (was occupying 210px in flex layout)
+- Fixed .content-area max-width: negative value on mobile → 100vw
+- Added .right-sidebar { display: none } for <768px screens
+- Root cause: sidebar visually hidden but still took layout space, squeezing content to ~0px
+
 v4.0 - 2026-06-06
 - P0 CRITICAL: Fixed Minecraft Netherite Armor recipe (added Smithing Template for 1.20+)
 - P0 CRITICAL: Fixed Ancient Debris Y-coordinate (-59 → 15, peak generation layer)

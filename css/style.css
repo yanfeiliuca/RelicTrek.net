@@ -839,13 +839,24 @@ body.lang-en .bilingual .zh { display: none; }
 
 @media (max-width: 768px) {
   .left-sidebar {
+    position: fixed;
+    left: 0;
+    top: var(--top-height);
+    bottom: 0;
+    width: var(--sidebar-width);
     transform: translateX(-100%);
     transition: transform 0.25s;
     z-index: 98;
   }
   .left-sidebar.open { transform: translateX(0); }
-  .content-area { margin-left: 0; padding: 16px; }
-  .site-footer { margin-left: 0; }
+  .right-sidebar { display: none; }
+  .content-area {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 16px;
+    max-width: 100vw;
+  }
+  .site-footer { margin-left: 0; margin-right: 0; }
   .menu-toggle { display: block; }
   .ticker-bar { display: none; }
   .nav-links { display: none; }
