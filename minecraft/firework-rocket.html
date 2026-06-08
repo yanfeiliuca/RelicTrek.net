@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="Complete Firework Rocket crafting guide for Minecraft. Paper + 3 Gunpowder = Flight 3. Elytra fuel for sustained flight.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z2SC4S5VZ9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firework Rocket Flight 3 Crafting Guide: Elytra Fuel | Minecraft | RelicTrek</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --surface2: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #d4d4d4;
+    --text2: #888;
+    --accent: #c9a96e;
+    --accent2: #8b7355;
+    --link: #7ab8e8;
+    --gotcha: #d46060;
+    --success: #5aaa6e;
+    --nav-bg: #0a0a0a;
+    --ticker-bg: #181818;
+    --sidebar-w: 210px;
+    --rightbar-w: 180px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; line-height: 1.7; overflow-x: hidden; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .top-nav { background: var(--nav-bg); border-bottom: 1px solid var(--border); padding: 0 20px; height: 48px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; left: 0; right: 0; z-index: 200; }
+  .nav-brand { font-size: 18px; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 20px; list-style: none; }
+  .nav-links a { color: var(--text2); font-size: 15px; }
+  .nav-links a:hover { color: var(--text); }
+  .ticker-bar { background: var(--ticker-bg); border-bottom: 1px solid var(--border); height: 32px; display: flex; align-items: center; overflow: hidden; position: fixed; top: 48px; left: 0; right: 0; z-index: 199; padding: 0 20px; font-size: 14px; color: var(--text2); }
+  .ticker-content { display: flex; gap: 40px; animation: ticker-scroll 40s linear infinite; white-space: nowrap; }
+  @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .ticker-item span { color: var(--accent); margin-right: 6px; }
+  .page-layout { display: flex; margin-top: 80px; min-height: calc(100vh - 80px); }
+  .left-sidebar { width: var(--sidebar-w); background: var(--nav-bg); border-right: 1px solid var(--border); padding: 16px 0; position: fixed; top: 80px; bottom: 0; left: 0; overflow-y: auto; z-index: 100; }
+  .sidebar-title { padding: 0 16px 12px; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text2); border-bottom: 1px solid var(--border); }
+  .sidebar-list { list-style: none; padding: 8px 0; }
+  .sidebar-list li a { display: block; padding: 8px 16px; color: var(--text2); font-size: 15px; border-left: 3px solid transparent; }
+  .sidebar-list li a:hover, .sidebar-list li a.active { background: var(--surface); color: var(--text); border-left-color: var(--accent); }
+  .sidebar-list li a .emoji { margin-right: 6px; }
+  .right-sidebar { width: var(--rightbar-w); background: var(--nav-bg); border-left: 1px solid var(--border); padding: 16px; position: fixed; top: 80px; bottom: 0; right: 0; overflow-y: auto; z-index: 100; font-size: 14px; }
+  .right-section { margin-bottom: 24px; }
+  .right-section h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .stat-row { display: flex; justify-content: space-between; margin-bottom: 6px; color: var(--text2); }
+  .stat-value { color: var(--text); font-weight: 600; }
+  .tag { display: inline-block; padding: 2px 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 3px; font-size: 14px; color: var(--text2); margin: 2px; }
+  .content-area { margin-left: var(--sidebar-w); margin-right: var(--rightbar-w); padding: 24px 32px; flex: 1; max-width: 860px; }
+  .breadcrumb { font-size: 14px; color: var(--text2); margin-bottom: 20px; }
+  .breadcrumb a { color: var(--text2); }
+  .breadcrumb a:hover { color: var(--text); }
+  .breadcrumb span { margin: 0 6px; color: var(--border); }
+  .item-header { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: var(--surface); border: 1px solid var(--border); margin-bottom: 24px; }
+  .item-icon-tech { width: 64px; height: 64px; background: var(--surface2); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; }
+  .item-meta h1 { font-size: 22px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+  .item-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .tag-rarity { background: #3a2a1a; color: var(--accent); border: 1px solid var(--accent2); padding: 2px 8px; font-size: 14px; }
+  .tag-type { background: var(--surface2); color: var(--text2); border: 1px solid var(--border); padding: 2px 8px; font-size: 14px; }
+  .tag-diff { background: var(--surface2); color: var(--gotcha); border: 1px solid var(--border); padding: 2px 8px; font-size: 14px; }
+  .item-desc { color: var(--text2); font-size: 15px; line-height: 1.6; }
+  .section { background: var(--surface); border: 1px solid var(--border); margin-bottom: 20px; padding: 24px; }
+  .section h2 { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .section h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 20px 0 10px; }
+  .section p { margin-bottom: 12px; color: var(--text); }
+  .recipe-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+  .recipe-table th { background: var(--surface2); padding: 10px 12px; text-align: left; color: var(--accent); font-weight: 600; border: 1px solid var(--border); }
+  .recipe-table td { padding: 10px 12px; border: 1px solid var(--border); color: var(--text); }
+  .recipe-table tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+  .crafting-ascii { background: var(--surface2); border: 1px solid var(--border); padding: 16px; font-family: 'Courier New', monospace; font-size: 15px; line-height: 1.8; color: var(--text); margin: 16px 0; overflow-x: auto; }
+  .crafting-ascii .grid-label { color: var(--accent); font-weight: bold; }
+  .gotcha-box { background: rgba(212, 96, 96, 0.08); border: 1px solid var(--gotcha); border-left: 4px solid var(--gotcha); padding: 16px; margin: 16px 0; }
+  .gotcha-box strong { color: var(--gotcha); }
+  .gotcha-box ul { margin: 8px 0 0 20px; }
+  .gotcha-box li { margin-bottom: 6px; color: var(--text); }
+  .route-tree { list-style: none; padding: 0; margin: 16px 0; }
+  .route-tree li { padding: 14px 16px 14px 44px; margin-bottom: 8px; background: var(--surface2); border: 1px solid var(--border); border-left: 4px solid var(--accent); position: relative; }
+  .route-tree li::before { content: attr(data-step); position: absolute; left: 0; top: 0; bottom: 0; width: 32px; background: var(--accent); color: #000; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+  .route-tree .step-title { font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+  .route-tree .step-detail { color: var(--text2); font-size: 15px; }
+  .material-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); margin-bottom: 10px; }
+  .material-icon { width: 40px; height: 40px; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .material-info h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .material-info p { font-size: 15px; color: var(--text2); margin-bottom: 4px; }
+  .material-meta { font-size: 14px; color: var(--accent); }
+  .benefit-list { list-style: none; padding: 0; margin: 16px 0; }
+  .benefit-list li { padding: 12px 16px; background: rgba(90, 170, 110, 0.06); border: 1px solid var(--success); margin-bottom: 8px; font-size: 15px; color: var(--text); position: relative; padding-left: 36px; }
+  .benefit-list li::before { content: "[+]"; position: absolute; left: 12px; color: var(--success); font-weight: 700; }
+  .footer { text-align: center; padding: 20px; font-size: 14px; color: var(--text2); border-top: 1px solid var(--border); margin-top: 20px; }
+  .next-rec { padding: 16px; background: var(--surface2); border: 1px solid var(--accent); margin-top: 8px; }
+  .next-rec a { color: var(--accent); font-weight: 600; }
+  .highlight { color: var(--accent); font-weight: 600; }
+  code { background: var(--surface2); padding: 2px 6px; font-family: 'Courier New', monospace; font-size: 14px; color: var(--accent); border: 1px solid var(--border); }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://relictrek.net/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Minecraft",
+      "item": "https://relictrek.net/minecraft/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Conduit",
+      "item": "https://relictrek.net/minecraft/conduit.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Conduit — RelicTrek Minecraft Guide",
+  "description": "Complete guide to crafting Conduit",
+  "totalTime": "PT4H",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Various materials"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Conduit Power",
+      "text": "Conduit Power: (a custom effect combining Water Breathing, Night Vision, and Haste III), making underwater exploration, mining, and combat not just viable but optimal.\n\n    Here is exactly what the Conduit does at its three activation tiers:\n\n    \n      Frame BlocksEffect RadiusVisualAttack Mobs?\n      16 blocks32 blocksConduit opens, blue raysNo\n      21 blocks64 blocksExpanded raysNo\n      42 blocks (max)96 blocksFull power, green eyes visibleYes (8 block attack range)\n    \n\n    At full power, the Conduit automatically targets and damages hostile ocean mobs — Drowned, Guardians, and Elder Guardians — within 8 blocks of the conduit block itself. The damage is equivalent to a continuous magical barrage, chipping away at mob health without any player intervention. This makes the Conduit not just a buff station but an active defense turret for your underwater base.\n\n    The status effect \"Conduit Power\" is unique and irreplaceable. It combines:\n    \n      Water Breathing — breathe indefinitely underwater, no bubble meter depletion",
+      "url": "https://relictrek.net/minecraft/conduit.html#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "must",
+      "text": "must: occupy the center slot, and all eight shell positions must be filled.\n\n    Activation Frame (Full Power Tier)\n    The Conduit must be surrounded by a frame of Prismarine-family blocks to activate. Any combination of these block types counts toward the frame:\n\n    \n      Block TypeValid?Notes\n      PrismarineYesMined from Ocean Monuments or crafted from 4 shards\n      Dark PrismarineYesCrafted with prismarine shard + ink sac\n      Prismarine BricksYesCrafted from 9 shards\n      Sea LanternYesCrafted or mined from monuments; also provides light\n    \n\n    Full Materials Summary\n    \n      MaterialQuantitySource\n      Heart of the Sea1Buried Treasure chests (100% spawn rate)\n      Nautilus Shell8Fishing (0.8%), Drowned (3.3% Java), Wandering Trader (5 emeralds)\n      Prismarine blocks (any variant)16-42Ocean Monument mining or Guardian farm\n    \n\n    For maximum effect radius and mob attack capability, you need 42 prismarine-family blocks arranged in a specific multi-ring structure. The minimum frame (16 blocks) still activates the conduit but with only 32-block range and no hostile mob targeting. Most players build the full frame immediately since the difference in materials is marginal once you have committed to the conduit project.\n  \n\n  \n  \n    3. Materials & Locations\n\n    \n      💙\n      \n        Heart of the Sea\n        The single rarest material for the Conduit. Found exclusively in Buried Treasure chests, with a 100% guaranteed spawn rate of 1 per chest. No other source exists in the game — no mob drops, no trading, no alternative generation.\n        Source: Buried Treasure Chest (100%) | Biome: Any beach/ocean shore | Coordinates: Follow treasure map\n      \n    \n\n    To obtain a Heart of the Sea, you must first locate a Buried Treasure Map. These maps are found in two structures:\n    \n      Shipwrecks — Map chests have ~90% chance to contain a Buried Treasure Map. Shipwrecks generate in ocean biomes at various depths, from fully exposed on beaches to completely submerged.",
+      "url": "https://relictrek.net/minecraft/conduit.html#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "highest solid block",
+      "text": "highest solid block: in that chunk (which is often under the sand layer at ocean shorelines).\n\n    \n      🐚\n      \n        Nautilus Shell\n        Need 8 total. Three acquisition methods with wildly different reliability:\n        Drop: Drowned (3.3% Java, 8% Bedrock) | Fishing: 0.8% treasure catch | Trade: Wandering Trader (5 emeralds)\n      \n    \n\n    Method A: Drowned Farming (Recommended) — Drowned have a chance to spawn holding a Nautilus Shell in their off-hand. In Java Edition, the spawn rate is 3.3%. In Bedrock Edition, it is 8%. When killed, they always drop the shell. Build a simple Drowned farm near an ocean monument or use a river biome spawn platform. With Looting III on your sword, you can expect roughly 1 shell per 15-25 drowned killed in Java.\n\n    Method B: Fishing — Nautilus Shells are categorized as \"treasure\" catches with a 0.8% base chance per cast. Using a Luck of the Sea III fishing rod increases this to approximately 1.9%. With an AFK fishing farm, shells accumulate passively alongside enchanted books, saddles, name tags, and bows. Expect roughly 1 shell per hour of active fishing with good enchantments.\n\n    Method C: Wandering Trader — The Wandering Trader randomly spawns within 48 blocks of the player after 24000 ticks (20 minutes) have passed, with a rolling 25% chance per attempt. When he appears, he may offer Nautilus Shells for 5 emeralds each. This is completely unreliable as a primary method but can supplement your supply if you get lucky.\n\n    \n      💎\n      \n        Prismarine Blocks\n        Any combination of Prismarine, Dark Prismarine, Prismarine Bricks, or Sea Lanterns. Need 16 minimum, 42 recommended for full power.\n        Source: Ocean Monument (mined) or Guardian drops | Crafting: Prismarine Shards + extras\n      \n    \n\n    Ocean Monument Mining: The most direct source. Ocean Monuments generate in Deep Ocean biomes and contain thousands of prismarine blocks built into their structure. Mining them requires no special tool (pickaxe speeds it up), but the monument is populated by Guardians — fish-like mobs that shoot lasers dealing 4-9 damage and inflicting Mining Fatigue III, making block breaking nearly impossible.\n\n    To mine prismarine safely, either bring Milk Buckets (cures Mining Fatigue temporarily), build a Conduit first (ironic but effective if you already have one), or drain the monument room by room with sand/gravel and sponges. Each Guardian killed drops 0-2 Prismarine Shards. With Looting III, expect 1-3 per kill. Nine shards craft one Prismarine Bricks block; four shards craft one Prismarine block.\n\n    Guardian Farm: For players who have already conquered an Ocean Monument, building a Guardian farm provides infinite prismarine. Guardian spawn rates inside monument bounding boxes are extremely high, and with proper funneling into a kill chamber, you can generate stacks of shards and fish drops passively.\n  \n\n  \n  \n    4. Optimal Route\n    This route is optimized for time efficiency, assuming mid-game gear (iron or diamond armor, iron/diamond sword, iron pickaxe, food supply, boat). Total estimated time: 2-4 hours depending on ocean size, spawn luck, and whether you already have a fishing setup.\n\n    \n      \n        Locate an Ocean Biome\n        Sail in a boat along coastlines until you find a large ocean. Look for Deep Ocean variants — these have the highest chance of containing Shipwrecks and Ocean Monuments. Bring 2-3 boats (they break on impact). Follow the coastline first; shipwrecks often spawn partially beached or in shallow water where they are easy to spot. Look for wooden mast structures poking above the waterline.",
+      "url": "https://relictrek.net/minecraft/conduit.html#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Map Chest",
+      "text": "Map Chest: (identified by its distinctive front-facing placement) has a ~90% chance of holding a Buried Treasure Map. Other chests contain food, iron ingots, and sometimes diamonds. Loot everything — iron and food are bonus resources. If the shipwreck has no map, mark it and move to the next one. Ocean Ruins can serve as backup map sources.",
+      "url": "https://relictrek.net/minecraft/conduit.html#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Set a waypoint or write down coordinates",
+      "text": "Set a waypoint or write down coordinates: — you may want to return to this coastline.",
+      "url": "https://relictrek.net/minecraft/conduit.html#step-5"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Drowned Farm:",
+      "text": "Drowned Farm:: Build a dark platform at Y=190+ over an ocean or river. Drowned spawn naturally at light level 0. With a Looting III sword, plan to kill 80-120 drowned for 8 shells (Java Edition rates). Water elevator + fall damage funnel recommended.\n          - AFK Fishing: Set up a fishing farm by the ocean. Luck of the Sea III rod required for reasonable rates (~1 shell/hour). Also yields enchanted books, bows, saddles.\n          - Wandering Trader: Passive option. Build a small trading platform at spawn and check every 20 minutes. Buy shells for 5 emeralds each when available.",
+      "url": "https://relictrek.net/minecraft/conduit.html#step-6"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 7,
+      "name": "Minimal frame (16 blocks):",
+      "text": "Minimal frame (16 blocks):: A simple 5x5 hollow ring with the conduit in the center, one block below the ring plane.\n          Full frame (42 blocks): A three-dimensional cross — a 5x5 ring at the center level, plus 4-block extensions on all four sides (north, south, east, west), each forming a 3x3 vertical ring intersecting the center ring. The Conduit sits in the dead center.\n          When correctly built, the Conduit opens up, emits blue particles, and the \"Conduit Power\" effect appears in your status bar when nearby.",
+      "url": "https://relictrek.net/minecraft/conduit.html#step-7"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 8,
+      "name": "nearest",
+      "text": "nearest: Buried Treasure to where the map was generated — NOT necessarily near where you found it. If you sail far from your base, the map may point hundreds or thousands of blocks away. Always open and check the map immediately upon finding it.",
+      "url": "https://relictrek.net/minecraft/conduit.html#step-8"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Conduit — RelicTrek Minecraft Guide",
+  "description": "",
+  "author": {
+    "@type": "Organization",
+    "name": "RelicTrek"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RelicTrek",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://relictrek.net/logo.png"
+    }
+  },
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://relictrek.net/minecraft/conduit.html"
+  }
+}
+</script>
+<link rel="canonical" href="https://relictrek.net/minecraft/conduit.html" />
+<link rel="alternate" hreflang="en" href="https://relictrek.net/minecraft/conduit.html" />
+<link rel="alternate" hreflang="zh-CN" href="https://relictrek.net/minecraft/zh/conduit.html" />
+<link rel="alternate" hreflang="x-default" href="https://relictrek.net/minecraft/conduit.html" />
+</head>
+<body class="lang-en">
+
+<!-- Top Navigation -->
+<nav class="top-nav">
+  <div class="nav-brand">CRAFT<span style="color:var(--text);">HUNT</span></div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="./">Recipes</a></li>
+    <li><a href="./">Materials</a></li>
+    <li><a href="./">Routes</a></li>
+    <li><a href="../about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- Ticker -->
+<div class="ticker-bar">
+  <div class="ticker-content">
+    <span class="ticker-item"><span>Now trending:</span> Heart of the Sea hunt up 340%</span>
+    <span class="ticker-item"><span>Tip:</span> Drowned spawn rates increased at full moon</span>
+    <span class="ticker-item"><span>Market:</span> Prismarine shards trading at premium</span>
+    <span class="ticker-item"><span>News:</span> Ocean monument seed maps now available</span>
+    <span class="ticker-item"><span>Now trending:</span> Heart of the Sea hunt up 340%</span>
+    <span class="ticker-item"><span>Tip:</span> Drowned spawn rates increased at full moon</span>
+    <span class="ticker-item"><span>Market:</span> Prismarine shards trading at premium</span>
+    <span class="ticker-item"><span>News:</span> Ocean monument seed maps now available</span>
+  </div>
+</div>
+
+<!-- Page Layout -->
+<div class="page-layout">
+
+<!-- Left Sidebar -->
+<aside class="left-sidebar">
+  <div class="sidebar-title">Minecraft Items</div>
+  <ul class="sidebar-list">
+    <li><a href="./"><span class="emoji">⛏️</span> Netherite Pickaxe</a></li>
+    <li><a href="enchanting-table.html"><span class="emoji">📖</span> Enchanting Table</a></li>
+    <li><a href="./"><span class="emoji">🦋</span> Elytra</a></li>
+    <li><a href="beacon.html"><span class="emoji">💡</span> Beacon</a></li>
+    <li><a href="conduit.html" class="active"><span class="emoji">🔱</span> Conduit</a></li>
+    <li><a href="ender-chest.html"><span class="emoji">📦</span> Ender Chest</a></li>
+    <li><a href="./"><span class="emoji">⚗️</span> Brewing Stand</a></li>
+    <li><a href="./"><span class="emoji">🟪</span> Shulker Box</a></li>
+    <li><a href="./"><span class="emoji">🪬</span> Totem of Undying</a></li>
+    <li><a href="./"><span class="emoji">🛡️</span> Diamond Armor</a></li>
+  </ul>
+</aside>
+
+<!-- Main Content -->
+<main class="content-area">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a> <span>/</span> <a href="./">Recipes</a> <span>/</span> Conduit
+  </div>
+
+  <!-- Item Header -->
+  <div class="item-header">
+    <div class="item-icon-tech">🔱</div>
+    <div class="item-meta">
+      <h1 data-zh="潮涌核心">Firework Rocket (Flight 3)</h1>
+      <div class="item-tags">
+        <span class="tag-rarity">Rare</span>
+        <span class="tag-type">Utility Block</span>
+        <span class="tag-diff">&#9733;&#9733;&#9733;&#9733;&#9734; Mid-Late Game</span>
+      </div>
+      <p class="item-desc">Underwater breathing, clear vision, and attacks hostile mobs within range. The ultimate underwater base companion. <span data-zh="水下呼吸、清晰视野、攻击敌对生物——水下基地终极伴侣。">A single block that transforms any underwater settlement into a self-sustaining fortress.</span></p>
+    </div>
+  </div>
+
+  <!-- Section 1: Why This Item Matters -->
+  <div class="section">
+    <h2><span data-zh="为什么值得制作">1. Why This Item Matters</span></h2>
+    <p>The Conduit is one of the most powerful utility blocks in Minecraft — and one of the rarest. When activated, it projects a spherical zone of underwater dominance that grants three powerful status effects simultaneously: <strong>Conduit Power</strong> (a custom effect combining Water Breathing, Night Vision, and Haste III), making underwater exploration, mining, and combat not just viable but optimal.</p>
+
+    <p>Here is exactly what the Conduit does at its three activation tiers:</p>
+
+    <table class="recipe-table">
+      <tr><th>Frame Blocks</th><th>Effect Radius</th><th>Visual</th><th>Attack Mobs?</th></tr>
+      <tr><td>16 blocks</td><td>32 blocks</td><td>Conduit opens, blue rays</td><td>No</td></tr>
+      <tr><td>21 blocks</td><td>64 blocks</td><td>Expanded rays</td><td>No</td></tr>
+      <tr><td>42 blocks (max)</td><td>96 blocks</td><td>Full power, green eyes visible</td><td>Yes (8 block attack range)</td></tr>
+    </table>
+
+    <p>At full power, the Conduit <strong>automatically targets and damages hostile ocean mobs</strong> — Drowned, Guardians, and Elder Guardians — within 8 blocks of the conduit block itself. The damage is equivalent to a continuous magical barrage, chipping away at mob health without any player intervention. This makes the Conduit not just a buff station but an <strong>active defense turret</strong> for your underwater base.</p>
+
+    <p>The status effect "Conduit Power" is unique and irreplaceable. It combines:</p>
+    <ul style="margin: 10px 0 10px 24px; color: var(--text);">
+      <li><span class="highlight">Water Breathing</span> — breathe indefinitely underwater, no bubble meter depletion</li>
+      <li><span class="highlight">Night Vision</span> — crystal-clear underwater visibility regardless of light level</li>
+      <li><span class="highlight">Haste III</span> — 60% faster mining speed, even underwater where mining is normally 5x slower</li>
+    </ul>
+
+    <p>For players building ocean monuments into bases, constructing underwater redstone farms, or simply wanting to clear an Ocean Monument of Guardians safely, the Conduit is non-negotiable. No combination of potions, enchantments, or gear can replicate what a single fully-powered Conduit provides passively and permanently in a 96-block radius. The effort required to obtain the Heart of the Sea and Nautilus Shells is substantial, but the payoff is a permanent zone of underwater supremacy that never runs out and never needs recharging.</p>
+  </div>
+
+  <!-- Section 2: Crafting Recipe -->
+  <div class="section">
+    <h2><span data-zh="合成配方">2. Crafting Recipe</span></h2>
+
+    <h3>Conduit Block</h3>
+    <div class="crafting-ascii">
+      <span class="grid-label">Crafting Table — 3x3 Grid:</span>
+      +---+---+---+
+      | N | N | N |
+      |<span style="color:var(--accent)"> S </span>|<span style="color:var(--accent)"> H </span>|<span style="color:var(--accent)"> S </span>|
+      | N | N | N |
+      +---+---+---+
+
+      N = Nautilus Shell (8 total)
+      H = Heart of the Sea (1 total)
+      S = Empty Slot
+
+      Output: 1x Conduit Block
+    </div>
+
+    <p>The crafting recipe is deceptively simple — one Heart of the Sea surrounded by eight Nautilus Shells arranged in the outer ring of a crafting table. There are no shapeless alternatives; the Heart of the Sea <strong>must</strong> occupy the center slot, and all eight shell positions must be filled.</p>
+
+    <h3>Activation Frame (Full Power Tier)</h3>
+    <p>The Conduit must be surrounded by a frame of Prismarine-family blocks to activate. Any combination of these block types counts toward the frame:</p>
+
+    <table class="recipe-table">
+      <tr><th>Block Type</th><th>Valid?</th><th>Notes</th></tr>
+      <tr><td>Prismarine</td><td>Yes</td><td>Mined from Ocean Monuments or crafted from 4 shards</td></tr>
+      <tr><td>Dark Prismarine</td><td>Yes</td><td>Crafted with prismarine shard + ink sac</td></tr>
+      <tr><td>Prismarine Bricks</td><td>Yes</td><td>Crafted from 9 shards</td></tr>
+      <tr><td>Sea Lantern</td><td>Yes</td><td>Crafted or mined from monuments; also provides light</td></tr>
+    </table>
+
+    <h3>Full Materials Summary</h3>
+    <table class="recipe-table">
+      <tr><th>Material</th><th>Quantity</th><th>Source</th></tr>
+      <tr><td>Heart of the Sea</td><td>1</td><td>Buried Treasure chests (100% spawn rate)</td></tr>
+      <tr><td>Nautilus Shell</td><td>8</td><td>Fishing (0.8%), Drowned (3.3% Java), Wandering Trader (5 emeralds)</td></tr>
+      <tr><td>Prismarine blocks (any variant)</td><td>16-42</td><td>Ocean Monument mining or Guardian farm</td></tr>
+    </table>
+
+    <p>For maximum effect radius and mob attack capability, you need <strong>42 prismarine-family blocks</strong> arranged in a specific multi-ring structure. The minimum frame (16 blocks) still activates the conduit but with only 32-block range and no hostile mob targeting. Most players build the full frame immediately since the difference in materials is marginal once you have committed to the conduit project.</p>
+  </div>
+
+  <!-- Section 3: Materials & Locations -->
+  <div class="section">
+    <h2><span data-zh="材料与获取位置">3. Materials & Locations</span></h2>
+
+    <div class="material-item">
+      <div class="material-icon">💙</div>
+      <div class="material-info">
+        <h4 data-zh="海洋之心">Heart of the Sea</h4>
+        <p>The single rarest material for the Conduit. Found <strong>exclusively</strong> in Buried Treasure chests, with a 100% guaranteed spawn rate of 1 per chest. No other source exists in the game — no mob drops, no trading, no alternative generation.</p>
+        <p class="material-meta">Source: Buried Treasure Chest (100%) | Biome: Any beach/ocean shore | Coordinates: Follow treasure map</p>
+      </div>
+    </div>
+
+    <p>To obtain a Heart of the Sea, you must first locate a <strong>Buried Treasure Map</strong>. These maps are found in two structures:</p>
+    <ul style="margin: 10px 0 10px 24px; color: var(--text);">
+      <li><span class="highlight">Shipwrecks</span> — Map chests have ~90% chance to contain a Buried Treasure Map. Shipwrecks generate in ocean biomes at various depths, from fully exposed on beaches to completely submerged.</li>
+      <li><span class="highlight">Ocean Ruins</span> — Small stone brick structures scattered on ocean floors. Chests have a lower (~40-50%) chance of containing a map, but are more numerous than shipwrecks.</li>
+    </ul>
+
+    <p>Once you have the map, the X marks the spot — but the X is a rough indicator covering roughly a 10x10 block area. Dig systematically around the center of the X. The treasure chest is always buried under sand or gravel, usually 3-10 blocks below the surface, at the <strong>highest solid block</strong> in that chunk (which is often under the sand layer at ocean shorelines).</p>
+
+    <div class="material-item">
+      <div class="material-icon">🐚</div>
+      <div class="material-info">
+        <h4 data-zh="鹦鹉螺壳">Nautilus Shell</h4>
+        <p>Need 8 total. Three acquisition methods with wildly different reliability:</p>
+        <p class="material-meta">Drop: Drowned (3.3% Java, 8% Bedrock) | Fishing: 0.8% treasure catch | Trade: Wandering Trader (5 emeralds)</p>
+      </div>
+    </div>
+
+    <p><strong>Method A: Drowned Farming (Recommended)</strong> — Drowned have a chance to spawn holding a Nautilus Shell in their off-hand. In Java Edition, the spawn rate is 3.3%. In Bedrock Edition, it is 8%. When killed, they always drop the shell. Build a simple Drowned farm near an ocean monument or use a river biome spawn platform. With Looting III on your sword, you can expect roughly 1 shell per 15-25 drowned killed in Java.</p>
+
+    <p><strong>Method B: Fishing</strong> — Nautilus Shells are categorized as "treasure" catches with a 0.8% base chance per cast. Using a Luck of the Sea III fishing rod increases this to approximately 1.9%. With an AFK fishing farm, shells accumulate passively alongside enchanted books, saddles, name tags, and bows. Expect roughly 1 shell per hour of active fishing with good enchantments.</p>
+
+    <p><strong>Method C: Wandering Trader</strong> — The Wandering Trader randomly spawns within 48 blocks of the player after 24000 ticks (20 minutes) have passed, with a rolling 25% chance per attempt. When he appears, he may offer Nautilus Shells for 5 emeralds each. This is completely unreliable as a primary method but can supplement your supply if you get lucky.</p>
+
+    <div class="material-item">
+      <div class="material-icon">💎</div>
+      <div class="material-info">
+        <h4 data-zh="海晶石">Prismarine Blocks</h4>
+        <p>Any combination of Prismarine, Dark Prismarine, Prismarine Bricks, or Sea Lanterns. Need 16 minimum, 42 recommended for full power.</p>
+        <p class="material-meta">Source: Ocean Monument (mined) or Guardian drops | Crafting: Prismarine Shards + extras</p>
+      </div>
+    </div>
+
+    <p><strong>Ocean Monument Mining:</strong> The most direct source. Ocean Monuments generate in Deep Ocean biomes and contain thousands of prismarine blocks built into their structure. Mining them requires no special tool (pickaxe speeds it up), but the monument is populated by Guardians — fish-like mobs that shoot lasers dealing 4-9 damage and inflicting Mining Fatigue III, making block breaking nearly impossible.</p>
+
+    <p>To mine prismarine safely, either bring Milk Buckets (cures Mining Fatigue temporarily), build a Conduit first (ironic but effective if you already have one), or drain the monument room by room with sand/gravel and sponges. Each Guardian killed drops 0-2 Prismarine Shards. With Looting III, expect 1-3 per kill. Nine shards craft one Prismarine Bricks block; four shards craft one Prismarine block.</p>
+
+    <p><strong>Guardian Farm:</strong> For players who have already conquered an Ocean Monument, building a Guardian farm provides infinite prismarine. Guardian spawn rates inside monument bounding boxes are extremely high, and with proper funneling into a kill chamber, you can generate stacks of shards and fish drops passively.</p>
+  </div>
+
+  <!-- Section 4: Optimal Route -->
+  <div class="section">
+    <h2><span data-zh="最优路线">4. Optimal Route</span></h2>
+    <p>This route is optimized for time efficiency, assuming mid-game gear (iron or diamond armor, iron/diamond sword, iron pickaxe, food supply, boat). Total estimated time: <strong>2-4 hours</strong> depending on ocean size, spawn luck, and whether you already have a fishing setup.</p>
+
+    <ul class="route-tree">
+      <li data-step="1">
+        <div class="step-title">Locate an Ocean Biome</div>
+        <div class="step-detail">Sail in a boat along coastlines until you find a large ocean. Look for Deep Ocean variants — these have the highest chance of containing Shipwrecks and Ocean Monuments. Bring 2-3 boats (they break on impact). Follow the coastline first; shipwrecks often spawn partially beached or in shallow water where they are easy to spot. <em>Look for wooden mast structures poking above the waterline.</em></div>
+      </li>
+      <li data-step="2">
+        <div class="step-title">Loot a Shipwreck for the Treasure Map</div>
+        <div class="step-detail">Shipwrecks generate in three variants (upright, capsized, sideways) and always contain 1-3 loot chests. The <strong>Map Chest</strong> (identified by its distinctive front-facing placement) has a ~90% chance of holding a Buried Treasure Map. Other chests contain food, iron ingots, and sometimes diamonds. Loot everything — iron and food are bonus resources. If the shipwreck has no map, mark it and move to the next one. Ocean Ruins can serve as backup map sources.</div>
+      </li>
+      <li data-step="3">
+        <div class="step-title">Follow the Map to Buried Treasure</div>
+        <div class="step-detail">Hold the map in your main hand. The white dot marker represents your position; the X marks the treasure chunk. Sail until the player marker overlaps the X. The chest is buried in the highest-solid-block position of that chunk, typically 3-10 blocks under sand. <em>Pro tip:</em> The X on the map covers a ~10x10 block area. Dig a systematic spiral outward from where you think the center is. Use TNT if you have gunpowder — it destroys sand/gravel without destroying the chest.</div>
+      </li>
+      <li data-step="4">
+        <div class="step-title">Claim the Heart of the Sea</div>
+        <div class="step-detail">Open the Buried Treasure chest — the Heart of the Sea is guaranteed. The chest also contains excellent supplementary loot: iron/gold/diamonds, TNT, cooked salmon, leather, and chainmail armor. This single chest typically provides enough iron and food to make the rest of the conduit quest self-sustaining. <strong>Set a waypoint or write down coordinates</strong> — you may want to return to this coastline.</div>
+      </li>
+      <li data-step="5">
+        <div class="step-title">Farm 8 Nautilus Shells</div>
+        <div class="step-detail">Choose your method based on current resources:
+          <br>- <strong>Drowned Farm:</strong> Build a dark platform at Y=190+ over an ocean or river. Drowned spawn naturally at light level 0. With a Looting III sword, plan to kill 80-120 drowned for 8 shells (Java Edition rates). Water elevator + fall damage funnel recommended.
+          <br>- <strong>AFK Fishing:</strong> Set up a fishing farm by the ocean. Luck of the Sea III rod required for reasonable rates (~1 shell/hour). Also yields enchanted books, bows, saddles.
+          <br>- <strong>Wandering Trader:</strong> Passive option. Build a small trading platform at spawn and check every 20 minutes. Buy shells for 5 emeralds each when available.</div>
+      </li>
+      <li data-step="6">
+        <div class="step-title">Acquire Prismarine Blocks</div>
+        <div class="step-detail">Mine 42 prismarine-family blocks from an Ocean Monument, or kill Guardians for shards and craft them. The monument approach: drink milk to negate Mining Fatigue, mine until it reapplies, retreat and drink again. Sponges from the monument's sponge rooms make draining sections easier. Alternatively, if you already have a Guardian farm, run it for 30 minutes to collect enough shards for 42+ blocks.</div>
+      </li>
+      <li data-step="7">
+        <div class="step-title">Build and Activate the Frame</div>
+        <div class="step-detail">Choose your build location — an underwater base, a drained ocean monument room, or a purpose-built aquarium structure. Place the Conduit block in the center. Build the activation frame around it:
+          <br><strong>Minimal frame (16 blocks):</strong> A simple 5x5 hollow ring with the conduit in the center, one block below the ring plane.
+          <br><strong>Full frame (42 blocks):</strong> A three-dimensional cross — a 5x5 ring at the center level, plus 4-block extensions on all four sides (north, south, east, west), each forming a 3x3 vertical ring intersecting the center ring. The Conduit sits in the dead center.
+          <br>When correctly built, the Conduit opens up, emits blue particles, and the "Conduit Power" effect appears in your status bar when nearby.</div>
+      </li>
+    </ul>
+
+    <p><strong>Time Estimate Breakdown:</strong> Finding ocean and shipwreck: 15-30 min. Following map and finding treasure: 10-20 min. Farming 8 Nautilus Shells (drowned method): 45-90 min. Mining prismarine: 30-60 min. Building frame and activating: 10-15 min. Total: 2-4 hours of focused gameplay.</p>
+  </div>
+
+  <!-- Section 5: Gotcha Tips -->
+  <div class="section">
+    <h2><span data-zh="注意事项">5. Gotcha Tips</span></h2>
+
+    <div class="gotcha-box">
+      <strong>WARNING: Buried Treasure Map Gotchas</strong>
+      <ul>
+        <li>Treasure maps always point to the <strong>nearest</strong> Buried Treasure to where the map was generated — NOT necessarily near where you found it. If you sail far from your base, the map may point hundreds or thousands of blocks away. Always open and check the map immediately upon finding it.</li>
+        <li>The X is <strong>not exact</strong>. The chest generates at the highest solid block in the chunk, which can be offset from the visual X by up to 5 blocks in any direction. Dig a 10x10 area systematically.</li>
+        <li>If the treasure generates underwater (common at ocean shores), sand falls when disturbed — dig carefully or the chest may be buried under falling sand columns.</li>
+      </ul>
+    </div>
+
+    <div class="gotcha-box">
+      <strong>WARNING: Drowned & Nautilus Shell Edition Differences</strong>
+      <ul>
+        <li>In <strong>Java Edition</strong>, Drowned spawn holding Nautilus Shells at 3.3% rate. In <strong>Bedrock Edition</strong>, the rate is 8% — significantly higher. Bedrock players should prioritize Drowned farming; Java players may want to supplement with fishing.</li>
+        <li>Drowned only spawn holding shells when naturally generated — those converted from Zombies (falling into water) do <strong>not</strong> spawn with shells. Farm naturally spawned Drowned in oceans and rivers.</li>
+        <li>The Wandering Trader spawn is <strong>random and unreliable</strong>. Do not depend on it as your primary source. Check him when he appears, but have an active farming plan.</li>
+      </ul>
+    </div>
+
+    <div class="gotcha-box">
+      <strong>WARNING: Ocean Monument Hazards</strong>
+      <ul>
+        <li>Guardians inflict <strong>Mining Fatigue III</strong> for 5 minutes when their laser charge completes. This reduces mining speed by 99.97% — you literally cannot break prismarine blocks while affected. Bring at least 3-6 Milk Buckets to cure the effect.</li>
+        <li>Elder Guardians (3 per monument) give Mining Fatigue to the entire monument area and cannot be respawned. Kill all three before any serious mining operation.</li>
+        <li>Guardian lasers ignore armor to some extent and deal significant damage (up to 9 hearts on Hard difficulty). Bring Protection IV armor and golden apples for safety.</li>
+        <li>Draining a monument room is tedious but worthwhile — build a sand/gravel wall, place sponges, dry out sections. Conduit activation becomes much easier in air.</li>
+      </ul>
+    </div>
+
+    <div class="gotcha-box">
+      <strong>WARNING: Frame Building Underwater</strong>
+      <ul>
+        <li>Building the Conduit frame underwater requires <strong>Water Breathing</strong> or you will drown mid-construction. Options: Potion of Water Breathing (8 min), Turtle Helmet (10 seconds air + extra time), or build a temporary air pocket by placing a door or torch.</li>
+        <li>The frame blocks must be physically adjacent to the Conduit block's 3x3x3 area in specific arrangements. Use a reference image or build guide — wrong placements will not activate.</li>
+        <li>The Conduit block itself <strong>must be surrounded by water source blocks</strong> on all sides to activate. It will not work in air or flowing water only.</li>
+        <li>Hostile mob targeting (full power tier) only works on ocean-specific hostiles: Drowned, Guardians, Elder Guardians, and squids in some versions. It does NOT target regular zombies, creepers, etc., even if they are underwater.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 6: Free Benefits -->
+  <div class="section">
+    <h2><span data-zh="附带收益">6. Free Benefits</span></h2>
+    <p>The path to crafting a Conduit is filled with valuable side rewards. Almost every step of the journey produces resources that directly improve your overall game progression. Do not view the Conduit as a standalone goal — it is the capstone of an ocean exploration phase that enriches your entire world.</p>
+
+    <ul class="benefit-list">
+      <li><strong>Shipwreck Loot Bonanza:</strong> Every shipwreck contains 1-3 chests with iron ingots (3-12 per chest), food (wheat, suspicious stew, cooked fish), leather, TNT, and occasionally diamonds or emeralds. A single shipwreck typically yields 10-20 iron ingots — enough for an anvil, hopper, or several minecarts.</li>
+
+      <li><strong>Ocean Ruin Exploration:</strong> These small structures contain loot chests with cod/salmon (food), bones (bonemeal for farming), coal, and sometimes treasure maps. The mossy stone brick blocks are also useful for building aesthetic structures.</li>
+
+      <li><strong>Ocean Monument Gold Blocks:</strong> Every Ocean Monument contains a central treasure room with <strong>8 solid Gold Blocks</strong> encased in dark prismarine. That is 72 gold ingots — enough for 8 golden apples, powered rails, or trading with Piglins in the Nether. This alone justifies monument exploration.</li>
+
+      <li><strong>Sponge Rooms:</strong> Some Ocean Monument wings contain "sponge rooms" — small chambers filled with sponge blocks on ceilings. Sponges are the only blocks that can absorb water in a 7-block radius and are invaluable for draining projects, underwater base construction, and Guardian farm building. Each sponge room contains 20-30 sponge blocks.</li>
+
+      <li><strong>Fishing Treasure Table:</strong> While fishing for Nautilus Shells, you will also catch enchanted books (Mending, Infinity, Luck of the Sea, Lure), saddles, name tags, bows, and fishing rods. Many speedrunners and progression players use "fishing for enchanted books" as their primary early enchanting strategy because it bypasses the enchanting table RNG.</li>
+
+      <li><strong>Buried Treasure Bonus Loot:</strong> The treasure chest containing the Heart of the Sea also always includes mixed iron/gold/diamonds, cooked salmon, leather armor, TNT, and chainmail pieces. It is one of the most loot-dense chests in the game relative to the effort required.</li>
+
+      <li><strong>Guardian Drops:</strong> Killing Guardians for prismarine shards also yields raw fish (food), and rarely a Tide Armor Trim Smithing Template — a decorative item for customizing armor appearance that can only be obtained from Elder Guardians.</li>
+
+      <li><strong>Drowned Drops (Beyond Shells):</strong> Drowned farms produce copper ingots, rotten flesh (trading with Cleric villagers), and occasionally tridents — one of the most powerful and rare weapons in Minecraft. A trident with Loyalty III and Channeling is a game-changer for combat and transportation.</li>
+    </ul>
+
+    <p>In practical terms, a single Conduit quest will typically net you: 50+ iron ingots, 72 gold ingots, 20-30 sponge blocks, a full stack of food, enchanted books, potential tridents, and enough prismarine to build decorative structures. The Conduit itself is the crown jewel, but the journey fills your storage chests with progression-critical resources.</p>
+  </div>
+
+  <!-- Recommended Next -->
+  <div class="section">
+    <h2>Recommended Next</h2>
+    <div class="next-rec">
+      <p>Now that you can breathe and mine underwater indefinitely, it is time to unlock the maximum power of your tools and armor. Head to the <a href="enchanting-table.html">Enchanting Table + 15 Bookshelves Guide</a> to learn how to set up Level 30 enchantments — the gateway to Fortune III, Efficiency V, Protection IV, and Mending on every piece of gear.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    RelicTrek Minecraft Guides &copy; 2025. Not affiliated with Mojang Studios. Minecraft is a trademark of Microsoft Corporation.
+  </div>
+
+</main>
+
+<!-- Right Sidebar -->
+<aside class="right-sidebar">
+  <div class="right-section">
+    <h4>Item Stats</h4>
+    <div class="stat-row"><span class="stat-label">Rarity</span><span class="stat-value">Rare</span></div>
+    <div class="stat-row"><span class="stat-label">Type</span><span class="stat-value">Utility Block</span></div>
+    <div class="stat-row"><span class="stat-label">Stack</span><span class="stat-value">64</span></div>
+    <div class="stat-row"><span class="stat-label">Renewable</span><span class="stat-value">No (Heart)</span></div>
+    <div class="stat-row"><span class="stat-label">Effect Radius</span><span class="stat-value">32-96 blocks</span></div>
+    <div class="stat-row"><span class="stat-label">Attack Range</span><span class="stat-value">8 blocks</span></div>
+  </div>
+  <div class="right-section">
+    <h4>Required Tools</h4>
+    <div class="stat-row"><span class="stat-label">Pickaxe</span><span class="stat-value">Iron+</span></div>
+    <div class="stat-row"><span class="stat-label">Sword</span><span class="stat-value">Any (Looting III)</span></div>
+    <div class="stat-row"><span class="stat-label">Boat</span><span class="stat-value">Multiple</span></div>
+    <div class="stat-row"><span class="stat-label">Milk Buckets</span><span class="stat-value">3-6</span></div>
+  </div>
+  <div class="right-section">
+    <h4>Tags</h4>
+    <span class="tag">Underwater</span>
+    <span class="tag">Ocean</span>
+    <span class="tag">Buff</span>
+    <span class="tag">Base</span>
+    <span class="tag">Exploration</span>
+    <span class="tag">Rare</span>
+  </div>
+  <div class="right-section">
+    <h4>Version</h4>
+    <div class="stat-row"><span class="stat-label">Java</span><span class="stat-value">1.13+</span></div>
+    <div class="stat-row"><span class="stat-label">Bedrock</span><span class="stat-value">1.5+</span></div>
+    <div class="stat-row"><span class="stat-label">Updated</span><span class="stat-value">1.20</span></div>
+  </div>
+</aside>
+
+</div>
+
+</body>
+</html>

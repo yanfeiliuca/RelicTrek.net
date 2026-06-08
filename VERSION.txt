@@ -1,5 +1,19 @@
 RelicTrek Website Version Tracker
 
+v4.4 - 2026-06-09
+- COMPREHENSIVE: Scanned all 143 ZH pages across all 13 games
+- Fixed 55 DOUBLE_PATH_404: lang-switch pointed to ../game/index.html (double path)
+- Fixed 23 MISSING_EN_BTN: pages had no EN language switch button at all
+- Fixed 10 sidebar links: ../../game/ → ../index.html (from ZH subdir)
+- Rebuilt 6 empty files (minecraft: beacon, eye-of-ender, firework-rocket EN+ZH)
+- Games affected: zelda-totk(10), no-mans-sky(10), valheim(10), stardew-valley(10), satisfactory(10), hades-2(10), bg3(10), poe2(5), minecraft(6), terraria(1)
+- Root cause: ZH page generator used ../{game}/index.html instead of ../{item}.html
+
+v4.3 - 2026-06-08
+- CRITICAL: Fixed Subnautica 2 ZH→EN white screen (10 pages)
+- Same root cause: ../subnautica2/index.html → subnautica2/subnautica2/index.html 404
+- Fixed all 10 item pages to point to ../{item}.html (correct EN counterpart)
+
 v4.2 - 2026-06-06
 - CRITICAL: Fixed Terraria ZH→EN white screen (11 pages, lang-switch pointed to 404)
 - Fixed MHW ZH missing EN language buttons (11 pages, added missing lang-switch)
