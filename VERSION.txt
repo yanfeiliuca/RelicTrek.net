@@ -1,5 +1,11 @@
 RelicTrek Website Version Tracker
 
+v4.5 - 2026-06-09
+- BG3: Fixed all EN→ZH language switch links (10 pages)
+- Added missing 中文 buttons to 5 EN pages (blood-of-lathander, duellist-gloves, gontr-mael, nyrulna, shars-spear)
+- Fixed wrong links ./zh/ → zh/ on 5 EN pages (devilfoil-mask, helldusk-armor, moonlantern, shadowheart-spear, silver-sword)
+- Verified: ZH→EN all correct, EN→ZH all correct, index.html bidirectional correct
+
 v4.4 - 2026-06-09
 - COMPREHENSIVE: Scanned all 143 ZH pages across all 13 games
 - Fixed 55 DOUBLE_PATH_404: lang-switch pointed to ../game/index.html (double path)
