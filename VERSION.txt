@@ -1,5 +1,11 @@
 RelicTrek Website Version Tracker
 
+v4.9 - 2026-06-10
+- Fixed 5 Minecraft EN pages using old CRAFTHUNT template
+  * beacon.html, conduit.html, enchanting-table.html, eye-of-ender.html, firework-rocket.html
+  * All rewritten to Terraria standard template (RelicTrek brand, ../css/style.css, 13-game sidebar)
+  * Full-site validation: 130 EN pages | 0 old-format | ALL PASS
+
 v4.8 - 2026-06-10
 - Added complete daily blog automation package
   * blog/run_daily_blog.sh — local blog generation + git push
