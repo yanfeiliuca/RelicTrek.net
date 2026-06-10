@@ -1,5 +1,14 @@
 RelicTrek Website Version Tracker
 
+v4.8 - 2026-06-10
+- Added complete daily blog automation package
+  * blog/run_daily_blog.sh — local blog generation + git push
+  * blog/net.relictrek.dailyblog.plist — macOS launchd config (3AM daily)
+  * .github/workflows/daily-blog.yml — GitHub Actions backup
+  * install_blog_automation.sh — one-click installer
+- Repo path configured: /Users/yanfeiliu/Documents/GitHub/relictrek.net
+- Dual system: local launchd (primary) + GitHub Actions (backup)
+
 v4.7 - 2026-06-10
 - Blog: Backfilled missing posts for June 7, 8, 9 (3 days)
   * 2026-06-07: Blackmetal Sword (Valheim) EN+ZH
@@ -77,19 +86,4 @@ v3.8 - 2026-06-06
 - Fixed 2 HTML lang mismatches (MHW EN pages marked as zh-CN)
 - Added hreflang alternate tags to 17 EN pages
 - Verified: 0 broken links, 147 EN+ZH page pairs fully matched
-- Daily blog auto-generated: 2026-06-06 (Nyrulna from BG3)
-
-v3.7 - 2026-06-05
-- Chinese translation for 20 item pages (BG3 + POE2 + Satisfactory)
-- Complete removal of CraftHunt branding (25 pages)
-- Fixed 130 EN page lang-en markings
-
-v3.5 - 2026-06-04
-- About page navigation and statistics fixes
-- Root zh/ page link path fixes (80 occurrences)
-
-v2.0 - 2026-06-03
-- Relic Ruins golden theme redesign
-- Independent bilingual page architecture (148 EN + 148 ZH)
-
-[Earlier versions tracked in user git history]
+- Daily blog auto-generated: 2026-06-06 (Nyrulna f
