@@ -1,5 +1,14 @@
 RelicTrek Website Version Tracker
 
+v4.7 - 2026-06-10
+- Blog: Backfilled missing posts for June 7, 8, 9 (3 days)
+  * 2026-06-07: Blackmetal Sword (Valheim) EN+ZH
+  * 2026-06-08: Cell Phone (Terraria) EN+ZH
+  * 2026-06-09: Fusion Ignitor (No Man's Sky) EN+ZH
+  * 2026-06-10: Uplifting Aromatic (Elden Ring) EN+ZH
+- Updated blog index.html (EN+ZH) with all 7 days of posts
+- Root cause: generate_daily_blog.py uses datetime.now() and was not run on 6/7-9
+
 v4.6 - 2026-06-10
 - MASSIVE: Standardized all item pages to Terraria template format
 - Rewrote 96 old-format pages across 7 games:
