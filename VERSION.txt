@@ -1,5 +1,18 @@
 RelicTrek Website Version Tracker
 
+v4.6 - 2026-06-10
+- MASSIVE: Standardized all item pages to Terraria template format
+- Rewrote 96 old-format pages across 7 games:
+  * Elden Ring: 20 pages (10EN+10ZH)
+  * Hades 2: 20 pages (10EN+10ZH)
+  * Baldur's Gate 3: 10 pages (5EN+5ZH)
+  * Monster Hunter Wilds: 20 pages (10EN+10ZH)
+  * Path of Exile 2: 10 pages (5EN+5ZH)
+  * Zelda TOTK: 6 EN pages
+- Fixed Minecraft: 5 EN pages missing lang-switch buttons
+- Full-site validation: 260 pages | 0 old-format | 0 link errors | ALL PASS
+- Every ZH→EN and EN→ZH language switch verified working, no 404s
+
 v4.5 - 2026-06-09
 - BG3: Fixed all EN→ZH language switch links (10 pages)
 - Added missing 中文 buttons to 5 EN pages (blood-of-lathander, duellist-gloves, gontr-mael, nyrulna, shars-spear)

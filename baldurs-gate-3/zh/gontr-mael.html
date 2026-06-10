@@ -1,86 +1,20 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
-<link href="../../css/style.css" rel="stylesheet"/>
-<meta content="Baldur's Gate 3冈特·梅尔完整合成攻略。材料、位置、分步配方、避坑指南与最优路线。" name="description"/>
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2SC4S5VZ9"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-Z2SC4S5VZ9');
 </script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>博德之门3冈特·梅尔攻略：位置属性与最佳Build | RelicTrek</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0d0d0d;color:#e0e0e0;line-height:1.7}
-a{color:#c9a050;text-decoration:none}
-a:hover{color:#f0d080}
-.nav{background:#1a1a1a;padding:12px 20px;display:flex;align-items:center;border-bottom:2px solid #c9a050;position:sticky;top:0;z-index:100}
-.nav-logo{font-size:20px;font-weight:bold;color:#c9a050;margin-right:30px}
-.nav a{color:#e0e0e0;margin-right:20px;font-size:14px}
-.nav a:hover{color:#c9a050}
-.ticker{background:#2a1a00;padding:8px 20px;font-size:15px;border-bottom:1px solid #444;color:#c9a050}
-.container{display:flex;max-width:1600px;margin:0 auto;padding:20px;gap:20px}
-.left-sidebar{width:260px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content;max-height:calc(100vh - 80px);overflow-y:auto}
-.left-sidebar h3{color:#c9a050;margin-bottom:12px;font-size:16px}
-.left-sidebar a{display:block;padding:6px 0;color:#aaa;font-size:14px}
-.left-sidebar a:hover,.left-sidebar a.active{color:#c9a050}
-.left-sidebar .quick-nav{margin-top:15px;padding-top:15px;border-top:1px solid #2a2a2a}
-.left-sidebar .quick-nav h4{color:#c9a050;margin-bottom:10px;font-size:14px}
-.main-content{flex:1;min-width:0}
-.right-sidebar{width:300px;background:#161616;padding:20px;border-radius:8px;border:1px solid #2a2a2a;position:sticky;top:60px;height:fit-content}
-.right-sidebar h4{color:#c9a050;margin-bottom:12px;font-size:15px}
-.right-sidebar .info-box{background:#1a1a1a;padding:12px;border-radius:6px;margin-bottom:12px;border:1px solid #2a2a2a}
-.right-sidebar .info-box .label{color:#888;font-size:14px;text-transform:uppercase}
-.right-sidebar .info-box .value{color:#e0e0e0;font-size:14px;font-weight:bold}
-.footer{background:#1a1a1a;text-align:center;padding:20px;margin-top:40px;border-top:2px solid #2a2a2a;color:#888;font-size:13px}
-.section{background:#161616;padding:25px;margin-bottom:20px;border-radius:8px;border:1px solid #2a2a2a}
-.section h2{color:#c9a050;margin-bottom:15px;font-size:22px;display:flex;align-items:center;gap:10px}
-.section h3{color:#e0e0e0;margin:18px 0 10px;font-size:18px}
-.item-header{display:flex;align-items:center;gap:15px;margin-bottom:20px;padding:20px;background:#1a1a1a;border-radius:8px;border:2px solid #c9a050}
-.item-icon-legendary{width:80px;height:80px;background:#2a1a00;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #c9a050}
-.item-icon-epic{width:80px;height:80px;background:#1a0a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #9b59b6}
-.item-icon-rare{width:80px;height:80px;background:#0a1a2e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #3498db}
-.item-icon-accessory{width:80px;height:80px;background:#0a2e1a;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:40px;border:2px solid #2ecc71}
-.item-title h1{color:#c9a050;font-size:28px;margin-bottom:5px}
-.item-meta{color:#888;font-size:14px}
-.difficulty{color:#e74c3c;font-weight:bold}
-.gotcha-box{background:#2a1a00;padding:15px;border-radius:6px;border-left:4px solid #c9a050;margin:15px 0}
-.gotcha-box h4{color:#c9a050;margin-bottom:8px}
-.route-tree{padding-left:20px;border-left:2px solid #c9a050;margin:15px 0}
-.route-tree li{margin:10px 0;list-style:none;position:relative;padding-left:15px}
-.route-tree li::before{content:'◆';position:absolute;left:-20px;color:#c9a050}
-.material-item{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;padding:6px 12px;border-radius:4px;margin:4px;border:1px solid #2a2a2a;font-size:13px}
-.tag{display:inline-block;padding:3px 10px;border-radius:3px;font-size:14px;font-weight:bold;margin:2px}
-.tag-act1{background:#2a4a00;color:#7fff00}
-.tag-act2{background:#4a2a00;color:#ffa500}
-.tag-act3{background:#4a002a;color:#ff6b9d}
-.tag-legendary{background:#2a1a00;color:#c9a050;border:1px solid #c9a050}
-.tag-rare{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
-.tag-warning{background:#3a1a00;color:#e67e22;border:1px solid #e67e22}
-.tag-info{background:#0a1a2e;color:#3498db;border:1px solid #3498db}
-pre{background:#0d0d0d;padding:15px;border-radius:6px;overflow-x:auto;border:1px solid #2a2a2a;color:#c9a050;font-family:Consolas,monospace;font-size:13px}
-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:14px}
-th,td{padding:10px;text-align:left;border-bottom:1px solid #2a2a2a}
-th{background:#1a1a1a;color:#c9a050;font-weight:600}
-tr:hover{background:#1a1a1a}
-.guide-nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
-.guide-nav a{padding:8px 16px;background:#1a1a1a;border-radius:4px;border:1px solid #2a2a2a;font-size:15px;color:#aaa}
-.guide-nav a:hover,.guide-nav a.active{background:#2a1a00;color:#c9a050;border-color:#c9a050}
-.highlight{color:#c9a050;font-weight:bold}
-.warning-box{background:#3a0000;padding:15px;border-radius:6px;border-left:4px solid #e74c3c;margin:15px 0}
-.warning-box h4{color:#e74c3c;margin-bottom:8px}
-.npc-name{color:#9b59b6;font-weight:bold}
-.location-name{color:#2ecc71;font-weight:bold}
-.item-name{color:#c9a050;font-weight:bold}
-.code-block{background:#0d0d0d;padding:12px 15px;border-radius:4px;border:1px solid #2a2a2a;font-family:Consolas,monospace;color:#c9a050;margin:10px 0;display:block}
-@media(max-width:1200px){.right-sidebar{display:none}}@media(max-width:900px){.left-sidebar{display:none}.container{padding:10px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博德之门3冈特·梅尔攻略：位置属性与最佳Build | RelicTrek</title>
+  <meta name="description" content="冈特梅尔 完整攻略。">
+  <link rel="stylesheet" href="../../css/style.css">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -227,55 +161,90 @@ tr:hover{background:#1a1a1a}
   }
 }
 </script>
-<link href="https://relictrek.net/baldurs-gate-3/zh/gontr-mael.html" rel="canonical"/>
-<link href="https://relictrek.net/baldurs-gate-3/gontr-mael.html" hreflang="en" rel="alternate"/>
-<link href="https://relictrek.net/baldurs-gate-3/zh/gontr-mael.html" hreflang="zh-CN" rel="alternate"/>
-<link href="https://relictrek.net/baldurs-gate-3/gontr-mael.html" hreflang="x-default" rel="alternate">
-</link></head>
+
+</head>
 <body class="lang-zh">
-<nav class="nav">
-<div class="nav-logo">⚔ RelicTrek</div>
-<button data-lang="en" onclick="window.location.href='../gontr-mael.html'" style="background:none;border:1px solid #c9a050;color:#c9a050;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:13px;margin-left:auto;">EN</button>⚔ RelicTrek</div>
-<a href="../">首页</a>
-<a href="../">游戏</a>
-<a href="../">攻略</a>
-<a href="../">地图</a>
-<a href="../">Build</a>
-<a href="../">物品</a>
-</nav>
-<div class="ticker">📍 Current Guide: Gontr Mael — Legendary Longbow — Gauntlet of Shar &amp; House of Hope — 难度： ★★★★★ — Estimated Time: 60-120 minutes</div>
-<div class="container">
-<aside class="left-sidebar">
-<h3>🎮 游戏导航</h3>
-<a href="../../terraria/">Terraria</a>
-<a href="../../subnautica2/">Subnautica 2</a>
-<a href="../../monster-hunter-wilds/">Monster Hunter Wilds</a>
-<a href="../../zelda-totk/">Zelda: TOTK</a>
-<a href="../../minecraft/">Minecraft</a>
-<a href="../../no-mans-sky/">No Man\'s Sky</a>
-<a href="../index.html">Baldur\'s Gate 3</a>
-<a href="../../valheim/">Valheim</a>
-<a href="../../path-of-exile-2/">Path of Exile 2</a>
-<a href="../../elden-ring/">Elden Ring</a>
-<a href="../../stardew-valley/">Stardew Valley</a>
-<a href="../../hades-2/">Hades 2</a>
-<a href="../../satisfactory/">Satisfactory</a>
-<a class="active" href="./">博德之门3</a>
-<div class="quick-nav">
-<h4>BG3 物品</h4>
-<a href="blood-of-lathander.html">洛山达之血</a>
-<a class="active" href="gontr-mael.html">冈特·梅尔</a>
-<a href="nyrulna.html">尼鲁纳</a>
-<a href="shars-spear.html">莎尔的黄昏之矛</a>
-<a href="duellist-gloves.html">决斗者的棱彩手套</a>
-<a href="helldusk-armor.html">地狱黄昏护甲</a>
-<a href="moonlantern.html">月亮提灯</a>
-<a href="silver-sword.html">星界银剑</a>
-<a href="devilfoil-mask.html">魔鬼箔面具</a>
-<a href="shadowheart-spear.html">暗影之心的夜之矛</a>
-</div>
-</aside>
-<main class="main-content">
+
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+    <a href="../../" class="logo">RelicTrek</a>
+    <input type="search" placeholder="搜索物品..." aria-label="搜索">
+    <div class="lang-switch">
+      <button data-lang="en" onclick="window.location.href='../gontr-mael.html'" title="English">EN</button>
+      <button data-lang="zh" class="active">中文</button>
+    </div>
+    <div class="nav-links">
+      <a href="../../blog/">博客</a>
+      <a href="../../" class="active">游戏</a>
+      <a href="../../about.html">关于</a>
+    </div>
+  </nav>
+
+  <!-- Scrolling Ticker (Slogan Bar) -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <span class="ticker-item">
+        <span class="slogan-main-text">你不知道你错过了什么</span>
+        <span class="sep">|</span>
+        <span class="slogan-sub-text">最好的物品就隐藏在眼皮底下</span>
+        <span class="sep">//</span>
+        <span data-en="And the Shortest Way to Get It All" data-zh="获取它们的最短路径">获取它们的最短路径</span>
+      </span>
+      <span class="ticker-item">
+        <span class="slogan-main-text">你不知道你错过了什么</span>
+        <span class="sep">|</span>
+        <span class="slogan-sub-text">最好的物品就隐藏在眼皮底下</span>
+        <span class="sep">//</span>
+        <span data-en="Every Material. Every Drop Rate. Every Shortcut." data-zh="每个材料。每个掉率。每个捷径。">每个材料。每个掉率。每个捷径。</span>
+      </span>
+      <span class="ticker-item">
+        <span class="slogan-main-text">你不知道你错过了什么</span>
+        <span class="sep">|</span>
+        <span class="slogan-sub-text">最好的物品就隐藏在眼皮底下</span>
+        <span class="sep">//</span>
+        <span data-en="No Grind. No Guesswork. Just Results." data-zh="无需刷怪。无需猜测。只有结果。">无需刷怪。无需猜测。只有结果。</span>
+      </span>
+      <span class="ticker-item">
+        <span class="slogan-main-text">你不知道你错过了什么</span>
+        <span class="sep">|</span>
+        <span class="slogan-sub-text">最好的物品就隐藏在眼皮底下</span>
+        <span class="sep">//</span>
+        <span data-en="Guides that actually save you time." data-zh="真正能节省你时间的攻略。">真正能节省你时间的攻略。</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="main-layout">
+
+    <!-- Left Sidebar -->
+    <aside class="left-sidebar">
+      <h3>游戏</h3>
+      <a href="../../terraria/">泰拉瑞亚</a>
+      <a href="../../subnautica2/">深海迷航2</a>
+      <a href="../../monster-hunter-wilds/">怪物猎人：荒野</a>
+      <a href="../../zelda-totk/">塞尔达传说：王国之泪</a>
+      <a href="../../minecraft/">我的世界</a>
+      <a href="../../no-mans-sky/">无人深空</a>
+      <a href="../../baldurs-gate-3/" class="active">博德之门3</a>
+      <a href="../../valheim/">英灵神殿</a>
+      <a href="../../path-of-exile-2/">流放之路2</a>
+      <a href="../../elden-ring/">艾尔登法环</a>
+      <a href="../../stardew-valley/">星露谷物语</a>
+      <a href="../../hades-2/">哈迪斯2</a>
+      <a href="../../satisfactory/">幸福工厂</a>
+    </aside>
+
+    <!-- Center Content -->
+    <main class="content-area">
+
+      <!-- Breadcrumb -->
+      <p style="font-size: 15px; color: var(--text-dim); margin-bottom: 16px;">
+        <a href="../../" style="color: var(--text-dim);">游戏</a> / 
+        <a href="../" style="color: var(--text-dim);">博德之门3</a> / 
+        冈特梅尔
+      </p>
+
 <div class="guide-nav">
 <a class="active" href="#overview">概览</a>
 <a href="#acquisition">获取方式</a>
@@ -523,28 +492,55 @@ tr:hover{background:#1a1a1a}
 </div>
 <p>第九步：使用任何伤害类型摧毁水晶监狱——它有100点生命值且没有抗性。当水晶碎裂时，夜之歌艾琳以她的天界真身形态出现并感谢你。</p>
 </section>
-</main>
-<aside class="right-sidebar">
-<h4>📊 物品信息</h4>
-<div class="info-box"><div class="label">游戏</div><div class="value">博德之门3</div></div>
-<div class="info-box"><div class="label">物品类型</div><div class="value">传奇长弓</div></div>
-<div class="info-box"><div class="label">Acts</div><div class="value"><span class="tag tag-act2">Act 2</span> → <span class="tag tag-act3">Act 3</span></div></div>
-<div class="info-box"><div class="label">基础伤害</div><div class="value">1d8 + 2 Piercing + Guiding Bolt</div></div>
-<div class="info-box"><div class="label">Difficulty</div><div class="value" style="color:#e74c3c">★★★★★</div></div>
-<div class="info-box"><div class="label">预计用时</div><div class="value">60-120 minutes (multi-act)</div></div>
-<div class="info-box"><div class="label">可错过？</div><div class="value" style="color:#e74c3c">是 — Save Aylin</div></div>
-<h4>🔗 快速链接</h4>
-<div style="margin-bottom:10px"><a href="blood-of-lathander.html">← Blood of Lathander (Legendary Mace)</a></div>
-<div style="margin-bottom:10px"><a href="nyrulna.html">→ Nyrulna (Legendary Trident)</a></div>
-<div style="margin-bottom:10px"><a href="shars-spear.html">→ Shar's Spear of Evening</a></div>
-<div style="margin-bottom:10px"><a href="duellist-gloves.html">→ Duellist's Prismatic Gloves</a></div>
-<h4>📅 攻略更新</h4>
-<div class="info-box"><div class="value">兼容补丁7</div></div>
-</aside>
-</div>
-<footer class="footer">
-<p>⚔ RelicTrek — 博德之门3 Item Guides © 2025 | 所有游戏内容版权归拉瑞安工作室所有</p>
-<p><a href="../privacy.html">隐私</a> | <a href="../terms.html">条款</a> | <a href="../about.html">联系</a> | <a href="../about.html">关于</a></p>
+
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="right-sidebar">
+      <div class="ad-slot">广告位</div>
+
+      <h4>概览</h4>
+      <p style="font-size: 15px; color: var(--text-muted); line-height: 1.8;">
+        <strong style="color: var(--text);">游戏：</strong>博德之门3<br>
+        <strong style="color: var(--text);">物品：</strong>冈特梅尔<br>
+        <strong style="color: var(--text);">难度：</strong>★★★★★
+      </p>
+
+      <h4>相关攻略</h4>
+      <a href="blood-of-lathander.html">洛山达之血</a>
+      <a href="gontr-mael.html">冈特梅尔</a>
+      <a href="nyrulna.html">尼鲁纳</a>
+      <a href="shars-spear.html">莎尔的黄昏之矛</a>
+      <a href="duellist-gloves.html">决斗者的棱镜手套</a>
+
+      <div class="ad-slot" style="min-height: 160px; margin-top: 20px;">广告位</div>
+    </aside>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">&#9676; RelicTrek</div>
+      <p class="footer-tagline">每一件传奇物品都有一个故事。我们为你绘制旅程。</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">RelicTrek</div>
+        <a href="../../privacy.html">隐私政策</a>
+        <a href="../../terms.html">使用条款</a>
+        <a href="../../about.html">关于我们</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 RelicTrek.net</span>
+    <span class="footer-sep">&#9676;</span>
+    <span>为冒险者精心打造</span>
+  </div>
 </footer>
+
+  <script src="../../js/main.js"></script>
 </body>
 </html>

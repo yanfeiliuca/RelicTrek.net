@@ -1,44 +1,41 @@
-# RelicTrek 风格改版计划
+# 全站标准化计划
 
 ## 目标
-1. 网站风格改为"纯C"（Clean/C 语言风格）——极简、深色、代码感
-2. 全站中英文双语，英文默认
-3. 顶部菜单和主内容区之间添加滚动字幕（Slogan）
-4. 保留搜索框
+以Terraria中英文页面布局为标准模板，全站所有游戏所有物品页面核查并修复。
 
-## 风格定义（纯C风格）
-- 背景：#0a0e14（极深蓝黑，VS Code 感）
-- 卡片背景：#111820，边框 1px #1e2730
-- 强调色：#58a6ff（代码蓝）
-- 次强调：#2ea043（终端绿）
-- 文字：#c9d1d9（主文字），#8b949e（次要）
-- 字体：system-ui 正文，等宽字体用于代码/数据
-- 无渐变、无毛玻璃、无花哨效果
-- 极简圆角（4px 或 0）
-- 高对比度、清晰层次
+## Terraria标准模板特征
+1. `<nav class="top-nav">` — 顶部导航
+2. `<button class="menu-toggle">` — 汉堡菜单
+3. `<a href="../" class="logo">RelicTrek</a>` — Logo
+4. `<input type="search">` — 搜索框
+5. `<div class="lang-switch">` — 语言切换(EN/中文按钮)
+6. `<div class="nav-links">` — Blog/Games/About导航
+7. `<div class="ticker-bar">` — 滚动标语
+8. `<div class="main-layout">` — 主布局
+9. `<aside class="left-sidebar">` — 左侧游戏导航
+10. `<main class="content-area">` — 内容区域
+11. `<aside class="right-sidebar">` — 右侧信息
+12. `<footer class="site-footer">` — 页脚
+
+## 老格式特征(需修改)
+- `<nav class="nav">` 不是 `<nav class="top-nav">`
+- `<div class="nav-logo">` 不是 `<a class="logo">`
+- `<div class="news-ticker">` 或 `<div class="ticker">` 不是 `ticker-bar`
+- `<div class="container">` 不是 `main-layout`
+- 标签页导航 (Overview/Acquisition...)
+- Item Info / QUICK INFO 面板
 
 ## 执行阶段
 
-### Stage 1: 重写 CSS（style.css）
-- 替换全部变量和样式规则
-- 添加滚动字幕（ticker）样式
-- 双语支持样式（lang 属性切换）
+### Stage 1: 扫描识别 (并行)
+- 13个游戏各派一个子代理扫描EN+ZH物品页面
+- 识别老格式页面和语言切换链接错误
+- 输出：问题页面清单
 
-### Stage 2: 重写 JS（main.js）
-- 添加语言切换功能
-- 添加滚动字幕控制
+### Stage 2: 修复 (并行)
+- 按游戏分组修复老格式页面
+- 每个子代理处理一个游戏
+- 标准模板替换 + 语言切换链接修复
 
-### Stage 3: 更新首页（index.html）
-- 添加滚动字幕 HTML
-- 添加语言切换器
-- 更新为双语内容
-
-### Stage 4: 批量更新所有游戏首页
-- Terraria / Subnautica 2 / MH Wilds index.html
-- 添加滚动字幕、语言切换器
-
-### Stage 5: 批量更新所有物品页面
-- 30 个物品页面
-- 添加滚动字幕、语言切换器、双语内容
-
-### Stage 6: 打包交付
+### Stage 3: 验证
+- 全站重新扫描确认
